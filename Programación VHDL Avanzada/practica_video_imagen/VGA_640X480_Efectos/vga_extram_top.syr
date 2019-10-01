@@ -1,0 +1,574 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.45 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.46 secs
+ 
+--> Reading design: vga_extram_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "vga_extram_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "vga_extram_top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : vga_extram_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vgacomp.vhd" in Library work.
+Compiling vhdl file "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/clkdiv.vhd" in Library work.
+Architecture behavioral of Entity clkdiv is up to date.
+Compiling vhdl file "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_640x480.vhd" in Library work.
+Architecture behavioral of Entity vga_640x480 is up to date.
+Compiling vhdl file "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd" in Library work.
+Entity <vga_ram> compiled.
+Entity <vga_ram> (Architecture <behavioral>) compiled.
+Compiling vhdl file "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_extram_top.vhd" in Library work.
+Architecture behavioral of Entity vga_extram_top is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <vga_extram_top> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <clkdiv> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <vga_640x480> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <vga_ram> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <vga_extram_top> in library <work> (Architecture <behavioral>).
+Entity <vga_extram_top> analyzed. Unit <vga_extram_top> generated.
+
+Analyzing Entity <clkdiv> in library <work> (Architecture <behavioral>).
+Entity <clkdiv> analyzed. Unit <clkdiv> generated.
+
+Analyzing Entity <vga_640x480> in library <work> (Architecture <behavioral>).
+Entity <vga_640x480> analyzed. Unit <vga_640x480> generated.
+
+Analyzing Entity <vga_ram> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd" line 80: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <selector>
+Entity <vga_ram> analyzed. Unit <vga_ram> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clkdiv>.
+    Related source file is "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/clkdiv.vhd".
+    Found 2-bit up counter for signal <q>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <clkdiv> synthesized.
+
+
+Synthesizing Unit <vga_640x480>.
+    Related source file is "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_640x480.vhd".
+    Found 10-bit up counter for signal <hcs>.
+    Found 11-bit comparator less for signal <hsync$cmp_lt0000> created at line 48.
+    Found 10-bit up counter for signal <vcs>.
+    Found 10-bit comparator greatequal for signal <vidon$cmp_ge0000> created at line 66.
+    Found 10-bit comparator greatequal for signal <vidon$cmp_ge0001> created at line 66.
+    Found 10-bit comparator less for signal <vidon$cmp_lt0000> created at line 66.
+    Found 10-bit comparator less for signal <vidon$cmp_lt0001> created at line 66.
+    Found 1-bit register for signal <vsenable>.
+    Found 11-bit comparator less for signal <vsync$cmp_lt0000> created at line 64.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+Unit <vga_640x480> synthesized.
+
+
+Synthesizing Unit <vga_ram>.
+    Related source file is "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd".
+WARNING:Xst:647 - Input <hc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <vc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 20-bit up counter for signal <addr_count>.
+    Found 8-bit register for signal <pixel>.
+    Found 8-bit 8-to-1 multiplexer for signal <pixelaux>.
+    Found 2-bit comparator greatequal for signal <pixelaux$cmp_ge0000> created at line 111.
+    Found 3-bit comparator greatequal for signal <pixelaux$cmp_ge0001> created at line 99.
+    Found 3-bit comparator greatequal for signal <pixelaux$cmp_ge0002> created at line 87.
+    Found 2-bit comparator lessequal for signal <pixelaux$cmp_le0000> created at line 117.
+    Found 3-bit comparator lessequal for signal <pixelaux$cmp_le0001> created at line 105.
+    Found 3-bit comparator lessequal for signal <pixelaux$cmp_le0002> created at line 93.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   8 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   8 Multiplexer(s).
+Unit <vga_ram> synthesized.
+
+
+Synthesizing Unit <vga_extram_top>.
+    Related source file is "//VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_extram_top.vhd".
+WARNING:Xst:647 - Input <btn<2:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <vga_extram_top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 2-bit up counter                                      : 1
+ 20-bit up counter                                     : 1
+# Registers                                            : 2
+ 1-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 12
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 2
+ 11-bit comparator less                                : 2
+ 2-bit comparator greatequal                           : 1
+ 2-bit comparator lessequal                            : 1
+ 3-bit comparator greatequal                           : 2
+ 3-bit comparator lessequal                            : 2
+# Multiplexers                                         : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 2-bit up counter                                      : 1
+ 20-bit up counter                                     : 1
+# Registers                                            : 9
+ Flip-Flops                                            : 9
+# Comparators                                          : 12
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 2
+ 11-bit comparator less                                : 2
+ 2-bit comparator greatequal                           : 1
+ 2-bit comparator lessequal                            : 1
+ 3-bit comparator greatequal                           : 2
+ 3-bit comparator lessequal                            : 2
+# Multiplexers                                         : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <vga_extram_top> ...
+
+Optimizing unit <vga_640x480> ...
+
+Optimizing unit <vga_ram> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block vga_extram_top, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 51
+ Flip-Flops                                            : 51
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : vga_extram_top.ngr
+Top Level Output File Name         : vga_extram_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 66
+
+Cell Usage :
+# BELS                             : 267
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 53
+#      LUT2                        : 41
+#      LUT3                        : 14
+#      LUT3_D                      : 2
+#      LUT4                        : 39
+#      LUT4_D                      : 2
+#      MUXCY                       : 42
+#      MUXF5                       : 19
+#      MUXF6                       : 8
+#      VCC                         : 1
+#      XORCY                       : 40
+# FlipFlops/Latches                : 51
+#      FDC                         : 20
+#      FDCE                        : 30
+#      FDE                         : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 62
+#      IBUF                        : 20
+#      OBUF                        : 42
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       83  out of   4656     1%  
+ Number of Slice Flip Flops:             51  out of   9312     0%  
+ Number of 4 input LUTs:                156  out of   9312     1%  
+ Number of IOs:                          66
+ Number of bonded IOBs:                  63  out of    232    27%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+mclk                               | BUFGP                  | 2     |
+u1/q_01                            | BUFG                   | 29    |
+u1/q_11                            | BUFG                   | 20    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+btn<3>                             | IBUF                   | 50    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.669ns (Maximum Frequency: 149.948MHz)
+   Minimum input arrival time before clock: 4.165ns
+   Maximum output required time after clock: 9.435ns
+   Maximum combinational path delay: 8.793ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mclk'
+  Clock period: 2.660ns (frequency: 375.940MHz)
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Delay:               2.660ns (Levels of Logic = 1)
+  Source:            u1/q_1 (FF)
+  Destination:       u1/q_1 (FF)
+  Source Clock:      mclk rising
+  Destination Clock: mclk rising
+
+  Data Path: u1/q_1 to u1/q_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             10   0.591   1.057  u1/q_1 (u1/q_11)
+     LUT2:I0->O            1   0.704   0.000  u1/Mcount_q_xor<1>11 (Result<1>)
+     FDC:D                     0.308          u1/q_1
+    ----------------------------------------
+    Total                      2.660ns (1.603ns logic, 1.057ns route)
+                                       (60.3% logic, 39.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'u1/q_01'
+  Clock period: 5.295ns (frequency: 188.857MHz)
+  Total number of paths / destination ports: 330 / 31
+-------------------------------------------------------------------------
+Delay:               5.295ns (Levels of Logic = 11)
+  Source:            u2/vcs_1 (FF)
+  Destination:       u2/vcs_9 (FF)
+  Source Clock:      u1/q_01 rising
+  Destination Clock: u1/q_01 rising
+
+  Data Path: u2/vcs_1 to u2/vcs_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             5   0.591   0.808  u2/vcs_1 (u2/vcs_1)
+     LUT1:I0->O            1   0.704   0.000  u2/Mcount_vcs_cy<1>_rt (u2/Mcount_vcs_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  u2/Mcount_vcs_cy<1> (u2/Mcount_vcs_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  u2/Mcount_vcs_cy<2> (u2/Mcount_vcs_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  u2/Mcount_vcs_cy<3> (u2/Mcount_vcs_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  u2/Mcount_vcs_cy<4> (u2/Mcount_vcs_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  u2/Mcount_vcs_cy<5> (u2/Mcount_vcs_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  u2/Mcount_vcs_cy<6> (u2/Mcount_vcs_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  u2/Mcount_vcs_cy<7> (u2/Mcount_vcs_cy<7>)
+     MUXCY:CI->O           0   0.059   0.000  u2/Mcount_vcs_cy<8> (u2/Mcount_vcs_cy<8>)
+     XORCY:CI->O           1   0.804   0.499  u2/Mcount_vcs_xor<9> (u2/Result<9>)
+     LUT2:I1->O            1   0.704   0.000  u2/Mcount_vcs_eqn_91 (u2/Mcount_vcs_eqn_9)
+     FDCE:D                    0.308          u2/vcs_9
+    ----------------------------------------
+    Total                      5.295ns (3.988ns logic, 1.307ns route)
+                                       (75.3% logic, 24.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'u1/q_11'
+  Clock period: 6.669ns (frequency: 149.948MHz)
+  Total number of paths / destination ports: 1010 / 40
+-------------------------------------------------------------------------
+Delay:               6.669ns (Levels of Logic = 7)
+  Source:            u3/addr_count_7 (FF)
+  Destination:       u3/addr_count_19 (FF)
+  Source Clock:      u1/q_11 rising
+  Destination Clock: u1/q_11 rising
+
+  Data Path: u3/addr_count_7 to u3/addr_count_19
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.591   0.706  u3/addr_count_7 (u3/addr_count_7)
+     LUT4:I0->O            1   0.704   0.000  u3/addr_count_cmp_eq0000_wg_lut<0> (u3/addr_count_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  u3/addr_count_cmp_eq0000_wg_cy<0> (u3/addr_count_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  u3/addr_count_cmp_eq0000_wg_cy<1> (u3/addr_count_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  u3/addr_count_cmp_eq0000_wg_cy<2> (u3/addr_count_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  u3/addr_count_cmp_eq0000_wg_cy<3> (u3/addr_count_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O          21   0.459   1.207  u3/addr_count_cmp_eq0000_wg_cy<4> (u3/addr_count_cmp_eq0000)
+     LUT2:I1->O           20   0.704   1.102  u3/addr_count_not00011 (u3/addr_count_not0001)
+     FDCE:CE                   0.555          u3/addr_count_0
+    ----------------------------------------
+    Total                      6.669ns (3.654ns logic, 3.015ns route)
+                                       (54.8% logic, 45.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'u1/q_01'
+  Total number of paths / destination ports: 17 / 9
+-------------------------------------------------------------------------
+Offset:              4.165ns (Levels of Logic = 2)
+  Source:            btn<3> (PAD)
+  Destination:       u2/vsenable (FF)
+  Destination Clock: u1/q_01 rising
+
+  Data Path: btn<3> to u2/vsenable
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            51   1.218   1.268  btn_3_IBUF (btn_3_IBUF)
+     INV:I->O              1   0.704   0.420  u2/clr_inv1_INV_0 (u2/clr_inv)
+     FDE:CE                    0.555          u2/vsenable
+    ----------------------------------------
+    Total                      4.165ns (2.477ns logic, 1.688ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'u1/q_01'
+  Total number of paths / destination ports: 306 / 10
+-------------------------------------------------------------------------
+Offset:              9.435ns (Levels of Logic = 6)
+  Source:            u2/vcs_3 (FF)
+  Destination:       blue<1> (PAD)
+  Source Clock:      u1/q_01 rising
+
+  Data Path: u2/vcs_3 to blue<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             5   0.591   0.808  u2/vcs_3 (u2/vcs_3)
+     LUT4:I0->O            1   0.704   0.000  u2/vidon_and0000141 (u2/vidon_and0000141)
+     MUXF5:I1->O           1   0.321   0.595  u2/vidon_and000014_f5 (u2/vidon_and000014)
+     LUT4:I0->O            1   0.704   0.000  u2/vidon_and000073_F (N8)
+     MUXF5:I0->O           9   0.321   0.995  u2/vidon_and000073 (u2/vidon_and000073)
+     LUT4:I0->O            1   0.704   0.420  u3/red<2>1 (red_2_OBUF)
+     OBUF:I->O                 3.272          red_2_OBUF (red<2>)
+    ----------------------------------------
+    Total                      9.435ns (6.617ns logic, 2.818ns route)
+                                       (70.1% logic, 29.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'u1/q_11'
+  Total number of paths / destination ports: 20 / 20
+-------------------------------------------------------------------------
+Offset:              4.394ns (Levels of Logic = 1)
+  Source:            u3/addr_count_19 (FF)
+  Destination:       A<19> (PAD)
+  Source Clock:      u1/q_11 rising
+
+  Data Path: u3/addr_count_19 to A<19>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.591   0.531  u3/addr_count_19 (u3/addr_count_19)
+     OBUF:I->O                 3.272          A_19_OBUF (A<19>)
+    ----------------------------------------
+    Total                      4.394ns (3.863ns logic, 0.531ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 40 / 8
+-------------------------------------------------------------------------
+Delay:               8.793ns (Levels of Logic = 6)
+  Source:            Seleccion<0> (PAD)
+  Destination:       blue<1> (PAD)
+
+  Data Path: Seleccion<0> to blue<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   1.218   1.209  Seleccion_0_IBUF (Seleccion_0_IBUF)
+     LUT2:I0->O            1   0.704   0.000  u3/Mmux_pixelaux_4 (u3/Mmux_pixelaux_4)
+     MUXF5:I1->O           1   0.321   0.000  u3/Mmux_pixelaux_3_f5 (u3/Mmux_pixelaux_3_f5)
+     MUXF6:I1->O           1   0.521   0.424  u3/Mmux_pixelaux_2_f6 (u3/pixelaux<0>)
+     LUT4:I3->O            1   0.704   0.420  u3/blue<0>1 (blue_0_OBUF)
+     OBUF:I->O                 3.272          blue_0_OBUF (blue<0>)
+    ----------------------------------------
+    Total                      8.793ns (6.740ns logic, 2.053ns route)
+                                       (76.7% logic, 23.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 24.59 secs
+ 
+--> 
+
+Total memory usage is 153776 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

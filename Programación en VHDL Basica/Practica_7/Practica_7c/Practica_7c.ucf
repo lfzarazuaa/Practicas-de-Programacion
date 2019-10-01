@@ -1,0 +1,4 @@
+net clk loc=B8;
+net push loc=R17;
+net senal loc=R4;
+net senal loc=L15;

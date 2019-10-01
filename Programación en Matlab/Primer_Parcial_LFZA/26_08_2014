@@ -1,0 +1,343 @@
+x=[-5:0.01:5];
+f1=x.^2./sin(x.^3);
+f2=(x.^2+x.^3)./x.^2.*tan(x));
+ f2=(x.^2+x.^3)./x.^2.*tan(x));
+                             |
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+f2=(x.^2+x.^3)./(x.^2.*tan(x));
+f3=(x.^2+x.^x)./sqrt(x+2);
+f4=(x.^3+x)./(x.^3);
+f5=log((x.^2)./(x.^3.*sin(x)));
+f6=(sin(x))./(sqrt(tan(x.^2)));
+f7=(x+x.^2+x.^3)./(x-(x.^5).*x.^x);
+f8=log((x-x.^2)./(x+x.^2))./x.^4;
+plot(x,f1);
+plot(x,f2);
+plot(x,f2);
+plot(x,f2);
+plot(x,f2);
+
+help subplot
+ <strong>subplot</strong> Create axes in tiled positions.
+    H = <strong>subplot</strong>(m,n,p), or <strong>subplot</strong>(mnp), breaks the Figure window
+    into an m-by-n matrix of small axes, selects the p-th axes for
+    the current plot, and returns the axes handle.  The axes are
+    counted along the top row of the Figure window, then the second
+    row, etc.  For example,
+ 
+        <strong>subplot</strong>(2,1,1), PLOT(income)
+        <strong>subplot</strong>(2,1,2), PLOT(outgo)
+ 
+    plots income on the top half of the window and outgo on the
+    bottom half. If the CurrentAxes is nested in a uipanel the
+    panel is used as the parent for the subplot instead of the
+    current figure.
+ 
+    <strong>subplot</strong>(m,n,p), if the axes already exists, makes it current.
+    <strong>subplot</strong>(m,n,p,'replace'), if the axes already exists, deletes it and
+    creates a new axes.
+    <strong>subplot</strong>(m,n,p,'align') places the axes so that the plot boxes
+    are aligned, but does not prevent the labels and ticks from
+    overlapping.
+    <strong>subplot</strong>(m,n,P), where P is a vector, specifies an axes position
+    that covers all the subplot positions listed in P.
+    <strong>subplot</strong>(H), where H is an axes handle, is another way of making
+    an axes current for subsequent plotting commands.
+ 
+    <strong>subplot</strong>('position',[left bottom width height]) creates an
+    axes at the specified position in normalized coordinates (in
+    in the range from 0.0 to 1.0).
+ 
+    <strong>subplot</strong>(..., PROP1, VALUE1, PROP2, VALUE2, ...) sets the
+    specified property-value pairs on the subplot axes. To add the
+    subplot to a specific figure pass the figure handle as the
+    value for the 'Parent' property.
+ 
+    If a <strong>subplot</strong> specification causes a new axes to overlap an
+    existing axes, the existing axes is deleted - unless the position
+    of the new and existing axes are identical.  For example,
+    the statement <strong>subplot</strong>(1,2,1) deletes all existing axes overlapping
+    the left side of the Figure window and creates a new axes on that
+    side - unless there is an axes there with a position that exactly
+    matches the position of the new axes (and 'replace' was not specified),
+    in which case all other overlapping axes will be deleted and the
+    matching axes will become the current axes.
+ 
+    <strong>subplot</strong>(111) is an exception to the rules above, and is not
+    identical in behavior to <strong>subplot</strong>(1,1,1).  For reasons of backwards
+    compatibility, it is a special case of subplot which does not
+    immediately create an axes, but instead sets up the figure so that
+    the next graphics command executes CLF RESET in the figure
+    (deleting all children of the figure), and creates a new axes in
+    the default position.  This syntax does not return a handle, so it
+    is an error to specify a return argument.  The delayed CLF RESET
+    is accomplished by setting the figure's NextPlot to 'replace'.
+ 
+    Be aware when creating subplots from scripts that the Position
+    property of subplots is not finalized until either a drawnow
+    command is issued, or MATLAB returns to await a user command.
+    That is, the value obtained for subplot i by the command
+    get(h(i),'Position') will not be correct until the script
+    refreshes the plot or exits.
+ 
+    See also  <a href="matlab:help gca">gca</a>, <a href="matlab:help gcf">gcf</a>, <a href="matlab:help axes">axes</a>, <a href="matlab:help figure">figure</a>, <a href="matlab:help uipanel">uipanel</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc subplot">doc subplot</a>
+
+plot(x,f3)
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+Mi_1ra_grafica
+Mi_1ra_grafica
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',12,1)">Mi_1ra_grafica at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',18,1)">Mi_1ra_grafica at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',21,1)">Mi_1ra_grafica at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',24,1)">Mi_1ra_grafica at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',27,1)">Mi_1ra_grafica at 27</a>] 
+Mi_1ra_grafica
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',12,1)">Mi_1ra_grafica at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',18,1)">Mi_1ra_grafica at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',21,1)">Mi_1ra_grafica at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',24,1)">Mi_1ra_grafica at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',27,1)">Mi_1ra_grafica at 27</a>] 
+Mi_1ra_grafica
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',12,1)">Mi_1ra_grafica at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',18,1)">Mi_1ra_grafica at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',21,1)">Mi_1ra_grafica at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',24,1)">Mi_1ra_grafica at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_1ra_grafica.m',27,1)">Mi_1ra_grafica at 27</a>] 
+Mi_2da_grafica
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',12,1)">Mi_2da_grafica at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',18,1)">Mi_2da_grafica at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',21,1)">Mi_2da_grafica at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',24,1)">Mi_2da_grafica at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',27,1)">Mi_2da_grafica at 27</a>] 
+Mi_2da_grafica
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',12,1)">Mi_2da_grafica at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',18,1)">Mi_2da_grafica at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',21,1)">Mi_2da_grafica at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',24,1)">Mi_2da_grafica at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Mi_2da_grafica.m',27,1)">Mi_2da_grafica at 27</a>] 
+graph_subplot()
+{Cannot find an exact (case-sensitive) match for 'graph_subplot'
+
+The closest match is: Graph_subplot in C:\Users\Sala4\Documents\MATLAB\Graph_subplot.m
+
+} 
+Graph_subplot()
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_subplot.m',12,1)">Graph_subplot at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_subplot.m',18,1)">Graph_subplot at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_subplot.m',21,1)">Graph_subplot at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_subplot.m',24,1)">Graph_subplot at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_subplot.m',27,1)">Graph_subplot at 27</a>] 
+Graph_pause()
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',12,1)">Graph_pause at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',18,1)">Graph_pause at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',21,1)">Graph_pause at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',24,1)">Graph_pause at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',27,1)">Graph_pause at 27</a>] 
+Graph_pause()
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',12,1)">Graph_pause at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',18,1)">Graph_pause at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',21,1)">Graph_pause at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',24,1)">Graph_pause at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_pause.m',27,1)">Graph_pause at 27</a>] 
+help plot
+ <strong>plot</strong>   Linear plot. 
+    <strong>plot</strong>(X,Y) plots vector Y versus vector X. If X or Y is a matrix,
+    then the vector is plotted versus the rows or columns of the matrix,
+    whichever line up.  If X is a scalar and Y is a vector, disconnected
+    line objects are created and plotted as discrete points vertically at
+    X.
+ 
+    <strong>plot</strong>(Y) plots the columns of Y versus their index.
+    If Y is complex, <strong>plot</strong>(Y) is equivalent to <strong>plot</strong>(real(Y),imag(Y)).
+    In all other uses of <strong>plot</strong>, the imaginary part is ignored.
+ 
+    Various line types, plot symbols and colors may be obtained with
+    <strong>plot</strong>(X,Y,S) where S is a character string made from one element
+    from any or all the following 3 columns:
+ 
+           b     blue          .     point              -     solid
+           g     green         o     circle             :     dotted
+           r     red           x     x-mark             -.    dashdot 
+           c     cyan          +     plus               --    dashed   
+           m     magenta       *     star             (none)  no line
+           y     yellow        s     square
+           k     black         d     diamond
+           w     white         v     triangle (down)
+                               ^     triangle (up)
+                               <     triangle (left)
+                               >     triangle (right)
+                               p     pentagram
+                               h     hexagram
+                          
+    For example, <strong>plot</strong>(X,Y,'c+:') plots a cyan dotted line with a plus 
+    at each data point; <strong>plot</strong>(X,Y,'bd') plots blue diamond at each data 
+    point but does not draw any line.
+ 
+    <strong>plot</strong>(X1,Y1,S1,X2,Y2,S2,X3,Y3,S3,...) combines the plots defined by
+    the (X,Y,S) triples, where the X's and Y's are vectors or matrices 
+    and the S's are strings.  
+ 
+    For example, <strong>plot</strong>(X,Y,'y-',X,Y,'go') plots the data twice, with a
+    solid yellow line interpolating green circles at the data points.
+ 
+    The <strong>plot</strong> command, if no color is specified, makes automatic use of
+    the colors specified by the axes ColorOrder property.  By default,
+    <strong>plot</strong> cycles through the colors in the ColorOrder property.  For
+    monochrome systems, <strong>plot</strong> cycles over the axes LineStyleOrder property.
+ 
+    Note that RGB colors in the ColorOrder property may differ from
+    similarly-named colors in the (X,Y,S) triples.  For example, the 
+    second axes ColorOrder property is medium green with RGB [0 .5 0],
+    while <strong>plot</strong>(X,Y,'g') plots a green line with RGB [0 1 0].
+ 
+    If you do not specify a marker type, <strong>plot</strong> uses no marker. 
+    If you do not specify a line style, <strong>plot</strong> uses a solid line.
+ 
+    <strong>plot</strong>(AX,...) plots into the axes with handle AX.
+ 
+    <strong>plot</strong> returns a column vector of handles to lineseries objects, one
+    handle per plotted line. 
+ 
+    The X,Y pairs, or X,Y,S triples, can be followed by 
+    parameter/value pairs to specify additional properties 
+    of the lines. For example, <strong>plot</strong>(X,Y,'LineWidth',2,'Color',[.6 0 0]) 
+    will create a plot with a dark red line width of 2 points.
+ 
+    Example
+       x = -pi:pi/10:pi;
+       y = tan(sin(x)) - sin(tan(x));
+       plot(x,y,'--rs','LineWidth',2,...
+                       'MarkerEdgeColor','k',...
+                       'MarkerFaceColor','g',...
+                       'MarkerSize',10)
+ 
+    See also <a href="matlab:help plottools">plottools</a>, <a href="matlab:help semilogx">semilogx</a>, <a href="matlab:help semilogy">semilogy</a>, <a href="matlab:help loglog">loglog</a>, <a href="matlab:help plotyy">plotyy</a>, <a href="matlab:help plot3">plot3</a>, <a href="matlab:help grid">grid</a>,
+    <a href="matlab:help title">title</a>, <a href="matlab:help xlabel">xlabel</a>, <a href="matlab:help ylabel">ylabel</a>, <a href="matlab:help axis">axis</a>, <a href="matlab:help axes">axes</a>, <a href="matlab:help hold">hold</a>, <a href="matlab:help legend">legend</a>, <a href="matlab:help subplot">subplot</a>, <a href="matlab:help scatter">scatter</a>.
+
+    Overloaded methods:
+       <a href="matlab:help phytree/plot">phytree/plot</a>
+       <a href="matlab:help clustergram/plot">clustergram/plot</a>
+       <a href="matlab:help HeatMap/plot">HeatMap/plot</a>
+       <a href="matlab:help channel.plot">channel.plot</a>
+       <a href="matlab:help sfit/plot">sfit/plot</a>
+       <a href="matlab:help cfit/plot">cfit/plot</a>
+       <a href="matlab:help gpuArray/plot">gpuArray/plot</a>
+       <a href="matlab:help fints/plot">fints/plot</a>
+       <a href="matlab:help iddata/plot">iddata/plot</a>
+       <a href="matlab:help idnlhw/plot">idnlhw/plot</a>
+       <a href="matlab:help idnlarx/plot">idnlarx/plot</a>
+       <a href="matlab:help cgrules/plot">cgrules/plot</a>
+       <a href="matlab:help xregtwostage/plot">xregtwostage/plot</a>
+       <a href="matlab:help xregtransient/plot">xregtransient/plot</a>
+       <a href="matlab:help xregmodel/plot">xregmodel/plot</a>
+       <a href="matlab:help xregarx/plot">xregarx/plot</a>
+       <a href="matlab:help localmulti/plot">localmulti/plot</a>
+       <a href="matlab:help localmod/plot">localmod/plot</a>
+       <a href="matlab:help localavfit/plot">localavfit/plot</a>
+       <a href="matlab:help sweepset/plot">sweepset/plot</a>
+       <a href="matlab:help mdevtestplan/plot">mdevtestplan/plot</a>
+       <a href="matlab:help cgdatasetnode/plot">cgdatasetnode/plot</a>
+       <a href="matlab:help mpc/plot">mpc/plot</a>
+       <a href="matlab:help frd/plot">frd/plot</a>
+       <a href="matlab:help dspdata.plot">dspdata.plot</a>
+       <a href="matlab:help LinearModel/plot">LinearModel/plot</a>
+       <a href="matlab:help timeseries/plot">timeseries/plot</a>
+       <a href="matlab:help wdectree/plot">wdectree/plot</a>
+       <a href="matlab:help ntree/plot">ntree/plot</a>
+       <a href="matlab:help dtree/plot">dtree/plot</a>
+       <a href="matlab:help wvtree/plot">wvtree/plot</a>
+       <a href="matlab:help rwvtree/plot">rwvtree/plot</a>
+       <a href="matlab:help edwttree/plot">edwttree/plot</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc plot">doc plot</a>
+
+Graph_nombre
+{Error: <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',6,11)">File: Graph_nombre.m Line: 6 Column: 11
+</a>Unbalanced or unexpected parenthesis or bracket.
+} 
+Graph_nombre
+{Error: <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',6,11)">File: Graph_nombre.m Line: 6 Column: 11
+</a>Unbalanced or unexpected parenthesis or bracket.
+} 
+Graph_nombre
+{Error: <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',9,10)">File: Graph_nombre.m Line: 9 Column: 10
+</a>Unexpected MATLAB operator.
+} 
+Graph_nombre
+{Error: <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',9,12)">File: Graph_nombre.m Line: 9 Column: 12
+</a>Unbalanced or unexpected parenthesis or bracket.
+} 
+Graph_nombre
+{Error: <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',9,12)">File: Graph_nombre.m Line: 9 Column: 12
+</a>Unbalanced or unexpected parenthesis or bracket.
+} 
+Graph_nombre
+{Undefined function or variable 'h'.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('Graph_nombre', 'C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m', 6)" style="font-weight:bold">Graph_nombre</a> (<a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',6,0)">line 6</a>)
+plot(x,y,h);
+} 
+helpUtils.errorDocCallback('Graph_nombre', 'C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m', 6)
+Graph_nombre
+{Undefined function or variable 's'.
+
+Error in <a href="matlab:helpUtils.errorDocCallback('Graph_nombre', 'C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m', 12)" style="font-weight:bold">Graph_nombre</a> (<a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',12,0)">line 12</a>)
+plot(x,y,s);
+} 
+Graph_nombre
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',12,1)">Graph_nombre at 12</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',18,1)">Graph_nombre at 18</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',21,1)">Graph_nombre at 21</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',24,1)">Graph_nombre at 24</a>] 
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+[> In <a href="matlab: opentoline('C:\Users\Sala4\Documents\MATLAB\Graph_nombre.m',27,1)">Graph_nombre at 27</a>] 
+diary off

@@ -1,0 +1,9 @@
+AR vga_640x480 behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_640x480.vhd sub00/vhpl04 1491796544
+EN clkdiv NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/clkdiv.vhd sub00/vhpl01 1491796541
+EN vga_ram NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd sub00/vhpl05 1491796545
+EN vga_640x480 NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_640x480.vhd sub00/vhpl03 1491796543
+AR clkdiv behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/clkdiv.vhd sub00/vhpl02 1491796542
+EN vga_extram_top NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_extram_top.vhd sub00/vhpl07 1491796547
+AR vga_extram_top behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_extram_top.vhd sub00/vhpl08 1491796548
+PH vgacomp NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vgacomp.vhd sub00/vhpl00 1491796540
+AR vga_ram behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd sub00/vhpl06 1491796546

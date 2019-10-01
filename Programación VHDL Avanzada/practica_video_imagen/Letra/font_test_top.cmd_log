@@ -1,0 +1,17 @@
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Letra/font_test_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Letra/font_test_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 font_test_top.ngc font_test_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 font_test_top.ngc font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 font_test_top.ngc font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 font_test_top.ngc font_test_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o font_test_top_map.ncd font_test_top.ngd font_test_top.pcf 
+par -w -intstyle ise -ol high -t 1 font_test_top_map.ncd font_test_top.ncd font_test_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml font_test_top.twx font_test_top.ncd -o font_test_top.twr font_test_top.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f font_test_top.ut font_test_top.ncd 

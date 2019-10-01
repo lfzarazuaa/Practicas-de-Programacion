@@ -1,0 +1,38 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Debug/Practica_74595.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_74595.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_74595.map</FILE>
+  <FILE>Practica_74595.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>13</LINE></config>
+  <SPI_MasterInit><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>23</LINE></SPI_MasterInit>
+  <inicio><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>32</LINE></inicio>
+  <Incrementar><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>34</LINE></Incrementar>
+  <Transmitir_SPI><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>46</LINE></Transmitir_SPI>
+  <Actualizar_Registro><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>58</LINE></Actualizar_Registro>
+  <Retardo><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>67</LINE></Retardo>
+  <Espera_SPI><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>50</LINE></Espera_SPI>
+  <WGLOOP3><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>72</LINE></WGLOOP3>
+  <WGLOOP0><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>74</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>75</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\Practica_74595\Practica_74595\Practica_74595.asm</FILE><LINE>82</LINE></WGLOOP2>
+ </LABELS>
+</ASSEMBLER_INFO>

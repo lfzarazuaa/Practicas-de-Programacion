@@ -1,0 +1,40 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Debug/Practica_1A.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_1A.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_1A.map</FILE>
+  <FILE>Practica_1A.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>11</LINE></config>
+  <inicio><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>22</LINE></inicio>
+  <Carga_100><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>34</LINE></Carga_100>
+  <Carga_400><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>37</LINE></Carga_400>
+  <Combinacion><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>40</LINE></Combinacion>
+  <Comb_0><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>49</LINE></Comb_0>
+  <Comb_1><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>58</LINE></Comb_1>
+  <Comb_2><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>85</LINE></Comb_2>
+  <Comb_3><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>100</LINE></Comb_3>
+  <Retardo><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>122</LINE></Retardo>
+  <WGLOOP3><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>127</LINE></WGLOOP3>
+  <WGLOOP0><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>129</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>130</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1A\Practica_1A\Practica_1A.asm</FILE><LINE>137</LINE></WGLOOP2>
+ </LABELS>
+</ASSEMBLER_INFO>

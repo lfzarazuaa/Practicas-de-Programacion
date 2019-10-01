@@ -1,0 +1,6 @@
+Net ent(1) LOC=L13;
+Net ent(0) LOC=L14;
+Net sal(0) LOC=P15;
+Net sal(1) LOC=E17;
+Net sal(2) LOC=K14;
+Net sal(3) LOC=K15;

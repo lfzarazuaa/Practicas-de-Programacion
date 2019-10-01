@@ -1,0 +1,7 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\salvapantalla\Salvapantalla\ipcore_dir\rom240x160.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\salvapantalla\vga_sprite.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\salvapantalla\vga_bounce.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\salvapantalla\vga_640x480.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\salvapantalla\Salvapantalla\vgacomp.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\salvapantalla\clkdiv.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\salvapantalla\vga_sprite_top.vhd"

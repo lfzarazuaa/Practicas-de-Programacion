@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\azapi\Desktop\DLP's\Ejercicio8_VGA\principal.ncd
+OUTFILE=C:\Users\azapi\Desktop\DLP's\Ejercicio8_VGA\principal.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Users\azapi\Desktop\DLP's\Ejercicio8_VGA
+LICENSE=WebPack
+USER_INFO=0_0_0

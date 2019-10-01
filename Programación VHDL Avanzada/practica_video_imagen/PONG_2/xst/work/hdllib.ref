@@ -1,0 +1,6 @@
+EN vga_sync NULL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/vga_sync.vhd sub00/vhpl02 1496416425
+EN pong NULL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/pong.vhd sub00/vhpl04 1496416427
+AR bat_n_ball behavioral //VBOXSVR/vhdl/practica_video_imagen/PONG_2/bat_n_ball.vhd sub00/vhpl01 1496416424
+AR vga_sync behavioral //VBOXSVR/vhdl/practica_video_imagen/PONG_2/vga_sync.vhd sub00/vhpl03 1496416426
+AR pong behavioral //VBOXSVR/vhdl/practica_video_imagen/PONG_2/pong.vhd sub00/vhpl05 1496416428
+EN bat_n_ball NULL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/bat_n_ball.vhd sub00/vhpl00 1496416423

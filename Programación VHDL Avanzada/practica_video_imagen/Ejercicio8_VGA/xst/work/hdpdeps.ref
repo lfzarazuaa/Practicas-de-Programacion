@@ -1,0 +1,35 @@
+V3 20
+FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/clkdiv.vhd 2017/03/17.09:25:18 M.81d
+EN work/clkdiv 1489765781 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/clkdiv.vhd \
+      PB ieee/std_logic_1164 1290154108 PB ieee/NUMERIC_STD 1290154109 \
+      PB ieee/STD_LOGIC_UNSIGNED 1290154110
+AR work/clkdiv/Behavioral 1489765782 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/clkdiv.vhd EN work/clkdiv 1489765781
+FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/costal.vhd 2017/03/17.09:28:48 M.81d
+PH work/costal 1489765780 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/costal.vhd \
+      PB ieee/std_logic_1164 1290154108 CD vga_640x480 CD vga_stripes CD clkdiv
+FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/principal.vhd 2017/03/17.09:49:05 M.81d
+EN work/principal 1489765787 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/principal.vhd \
+      PB ieee/std_logic_1164 1290154108 PH work/costal 1489765780
+AR work/principal/Behavioral 1489765788 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/principal.vhd \
+      EN work/principal 1489765787 CP clkdiv CP vga_640x480 CP vga_stripes
+FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_640x480.vhd 2017/03/17.09:46:19 M.81d
+EN work/vga_640x480 1489765783 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1290154108 PB ieee/NUMERIC_STD 1290154109 \
+      PB ieee/STD_LOGIC_UNSIGNED 1290154110
+AR work/vga_640x480/Behavioral 1489765784 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_640x480.vhd \
+      EN work/vga_640x480 1489765783
+FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_stripes.vhd 2017/03/17.09:22:21 M.81d
+EN work/vga_stripes 1489765785 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_stripes.vhd \
+      PB ieee/std_logic_1164 1290154108 PB ieee/NUMERIC_STD 1290154109 \
+      PB ieee/STD_LOGIC_UNSIGNED 1290154110
+AR work/vga_stripes/Behavioral 1489765786 \
+      FL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_stripes.vhd \
+      EN work/vga_stripes 1489765785

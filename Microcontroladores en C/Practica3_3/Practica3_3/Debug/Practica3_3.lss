@@ -1,0 +1,938 @@
+
+Practica3_3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000548  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000006e  00800060  00000548  000005bc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  0000062a  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000065c  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000d8  00000000  00000000  00000698  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000167a  00000000  00000000  00000770  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000767  00000000  00000000  00001dea  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000906  00000000  00000000  00002551  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000020c  00000000  00000000  00002e58  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000054b  00000000  00000000  00003064  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000ce6  00000000  00000000  000035af  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000c8  00000000  00000000  00004295  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   8:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+   c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  10:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  14:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  18:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  1c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  20:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  24:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  28:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  2c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  30:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  34:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  38:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  3c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  40:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  44:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  48:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  4c:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+  50:	0c 94 3f 00 	jmp	0x7e	; 0x7e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e8 e4       	ldi	r30, 0x48	; 72
+  68:	f5 e0       	ldi	r31, 0x05	; 5
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	ae 3c       	cpi	r26, 0xCE	; 206
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+  76:	0e 94 07 02 	call	0x40e	; 0x40e <main>
+  7a:	0c 94 a2 02 	jmp	0x544	; 0x544 <_exit>
+
+0000007e <__bad_interrupt>:
+  7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000082 <Inicializar_Teclado>:
+
+void POS_LINEA4(char posicion)
+{
+	char linea4 = 0xD4;
+	posicion= posicion|linea4;
+	ENVIA_CMD(posicion);
+  82:	80 ef       	ldi	r24, 0xF0	; 240
+  84:	81 bb       	out	0x11, r24	; 17
+  86:	8f ef       	ldi	r24, 0xFF	; 255
+  88:	82 bb       	out	0x12, r24	; 18
+  8a:	08 95       	ret
+
+0000008c <Detectar_Tecla>:
+  8c:	90 b3       	in	r25, 0x10	; 16
+  8e:	9f 70       	andi	r25, 0x0F	; 15
+  90:	9e 30       	cpi	r25, 0x0E	; 14
+  92:	69 f0       	breq	.+26     	; 0xae <Detectar_Tecla+0x22>
+  94:	9d 30       	cpi	r25, 0x0D	; 13
+  96:	31 f0       	breq	.+12     	; 0xa4 <Detectar_Tecla+0x18>
+  98:	9b 30       	cpi	r25, 0x0B	; 11
+  9a:	31 f0       	breq	.+12     	; 0xa8 <Detectar_Tecla+0x1c>
+  9c:	97 30       	cpi	r25, 0x07	; 7
+  9e:	31 f4       	brne	.+12     	; 0xac <Detectar_Tecla+0x20>
+  a0:	28 2f       	mov	r18, r24
+  a2:	05 c0       	rjmp	.+10     	; 0xae <Detectar_Tecla+0x22>
+  a4:	24 2f       	mov	r18, r20
+  a6:	03 c0       	rjmp	.+6      	; 0xae <Detectar_Tecla+0x22>
+  a8:	26 2f       	mov	r18, r22
+  aa:	01 c0       	rjmp	.+2      	; 0xae <Detectar_Tecla+0x22>
+  ac:	2b ee       	ldi	r18, 0xEB	; 235
+  ae:	82 2f       	mov	r24, r18
+  b0:	08 95       	ret
+
+000000b2 <Obtener_Tecla>:
+  b2:	8f e0       	ldi	r24, 0x0F	; 15
+  b4:	82 bb       	out	0x12, r24	; 18
+  b6:	80 b3       	in	r24, 0x10	; 16
+  b8:	8f 70       	andi	r24, 0x0F	; 15
+  ba:	8f 30       	cpi	r24, 0x0F	; 15
+  bc:	08 f0       	brcs	.+2      	; 0xc0 <Obtener_Tecla+0xe>
+  be:	3f c0       	rjmp	.+126    	; 0x13e <Obtener_Tecla+0x8c>
+  c0:	8f e7       	ldi	r24, 0x7F	; 127
+  c2:	82 bb       	out	0x12, r24	; 18
+  c4:	89 ef       	ldi	r24, 0xF9	; 249
+  c6:	90 e0       	ldi	r25, 0x00	; 0
+  c8:	01 97       	sbiw	r24, 0x01	; 1
+  ca:	f1 f7       	brne	.-4      	; 0xc8 <Obtener_Tecla+0x16>
+  cc:	00 c0       	rjmp	.+0      	; 0xce <Obtener_Tecla+0x1c>
+  ce:	00 00       	nop
+  d0:	21 e4       	ldi	r18, 0x41	; 65
+  d2:	43 e3       	ldi	r20, 0x33	; 51
+  d4:	62 e3       	ldi	r22, 0x32	; 50
+  d6:	81 e3       	ldi	r24, 0x31	; 49
+  d8:	0e 94 46 00 	call	0x8c	; 0x8c <Detectar_Tecla>
+  dc:	8b 3e       	cpi	r24, 0xEB	; 235
+  de:	81 f5       	brne	.+96     	; 0x140 <Obtener_Tecla+0x8e>
+  e0:	8f eb       	ldi	r24, 0xBF	; 191
+  e2:	82 bb       	out	0x12, r24	; 18
+  e4:	89 ef       	ldi	r24, 0xF9	; 249
+  e6:	90 e0       	ldi	r25, 0x00	; 0
+  e8:	01 97       	sbiw	r24, 0x01	; 1
+  ea:	f1 f7       	brne	.-4      	; 0xe8 <Obtener_Tecla+0x36>
+  ec:	00 c0       	rjmp	.+0      	; 0xee <Obtener_Tecla+0x3c>
+  ee:	00 00       	nop
+  f0:	22 e4       	ldi	r18, 0x42	; 66
+  f2:	46 e3       	ldi	r20, 0x36	; 54
+  f4:	65 e3       	ldi	r22, 0x35	; 53
+  f6:	84 e3       	ldi	r24, 0x34	; 52
+  f8:	0e 94 46 00 	call	0x8c	; 0x8c <Detectar_Tecla>
+  fc:	8b 3e       	cpi	r24, 0xEB	; 235
+  fe:	01 f5       	brne	.+64     	; 0x140 <Obtener_Tecla+0x8e>
+ 100:	8f ed       	ldi	r24, 0xDF	; 223
+ 102:	82 bb       	out	0x12, r24	; 18
+ 104:	89 ef       	ldi	r24, 0xF9	; 249
+ 106:	90 e0       	ldi	r25, 0x00	; 0
+ 108:	01 97       	sbiw	r24, 0x01	; 1
+ 10a:	f1 f7       	brne	.-4      	; 0x108 <Obtener_Tecla+0x56>
+ 10c:	00 c0       	rjmp	.+0      	; 0x10e <Obtener_Tecla+0x5c>
+ 10e:	00 00       	nop
+ 110:	23 e4       	ldi	r18, 0x43	; 67
+ 112:	49 e3       	ldi	r20, 0x39	; 57
+ 114:	68 e3       	ldi	r22, 0x38	; 56
+ 116:	87 e3       	ldi	r24, 0x37	; 55
+ 118:	0e 94 46 00 	call	0x8c	; 0x8c <Detectar_Tecla>
+ 11c:	8b 3e       	cpi	r24, 0xEB	; 235
+ 11e:	81 f4       	brne	.+32     	; 0x140 <Obtener_Tecla+0x8e>
+ 120:	8f ee       	ldi	r24, 0xEF	; 239
+ 122:	82 bb       	out	0x12, r24	; 18
+ 124:	89 ef       	ldi	r24, 0xF9	; 249
+ 126:	90 e0       	ldi	r25, 0x00	; 0
+ 128:	01 97       	sbiw	r24, 0x01	; 1
+ 12a:	f1 f7       	brne	.-4      	; 0x128 <Obtener_Tecla+0x76>
+ 12c:	00 c0       	rjmp	.+0      	; 0x12e <Obtener_Tecla+0x7c>
+ 12e:	00 00       	nop
+ 130:	24 e4       	ldi	r18, 0x44	; 68
+ 132:	43 e2       	ldi	r20, 0x23	; 35
+ 134:	60 e3       	ldi	r22, 0x30	; 48
+ 136:	8a e2       	ldi	r24, 0x2A	; 42
+ 138:	0e 94 46 00 	call	0x8c	; 0x8c <Detectar_Tecla>
+ 13c:	08 95       	ret
+ 13e:	8b ee       	ldi	r24, 0xEB	; 235
+ 140:	08 95       	ret
+
+00000142 <ENVIA_CMD>:
+ 142:	98 2f       	mov	r25, r24
+ 144:	90 7f       	andi	r25, 0xF0	; 240
+ 146:	95 bb       	out	0x15, r25	; 21
+ 148:	aa 98       	cbi	0x15, 2	; 21
+ 14a:	ab 9a       	sbi	0x15, 3	; 21
+ 14c:	e9 ef       	ldi	r30, 0xF9	; 249
+ 14e:	f0 e0       	ldi	r31, 0x00	; 0
+ 150:	31 97       	sbiw	r30, 0x01	; 1
+ 152:	f1 f7       	brne	.-4      	; 0x150 <ENVIA_CMD+0xe>
+ 154:	00 c0       	rjmp	.+0      	; 0x156 <ENVIA_CMD+0x14>
+ 156:	00 00       	nop
+ 158:	ab 98       	cbi	0x15, 3	; 21
+ 15a:	e3 ec       	ldi	r30, 0xC3	; 195
+ 15c:	f9 e0       	ldi	r31, 0x09	; 9
+ 15e:	31 97       	sbiw	r30, 0x01	; 1
+ 160:	f1 f7       	brne	.-4      	; 0x15e <ENVIA_CMD+0x1c>
+ 162:	00 c0       	rjmp	.+0      	; 0x164 <ENVIA_CMD+0x22>
+ 164:	00 00       	nop
+ 166:	f0 e1       	ldi	r31, 0x10	; 16
+ 168:	8f 9f       	mul	r24, r31
+ 16a:	c0 01       	movw	r24, r0
+ 16c:	11 24       	eor	r1, r1
+ 16e:	85 bb       	out	0x15, r24	; 21
+ 170:	aa 98       	cbi	0x15, 2	; 21
+ 172:	ab 9a       	sbi	0x15, 3	; 21
+ 174:	89 ef       	ldi	r24, 0xF9	; 249
+ 176:	90 e0       	ldi	r25, 0x00	; 0
+ 178:	01 97       	sbiw	r24, 0x01	; 1
+ 17a:	f1 f7       	brne	.-4      	; 0x178 <ENVIA_CMD+0x36>
+ 17c:	00 c0       	rjmp	.+0      	; 0x17e <ENVIA_CMD+0x3c>
+ 17e:	00 00       	nop
+ 180:	ab 98       	cbi	0x15, 3	; 21
+ 182:	e3 ec       	ldi	r30, 0xC3	; 195
+ 184:	f9 e0       	ldi	r31, 0x09	; 9
+ 186:	31 97       	sbiw	r30, 0x01	; 1
+ 188:	f1 f7       	brne	.-4      	; 0x186 <ENVIA_CMD+0x44>
+ 18a:	00 c0       	rjmp	.+0      	; 0x18c <ENVIA_CMD+0x4a>
+ 18c:	00 00       	nop
+ 18e:	08 95       	ret
+
+00000190 <LCD_INICIALIZA>:
+ 190:	82 e0       	ldi	r24, 0x02	; 2
+ 192:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+ 196:	88 e2       	ldi	r24, 0x28	; 40
+ 198:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+ 19c:	8e e0       	ldi	r24, 0x0E	; 14
+ 19e:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+ 1a2:	86 e0       	ldi	r24, 0x06	; 6
+ 1a4:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+ 1a8:	81 e0       	ldi	r24, 0x01	; 1
+ 1aa:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+ 1ae:	80 e8       	ldi	r24, 0x80	; 128
+ 1b0:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+ 1b4:	08 95       	ret
+
+000001b6 <ENVIA_DATO>:
+ 1b6:	98 2f       	mov	r25, r24
+ 1b8:	90 7f       	andi	r25, 0xF0	; 240
+ 1ba:	95 bb       	out	0x15, r25	; 21
+ 1bc:	95 b3       	in	r25, 0x15	; 21
+ 1be:	9c 60       	ori	r25, 0x0C	; 12
+ 1c0:	95 bb       	out	0x15, r25	; 21
+ 1c2:	e9 ef       	ldi	r30, 0xF9	; 249
+ 1c4:	f0 e0       	ldi	r31, 0x00	; 0
+ 1c6:	31 97       	sbiw	r30, 0x01	; 1
+ 1c8:	f1 f7       	brne	.-4      	; 0x1c6 <ENVIA_DATO+0x10>
+ 1ca:	00 c0       	rjmp	.+0      	; 0x1cc <ENVIA_DATO+0x16>
+ 1cc:	00 00       	nop
+ 1ce:	ab 98       	cbi	0x15, 3	; 21
+ 1d0:	aa 98       	cbi	0x15, 2	; 21
+ 1d2:	e3 ec       	ldi	r30, 0xC3	; 195
+ 1d4:	f9 e0       	ldi	r31, 0x09	; 9
+ 1d6:	31 97       	sbiw	r30, 0x01	; 1
+ 1d8:	f1 f7       	brne	.-4      	; 0x1d6 <ENVIA_DATO+0x20>
+ 1da:	00 c0       	rjmp	.+0      	; 0x1dc <ENVIA_DATO+0x26>
+ 1dc:	00 00       	nop
+ 1de:	f0 e1       	ldi	r31, 0x10	; 16
+ 1e0:	8f 9f       	mul	r24, r31
+ 1e2:	c0 01       	movw	r24, r0
+ 1e4:	11 24       	eor	r1, r1
+ 1e6:	85 bb       	out	0x15, r24	; 21
+ 1e8:	85 b3       	in	r24, 0x15	; 21
+ 1ea:	8c 60       	ori	r24, 0x0C	; 12
+ 1ec:	85 bb       	out	0x15, r24	; 21
+ 1ee:	89 ef       	ldi	r24, 0xF9	; 249
+ 1f0:	90 e0       	ldi	r25, 0x00	; 0
+ 1f2:	01 97       	sbiw	r24, 0x01	; 1
+ 1f4:	f1 f7       	brne	.-4      	; 0x1f2 <ENVIA_DATO+0x3c>
+ 1f6:	00 c0       	rjmp	.+0      	; 0x1f8 <ENVIA_DATO+0x42>
+ 1f8:	00 00       	nop
+ 1fa:	ab 98       	cbi	0x15, 3	; 21
+ 1fc:	aa 98       	cbi	0x15, 2	; 21
+ 1fe:	e3 ec       	ldi	r30, 0xC3	; 195
+ 200:	f9 e0       	ldi	r31, 0x09	; 9
+ 202:	31 97       	sbiw	r30, 0x01	; 1
+ 204:	f1 f7       	brne	.-4      	; 0x202 <ENVIA_DATO+0x4c>
+ 206:	00 c0       	rjmp	.+0      	; 0x208 <ENVIA_DATO+0x52>
+ 208:	00 00       	nop
+ 20a:	08 95       	ret
+
+0000020c <ENVIA_CADENA>:
+ 20c:	cf 93       	push	r28
+ 20e:	df 93       	push	r29
+ 210:	ec 01       	movw	r28, r24
+ 212:	88 81       	ld	r24, Y
+ 214:	88 23       	and	r24, r24
+ 216:	31 f0       	breq	.+12     	; 0x224 <ENVIA_CADENA+0x18>
+ 218:	21 96       	adiw	r28, 0x01	; 1
+ 21a:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+ 21e:	89 91       	ld	r24, Y+
+ 220:	81 11       	cpse	r24, r1
+ 222:	fb cf       	rjmp	.-10     	; 0x21a <ENVIA_CADENA+0xe>
+ 224:	df 91       	pop	r29
+ 226:	cf 91       	pop	r28
+ 228:	08 95       	ret
+
+0000022a <LIMPIA_LCD>:
+ 22a:	81 e0       	ldi	r24, 0x01	; 1
+ 22c:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+ 230:	08 95       	ret
+
+00000232 <EEPROM_write>:
+uint8_t EEPROM_read(uint16_t Direccion);
+void Cargar_EEPROM_Inicial(void);
+
+void EEPROM_write(uint16_t Direccion,uint8_t Dato){
+	//Esperar a la escritura anterior.
+	while(EECR & (1<<EEWE));
+ 232:	e1 99       	sbic	0x1c, 1	; 28
+ 234:	fe cf       	rjmp	.-4      	; 0x232 <EEPROM_write>
+	//Escribir en registros del AVR la dirección y el dato.
+	EEAR=Direccion;
+ 236:	9f bb       	out	0x1f, r25	; 31
+ 238:	8e bb       	out	0x1e, r24	; 30
+	EEDR=Dato;
+ 23a:	6d bb       	out	0x1d, r22	; 29
+	//Escribir 1 lógico.
+	EECR|=(1<<EEMWE);
+ 23c:	e2 9a       	sbi	0x1c, 2	; 28
+	//Empezar la escritura en la EEPROM.
+	EECR|=(1<<EEWE);
+ 23e:	e1 9a       	sbi	0x1c, 1	; 28
+ 240:	08 95       	ret
+
+00000242 <EEPROM_read>:
+}
+
+uint8_t EEPROM_read(uint16_t Direccion){
+	//Esperar a la escritura anterior.
+	while(EECR & (1<<EEWE));
+ 242:	e1 99       	sbic	0x1c, 1	; 28
+ 244:	fe cf       	rjmp	.-4      	; 0x242 <EEPROM_read>
+	//Escribir en registros del AVR la dirección.
+	EEAR=Direccion;
+ 246:	9f bb       	out	0x1f, r25	; 31
+ 248:	8e bb       	out	0x1e, r24	; 30
+	//Escribir 1 lógico.
+	EECR|=(1<<EERE);
+ 24a:	e0 9a       	sbi	0x1c, 0	; 28
+	//Empezar la escritura en la EEPROM.
+	return EEDR;
+ 24c:	8d b3       	in	r24, 0x1d	; 29
+}
+ 24e:	08 95       	ret
+
+00000250 <Recibir_Opcion>:
+			_delay_ms(1500);
+		}
+    }
+}
+
+uint8_t Recibir_Opcion(void){
+ 250:	cf 93       	push	r28
+	uint8_t Dig;
+	Dig=Obtener_Tecla();
+ 252:	0e 94 59 00 	call	0xb2	; 0xb2 <Obtener_Tecla>
+ 256:	c8 2f       	mov	r28, r24
+	while((Dig>0x32)|(Dig<0x31)){
+ 258:	8f ec       	ldi	r24, 0xCF	; 207
+ 25a:	8c 0f       	add	r24, r28
+ 25c:	82 30       	cpi	r24, 0x02	; 2
+ 25e:	38 f0       	brcs	.+14     	; 0x26e <Recibir_Opcion+0x1e>
+		Dig=Obtener_Tecla();
+ 260:	0e 94 59 00 	call	0xb2	; 0xb2 <Obtener_Tecla>
+ 264:	c8 2f       	mov	r28, r24
+}
+
+uint8_t Recibir_Opcion(void){
+	uint8_t Dig;
+	Dig=Obtener_Tecla();
+	while((Dig>0x32)|(Dig<0x31)){
+ 266:	8f ec       	ldi	r24, 0xCF	; 207
+ 268:	8c 0f       	add	r24, r28
+ 26a:	82 30       	cpi	r24, 0x02	; 2
+ 26c:	c8 f7       	brcc	.-14     	; 0x260 <Recibir_Opcion+0x10>
+		Dig=Obtener_Tecla();
+	}
+	while(Obtener_Tecla()==Dig);
+ 26e:	0e 94 59 00 	call	0xb2	; 0xb2 <Obtener_Tecla>
+ 272:	8c 17       	cp	r24, r28
+ 274:	e1 f3       	breq	.-8      	; 0x26e <Recibir_Opcion+0x1e>
+	return Dig;
+}
+ 276:	8c 2f       	mov	r24, r28
+ 278:	cf 91       	pop	r28
+ 27a:	08 95       	ret
+
+0000027c <Recibir_Numero>:
+uint8_t Recibir_Numero(void){
+ 27c:	cf 93       	push	r28
+	uint8_t Dig;
+	Dig=Obtener_Tecla();
+ 27e:	0e 94 59 00 	call	0xb2	; 0xb2 <Obtener_Tecla>
+ 282:	c8 2f       	mov	r28, r24
+	while((Dig>0x39)){
+ 284:	8a 33       	cpi	r24, 0x3A	; 58
+ 286:	28 f0       	brcs	.+10     	; 0x292 <Recibir_Numero+0x16>
+		Dig=Obtener_Tecla();
+ 288:	0e 94 59 00 	call	0xb2	; 0xb2 <Obtener_Tecla>
+ 28c:	c8 2f       	mov	r28, r24
+	return Dig;
+}
+uint8_t Recibir_Numero(void){
+	uint8_t Dig;
+	Dig=Obtener_Tecla();
+	while((Dig>0x39)){
+ 28e:	8a 33       	cpi	r24, 0x3A	; 58
+ 290:	d8 f7       	brcc	.-10     	; 0x288 <Recibir_Numero+0xc>
+		Dig=Obtener_Tecla();
+	}
+	while(Obtener_Tecla()==Dig);
+ 292:	0e 94 59 00 	call	0xb2	; 0xb2 <Obtener_Tecla>
+ 296:	8c 17       	cp	r24, r28
+ 298:	e1 f3       	breq	.-8      	; 0x292 <Recibir_Numero+0x16>
+	return Dig;
+}
+ 29a:	8c 2f       	mov	r24, r28
+ 29c:	cf 91       	pop	r28
+ 29e:	08 95       	ret
+
+000002a0 <Presionar_Aceptar>:
+
+void Presionar_Aceptar(void){
+	while(Obtener_Tecla()!=Tecla_A);
+ 2a0:	0e 94 59 00 	call	0xb2	; 0xb2 <Obtener_Tecla>
+ 2a4:	81 34       	cpi	r24, 0x41	; 65
+ 2a6:	e1 f7       	brne	.-8      	; 0x2a0 <Presionar_Aceptar>
+}
+ 2a8:	08 95       	ret
+
+000002aa <Verificar_Contrasena>:
+
+uint8_t Verificar_Contrasena(uint8_t ID_num,uint8_t Digito1,uint8_t Digito2,uint8_t Digito3,uint8_t Digito4){
+ 2aa:	ff 92       	push	r15
+ 2ac:	0f 93       	push	r16
+ 2ae:	1f 93       	push	r17
+ 2b0:	cf 93       	push	r28
+ 2b2:	df 93       	push	r29
+ 2b4:	d6 2f       	mov	r29, r22
+ 2b6:	14 2f       	mov	r17, r20
+ 2b8:	f2 2e       	mov	r15, r18
+	uint8_t Sal=0;
+	uint8_t Dir_Alto=ID_num<<4;
+ 2ba:	c8 2f       	mov	r28, r24
+ 2bc:	c2 95       	swap	r28
+ 2be:	c0 7f       	andi	r28, 0xF0	; 240
+	if(Digito1==EEPROM_read(Dir_Alto|0x00)){
+ 2c0:	8c 2f       	mov	r24, r28
+ 2c2:	90 e0       	ldi	r25, 0x00	; 0
+ 2c4:	0e 94 21 01 	call	0x242	; 0x242 <EEPROM_read>
+ 2c8:	8d 13       	cpse	r24, r29
+ 2ca:	18 c0       	rjmp	.+48     	; 0x2fc <Verificar_Contrasena+0x52>
+	  if(Digito2==EEPROM_read(Dir_Alto|0x01)){
+ 2cc:	8c 2f       	mov	r24, r28
+ 2ce:	81 60       	ori	r24, 0x01	; 1
+ 2d0:	90 e0       	ldi	r25, 0x00	; 0
+ 2d2:	0e 94 21 01 	call	0x242	; 0x242 <EEPROM_read>
+ 2d6:	81 13       	cpse	r24, r17
+ 2d8:	13 c0       	rjmp	.+38     	; 0x300 <Verificar_Contrasena+0x56>
+	     if(Digito3==EEPROM_read(Dir_Alto|0x02)){
+ 2da:	8c 2f       	mov	r24, r28
+ 2dc:	82 60       	ori	r24, 0x02	; 2
+ 2de:	90 e0       	ldi	r25, 0x00	; 0
+ 2e0:	0e 94 21 01 	call	0x242	; 0x242 <EEPROM_read>
+ 2e4:	8f 11       	cpse	r24, r15
+ 2e6:	0e c0       	rjmp	.+28     	; 0x304 <Verificar_Contrasena+0x5a>
+			if(Digito4==EEPROM_read(Dir_Alto|0x03)){
+ 2e8:	8c 2f       	mov	r24, r28
+ 2ea:	83 60       	ori	r24, 0x03	; 3
+ 2ec:	90 e0       	ldi	r25, 0x00	; 0
+ 2ee:	0e 94 21 01 	call	0x242	; 0x242 <EEPROM_read>
+void Presionar_Aceptar(void){
+	while(Obtener_Tecla()!=Tecla_A);
+}
+
+uint8_t Verificar_Contrasena(uint8_t ID_num,uint8_t Digito1,uint8_t Digito2,uint8_t Digito3,uint8_t Digito4){
+	uint8_t Sal=0;
+ 2f2:	91 e0       	ldi	r25, 0x01	; 1
+ 2f4:	80 17       	cp	r24, r16
+ 2f6:	39 f0       	breq	.+14     	; 0x306 <Verificar_Contrasena+0x5c>
+ 2f8:	90 e0       	ldi	r25, 0x00	; 0
+ 2fa:	05 c0       	rjmp	.+10     	; 0x306 <Verificar_Contrasena+0x5c>
+ 2fc:	90 e0       	ldi	r25, 0x00	; 0
+ 2fe:	03 c0       	rjmp	.+6      	; 0x306 <Verificar_Contrasena+0x5c>
+ 300:	90 e0       	ldi	r25, 0x00	; 0
+ 302:	01 c0       	rjmp	.+2      	; 0x306 <Verificar_Contrasena+0x5c>
+ 304:	90 e0       	ldi	r25, 0x00	; 0
+			} 
+		 }
+	  }
+	}
+	return Sal;
+}
+ 306:	89 2f       	mov	r24, r25
+ 308:	df 91       	pop	r29
+ 30a:	cf 91       	pop	r28
+ 30c:	1f 91       	pop	r17
+ 30e:	0f 91       	pop	r16
+ 310:	ff 90       	pop	r15
+ 312:	08 95       	ret
+
+00000314 <Cambiar_Contrasena>:
+void Cambiar_Contrasena(uint8_t ID_num){
+ 314:	ff 92       	push	r15
+ 316:	0f 93       	push	r16
+ 318:	1f 93       	push	r17
+ 31a:	cf 93       	push	r28
+ 31c:	df 93       	push	r29
+	uint8_t Digito1,Digito2,Digito3,Digito4;
+	uint8_t Dir_Alto=ID_num<<4;
+ 31e:	c8 2f       	mov	r28, r24
+ 320:	c2 95       	swap	r28
+ 322:	c0 7f       	andi	r28, 0xF0	; 240
+	LIMPIA_LCD();
+ 324:	0e 94 15 01 	call	0x22a	; 0x22a <LIMPIA_LCD>
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 328:	82 e8       	ldi	r24, 0x82	; 130
+ 32a:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+	POS_LINEA1(2);
+	ENVIA_CADENA("Nueva Contraseña:");
+ 32e:	80 e6       	ldi	r24, 0x60	; 96
+ 330:	90 e0       	ldi	r25, 0x00	; 0
+ 332:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 336:	84 ec       	ldi	r24, 0xC4	; 196
+ 338:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+	POS_LINEA2(4);
+	Digito1=Recibir_Numero();
+ 33c:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 340:	f8 2e       	mov	r15, r24
+	ENVIA_DATO(Digito1);
+ 342:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+	Digito2=Recibir_Numero();
+ 346:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 34a:	08 2f       	mov	r16, r24
+	ENVIA_DATO(Digito2);
+ 34c:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+	Digito3=Recibir_Numero();
+ 350:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 354:	18 2f       	mov	r17, r24
+	ENVIA_DATO(Digito3);
+ 356:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+	Digito4=Recibir_Numero();
+ 35a:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 35e:	d8 2f       	mov	r29, r24
+	ENVIA_DATO(Digito4);
+ 360:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+	Presionar_Aceptar();
+ 364:	0e 94 50 01 	call	0x2a0	; 0x2a0 <Presionar_Aceptar>
+    EEPROM_write(Dir_Alto|(0x00),Digito1);	
+ 368:	6f 2d       	mov	r22, r15
+ 36a:	8c 2f       	mov	r24, r28
+ 36c:	90 e0       	ldi	r25, 0x00	; 0
+ 36e:	0e 94 19 01 	call	0x232	; 0x232 <EEPROM_write>
+	EEPROM_write(Dir_Alto|(0x01),Digito2);	
+ 372:	8c 2f       	mov	r24, r28
+ 374:	81 60       	ori	r24, 0x01	; 1
+ 376:	60 2f       	mov	r22, r16
+ 378:	90 e0       	ldi	r25, 0x00	; 0
+ 37a:	0e 94 19 01 	call	0x232	; 0x232 <EEPROM_write>
+	EEPROM_write(Dir_Alto|(0x02),Digito3);	
+ 37e:	8c 2f       	mov	r24, r28
+ 380:	82 60       	ori	r24, 0x02	; 2
+ 382:	61 2f       	mov	r22, r17
+ 384:	90 e0       	ldi	r25, 0x00	; 0
+ 386:	0e 94 19 01 	call	0x232	; 0x232 <EEPROM_write>
+	EEPROM_write(Dir_Alto|(0x03),Digito4);	
+ 38a:	8c 2f       	mov	r24, r28
+ 38c:	83 60       	ori	r24, 0x03	; 3
+ 38e:	6d 2f       	mov	r22, r29
+ 390:	90 e0       	ldi	r25, 0x00	; 0
+ 392:	0e 94 19 01 	call	0x232	; 0x232 <EEPROM_write>
+}
+ 396:	df 91       	pop	r29
+ 398:	cf 91       	pop	r28
+ 39a:	1f 91       	pop	r17
+ 39c:	0f 91       	pop	r16
+ 39e:	ff 90       	pop	r15
+ 3a0:	08 95       	ret
+
+000003a2 <Cargar_EEPROM_Inicial>:
+
+void Cargar_EEPROM_Inicial(){
+ 3a2:	cf 92       	push	r12
+ 3a4:	df 92       	push	r13
+ 3a6:	ff 92       	push	r15
+ 3a8:	0f 93       	push	r16
+ 3aa:	1f 93       	push	r17
+ 3ac:	cf 93       	push	r28
+ 3ae:	df 93       	push	r29
+	uint8_t i,j;
+	for(j=0;j<10;j++){
+	 for(i=0;i<3;i++){
+	  EEPROM_write((j<<4)|i,'0');
+ 3b0:	0f 2e       	mov	r0, r31
+ 3b2:	f0 e3       	ldi	r31, 0x30	; 48
+ 3b4:	ff 2e       	mov	r15, r31
+ 3b6:	f0 2d       	mov	r31, r0
+ 3b8:	c1 2c       	mov	r12, r1
+ 3ba:	d1 2c       	mov	r13, r1
+ 3bc:	16 c0       	rjmp	.+44     	; 0x3ea <Cargar_EEPROM_Inicial+0x48>
+ 3be:	60 e3       	ldi	r22, 0x30	; 48
+ 3c0:	ce 01       	movw	r24, r28
+ 3c2:	80 2b       	or	r24, r16
+ 3c4:	91 2b       	or	r25, r17
+ 3c6:	0e 94 19 01 	call	0x232	; 0x232 <EEPROM_write>
+ 3ca:	21 96       	adiw	r28, 0x01	; 1
+}
+
+void Cargar_EEPROM_Inicial(){
+	uint8_t i,j;
+	for(j=0;j<10;j++){
+	 for(i=0;i<3;i++){
+ 3cc:	c3 30       	cpi	r28, 0x03	; 3
+ 3ce:	d1 05       	cpc	r29, r1
+ 3d0:	b1 f7       	brne	.-20     	; 0x3be <Cargar_EEPROM_Inicial+0x1c>
+	  EEPROM_write((j<<4)|i,'0');
+	 }
+	  EEPROM_write((j<<4)|i,j+0x30);}
+ 3d2:	6f 2d       	mov	r22, r15
+ 3d4:	c8 01       	movw	r24, r16
+ 3d6:	83 60       	ori	r24, 0x03	; 3
+ 3d8:	0e 94 19 01 	call	0x232	; 0x232 <EEPROM_write>
+ 3dc:	8f ef       	ldi	r24, 0xFF	; 255
+ 3de:	c8 1a       	sub	r12, r24
+ 3e0:	d8 0a       	sbc	r13, r24
+ 3e2:	f3 94       	inc	r15
+	EEPROM_write(Dir_Alto|(0x03),Digito4);	
+}
+
+void Cargar_EEPROM_Inicial(){
+	uint8_t i,j;
+	for(j=0;j<10;j++){
+ 3e4:	8a e3       	ldi	r24, 0x3A	; 58
+ 3e6:	f8 16       	cp	r15, r24
+ 3e8:	51 f0       	breq	.+20     	; 0x3fe <Cargar_EEPROM_Inicial+0x5c>
+	 for(i=0;i<3;i++){
+	  EEPROM_write((j<<4)|i,'0');
+ 3ea:	86 01       	movw	r16, r12
+ 3ec:	02 95       	swap	r16
+ 3ee:	12 95       	swap	r17
+ 3f0:	10 7f       	andi	r17, 0xF0	; 240
+ 3f2:	10 27       	eor	r17, r16
+ 3f4:	00 7f       	andi	r16, 0xF0	; 240
+ 3f6:	10 27       	eor	r17, r16
+ 3f8:	c0 e0       	ldi	r28, 0x00	; 0
+ 3fa:	d0 e0       	ldi	r29, 0x00	; 0
+ 3fc:	e0 cf       	rjmp	.-64     	; 0x3be <Cargar_EEPROM_Inicial+0x1c>
+	 }
+	  EEPROM_write((j<<4)|i,j+0x30);}
+ 3fe:	df 91       	pop	r29
+ 400:	cf 91       	pop	r28
+ 402:	1f 91       	pop	r17
+ 404:	0f 91       	pop	r16
+ 406:	ff 90       	pop	r15
+ 408:	df 90       	pop	r13
+ 40a:	cf 90       	pop	r12
+ 40c:	08 95       	ret
+
+0000040e <main>:
+
+int main(void)
+{
+	uint8_t ID_num,Digito1,Digito2,Digito3,Digito4,Opcion,Salida;
+    uint8_t ID;
+	DDRA=0x00;
+ 40e:	1a ba       	out	0x1a, r1	; 26
+	PORTA=0xFF;
+ 410:	8f ef       	ldi	r24, 0xFF	; 255
+ 412:	8b bb       	out	0x1b, r24	; 27
+	DDRB=0xFF;
+ 414:	87 bb       	out	0x17, r24	; 23
+	PORTB=0x00;
+ 416:	18 ba       	out	0x18, r1	; 24
+	DDRC=0xFF;
+ 418:	84 bb       	out	0x14, r24	; 20
+	LCD_INICIALIZA();
+ 41a:	0e 94 c8 00 	call	0x190	; 0x190 <LCD_INICIALIZA>
+	ENVIA_CMD(0b00001100);
+ 41e:	8c e0       	ldi	r24, 0x0C	; 12
+ 420:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+    Inicializar_Teclado();
+ 424:	0e 94 41 00 	call	0x82	; 0x82 <Inicializar_Teclado>
+	if((PINA&0x01)==0){
+ 428:	c8 9b       	sbis	0x19, 0	; 25
+	  Cargar_EEPROM_Inicial();
+ 42a:	0e 94 d1 01 	call	0x3a2	; 0x3a2 <Cargar_EEPROM_Inicial>
+		//Verificar Contraseña (Direcciones 0(0x00-0x03), 1(0x10-0x13), 2(0x20-0x23) ... 8(0x80-83) 9(0x90-0x93))
+		if(Verificar_Contrasena(ID_num,Digito1,Digito2,Digito3,Digito4)){
+		  LIMPIA_LCD();
+		  POS_LINEA1(0);
+		  ENVIA_CADENA("Ingreso Correcto");
+		  PORTB=0xFF;
+ 42e:	ee 24       	eor	r14, r14
+ 430:	ea 94       	dec	r14
+	if((PINA&0x01)==0){
+	  Cargar_EEPROM_Inicial();
+	}
+    while (1)
+    {
+		LIMPIA_LCD();
+ 432:	0e 94 15 01 	call	0x22a	; 0x22a <LIMPIA_LCD>
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 436:	81 e8       	ldi	r24, 0x81	; 129
+ 438:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+		Salida=0;
+		POS_LINEA1(1);
+		ENVIA_CADENA("Ingrese ID(0-9):");
+ 43c:	82 e7       	ldi	r24, 0x72	; 114
+ 43e:	90 e0       	ldi	r25, 0x00	; 0
+ 440:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 444:	85 ec       	ldi	r24, 0xC5	; 197
+ 446:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+		POS_LINEA2(5);
+		//Leer ID del Usuario
+		ID=Recibir_Numero();
+ 44a:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+		ID_num=ID-0X30;
+ 44e:	d0 ed       	ldi	r29, 0xD0	; 208
+ 450:	d8 0f       	add	r29, r24
+		ENVIA_DATO(ID);
+ 452:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+		Presionar_Aceptar();
+ 456:	0e 94 50 01 	call	0x2a0	; 0x2a0 <Presionar_Aceptar>
+		//Escribir contraseña
+		LIMPIA_LCD();
+ 45a:	0e 94 15 01 	call	0x22a	; 0x22a <LIMPIA_LCD>
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 45e:	81 e8       	ldi	r24, 0x81	; 129
+ 460:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+		POS_LINEA1(1);
+		ENVIA_CADENA("Ingrese Contraseña:");
+ 464:	83 e8       	ldi	r24, 0x83	; 131
+ 466:	90 e0       	ldi	r25, 0x00	; 0
+ 468:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 46c:	84 ec       	ldi	r24, 0xC4	; 196
+ 46e:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+		POS_LINEA2(4);
+		Digito1=Recibir_Numero();
+ 472:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 476:	c8 2f       	mov	r28, r24
+		ENVIA_DATO(Digito1);
+ 478:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+		Digito2=Recibir_Numero();
+ 47c:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 480:	18 2f       	mov	r17, r24
+		ENVIA_DATO(Digito2);
+ 482:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+		Digito3=Recibir_Numero();
+ 486:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 48a:	f8 2e       	mov	r15, r24
+		ENVIA_DATO(Digito3);
+ 48c:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+		Digito4=Recibir_Numero();
+ 490:	0e 94 3e 01 	call	0x27c	; 0x27c <Recibir_Numero>
+ 494:	08 2f       	mov	r16, r24
+		ENVIA_DATO(Digito4);
+ 496:	0e 94 db 00 	call	0x1b6	; 0x1b6 <ENVIA_DATO>
+		Presionar_Aceptar();
+ 49a:	0e 94 50 01 	call	0x2a0	; 0x2a0 <Presionar_Aceptar>
+		//Verificar Contraseña (Direcciones 0(0x00-0x03), 1(0x10-0x13), 2(0x20-0x23) ... 8(0x80-83) 9(0x90-0x93))
+		if(Verificar_Contrasena(ID_num,Digito1,Digito2,Digito3,Digito4)){
+ 49e:	2f 2d       	mov	r18, r15
+ 4a0:	41 2f       	mov	r20, r17
+ 4a2:	6c 2f       	mov	r22, r28
+ 4a4:	8d 2f       	mov	r24, r29
+ 4a6:	0e 94 55 01 	call	0x2aa	; 0x2aa <Verificar_Contrasena>
+ 4aa:	88 23       	and	r24, r24
+ 4ac:	89 f1       	breq	.+98     	; 0x510 <__stack+0xb1>
+		  LIMPIA_LCD();
+ 4ae:	0e 94 15 01 	call	0x22a	; 0x22a <LIMPIA_LCD>
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 4b2:	80 e8       	ldi	r24, 0x80	; 128
+ 4b4:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+		  POS_LINEA1(0);
+		  ENVIA_CADENA("Ingreso Correcto");
+ 4b8:	87 e9       	ldi	r24, 0x97	; 151
+ 4ba:	90 e0       	ldi	r25, 0x00	; 0
+ 4bc:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+		  PORTB=0xFF;
+ 4c0:	e8 ba       	out	0x18, r14	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 4c2:	2f e7       	ldi	r18, 0x7F	; 127
+ 4c4:	8a e1       	ldi	r24, 0x1A	; 26
+ 4c6:	96 e0       	ldi	r25, 0x06	; 6
+ 4c8:	21 50       	subi	r18, 0x01	; 1
+ 4ca:	80 40       	sbci	r24, 0x00	; 0
+ 4cc:	90 40       	sbci	r25, 0x00	; 0
+ 4ce:	e1 f7       	brne	.-8      	; 0x4c8 <__stack+0x69>
+ 4d0:	00 c0       	rjmp	.+0      	; 0x4d2 <__stack+0x73>
+ 4d2:	00 00       	nop
+		  _delay_ms(2000);
+		  PORTB=0x00;
+ 4d4:	18 ba       	out	0x18, r1	; 24
+		  while(Salida==0){
+ 4d6:	03 c0       	rjmp	.+6      	; 0x4de <__stack+0x7f>
+          POS_LINEA2(2);
+		  ENVIA_CADENA("2-Salir");
+		  Opcion=Recibir_Opcion();
+		  Presionar_Aceptar();
+		   if (Opcion==0x31){
+			 Cambiar_Contrasena(ID_num);
+ 4d8:	8d 2f       	mov	r24, r29
+ 4da:	0e 94 8a 01 	call	0x314	; 0x314 <Cambiar_Contrasena>
+		  ENVIA_CADENA("Ingreso Correcto");
+		  PORTB=0xFF;
+		  _delay_ms(2000);
+		  PORTB=0x00;
+		  while(Salida==0){
+          LIMPIA_LCD();
+ 4de:	0e 94 15 01 	call	0x22a	; 0x22a <LIMPIA_LCD>
+ 4e2:	81 e8       	ldi	r24, 0x81	; 129
+ 4e4:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+          POS_LINEA1(1);
+          ENVIA_CADENA("1-Nueva Contrasena");
+ 4e8:	88 ea       	ldi	r24, 0xA8	; 168
+ 4ea:	90 e0       	ldi	r25, 0x00	; 0
+ 4ec:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 4f0:	82 ec       	ldi	r24, 0xC2	; 194
+ 4f2:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+          POS_LINEA2(2);
+		  ENVIA_CADENA("2-Salir");
+ 4f6:	8b eb       	ldi	r24, 0xBB	; 187
+ 4f8:	90 e0       	ldi	r25, 0x00	; 0
+ 4fa:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+		  Opcion=Recibir_Opcion();
+ 4fe:	0e 94 28 01 	call	0x250	; 0x250 <Recibir_Opcion>
+ 502:	c8 2f       	mov	r28, r24
+		  Presionar_Aceptar();
+ 504:	0e 94 50 01 	call	0x2a0	; 0x2a0 <Presionar_Aceptar>
+		   if (Opcion==0x31){
+ 508:	c1 33       	cpi	r28, 0x31	; 49
+ 50a:	09 f0       	breq	.+2      	; 0x50e <__stack+0xaf>
+ 50c:	92 cf       	rjmp	.-220    	; 0x432 <main+0x24>
+ 50e:	e4 cf       	rjmp	.-56     	; 0x4d8 <__stack+0x79>
+			 Salida=1;
+		   }
+		  }
+		}
+		else{
+			LIMPIA_LCD();
+ 510:	0e 94 15 01 	call	0x22a	; 0x22a <LIMPIA_LCD>
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 514:	81 e8       	ldi	r24, 0x81	; 129
+ 516:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+			POS_LINEA1(1);
+			ENVIA_CADENA("Contrasena");
+ 51a:	80 eb       	ldi	r24, 0xB0	; 176
+ 51c:	90 e0       	ldi	r25, 0x00	; 0
+ 51e:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 522:	81 ec       	ldi	r24, 0xC1	; 193
+ 524:	0e 94 a1 00 	call	0x142	; 0x142 <ENVIA_CMD>
+			POS_LINEA2(1);
+			ENVIA_CADENA("Incorrecta");
+ 528:	83 ec       	ldi	r24, 0xC3	; 195
+ 52a:	90 e0       	ldi	r25, 0x00	; 0
+ 52c:	0e 94 06 01 	call	0x20c	; 0x20c <ENVIA_CADENA>
+ 530:	2f ed       	ldi	r18, 0xDF	; 223
+ 532:	83 e9       	ldi	r24, 0x93	; 147
+ 534:	94 e0       	ldi	r25, 0x04	; 4
+ 536:	21 50       	subi	r18, 0x01	; 1
+ 538:	80 40       	sbci	r24, 0x00	; 0
+ 53a:	90 40       	sbci	r25, 0x00	; 0
+ 53c:	e1 f7       	brne	.-8      	; 0x536 <__stack+0xd7>
+ 53e:	00 c0       	rjmp	.+0      	; 0x540 <__stack+0xe1>
+ 540:	00 00       	nop
+ 542:	77 cf       	rjmp	.-274    	; 0x432 <main+0x24>
+
+00000544 <_exit>:
+ 544:	f8 94       	cli
+
+00000546 <__stop_program>:
+ 546:	ff cf       	rjmp	.-2      	; 0x546 <__stop_program>

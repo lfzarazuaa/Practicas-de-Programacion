@@ -1,0 +1,47 @@
+clc, clear all, close all
+syms M m l B1 B2 g x1 x2 x3 x4
+A=(B2*x4*cos(x2)+m*l^2*x4^2*sin(x2)-B1*l*x3-m*g*l*cos(x2)*sin(x2))/(l*(M+m-m*cos(x2)^2));
+B=(M*m*g*l*sin(x2)+m^2*g*l*sin(x2)+m*l*B1*x3*cos(x2)-M*B2*x4-m*B2*x4-m^2*l^2*x4^2*cos(x2)*sin(x2))/(m*l^2*(M+m-m*cos(x2)^2));
+D1a=diff(A,x1);
+D2a=diff(A,x2);
+D3a=diff(A,x3);
+D4a=diff(A,x4);
+%%%%
+D1b=diff(B,x1);
+D2b=diff(B,x2);
+D3b=diff(B,x3);
+D4b=diff(B,x4);
+D1a=simplify(D1a,'full');
+D2a=simplify(D2a,'full');
+D3a=simplify(D3a,'full');
+D4a=simplify(D4a,'full');
+D1b=simplify(D1b,'full');
+D2b=simplify(D2b,'full');
+D3b=simplify(D3b,'full');
+D4b=simplify(D4b,'full');
+disp(D1a)
+disp(D2a)
+disp(D3a)
+disp(D4a)
+disp(D1b)
+disp(D2b)
+disp(D3b)
+disp(D4b)
+ x1=0;x2=sym('pi');x3=0;x4=0;
+% x1=0;x2=0;x3=0;x4=0;
+d1a=eval(D1a);
+d2a=eval(D2a);
+d3a=eval(D3a);
+d4a=eval(D4a);
+d1b=eval(D1b);
+d2b=eval(D2b);
+d3b=eval(D3b);
+d4b=eval(D4b);
+disp(d1a)
+disp(simplify(d2a,'full'))
+disp(simplify(d3a,'full'))
+disp(simplify(d4a,'full'))
+disp(d1b)
+disp(simplify(d2b,'full'))
+disp(simplify(d3b,'full'))
+disp(simplify(d4b,'full'))

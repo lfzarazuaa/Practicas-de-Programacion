@@ -1,0 +1,28 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5_Rx\Practica_5_Rx\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5_Rx\Practica_5_Rx\Practica_5_Rx.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5_Rx\Practica_5_Rx\Debug/Practica_5_Rx.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_5_Rx.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_5_Rx.map</FILE>
+  <FILE>Practica_5_Rx.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5_Rx\Practica_5_Rx\Practica_5_Rx.asm</FILE><LINE>12</LINE></config>
+  <recep><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5_Rx\Practica_5_Rx\Practica_5_Rx.asm</FILE><LINE>35</LINE></recep>
+  <inicio><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5_Rx\Practica_5_Rx\Practica_5_Rx.asm</FILE><LINE>31</LINE></inicio>
+ </LABELS>
+</ASSEMBLER_INFO>

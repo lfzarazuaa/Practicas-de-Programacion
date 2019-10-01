@@ -1,0 +1,15 @@
+Net A(2) LOC=R17;
+Net A(1) LOC=N17;
+Net A(0) LOC=L13;
+Net B(2) LOC=K17;
+Net B(1) LOC=K18;
+Net B(0) LOC=H18;
+Net sel LOC=G18;
+Net Sal(7) LOC=C17;
+Net Sal(6) LOC=H14;
+Net Sal(5) LOC=J17;
+Net Sal(4) LOC=G14;
+Net Sal(3) LOC=D16;
+Net Sal(2) LOC=D17;
+Net Sal(1) LOC=F18;
+Net Sal(0) LOC=L18;

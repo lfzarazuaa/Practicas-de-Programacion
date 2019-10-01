@@ -1,0 +1,27 @@
+﻿------ Build started: Project: Practica_1B, Configuration: Debug AVR ------
+Build started.
+Project "Practica_1B.asmproj" (default targets):
+Target "PreBuildEvent" skipped, due to false condition; ('$(PreBuildEvent)'!='') was evaluated as (''!='').
+Target "CoreBuild" in file "C:\Program Files (x86)\Atmel\Atmel Studio 6.2\Vs\Assembler.targets" from project "C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1B\Practica_1B\Practica_1B\Practica_1B.asmproj" (target "Build" depends on it):
+	Task "RunAssemblerTask"
+		C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\avrasm2.exe -fI -o "Practica_1B.hex"  -m "Practica_1B.map"  -l "Practica_1B.lss"  -S "Practica_1B.tmp"  -W+ie -im328Pdef.inc -d "C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1B\Practica_1B\Practica_1B\Debug/Practica_1B.obj"  "C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1B\Practica_1B\Practica_1B\Practica_1B.asm"  -I "C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include" 
+		AVRASM: AVR macro assembler 2.1.52 (build 44 Jun 18 2012 15:46:37)
+		Copyright (C) 1995-2012 ATMEL Corporation
+		[builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc'
+		C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1B\Practica_1B\Practica_1B\Practica_1B.asm(7): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328pdef.inc'
+		"ATmega328P" memory use summary [bytes]:
+		Segment   Begin    End      Code   Data   Used    Size   Use%
+		---------------------------------------------------------------
+		[.cseg] 0x000000 0x007804    218      0    218   32768   0.7%
+		[.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
+		[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
+		Assembly complete, 0 errors. 0 warnings
+	Done executing task "RunAssemblerTask".
+Done building target "CoreBuild" in project "Practica_1B.asmproj".
+Target "PostBuildEvent" skipped, due to false condition; ('$(PostBuildEvent)' != '') was evaluated as ('' != '').
+Target "Build" in file "C:\Program Files (x86)\Atmel\Atmel Studio 6.2\Vs\Avr.common.targets" from project "C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_0\Practica_1\Practica_1B\Practica_1B\Practica_1B\Practica_1B.asmproj" (entry point):
+Done building target "Build" in project "Practica_1B.asmproj".
+Done building project "Practica_1B.asmproj".
+
+Build succeeded.
+========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========

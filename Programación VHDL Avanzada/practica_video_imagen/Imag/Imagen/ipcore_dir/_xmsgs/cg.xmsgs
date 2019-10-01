@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="sim" num="172" delta="old" >Generating IP...
+</msg>
+
+<msg type="warning" file="sim" num="830" delta="old" >The working directory for this project is located on a UNC-mounted drive.  To ensure generation completes successfully, you should locate your working directory on a drive which is identified by a drive letter.  You can change this path in the Project Options dialog.
+</msg>
+
+</messages>
+

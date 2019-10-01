@@ -1,0 +1,4 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Letra\list_ch13_01_font_rom.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Letra\list_ch13_02_font_test_gen.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Letra\list_ch12_01_vga_sync.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Letra\list_ch13_03_font_test_top.vhd"

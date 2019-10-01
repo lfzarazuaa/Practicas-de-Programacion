@@ -1,0 +1,15 @@
+Net clk LOC = B8;
+Net se LOC = R17;
+Net r LOC = N17;
+Net j LOC = L13;
+Net k LOC = L14;
+Net t LOC = K17;
+Net d LOC = K18;
+Net sq LOC = R4;
+Net snq LOC = F4;
+Net jq LOC = P15;
+Net jnq LOC = E17;
+Net tq LOC = K14;
+Net tnq LOC = K15;
+Net dq LOC = J15;
+Net dnq LOC = J14;

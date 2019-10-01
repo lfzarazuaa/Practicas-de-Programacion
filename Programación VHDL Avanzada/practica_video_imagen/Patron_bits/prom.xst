@@ -1,0 +1,5 @@
+set -tmpdir "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/xst/projnav.tmp"
+set -xsthdpdir "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/xst"
+elaborate
+-ifn prom.prj
+-ifmt mixed

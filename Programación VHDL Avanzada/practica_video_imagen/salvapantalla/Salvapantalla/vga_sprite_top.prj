@@ -1,0 +1,7 @@
+vhdl work "ipcore_dir/rom240x160.vhd"
+vhdl work "../vga_sprite.vhd"
+vhdl work "../vga_bounce.vhd"
+vhdl work "../vga_640x480.vhd"
+vhdl work "vgacomp.vhd"
+vhdl work "../clkdiv.vhd"
+vhdl work "../vga_sprite_top.vhd"

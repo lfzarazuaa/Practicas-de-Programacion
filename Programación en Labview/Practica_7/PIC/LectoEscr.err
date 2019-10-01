@@ -1,0 +1,7 @@
+>>> Warning 203 "C:\Program Files (x86)\PICC\drivers\pic18_usb.c" Line 531(1,1): Condition always TRUE
+>>> Warning 216 "LectoEscr.c" Line 189(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_token_reset)
+>>> Warning 216 "LectoEscr.c" Line 189(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_tbe)
+>>> Warning 216 "LectoEscr.c" Line 189(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_in)
+>>> Warning 216 "LectoEscr.c" Line 189(0,1): Interrupts disabled during call to prevent re-entrancy:  (usb_flush_out)
+      Memory usage:   ROM=12%      RAM=10% - 11%
+      0 Errors,  5 Warnings.

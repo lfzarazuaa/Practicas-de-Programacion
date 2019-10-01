@@ -1,0 +1,13 @@
+Net clk LOC=B8;
+Net R(2) LOC=R17;
+Net R(1) LOC=N17;
+Net R(0) LOC=L13;
+Net G(2) LOC=L14;
+Net G(1) LOC=K17;
+Net G(0) LOC=K18;
+Net B(2) LOC=H18;
+Net B(1) LOC=G18;
+Net B(0) LOC=H13;
+Net SalR LOC=M13;
+Net SalG LOC=R18;
+Net SalB LOC=R15;

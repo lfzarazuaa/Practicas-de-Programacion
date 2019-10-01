@@ -1,0 +1,83 @@
+net "mclk" loc = "b8";
+
+net "btn<3>" loc = "h13";
+net "btn<2>" loc = "e18";
+net "btn<1>" loc = "d18";
+net "btn<0>" loc = "b18";
+
+net "sw<7>" loc = r17;
+net "sw<6>" loc = n17;
+net "sw<5>" loc = l13;
+net "sw<4>" loc = l14;
+net "sw<3>" loc = k17;
+net "sw<2>" loc = k18;
+net "sw<1>" loc = h18;
+net "sw<0>" loc = g18;
+
+net "hsync" loc ="t4";
+net "vsync" loc ="u3";
+
+net "red<2>" loc ="r8";
+net "red<1>" loc ="t8";
+net "red<0>" loc ="r9";
+
+net "green<2>" loc ="p6";
+net "green<1>" loc ="p8";
+net "green<0>" loc ="n8";
+
+net "blue<1>" loc ="u4";
+net "blue<0>" loc ="u5";
+
+
+# External Cellular RAM and StrataFlash 
+ NET "OE_L" LOC= "T2"; 
+ NET "WE_L" LOC= "N7"; 
+ NET "RamADV_L" LOC= "J4"; 
+ NET "CE_L" LOC= "R6"; 
+ NET "RamCLK" LOC= "H5";  
+ NET "RamCRE" LOC= "P7"; 
+ NET "LB_L" LOC= "K5"; 
+ NET "UB_L" LOC= "K4"; 
+ #NET "RamWAIT" LOC= "F5"; 
+ #NET "FlashRP_L" LOC= "T5"; 
+ NET "FlashCE_L" LOC= "R5"; 
+ #NET "FlashSTS" LOC= "D3"; 
+ NET "A<0>" LOC= "J1"; 
+ NET "A<1>" LOC= "J2"; 
+ NET "A<2>" LOC= "H4"; 
+ NET "A<3>" LOC= "H1";
+ NET "A<4>" LOC= "H2"; 
+ NET "A<5>" LOC= "J5"; 
+ NET "A<6>" LOC= "H3"; 
+ NET "A<7>" LOC= "H6"; 
+ NET "A<8>" LOC= "F1"; 
+ NET "A<9>" LOC= "G3"; 
+ NET "A<10>" LOC= "G6"; 
+ NET "A<11>" LOC= "G5"; 
+ NET "A<12>" LOC= "G4"; 
+ NET "A<13>" LOC= "F2"; 
+ NET "A<14>" LOC= "E1"; 
+ NET "A<15>" LOC= "M5"; 
+ NET "A<16>" LOC= "E2"; 
+ NET "A<17>" LOC= "C2"; 
+ NET "A<18>" LOC= "C1"; 
+ NET "A<19>" LOC= "D2"; 
+ NET "A<20>" LOC= "K3"; 
+ NET "A<21>" LOC= "D1"; 
+ NET "A<22>" LOC= "K6"; 
+ NET "DQ<0>" LOC= "L1"; 
+ NET "DQ<1>" LOC= "L4"; 
+ NET "DQ<2>" LOC= "L6"; 
+ NET "DQ<3>" LOC= "M4"; 
+ NET "DQ<4>" LOC= "N5"; 
+ NET "DQ<5>" LOC= "P1"; 
+ NET "DQ<6>" LOC= "P2"; 
+ NET "DQ<7>" LOC= "R2"; 
+ NET "DQ<8>" LOC= "L3"; 
+ NET "DQ<9>" LOC= "L5"; 
+ NET "DQ<10>" LOC= "M3"; 
+ NET "DQ<11>" LOC= "M6"; 
+ NET "DQ<12>" LOC= "L2"; 
+ NET "DQ<13>" LOC= "N4"; 
+ NET "DQ<14>" LOC= "R3"; 
+ NET "DQ<15>" LOC= "T1"; 

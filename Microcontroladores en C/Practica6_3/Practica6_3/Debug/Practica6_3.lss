@@ -1,0 +1,255 @@
+
+Practica6_3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000150  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000001a4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  000001a4  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001d4  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000030  00000000  00000000  00000210  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000721  00000000  00000000  00000240  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000601  00000000  00000000  00000961  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002e6  00000000  00000000  00000f62  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000044  00000000  00000000  00001248  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000393  00000000  00000000  0000128c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000e6  00000000  00000000  0000161f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  00001705  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 71 00 	call	0xe2	; 0xe2 <main>
+  64:	0c 94 a6 00 	jmp	0x14c	; 0x14c <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <Posicion_Servomotor_0>:
+	}
+}
+
+void Posicion_Servomotor_0(uint8_t Grados){
+     //OCR0=(Tiempo_Inicial+(Tiempo_Final-Tiempo_Inicial)*(Grados/180))/1000000*(F_CPU/(64*2));//64 es el valor del preescalador y el 2 por PWM phase correct.
+       OCR0=(Tiempo_Inicial+(Tiempo_Final-Tiempo_Inicial)*(Grados/180))/128;
+  6c:	91 e0       	ldi	r25, 0x01	; 1
+  6e:	84 3b       	cpi	r24, 0xB4	; 180
+  70:	08 f4       	brcc	.+2      	; 0x74 <Posicion_Servomotor_0+0x8>
+  72:	90 e0       	ldi	r25, 0x00	; 0
+  74:	89 2f       	mov	r24, r25
+  76:	90 e0       	ldi	r25, 0x00	; 0
+  78:	40 e4       	ldi	r20, 0x40	; 64
+  7a:	56 e0       	ldi	r21, 0x06	; 6
+  7c:	84 9f       	mul	r24, r20
+  7e:	90 01       	movw	r18, r0
+  80:	85 9f       	mul	r24, r21
+  82:	30 0d       	add	r19, r0
+  84:	94 9f       	mul	r25, r20
+  86:	30 0d       	add	r19, r0
+  88:	11 24       	eor	r1, r1
+  8a:	20 57       	subi	r18, 0x70	; 112
+  8c:	3e 4f       	sbci	r19, 0xFE	; 254
+  8e:	c9 01       	movw	r24, r18
+  90:	99 23       	and	r25, r25
+  92:	14 f4       	brge	.+4      	; 0x98 <Posicion_Servomotor_0+0x2c>
+  94:	81 58       	subi	r24, 0x81	; 129
+  96:	9f 4f       	sbci	r25, 0xFF	; 255
+  98:	88 0f       	add	r24, r24
+  9a:	89 2f       	mov	r24, r25
+  9c:	88 1f       	adc	r24, r24
+  9e:	99 0b       	sbc	r25, r25
+  a0:	8c bf       	out	0x3c, r24	; 60
+  a2:	08 95       	ret
+
+000000a4 <Posicion_Servomotor_2>:
+}
+
+void Posicion_Servomotor_2(uint8_t Grados){
+     //OCR2=(Tiempo_Inicial+(Tiempo_Final-Tiempo_Inicial)*(Grados/180))/1000000*(F_CPU/(32*2));//32 es el valor del preescalador y el 2 por PWM phase correct.
+     OCR0=(Tiempo_Inicial+(Tiempo_Final-Tiempo_Inicial)*(Grados/180))/64;
+  a4:	91 e0       	ldi	r25, 0x01	; 1
+  a6:	84 3b       	cpi	r24, 0xB4	; 180
+  a8:	08 f4       	brcc	.+2      	; 0xac <Posicion_Servomotor_2+0x8>
+  aa:	90 e0       	ldi	r25, 0x00	; 0
+  ac:	89 2f       	mov	r24, r25
+  ae:	90 e0       	ldi	r25, 0x00	; 0
+  b0:	40 e4       	ldi	r20, 0x40	; 64
+  b2:	56 e0       	ldi	r21, 0x06	; 6
+  b4:	84 9f       	mul	r24, r20
+  b6:	90 01       	movw	r18, r0
+  b8:	85 9f       	mul	r24, r21
+  ba:	30 0d       	add	r19, r0
+  bc:	94 9f       	mul	r25, r20
+  be:	30 0d       	add	r19, r0
+  c0:	11 24       	eor	r1, r1
+  c2:	20 57       	subi	r18, 0x70	; 112
+  c4:	3e 4f       	sbci	r19, 0xFE	; 254
+  c6:	c9 01       	movw	r24, r18
+  c8:	99 23       	and	r25, r25
+  ca:	0c f4       	brge	.+2      	; 0xce <Posicion_Servomotor_2+0x2a>
+  cc:	cf 96       	adiw	r24, 0x3f	; 63
+  ce:	08 2e       	mov	r0, r24
+  d0:	89 2f       	mov	r24, r25
+  d2:	00 0c       	add	r0, r0
+  d4:	88 1f       	adc	r24, r24
+  d6:	99 0b       	sbc	r25, r25
+  d8:	00 0c       	add	r0, r0
+  da:	88 1f       	adc	r24, r24
+  dc:	99 1f       	adc	r25, r25
+  de:	8c bf       	out	0x3c, r24	; 60
+  e0:	08 95       	ret
+
+000000e2 <main>:
+#define Tiempo_Final 2000 //us
+void Posicion_Servomotor_0(uint8_t);
+void Posicion_Servomotor_2(uint8_t);
+int main(void)
+{
+	cli();
+  e2:	f8 94       	cli
+	DDRB=(0<<DDB7)|(0<<DDB6)|(0<<DDB5)|(0<<DDB4)|(1<<DDB3)|(0<<DDB2)|(0<<DDB1)|(0<<DDB0);//PB3 es OC0.
+  e4:	88 e0       	ldi	r24, 0x08	; 8
+  e6:	87 bb       	out	0x17, r24	; 23
+	DDRD=(1<<DDD7)|(0<<DDD6)|(0<<DDD5)|(0<<DDD4)|(0<<DDD3)|(0<<DDD2)|(0<<DDD1)|(0<<DDD0);//PD7 es OC2.
+  e8:	80 e8       	ldi	r24, 0x80	; 128
+  ea:	81 bb       	out	0x11, r24	; 17
+	//Configuración Timer0
+	TCCR0=(0<<FOC0)|(1<<WGM00)|(1<<COM01)|(1<<COM00)|(0<<WGM01)|(0<<CS02)|(1<<CS01)|(1<<CS00);//Comparación, modo PWM Phase Correct,0C0 Conectado,prescalador a 64.
+  ec:	83 e7       	ldi	r24, 0x73	; 115
+  ee:	83 bf       	out	0x33, r24	; 51
+	TCNT0=0x00;
+  f0:	12 be       	out	0x32, r1	; 50
+	OCR0=0x00;
+  f2:	1c be       	out	0x3c, r1	; 60
+	//Configuración Timer2
+	TCCR2=(0<<FOC2)|(1<<WGM20)|(1<<COM21)|(1<<COM20)|(0<<WGM21)|(0<<CS22)|(1<<CS21)|(1<<CS20);//Comparación, modo PWM Phase Correct,0C2 desconectado,prescalador a 32.
+  f4:	85 bd       	out	0x25, r24	; 37
+	TCNT2=0x00;
+  f6:	14 bc       	out	0x24, r1	; 36
+	OCR2=0x00;
+  f8:	13 bc       	out	0x23, r1	; 35
+	//Habilitación interrupciones Timer0 y Timer2
+	TIMSK=(0<<OCIE2)|(0<<TOIE2)|(0<<TICIE1)|(0<<OCIE1A)|(0<<OCIE1B)|(0<<TOIE1)|(0<<OCIE0)|(0<<TOIE0);//Interrupción por overflow de Timer 2.
+  fa:	19 be       	out	0x39, r1	; 57
+	sei();
+  fc:	78 94       	sei
+#define Tiempo_Inicial 400 //us
+#define Tiempo_Final 2000 //us
+void Posicion_Servomotor_0(uint8_t);
+void Posicion_Servomotor_2(uint8_t);
+int main(void)
+{
+  fe:	c0 e0       	ldi	r28, 0x00	; 0
+	/* Replace with your application code */
+	int i;
+	while (1)
+	{
+	  for(i=0;i<=180;i=i+5){
+		  Posicion_Servomotor_0(i);
+ 100:	8c 2f       	mov	r24, r28
+ 102:	0e 94 36 00 	call	0x6c	; 0x6c <Posicion_Servomotor_0>
+		  Posicion_Servomotor_2(i);
+ 106:	8c 2f       	mov	r24, r28
+ 108:	0e 94 52 00 	call	0xa4	; 0xa4 <Posicion_Servomotor_2>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 10c:	2f e9       	ldi	r18, 0x9F	; 159
+ 10e:	86 e8       	ldi	r24, 0x86	; 134
+ 110:	91 e0       	ldi	r25, 0x01	; 1
+ 112:	21 50       	subi	r18, 0x01	; 1
+ 114:	80 40       	sbci	r24, 0x00	; 0
+ 116:	90 40       	sbci	r25, 0x00	; 0
+ 118:	e1 f7       	brne	.-8      	; 0x112 <main+0x30>
+ 11a:	00 c0       	rjmp	.+0      	; 0x11c <main+0x3a>
+ 11c:	00 00       	nop
+ 11e:	cb 5f       	subi	r28, 0xFB	; 251
+	sei();
+	/* Replace with your application code */
+	int i;
+	while (1)
+	{
+	  for(i=0;i<=180;i=i+5){
+ 120:	c9 3b       	cpi	r28, 0xB9	; 185
+ 122:	71 f7       	brne	.-36     	; 0x100 <main+0x1e>
+ 124:	c4 eb       	ldi	r28, 0xB4	; 180
+		  Posicion_Servomotor_0(i);
+		  Posicion_Servomotor_2(i);
+		  _delay_ms(500);
+	  }
+	  for(i=180;i>=0;i=i-5){
+		  Posicion_Servomotor_0(i);
+ 126:	8c 2f       	mov	r24, r28
+ 128:	0e 94 36 00 	call	0x6c	; 0x6c <Posicion_Servomotor_0>
+		  Posicion_Servomotor_2(i);
+ 12c:	8c 2f       	mov	r24, r28
+ 12e:	0e 94 52 00 	call	0xa4	; 0xa4 <Posicion_Servomotor_2>
+ 132:	2f e9       	ldi	r18, 0x9F	; 159
+ 134:	86 e8       	ldi	r24, 0x86	; 134
+ 136:	91 e0       	ldi	r25, 0x01	; 1
+ 138:	21 50       	subi	r18, 0x01	; 1
+ 13a:	80 40       	sbci	r24, 0x00	; 0
+ 13c:	90 40       	sbci	r25, 0x00	; 0
+ 13e:	e1 f7       	brne	.-8      	; 0x138 <main+0x56>
+ 140:	00 c0       	rjmp	.+0      	; 0x142 <main+0x60>
+ 142:	00 00       	nop
+ 144:	c5 50       	subi	r28, 0x05	; 5
+	  for(i=0;i<=180;i=i+5){
+		  Posicion_Servomotor_0(i);
+		  Posicion_Servomotor_2(i);
+		  _delay_ms(500);
+	  }
+	  for(i=180;i>=0;i=i-5){
+ 146:	cb 3f       	cpi	r28, 0xFB	; 251
+ 148:	71 f7       	brne	.-36     	; 0x126 <main+0x44>
+ 14a:	d9 cf       	rjmp	.-78     	; 0xfe <main+0x1c>
+
+0000014c <_exit>:
+ 14c:	f8 94       	cli
+
+0000014e <__stop_program>:
+ 14e:	ff cf       	rjmp	.-2      	; 0x14e <__stop_program>

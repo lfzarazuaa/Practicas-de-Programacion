@@ -1,0 +1,233 @@
+
+<!-- saved from url=(0078)http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/colecciones/vector.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>La clase Vector</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+</head>
+
+<body>
+
+<h1 align="center">La clase <em>Vector</em></h1>
+
+<table width="100%">
+  <tbody><tr>
+    <td width="50%"><a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/fundamentos.htm"><img src="./Clase_Vector_files/chapter.gif" alt="chapter.gif (1105 bytes)" width="49" height="40"></a><a href="http://www.sc.ehu.es/sbweb/fisica/curso.htm"><img src="./Clase_Vector_files/home.gif" alt="home.gif (1054 bytes)" width="49" height="40"></a><a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/colecciones/stringtokenizer.htm"><img src="./Clase_Vector_files/next.gif" alt="next.gif (998 bytes)" width="49" height="40"></a></td>
+    <td width="50%"><h3 align="right"><a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/colecciones/intro_vector.htm">Las clases <em>Vector</em> y <em>StringTokenizer</em></a></h3>
+    </td>
+  </tr>
+</tbody></table>
+
+<p><a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/colecciones/vector.htm#Crear un vector">Crear un vector</a></p>
+
+<p><a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/colecciones/vector.htm#Añadir elementos al vector">Añadir elementos al vector</a></p>
+
+<p><a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/colecciones/vector.htm#Acceso a los elementos de un vector">Acceso a los elementos de un vector</a></p>
+
+<hr>
+
+<p>Los arrays en Java son suficientes para<a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/clases1/arays.htm#Declarar y crear un array"> guardar tipos básicos de datos</a>,
+y <a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/clases1/arays.htm#Inicializar y usar los elementos del array">objetos de una
+determinada clase</a> cuyo número conocemos de antemano. Algunas veces deseamos guardar
+objetos en un array pero no sabemos cuantos objetos vamos a guardar. Una solución es la
+de crear un array cuya dimensión sea más grande que el número de elementos que
+necesitamos guardar. La clase <em>Vector</em> nos proporciona una solución alternativa a
+este problema. Un vector es similar a un array, la diferencia estriba en que un vector
+crece automáticamente cuando alcanza la dimensión inicial máxima. Además, proporciona
+métodos adicionales para añadir, eliminar elementos, e insertar elementos entre otros
+dos existentes.</p>
+
+<p><img src="./Clase_Vector_files/disco.gif" alt="disco.gif (1035 bytes)" align="middle" width="32" height="32"><strong>vector</strong>:
+<a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/colecciones/codigo/VectorApp.java">VectorApp.java</a></p>
+
+<p>&nbsp;</p>
+
+<h2><a name="Crear un vector">Crear un vector</a></h2>
+
+<p>Para usar la clase <em>Vector</em> hemos de poner al principo del archivo del código
+fuente la siguiente <a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/clases1/paquetes.htm#El comando import">sentencia <strong>import</strong></a></p>
+
+<pre>import java.util.*;</pre>
+
+<p>Cuando creamos un <em>vector</em> u objeto de la clase <em>Vector</em>, podemos
+especificar su dimensión inicial, y cuanto crecerá si rebasamos dicha dimensión. </p>
+
+<pre>    Vector vector=new Vector(20, 5);</pre>
+
+<p>Tenemos un vector con una dimensión inicial de 20 elementos. Si rebasamos dicha
+dimensión y guardamos 21 elementos la dimensión del vector crece a 25.</p>
+
+<p>Al segundo constructor, solamente se le pasa la dimensión inicial.</p>
+
+<pre>    Vector vector=new Vector(20);</pre>
+
+<p>Si se rebasa la dimensión inicial guardando 21 elementos, la dimensión del vector se
+duplica. El programador ha de tener cuidado con este constructor, ya que si se pretende
+guardar un número grande de elementos se tiene que especificar el incremento de la
+capacidad del vector, si no se quiere desperdiciar inútilmente la memoria el ordenador.</p>
+
+<p>Con el tercer constructor, se crea un vector cuya dimensión inicial es 10.</p>
+
+<pre>    Vector vector=new Vector();</pre>
+
+<p>La dimensión del vector se duplica si se rebasa la dimensión inicial, por ejemplo,
+cuando se pretende guardar once elementos.</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="Añadir elementos al vector">Añadir elementos al vector</a></h2>
+
+<p>Hay dos formas de añadir elementos a un vector. Podemos añadir un elemento a
+continuación del último elemento del vector, mediante la función miembro <em>addElement</em>.</p>
+
+<pre>        v.addElement("uno");</pre>
+
+<p>Podemos también insertar un elemento en una determinada posición, mediante <em>insertElementAt</em>.
+El segundo parámetro o índice, indica el lugar que ocupará el nuevo objeto. Si tratamos
+de insertar un elemento en una posición que no existe todavía obtenemos una <a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/excepciones/excepciones.htm#Las excepciones">excepción</a> del tipo <em>ArrayIndexOutOfBounds</em>.
+Por ejemplo, si tratamos de insertar un elemento en la posición 9 cuando el vector
+solamente tiene cinco elementos.</p>
+
+<p>Para insertar el string "tres" en la tercera posición del vector <em>v</em>,
+escribimos</p>
+
+<pre>        v.insertElementAt("tres", 2); </pre>
+
+<p>En la siguiente porción de código, se crea un vector con una capacidad inicial de 10
+elementos, valor por defecto, y se le añaden o insertan objetos de la clase <em>String</em>.</p>
+
+<table border="1" width="100%" cellspacing="">
+  <tbody><tr>
+    <td width="100%" bgcolor="#F7F7F7"><pre>        Vector v=new Vector();
+        v.addElement("uno");
+        v.addElement("dos");
+        v.addElement("cuatro");
+        v.addElement("cinco");
+        v.addElement("seis");
+        v.addElement("siete");
+        v.addElement("ocho");
+        v.addElement("nueve");
+        v.addElement("diez");
+        v.addElement("once");
+        v.addElement("doce");
+        v.insertElementAt("tres", 2);</pre>
+    </td>
+  </tr>
+</tbody></table>
+
+<p>Para saber cuantos elementos guarda un vector, se llama a la función miembro <em>size</em>.
+Para saber la dimensión actual de un vector se llama a la función miembro <em>capacity</em>.
+Por ejemplo, en la porción de código hemos guardado 12 elementos en el vector <em>v</em>.
+La dimensión de <em>v</em> es 20, ya que se ha superado la dimensión inicial de 10
+establecida en la llamada al tercer constructor cuando se ha creado el vector <em>v</em>.</p>
+
+<pre>        System.out.println("nº de elementos "+v.size());
+        System.out.println("dimensión "+v.capacity());</pre>
+
+<p>Podemos eliminar todos los elementos de un vector, llamando a la función miembro <em>removeAllElements</em>.
+O bien, podemos eliminar un elemento concreto, por ejemplo el que guarda el string
+"tres".</p>
+
+<pre>        v.removeElement("tres");</pre>
+
+<p>Podemos eliminar dicho elemento, si especificamos su índice.</p>
+
+<pre>        v.removeElementAt(2);
+
+</pre>
+
+<h2><a name="Acceso a los elementos de un vector">Acceso a los elementos de un vector</a></h2>
+
+<p>El acceso a los elementos de un vector no es tan sencillo como el acceso a los
+elementos de un array. En vez de dar un índice, usamos la función miembro <em>elementAt</em>.
+Por ejemplo, <em>v.elementAt(4)</em> sería equivalente a <em>v[4]</em>, si <em>v</em>
+fuese un array.</p>
+
+<p>Para acceder a todos lo elementos del vector, escribimos un código semejante al
+empleado para acceder a todos los elementos de un <a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/clases1/arays.htm#Inicializar y usar los elementos del array">array</a>.</p>
+
+<pre>        for(int i=0; i&lt;v.size(); i++){
+            System.out.print(v.elementAt(i)+"\t");
+        }</pre>
+
+<p>Existe otra alternativa, que es la de usar las funciones del <a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/herencia/interfaces.htm">interface</a> <em>Enumeration</em>. Este interface
+declara dos funciones pero no implementa ninguna de ellas. Una <em>Enumeration</em> nos
+permite acceder a los elementos de una estructura de datos de forma secuencial.</p>
+
+<pre>public interface Enumeration {
+    boolean hasMoreElements();
+    Object nextElement();
+}</pre>
+
+<p>La función miembro <em>elements</em> de la clase <em>Vector</em> devuelve un objeto de
+la clase <em>VectorEnumerator</em> que implementa el interface <em>Enumeration</em> y
+tiene que definir las dos funciones <em>hasMoreElements</em> y <em>nextElement</em>.</p>
+
+<pre>final class VectorEnumerator <strong>implements Enumeration</strong> {
+    Vector vector;
+    int count;
+    VectorEnumerator(Vector v) {
+	vector = v;
+	count = 0;
+    }
+    public boolean <strong>hasMoreElements</strong>() {
+	//...
+    }
+    public Object <strong>nextElement</strong>() {
+	//...
+    }
+}</pre>
+
+<p>El objeto <em>enum</em> devuelto por la función miembro <em>elements</em> es de la
+clase <em>VectorEnumerator</em>, sin embargo no podemos escribir</p>
+
+<pre>        VectorEnumerator enum=v.elements();</pre>
+
+<p>porque <em>VectorEnumerator</em> no es una clase pública. Como podemos ver en su
+definición, no tiene la palabra reservada <strong>public</strong> delante de <strong>class</strong>.
+Sin embargo, podemos guardar un objeto de la clase <em>VectorEnumerator</em> en una
+variable <em>enum</em> del tipo <em>Enumeration</em>, por que la clase implementa dicho
+interface. </p>
+
+<table border="1" width="100%" cellspacing="">
+  <tbody><tr>
+    <td width="100%" bgcolor="#F7F7F7"><pre>        Enumeration enum=v.elements();
+        while(enum.hasMoreElements()){
+            System.out.print(enum.nextElement()+"\t");
+        }</pre>
+    </td>
+  </tr>
+</tbody></table>
+
+<p>Desde el objeto <em>enum</em> devuelto por la función miembro <em>elements</em> de la
+clase <em>Vector</em> llamamos a las funciones miembro <em>hasMoreElements</em> y <em>nextElement</em>
+de la clase <em>VectorEnumerator</em>. La función <em>hasMoreElements</em> devuelve <strong>true</strong>
+mientras haya todavía más elementos que se puedan acceder en el vector <em>v</em>.
+Cuando se ha llegado al último elemento del vector, devuelve <strong>false</strong>. La
+función <em>nextElement</em> devuelve una referencia al próximo elemento en la
+estructura de datos. Esta función devuelve una referencia a un objeto de la clase base <em>Object</em>,
+que el programador precisará en ciertos casos, como veremos más abajo, promocionar
+(casting) a la clase adecuada.</p>
+
+<p>Para buscar objetos en un vector se puede usar una <em>Enumeration</em> y hecer una
+comparación elemento por elemento mediante <a href="http://www.sc.ehu.es/sbweb/fisica/cursoJava/fundamentos/clases1/string.htm#Comparación de strings"><em>equals</em></a>, tal como vemos
+en la siguiente porción de código</p>
+
+<pre>        Enumeration enum=v.elements();
+        while(enum.hasMoreElements()){
+            String elemento=(String)enum.nextElement();
+            if(elemento.equals("tres")){
+                System.out.println("Encontrado tres");
+                break;
+            }
+	}</pre>
+
+<p>Podemos usar alternativamente, la función miembro <em>contains</em> para este
+propósito.</p>
+
+<pre>        if(v.contains("tres")){
+            System.out.println("Encontrado tres");
+        }
+</pre>
+
+
+</body></html>

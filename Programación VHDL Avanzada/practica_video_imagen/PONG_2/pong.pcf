@@ -1,0 +1,54 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Jun 02 10:14:27 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk_50MHz" LOCATE = SITE "B8" LEVEL 1;
+COMP "adout<10>" LOCATE = SITE "N17" LEVEL 1;
+COMP "adout<11>" LOCATE = SITE "R17" LEVEL 1;
+COMP "btn0" LOCATE = SITE "B18" LEVEL 1;
+COMP "VGA_hsync" LOCATE = SITE "T4" LEVEL 1;
+COMP "VGA_vsync" LOCATE = SITE "U3" LEVEL 1;
+COMP "VGA_green<0>" LOCATE = SITE "N8" LEVEL 1;
+COMP "VGA_green<1>" LOCATE = SITE "P8" LEVEL 1;
+COMP "VGA_green<2>" LOCATE = SITE "P6" LEVEL 1;
+COMP "VGA_red<0>" LOCATE = SITE "R9" LEVEL 1;
+COMP "VGA_red<1>" LOCATE = SITE "T8" LEVEL 1;
+COMP "VGA_red<2>" LOCATE = SITE "R8" LEVEL 1;
+COMP "adout<0>" LOCATE = SITE "M13" LEVEL 1;
+COMP "adout<1>" LOCATE = SITE "D18" LEVEL 1;
+COMP "adout<2>" LOCATE = SITE "E18" LEVEL 1;
+COMP "adout<3>" LOCATE = SITE "H13" LEVEL 1;
+COMP "adout<4>" LOCATE = SITE "G18" LEVEL 1;
+COMP "adout<5>" LOCATE = SITE "H18" LEVEL 1;
+COMP "adout<6>" LOCATE = SITE "K18" LEVEL 1;
+COMP "adout<7>" LOCATE = SITE "K17" LEVEL 1;
+COMP "adout<8>" LOCATE = SITE "L14" LEVEL 1;
+COMP "adout<9>" LOCATE = SITE "L13" LEVEL 1;
+COMP "VGA_blue<0>" LOCATE = SITE "U5" LEVEL 1;
+COMP "VGA_blue<1>" LOCATE = SITE "U4" LEVEL 1;
+NET "clk_50MHz_BUFGP/IBUFG" BEL "clk_50MHz_BUFGP/BUFG.GCLKMUX"
+        USELOCALCONNECT;
+TIMEGRP ck_25_net = BEL "vga_driver/h_cnt_9" BEL "vga_driver/h_cnt_8" BEL
+        "vga_driver/h_cnt_7" BEL "vga_driver/h_cnt_6" BEL "vga_driver/h_cnt_5"
+        BEL "vga_driver/h_cnt_4" BEL "vga_driver/h_cnt_3" BEL
+        "vga_driver/h_cnt_2" BEL "vga_driver/h_cnt_1" BEL "vga_driver/h_cnt_0"
+        BEL "vga_driver/v_cnt_9" BEL "vga_driver/v_cnt_8" BEL
+        "vga_driver/v_cnt_7" BEL "vga_driver/v_cnt_6" BEL "vga_driver/v_cnt_5"
+        BEL "vga_driver/v_cnt_4" BEL "vga_driver/v_cnt_3" BEL
+        "vga_driver/v_cnt_2" BEL "vga_driver/v_cnt_1" BEL "vga_driver/v_cnt_0"
+        BEL "vga_driver/pixel_col_9" BEL "vga_driver/pixel_col_8" BEL
+        "vga_driver/pixel_col_7" BEL "vga_driver/pixel_col_6" BEL
+        "vga_driver/pixel_col_5" BEL "vga_driver/pixel_col_4" BEL
+        "vga_driver/pixel_col_3" BEL "vga_driver/pixel_col_2" BEL
+        "vga_driver/pixel_col_1" BEL "vga_driver/pixel_col_0" BEL
+        "vga_driver/pixel_row_9" BEL "vga_driver/pixel_row_8" BEL
+        "vga_driver/pixel_row_7" BEL "vga_driver/pixel_row_6" BEL
+        "vga_driver/pixel_row_5" BEL "vga_driver/pixel_row_4" BEL
+        "vga_driver/pixel_row_3" BEL "vga_driver/pixel_row_2" BEL
+        "vga_driver/pixel_row_1" BEL "vga_driver/pixel_row_0" BEL
+        "vga_driver/green_out" BEL "vga_driver/red_out" BEL "vga_driver/vsync"
+        BEL "vga_driver/hsync";
+TS_ck_25 = PERIOD TIMEGRP "ck_25_net" 40 ns HIGH 50%;
+SCHEMATIC END;
+

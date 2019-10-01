@@ -1,0 +1,34 @@
+Release 12.4 - xst M.81d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.39 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.39 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_stripes.vhd" in Library work.
+Architecture behavioral of Entity vga_stripes is up to date.
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.57 secs
+ 
+--> 
+
+Total memory usage is 175660 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

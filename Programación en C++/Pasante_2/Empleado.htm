@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Empleado.htm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { color: #0000FF; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #3399FF; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { color: #800080; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #800080; }
+.cpp1-preprocessor { color: #008000; }
+.cpp1-reservedword { color: #000000; font-weight: bold; }
+.cpp1-space { background-color: #FFFFFF; color: #000000; }
+.cpp1-string { color: #FF0000; }
+.cpp1-symbol { color: #000000; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="cpp1-preprocessor">#include &quot;Persona.hpp&quot;
+</span><span class="cpp1-reservedword">class</span><span class="cpp1-space"> Empleado: </span><span class="cpp1-reservedword">public</span><span class="cpp1-space"> Persona{
+      </span><span class="cpp1-reservedword">protected</span><span class="cpp1-symbol">:
+      </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Empleo[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+      </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> Salario;
+      </span><span class="cpp1-reservedword">public</span><span class="cpp1-symbol">:
+             Empleado();
+             Empleado(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *, </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *,</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> ,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *, </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> );
+             </span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> Imprimir_Datos_Empleado();
+      };
+
+Empleado::Empleado(){}
+Empleado::Empleado(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> nombre[], </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> direccion[],</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> edad,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> empleo[], </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> salario):Persona(nombre,direccion,edad){
+          strcpy(Empleo,empleo);
+          Salario=salario;
+         }
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> Empleado::Imprimir_Datos_Empleado(){
+          Imprimir_Datos_Persona();
+          cout&lt;&lt;</span><span class="cpp1-string">&quot;-----Empleo------&quot;</span><span class="cpp1-symbol">&lt;&lt;Empleo&lt;&lt;endl;
+          cout&lt;&lt;</span><span class="cpp1-string">&quot;-----Salario------&quot;</span><span class="cpp1-symbol">&lt;&lt;Salario&lt;&lt;endl;
+         }
+
+</span></span>
+</code></pre>
+</body>
+</html>

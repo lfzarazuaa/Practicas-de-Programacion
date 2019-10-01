@@ -1,0 +1,20 @@
+NET "clk_50MHZ" LOC = B8;
+NET "dac_SDIN" LOC = M15;
+NET "dac_SCLK" LOC = L17;
+NET "dac_LRCK" LOC = K12;
+NET "dac_MCLK" LOC = L15;
+NET "clk_50MHZ" TNM_NET = ck_50_net;
+TIMESPEC TS_ck_50 = PERIOD "ck_50_net" 20 ns HIGH 50%;
+
+net Salidas_7segc<7> loc=C17;
+net Salidas_7segc<6> loc=H14;
+net Salidas_7segc<5> loc=J17;
+net Salidas_7segc<4> loc=G14;
+net Salidas_7segc<3> loc=D16;
+net Salidas_7segc<2> loc=D17;
+net Salidas_7segc<1> loc=F18;
+net Salidas_7segc<0> loc=L18;
+net Control_Disp_7segc<3> loc=F17;
+net Control_Disp_7segc<2> loc=H17;
+net Control_Disp_7segc<1> loc=C18;
+net Control_Disp_7segc<0> loc=F15;

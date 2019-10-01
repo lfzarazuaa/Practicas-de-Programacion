@@ -1,0 +1,26 @@
+Net datain(0) loc =R17;
+Net datain(1) loc =N17;
+Net datain(2) loc =L13;
+Net datain(3) loc =L14;
+Net datain(4) loc =K17;
+Net datain(5) loc =K18;
+Net datain(6) loc =H18;
+Net datain(7) loc =G18;
+
+Net dataout(0) loc =R4;
+Net dataout(1) loc =F4;
+Net dataout(2) loc =P15;
+Net dataout(3) loc =E17;
+Net dataout(4) loc =K14;
+Net dataout(5) loc =K15;
+Net dataout(6) loc =J15;
+Net dataout(7) loc =J14;
+
+Net clk loc =B8;
+Net cs loc =P17;
+Net we loc =H13;
+
+Net addr(0) loc =M13;
+Net addr(1) loc =R18;
+Net addr(2) loc =R15;
+Net addr(3) loc =T17;

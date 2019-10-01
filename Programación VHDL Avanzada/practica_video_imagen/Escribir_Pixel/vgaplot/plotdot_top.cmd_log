@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vgapin.ucf -p xc3s500e-fg320-4 plotdot_top.ngc plotdot_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o plotdot_top_map.ncd plotdot_top.ngd plotdot_top.pcf 
+par -w -intstyle ise -ol high -t 1 plotdot_top_map.ncd plotdot_top.ncd plotdot_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml plotdot_top.twx plotdot_top.ncd -o plotdot_top.twr plotdot_top.pcf -ucf vgapin.ucf 
+bitgen -intstyle ise -f plotdot_top.ut plotdot_top.ncd 
+netgen -intstyle ise -ar Structure -tm plotdot_top -w -dir netgen/synthesis -ofmt vhdl -sim plotdot_top.ngc plotdot_top_synthesis.vhd 

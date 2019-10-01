@@ -1,0 +1,13 @@
+*** Error 18 "Practica_1.c" Line 1(9,19): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\devices\iostream"
+    Not in "C:\Program Files (x86)\PICC\drivers\iostream"
+    Not in "C:\Program Files (x86)\PICC\devices\iostream"
+    Not in local "C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\Programación\iostream"
+*** Error 18 "Practica_1.c" Line 2(10,19): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\devices\conio.h"
+    Not in "C:\Program Files (x86)\PICC\drivers\conio.h"
+    Not in "C:\Program Files (x86)\PICC\devices\conio.h"
+    Not in local "C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\Programación\conio.h"
+*** Error 128 "Practica_1.c" Line 5(1,10): A #DEVICE required before this line
+*** "Practica_1.c" Line 5: Error #48: Expecting a (
+      4 Errors,  0 Warnings.

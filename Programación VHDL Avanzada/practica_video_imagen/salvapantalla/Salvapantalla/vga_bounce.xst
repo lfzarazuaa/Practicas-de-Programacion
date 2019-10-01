@@ -1,0 +1,5 @@
+set -tmpdir "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/xst/projnav.tmp"
+set -xsthdpdir "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/xst"
+elaborate
+-ifn vga_bounce.prj
+-ifmt mixed

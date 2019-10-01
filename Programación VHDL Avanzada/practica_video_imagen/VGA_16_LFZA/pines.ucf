@@ -1,0 +1,16 @@
+NET	"mclk"					loc=b8;
+NET	"clr"					loc=h13;
+
+NET	"red<2>"				loc=R9;
+NET	"red<1>"				loc=T8;
+NET	"red<0>"				loc=R8;
+
+NET	"green<2>"			loc=N8;
+NET	"green<1>"			loc=P8;
+NET	"green<0>"			loc=P6;
+
+NET	"blue<1>"			loc=U5;
+NET	"blue<0>"			loc=U4;
+
+NET	"hsync"					loc=T4;
+NET	"vsync"					loc=U3;

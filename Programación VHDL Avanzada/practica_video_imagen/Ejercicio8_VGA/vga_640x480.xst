@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/xst"
+elaborate
+-ifn vga_640x480.prj
+-ifmt mixed

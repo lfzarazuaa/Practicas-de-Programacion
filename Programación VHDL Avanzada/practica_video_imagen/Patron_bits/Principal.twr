@@ -1,0 +1,132 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
+3 -fastpaths -xml Principal.twx Principal.ncd -o Principal.twr Principal.pcf
+-ucf pines.ucf
+
+Design file:              Principal.ncd
+Physical constraint file: Principal.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock mclk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+mclk           |    1.425|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+sw<0>          |blue<0>        |   16.008|
+sw<0>          |blue<1>        |   16.006|
+sw<0>          |green<0>       |   15.727|
+sw<0>          |green<1>       |   15.692|
+sw<0>          |green<2>       |   15.436|
+sw<0>          |red<0>         |   15.459|
+sw<0>          |red<1>         |   15.420|
+sw<0>          |red<2>         |   15.738|
+sw<1>          |blue<0>        |   15.185|
+sw<1>          |blue<1>        |   15.183|
+sw<1>          |green<0>       |   14.904|
+sw<1>          |green<1>       |   14.869|
+sw<1>          |green<2>       |   14.613|
+sw<1>          |red<0>         |   14.636|
+sw<1>          |red<1>         |   14.597|
+sw<1>          |red<2>         |   14.915|
+sw<2>          |blue<0>        |   14.914|
+sw<2>          |blue<1>        |   14.912|
+sw<2>          |green<0>       |   14.633|
+sw<2>          |green<1>       |   14.598|
+sw<2>          |green<2>       |   14.342|
+sw<2>          |red<0>         |   14.365|
+sw<2>          |red<1>         |   14.326|
+sw<2>          |red<2>         |   14.644|
+sw<3>          |blue<0>        |   15.040|
+sw<3>          |blue<1>        |   15.038|
+sw<3>          |green<0>       |   14.759|
+sw<3>          |green<1>       |   14.724|
+sw<3>          |green<2>       |   14.468|
+sw<3>          |red<0>         |   14.491|
+sw<3>          |red<1>         |   14.452|
+sw<3>          |red<2>         |   14.770|
+sw<4>          |blue<0>        |   14.636|
+sw<4>          |blue<1>        |   14.634|
+sw<4>          |green<0>       |   14.355|
+sw<4>          |green<1>       |   14.320|
+sw<4>          |green<2>       |   14.064|
+sw<4>          |red<0>         |   14.087|
+sw<4>          |red<1>         |   14.048|
+sw<4>          |red<2>         |   14.366|
+sw<5>          |blue<0>        |   14.583|
+sw<5>          |blue<1>        |   14.581|
+sw<5>          |green<0>       |   14.302|
+sw<5>          |green<1>       |   14.267|
+sw<5>          |green<2>       |   14.011|
+sw<5>          |red<0>         |   14.034|
+sw<5>          |red<1>         |   13.995|
+sw<5>          |red<2>         |   14.313|
+sw<6>          |blue<0>        |   14.929|
+sw<6>          |blue<1>        |   14.927|
+sw<6>          |green<0>       |   14.648|
+sw<6>          |green<1>       |   14.613|
+sw<6>          |green<2>       |   14.357|
+sw<6>          |red<0>         |   14.380|
+sw<6>          |red<1>         |   14.341|
+sw<6>          |red<2>         |   14.659|
+sw<7>          |blue<0>        |   15.227|
+sw<7>          |blue<1>        |   15.225|
+sw<7>          |green<0>       |   14.946|
+sw<7>          |green<1>       |   14.911|
+sw<7>          |green<2>       |   14.655|
+sw<7>          |red<0>         |   14.678|
+sw<7>          |red<1>         |   14.639|
+sw<7>          |red<2>         |   14.957|
+---------------+---------------+---------+
+
+
+Analysis completed Sun Apr 09 15:01:24 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 101 MB
+
+
+

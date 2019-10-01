@@ -1,0 +1,416 @@
+
+GccApplication1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000025c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000002d0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000003  00800060  00800060  000002d0  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000002d0  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000300  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000038  00000000  00000000  0000033c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000007b2  00000000  00000000  00000374  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000005e3  00000000  00000000  00000b26  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000003a1  00000000  00000000  00001109  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000c0  00000000  00000000  000014ac  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000037a  00000000  00000000  0000156c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000001aa  00000000  00000000  000018e6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000028  00000000  00000000  00001a90  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 b4 00 	jmp	0x168	; 0x168 <__vector_1>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__vector_9>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	20 e0       	ldi	r18, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a3 36       	cpi	r26, 0x63	; 99
+  6c:	b2 07       	cpc	r27, r18
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 10 01 	call	0x220	; 0x220 <main>
+  74:	0c 94 2c 01 	jmp	0x258	; 0x258 <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <__vector_9>:
+#define Tecla_Num '#'
+#define Tecla_Ast '*'
+uint8_t Tecla_Presionada=Tecla_Nula,Ultima_Tecla_Presionada=Tecla_Nula,conteo=0;
+char UTecla[4];
+void Detectar_Tecla(uint8_t,uint16_t,uint16_t,uint16_t,uint16_t);
+ISR(TIMER0_OVF_vect){
+  7c:	1f 92       	push	r1
+  7e:	0f 92       	push	r0
+  80:	0f b6       	in	r0, 0x3f	; 63
+  82:	0f 92       	push	r0
+  84:	11 24       	eor	r1, r1
+  86:	8f 93       	push	r24
+  88:	9f 93       	push	r25
+ TCNT0=Carga_Inicial_del_Timer_0;
+  8a:	84 ef       	ldi	r24, 0xF4	; 244
+  8c:	82 bf       	out	0x32, r24	; 50
+ conteo++;
+  8e:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+  92:	8f 5f       	subi	r24, 0xFF	; 255
+  94:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <_edata>
+ if (conteo==1){
+  98:	81 30       	cpi	r24, 0x01	; 1
+  9a:	79 f4       	brne	.+30     	; 0xba <__vector_9+0x3e>
+	 PORTB=0b01111111;
+  9c:	8f e7       	ldi	r24, 0x7F	; 127
+  9e:	88 bb       	out	0x18, r24	; 24
+	 if((PIND&(1<<PIND2))==(1<<PIND2)&&(Ultima_Tecla_Presionada==Tecla_1||Ultima_Tecla_Presionada==Tecla_2||Ultima_Tecla_Presionada==Tecla_3||Ultima_Tecla_Presionada==Tecla_A)){
+  a0:	82 9b       	sbis	0x10, 2	; 16
+  a2:	3f c0       	rjmp	.+126    	; 0x122 <__vector_9+0xa6>
+  a4:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <Ultima_Tecla_Presionada>
+  a8:	9f ec       	ldi	r25, 0xCF	; 207
+  aa:	98 0f       	add	r25, r24
+  ac:	93 30       	cpi	r25, 0x03	; 3
+  ae:	10 f0       	brcs	.+4      	; 0xb4 <__vector_9+0x38>
+  b0:	81 34       	cpi	r24, 0x41	; 65
+  b2:	b9 f5       	brne	.+110    	; 0x122 <__vector_9+0xa6>
+		 Ultima_Tecla_Presionada=Tecla_Nula;
+  b4:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <Ultima_Tecla_Presionada>
+  b8:	34 c0       	rjmp	.+104    	; 0x122 <__vector_9+0xa6>
+	 }
+	 //if((PIND&(1<<PIND2))==(1<<PIND2)){
+		 //UTecla[0]=true;
+	 //}
+ } 
+ else if(conteo==2){
+  ba:	82 30       	cpi	r24, 0x02	; 2
+  bc:	79 f4       	brne	.+30     	; 0xdc <__vector_9+0x60>
+	 PORTB=0b10111111;
+  be:	8f eb       	ldi	r24, 0xBF	; 191
+  c0:	88 bb       	out	0x18, r24	; 24
+	 if((PIND&(1<<PIND2))==(1<<PIND2)&&(Ultima_Tecla_Presionada==Tecla_4||Ultima_Tecla_Presionada==Tecla_5||Ultima_Tecla_Presionada==Tecla_6||Ultima_Tecla_Presionada==Tecla_B)){
+  c2:	82 9b       	sbis	0x10, 2	; 16
+  c4:	2e c0       	rjmp	.+92     	; 0x122 <__vector_9+0xa6>
+  c6:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <Ultima_Tecla_Presionada>
+  ca:	9c ec       	ldi	r25, 0xCC	; 204
+  cc:	98 0f       	add	r25, r24
+  ce:	93 30       	cpi	r25, 0x03	; 3
+  d0:	10 f0       	brcs	.+4      	; 0xd6 <__vector_9+0x5a>
+  d2:	82 34       	cpi	r24, 0x42	; 66
+  d4:	31 f5       	brne	.+76     	; 0x122 <__vector_9+0xa6>
+		 Ultima_Tecla_Presionada=Tecla_Nula;
+  d6:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <Ultima_Tecla_Presionada>
+  da:	23 c0       	rjmp	.+70     	; 0x122 <__vector_9+0xa6>
+	 }
+ }
+ else if(conteo==3){
+  dc:	83 30       	cpi	r24, 0x03	; 3
+  de:	79 f4       	brne	.+30     	; 0xfe <__vector_9+0x82>
+	 PORTB=0b11011111;
+  e0:	8f ed       	ldi	r24, 0xDF	; 223
+  e2:	88 bb       	out	0x18, r24	; 24
+     if((PIND&(1<<PIND2))==(1<<PIND2)&&(Ultima_Tecla_Presionada==Tecla_7||Ultima_Tecla_Presionada==Tecla_8||Ultima_Tecla_Presionada==Tecla_9||Ultima_Tecla_Presionada==Tecla_C)){
+  e4:	82 9b       	sbis	0x10, 2	; 16
+  e6:	1d c0       	rjmp	.+58     	; 0x122 <__vector_9+0xa6>
+  e8:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <Ultima_Tecla_Presionada>
+  ec:	99 ec       	ldi	r25, 0xC9	; 201
+  ee:	98 0f       	add	r25, r24
+  f0:	93 30       	cpi	r25, 0x03	; 3
+  f2:	10 f0       	brcs	.+4      	; 0xf8 <__vector_9+0x7c>
+  f4:	83 34       	cpi	r24, 0x43	; 67
+  f6:	a9 f4       	brne	.+42     	; 0x122 <__vector_9+0xa6>
+	     Ultima_Tecla_Presionada=Tecla_Nula;
+  f8:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <Ultima_Tecla_Presionada>
+  fc:	12 c0       	rjmp	.+36     	; 0x122 <__vector_9+0xa6>
+     }
+ }
+ else{
+	 PORTB=0b11101111;
+  fe:	8f ee       	ldi	r24, 0xEF	; 239
+ 100:	88 bb       	out	0x18, r24	; 24
+	 conteo=0;
+ 102:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <_edata>
+	 if((PIND&(1<<PIND2))==(1<<PIND2)&&(Ultima_Tecla_Presionada==Tecla_Ast||Ultima_Tecla_Presionada==Tecla_0||Ultima_Tecla_Presionada==Tecla_Num||Ultima_Tecla_Presionada==Tecla_D)){
+ 106:	82 9b       	sbis	0x10, 2	; 16
+ 108:	0c c0       	rjmp	.+24     	; 0x122 <__vector_9+0xa6>
+ 10a:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <Ultima_Tecla_Presionada>
+ 10e:	8a 32       	cpi	r24, 0x2A	; 42
+ 110:	31 f0       	breq	.+12     	; 0x11e <__vector_9+0xa2>
+ 112:	80 33       	cpi	r24, 0x30	; 48
+ 114:	21 f0       	breq	.+8      	; 0x11e <__vector_9+0xa2>
+ 116:	83 32       	cpi	r24, 0x23	; 35
+ 118:	11 f0       	breq	.+4      	; 0x11e <__vector_9+0xa2>
+ 11a:	84 34       	cpi	r24, 0x44	; 68
+ 11c:	11 f4       	brne	.+4      	; 0x122 <__vector_9+0xa6>
+		 Ultima_Tecla_Presionada=Tecla_Nula;
+ 11e:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <Ultima_Tecla_Presionada>
+	 }
+ }
+}
+ 122:	9f 91       	pop	r25
+ 124:	8f 91       	pop	r24
+ 126:	0f 90       	pop	r0
+ 128:	0f be       	out	0x3f, r0	; 63
+ 12a:	0f 90       	pop	r0
+ 12c:	1f 90       	pop	r1
+ 12e:	18 95       	reti
+
+00000130 <Detectar_Tecla>:
+ else{
+	//Detectar_Tecla(A,Tecla_4,Tecla_5,Tecla_6,Tecla_B); 
+	Detectar_Tecla(A,Tecla_Ast,Tecla_0,Tecla_Num,Tecla_D); 
+ }
+}
+void Detectar_Tecla(uint8_t var,uint16_t F1,uint16_t F2,uint16_t F3,uint16_t F4){
+ 130:	0f 93       	push	r16
+	if (var==0x01){
+ 132:	81 30       	cpi	r24, 0x01	; 1
+ 134:	29 f4       	brne	.+10     	; 0x140 <Detectar_Tecla+0x10>
+		Tecla_Presionada=F4;
+ 136:	00 93 62 00 	sts	0x0062, r16	; 0x800062 <Tecla_Presionada>
+		Ultima_Tecla_Presionada=F4;
+ 13a:	00 93 61 00 	sts	0x0061, r16	; 0x800061 <Ultima_Tecla_Presionada>
+ 13e:	12 c0       	rjmp	.+36     	; 0x164 <Detectar_Tecla+0x34>
+	}
+	else if(var==0x02){
+ 140:	82 30       	cpi	r24, 0x02	; 2
+ 142:	29 f4       	brne	.+10     	; 0x14e <Detectar_Tecla+0x1e>
+		Tecla_Presionada=F3;
+ 144:	20 93 62 00 	sts	0x0062, r18	; 0x800062 <Tecla_Presionada>
+		Ultima_Tecla_Presionada=F3;
+ 148:	20 93 61 00 	sts	0x0061, r18	; 0x800061 <Ultima_Tecla_Presionada>
+ 14c:	0b c0       	rjmp	.+22     	; 0x164 <Detectar_Tecla+0x34>
+	}
+	else if(var==0x04){
+ 14e:	84 30       	cpi	r24, 0x04	; 4
+ 150:	29 f4       	brne	.+10     	; 0x15c <Detectar_Tecla+0x2c>
+		Tecla_Presionada=F2;
+ 152:	40 93 62 00 	sts	0x0062, r20	; 0x800062 <Tecla_Presionada>
+		Ultima_Tecla_Presionada=F2;
+ 156:	40 93 61 00 	sts	0x0061, r20	; 0x800061 <Ultima_Tecla_Presionada>
+ 15a:	04 c0       	rjmp	.+8      	; 0x164 <Detectar_Tecla+0x34>
+	}
+	else{
+		Tecla_Presionada=F1;
+ 15c:	60 93 62 00 	sts	0x0062, r22	; 0x800062 <Tecla_Presionada>
+		Ultima_Tecla_Presionada=F1;
+ 160:	60 93 61 00 	sts	0x0061, r22	; 0x800061 <Ultima_Tecla_Presionada>
+	}
+}
+ 164:	0f 91       	pop	r16
+ 166:	08 95       	ret
+
+00000168 <__vector_1>:
+	 if((PIND&(1<<PIND2))==(1<<PIND2)&&(Ultima_Tecla_Presionada==Tecla_Ast||Ultima_Tecla_Presionada==Tecla_0||Ultima_Tecla_Presionada==Tecla_Num||Ultima_Tecla_Presionada==Tecla_D)){
+		 Ultima_Tecla_Presionada=Tecla_Nula;
+	 }
+ }
+}
+ISR(INT0_vect){
+ 168:	1f 92       	push	r1
+ 16a:	0f 92       	push	r0
+ 16c:	0f b6       	in	r0, 0x3f	; 63
+ 16e:	0f 92       	push	r0
+ 170:	11 24       	eor	r1, r1
+ 172:	0f 93       	push	r16
+ 174:	1f 93       	push	r17
+ 176:	2f 93       	push	r18
+ 178:	3f 93       	push	r19
+ 17a:	4f 93       	push	r20
+ 17c:	5f 93       	push	r21
+ 17e:	6f 93       	push	r22
+ 180:	7f 93       	push	r23
+ 182:	8f 93       	push	r24
+ 184:	9f 93       	push	r25
+ 186:	af 93       	push	r26
+ 188:	bf 93       	push	r27
+ 18a:	ef 93       	push	r30
+ 18c:	ff 93       	push	r31
+ uint8_t A=~PINB&(0X0F);
+ 18e:	86 b3       	in	r24, 0x16	; 22
+ 190:	80 95       	com	r24
+ 192:	8f 70       	andi	r24, 0x0F	; 15
+ if (conteo==1){
+ 194:	90 91 60 00 	lds	r25, 0x0060	; 0x800060 <_edata>
+ 198:	91 30       	cpi	r25, 0x01	; 1
+ 19a:	59 f4       	brne	.+22     	; 0x1b2 <__vector_1+0x4a>
+	 Detectar_Tecla(A,Tecla_1,Tecla_2,Tecla_3,Tecla_A); 
+ 19c:	01 e4       	ldi	r16, 0x41	; 65
+ 19e:	10 e0       	ldi	r17, 0x00	; 0
+ 1a0:	23 e3       	ldi	r18, 0x33	; 51
+ 1a2:	30 e0       	ldi	r19, 0x00	; 0
+ 1a4:	42 e3       	ldi	r20, 0x32	; 50
+ 1a6:	50 e0       	ldi	r21, 0x00	; 0
+ 1a8:	61 e3       	ldi	r22, 0x31	; 49
+ 1aa:	70 e0       	ldi	r23, 0x00	; 0
+ 1ac:	0e 94 98 00 	call	0x130	; 0x130 <Detectar_Tecla>
+ 1b0:	24 c0       	rjmp	.+72     	; 0x1fa <__vector_1+0x92>
+ }
+ else if(conteo==2){
+ 1b2:	92 30       	cpi	r25, 0x02	; 2
+ 1b4:	59 f4       	brne	.+22     	; 0x1cc <__vector_1+0x64>
+	 //Detectar_Tecla(A,Tecla_Ast,Tecla_0,Tecla_Num,Tecla_D);
+	 Detectar_Tecla(A,Tecla_4,Tecla_5,Tecla_6,Tecla_B); 
+ 1b6:	02 e4       	ldi	r16, 0x42	; 66
+ 1b8:	10 e0       	ldi	r17, 0x00	; 0
+ 1ba:	26 e3       	ldi	r18, 0x36	; 54
+ 1bc:	30 e0       	ldi	r19, 0x00	; 0
+ 1be:	45 e3       	ldi	r20, 0x35	; 53
+ 1c0:	50 e0       	ldi	r21, 0x00	; 0
+ 1c2:	64 e3       	ldi	r22, 0x34	; 52
+ 1c4:	70 e0       	ldi	r23, 0x00	; 0
+ 1c6:	0e 94 98 00 	call	0x130	; 0x130 <Detectar_Tecla>
+ 1ca:	17 c0       	rjmp	.+46     	; 0x1fa <__vector_1+0x92>
+ }
+ else if(conteo==3){
+ 1cc:	93 30       	cpi	r25, 0x03	; 3
+ 1ce:	59 f4       	brne	.+22     	; 0x1e6 <__vector_1+0x7e>
+	 Detectar_Tecla(A,Tecla_7,Tecla_8,Tecla_9,Tecla_C); 
+ 1d0:	03 e4       	ldi	r16, 0x43	; 67
+ 1d2:	10 e0       	ldi	r17, 0x00	; 0
+ 1d4:	29 e3       	ldi	r18, 0x39	; 57
+ 1d6:	30 e0       	ldi	r19, 0x00	; 0
+ 1d8:	48 e3       	ldi	r20, 0x38	; 56
+ 1da:	50 e0       	ldi	r21, 0x00	; 0
+ 1dc:	67 e3       	ldi	r22, 0x37	; 55
+ 1de:	70 e0       	ldi	r23, 0x00	; 0
+ 1e0:	0e 94 98 00 	call	0x130	; 0x130 <Detectar_Tecla>
+ 1e4:	0a c0       	rjmp	.+20     	; 0x1fa <__vector_1+0x92>
+ }
+ else{
+	//Detectar_Tecla(A,Tecla_4,Tecla_5,Tecla_6,Tecla_B); 
+	Detectar_Tecla(A,Tecla_Ast,Tecla_0,Tecla_Num,Tecla_D); 
+ 1e6:	04 e4       	ldi	r16, 0x44	; 68
+ 1e8:	10 e0       	ldi	r17, 0x00	; 0
+ 1ea:	23 e2       	ldi	r18, 0x23	; 35
+ 1ec:	30 e0       	ldi	r19, 0x00	; 0
+ 1ee:	40 e3       	ldi	r20, 0x30	; 48
+ 1f0:	50 e0       	ldi	r21, 0x00	; 0
+ 1f2:	6a e2       	ldi	r22, 0x2A	; 42
+ 1f4:	70 e0       	ldi	r23, 0x00	; 0
+ 1f6:	0e 94 98 00 	call	0x130	; 0x130 <Detectar_Tecla>
+ }
+}
+ 1fa:	ff 91       	pop	r31
+ 1fc:	ef 91       	pop	r30
+ 1fe:	bf 91       	pop	r27
+ 200:	af 91       	pop	r26
+ 202:	9f 91       	pop	r25
+ 204:	8f 91       	pop	r24
+ 206:	7f 91       	pop	r23
+ 208:	6f 91       	pop	r22
+ 20a:	5f 91       	pop	r21
+ 20c:	4f 91       	pop	r20
+ 20e:	3f 91       	pop	r19
+ 210:	2f 91       	pop	r18
+ 212:	1f 91       	pop	r17
+ 214:	0f 91       	pop	r16
+ 216:	0f 90       	pop	r0
+ 218:	0f be       	out	0x3f, r0	; 63
+ 21a:	0f 90       	pop	r0
+ 21c:	1f 90       	pop	r1
+ 21e:	18 95       	reti
+
+00000220 <main>:
+	}
+}
+int main(void)
+{
+    /* Replace with your application code */
+	cli();
+ 220:	f8 94       	cli
+	DDRA=(Salida<<PINA7)|(Salida<<PINA6)|(Salida<<PINA5)|(Salida<<PINA4)|(Salida<<PINA3)|(Salida<<PINA2)|(Salida<<PINA1)|(Salida<<PINA0);
+ 222:	8f ef       	ldi	r24, 0xFF	; 255
+ 224:	8a bb       	out	0x1a, r24	; 26
+	DDRB=(Salida<<PINB7)|(Salida<<PINB6)|(Salida<<PINB5)|(Salida<<PINB4)|(Entrada<<PINB3)|(Entrada<<PINB2)|(Entrada<<PINB1)|(Entrada<<PINB0);
+ 226:	90 ef       	ldi	r25, 0xF0	; 240
+ 228:	97 bb       	out	0x17, r25	; 23
+	DDRC=(Salida<<PINC7)|(Salida<<PINC6)|(Salida<<PINC5)|(Salida<<PINC4)|(Salida<<PINC3)|(Salida<<PINC2)|(Salida<<PINC1)|(Salida<<PINC0);
+ 22a:	84 bb       	out	0x14, r24	; 20
+    DDRD=(Entrada<<PIND7)|(Entrada<<PIND6)|(Entrada<<PIND5)|(Entrada<<PIND4)|(Entrada<<PIND3)|(Entrada<<PIND2)|(Entrada<<PIND1)|(Entrada<<PIND0);
+ 22c:	11 ba       	out	0x11, r1	; 17
+	PORTB=0b11101111;//Activar pullup en puerto B;
+ 22e:	9f ee       	ldi	r25, 0xEF	; 239
+ 230:	98 bb       	out	0x18, r25	; 24
+    PORTD=0xFF;//Activar pullup en puerto D;
+ 232:	82 bb       	out	0x12, r24	; 18
+	//Configuracion del Timer0 como 50ms;
+	TCCR0=(0<<FOC0)|(0<<WGM00)|(0<<COM01)|(0<<COM00)|(0<<WGM01)|(0<<CS02)|(1<<CS01)|(1<<CS00);//Modo Normal y Prescalador a 1024.
+ 234:	83 e0       	ldi	r24, 0x03	; 3
+ 236:	83 bf       	out	0x33, r24	; 51
+	TIMSK=(0<<OCIE2)|(0<<TOIE2)|(0<<TICIE1)|(0<<OCIE1A)|(0<<OCIE1B)|(0<<TOIE1)|(0<<OCIE0)|(1<<TOIE0);//Interrupción solo por Overflow del Timer0.
+ 238:	81 e0       	ldi	r24, 0x01	; 1
+ 23a:	89 bf       	out	0x39, r24	; 57
+	TCNT0=Carga_Inicial_del_Timer_0;
+ 23c:	84 ef       	ldi	r24, 0xF4	; 244
+ 23e:	82 bf       	out	0x32, r24	; 50
+	//Configuración de Int0;
+	MCUCR=(0<<SM2)|(0<<SE)|(0<<SM1)|(0<<SM0)|(0<<ISC11)|(0<<ISC10)|(1<<ISC01)|(0<<ISC00);//Configuracion Flancos de bajada en INT0.
+ 240:	82 e0       	ldi	r24, 0x02	; 2
+ 242:	85 bf       	out	0x35, r24	; 53
+	GICR=(0<<INT1)|(1<<INT0)|(0<<INT2)|(0<<4)|(0<<3)|(0<<INT2)|(0<<IVSEL)|(0<<IVCE);//Habilitar Interrupcion por INT0.
+ 244:	80 e4       	ldi	r24, 0x40	; 64
+ 246:	8b bf       	out	0x3b, r24	; 59
+	//Habilitar una interrupción global
+	sei();
+ 248:	78 94       	sei
+	while (1) 
+    {
+		PORTC=Tecla_Presionada;
+ 24a:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <Tecla_Presionada>
+ 24e:	85 bb       	out	0x15, r24	; 21
+		PORTA=Ultima_Tecla_Presionada;
+ 250:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <Ultima_Tecla_Presionada>
+ 254:	8b bb       	out	0x1b, r24	; 27
+ 256:	f9 cf       	rjmp	.-14     	; 0x24a <main+0x2a>
+
+00000258 <_exit>:
+ 258:	f8 94       	cli
+
+0000025a <__stop_program>:
+ 25a:	ff cf       	rjmp	.-2      	; 0x25a <__stop_program>

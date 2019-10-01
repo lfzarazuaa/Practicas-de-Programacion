@@ -1,0 +1,87 @@
+V3 50
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/buff3.vhd 2013/04/01.10:50:28 P.20131013
+EN work/buff3 1493391222 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/buff3.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/buff3/Behavioral 1493391223 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/buff3.vhd \
+      EN work/buff3 1493391222
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/clkdiv.vhd 2013/04/01.11:16:28 P.20131013
+EN work/clkdiv 1493391216 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/clkdiv.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clkdiv/Behavioral 1493391217 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/clkdiv.vhd \
+      EN work/clkdiv 1493391216
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/clrscr.vhd 2013/04/04.10:33:06 P.20131013
+EN work/clrscr 1493391224 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/clrscr.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clrscr/Behavioral 1493391225 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/clrscr.vhd \
+      EN work/clrscr 1493391224
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/debounce4.vhd 2013/04/01.11:04:46 P.20131013
+EN work/debounce4 1493391226 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/debounce4.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/debounce4/Behavioral 1493391227 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/debounce4.vhd \
+      EN work/debounce4 1493391226
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/mux2.vhd 2013/04/05.12:07:04 P.20131013
+EN work/mux2 1493391232 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/mux2.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/mux2/Behavioral 1493391233 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/mux2.vhd \
+      EN work/mux2 1493391232
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/mux2g.vhd 2013/04/01.10:56:30 P.20131013
+EN work/mux2g 1493391228 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/mux2g.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/mux2g/Behavioral 1493391229 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/mux2g.vhd \
+      EN work/mux2g 1493391228
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plot.vhd 2017/04/28.09:53:29 P.20131013
+EN work/plot 1493391230 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plot.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/plot/Behavioral 1493391231 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plot.vhd \
+      EN work/plot 1493391230
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.vhd 2013/04/05.12:09:46 P.20131013
+EN work/plotdot_top 1493391234 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PH work/vgacomp 1493391215
+AR work/plotdot_top/Behavioral 1493391235 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/plotdot_top.vhd \
+      EN work/plotdot_top 1493391234 CP clkdiv CP vga_640x480 CP vga_ram CP buff3 \
+      CP clrscr CP debounce4 CP mux2g CP plot CP mux2
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vgacomp.vhd 2013/04/05.12:07:52 P.20131013
+PH work/vgacomp 1493391215 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vgacomp.vhd \
+      PB ieee/std_logic_1164 1381692176 CD clkdiv CD vga_640x480 CD vga_ram CD buff3 \
+      CD clrscr CD debounce4 CD mux2g CD mux2 CD plot
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vga_640x480.vhd 2013/02/15.14:25:28 P.20131013
+EN work/vga_640x480 1493391218 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_640x480/Behavioral 1493391219 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vga_640x480.vhd \
+      EN work/vga_640x480 1493391218
+FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vga_ram.vhd 2013/04/03.10:42:56 P.20131013
+EN work/vga_ram 1493391220 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vga_ram.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_ram/Behavioral 1493391221 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Escribir_Pixel/vgaplot/vga_ram.vhd \
+      EN work/vga_ram 1493391220

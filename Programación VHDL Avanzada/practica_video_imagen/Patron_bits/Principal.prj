@@ -1,0 +1,6 @@
+vhdl work "vga_imagen.vhd"
+vhdl work "vga_640x480.vhd"
+vhdl work "prom.vhd"
+vhdl work "costal.vhd"
+vhdl work "clkdiv.vhd"
+vhdl work "Principal.vhd"

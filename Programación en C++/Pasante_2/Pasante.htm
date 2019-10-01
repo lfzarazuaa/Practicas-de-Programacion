@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Pasante.htm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { color: #0000FF; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #3399FF; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { color: #800080; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #800080; }
+.cpp1-preprocessor { color: #008000; }
+.cpp1-reservedword { color: #000000; font-weight: bold; }
+.cpp1-space { background-color: #FFFFFF; color: #000000; }
+.cpp1-string { color: #FF0000; }
+.cpp1-symbol { color: #000000; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="cpp1-preprocessor">#include &quot;Universitario.hpp&quot;
+#include &quot;Empleado.hpp&quot;
+</span><span class="cpp1-reservedword">class</span><span class="cpp1-space"> Pasante: </span><span class="cpp1-reservedword">public</span><span class="cpp1-space"> Empleado, </span><span class="cpp1-reservedword">public</span><span class="cpp1-space"> Universitario{
+      </span><span class="cpp1-reservedword">protected</span><span class="cpp1-symbol">:
+      </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Nacionalidad[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+      </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> Experiencia;
+      </span><span class="cpp1-reservedword">public</span><span class="cpp1-symbol">:
+             Pasante();
+             </span><span class="cpp1-comment">//Empleado(char nombre, char direccion,int edad,char empleo, int salario)
+</span><span class="cpp1-space">             </span><span class="cpp1-comment">//Universitario(char escuela, int calificaciones,char carrera,char proyecto)
+</span><span class="cpp1-space">             Pasante(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *, </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *,</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> ,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *, </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> ,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *, </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> *,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> *, </span><span class="cpp1-reservedword">int</span><span class="cpp1-symbol">);
+             </span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> Imprimir_Datos_Pasante();
+      };
+</span><span class="cpp1-comment">//: Universitario(escuela,calificaciones,carrera,proyecto)
+//: Empleado(nombre,direccion,edad,empleo,salario)
+</span><span class="cpp1-identifier">Pasante::Pasante(){}
+Pasante::Pasante(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> nombre[], </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> direccion[],</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> edad,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> empleo[], </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> salario,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> escuela[], </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> calificaciones[],</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> carrera[],</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> proyecto[],</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> nacionalidad[],</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> experiencia):Empleado(nombre,direccion,edad,empleo,salario),Universitario(escuela,calificaciones,carrera,proyecto){
+                       strcpy(Nacionalidad,nacionalidad);
+                       Experiencia=experiencia; 
+                      }
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> Pasante::Imprimir_Datos_Pasante(){
+          Imprimir_Datos_Empleado();
+          Imprimir_Datos_Universitario();
+          cout&lt;&lt;</span><span class="cpp1-string">&quot;-----Nacionalidad------&quot;</span><span class="cpp1-symbol">&lt;&lt;Nacionalidad&lt;&lt;endl;
+          cout&lt;&lt;</span><span class="cpp1-string">&quot;-----Experiencia------&quot;</span><span class="cpp1-symbol">&lt;&lt;Experiencia&lt;&lt;endl;           
+        }
+Pasante Leer_Datos(){
+         </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> i;
+         </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Nombre[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Direccion[</span><span class="cpp1-number">80</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> Edad;
+         </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Empleo[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> Salario;
+         </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Escuela[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> Calificaciones[</span><span class="cpp1-number">8</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Carrera[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Proyecto[</span><span class="cpp1-number">80</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> Nacionalidad[</span><span class="cpp1-number">50</span><span class="cpp1-symbol">];
+         </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> Experiencia;
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su nombre: &quot;</span><span class="cpp1-symbol">;
+         gets(Nombre);
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su direccion: &quot;</span><span class="cpp1-symbol">;
+         gets(Direccion);
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su edad: &quot;</span><span class="cpp1-symbol">;
+         cin&gt;&gt;Edad;
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su empleo: &quot;</span><span class="cpp1-symbol">;
+         gets(Empleo);
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su salario: &quot;</span><span class="cpp1-symbol">;
+         cin&gt;&gt;Salario;
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su escuela: &quot;</span><span class="cpp1-symbol">;
+         gets(Escuela);
+         fflush(stdin);
+         </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(i=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;i&lt;</span><span class="cpp1-number">8</span><span class="cpp1-symbol">;i++){
+             cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su calificacion &quot;</span><span class="cpp1-symbol">&lt;&lt;i+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">&lt;&lt;</span><span class="cpp1-string">&quot; : &quot;</span><span class="cpp1-symbol">;
+             cin&gt;&gt;Calificaciones[i];
+             fflush(stdin);              
+            }
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su carrera: &quot;</span><span class="cpp1-symbol">;
+         gets(Carrera);
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su proyecto: &quot;</span><span class="cpp1-symbol">;
+         gets(Proyecto);
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su nacionalidad: &quot;</span><span class="cpp1-symbol">;
+         gets(Nacionalidad);
+         fflush(stdin);
+         cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese su experiencia: &quot;</span><span class="cpp1-symbol">;
+         cin&gt;&gt;Experiencia;
+         fflush(stdin);
+         Pasante Paquete(Nombre,Direccion,Edad,Empleo,Salario,Escuela,Calificaciones,Carrera,Proyecto,Nacionalidad,Experiencia);
+         </span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> Paquete;
+        }
+
+</span></span>
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.0</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.98\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\Debug\Examen.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Examen.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Examen.map</FILE>
+  <FILE>Examen.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>32</LINE></config>
+  <Temp_0><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>61</LINE></Temp_0>
+  <inicio><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>103</LINE></inicio>
+  <Parar><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>74</LINE></Parar>
+  <Poner_1><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>77</LINE></Poner_1>
+  <Derecha><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>80</LINE></Derecha>
+  <Izquierda><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>88</LINE></Izquierda>
+  <Cargar><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>96</LINE></Cargar>
+  <Cargar_8><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>85</LINE></Cargar_8>
+  <Cargar_1><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>93</LINE></Cargar_1>
+  <Fila_1><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>145</LINE></Fila_1>
+  <Fila_2><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>154</LINE></Fila_2>
+  <Fila_3><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>163</LINE></Fila_3>
+  <Fila_4><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>172</LINE></Fila_4>
+  <Regresa><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>140</LINE></Regresa>
+  <Op_1><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>183</LINE></Op_1>
+  <Op_2><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>186</LINE></Op_2>
+  <Op_3><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>189</LINE></Op_3>
+  <Op_A><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>207</LINE></Op_A>
+  <Op_4><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>192</LINE></Op_4>
+  <Op_5><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>195</LINE></Op_5>
+  <Op_6><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>198</LINE></Op_6>
+  <Op_B><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>209</LINE></Op_B>
+  <Op_7><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>201</LINE></Op_7>
+  <Op_8><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>203</LINE></Op_8>
+  <Op_9><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>205</LINE></Op_9>
+  <Op_C><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>211</LINE></Op_C>
+  <Op_0><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>181</LINE></Op_0>
+  <Op_D><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>213</LINE></Op_D>
+  <Op_E><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>215</LINE></Op_E>
+  <Op_F><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>217</LINE></Op_F>
+  <Retardo><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>220</LINE></Retardo>
+  <WGLOOP0><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>227</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>228</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>229</LINE></WGLOOP2>
+  <WGLOOP3><FILE>C:\Users\nestor\Documents\upiita\octavo\micros\examen1\Examen\Examen\main.asm</FILE><LINE>238</LINE></WGLOOP3>
+ </LABELS>
+</ASSEMBLER_INFO>

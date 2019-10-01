@@ -1,0 +1,3 @@
+Tarea
+CompactRIO, Controlador en tiempo real, Chassis, Módulo de I/O Analógica, Módulo de I/O Digital.
+MyRIO

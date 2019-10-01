@@ -1,0 +1,16 @@
+1-Matemáticas.
+  Porcentaje.
+  Promedio.
+  Suma.
+  Resta
+  Multiplicacion.
+  Division.
+  Funciones Trigonometricas.
+  Cálculo de Areas.
+  Cálculo de Volumenes.
+  Resolución de ecuaciones cuadráticas.
+  Cálculo de coeficientes de Pascal.
+  Suma de Ángulos Interiores.
+  Suma de Ángulos Exteriores.
+  Operaciones con números complejos.
+  Operaciones con vectores.

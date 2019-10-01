@@ -1,0 +1,27 @@
+V3 15
+FL //VBOXSVR/vhdl/practica_video_imagen/PONG/adc_if.vhd 2013/05/06.11:29:38 P.20131013
+EN work/adc_if 1496414079 FL //VBOXSVR/vhdl/practica_video_imagen/PONG/adc_if.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/adc_if/Behavioral 1496414080 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG/adc_if.vhd EN work/adc_if 1496414079
+FL //VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd 2013/05/06.11:11:58 P.20131013
+EN work/bat_n_ball 1496414081 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/bat_n_ball/Behavioral 1496414082 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd \
+      EN work/bat_n_ball 1496414081
+FL //VBOXSVR/vhdl/practica_video_imagen/PONG/pong.vhd 2013/05/06.11:31:30 P.20131013
+EN work/pong 1496414085 FL //VBOXSVR/vhdl/practica_video_imagen/PONG/pong.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/pong/Behavioral 1496414086 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG/pong.vhd EN work/pong 1496414085 \
+      CP adc_if CP bat_n_ball CP vga_sync
+FL //VBOXSVR/vhdl/practica_video_imagen/PONG/vga_sync.vhd 2013/05/06.11:11:18 P.20131013
+EN work/vga_sync 1496414083 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG/vga_sync.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_sync/Behavioral 1496414084 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG/vga_sync.vhd EN work/vga_sync 1496414083

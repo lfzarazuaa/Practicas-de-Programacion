@@ -1,0 +1,15 @@
+Net clk LOC=B8;
+Net Sel LOC=R17;
+Net cs LOC=N17;
+Net Dato(7) LOC=C17;
+Net Dato(6) LOC=H14;
+Net Dato(5) LOC=J17;
+Net Dato(4) LOC=G14;
+Net Dato(3) LOC=D16;
+Net Dato(2) LOC=D17;
+Net Dato(1) LOC=F18;
+Net Dato(0) LOC=L18;
+Net Control(3) LOC=F15;
+Net Control(2) LOC=C18;
+Net Control(1) LOC=H17;
+Net Control(0) LOC=F17;

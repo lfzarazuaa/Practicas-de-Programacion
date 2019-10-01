@@ -1,0 +1,11 @@
+PH costal NULL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/costal.vhd sub00/vhpl04 1491767929
+EN principal NULL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.vhd sub00/vhpl09 1491767938
+AR vga_640x480 behavioral //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_640x480.vhd sub00/vhpl08 1491767933
+EN vga_imagen NULL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_imagen.vhd sub00/vhpl02 1491767936
+EN clkdiv NULL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/clkdiv.vhd sub00/vhpl05 1491767930
+AR prom behavioral //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/prom.vhd sub00/vhpl01 1491767935
+EN vga_640x480 NULL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_640x480.vhd sub00/vhpl07 1491767932
+AR principal behavioral //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.vhd sub00/vhpl10 1491767939
+AR clkdiv behavioral //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/clkdiv.vhd sub00/vhpl06 1491767931
+EN prom NULL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/prom.vhd sub00/vhpl00 1491767934
+AR vga_imagen behavioral //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_imagen.vhd sub00/vhpl03 1491767937

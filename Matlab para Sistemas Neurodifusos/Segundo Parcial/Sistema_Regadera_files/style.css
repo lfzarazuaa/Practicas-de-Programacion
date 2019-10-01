@@ -1,0 +1,154 @@
+/*
+Theme Name: Twenty Twelve Child
+Theme URI: http://wordpress.org/themes/twentytwelve-child
+Template:  twentytwelve
+*/
+
+@import url("../twentytwelve/style.css");
+
+/*  =Theme customization starts here
+------------------------------------------------------------------------*/
+
+/* rounded getting started button */
+
+.round-button {
+	width:10%;
+	float:right
+}
+
+.round-button-circle {
+	width: 100px;
+	height:32px;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:10px solid #FDB666;
+    overflow:hidden;
+    background: #FDB; 
+    box-shadow: 0 0 3px gray;
+}
+
+
+
+.round-button-circle:hover {
+	background:#FFFFFF;
+}
+
+.round-button a {
+    display:block;
+	float:left;
+	width:100%;
+	padding-top:30%;
+    padding-bottom:50%;
+	line-height:1em;
+	margin-top:-0.5em;
+	text-align:center;
+	color:#F9192B;
+    font-family:Verdana;
+    font-size:.7em;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+
+
+/* border for home page compliments */
+#sticky-posts-3 { border-left: thin solid gray ; padding-left: 10px; }
+
+/* gradiant version?
+
+#sticky-posts-3 {
+	padding-left: 10px;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-border-image: 
+    -webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
+    -webkit-border-image: 
+    -webkit-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+    -moz-border-image:
+    -moz-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;    
+    -o-border-image:
+    -o-linear-gradient(black, rgba(0, 0, 0, 0)) 1 100%;
+    border-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0)) 1 100%;
+}*/
+
+/* allow menu to show over bottom footer*/
+.site {overflow: visible; }
+
+.main-navigation {margin-top: 2px; }
+#site-navigation { background-color:#E8CB6F; }
+
+/*
+.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul { padding-left: 1rem; }
+*/
+
+.main-navigation li a:hover, .main-navigation li a:focus {/* background: #e3e3e3 ; */ font-weight: bold; }
+.main-navigation li ul li a {		background: #E8CB6F;	 }
+.main-navigation li ul li a:hover, .main-navigation li ul li a:focus { border-right: white solid 1px; }
+
+
+.site-header h1 a:hover,
+
+.site-header h2 a:hover {
+	color: #E8CB6F;
+}
+
+.breadcrumb-trail, .top a { font-size: .8rem ; color: gray ; margin-top: -10px; }
+.breadcrumb-trail a , .top a {color: gray ; }
+
+span.trail-browse {   display: none; }
+
+main-navigation li {margin: 0 1.7rem 0 0  ; }
+
+.header-image {
+	margin-top: 8px;
+}
+
+/*form fieldset headings*/
+
+.visual-form-builder .vfb-legend h3 {font-size: inherit;}
+.visual-form-builder .vfb-legend { color: #000 ; }
+
+/* trying to truncate... lightbox captions */
+/* this works to get ellipsis, could try overflow:scroll instead ...} */
+ #swipebox-caption  { white-space: nowrap;  text-overflow: ellipsis;  }
+  
+ 
+/* glassary adjustments */
+
+.glossary .entry-meta { display: none ; }
+
+.archive-title {font-size: 1.571428571rem ; color: #444; line-height: 1.2; }
+
+li.glossary-item { padding: 0px 0px 10px 15px ; line-height: 1.5 ;}
+li.glossary-item a {font-weight: bold;}
+
+.hentry .entry-meta { display: none; } /* remove article meta from posts */
+
+
+
+.site-content article {border-bottom: none ; }
+
+
+/* making rows with picture on the left on some pages */ 
+
+div.myrow {clear: both;}
+
+
+table.tablepress  { line-height:1.5; margin: 0px; }
+table.tablepress thead tr  { background-color: #FFCC99!important; }
+
+/* general link colors */
+a:link, a:visited, a:hover {color: #996600 ; }
+.entry-content a:visited, .comment-content a:visited {color: #996600; }
+
+/*blockquotes*/
+.entry-content blockquote, .comment-content blockquote { padding: 0 0 0 1.7rem ; }
+
+.main-navigation li {
+    margin: 0 1.8rem 0 0;
+    position: relative;
+}
+ 
+.vfbp-form .btn {margin-bottom: 25px;}
+
+.mjn {border-top: solid; border-width: 1px; padding-top:10px;}

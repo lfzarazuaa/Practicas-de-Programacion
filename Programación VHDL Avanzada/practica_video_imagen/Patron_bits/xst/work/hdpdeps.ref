@@ -1,0 +1,44 @@
+V3 25
+FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/clkdiv.vhd 2017/03/17.10:25:20 P.20131013
+EN work/clkdiv 1491767930 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/clkdiv.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clkdiv/Behavioral 1491767931 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/clkdiv.vhd \
+      EN work/clkdiv 1491767930
+FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/costal.vhd 2017/03/24.10:43:20 P.20131013
+PH work/costal 1491767929 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/costal.vhd \
+      PB ieee/std_logic_1164 1381692176 CD clkdiv CD prom CD vga_640x480 \
+      CD vga_imagen
+FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.vhd 2017/03/24.10:38:12 P.20131013
+EN work/Principal 1491767938 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.vhd \
+      PB ieee/std_logic_1164 1381692176 PH work/costal 1491767929
+AR work/Principal/Behavioral 1491767939 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.vhd \
+      EN work/Principal 1491767938 CP clkdiv CP vga_640x480 CP prom CP vga_imagen
+FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/prom.vhd 2017/04/09.14:55:00 P.20131013
+EN work/prom 1491767934 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/prom.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/prom/Behavioral 1491767935 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/prom.vhd EN work/prom 1491767934
+FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_640x480.vhd 2017/03/17.10:46:20 P.20131013
+EN work/vga_640x480 1491767932 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_640x480/Behavioral 1491767933 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_640x480.vhd \
+      EN work/vga_640x480 1491767932
+FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Vga_Imagen.vhd 2017/04/09.14:58:29 P.20131013
+EN work/Vga_Imagen 1491767936 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Vga_Imagen.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Vga_Imagen/Behavioral 1491767937 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Vga_Imagen.vhd \
+      EN work/Vga_Imagen 1491767936

@@ -1,0 +1,768 @@
+function togglebutton1_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton2_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton3_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton4_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton5_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton6_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton7_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton8_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton9_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton10_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton11_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton12_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton13_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton14_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton15_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton16_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton17_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton18_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton19_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton20_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton21_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton22_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton23_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton24_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton25_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton26_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton27_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton28_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton29_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton30_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton31_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton32_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton33_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton34_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton35_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton36_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton37_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton38_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton39_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton40_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton41_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton42_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton43_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton44_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton45_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton46_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton47_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton48_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton49_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton50_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton51_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton52_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton53_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton54_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton55_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton56_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton57_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton58_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton59_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton60_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton61_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton62_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton63_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton64_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton65_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton66_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton67_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton68_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton69_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton70_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton71_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton72_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton73_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton74_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton75_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton76_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton77_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton78_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton79_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton80_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton81_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton82_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton83_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton84_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton85_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton86_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton87_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton88_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton89_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton90_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton91_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton92_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton93_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton94_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton95_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton96_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton97_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton98_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton99_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton100_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton101_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton102_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton103_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton104_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton105_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton106_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton107_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton108_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton109_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton110_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton111_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton112_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton113_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton114_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton115_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton116_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton117_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton118_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton119_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton120_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton121_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton122_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton123_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton124_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton125_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton126_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton127_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton128_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton129_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton130_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton131_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton132_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton133_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton134_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton135_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton136_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton137_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton138_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton139_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton140_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton141_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton142_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton143_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton144_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton145_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton146_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton147_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton148_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton149_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton150_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton151_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton152_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton153_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton154_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton155_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton156_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton157_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton158_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton159_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton160_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton161_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton162_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton163_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton164_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton165_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton166_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton167_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton168_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton169_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton170_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton171_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton172_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton173_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton174_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton175_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton176_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton177_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton178_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton179_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton180_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton181_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton182_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton183_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton184_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton185_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton186_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton187_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton188_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton189_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton190_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton191_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton192_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton193_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton194_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton195_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton196_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton197_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton198_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton199_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton200_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton201_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton202_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton203_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton204_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton205_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton206_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton207_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton208_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton209_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton210_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton211_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton212_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton213_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton214_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton215_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton216_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton217_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton218_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton219_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton220_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton221_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton222_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton223_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton224_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton225_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton226_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton227_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton228_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton229_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton230_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton231_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton232_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton233_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton234_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton235_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton236_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton237_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton238_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton239_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton240_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton241_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton242_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton243_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton244_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton245_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton246_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton247_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton248_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton249_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton250_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton251_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton252_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton253_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton254_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton255_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+
+function togglebutton256_Callback(hObject, eventdata, handles)
+Cambiar_Valor(hObject);
+

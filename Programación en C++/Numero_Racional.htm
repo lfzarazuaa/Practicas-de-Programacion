@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Numero_Racional.htm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { color: #0000FF; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #3399FF; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { color: #800080; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #800080; }
+.cpp1-preprocessor { color: #008000; }
+.cpp1-reservedword { color: #000000; font-weight: bold; }
+.cpp1-space { background-color: #FFFFFF; color: #000000; }
+.cpp1-string { color: #FF0000; }
+.cpp1-symbol { color: #000000; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="cpp1-preprocessor">#include &lt;iostream&gt;</span><span class="cpp1-comment">//Declaraci&oacute;n librer&iacute;a iostream &uacute;til para llamar clases de cpp.
+</span><span class="cpp1-preprocessor">#include &lt;conio.h&gt;</span><span class="cpp1-comment">//Declaraci&oacute;n librer&iacute;a conio.
+//declaracion de clase
+</span><span class="cpp1-reservedword">using</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">namespace</span><span class="cpp1-space"> std;</span><span class="cpp1-comment">//Uso del prefijo std para ahorrar c&oacute;digo en la llamada de la clase cout y cin.
+</span><span class="cpp1-reservedword">class</span><span class="cpp1-space"> NumeroRacional{</span><span class="cpp1-comment">//Declaraci&oacute;n de clase NumeroRacional.
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> num;</span><span class="cpp1-comment">//Declaraci&oacute;n del entero numerador.
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> den;</span><span class="cpp1-comment">//Declaraci&oacute;n del entero denominador.
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> r,menor,a;</span><span class="cpp1-comment">//Declaraci&oacute;n del entero residuo, menor y auxiliar.
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">public</span><span class="cpp1-symbol">:</span><span class="cpp1-comment">//Hacer de uso libre las funciones de la clase.
+</span><span class="cpp1-space">            NumeroRacional(){</span><span class="cpp1-comment">//Constructor que inicializa la clase.
+</span><span class="cpp1-space">             num=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+             den=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;                 
+            }
+     </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> mcd(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> n,</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> d){</span><span class="cpp1-comment">//Funci&oacute;n o m&eacute;todo maximo com&uacute;n divisor.
+</span><span class="cpp1-space">          num=n;</span><span class="cpp1-comment">//Igualar los resultados obtenidos desde el main(o de la misma clase)
+</span><span class="cpp1-space">          den=d;</span><span class="cpp1-comment">//con los de la funci&oacute;n actual.
+</span><span class="cpp1-space">          </span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> (den==</span><span class="cpp1-number">0</span><span class="cpp1-symbol">||num==</span><span class="cpp1-number">0</span><span class="cpp1-symbol">){</span><span class="cpp1-comment">//Si algun n&uacute;mero es cero imprimir el resultado en
+</span><span class="cpp1-space">          imprimir(num+den);</span><span class="cpp1-comment">//pantalla ya que ese es el resultado.                   
+</span><span class="cpp1-space">          </span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> num+den;}</span><span class="cpp1-comment">//Salir de la funci&oacute;n y regresar el resultado.
+</span><span class="cpp1-space">          </span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{</span><span class="cpp1-comment">//En caso que no sea cero ninguno de los n&uacute;meros.
+</span><span class="cpp1-space">           </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(num&gt;=den){</span><span class="cpp1-comment">//Calcular cual es el mas grande de ellos.
+</span><span class="cpp1-space">           menor=den;</span><span class="cpp1-comment">//y en base a eso sacar el residuo y elegir el menor,
+</span><span class="cpp1-space">           r=num%den;</span><span class="cpp1-comment">//de ambos.
+</span><span class="cpp1-space">           }
+           </span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{</span><span class="cpp1-comment">//En caso que el mayor sea el denominador.
+</span><span class="cpp1-space">           menor=num;
+           r=den%num;
+          }
+          a=mcd(menor,r);</span><span class="cpp1-comment">//La funci&oacute;n vuelve a llamarse asi misma para ir reduciendo t&eacute;rminos.
+</span><span class="cpp1-space">          </span><span class="cpp1-comment">//Adem&aacute;s regresa el valor de la funci&oacute;n cuando un numero vale cero mateniendo el valor,
+</span><span class="cpp1-space">          </span><span class="cpp1-comment">//hasta la ultima reiteraci&oacute;n.
+</span><span class="cpp1-space">          </span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> a;</span><span class="cpp1-comment">//Regresa el valor de la funci&oacute;n (resultado o m&iacute;nimo com&uacute;n divisor).
+</span><span class="cpp1-space">         }}
+     </span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> imprimir(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> r){</span><span class="cpp1-comment">//Funci&oacute;n o m&eacute;todo para imprimir el n&uacute;mero en pantalla.
+</span><span class="cpp1-space">          cout&lt;&lt;</span><span class="cpp1-string">&quot;El maximo comun divisor es: &quot;</span><span class="cpp1-symbol">&lt;&lt;r;</span><span class="cpp1-comment">//Imprime el resultado en pantalla.
+</span><span class="cpp1-space">          }
+     };</span><span class="cpp1-comment">//Fin de clase.
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> main(){</span><span class="cpp1-comment">//Funci&oacute;n principal
+</span><span class="cpp1-space">       NumeroRacional b;</span><span class="cpp1-comment">//Declaraci&oacute;n de clase b.
+</span><span class="cpp1-space">       </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> c,numero1,numero2;</span><span class="cpp1-comment">//Declaraci&oacute;n de variables para ingresar datos.
+</span><span class="cpp1-space">       cout &lt;&lt; </span><span class="cpp1-string">&quot;Ingrese el primer numero: &quot;</span><span class="cpp1-space"> &lt;&lt; endl;</span><span class="cpp1-comment">//Pedir el primer n&uacute;mero.
+</span><span class="cpp1-space">       cin &gt;&gt; numero1;</span><span class="cpp1-comment">//Ingresar el primer n&uacute;mero.
+</span><span class="cpp1-space">       cout &lt;&lt; </span><span class="cpp1-string">&quot;Ingrese el segundo numero: &quot;</span><span class="cpp1-space"> &lt;&lt; endl;</span><span class="cpp1-comment">//Pedir el segundo n&uacute;mero.
+</span><span class="cpp1-space">       cin &gt;&gt; numero2;</span><span class="cpp1-comment">//Ingresar el segundo n&uacute;mero.
+</span><span class="cpp1-space">       c=b.mcd(numero1,numero2);</span><span class="cpp1-comment">//Llamar al m&eacute;todo mcd de la clase b.
+</span><span class="cpp1-space">       </span><span class="cpp1-comment">//cout&lt;&lt;&quot;El maximo comun divisor es: &quot;&lt;&lt;c;
+</span><span class="cpp1-space">       getch();</span><span class="cpp1-comment">//Esperar en pantalla hasta ingresar Enter.
+</span><span class="cpp1-space">       </span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-comment">//Regresar 0 y terminar funci&oacute;n.
+</span><span class="cpp1-space">      }
+
+</span></span>
+</code></pre>
+</body>
+</html>

@@ -1,0 +1,9 @@
+PH costal NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/costal.vhd sub00/vhpl00 1491716047
+EN principal NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/principal.vhd sub00/vhpl07 1491716054
+AR vga_640x480 behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_640x480.vhd sub00/vhpl04 1491716051
+EN clkdiv NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/clkdiv.vhd sub00/vhpl01 1491716048
+EN vga_640x480 NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_640x480.vhd sub00/vhpl03 1491716050
+AR principal behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/principal.vhd sub00/vhpl08 1491716055
+EN vga_stripes NULL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_stripes.vhd sub00/vhpl05 1491716052
+AR clkdiv behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/clkdiv.vhd sub00/vhpl02 1491716049
+AR vga_stripes behavioral //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_stripes.vhd sub00/vhpl06 1491716053

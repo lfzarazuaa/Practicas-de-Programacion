@@ -1,0 +1,24 @@
+JOptionPane.showMessageDialog(null, "No se puede editar ya que no posee trabajadores a administrar",
+                "WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE); 
+Nombre:Quedar_con_texto
+Apellido Paterno:Quedar_con_texto
+Apellido Materno:Quedar_con_texto
+Usuario:Verificar si es el mismo usuario, Verificar_Usuario_Repetido.
+Salario:Numero mayor a 0 y menor a 200e6;
+Antiguedad:Numero menor a edad.
+Edad:Numero mayor a Antiguedad y menor de 150.
+Contraseña:Quedar_con_texto y seis caracteres.
+
+Opcion
+0r Giro este
+1r Noreste
+2r Norte
+3r Noroeste
+4r Giro oeste
+5r Suroeste
+6r Sur
+7r Suroeste
+8r Paro
+9r Prender Lampara
+10r Apagar Lampara
+11r Ajustar Velocidad

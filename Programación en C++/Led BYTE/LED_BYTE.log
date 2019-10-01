@@ -1,0 +1,12 @@
+# Writing all output to: C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\An??lisis y Dise??o de Programas\Led BYTE\LED_BYTE.log
+set pad_wire_necking on
+bus diagonal
+fanout 5
+route 100
+clean 2
+route 100 16
+clean 2
+filter 5
+recorner diagonal
+status_file
+

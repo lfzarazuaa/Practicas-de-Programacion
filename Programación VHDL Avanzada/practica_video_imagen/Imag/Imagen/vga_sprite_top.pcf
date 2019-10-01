@@ -1,0 +1,28 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Mar 24 22:49:47 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "red<1>" LOCATE = SITE "T8" LEVEL 1;
+COMP "red<2>" LOCATE = SITE "R8" LEVEL 1;
+COMP "btn<3>" LOCATE = SITE "H13" LEVEL 1;
+COMP "green<0>" LOCATE = SITE "N8" LEVEL 1;
+COMP "green<1>" LOCATE = SITE "P8" LEVEL 1;
+COMP "green<2>" LOCATE = SITE "P6" LEVEL 1;
+COMP "hsync" LOCATE = SITE "T4" LEVEL 1;
+COMP "sw<0>" LOCATE = SITE "G18" LEVEL 1;
+COMP "sw<1>" LOCATE = SITE "H18" LEVEL 1;
+COMP "sw<2>" LOCATE = SITE "K18" LEVEL 1;
+COMP "sw<3>" LOCATE = SITE "K17" LEVEL 1;
+COMP "sw<4>" LOCATE = SITE "L14" LEVEL 1;
+COMP "sw<5>" LOCATE = SITE "L13" LEVEL 1;
+COMP "sw<6>" LOCATE = SITE "N17" LEVEL 1;
+COMP "sw<7>" LOCATE = SITE "R17" LEVEL 1;
+COMP "vsync" LOCATE = SITE "U3" LEVEL 1;
+COMP "mclk" LOCATE = SITE "B8" LEVEL 1;
+COMP "blue<0>" LOCATE = SITE "U5" LEVEL 1;
+COMP "blue<1>" LOCATE = SITE "U4" LEVEL 1;
+COMP "red<0>" LOCATE = SITE "R9" LEVEL 1;
+NET "mclk_BUFGP/IBUFG" BEL "mclk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

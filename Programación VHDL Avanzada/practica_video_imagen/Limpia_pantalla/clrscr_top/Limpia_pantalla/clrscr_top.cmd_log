@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vgapin.ucf -p xc3s500e-fg320-4 clrscr_top.ngc clrscr_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o clrscr_top_map.ncd clrscr_top.ngd clrscr_top.pcf 
+par -w -intstyle ise -ol high -t 1 clrscr_top_map.ncd clrscr_top.ncd clrscr_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml clrscr_top.twx clrscr_top.ncd -o clrscr_top.twr clrscr_top.pcf -ucf vgapin.ucf 
+bitgen -intstyle ise -f clrscr_top.ut clrscr_top.ncd 

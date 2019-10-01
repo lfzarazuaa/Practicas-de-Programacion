@@ -1,0 +1,599 @@
+
+LCD_I2C.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000026  00800200  000003d8  0000046c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000003d8  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800226  00800226  00000492  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000492  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000004c4  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000110  00000000  00000000  00000504  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001a3d  00000000  00000000  00000614  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000e6c  00000000  00000000  00002051  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000009b6  00000000  00000000  00002ebd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000002a8  00000000  00000000  00003874  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000007e6  00000000  00000000  00003b1c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000d29  00000000  00000000  00004302  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000118  00000000  00000000  0000502b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	71 c0       	rjmp	.+226    	; 0xe4 <__ctors_end>
+   2:	00 00       	nop
+   4:	8e c0       	rjmp	.+284    	; 0x122 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	8c c0       	rjmp	.+280    	; 0x122 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	8a c0       	rjmp	.+276    	; 0x122 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	88 c0       	rjmp	.+272    	; 0x122 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	86 c0       	rjmp	.+268    	; 0x122 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	84 c0       	rjmp	.+264    	; 0x122 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	82 c0       	rjmp	.+260    	; 0x122 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	80 c0       	rjmp	.+256    	; 0x122 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	7e c0       	rjmp	.+252    	; 0x122 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	7c c0       	rjmp	.+248    	; 0x122 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	7a c0       	rjmp	.+244    	; 0x122 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	78 c0       	rjmp	.+240    	; 0x122 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	76 c0       	rjmp	.+236    	; 0x122 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	74 c0       	rjmp	.+232    	; 0x122 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	72 c0       	rjmp	.+228    	; 0x122 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	70 c0       	rjmp	.+224    	; 0x122 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	6e c0       	rjmp	.+220    	; 0x122 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	6c c0       	rjmp	.+216    	; 0x122 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	6a c0       	rjmp	.+212    	; 0x122 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	68 c0       	rjmp	.+208    	; 0x122 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	66 c0       	rjmp	.+204    	; 0x122 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	64 c0       	rjmp	.+200    	; 0x122 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	62 c0       	rjmp	.+196    	; 0x122 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	60 c0       	rjmp	.+192    	; 0x122 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	5e c0       	rjmp	.+188    	; 0x122 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	5c c0       	rjmp	.+184    	; 0x122 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	5a c0       	rjmp	.+180    	; 0x122 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	58 c0       	rjmp	.+176    	; 0x122 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	56 c0       	rjmp	.+172    	; 0x122 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	54 c0       	rjmp	.+168    	; 0x122 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	52 c0       	rjmp	.+164    	; 0x122 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	50 c0       	rjmp	.+160    	; 0x122 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	4e c0       	rjmp	.+156    	; 0x122 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	4c c0       	rjmp	.+152    	; 0x122 <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	4a c0       	rjmp	.+148    	; 0x122 <__bad_interrupt>
+  8e:	00 00       	nop
+  90:	48 c0       	rjmp	.+144    	; 0x122 <__bad_interrupt>
+  92:	00 00       	nop
+  94:	46 c0       	rjmp	.+140    	; 0x122 <__bad_interrupt>
+  96:	00 00       	nop
+  98:	44 c0       	rjmp	.+136    	; 0x122 <__bad_interrupt>
+  9a:	00 00       	nop
+  9c:	42 c0       	rjmp	.+132    	; 0x122 <__bad_interrupt>
+  9e:	00 00       	nop
+  a0:	40 c0       	rjmp	.+128    	; 0x122 <__bad_interrupt>
+  a2:	00 00       	nop
+  a4:	3e c0       	rjmp	.+124    	; 0x122 <__bad_interrupt>
+  a6:	00 00       	nop
+  a8:	3c c0       	rjmp	.+120    	; 0x122 <__bad_interrupt>
+  aa:	00 00       	nop
+  ac:	3a c0       	rjmp	.+116    	; 0x122 <__bad_interrupt>
+  ae:	00 00       	nop
+  b0:	38 c0       	rjmp	.+112    	; 0x122 <__bad_interrupt>
+  b2:	00 00       	nop
+  b4:	36 c0       	rjmp	.+108    	; 0x122 <__bad_interrupt>
+  b6:	00 00       	nop
+  b8:	34 c0       	rjmp	.+104    	; 0x122 <__bad_interrupt>
+  ba:	00 00       	nop
+  bc:	32 c0       	rjmp	.+100    	; 0x122 <__bad_interrupt>
+  be:	00 00       	nop
+  c0:	30 c0       	rjmp	.+96     	; 0x122 <__bad_interrupt>
+  c2:	00 00       	nop
+  c4:	2e c0       	rjmp	.+92     	; 0x122 <__bad_interrupt>
+  c6:	00 00       	nop
+  c8:	2c c0       	rjmp	.+88     	; 0x122 <__bad_interrupt>
+  ca:	00 00       	nop
+  cc:	2a c0       	rjmp	.+84     	; 0x122 <__bad_interrupt>
+  ce:	00 00       	nop
+  d0:	28 c0       	rjmp	.+80     	; 0x122 <__bad_interrupt>
+  d2:	00 00       	nop
+  d4:	26 c0       	rjmp	.+76     	; 0x122 <__bad_interrupt>
+  d6:	00 00       	nop
+  d8:	24 c0       	rjmp	.+72     	; 0x122 <__bad_interrupt>
+  da:	00 00       	nop
+  dc:	22 c0       	rjmp	.+68     	; 0x122 <__bad_interrupt>
+  de:	00 00       	nop
+  e0:	20 c0       	rjmp	.+64     	; 0x122 <__bad_interrupt>
+	...
+
+000000e4 <__ctors_end>:
+  e4:	11 24       	eor	r1, r1
+  e6:	1f be       	out	0x3f, r1	; 63
+  e8:	cf ef       	ldi	r28, 0xFF	; 255
+  ea:	d1 e2       	ldi	r29, 0x21	; 33
+  ec:	de bf       	out	0x3e, r29	; 62
+  ee:	cd bf       	out	0x3d, r28	; 61
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	0c bf       	out	0x3c, r16	; 60
+
+000000f4 <__do_copy_data>:
+  f4:	12 e0       	ldi	r17, 0x02	; 2
+  f6:	a0 e0       	ldi	r26, 0x00	; 0
+  f8:	b2 e0       	ldi	r27, 0x02	; 2
+  fa:	e8 ed       	ldi	r30, 0xD8	; 216
+  fc:	f3 e0       	ldi	r31, 0x03	; 3
+  fe:	00 e0       	ldi	r16, 0x00	; 0
+ 100:	0b bf       	out	0x3b, r16	; 59
+ 102:	02 c0       	rjmp	.+4      	; 0x108 <__do_copy_data+0x14>
+ 104:	07 90       	elpm	r0, Z+
+ 106:	0d 92       	st	X+, r0
+ 108:	a6 32       	cpi	r26, 0x26	; 38
+ 10a:	b1 07       	cpc	r27, r17
+ 10c:	d9 f7       	brne	.-10     	; 0x104 <__do_copy_data+0x10>
+
+0000010e <__do_clear_bss>:
+ 10e:	22 e0       	ldi	r18, 0x02	; 2
+ 110:	a6 e2       	ldi	r26, 0x26	; 38
+ 112:	b2 e0       	ldi	r27, 0x02	; 2
+ 114:	01 c0       	rjmp	.+2      	; 0x118 <.do_clear_bss_start>
+
+00000116 <.do_clear_bss_loop>:
+ 116:	1d 92       	st	X+, r1
+
+00000118 <.do_clear_bss_start>:
+ 118:	a8 32       	cpi	r26, 0x28	; 40
+ 11a:	b2 07       	cpc	r27, r18
+ 11c:	e1 f7       	brne	.-8      	; 0x116 <.do_clear_bss_loop>
+ 11e:	28 d1       	rcall	.+592    	; 0x370 <main>
+ 120:	59 c1       	rjmp	.+690    	; 0x3d4 <_exit>
+
+00000122 <__bad_interrupt>:
+ 122:	6e cf       	rjmp	.-292    	; 0x0 <__vectors>
+
+00000124 <Inicializar_I2C>:
+}
+void POS_CGRAM(char posicion)
+{
+	char CGRAM = (1<<6);
+	posicion= (posicion*8)|CGRAM;
+	ENVIA_CMD(posicion);
+ 124:	88 e4       	ldi	r24, 0x48	; 72
+ 126:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7000b8>
+ 12a:	10 92 b9 00 	sts	0x00B9, r1	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7000b9>
+ 12e:	10 92 bc 00 	sts	0x00BC, r1	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7000bc>
+ 132:	08 95       	ret
+
+00000134 <Inicio_I2C_Write>:
+ 134:	ec eb       	ldi	r30, 0xBC	; 188
+ 136:	f0 e0       	ldi	r31, 0x00	; 0
+ 138:	10 82       	st	Z, r1
+ 13a:	90 81       	ld	r25, Z
+ 13c:	94 6a       	ori	r25, 0xA4	; 164
+ 13e:	90 83       	st	Z, r25
+ 140:	90 81       	ld	r25, Z
+ 142:	99 23       	and	r25, r25
+ 144:	ec f7       	brge	.-6      	; 0x140 <Inicio_I2C_Write+0xc>
+ 146:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7000b9>
+ 14a:	98 7f       	andi	r25, 0xF8	; 248
+ 14c:	98 30       	cpi	r25, 0x08	; 8
+ 14e:	39 f0       	breq	.+14     	; 0x15e <Inicio_I2C_Write+0x2a>
+ 150:	80 91 27 02 	lds	r24, 0x0227	; 0x800227 <Bandera_Estado>
+ 154:	81 60       	ori	r24, 0x01	; 1
+ 156:	80 93 27 02 	sts	0x0227, r24	; 0x800227 <Bandera_Estado>
+ 15a:	81 e0       	ldi	r24, 0x01	; 1
+ 15c:	08 95       	ret
+ 15e:	88 0f       	add	r24, r24
+ 160:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7000bb>
+ 164:	84 e8       	ldi	r24, 0x84	; 132
+ 166:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7000bc>
+ 16a:	ec eb       	ldi	r30, 0xBC	; 188
+ 16c:	f0 e0       	ldi	r31, 0x00	; 0
+ 16e:	80 81       	ld	r24, Z
+ 170:	88 23       	and	r24, r24
+ 172:	ec f7       	brge	.-6      	; 0x16e <Inicio_I2C_Write+0x3a>
+ 174:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7000b9>
+ 178:	88 7f       	andi	r24, 0xF8	; 248
+ 17a:	88 31       	cpi	r24, 0x18	; 24
+ 17c:	39 f0       	breq	.+14     	; 0x18c <Inicio_I2C_Write+0x58>
+ 17e:	80 91 27 02 	lds	r24, 0x0227	; 0x800227 <Bandera_Estado>
+ 182:	82 60       	ori	r24, 0x02	; 2
+ 184:	80 93 27 02 	sts	0x0227, r24	; 0x800227 <Bandera_Estado>
+ 188:	81 e0       	ldi	r24, 0x01	; 1
+ 18a:	08 95       	ret
+ 18c:	80 e0       	ldi	r24, 0x00	; 0
+ 18e:	08 95       	ret
+
+00000190 <I2C_Escribir>:
+ 190:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7000bb>
+ 194:	84 e8       	ldi	r24, 0x84	; 132
+ 196:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7000bc>
+ 19a:	ec eb       	ldi	r30, 0xBC	; 188
+ 19c:	f0 e0       	ldi	r31, 0x00	; 0
+ 19e:	80 81       	ld	r24, Z
+ 1a0:	88 23       	and	r24, r24
+ 1a2:	ec f7       	brge	.-6      	; 0x19e <I2C_Escribir+0xe>
+ 1a4:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7000b9>
+ 1a8:	88 7f       	andi	r24, 0xF8	; 248
+ 1aa:	88 32       	cpi	r24, 0x28	; 40
+ 1ac:	39 f0       	breq	.+14     	; 0x1bc <I2C_Escribir+0x2c>
+ 1ae:	80 91 27 02 	lds	r24, 0x0227	; 0x800227 <Bandera_Estado>
+ 1b2:	84 60       	ori	r24, 0x04	; 4
+ 1b4:	80 93 27 02 	sts	0x0227, r24	; 0x800227 <Bandera_Estado>
+ 1b8:	81 e0       	ldi	r24, 0x01	; 1
+ 1ba:	08 95       	ret
+ 1bc:	80 e0       	ldi	r24, 0x00	; 0
+ 1be:	08 95       	ret
+
+000001c0 <I2C_Escribir_Direccion>:
+ 1c0:	cf 93       	push	r28
+ 1c2:	df 93       	push	r29
+ 1c4:	d6 2f       	mov	r29, r22
+ 1c6:	b6 df       	rcall	.-148    	; 0x134 <Inicio_I2C_Write>
+ 1c8:	c8 2f       	mov	r28, r24
+ 1ca:	81 11       	cpse	r24, r1
+ 1cc:	06 c0       	rjmp	.+12     	; 0x1da <I2C_Escribir_Direccion+0x1a>
+ 1ce:	8d 2f       	mov	r24, r29
+ 1d0:	df df       	rcall	.-66     	; 0x190 <I2C_Escribir>
+ 1d2:	84 e9       	ldi	r24, 0x94	; 148
+ 1d4:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7000bc>
+ 1d8:	01 c0       	rjmp	.+2      	; 0x1dc <I2C_Escribir_Direccion+0x1c>
+ 1da:	c1 e0       	ldi	r28, 0x01	; 1
+ 1dc:	8c 2f       	mov	r24, r28
+ 1de:	df 91       	pop	r29
+ 1e0:	cf 91       	pop	r28
+ 1e2:	08 95       	ret
+
+000001e4 <Escribir_Puerto>:
+ 1e4:	80 93 26 02 	sts	0x0226, r24	; 0x800226 <__data_end>
+ 1e8:	68 2f       	mov	r22, r24
+ 1ea:	80 91 20 02 	lds	r24, 0x0220	; 0x800220 <LCD>
+ 1ee:	e8 cf       	rjmp	.-48     	; 0x1c0 <I2C_Escribir_Direccion>
+ 1f0:	08 95       	ret
+
+000001f2 <ENVIA_CMD>:
+ 1f2:	cf 93       	push	r28
+ 1f4:	c8 2f       	mov	r28, r24
+ 1f6:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 1fa:	88 70       	andi	r24, 0x08	; 8
+ 1fc:	9c 2f       	mov	r25, r28
+ 1fe:	90 7f       	andi	r25, 0xF0	; 240
+ 200:	89 2b       	or	r24, r25
+ 202:	f0 df       	rcall	.-32     	; 0x1e4 <Escribir_Puerto>
+ 204:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 208:	8e 7f       	andi	r24, 0xFE	; 254
+ 20a:	ec df       	rcall	.-40     	; 0x1e4 <Escribir_Puerto>
+ 20c:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 210:	84 60       	ori	r24, 0x04	; 4
+ 212:	e8 df       	rcall	.-48     	; 0x1e4 <Escribir_Puerto>
+ 214:	8f e9       	ldi	r24, 0x9F	; 159
+ 216:	9f e0       	ldi	r25, 0x0F	; 15
+ 218:	01 97       	sbiw	r24, 0x01	; 1
+ 21a:	f1 f7       	brne	.-4      	; 0x218 <ENVIA_CMD+0x26>
+ 21c:	00 c0       	rjmp	.+0      	; 0x21e <ENVIA_CMD+0x2c>
+ 21e:	00 00       	nop
+ 220:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 224:	8b 7f       	andi	r24, 0xFB	; 251
+ 226:	de df       	rcall	.-68     	; 0x1e4 <Escribir_Puerto>
+ 228:	8f e3       	ldi	r24, 0x3F	; 63
+ 22a:	9f e1       	ldi	r25, 0x1F	; 31
+ 22c:	01 97       	sbiw	r24, 0x01	; 1
+ 22e:	f1 f7       	brne	.-4      	; 0x22c <ENVIA_CMD+0x3a>
+ 230:	00 c0       	rjmp	.+0      	; 0x232 <ENVIA_CMD+0x40>
+ 232:	00 00       	nop
+ 234:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 238:	88 70       	andi	r24, 0x08	; 8
+ 23a:	90 e1       	ldi	r25, 0x10	; 16
+ 23c:	c9 9f       	mul	r28, r25
+ 23e:	90 01       	movw	r18, r0
+ 240:	11 24       	eor	r1, r1
+ 242:	82 2b       	or	r24, r18
+ 244:	cf df       	rcall	.-98     	; 0x1e4 <Escribir_Puerto>
+ 246:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 24a:	8e 7f       	andi	r24, 0xFE	; 254
+ 24c:	cb df       	rcall	.-106    	; 0x1e4 <Escribir_Puerto>
+ 24e:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 252:	84 60       	ori	r24, 0x04	; 4
+ 254:	c7 df       	rcall	.-114    	; 0x1e4 <Escribir_Puerto>
+ 256:	8f e9       	ldi	r24, 0x9F	; 159
+ 258:	9f e0       	ldi	r25, 0x0F	; 15
+ 25a:	01 97       	sbiw	r24, 0x01	; 1
+ 25c:	f1 f7       	brne	.-4      	; 0x25a <ENVIA_CMD+0x68>
+ 25e:	00 c0       	rjmp	.+0      	; 0x260 <ENVIA_CMD+0x6e>
+ 260:	00 00       	nop
+ 262:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 266:	8b 7f       	andi	r24, 0xFB	; 251
+ 268:	bd df       	rcall	.-134    	; 0x1e4 <Escribir_Puerto>
+ 26a:	8f e3       	ldi	r24, 0x3F	; 63
+ 26c:	9f e1       	ldi	r25, 0x1F	; 31
+ 26e:	01 97       	sbiw	r24, 0x01	; 1
+ 270:	f1 f7       	brne	.-4      	; 0x26e <ENVIA_CMD+0x7c>
+ 272:	00 c0       	rjmp	.+0      	; 0x274 <ENVIA_CMD+0x82>
+ 274:	00 00       	nop
+ 276:	cf 91       	pop	r28
+ 278:	08 95       	ret
+
+0000027a <LCD_INICIALIZA>:
+ 27a:	82 e0       	ldi	r24, 0x02	; 2
+ 27c:	ba df       	rcall	.-140    	; 0x1f2 <ENVIA_CMD>
+ 27e:	88 e2       	ldi	r24, 0x28	; 40
+ 280:	b8 df       	rcall	.-144    	; 0x1f2 <ENVIA_CMD>
+ 282:	8e e0       	ldi	r24, 0x0E	; 14
+ 284:	b6 df       	rcall	.-148    	; 0x1f2 <ENVIA_CMD>
+ 286:	86 e0       	ldi	r24, 0x06	; 6
+ 288:	b4 df       	rcall	.-152    	; 0x1f2 <ENVIA_CMD>
+ 28a:	81 e0       	ldi	r24, 0x01	; 1
+ 28c:	b2 df       	rcall	.-156    	; 0x1f2 <ENVIA_CMD>
+ 28e:	80 e8       	ldi	r24, 0x80	; 128
+ 290:	b0 cf       	rjmp	.-160    	; 0x1f2 <ENVIA_CMD>
+ 292:	08 95       	ret
+
+00000294 <ENVIA_DATO>:
+ 294:	cf 93       	push	r28
+ 296:	c8 2f       	mov	r28, r24
+ 298:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 29c:	88 70       	andi	r24, 0x08	; 8
+ 29e:	9c 2f       	mov	r25, r28
+ 2a0:	90 7f       	andi	r25, 0xF0	; 240
+ 2a2:	89 2b       	or	r24, r25
+ 2a4:	9f df       	rcall	.-194    	; 0x1e4 <Escribir_Puerto>
+ 2a6:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 2aa:	85 60       	ori	r24, 0x05	; 5
+ 2ac:	9b df       	rcall	.-202    	; 0x1e4 <Escribir_Puerto>
+ 2ae:	8f e9       	ldi	r24, 0x9F	; 159
+ 2b0:	9f e0       	ldi	r25, 0x0F	; 15
+ 2b2:	01 97       	sbiw	r24, 0x01	; 1
+ 2b4:	f1 f7       	brne	.-4      	; 0x2b2 <ENVIA_DATO+0x1e>
+ 2b6:	00 c0       	rjmp	.+0      	; 0x2b8 <ENVIA_DATO+0x24>
+ 2b8:	00 00       	nop
+ 2ba:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 2be:	8b 7f       	andi	r24, 0xFB	; 251
+ 2c0:	91 df       	rcall	.-222    	; 0x1e4 <Escribir_Puerto>
+ 2c2:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 2c6:	8e 7f       	andi	r24, 0xFE	; 254
+ 2c8:	8d df       	rcall	.-230    	; 0x1e4 <Escribir_Puerto>
+ 2ca:	8f e3       	ldi	r24, 0x3F	; 63
+ 2cc:	9f e1       	ldi	r25, 0x1F	; 31
+ 2ce:	01 97       	sbiw	r24, 0x01	; 1
+ 2d0:	f1 f7       	brne	.-4      	; 0x2ce <ENVIA_DATO+0x3a>
+ 2d2:	00 c0       	rjmp	.+0      	; 0x2d4 <ENVIA_DATO+0x40>
+ 2d4:	00 00       	nop
+ 2d6:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 2da:	88 70       	andi	r24, 0x08	; 8
+ 2dc:	90 e1       	ldi	r25, 0x10	; 16
+ 2de:	c9 9f       	mul	r28, r25
+ 2e0:	90 01       	movw	r18, r0
+ 2e2:	11 24       	eor	r1, r1
+ 2e4:	82 2b       	or	r24, r18
+ 2e6:	7e df       	rcall	.-260    	; 0x1e4 <Escribir_Puerto>
+ 2e8:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 2ec:	85 60       	ori	r24, 0x05	; 5
+ 2ee:	7a df       	rcall	.-268    	; 0x1e4 <Escribir_Puerto>
+ 2f0:	8f e9       	ldi	r24, 0x9F	; 159
+ 2f2:	9f e0       	ldi	r25, 0x0F	; 15
+ 2f4:	01 97       	sbiw	r24, 0x01	; 1
+ 2f6:	f1 f7       	brne	.-4      	; 0x2f4 <ENVIA_DATO+0x60>
+ 2f8:	00 c0       	rjmp	.+0      	; 0x2fa <ENVIA_DATO+0x66>
+ 2fa:	00 00       	nop
+ 2fc:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 300:	8b 7f       	andi	r24, 0xFB	; 251
+ 302:	70 df       	rcall	.-288    	; 0x1e4 <Escribir_Puerto>
+ 304:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 308:	8e 7f       	andi	r24, 0xFE	; 254
+ 30a:	6c df       	rcall	.-296    	; 0x1e4 <Escribir_Puerto>
+ 30c:	8f e3       	ldi	r24, 0x3F	; 63
+ 30e:	9f e1       	ldi	r25, 0x1F	; 31
+ 310:	01 97       	sbiw	r24, 0x01	; 1
+ 312:	f1 f7       	brne	.-4      	; 0x310 <ENVIA_DATO+0x7c>
+ 314:	00 c0       	rjmp	.+0      	; 0x316 <ENVIA_DATO+0x82>
+ 316:	00 00       	nop
+ 318:	cf 91       	pop	r28
+ 31a:	08 95       	ret
+
+0000031c <ENVIA_CADENA>:
+ 31c:	cf 93       	push	r28
+ 31e:	df 93       	push	r29
+ 320:	ec 01       	movw	r28, r24
+ 322:	88 81       	ld	r24, Y
+ 324:	88 23       	and	r24, r24
+ 326:	29 f0       	breq	.+10     	; 0x332 <ENVIA_CADENA+0x16>
+ 328:	21 96       	adiw	r28, 0x01	; 1
+ 32a:	b4 df       	rcall	.-152    	; 0x294 <ENVIA_DATO>
+ 32c:	89 91       	ld	r24, Y+
+ 32e:	81 11       	cpse	r24, r1
+ 330:	fc cf       	rjmp	.-8      	; 0x32a <ENVIA_CADENA+0xe>
+ 332:	df 91       	pop	r29
+ 334:	cf 91       	pop	r28
+ 336:	08 95       	ret
+
+00000338 <Prender_Backlight>:
+ 338:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 33c:	88 60       	ori	r24, 0x08	; 8
+ 33e:	52 cf       	rjmp	.-348    	; 0x1e4 <Escribir_Puerto>
+ 340:	08 95       	ret
+
+00000342 <Apagar_Backlight>:
+ 342:	80 91 26 02 	lds	r24, 0x0226	; 0x800226 <__data_end>
+ 346:	87 7f       	andi	r24, 0xF7	; 247
+ 348:	4d cf       	rjmp	.-358    	; 0x1e4 <Escribir_Puerto>
+ 34a:	08 95       	ret
+
+0000034c <Carga_Caracter>:
+}
+void Carga_Caracter(char *dato)
+{
+ 34c:	0f 93       	push	r16
+ 34e:	1f 93       	push	r17
+ 350:	cf 93       	push	r28
+ 352:	df 93       	push	r29
+ 354:	ec 01       	movw	r28, r24
+ 356:	8c 01       	movw	r16, r24
+ 358:	08 5f       	subi	r16, 0xF8	; 248
+ 35a:	1f 4f       	sbci	r17, 0xFF	; 255
+	uint8_t i;
+	for(i=0;i<8;i++){
+	 ENVIA_DATO(dato[i]);}
+ 35c:	89 91       	ld	r24, Y+
+ 35e:	9a df       	rcall	.-204    	; 0x294 <ENVIA_DATO>
+	ENVIA_CMD(posicion);
+}
+void Carga_Caracter(char *dato)
+{
+	uint8_t i;
+	for(i=0;i<8;i++){
+ 360:	c0 17       	cp	r28, r16
+ 362:	d1 07       	cpc	r29, r17
+ 364:	d9 f7       	brne	.-10     	; 0x35c <Carga_Caracter+0x10>
+	 ENVIA_DATO(dato[i]);}
+}
+ 366:	df 91       	pop	r29
+ 368:	cf 91       	pop	r28
+ 36a:	1f 91       	pop	r17
+ 36c:	0f 91       	pop	r16
+ 36e:	08 95       	ret
+
+00000370 <main>:
+								  {0b00100,0b01100,0b00100,0b00100,0b11111,0b11111,0b01110,0b00000},
+								  {0b00100,0b00100,0b00100,0b00100,0b11111,0b11111,0b01110,0b00100}};
+int main(void)
+{
+	uint8_t i=0;
+	Inicializar_I2C();
+ 370:	d9 de       	rcall	.-590    	; 0x124 <Inicializar_I2C>
+	LCD_INICIALIZA();
+ 372:	83 df       	rcall	.-250    	; 0x27a <LCD_INICIALIZA>
+}
+void POS_CGRAM(char posicion)
+{
+	char CGRAM = (1<<6);
+	posicion= (posicion*8)|CGRAM;
+	ENVIA_CMD(posicion);
+ 374:	80 e4       	ldi	r24, 0x40	; 64
+ 376:	3d df       	rcall	.-390    	; 0x1f2 <ENVIA_CMD>
+	uint8_t i=0;
+	Inicializar_I2C();
+	LCD_INICIALIZA();
+	POS_CGRAM(0);
+	for(i=0;i<4;i++){
+	Carga_Caracter(Caracteres_Iniciales[i]);}
+ 378:	80 e0       	ldi	r24, 0x00	; 0
+ 37a:	92 e0       	ldi	r25, 0x02	; 2
+ 37c:	e7 df       	rcall	.-50     	; 0x34c <Carga_Caracter>
+ 37e:	88 e0       	ldi	r24, 0x08	; 8
+ 380:	92 e0       	ldi	r25, 0x02	; 2
+ 382:	e4 df       	rcall	.-56     	; 0x34c <Carga_Caracter>
+ 384:	80 e1       	ldi	r24, 0x10	; 16
+ 386:	92 e0       	ldi	r25, 0x02	; 2
+ 388:	e1 df       	rcall	.-62     	; 0x34c <Carga_Caracter>
+ 38a:	88 e1       	ldi	r24, 0x18	; 24
+ 38c:	92 e0       	ldi	r25, 0x02	; 2
+ 38e:	de df       	rcall	.-68     	; 0x34c <Carga_Caracter>
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 390:	82 e8       	ldi	r24, 0x82	; 130
+ 392:	2f df       	rcall	.-418    	; 0x1f2 <ENVIA_CMD>
+	LCD_INICIALIZA();
+	POS_CGRAM(0);
+	for(i=0;i<4;i++){
+	Carga_Caracter(Caracteres_Iniciales[i]);}
+	POS_LINEA1(2);
+	ENVIA_DATO(0x00);
+ 394:	80 e0       	ldi	r24, 0x00	; 0
+ 396:	7e df       	rcall	.-260    	; 0x294 <ENVIA_DATO>
+	ENVIA_DATO(0x01);
+ 398:	81 e0       	ldi	r24, 0x01	; 1
+ 39a:	7c df       	rcall	.-264    	; 0x294 <ENVIA_DATO>
+	ENVIA_DATO(0x02);
+ 39c:	82 e0       	ldi	r24, 0x02	; 2
+ 39e:	7a df       	rcall	.-268    	; 0x294 <ENVIA_DATO>
+ 3a0:	83 e0       	ldi	r24, 0x03	; 3
+	ENVIA_DATO(0x03);
+ 3a2:	78 df       	rcall	.-272    	; 0x294 <ENVIA_DATO>
+ 3a4:	81 e2       	ldi	r24, 0x21	; 33
+ 3a6:	92 e0       	ldi	r25, 0x02	; 2
+	ENVIA_CADENA("HOLA");
+ 3a8:	b9 df       	rcall	.-142    	; 0x31c <ENVIA_CADENA>
+ 3aa:	c6 df       	rcall	.-116    	; 0x338 <Prender_Backlight>
+ 3ac:	2f ef       	ldi	r18, 0xFF	; 255
+	/* Replace with your application code */
+	while (1)
+	{
+		Prender_Backlight();
+ 3ae:	83 ec       	ldi	r24, 0xC3	; 195
+ 3b0:	99 e0       	ldi	r25, 0x09	; 9
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 3b2:	21 50       	subi	r18, 0x01	; 1
+ 3b4:	80 40       	sbci	r24, 0x00	; 0
+ 3b6:	90 40       	sbci	r25, 0x00	; 0
+ 3b8:	e1 f7       	brne	.-8      	; 0x3b2 <main+0x42>
+ 3ba:	00 c0       	rjmp	.+0      	; 0x3bc <main+0x4c>
+ 3bc:	00 00       	nop
+ 3be:	c1 df       	rcall	.-126    	; 0x342 <Apagar_Backlight>
+ 3c0:	2f ef       	ldi	r18, 0xFF	; 255
+ 3c2:	83 ec       	ldi	r24, 0xC3	; 195
+		_delay_ms(200);
+		Apagar_Backlight();
+ 3c4:	99 e0       	ldi	r25, 0x09	; 9
+ 3c6:	21 50       	subi	r18, 0x01	; 1
+ 3c8:	80 40       	sbci	r24, 0x00	; 0
+ 3ca:	90 40       	sbci	r25, 0x00	; 0
+ 3cc:	e1 f7       	brne	.-8      	; 0x3c6 <main+0x56>
+ 3ce:	00 c0       	rjmp	.+0      	; 0x3d0 <main+0x60>
+ 3d0:	00 00       	nop
+ 3d2:	eb cf       	rjmp	.-42     	; 0x3aa <main+0x3a>
+
+000003d4 <_exit>:
+ 3d4:	f8 94       	cli
+
+000003d6 <__stop_program>:
+ 3d6:	ff cf       	rjmp	.-2      	; 0x3d6 <__stop_program>

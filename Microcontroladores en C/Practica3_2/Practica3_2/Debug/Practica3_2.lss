@@ -1,0 +1,387 @@
+
+Practica3_2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001b2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000226  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000001  00800060  00800060  00000226  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000226  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000258  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000058  00000000  00000000  00000294  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000096a  00000000  00000000  000002ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000006aa  00000000  00000000  00000c56  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000425  00000000  00000000  00001300  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000094  00000000  00000000  00001728  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000406  00000000  00000000  000017bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000023f  00000000  00000000  00001bc2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000048  00000000  00000000  00001e01  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	20 e0       	ldi	r18, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a1 36       	cpi	r26, 0x61	; 97
+  6c:	b2 07       	cpc	r27, r18
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 b9 00 	call	0x172	; 0x172 <main>
+  74:	0c 94 d7 00 	jmp	0x1ae	; 0x1ae <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <Inicializar_Teclado>:
+void Inicializar_Teclado(void);
+uint8_t Obtener_Tecla(void);
+uint8_t Detectar_Tecla(uint8_t,uint8_t,uint8_t,uint8_t);
+
+void Inicializar_Teclado(void){
+	DDR_Teclado=0xF0;//(1<<DDD7)|(1<<DDD6)|(1<<DDD5)|(1<<DDD4)|(0<DDD3)|(0<<DDD2)|(0<<DDD1)|(0<<DDD0);
+  7c:	80 ef       	ldi	r24, 0xF0	; 240
+  7e:	81 bb       	out	0x11, r24	; 17
+	Puerto_Teclado=0xFF;//(1<<PB7)|(1<<PB6)|(1<<PB5)|(1<<PB4)|(1<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0);
+  80:	8f ef       	ldi	r24, 0xFF	; 255
+  82:	82 bb       	out	0x12, r24	; 18
+  84:	08 95       	ret
+
+00000086 <Detectar_Tecla>:
+	else{
+	return Tecla_Nula;}
+}
+
+uint8_t Detectar_Tecla(uint8_t C1,uint8_t C2,uint8_t C3,uint8_t C4){
+	uint8_t var=Pin_Teclado&(0x0F);
+  86:	90 b3       	in	r25, 0x10	; 16
+  88:	9f 70       	andi	r25, 0x0F	; 15
+	uint8_t Tecla_Presionada=Tecla_Nula;
+	if (var==0x0E){//((1<<PB3)|(1<<PB2)|(1<<PB1)|(0<<PB0))
+  8a:	9e 30       	cpi	r25, 0x0E	; 14
+  8c:	69 f0       	breq	.+26     	; 0xa8 <Detectar_Tecla+0x22>
+		Tecla_Presionada=C4;
+	}
+	else if(var==0x0D){//((1<<PB3)|(1<<PB2)|(0<<PB1)|(1<<PB0))
+  8e:	9d 30       	cpi	r25, 0x0D	; 13
+  90:	31 f0       	breq	.+12     	; 0x9e <Detectar_Tecla+0x18>
+		Tecla_Presionada=C3;
+	}
+	else if(var==0x0B){//((1<<PB3)|(1<<PB2)|(0<<PB1)|(1<<PB0))
+  92:	9b 30       	cpi	r25, 0x0B	; 11
+  94:	31 f0       	breq	.+12     	; 0xa2 <Detectar_Tecla+0x1c>
+		Tecla_Presionada=C2;
+	}
+	else if(var==0x07){//((0<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0))
+  96:	97 30       	cpi	r25, 0x07	; 7
+  98:	31 f4       	brne	.+12     	; 0xa6 <Detectar_Tecla+0x20>
+		Tecla_Presionada=C1;
+  9a:	28 2f       	mov	r18, r24
+  9c:	05 c0       	rjmp	.+10     	; 0xa8 <Detectar_Tecla+0x22>
+	uint8_t Tecla_Presionada=Tecla_Nula;
+	if (var==0x0E){//((1<<PB3)|(1<<PB2)|(1<<PB1)|(0<<PB0))
+		Tecla_Presionada=C4;
+	}
+	else if(var==0x0D){//((1<<PB3)|(1<<PB2)|(0<<PB1)|(1<<PB0))
+		Tecla_Presionada=C3;
+  9e:	24 2f       	mov	r18, r20
+  a0:	03 c0       	rjmp	.+6      	; 0xa8 <Detectar_Tecla+0x22>
+	}
+	else if(var==0x0B){//((1<<PB3)|(1<<PB2)|(0<<PB1)|(1<<PB0))
+		Tecla_Presionada=C2;
+  a2:	26 2f       	mov	r18, r22
+  a4:	01 c0       	rjmp	.+2      	; 0xa8 <Detectar_Tecla+0x22>
+	return Tecla_Nula;}
+}
+
+uint8_t Detectar_Tecla(uint8_t C1,uint8_t C2,uint8_t C3,uint8_t C4){
+	uint8_t var=Pin_Teclado&(0x0F);
+	uint8_t Tecla_Presionada=Tecla_Nula;
+  a6:	2b ee       	ldi	r18, 0xEB	; 235
+	}
+	else if(var==0x07){//((0<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0))
+		Tecla_Presionada=C1;
+	}
+	return Tecla_Presionada;
+  a8:	82 2f       	mov	r24, r18
+  aa:	08 95       	ret
+
+000000ac <Obtener_Tecla>:
+	Puerto_Teclado=0xFF;//(1<<PB7)|(1<<PB6)|(1<<PB5)|(1<<PB4)|(1<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0);
+}
+
+uint8_t Obtener_Tecla(void){//Filas(7-4) Salidas, Columnas(3-0) Entradas
+	uint8_t Tecla, Entrada;
+	Puerto_Teclado=0x0F;//(0<<PB7)|(0<<PB6)|(0<<PB5)|(0<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0);//Verificar Estado sin modificar pullup.
+  ac:	8f e0       	ldi	r24, 0x0F	; 15
+  ae:	82 bb       	out	0x12, r24	; 18
+	Entrada=Pin_Teclado&(0x0F);
+  b0:	80 b3       	in	r24, 0x10	; 16
+	if(Entrada<0x0F){
+  b2:	8f 70       	andi	r24, 0x0F	; 15
+  b4:	8f 30       	cpi	r24, 0x0F	; 15
+  b6:	08 f0       	brcs	.+2      	; 0xba <Obtener_Tecla+0xe>
+  b8:	3f c0       	rjmp	.+126    	; 0x138 <Obtener_Tecla+0x8c>
+		Puerto_Teclado=0x7F;//(0<<PB7)|(1<<PB6)|(1<<PB5)|(1<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0);
+  ba:	8f e7       	ldi	r24, 0x7F	; 127
+  bc:	82 bb       	out	0x12, r24	; 18
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  be:	89 ef       	ldi	r24, 0xF9	; 249
+  c0:	90 e0       	ldi	r25, 0x00	; 0
+  c2:	01 97       	sbiw	r24, 0x01	; 1
+  c4:	f1 f7       	brne	.-4      	; 0xc2 <Obtener_Tecla+0x16>
+  c6:	00 c0       	rjmp	.+0      	; 0xc8 <Obtener_Tecla+0x1c>
+  c8:	00 00       	nop
+		_delay_ms(1);
+		Tecla=Detectar_Tecla(Tecla_1,Tecla_2,Tecla_3,Tecla_A);
+  ca:	21 e4       	ldi	r18, 0x41	; 65
+  cc:	43 e3       	ldi	r20, 0x33	; 51
+  ce:	62 e3       	ldi	r22, 0x32	; 50
+  d0:	81 e3       	ldi	r24, 0x31	; 49
+  d2:	0e 94 43 00 	call	0x86	; 0x86 <Detectar_Tecla>
+		if (Tecla==Tecla_Nula)
+  d6:	8b 3e       	cpi	r24, 0xEB	; 235
+  d8:	81 f5       	brne	.+96     	; 0x13a <Obtener_Tecla+0x8e>
+		{
+			Puerto_Teclado=0xBF;//(1<<PB7)|(0<<PB6)|(1<PB5)|(1<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0);
+  da:	8f eb       	ldi	r24, 0xBF	; 191
+  dc:	82 bb       	out	0x12, r24	; 18
+  de:	89 ef       	ldi	r24, 0xF9	; 249
+  e0:	90 e0       	ldi	r25, 0x00	; 0
+  e2:	01 97       	sbiw	r24, 0x01	; 1
+  e4:	f1 f7       	brne	.-4      	; 0xe2 <Obtener_Tecla+0x36>
+  e6:	00 c0       	rjmp	.+0      	; 0xe8 <Obtener_Tecla+0x3c>
+  e8:	00 00       	nop
+			_delay_ms(1);
+			Tecla=Detectar_Tecla(Tecla_4,Tecla_5,Tecla_6,Tecla_B);
+  ea:	22 e4       	ldi	r18, 0x42	; 66
+  ec:	46 e3       	ldi	r20, 0x36	; 54
+  ee:	65 e3       	ldi	r22, 0x35	; 53
+  f0:	84 e3       	ldi	r24, 0x34	; 52
+  f2:	0e 94 43 00 	call	0x86	; 0x86 <Detectar_Tecla>
+			if (Tecla==Tecla_Nula)
+  f6:	8b 3e       	cpi	r24, 0xEB	; 235
+  f8:	01 f5       	brne	.+64     	; 0x13a <Obtener_Tecla+0x8e>
+			{
+				Puerto_Teclado=0xDF;//(1<<PB7)|(1<<PB6)|(0<<PB5)|(1<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0);
+  fa:	8f ed       	ldi	r24, 0xDF	; 223
+  fc:	82 bb       	out	0x12, r24	; 18
+  fe:	89 ef       	ldi	r24, 0xF9	; 249
+ 100:	90 e0       	ldi	r25, 0x00	; 0
+ 102:	01 97       	sbiw	r24, 0x01	; 1
+ 104:	f1 f7       	brne	.-4      	; 0x102 <Obtener_Tecla+0x56>
+ 106:	00 c0       	rjmp	.+0      	; 0x108 <Obtener_Tecla+0x5c>
+ 108:	00 00       	nop
+				_delay_ms(1);
+				Tecla=Detectar_Tecla(Tecla_7,Tecla_8,Tecla_9,Tecla_C);
+ 10a:	23 e4       	ldi	r18, 0x43	; 67
+ 10c:	49 e3       	ldi	r20, 0x39	; 57
+ 10e:	68 e3       	ldi	r22, 0x38	; 56
+ 110:	87 e3       	ldi	r24, 0x37	; 55
+ 112:	0e 94 43 00 	call	0x86	; 0x86 <Detectar_Tecla>
+				if (Tecla==Tecla_Nula)
+ 116:	8b 3e       	cpi	r24, 0xEB	; 235
+ 118:	81 f4       	brne	.+32     	; 0x13a <Obtener_Tecla+0x8e>
+				{
+					Puerto_Teclado=0xEF;//(1<<PB7)|(1<<PB6)|(1<<PB5)|(0<<PB4)|(1<<PB3)|(1<<PB2)|(1<<PB1)|(1<<PB0);
+ 11a:	8f ee       	ldi	r24, 0xEF	; 239
+ 11c:	82 bb       	out	0x12, r24	; 18
+ 11e:	89 ef       	ldi	r24, 0xF9	; 249
+ 120:	90 e0       	ldi	r25, 0x00	; 0
+ 122:	01 97       	sbiw	r24, 0x01	; 1
+ 124:	f1 f7       	brne	.-4      	; 0x122 <Obtener_Tecla+0x76>
+ 126:	00 c0       	rjmp	.+0      	; 0x128 <Obtener_Tecla+0x7c>
+ 128:	00 00       	nop
+					_delay_ms(1);
+					Tecla=Detectar_Tecla(Tecla_Ast,Tecla_0,Tecla_Num,Tecla_D);
+ 12a:	24 e4       	ldi	r18, 0x44	; 68
+ 12c:	43 e2       	ldi	r20, 0x23	; 35
+ 12e:	60 e3       	ldi	r22, 0x30	; 48
+ 130:	8a e2       	ldi	r24, 0x2A	; 42
+ 132:	0e 94 43 00 	call	0x86	; 0x86 <Detectar_Tecla>
+ 136:	08 95       	ret
+			}
+		}
+		return Tecla;
+	}
+	else{
+	return Tecla_Nula;}
+ 138:	8b ee       	ldi	r24, 0xEB	; 235
+}
+ 13a:	08 95       	ret
+
+0000013c <EEPROM_write>:
+void EEPROM_write(uint16_t Direccion,uint8_t Dato);
+uint8_t EEPROM_read(uint16_t Direccion);
+
+void EEPROM_write(uint16_t Direccion,uint8_t Dato){
+	//Esperar a la escritura anterior.
+	while(EECR & (1<<EEWE));
+ 13c:	e1 99       	sbic	0x1c, 1	; 28
+ 13e:	fe cf       	rjmp	.-4      	; 0x13c <EEPROM_write>
+	//Escribir en registros del AVR la dirección y el dato.
+	EEAR=Direccion;
+ 140:	9f bb       	out	0x1f, r25	; 31
+ 142:	8e bb       	out	0x1e, r24	; 30
+	EEDR=Dato;
+ 144:	6d bb       	out	0x1d, r22	; 29
+	//Escribir 1 lógico.
+	EECR|=(1<<EEMWE);
+ 146:	e2 9a       	sbi	0x1c, 2	; 28
+	//Empezar la escritura en la EEPROM.
+	EECR|=(1<<EEWE);
+ 148:	e1 9a       	sbi	0x1c, 1	; 28
+ 14a:	08 95       	ret
+
+0000014c <EEPROM_read>:
+}
+
+uint8_t EEPROM_read(uint16_t Direccion){
+	//Esperar a la escritura anterior.
+	while(EECR & (1<<EEWE));
+ 14c:	e1 99       	sbic	0x1c, 1	; 28
+ 14e:	fe cf       	rjmp	.-4      	; 0x14c <EEPROM_read>
+	//Escribir en registros del AVR la dirección.
+	EEAR=Direccion;
+ 150:	9f bb       	out	0x1f, r25	; 31
+ 152:	8e bb       	out	0x1e, r24	; 30
+	//Escribir 1 lógico.
+	EECR|=(1<<EERE);
+ 154:	e0 9a       	sbi	0x1c, 0	; 28
+	//Empezar la escritura en la EEPROM.
+	return EEDR;
+ 156:	8d b3       	in	r24, 0x1d	; 29
+}
+ 158:	08 95       	ret
+
+0000015a <Leer_Direccion_EEPROM>:
+
+void Leer_Direccion_EEPROM(void);
+void Escribir_Dato_EEPROM(void);
+
+void Leer_Direccion_EEPROM(void){//LEER
+	PORTC=EEPROM_read(PINB);
+ 15a:	86 b3       	in	r24, 0x16	; 22
+ 15c:	90 e0       	ldi	r25, 0x00	; 0
+ 15e:	0e 94 a6 00 	call	0x14c	; 0x14c <EEPROM_read>
+ 162:	85 bb       	out	0x15, r24	; 21
+ 164:	08 95       	ret
+
+00000166 <Escribir_Dato_EEPROM>:
+}
+
+void Escribir_Dato_EEPROM(void){//Escribir
+	EEPROM_write(PINB,PINA);
+ 166:	69 b3       	in	r22, 0x19	; 25
+ 168:	86 b3       	in	r24, 0x16	; 22
+ 16a:	90 e0       	ldi	r25, 0x00	; 0
+ 16c:	0e 94 9e 00 	call	0x13c	; 0x13c <EEPROM_write>
+ 170:	08 95       	ret
+
+00000172 <main>:
+}
+uint8_t Tec;
+int main(void)
+{
+	cli();
+ 172:	f8 94       	cli
+	DDRA=0x00;//Leer Dato (Entradas)
+ 174:	1a ba       	out	0x1a, r1	; 26
+	DDRB=0x00;//Dirección (Entradas)
+ 176:	17 ba       	out	0x17, r1	; 23
+	DDRC=0xFF;//Mostrar Dato (Salidas)
+ 178:	8f ef       	ldi	r24, 0xFF	; 255
+ 17a:	84 bb       	out	0x14, r24	; 20
+	Inicializar_Teclado();
+ 17c:	0e 94 3e 00 	call	0x7c	; 0x7c <Inicializar_Teclado>
+	//Habilitar la interrupción global
+	sei();
+ 180:	78 94       	sei
+	/* Replace with your application code */
+	while (1)
+	{
+		Tec=Obtener_Tecla();
+ 182:	0e 94 56 00 	call	0xac	; 0xac <Obtener_Tecla>
+ 186:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <_edata>
+		if(Tec!=Tecla_Nula){
+ 18a:	8b 3e       	cpi	r24, 0xEB	; 235
+ 18c:	49 f0       	breq	.+18     	; 0x1a0 <main+0x2e>
+			if(Tec==Tecla_1){
+ 18e:	81 33       	cpi	r24, 0x31	; 49
+ 190:	19 f4       	brne	.+6      	; 0x198 <main+0x26>
+			  Leer_Direccion_EEPROM();
+ 192:	0e 94 ad 00 	call	0x15a	; 0x15a <Leer_Direccion_EEPROM>
+ 196:	04 c0       	rjmp	.+8      	; 0x1a0 <main+0x2e>
+			}
+			else if(Tec==Tecla_2){
+ 198:	82 33       	cpi	r24, 0x32	; 50
+ 19a:	11 f4       	brne	.+4      	; 0x1a0 <main+0x2e>
+			  Escribir_Dato_EEPROM();
+ 19c:	0e 94 b3 00 	call	0x166	; 0x166 <Escribir_Dato_EEPROM>
+ 1a0:	89 ef       	ldi	r24, 0xF9	; 249
+ 1a2:	90 e0       	ldi	r25, 0x00	; 0
+ 1a4:	01 97       	sbiw	r24, 0x01	; 1
+ 1a6:	f1 f7       	brne	.-4      	; 0x1a4 <main+0x32>
+ 1a8:	00 c0       	rjmp	.+0      	; 0x1aa <main+0x38>
+ 1aa:	00 00       	nop
+ 1ac:	ea cf       	rjmp	.-44     	; 0x182 <main+0x10>
+
+000001ae <_exit>:
+ 1ae:	f8 94       	cli
+
+000001b0 <__stop_program>:
+ 1b0:	ff cf       	rjmp	.-2      	; 0x1b0 <__stop_program>

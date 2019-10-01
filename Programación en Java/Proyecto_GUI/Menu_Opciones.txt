@@ -1,0 +1,22 @@
+Matemáticas
+   Suma.
+   Resta.
+   Multiplicacion.
+   División.
+   Numeros Complejos.
+   Matriz.
+   Sistema de ecuación de 3 incognitas.
+   Sistema de ecuación de 2 incognitas.
+Fisica
+   Suma de Vectores.
+   Producto Punto.
+   Producto Cruz.
+   Tiro Parabólico.
+   Cálculo de peso.
+Circuitos
+   Ley de Ohm.
+   Resistencia para LED.
+   Conversor Delta-Estrella.
+   Filtro Pasa Bajas.
+   Filtro Pasa Altas.  
+Salir

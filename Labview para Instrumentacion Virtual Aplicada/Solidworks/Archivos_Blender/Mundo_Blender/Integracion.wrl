@@ -1,0 +1,51 @@
+#VRML V2.0 utf8
+#body 1
+DEF body1
+Transform { 
+scale 0.50,0.50,0.50
+translation 0.00,0.00,0.00
+rotation 1.000,0.000,0.000,0.000
+  children [ 
+Shape {
+	appearance Appearance {
+		material Material {
+		}
+	}
+	geometry IndexedFaceSet {
+		coord Coordinate {
+			point [ -5.000000 -5.000000 1.000000 -5.000000 -5.000000 -1.000000 5.000000 -5.000000 -1.000000 4.999998 -5.000000 1.000000 -5.000002 5.000000 0.999999 -4.999997 5.000000 -1.000001 5.000002 5.000000 -1.000000 5.000000 5.000000 1.000000 ]
+		}
+		colorPerVertex FALSE
+		color Color {
+			color [ 0.11 0.80 0.01 ]
+		}
+		colorIndex [ 0 0 0 0 0 0 0 0 0 0 0 0 ]
+		coordIndex [ 1 3 0 -1 7 5 4 -1 4 1 0 -1 5 2 1 -1 2 7 3 -1 0 7 4 -1 1 2 3 -1 7 6 5 -1 4 5 1 -1 5 6 2 -1 2 6 7 -1 0 3 7 -1 ]
+	}
+}
+] } 
+#body 2
+DEF body2
+Transform { 
+scale 0.50,0.50,0.50
+translation 0.00,0.00,-1.50
+rotation 1.000,0.000,0.000,0.000
+  children [ 
+Shape {
+	appearance Appearance {
+		material Material {
+		}
+	}
+	geometry IndexedFaceSet {
+		coord Coordinate {
+			point [ -2.000000 -2.000000 2.000000 -2.000000 -2.000000 -2.000000 2.000000 -2.000000 -2.000000 1.999999 -2.000000 2.000001 -2.000001 2.000000 1.999999 -1.999999 2.000000 -2.000001 2.000001 2.000000 -1.999999 2.000000 2.000000 2.000000 ]
+		}
+		colorPerVertex FALSE
+		color Color {
+			color [ 0.80 0.32 0.01 ]
+		}
+		colorIndex [ 0 0 0 0 0 0 0 0 0 0 0 0 ]
+		coordIndex [ 1 3 0 -1 7 5 4 -1 4 1 0 -1 5 2 1 -1 2 7 3 -1 0 7 4 -1 1 2 3 -1 7 6 5 -1 4 5 1 -1 5 6 2 -1 2 6 7 -1 0 3 7 -1 ]
+	}
+}
+] } 

@@ -1,0 +1,36 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.20 secs
+ 
+--> Parameter xsthdpdir set to //VBOXSVR/vhdl/practica_video_imagen/Patron_bits/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.20 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Vga_Imagen.vhd" in Library work.
+Entity <vga_imagen> compiled.
+ERROR:HDLParsers:808 - "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Vga_Imagen.vhd" Line 61. >= can not have such operands in this context.
+ERROR:HDLParsers:808 - "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Vga_Imagen.vhd" Line 61. < can not have such operands in this context.
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.47 secs
+ 
+--> 
+
+Total memory usage is 134524 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

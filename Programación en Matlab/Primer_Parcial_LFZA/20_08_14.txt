@@ -1,0 +1,221 @@
+diary 20_08_14.txt
+>> x= rand(5)
+x =
+    0.4709    0.1707    0.4302    0.1111    0.6028
+    0.2305    0.2277    0.1848    0.2581    0.7112
+    0.8443    0.4357    0.9049    0.4087    0.2217
+    0.1948    0.3111    0.9797    0.5949    0.1174
+    0.2259    0.9234    0.4389    0.2622    0.2967
+>> fix(rand(5)*10)
+ans =
+     3     8     5     5     3
+     4     0     2     2     3
+     5     9     4     4     9
+     0     7     9     6     0
+     2     4     5     6     8
+>> round(rand(5)*10)
+ans =
+     9     7     5     3     5
+     8     1     8     7     5
+     1     7     7     2     9
+     3     1     9     0     6
+     3     7     9     7     6
+>> y=mean(mean(x))
+y =
+    0.4223
+>> median(x)
+ans =
+    0.2305    0.3111    0.4389    0.2622    0.2967
+>> mode(x)
+ans =
+    0.1948    0.1707    0.1848    0.1111    0.1174
+>> z=sum(x)
+z =
+    1.9664    2.0686    2.9385    1.6350    1.9499
+>> z=sum(sum(x))
+z =
+   10.5584
+>> max(max(x))
+ans =
+    0.9797
+>> min(min(x))
+ans =
+    0.1111
+>> cot(5)
+ans =
+   -0.2958
+>> healp sec
+Undefined function 'healp' for input arguments of type 'char'.
+ 
+Did you mean:
+>> sec(7)
+ans =
+    1.3264
+>> diag(x)
+ans =
+    0.4709
+    0.2277
+    0.9049
+    0.5949
+    0.2967
+>> log(e)
+Undefined function or variable 'e'.
+ 
+>> log(2.76)
+ans =
+    1.0152
+>> log10(8)
+ans =
+    0.9031
+>> inv(ans)
+ans =
+    1.1073
+>> x=0:05:100
+x =
+  Columns 1 through 16
+     0     5    10    15    20    25    30    35    40    45    50    55    60    65    70    75
+  Columns 17 through 21
+    80    85    90    95   100
+x= rand(5)
+x =
+    0.4709    0.1707    0.4302    0.1111    0.6028
+    0.2305    0.2277    0.1848    0.2581    0.7112
+    0.8443    0.4357    0.9049    0.4087    0.2217
+    0.1948    0.3111    0.9797    0.5949    0.1174
+    0.2259    0.9234    0.4389    0.2622    0.2967
+fix(rand(5)*10)
+ans =
+     3     8     5     5     3
+     4     0     2     2     3
+     5     9     4     4     9
+     0     7     9     6     0
+     2     4     5     6     8
+round(rand(5)*10)
+ans =
+     9     7     5     3     5
+     8     1     8     7     5
+     1     7     7     2     9
+     3     1     9     0     6
+     3     7     9     7     6
+y=mean(mean(x))
+y =
+    0.4223
+median(x)
+ans =
+    0.2305    0.3111    0.4389    0.2622    0.2967
+mode(x)
+ans =
+    0.1948    0.1707    0.1848    0.1111    0.1174
+z=sum(x)
+z =
+    1.9664    2.0686    2.9385    1.6350    1.9499
+z=sum(sum(x))
+z =
+   10.5584
+max(max(x))
+ans =
+    0.9797
+min(min(x))
+ans =
+    0.1111
+cot(5)
+ans =
+   -0.2958
+healp sec
+{Undefined function 'healp' for input arguments of type 'char'.
+} 
+sec(7)
+ans =
+    1.3264
+diag(x)
+ans =
+    0.4709
+    0.2277
+    0.9049
+    0.5949
+    0.2967
+log(e)
+{Undefined function or variable 'e'.
+} 
+log(2.76)
+ans =
+    1.0152
+log10(8)
+ans =
+    0.9031
+inv(ans)
+ans =
+    1.1073
+x=0:05:100
+x =
+  Columns 1 through 16
+     0     5    10    15    20    25    30    35    40    45    50    55    60    65    70    75
+  Columns 17 through 21
+    80    85    90    95   100
+clc
+x=0:0.5:100;
+length(x)
+ans =
+   201
+x=0:0.05:100;
+diary on
+x=0:0.05:100;
+lenght(x)
+{Undefined function 'lenght' for input arguments of type 'double'.
+} 
+length(x)
+ans =
+        2001
+y=sin(x+(x.^2))/tan(x.^2).*x);
+ y=sin(x+(x.^2))/tan(x.^2).*x);
+                             |
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+y=sin(x+(x.^2))/(tan(x.^2).*x);
+plot(x,y)
+y=sin(x+(x.^2))./(tan(x.^2).*x);
+plot(x,y)
+plot(y,x)
+z=csc(x+(x.^2))./cot(x.^2).*x);
+ z=csc(x+(x.^2))./cot(x.^2).*x);
+                              |
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+ z=csc(x+(x.^2))./(cot(x.^2).*x);
+plot(x,y,z)
+{Error using <a href="matlab:helpUtils.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Data must be a single matrix Y or a list of pairs X,Y
+} 
+clc
+length(x)
+ans =
+        2001
+y=(x.^2)./(sin(x.^3));
+plot(x,y)
+y=(x.^2+x.^3)./((x.^2).*tan(x));
+plot(x,y)
+ y=(x.^2+x.^x)./(sqrt((x.^2).*tan(x)));
+plot(x,y)
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+y=(x.^2+x.^x)./(sqrt(x+2));
+plot(x,y)
+y=(x.^3+x)./(x.^3);
+plot(x,y)
+y=log((x.^2)./(x.^3*sin(x)));
+{Error using <a href="matlab:helpUtils.errorDocCallback('mtimes')" style="font-weight:bold"> * </a>
+Inner matrix dimensions must agree.
+} 
+y=log((x.^2)./(x.^3.*sin(x)));
+plot(x,y)
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+y=sin(x)./(sqrt(tan(x.^2));
+ y=sin(x)./(sqrt(tan(x.^2));
+                           |
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+y= (sin(x))./(sqrt(tan(x.^2)));
+plot(x,y)
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+ y= (x+x.^2+x.^3)./(x-(x.^5).*x.^x);
+plot(x,y)
+diary off

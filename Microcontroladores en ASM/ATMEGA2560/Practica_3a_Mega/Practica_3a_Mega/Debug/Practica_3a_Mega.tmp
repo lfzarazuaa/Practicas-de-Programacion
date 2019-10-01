@@ -1,0 +1,36 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega2560"</DEVICE>
+ <WORKING_DIR>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\Debug\Practica_3a_Mega.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_3a_Mega.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_3a_Mega.map</FILE>
+  <FILE>Practica_3a_Mega.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>70</LINE></config>
+  <TIM1_OVF><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>28</LINE></TIM1_OVF>
+  <Incrementar><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>40</LINE></Incrementar>
+  <Decrementar><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>51</LINE></Decrementar>
+  <Decodificar><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>62</LINE></Decodificar>
+  <IContador><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>48</LINE></IContador>
+  <Incr><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>46</LINE></Incr>
+  <DContador><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>59</LINE></DContador>
+  <Decr><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>57</LINE></Decr>
+  <inicio><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_3a_Mega\Practica_3a_Mega\main.asm</FILE><LINE>125</LINE></inicio>
+ </LABELS>
+</ASSEMBLER_INFO>

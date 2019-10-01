@@ -1,0 +1,10 @@
+INFO:sim:172 - Generating IP...
+WARNING:sim:830 - The working directory for this project is located on a
+   UNC-mounted drive.  To ensure generation completes successfully, you should
+   locate your working directory on a drive which is identified by a drive
+   letter.  You can change this path in the Project Options dialog.
+Customizing IP...
+Release 14.7 - Xilinx CORE Generator IP GUI Launcher P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Cancelled Customization.
+Wrote CGP file for project 'Filtro'.

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="sim" num="172" delta="new" >Generating IP...
+</msg>
+
+<msg type="warning" file="sim" num="830" delta="new" >The working directory for this project is located on a UNC-mounted drive.  To ensure generation completes successfully, you should locate your working directory on a drive which is identified by a drive letter.  You can change this path in the Project Options dialog.
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">The Memory Initialization vector can contain between 1 to Write</arg>
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;ROM16X8&apos;...</arg>
+</msg>
+
+<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Overwriting existing file //VBOXSVR/vhdl/practica_video_imagen/ROM_XILINIX/ipcore_dir/tmp/_cg/ROM16X8/doc/blk_mem_gen_v7_3_vinfo.html with file from view xilinx_documentation</arg>
+</msg>
+
+<msg type="info" file="sim" num="949" delta="new" >Finished generation of ASY schematic symbol.
+</msg>
+
+<msg type="info" file="sim" num="948" delta="new" >Finished FLIST file generation.
+</msg>
+
+</messages>
+

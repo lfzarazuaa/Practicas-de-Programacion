@@ -1,0 +1,36 @@
+V3 20
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/clkdiv.vhd 2017/03/17.10:25:20 P.20131013
+EN work/clkdiv 1491716048 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/clkdiv.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clkdiv/Behavioral 1491716049 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/clkdiv.vhd \
+      EN work/clkdiv 1491716048
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/costal.vhd 2017/03/17.10:28:50 P.20131013
+PH work/costal 1491716047 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/costal.vhd \
+      PB ieee/std_logic_1164 1381692176 CD vga_640x480 CD vga_stripes CD clkdiv
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/principal.vhd 2017/03/17.10:49:06 P.20131013
+EN work/principal 1491716054 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/principal.vhd \
+      PB ieee/std_logic_1164 1381692176 PH work/costal 1491716047
+AR work/principal/Behavioral 1491716055 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/principal.vhd \
+      EN work/principal 1491716054 CP clkdiv CP vga_640x480 CP vga_stripes
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_640x480.vhd 2017/04/09.00:33:55 P.20131013
+EN work/vga_640x480 1491716050 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_640x480/Behavioral 1491716051 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_640x480.vhd \
+      EN work/vga_640x480 1491716050
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_stripes.vhd 2017/03/17.10:22:22 P.20131013
+EN work/vga_stripes 1491716052 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_stripes.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_stripes/Behavioral 1491716053 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_16_LFZA/vga_stripes.vhd \
+      EN work/vga_stripes 1491716052

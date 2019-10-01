@@ -1,0 +1,6 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Imag\Imagen\ipcore_dir\rom240x160.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Imag\vga240x160\vga_sprite.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Imag\vga240x160\vga_640x480.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Imag\vga240x160\vgacomp.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Imag\vga240x160\clkdiv.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Imag\vga240x160\vga_sprite_top.vhd"

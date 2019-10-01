@@ -1,0 +1,56 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Debug/Teclado_Trans.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Teclado_Trans.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Teclado_Trans.map</FILE>
+  <FILE>Teclado_Trans.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>28</LINE></config>
+  <inicio><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>51</LINE></inicio>
+  <Fila_1><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>99</LINE></Fila_1>
+  <Fila_2><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>108</LINE></Fila_2>
+  <Fila_3><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>117</LINE></Fila_3>
+  <Fila_4><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>126</LINE></Fila_4>
+  <Regresa><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>90</LINE></Regresa>
+  <trans><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>180</LINE></trans>
+  <Op_1><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>137</LINE></Op_1>
+  <Op_2><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>141</LINE></Op_2>
+  <Op_3><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>145</LINE></Op_3>
+  <Op_A><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>167</LINE></Op_A>
+  <Op_4><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>149</LINE></Op_4>
+  <Op_5><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>153</LINE></Op_5>
+  <Op_6><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>157</LINE></Op_6>
+  <Op_B><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>169</LINE></Op_B>
+  <Op_7><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>161</LINE></Op_7>
+  <Op_8><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>163</LINE></Op_8>
+  <Op_9><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>165</LINE></Op_9>
+  <Op_C><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>171</LINE></Op_C>
+  <Op_0><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>135</LINE></Op_0>
+  <Op_D><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>173</LINE></Op_D>
+  <Op_E><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>175</LINE></Op_E>
+  <Op_F><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>177</LINE></Op_F>
+  <trans1><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>184</LINE></trans1>
+  <Retardo><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>189</LINE></Retardo>
+  <WGLOOP0><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>196</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>197</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>198</LINE></WGLOOP2>
+  <WGLOOP3><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Motor_Serial\Teclado_Trans\Teclado_Trans\Teclado_Trans.asm</FILE><LINE>207</LINE></WGLOOP3>
+ </LABELS>
+</ASSEMBLER_INFO>

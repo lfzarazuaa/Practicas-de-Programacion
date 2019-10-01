@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES\principal.ncd
+OUTFILE=\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES\principal.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES
+LICENSE=WebPack
+USER_INFO=211155561_0_0_130

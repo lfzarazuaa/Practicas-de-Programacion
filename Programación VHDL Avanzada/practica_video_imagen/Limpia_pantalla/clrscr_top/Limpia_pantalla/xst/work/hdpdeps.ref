@@ -1,0 +1,71 @@
+V3 40
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/buff3.vhd 2017/04/21.09:45:12 P.20131013
+EN work/buff3 1492785930 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/buff3.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/buff3/Behavioral 1492785931 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/buff3.vhd \
+      EN work/buff3 1492785930
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clkdiv.vhd 2013/04/01.09:16:28 P.20131013
+EN work/clkdiv 1492785924 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clkdiv.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clkdiv/Behavioral 1492785925 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clkdiv.vhd \
+      EN work/clkdiv 1492785924
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr.vhd 2017/04/21.09:41:50 P.20131013
+EN work/clrscr 1492785932 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clrscr/Behavioral 1492785933 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr.vhd \
+      EN work/clrscr 1492785932
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr_top.vhd 2013/04/03.08:43:42 P.20131013
+EN work/clrscr_top 1492785938 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr_top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PH work/vgacomp 1492785923
+AR work/clrscr_top/Behavioral 1492785939 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr_top.vhd \
+      EN work/clrscr_top 1492785938 CP clkdiv CP vga_640x480 CP vga_ram CP buff3 \
+      CP clrscr CP debounce4 CP mux2g
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/debounce4.vhd 2017/04/21.09:43:27 P.20131013
+EN work/debounce4 1492785934 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/debounce4.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/debounce4/Behavioral 1492785935 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/debounce4.vhd \
+      EN work/debounce4 1492785934
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/mux2g.vhd 2013/04/01.08:56:30 P.20131013
+EN work/mux2g 1492785936 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/mux2g.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/mux2g/Behavioral 1492785937 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/mux2g.vhd \
+      EN work/mux2g 1492785936
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vgacomp.vhd 2013/04/03.08:44:02 P.20131013
+PH work/vgacomp 1492785923 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vgacomp.vhd \
+      PB ieee/std_logic_1164 1381692176 CD clkdiv CD vga_640x480 CD vga_ram CD buff3 \
+      CD clrscr CD debounce4 CD mux2g
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_640x480.vhd 2013/02/15.12:25:28 P.20131013
+EN work/vga_640x480 1492785926 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_640x480/Behavioral 1492785927 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_640x480.vhd \
+      EN work/vga_640x480 1492785926
+FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_ram.vhd 2013/04/03.08:42:56 P.20131013
+EN work/vga_ram 1492785928 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_ram.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_ram/Behavioral 1492785929 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_ram.vhd \
+      EN work/vga_ram 1492785928

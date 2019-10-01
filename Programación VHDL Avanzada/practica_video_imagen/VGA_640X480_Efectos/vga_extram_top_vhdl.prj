@@ -1,0 +1,5 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_640X480_Efectos\vga_ram.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_640X480_Efectos\vga_640x480.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_640X480_Efectos\vgacomp.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_640X480_Efectos\clkdiv.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_640X480_Efectos\vga_extram_top.vhd"

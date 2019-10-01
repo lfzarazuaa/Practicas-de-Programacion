@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Principal.htm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { color: #0000FF; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #3399FF; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { color: #800080; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #800080; }
+.cpp1-preprocessor { color: #008000; }
+.cpp1-reservedword { color: #000000; font-weight: bold; }
+.cpp1-space { background-color: #FFFFFF; color: #000000; }
+.cpp1-string { color: #FF0000; }
+.cpp1-symbol { color: #000000; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="cpp1-preprocessor">#include &quot;Pasante.hpp&quot;
+#include &lt;conio.h&gt;
+
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> main(){
+    Pasante R[</span><span class="cpp1-number">10</span><span class="cpp1-symbol">];
+    textbackground(RED);
+    textcolor(WHITE);
+    </span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> opcion, contador=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,i;
+    </span><span class="cpp1-reservedword">do</span><span class="cpp1-symbol">{
+    clrscr();
+    cout&lt;&lt;</span><span class="cpp1-string">&quot;Seleccione una opcion: &quot;</span><span class="cpp1-symbol">&lt;&lt;endl;
+    cout&lt;&lt;</span><span class="cpp1-string">&quot;1) Ingresar los datos del pasante.&quot;</span><span class="cpp1-symbol">&lt;&lt;endl; 
+    cout&lt;&lt;</span><span class="cpp1-string">&quot;2) Mostrar los datos del pasante.&quot;</span><span class="cpp1-symbol">&lt;&lt;endl; 
+    cout&lt;&lt;</span><span class="cpp1-string">&quot;3) Visualizar el promedio de las notas para ver los pasantes.&quot;</span><span class="cpp1-symbol">&lt;&lt;endl; 
+    cout&lt;&lt;</span><span class="cpp1-string">&quot;4) Salir de la aplicacion.&quot;</span><span class="cpp1-symbol">&lt;&lt;endl;
+    cin&gt;&gt;opcion;
+    fflush(stdin);
+    </span><span class="cpp1-reservedword">switch</span><span class="cpp1-symbol">(opcion){
+    </span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-symbol">:
+           R[contador]=Leer_Datos();
+           contador+=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+           </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+    </span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-symbol">:
+           </span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> (contador==</span><span class="cpp1-number">0</span><span class="cpp1-symbol">)
+           cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese al menos un usuario.&quot;</span><span class="cpp1-symbol">&lt;&lt;endl;
+           </span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+           </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(i=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;i&lt;contador;i+=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">){
+           cout&lt;&lt;</span><span class="cpp1-string">&quot;Datos usuario.....&quot;</span><span class="cpp1-symbol">&lt;&lt;i+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">&lt;&lt;endl;
+           R[i].Imprimir_Datos_Pasante();}}
+           getch();
+           </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+    </span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-symbol">:
+           </span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> (contador==</span><span class="cpp1-number">0</span><span class="cpp1-symbol">)
+           cout&lt;&lt;</span><span class="cpp1-string">&quot;Ingrese al menos un usuario.&quot;</span><span class="cpp1-symbol">&lt;&lt;endl;
+           </span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+           </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(i=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;i&lt;contador;i+=</span><span class="cpp1-number">1</span><span class="cpp1-symbol">){
+           </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(R[i].Promedio&gt;=</span><span class="cpp1-number">6</span><span class="cpp1-symbol">)
+           cout&lt;&lt;</span><span class="cpp1-string">&quot;El usuario &quot;</span><span class="cpp1-symbol">&lt;&lt;i+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">&lt;&lt;</span><span class="cpp1-string">&quot; es pasante con promedio de &quot;</span><span class="cpp1-symbol">&lt;&lt;R[i].Promedio&lt;&lt;endl;                     
+           </span><span class="cpp1-reservedword">else
+</span><span class="cpp1-space">           cout&lt;&lt;</span><span class="cpp1-string">&quot;El usuario &quot;</span><span class="cpp1-symbol">&lt;&lt;i+</span><span class="cpp1-number">1</span><span class="cpp1-symbol">&lt;&lt;</span><span class="cpp1-string">&quot; no es pasante por su promedio de &quot;</span><span class="cpp1-symbol">&lt;&lt;R[i].Promedio&lt;&lt;endl;                     
+           }}
+           getch();
+           </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+    </span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">:
+           cout&lt;&lt;</span><span class="cpp1-string">&quot; &quot;</span><span class="cpp1-symbol">&lt;&lt;endl;
+           </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+    </span><span class="cpp1-reservedword">default</span><span class="cpp1-symbol">:
+            cout&lt;&lt;</span><span class="cpp1-string">&quot;Seleccione una opcion correcta.&quot;</span><span class="cpp1-symbol">; 
+            getch();
+                  }
+    }</span><span class="cpp1-reservedword">while</span><span class="cpp1-symbol">(opcion!=</span><span class="cpp1-number">4</span><span class="cpp1-symbol">);
+    </span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-symbol">;
+    }
+
+</span></span>
+</code></pre>
+</body>
+</html>

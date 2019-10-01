@@ -1,0 +1,5 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES\vga_stripes.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES\vga_640x480.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES\costal.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES\clkdiv.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_256_COLORES\principal.vhd"

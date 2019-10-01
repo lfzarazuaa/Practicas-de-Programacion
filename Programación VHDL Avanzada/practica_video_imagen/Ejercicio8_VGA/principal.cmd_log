@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/principal.xst" -ofn "C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/principal.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 principal.ngc principal.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 principal.ngc principal.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 principal.ngc principal.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o principal_map.ncd principal.ngd principal.pcf 
+par -w -intstyle ise -ol high -t 1 principal_map.ncd principal.ncd principal.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml principal.twx principal.ncd -o principal.twr principal.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f principal.ut principal.ncd 

@@ -1,0 +1,968 @@
+
+Interfaz_Motor.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000020  00800200  0000056c  00000600  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000056c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000007  00800220  00800220  00000620  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000620  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000650  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000130  00000000  00000000  00000690  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001a8e  00000000  00000000  000007c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000d49  00000000  00000000  0000224e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000a02  00000000  00000000  00002f97  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000002a0  00000000  00000000  0000399c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000082f  00000000  00000000  00003c3c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000ab7  00000000  00000000  0000446b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000120  00000000  00000000  00004f22  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	81 c0       	rjmp	.+258    	; 0x104 <__ctors_end>
+   2:	00 00       	nop
+   4:	9e c0       	rjmp	.+316    	; 0x142 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	9c c0       	rjmp	.+312    	; 0x142 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	9a c0       	rjmp	.+308    	; 0x142 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	98 c0       	rjmp	.+304    	; 0x142 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	96 c0       	rjmp	.+300    	; 0x142 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	94 c0       	rjmp	.+296    	; 0x142 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	92 c0       	rjmp	.+292    	; 0x142 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	90 c0       	rjmp	.+288    	; 0x142 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	8e c0       	rjmp	.+284    	; 0x142 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	8c c0       	rjmp	.+280    	; 0x142 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	02 c2       	rjmp	.+1028   	; 0x432 <__vector_11>
+  2e:	00 00       	nop
+  30:	88 c0       	rjmp	.+272    	; 0x142 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	86 c0       	rjmp	.+268    	; 0x142 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	84 c0       	rjmp	.+264    	; 0x142 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	82 c0       	rjmp	.+260    	; 0x142 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	80 c0       	rjmp	.+256    	; 0x142 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	7e c0       	rjmp	.+252    	; 0x142 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	7c c0       	rjmp	.+248    	; 0x142 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	7a c0       	rjmp	.+244    	; 0x142 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	78 c0       	rjmp	.+240    	; 0x142 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	76 c0       	rjmp	.+236    	; 0x142 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	74 c0       	rjmp	.+232    	; 0x142 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	72 c0       	rjmp	.+228    	; 0x142 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	70 c0       	rjmp	.+224    	; 0x142 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	6e c0       	rjmp	.+220    	; 0x142 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	6c c0       	rjmp	.+216    	; 0x142 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	6a c0       	rjmp	.+212    	; 0x142 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	68 c0       	rjmp	.+208    	; 0x142 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	66 c0       	rjmp	.+204    	; 0x142 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	64 c0       	rjmp	.+200    	; 0x142 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	62 c0       	rjmp	.+196    	; 0x142 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	60 c0       	rjmp	.+192    	; 0x142 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	5e c0       	rjmp	.+188    	; 0x142 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	5c c0       	rjmp	.+184    	; 0x142 <__bad_interrupt>
+  8a:	00 00       	nop
+  8c:	5a c0       	rjmp	.+180    	; 0x142 <__bad_interrupt>
+  8e:	00 00       	nop
+  90:	58 c0       	rjmp	.+176    	; 0x142 <__bad_interrupt>
+  92:	00 00       	nop
+  94:	56 c0       	rjmp	.+172    	; 0x142 <__bad_interrupt>
+  96:	00 00       	nop
+  98:	54 c0       	rjmp	.+168    	; 0x142 <__bad_interrupt>
+  9a:	00 00       	nop
+  9c:	52 c0       	rjmp	.+164    	; 0x142 <__bad_interrupt>
+  9e:	00 00       	nop
+  a0:	50 c0       	rjmp	.+160    	; 0x142 <__bad_interrupt>
+  a2:	00 00       	nop
+  a4:	4e c0       	rjmp	.+156    	; 0x142 <__bad_interrupt>
+  a6:	00 00       	nop
+  a8:	4c c0       	rjmp	.+152    	; 0x142 <__bad_interrupt>
+  aa:	00 00       	nop
+  ac:	4a c0       	rjmp	.+148    	; 0x142 <__bad_interrupt>
+  ae:	00 00       	nop
+  b0:	48 c0       	rjmp	.+144    	; 0x142 <__bad_interrupt>
+  b2:	00 00       	nop
+  b4:	46 c0       	rjmp	.+140    	; 0x142 <__bad_interrupt>
+  b6:	00 00       	nop
+  b8:	44 c0       	rjmp	.+136    	; 0x142 <__bad_interrupt>
+  ba:	00 00       	nop
+  bc:	42 c0       	rjmp	.+132    	; 0x142 <__bad_interrupt>
+  be:	00 00       	nop
+  c0:	40 c0       	rjmp	.+128    	; 0x142 <__bad_interrupt>
+  c2:	00 00       	nop
+  c4:	3e c0       	rjmp	.+124    	; 0x142 <__bad_interrupt>
+  c6:	00 00       	nop
+  c8:	3c c0       	rjmp	.+120    	; 0x142 <__bad_interrupt>
+  ca:	00 00       	nop
+  cc:	3a c0       	rjmp	.+116    	; 0x142 <__bad_interrupt>
+  ce:	00 00       	nop
+  d0:	38 c0       	rjmp	.+112    	; 0x142 <__bad_interrupt>
+  d2:	00 00       	nop
+  d4:	36 c0       	rjmp	.+108    	; 0x142 <__bad_interrupt>
+  d6:	00 00       	nop
+  d8:	34 c0       	rjmp	.+104    	; 0x142 <__bad_interrupt>
+  da:	00 00       	nop
+  dc:	32 c0       	rjmp	.+100    	; 0x142 <__bad_interrupt>
+  de:	00 00       	nop
+  e0:	30 c0       	rjmp	.+96     	; 0x142 <__bad_interrupt>
+  e2:	00 00       	nop
+  e4:	5a 02       	muls	r21, r26
+  e6:	5b 02       	muls	r21, r27
+  e8:	5b 02       	muls	r21, r27
+  ea:	5b 02       	muls	r21, r27
+  ec:	5b 02       	muls	r21, r27
+  ee:	5b 02       	muls	r21, r27
+  f0:	46 02       	muls	r20, r22
+  f2:	48 02       	muls	r20, r24
+  f4:	4a 02       	muls	r20, r26
+  f6:	4c 02       	muls	r20, r28
+  f8:	4e 02       	muls	r20, r30
+  fa:	50 02       	muls	r21, r16
+  fc:	52 02       	muls	r21, r18
+  fe:	54 02       	muls	r21, r20
+ 100:	56 02       	muls	r21, r22
+ 102:	58 02       	muls	r21, r24
+
+00000104 <__ctors_end>:
+ 104:	11 24       	eor	r1, r1
+ 106:	1f be       	out	0x3f, r1	; 63
+ 108:	cf ef       	ldi	r28, 0xFF	; 255
+ 10a:	d1 e2       	ldi	r29, 0x21	; 33
+ 10c:	de bf       	out	0x3e, r29	; 62
+ 10e:	cd bf       	out	0x3d, r28	; 61
+ 110:	00 e0       	ldi	r16, 0x00	; 0
+ 112:	0c bf       	out	0x3c, r16	; 60
+
+00000114 <__do_copy_data>:
+ 114:	12 e0       	ldi	r17, 0x02	; 2
+ 116:	a0 e0       	ldi	r26, 0x00	; 0
+ 118:	b2 e0       	ldi	r27, 0x02	; 2
+ 11a:	ec e6       	ldi	r30, 0x6C	; 108
+ 11c:	f5 e0       	ldi	r31, 0x05	; 5
+ 11e:	00 e0       	ldi	r16, 0x00	; 0
+ 120:	0b bf       	out	0x3b, r16	; 59
+ 122:	02 c0       	rjmp	.+4      	; 0x128 <__do_copy_data+0x14>
+ 124:	07 90       	elpm	r0, Z+
+ 126:	0d 92       	st	X+, r0
+ 128:	a0 32       	cpi	r26, 0x20	; 32
+ 12a:	b1 07       	cpc	r27, r17
+ 12c:	d9 f7       	brne	.-10     	; 0x124 <__do_copy_data+0x10>
+
+0000012e <__do_clear_bss>:
+ 12e:	22 e0       	ldi	r18, 0x02	; 2
+ 130:	a0 e2       	ldi	r26, 0x20	; 32
+ 132:	b2 e0       	ldi	r27, 0x02	; 2
+ 134:	01 c0       	rjmp	.+2      	; 0x138 <.do_clear_bss_start>
+
+00000136 <.do_clear_bss_loop>:
+ 136:	1d 92       	st	X+, r1
+
+00000138 <.do_clear_bss_start>:
+ 138:	a7 32       	cpi	r26, 0x27	; 39
+ 13a:	b2 07       	cpc	r27, r18
+ 13c:	e1 f7       	brne	.-8      	; 0x136 <.do_clear_bss_loop>
+ 13e:	cf d1       	rcall	.+926    	; 0x4de <main>
+ 140:	13 c2       	rjmp	.+1062   	; 0x568 <_exit>
+
+00000142 <__bad_interrupt>:
+ 142:	5e cf       	rjmp	.-324    	; 0x0 <__vectors>
+
+00000144 <Inicializar_Teclado>:
+		ENVIA_CADENA("Dato Introducido");
+		POS_LINEA1(3);
+		Contador_Digito=0;
+	}
+}
+void Accion_Tecla_Num(void){
+ 144:	80 ef       	ldi	r24, 0xF0	; 240
+ 146:	80 93 07 01 	sts	0x0107, r24	; 0x800107 <__TEXT_REGION_LENGTH__+0x700107>
+ 14a:	8f e0       	ldi	r24, 0x0F	; 15
+ 14c:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <__TEXT_REGION_LENGTH__+0x700108>
+ 150:	15 be       	out	0x35, r1	; 53
+ 152:	94 e0       	ldi	r25, 0x04	; 4
+ 154:	90 93 68 00 	sts	0x0068, r25	; 0x800068 <__TEXT_REGION_LENGTH__+0x700068>
+ 158:	80 93 6d 00 	sts	0x006D, r24	; 0x80006d <__TEXT_REGION_LENGTH__+0x70006d>
+ 15c:	08 95       	ret
+
+0000015e <Detectar_Tecla>:
+ 15e:	90 91 06 01 	lds	r25, 0x0106	; 0x800106 <__TEXT_REGION_LENGTH__+0x700106>
+ 162:	9f 70       	andi	r25, 0x0F	; 15
+ 164:	9e 30       	cpi	r25, 0x0E	; 14
+ 166:	69 f0       	breq	.+26     	; 0x182 <Detectar_Tecla+0x24>
+ 168:	9d 30       	cpi	r25, 0x0D	; 13
+ 16a:	31 f0       	breq	.+12     	; 0x178 <Detectar_Tecla+0x1a>
+ 16c:	9b 30       	cpi	r25, 0x0B	; 11
+ 16e:	31 f0       	breq	.+12     	; 0x17c <Detectar_Tecla+0x1e>
+ 170:	97 30       	cpi	r25, 0x07	; 7
+ 172:	31 f4       	brne	.+12     	; 0x180 <Detectar_Tecla+0x22>
+ 174:	28 2f       	mov	r18, r24
+ 176:	05 c0       	rjmp	.+10     	; 0x182 <Detectar_Tecla+0x24>
+ 178:	24 2f       	mov	r18, r20
+ 17a:	03 c0       	rjmp	.+6      	; 0x182 <Detectar_Tecla+0x24>
+ 17c:	26 2f       	mov	r18, r22
+ 17e:	01 c0       	rjmp	.+2      	; 0x182 <Detectar_Tecla+0x24>
+ 180:	2b ee       	ldi	r18, 0xEB	; 235
+ 182:	82 2f       	mov	r24, r18
+ 184:	08 95       	ret
+
+00000186 <Obtener_Tecla>:
+ 186:	8f e0       	ldi	r24, 0x0F	; 15
+ 188:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <__TEXT_REGION_LENGTH__+0x700108>
+ 18c:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <__TEXT_REGION_LENGTH__+0x700106>
+ 190:	8f 70       	andi	r24, 0x0F	; 15
+ 192:	8f 30       	cpi	r24, 0x0F	; 15
+ 194:	08 f0       	brcs	.+2      	; 0x198 <Obtener_Tecla+0x12>
+ 196:	41 c0       	rjmp	.+130    	; 0x21a <Obtener_Tecla+0x94>
+ 198:	8f e7       	ldi	r24, 0x7F	; 127
+ 19a:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <__TEXT_REGION_LENGTH__+0x700108>
+ 19e:	8f e9       	ldi	r24, 0x9F	; 159
+ 1a0:	9f e0       	ldi	r25, 0x0F	; 15
+ 1a2:	01 97       	sbiw	r24, 0x01	; 1
+ 1a4:	f1 f7       	brne	.-4      	; 0x1a2 <Obtener_Tecla+0x1c>
+ 1a6:	00 c0       	rjmp	.+0      	; 0x1a8 <Obtener_Tecla+0x22>
+ 1a8:	00 00       	nop
+ 1aa:	21 e4       	ldi	r18, 0x41	; 65
+ 1ac:	43 e3       	ldi	r20, 0x33	; 51
+ 1ae:	62 e3       	ldi	r22, 0x32	; 50
+ 1b0:	81 e3       	ldi	r24, 0x31	; 49
+ 1b2:	d5 df       	rcall	.-86     	; 0x15e <Detectar_Tecla>
+ 1b4:	8b 3e       	cpi	r24, 0xEB	; 235
+ 1b6:	71 f5       	brne	.+92     	; 0x214 <Obtener_Tecla+0x8e>
+ 1b8:	8f eb       	ldi	r24, 0xBF	; 191
+ 1ba:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <__TEXT_REGION_LENGTH__+0x700108>
+ 1be:	8f e9       	ldi	r24, 0x9F	; 159
+ 1c0:	9f e0       	ldi	r25, 0x0F	; 15
+ 1c2:	01 97       	sbiw	r24, 0x01	; 1
+ 1c4:	f1 f7       	brne	.-4      	; 0x1c2 <Obtener_Tecla+0x3c>
+ 1c6:	00 c0       	rjmp	.+0      	; 0x1c8 <Obtener_Tecla+0x42>
+ 1c8:	00 00       	nop
+ 1ca:	22 e4       	ldi	r18, 0x42	; 66
+ 1cc:	46 e3       	ldi	r20, 0x36	; 54
+ 1ce:	65 e3       	ldi	r22, 0x35	; 53
+ 1d0:	84 e3       	ldi	r24, 0x34	; 52
+ 1d2:	c5 df       	rcall	.-118    	; 0x15e <Detectar_Tecla>
+ 1d4:	8b 3e       	cpi	r24, 0xEB	; 235
+ 1d6:	f1 f4       	brne	.+60     	; 0x214 <Obtener_Tecla+0x8e>
+ 1d8:	8f ed       	ldi	r24, 0xDF	; 223
+ 1da:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <__TEXT_REGION_LENGTH__+0x700108>
+ 1de:	8f e9       	ldi	r24, 0x9F	; 159
+ 1e0:	9f e0       	ldi	r25, 0x0F	; 15
+ 1e2:	01 97       	sbiw	r24, 0x01	; 1
+ 1e4:	f1 f7       	brne	.-4      	; 0x1e2 <Obtener_Tecla+0x5c>
+ 1e6:	00 c0       	rjmp	.+0      	; 0x1e8 <Obtener_Tecla+0x62>
+ 1e8:	00 00       	nop
+ 1ea:	23 e4       	ldi	r18, 0x43	; 67
+ 1ec:	49 e3       	ldi	r20, 0x39	; 57
+ 1ee:	68 e3       	ldi	r22, 0x38	; 56
+ 1f0:	87 e3       	ldi	r24, 0x37	; 55
+ 1f2:	b5 df       	rcall	.-150    	; 0x15e <Detectar_Tecla>
+ 1f4:	8b 3e       	cpi	r24, 0xEB	; 235
+ 1f6:	71 f4       	brne	.+28     	; 0x214 <Obtener_Tecla+0x8e>
+ 1f8:	8f ee       	ldi	r24, 0xEF	; 239
+ 1fa:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <__TEXT_REGION_LENGTH__+0x700108>
+ 1fe:	8f e9       	ldi	r24, 0x9F	; 159
+ 200:	9f e0       	ldi	r25, 0x0F	; 15
+ 202:	01 97       	sbiw	r24, 0x01	; 1
+ 204:	f1 f7       	brne	.-4      	; 0x202 <Obtener_Tecla+0x7c>
+ 206:	00 c0       	rjmp	.+0      	; 0x208 <Obtener_Tecla+0x82>
+ 208:	00 00       	nop
+ 20a:	24 e4       	ldi	r18, 0x44	; 68
+ 20c:	43 e2       	ldi	r20, 0x23	; 35
+ 20e:	60 e3       	ldi	r22, 0x30	; 48
+ 210:	8a e2       	ldi	r24, 0x2A	; 42
+ 212:	a5 df       	rcall	.-182    	; 0x15e <Detectar_Tecla>
+ 214:	80 93 00 02 	sts	0x0200, r24	; 0x800200 <Tecla_Presionada>
+ 218:	08 95       	ret
+ 21a:	8b ee       	ldi	r24, 0xEB	; 235
+ 21c:	80 93 00 02 	sts	0x0200, r24	; 0x800200 <Tecla_Presionada>
+ 220:	08 95       	ret
+
+00000222 <ENVIA_CMD>:
+ 222:	98 2f       	mov	r25, r24
+ 224:	90 7f       	andi	r25, 0xF0	; 240
+ 226:	91 bb       	out	0x11, r25	; 17
+ 228:	8a 98       	cbi	0x11, 2	; 17
+ 22a:	8b 9a       	sbi	0x11, 3	; 17
+ 22c:	ef e9       	ldi	r30, 0x9F	; 159
+ 22e:	ff e0       	ldi	r31, 0x0F	; 15
+ 230:	31 97       	sbiw	r30, 0x01	; 1
+ 232:	f1 f7       	brne	.-4      	; 0x230 <ENVIA_CMD+0xe>
+ 234:	00 c0       	rjmp	.+0      	; 0x236 <ENVIA_CMD+0x14>
+ 236:	00 00       	nop
+ 238:	8b 98       	cbi	0x11, 3	; 17
+ 23a:	ef e3       	ldi	r30, 0x3F	; 63
+ 23c:	fc e9       	ldi	r31, 0x9C	; 156
+ 23e:	31 97       	sbiw	r30, 0x01	; 1
+ 240:	f1 f7       	brne	.-4      	; 0x23e <ENVIA_CMD+0x1c>
+ 242:	00 c0       	rjmp	.+0      	; 0x244 <ENVIA_CMD+0x22>
+ 244:	00 00       	nop
+ 246:	f0 e1       	ldi	r31, 0x10	; 16
+ 248:	8f 9f       	mul	r24, r31
+ 24a:	c0 01       	movw	r24, r0
+ 24c:	11 24       	eor	r1, r1
+ 24e:	81 bb       	out	0x11, r24	; 17
+ 250:	8a 98       	cbi	0x11, 2	; 17
+ 252:	8b 9a       	sbi	0x11, 3	; 17
+ 254:	8f e9       	ldi	r24, 0x9F	; 159
+ 256:	9f e0       	ldi	r25, 0x0F	; 15
+ 258:	01 97       	sbiw	r24, 0x01	; 1
+ 25a:	f1 f7       	brne	.-4      	; 0x258 <ENVIA_CMD+0x36>
+ 25c:	00 c0       	rjmp	.+0      	; 0x25e <ENVIA_CMD+0x3c>
+ 25e:	00 00       	nop
+ 260:	8b 98       	cbi	0x11, 3	; 17
+ 262:	ef e3       	ldi	r30, 0x3F	; 63
+ 264:	fc e9       	ldi	r31, 0x9C	; 156
+ 266:	31 97       	sbiw	r30, 0x01	; 1
+ 268:	f1 f7       	brne	.-4      	; 0x266 <ENVIA_CMD+0x44>
+ 26a:	00 c0       	rjmp	.+0      	; 0x26c <ENVIA_CMD+0x4a>
+ 26c:	00 00       	nop
+ 26e:	08 95       	ret
+
+00000270 <LCD_INICIALIZA>:
+ 270:	8f ef       	ldi	r24, 0xFF	; 255
+ 272:	80 bb       	out	0x10, r24	; 16
+ 274:	82 e0       	ldi	r24, 0x02	; 2
+ 276:	d5 df       	rcall	.-86     	; 0x222 <ENVIA_CMD>
+ 278:	88 e2       	ldi	r24, 0x28	; 40
+ 27a:	d3 df       	rcall	.-90     	; 0x222 <ENVIA_CMD>
+ 27c:	8e e0       	ldi	r24, 0x0E	; 14
+ 27e:	d1 df       	rcall	.-94     	; 0x222 <ENVIA_CMD>
+ 280:	86 e0       	ldi	r24, 0x06	; 6
+ 282:	cf df       	rcall	.-98     	; 0x222 <ENVIA_CMD>
+ 284:	81 e0       	ldi	r24, 0x01	; 1
+ 286:	cd df       	rcall	.-102    	; 0x222 <ENVIA_CMD>
+ 288:	80 e8       	ldi	r24, 0x80	; 128
+ 28a:	cb cf       	rjmp	.-106    	; 0x222 <ENVIA_CMD>
+ 28c:	08 95       	ret
+
+0000028e <ENVIA_DATO>:
+ 28e:	98 2f       	mov	r25, r24
+ 290:	90 7f       	andi	r25, 0xF0	; 240
+ 292:	91 bb       	out	0x11, r25	; 17
+ 294:	91 b3       	in	r25, 0x11	; 17
+ 296:	9c 60       	ori	r25, 0x0C	; 12
+ 298:	91 bb       	out	0x11, r25	; 17
+ 29a:	ef e9       	ldi	r30, 0x9F	; 159
+ 29c:	ff e0       	ldi	r31, 0x0F	; 15
+ 29e:	31 97       	sbiw	r30, 0x01	; 1
+ 2a0:	f1 f7       	brne	.-4      	; 0x29e <ENVIA_DATO+0x10>
+ 2a2:	00 c0       	rjmp	.+0      	; 0x2a4 <ENVIA_DATO+0x16>
+ 2a4:	00 00       	nop
+ 2a6:	8b 98       	cbi	0x11, 3	; 17
+ 2a8:	8a 98       	cbi	0x11, 2	; 17
+ 2aa:	ef e3       	ldi	r30, 0x3F	; 63
+ 2ac:	fc e9       	ldi	r31, 0x9C	; 156
+ 2ae:	31 97       	sbiw	r30, 0x01	; 1
+ 2b0:	f1 f7       	brne	.-4      	; 0x2ae <ENVIA_DATO+0x20>
+ 2b2:	00 c0       	rjmp	.+0      	; 0x2b4 <ENVIA_DATO+0x26>
+ 2b4:	00 00       	nop
+ 2b6:	f0 e1       	ldi	r31, 0x10	; 16
+ 2b8:	8f 9f       	mul	r24, r31
+ 2ba:	c0 01       	movw	r24, r0
+ 2bc:	11 24       	eor	r1, r1
+ 2be:	81 bb       	out	0x11, r24	; 17
+ 2c0:	81 b3       	in	r24, 0x11	; 17
+ 2c2:	8c 60       	ori	r24, 0x0C	; 12
+ 2c4:	81 bb       	out	0x11, r24	; 17
+ 2c6:	8f e9       	ldi	r24, 0x9F	; 159
+ 2c8:	9f e0       	ldi	r25, 0x0F	; 15
+ 2ca:	01 97       	sbiw	r24, 0x01	; 1
+ 2cc:	f1 f7       	brne	.-4      	; 0x2ca <ENVIA_DATO+0x3c>
+ 2ce:	00 c0       	rjmp	.+0      	; 0x2d0 <ENVIA_DATO+0x42>
+ 2d0:	00 00       	nop
+ 2d2:	8b 98       	cbi	0x11, 3	; 17
+ 2d4:	8a 98       	cbi	0x11, 2	; 17
+ 2d6:	ef e3       	ldi	r30, 0x3F	; 63
+ 2d8:	fc e9       	ldi	r31, 0x9C	; 156
+ 2da:	31 97       	sbiw	r30, 0x01	; 1
+ 2dc:	f1 f7       	brne	.-4      	; 0x2da <ENVIA_DATO+0x4c>
+ 2de:	00 c0       	rjmp	.+0      	; 0x2e0 <ENVIA_DATO+0x52>
+ 2e0:	00 00       	nop
+ 2e2:	08 95       	ret
+
+000002e4 <ENVIA_CADENA>:
+ 2e4:	cf 93       	push	r28
+ 2e6:	df 93       	push	r29
+ 2e8:	ec 01       	movw	r28, r24
+ 2ea:	88 81       	ld	r24, Y
+ 2ec:	88 23       	and	r24, r24
+ 2ee:	29 f0       	breq	.+10     	; 0x2fa <ENVIA_CADENA+0x16>
+ 2f0:	21 96       	adiw	r28, 0x01	; 1
+ 2f2:	cd df       	rcall	.-102    	; 0x28e <ENVIA_DATO>
+ 2f4:	89 91       	ld	r24, Y+
+ 2f6:	81 11       	cpse	r24, r1
+ 2f8:	fc cf       	rjmp	.-8      	; 0x2f2 <ENVIA_CADENA+0xe>
+ 2fa:	df 91       	pop	r29
+ 2fc:	cf 91       	pop	r28
+ 2fe:	08 95       	ret
+
+00000300 <LIMPIA_LCD>:
+ 300:	81 e0       	ldi	r24, 0x01	; 1
+ 302:	8f cf       	rjmp	.-226    	; 0x222 <ENVIA_CMD>
+ 304:	08 95       	ret
+
+00000306 <Calcular_Referencia>:
+uint16_t Posicion;
+void Calcular_Referencia(uint8_t Dig1,uint8_t Dig2,uint8_t Dig3){
+	 Dig1-=0x30;
+	 Dig2-=0x30;
+	 Dig3-=0x30;
+	 Posicion=Dig1*100+Dig2*10+Dig3;
+ 306:	20 ed       	ldi	r18, 0xD0	; 208
+ 308:	28 0f       	add	r18, r24
+ 30a:	60 53       	subi	r22, 0x30	; 48
+ 30c:	70 e0       	ldi	r23, 0x00	; 0
+ 30e:	cb 01       	movw	r24, r22
+ 310:	88 0f       	add	r24, r24
+ 312:	99 1f       	adc	r25, r25
+ 314:	66 0f       	add	r22, r22
+ 316:	77 1f       	adc	r23, r23
+ 318:	66 0f       	add	r22, r22
+ 31a:	77 1f       	adc	r23, r23
+ 31c:	66 0f       	add	r22, r22
+ 31e:	77 1f       	adc	r23, r23
+ 320:	86 0f       	add	r24, r22
+ 322:	97 1f       	adc	r25, r23
+ 324:	34 e6       	ldi	r19, 0x64	; 100
+ 326:	23 9f       	mul	r18, r19
+ 328:	80 0d       	add	r24, r0
+ 32a:	91 1d       	adc	r25, r1
+ 32c:	11 24       	eor	r1, r1
+ 32e:	40 53       	subi	r20, 0x30	; 48
+ 330:	84 0f       	add	r24, r20
+ 332:	91 1d       	adc	r25, r1
+ 334:	90 93 22 02 	sts	0x0222, r25	; 0x800222 <Posicion+0x1>
+ 338:	80 93 21 02 	sts	0x0221, r24	; 0x800221 <Posicion>
+	 if (Posicion<=360)
+ 33c:	89 36       	cpi	r24, 0x69	; 105
+ 33e:	21 e0       	ldi	r18, 0x01	; 1
+ 340:	92 07       	cpc	r25, r18
+ 342:	a0 f4       	brcc	.+40     	; 0x36c <Calcular_Referencia+0x66>
+	 {
+		Referencia=Posicion*160/360; 
+ 344:	40 ea       	ldi	r20, 0xA0	; 160
+ 346:	48 9f       	mul	r20, r24
+ 348:	90 01       	movw	r18, r0
+ 34a:	49 9f       	mul	r20, r25
+ 34c:	30 0d       	add	r19, r0
+ 34e:	11 24       	eor	r1, r1
+ 350:	a3 e8       	ldi	r26, 0x83	; 131
+ 352:	bd e2       	ldi	r27, 0x2D	; 45
+ 354:	fa d0       	rcall	.+500    	; 0x54a <__umulhisi3>
+ 356:	00 24       	eor	r0, r0
+ 358:	88 0f       	add	r24, r24
+ 35a:	99 1f       	adc	r25, r25
+ 35c:	00 1c       	adc	r0, r0
+ 35e:	88 0f       	add	r24, r24
+ 360:	99 1f       	adc	r25, r25
+ 362:	00 1c       	adc	r0, r0
+ 364:	89 2f       	mov	r24, r25
+ 366:	90 2d       	mov	r25, r0
+ 368:	80 93 25 02 	sts	0x0225, r24	; 0x800225 <Referencia>
+ 36c:	08 95       	ret
+
+0000036e <Accion_Tecla_Ast>:
+void Accion_Tecla_D(void){
+	
+}
+
+void Accion_Tecla_Ast(void){
+	if (Contador_Digito>=3){
+ 36e:	80 91 20 02 	lds	r24, 0x0220	; 0x800220 <__data_end>
+ 372:	83 30       	cpi	r24, 0x03	; 3
+ 374:	80 f0       	brcs	.+32     	; 0x396 <Accion_Tecla_Ast+0x28>
+		Calcular_Referencia(Digito1,Digito2,Digito3);
+ 376:	40 91 24 02 	lds	r20, 0x0224	; 0x800224 <Digito3>
+ 37a:	60 91 26 02 	lds	r22, 0x0226	; 0x800226 <Digito2>
+ 37e:	80 91 23 02 	lds	r24, 0x0223	; 0x800223 <Digito1>
+ 382:	c1 df       	rcall	.-126    	; 0x306 <Calcular_Referencia>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 384:	81 ec       	ldi	r24, 0xC1	; 193
+ 386:	4d df       	rcall	.-358    	; 0x222 <ENVIA_CMD>
+		POS_LINEA2(1);
+		ENVIA_CADENA("Dato Introducido");
+ 388:	82 e0       	ldi	r24, 0x02	; 2
+ 38a:	92 e0       	ldi	r25, 0x02	; 2
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 38c:	ab df       	rcall	.-170    	; 0x2e4 <ENVIA_CADENA>
+ 38e:	83 e8       	ldi	r24, 0x83	; 131
+ 390:	48 df       	rcall	.-368    	; 0x222 <ENVIA_CMD>
+		POS_LINEA1(3);
+		Contador_Digito=0;
+ 392:	10 92 20 02 	sts	0x0220, r1	; 0x800220 <__data_end>
+ 396:	08 95       	ret
+
+00000398 <Presionar_Numero>:
+	 {
+		Referencia=Posicion*160/360; 
+	 }
+}
+
+void Presionar_Numero(uint8_t Tecla){
+ 398:	cf 93       	push	r28
+ 39a:	c8 2f       	mov	r28, r24
+	switch (Contador_Digito)
+ 39c:	80 91 20 02 	lds	r24, 0x0220	; 0x800220 <__data_end>
+ 3a0:	81 30       	cpi	r24, 0x01	; 1
+ 3a2:	89 f0       	breq	.+34     	; 0x3c6 <Presionar_Numero+0x2e>
+ 3a4:	18 f0       	brcs	.+6      	; 0x3ac <Presionar_Numero+0x14>
+ 3a6:	82 30       	cpi	r24, 0x02	; 2
+ 3a8:	a9 f0       	breq	.+42     	; 0x3d4 <Presionar_Numero+0x3c>
+ 3aa:	1b c0       	rjmp	.+54     	; 0x3e2 <Presionar_Numero+0x4a>
+	{
+		case 0:
+		 Digito1=Tecla;
+ 3ac:	c0 93 23 02 	sts	0x0223, r28	; 0x800223 <Digito1>
+		 LIMPIA_LCD();
+ 3b0:	a7 df       	rcall	.-178    	; 0x300 <LIMPIA_LCD>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 3b2:	81 ec       	ldi	r24, 0xC1	; 193
+ 3b4:	36 df       	rcall	.-404    	; 0x222 <ENVIA_CMD>
+		 POS_LINEA2(1);
+		 ENVIA_CADENA("Intro: Dato");
+ 3b6:	83 e1       	ldi	r24, 0x13	; 19
+ 3b8:	92 e0       	ldi	r25, 0x02	; 2
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 3ba:	94 df       	rcall	.-216    	; 0x2e4 <ENVIA_CADENA>
+ 3bc:	83 e8       	ldi	r24, 0x83	; 131
+		 POS_LINEA1(3);
+		 ENVIA_DATO(Tecla);
+ 3be:	31 df       	rcall	.-414    	; 0x222 <ENVIA_CMD>
+ 3c0:	8c 2f       	mov	r24, r28
+		break;
+ 3c2:	65 df       	rcall	.-310    	; 0x28e <ENVIA_DATO>
+		case 1:
+		 Digito2=Tecla;
+ 3c4:	11 c0       	rjmp	.+34     	; 0x3e8 <Presionar_Numero+0x50>
+ 3c6:	c0 93 26 02 	sts	0x0226, r28	; 0x800226 <Digito2>
+ 3ca:	84 e8       	ldi	r24, 0x84	; 132
+		 POS_LINEA1(4);
+		 ENVIA_DATO(Tecla);
+ 3cc:	2a df       	rcall	.-428    	; 0x222 <ENVIA_CMD>
+ 3ce:	8c 2f       	mov	r24, r28
+		break;
+ 3d0:	5e df       	rcall	.-324    	; 0x28e <ENVIA_DATO>
+		case 2:
+		 Digito3=Tecla;
+ 3d2:	0a c0       	rjmp	.+20     	; 0x3e8 <Presionar_Numero+0x50>
+ 3d4:	c0 93 24 02 	sts	0x0224, r28	; 0x800224 <Digito3>
+ 3d8:	85 e8       	ldi	r24, 0x85	; 133
+ 3da:	23 df       	rcall	.-442    	; 0x222 <ENVIA_CMD>
+		 POS_LINEA1(5);
+		 ENVIA_DATO(Tecla);
+ 3dc:	8c 2f       	mov	r24, r28
+ 3de:	57 df       	rcall	.-338    	; 0x28e <ENVIA_DATO>
+ 3e0:	03 c0       	rjmp	.+6      	; 0x3e8 <Presionar_Numero+0x50>
+		break;
+ 3e2:	81 50       	subi	r24, 0x01	; 1
+		default:
+		 Contador_Digito--;
+ 3e4:	80 93 20 02 	sts	0x0220, r24	; 0x800220 <__data_end>
+ 3e8:	80 91 20 02 	lds	r24, 0x0220	; 0x800220 <__data_end>
+		break;
+	}
+	Contador_Digito++;
+ 3ec:	8f 5f       	subi	r24, 0xFF	; 255
+ 3ee:	80 93 20 02 	sts	0x0220, r24	; 0x800220 <__data_end>
+ 3f2:	cf 91       	pop	r28
+}
+ 3f4:	08 95       	ret
+
+000003f6 <Accion_Tecla_0>:
+ 3f6:	80 e3       	ldi	r24, 0x30	; 48
+void Presionar_Numero(uint8_t Tecla);
+uint8_t Contador_Digito,Digito1,Digito2,Digito3;
+uint8_t Referencia;
+
+void Accion_Tecla_0(void){
+	Presionar_Numero('0');
+ 3f8:	cf cf       	rjmp	.-98     	; 0x398 <Presionar_Numero>
+ 3fa:	08 95       	ret
+
+000003fc <Accion_Tecla_1>:
+}
+void Accion_Tecla_1(void){
+	Presionar_Numero('1');
+ 3fc:	81 e3       	ldi	r24, 0x31	; 49
+ 3fe:	cc cf       	rjmp	.-104    	; 0x398 <Presionar_Numero>
+ 400:	08 95       	ret
+
+00000402 <Accion_Tecla_2>:
+}
+void Accion_Tecla_2(void){
+	Presionar_Numero('2');
+ 402:	82 e3       	ldi	r24, 0x32	; 50
+ 404:	c9 cf       	rjmp	.-110    	; 0x398 <Presionar_Numero>
+ 406:	08 95       	ret
+
+00000408 <Accion_Tecla_3>:
+}
+void Accion_Tecla_3(void){
+	Presionar_Numero('3');
+ 408:	83 e3       	ldi	r24, 0x33	; 51
+ 40a:	c6 cf       	rjmp	.-116    	; 0x398 <Presionar_Numero>
+ 40c:	08 95       	ret
+
+0000040e <Accion_Tecla_4>:
+}
+void Accion_Tecla_4(void){
+	Presionar_Numero('4');
+ 40e:	84 e3       	ldi	r24, 0x34	; 52
+ 410:	c3 cf       	rjmp	.-122    	; 0x398 <Presionar_Numero>
+ 412:	08 95       	ret
+
+00000414 <Accion_Tecla_5>:
+}
+void Accion_Tecla_5(void){
+	Presionar_Numero('5');
+ 414:	85 e3       	ldi	r24, 0x35	; 53
+ 416:	c0 cf       	rjmp	.-128    	; 0x398 <Presionar_Numero>
+ 418:	08 95       	ret
+
+0000041a <Accion_Tecla_6>:
+}
+void Accion_Tecla_6(void){
+	Presionar_Numero('6');
+ 41a:	86 e3       	ldi	r24, 0x36	; 54
+ 41c:	bd cf       	rjmp	.-134    	; 0x398 <Presionar_Numero>
+ 41e:	08 95       	ret
+
+00000420 <Accion_Tecla_7>:
+}
+void Accion_Tecla_7(void){
+	Presionar_Numero('7');
+ 420:	87 e3       	ldi	r24, 0x37	; 55
+ 422:	ba cf       	rjmp	.-140    	; 0x398 <Presionar_Numero>
+ 424:	08 95       	ret
+
+00000426 <Accion_Tecla_8>:
+}
+void Accion_Tecla_8(void){
+	Presionar_Numero('8');
+ 426:	88 e3       	ldi	r24, 0x38	; 56
+ 428:	b7 cf       	rjmp	.-146    	; 0x398 <Presionar_Numero>
+ 42a:	08 95       	ret
+
+0000042c <Accion_Tecla_9>:
+}
+void Accion_Tecla_9(void){
+	Presionar_Numero('9');
+ 42c:	89 e3       	ldi	r24, 0x39	; 57
+ 42e:	b4 cf       	rjmp	.-152    	; 0x398 <Presionar_Numero>
+ 430:	08 95       	ret
+
+00000432 <__vector_11>:
+		Tecla_Presionada=C1;
+	}
+	return Tecla_Presionada;
+}
+
+ISR(PCINT2_vect){
+ 432:	1f 92       	push	r1
+ 434:	0f 92       	push	r0
+ 436:	0f b6       	in	r0, 0x3f	; 63
+ 438:	0f 92       	push	r0
+ 43a:	11 24       	eor	r1, r1
+ 43c:	0b b6       	in	r0, 0x3b	; 59
+ 43e:	0f 92       	push	r0
+ 440:	2f 93       	push	r18
+ 442:	3f 93       	push	r19
+ 444:	4f 93       	push	r20
+ 446:	5f 93       	push	r21
+ 448:	6f 93       	push	r22
+ 44a:	7f 93       	push	r23
+ 44c:	8f 93       	push	r24
+ 44e:	9f 93       	push	r25
+ 450:	af 93       	push	r26
+ 452:	bf 93       	push	r27
+ 454:	ef 93       	push	r30
+ 456:	ff 93       	push	r31
+	cli();
+ 458:	f8 94       	cli
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 45a:	2f ef       	ldi	r18, 0xFF	; 255
+ 45c:	81 ee       	ldi	r24, 0xE1	; 225
+ 45e:	94 e0       	ldi	r25, 0x04	; 4
+ 460:	21 50       	subi	r18, 0x01	; 1
+ 462:	80 40       	sbci	r24, 0x00	; 0
+ 464:	90 40       	sbci	r25, 0x00	; 0
+ 466:	e1 f7       	brne	.-8      	; 0x460 <__vector_11+0x2e>
+ 468:	00 c0       	rjmp	.+0      	; 0x46a <__vector_11+0x38>
+ 46a:	00 00       	nop
+        _delay_ms(100);
+	uint8_t Tecla=Obtener_Tecla();
+ 46c:	8c de       	rcall	.-744    	; 0x186 <Obtener_Tecla>
+	if (Tecla!=Tecla_Nula){Ultima_Tecla_Presionada=Tecla;}
+ 46e:	8b 3e       	cpi	r24, 0xEB	; 235
+ 470:	11 f1       	breq	.+68     	; 0x4b6 <__vector_11+0x84>
+ 472:	80 93 01 02 	sts	0x0201, r24	; 0x800201 <Ultima_Tecla_Presionada>
+	switch (Tecla)
+ 476:	90 e0       	ldi	r25, 0x00	; 0
+ 478:	fc 01       	movw	r30, r24
+ 47a:	ba 97       	sbiw	r30, 0x2a	; 42
+ 47c:	e0 31       	cpi	r30, 0x10	; 16
+ 47e:	f1 05       	cpc	r31, r1
+ 480:	d0 f4       	brcc	.+52     	; 0x4b6 <__vector_11+0x84>
+ 482:	88 27       	eor	r24, r24
+ 484:	ee 58       	subi	r30, 0x8E	; 142
+ 486:	ff 4f       	sbci	r31, 0xFF	; 255
+ 488:	8f 4f       	sbci	r24, 0xFF	; 255
+	{
+		case Tecla_0:
+		Accion_Tecla_0();
+ 48a:	57 c0       	rjmp	.+174    	; 0x53a <__tablejump2__>
+		break;
+		case Tecla_1:
+		Accion_Tecla_1();
+ 48c:	b4 df       	rcall	.-152    	; 0x3f6 <Accion_Tecla_0>
+		break;
+ 48e:	13 c0       	rjmp	.+38     	; 0x4b6 <__vector_11+0x84>
+		case Tecla_2:
+		Accion_Tecla_2();
+ 490:	b5 df       	rcall	.-150    	; 0x3fc <Accion_Tecla_1>
+		break;
+		case Tecla_3:
+		Accion_Tecla_3();
+ 492:	11 c0       	rjmp	.+34     	; 0x4b6 <__vector_11+0x84>
+		break;
+ 494:	b6 df       	rcall	.-148    	; 0x402 <Accion_Tecla_2>
+		case Tecla_4:
+		Accion_Tecla_4();
+ 496:	0f c0       	rjmp	.+30     	; 0x4b6 <__vector_11+0x84>
+		break;
+		case Tecla_5:
+		Accion_Tecla_5();
+ 498:	b7 df       	rcall	.-146    	; 0x408 <Accion_Tecla_3>
+		break;
+ 49a:	0d c0       	rjmp	.+26     	; 0x4b6 <__vector_11+0x84>
+		case Tecla_6:
+		Accion_Tecla_6();
+ 49c:	b8 df       	rcall	.-144    	; 0x40e <Accion_Tecla_4>
+		break;
+ 49e:	0b c0       	rjmp	.+22     	; 0x4b6 <__vector_11+0x84>
+		case Tecla_7:
+		Accion_Tecla_7();
+ 4a0:	b9 df       	rcall	.-142    	; 0x414 <Accion_Tecla_5>
+ 4a2:	09 c0       	rjmp	.+18     	; 0x4b6 <__vector_11+0x84>
+		break;
+ 4a4:	ba df       	rcall	.-140    	; 0x41a <Accion_Tecla_6>
+		case Tecla_8:
+		Accion_Tecla_8();
+ 4a6:	07 c0       	rjmp	.+14     	; 0x4b6 <__vector_11+0x84>
+ 4a8:	bb df       	rcall	.-138    	; 0x420 <Accion_Tecla_7>
+		break;
+ 4aa:	05 c0       	rjmp	.+10     	; 0x4b6 <__vector_11+0x84>
+		case Tecla_9:
+		Accion_Tecla_9();
+ 4ac:	bc df       	rcall	.-136    	; 0x426 <Accion_Tecla_8>
+ 4ae:	03 c0       	rjmp	.+6      	; 0x4b6 <__vector_11+0x84>
+		break;
+ 4b0:	bd df       	rcall	.-134    	; 0x42c <Accion_Tecla_9>
+		break;
+		case Tecla_D:
+		Accion_Tecla_D();
+		break;
+		case Tecla_Ast:
+		Accion_Tecla_Ast();
+ 4b2:	01 c0       	rjmp	.+2      	; 0x4b6 <__vector_11+0x84>
+ 4b4:	5c df       	rcall	.-328    	; 0x36e <Accion_Tecla_Ast>
+		Accion_Tecla_Num();
+		break;
+		default:
+		break;
+	}
+	sei();
+ 4b6:	78 94       	sei
+}
+ 4b8:	ff 91       	pop	r31
+ 4ba:	ef 91       	pop	r30
+ 4bc:	bf 91       	pop	r27
+ 4be:	af 91       	pop	r26
+ 4c0:	9f 91       	pop	r25
+ 4c2:	8f 91       	pop	r24
+ 4c4:	7f 91       	pop	r23
+ 4c6:	6f 91       	pop	r22
+ 4c8:	5f 91       	pop	r21
+ 4ca:	4f 91       	pop	r20
+ 4cc:	3f 91       	pop	r19
+ 4ce:	2f 91       	pop	r18
+ 4d0:	0f 90       	pop	r0
+ 4d2:	0b be       	out	0x3b, r0	; 59
+ 4d4:	0f 90       	pop	r0
+ 4d6:	0f be       	out	0x3f, r0	; 63
+ 4d8:	0f 90       	pop	r0
+ 4da:	1f 90       	pop	r1
+ 4dc:	18 95       	reti
+
+000004de <main>:
+	Contador_Digito++;
+}
+
+int main(void)
+{
+	cli();
+ 4de:	f8 94       	cli
+	DDRB=(1<<PB7)|(1<<PB6);//Pines de PWM
+ 4e0:	80 ec       	ldi	r24, 0xC0	; 192
+ 4e2:	84 b9       	out	0x04, r24	; 4
+	Inicializar_Teclado();
+ 4e4:	2f de       	rcall	.-930    	; 0x144 <Inicializar_Teclado>
+	LCD_INICIALIZA();
+ 4e6:	c4 de       	rcall	.-632    	; 0x270 <LCD_INICIALIZA>
+ 4e8:	8b ee       	ldi	r24, 0xEB	; 235
+	//Configuración Timer1 PWM 10 bits phase correct
+	TCCR1A=(1<<COM1A1)|(1<<COM1A0)|(1<<COM1B1)|(0<<COM1B0)|(1<<COM1C1)|(0<<COM1C0)|(1<<WGM11)|(1<<WGM10);//Phase Correct PWM 10 bits OCR1A OCR1B y OCR1C conectados.
+ 4ea:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x700080>
+ 4ee:	82 e0       	ldi	r24, 0x02	; 2
+	TCCR1B=(0<<ICNC1)|(0<<ICES1)|(0<<5)|(0<<WGM13)|(0<<WGM12)|(0<<CS12)|(1<<CS11)|(0<<CS10);//Modo Phase Correct PWM 10 bits y Prescalador a 8.
+ 4f0:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x700081>
+ 4f4:	10 92 82 00 	sts	0x0082, r1	; 0x800082 <__TEXT_REGION_LENGTH__+0x700082>
+	TCCR1C=(0<<FOC1A)|(0<<FOC1B)|(0<<FOC1C)|(0<<4)|(0<<3)|(0<<2)|(0<<1)|(0<<0);//Sin forzar comparaciones.
+ 4f8:	10 92 6f 00 	sts	0x006F, r1	; 0x80006f <__TEXT_REGION_LENGTH__+0x70006f>
+	TIMSK1=(0<<7)|(0<<6)|(0<<ICIE1)|(0<<4)|(0<<OCIE1C)|(0<<OCIE1B)|(0<<OCIE1A)|(0<<TOIE1);//Sin interrupciones de PWM.
+ 4fc:	10 92 85 00 	sts	0x0085, r1	; 0x800085 <__TEXT_REGION_LENGTH__+0x700085>
+	TCNT1=0x0000;
+ 500:	10 92 84 00 	sts	0x0084, r1	; 0x800084 <__TEXT_REGION_LENGTH__+0x700084>
+ 504:	10 92 87 00 	sts	0x0087, r1	; 0x800087 <__TEXT_REGION_LENGTH__+0x700087>
+	ICR1=0x0000;
+ 508:	10 92 86 00 	sts	0x0086, r1	; 0x800086 <__TEXT_REGION_LENGTH__+0x700086>
+ 50c:	10 92 89 00 	sts	0x0089, r1	; 0x800089 <__TEXT_REGION_LENGTH__+0x700089>
+	OCR1A=0x0000;
+ 510:	10 92 88 00 	sts	0x0088, r1	; 0x800088 <__TEXT_REGION_LENGTH__+0x700088>
+ 514:	10 92 b3 00 	sts	0x00B3, r1	; 0x8000b3 <__TEXT_REGION_LENGTH__+0x7000b3>
+	OCR2A=0x0000;
+ 518:	10 92 8d 00 	sts	0x008D, r1	; 0x80008d <__TEXT_REGION_LENGTH__+0x70008d>
+	OCR1C=0x0000;
+ 51c:	10 92 8c 00 	sts	0x008C, r1	; 0x80008c <__TEXT_REGION_LENGTH__+0x70008c>
+ 520:	80 e5       	ldi	r24, 0x50	; 80
+	Referencia=80;
+ 522:	80 93 25 02 	sts	0x0225, r24	; 0x800225 <Referencia>
+	//Configuración Interrupciones Externas
+	  
+	//
+	LIMPIA_LCD();
+ 526:	ec de       	rcall	.-552    	; 0x300 <LIMPIA_LCD>
+
+void POS_LINEA2(char posicion)
+{
+	char linea2 = 0xC0;
+	posicion= posicion|linea2;
+	ENVIA_CMD(posicion);
+ 528:	81 ec       	ldi	r24, 0xC1	; 193
+ 52a:	7b de       	rcall	.-778    	; 0x222 <ENVIA_CMD>
+	POS_LINEA2(1);
+	ENVIA_CADENA("Intro: Dato");
+ 52c:	83 e1       	ldi	r24, 0x13	; 19
+ 52e:	92 e0       	ldi	r25, 0x02	; 2
+ 530:	d9 de       	rcall	.-590    	; 0x2e4 <ENVIA_CADENA>
+
+void POS_LINEA1(char posicion)
+{
+	char linea1 = 0x80;
+	posicion= posicion|linea1;
+	ENVIA_CMD(posicion);
+ 532:	83 e8       	ldi	r24, 0x83	; 131
+ 534:	76 de       	rcall	.-788    	; 0x222 <ENVIA_CMD>
+ 536:	78 94       	sei
+	POS_LINEA1(3);
+	sei();
+ 538:	ff cf       	rjmp	.-2      	; 0x538 <main+0x5a>
+
+0000053a <__tablejump2__>:
+ 53a:	ee 0f       	add	r30, r30
+ 53c:	ff 1f       	adc	r31, r31
+ 53e:	88 1f       	adc	r24, r24
+ 540:	8b bf       	out	0x3b, r24	; 59
+ 542:	07 90       	elpm	r0, Z+
+ 544:	f6 91       	elpm	r31, Z
+ 546:	e0 2d       	mov	r30, r0
+ 548:	19 94       	eijmp
+
+0000054a <__umulhisi3>:
+ 54a:	a2 9f       	mul	r26, r18
+ 54c:	b0 01       	movw	r22, r0
+ 54e:	b3 9f       	mul	r27, r19
+ 550:	c0 01       	movw	r24, r0
+ 552:	a3 9f       	mul	r26, r19
+ 554:	70 0d       	add	r23, r0
+ 556:	81 1d       	adc	r24, r1
+ 558:	11 24       	eor	r1, r1
+ 55a:	91 1d       	adc	r25, r1
+ 55c:	b2 9f       	mul	r27, r18
+ 55e:	70 0d       	add	r23, r0
+ 560:	81 1d       	adc	r24, r1
+ 562:	11 24       	eor	r1, r1
+ 564:	91 1d       	adc	r25, r1
+ 566:	08 95       	ret
+
+00000568 <_exit>:
+ 568:	f8 94       	cli
+
+0000056a <__stop_program>:
+ 56a:	ff cf       	rjmp	.-2      	; 0x56a <__stop_program>

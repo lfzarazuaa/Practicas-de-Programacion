@@ -1,0 +1,28 @@
+INFO:sim:172 - Generating IP...
+WARNING:sim:830 - The working directory for this project is located on a
+   UNC-mounted drive.  To ensure generation completes successfully, you should
+   locate your working directory on a drive which is identified by a drive
+   letter.  You can change this path in the Project Options dialog.
+Applying current project options...
+Finished applying current project options.
+ERROR:sim - Unable to find
+ERROR:sim -   
+   C:\Users\LuisFernando\Desktop\VHDL\practica_video_imagen\salvapantalla\Salvap
+ERROR:sim -    antalla\Resultado.coe
+ERROR:sim -    Coregen is looking for
+ERROR:sim -   
+   C:\Users\LuisFernando\Desktop\VHDL\practica_video_imagen\salvapantalla\Salvap
+ERROR:sim -    antalla\Resultado.coe
+ERROR:sim - Unable to find
+ERROR:sim -   
+   C:\Users\LuisFernando\Desktop\VHDL\practica_video_imagen\salvapantalla\Salvap
+ERROR:sim -    antalla\Resultado.coe
+ERROR:sim -    Coregen is looking for
+ERROR:sim -   
+   C:\Users\LuisFernando\Desktop\VHDL\practica_video_imagen\salvapantalla\Salvap
+ERROR:sim -    antalla\Resultado.coe
+ERROR:sim - An invalid core configuration has been detected during
+ERROR:sim -    Customization. Core parameters will be reset to their default
+   values.
+Cancelled executing Tcl generator.
+Wrote CGP file for project 'rom240x160'.

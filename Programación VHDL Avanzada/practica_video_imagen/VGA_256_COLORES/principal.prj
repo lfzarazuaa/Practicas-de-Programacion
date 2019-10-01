@@ -1,0 +1,5 @@
+vhdl work "vga_stripes.vhd"
+vhdl work "vga_640x480.vhd"
+vhdl work "costal.vhd"
+vhdl work "clkdiv.vhd"
+vhdl work "principal.vhd"

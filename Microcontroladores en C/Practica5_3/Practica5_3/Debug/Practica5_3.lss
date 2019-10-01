@@ -1,0 +1,167 @@
+
+Practica5_3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000de  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000132  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000132  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000164  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000030  00000000  00000000  000001a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000005e2  00000000  00000000  000001d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000555  00000000  00000000  000007b2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000242  00000000  00000000  00000d07  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000064  00000000  00000000  00000f4c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000032b  00000000  00000000  00000fb0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000078  00000000  00000000  000012db  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  00001353  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__vector_4>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 36 00 	jmp	0x6c	; 0x6c <__vector_9>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 58 00 	call	0xb0	; 0xb0 <main>
+  64:	0c 94 6d 00 	jmp	0xda	; 0xda <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <__vector_9>:
+#include <util/delay.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#define Carga_Inicial_T0 134;//Frecuencia de 8 Hz.
+#define Carga_Inicial_T2 175;//Frecuencia de 12 Hz.
+ISR(TIMER0_OVF_vect){
+  6c:	1f 92       	push	r1
+  6e:	0f 92       	push	r0
+  70:	0f b6       	in	r0, 0x3f	; 63
+  72:	0f 92       	push	r0
+  74:	11 24       	eor	r1, r1
+  76:	8f 93       	push	r24
+	TCNT0=Carga_Inicial_T0;
+  78:	86 e8       	ldi	r24, 0x86	; 134
+  7a:	82 bf       	out	0x32, r24	; 50
+	PORTA=PORTA+1;
+  7c:	8b b3       	in	r24, 0x1b	; 27
+  7e:	8f 5f       	subi	r24, 0xFF	; 255
+  80:	8b bb       	out	0x1b, r24	; 27
+}
+  82:	8f 91       	pop	r24
+  84:	0f 90       	pop	r0
+  86:	0f be       	out	0x3f, r0	; 63
+  88:	0f 90       	pop	r0
+  8a:	1f 90       	pop	r1
+  8c:	18 95       	reti
+
+0000008e <__vector_4>:
+ISR(TIMER2_OVF_vect){
+  8e:	1f 92       	push	r1
+  90:	0f 92       	push	r0
+  92:	0f b6       	in	r0, 0x3f	; 63
+  94:	0f 92       	push	r0
+  96:	11 24       	eor	r1, r1
+  98:	8f 93       	push	r24
+	TCNT2=Carga_Inicial_T2;
+  9a:	8f ea       	ldi	r24, 0xAF	; 175
+  9c:	84 bd       	out	0x24, r24	; 36
+	PORTB=PORTB-1;
+  9e:	88 b3       	in	r24, 0x18	; 24
+  a0:	81 50       	subi	r24, 0x01	; 1
+  a2:	88 bb       	out	0x18, r24	; 24
+}
+  a4:	8f 91       	pop	r24
+  a6:	0f 90       	pop	r0
+  a8:	0f be       	out	0x3f, r0	; 63
+  aa:	0f 90       	pop	r0
+  ac:	1f 90       	pop	r1
+  ae:	18 95       	reti
+
+000000b0 <main>:
+int main(void)
+{
+	cli();
+  b0:	f8 94       	cli
+    DDRA=(1<<DDA7)|(1<<DDA6)|(1<<DDA5)|(1<<DDA4)|(1<<DDA3)|(1<<DDA2)|(1<<DDA1)|(1<<DDA0);//Todo el Puerto A es salida.
+  b2:	8f ef       	ldi	r24, 0xFF	; 255
+  b4:	8a bb       	out	0x1a, r24	; 26
+	DDRB=(1<<DDB7)|(1<<DDB6)|(1<<DDB5)|(1<<DDB4)|(1<<DDB3)|(1<<DDB2)|(1<<DDB1)|(1<<DDB0);//Todo el Puerto B es salida.
+  b6:	87 bb       	out	0x17, r24	; 23
+	
+	PORTA=(0<<PA7)|(0<<PA6)|(0<<PA5)|(0<<PA4)|(0<<PA3)|(0<<PA2)|(0<<PA1)|(1<<PA0);//Valor Inicial del puerto A.
+  b8:	81 e0       	ldi	r24, 0x01	; 1
+  ba:	8b bb       	out	0x1b, r24	; 27
+	PORTB=(0<<PB7)|(0<<PB6)|(0<<PB5)|(0<<PB4)|(0<<PB3)|(0<<PB2)|(0<<PB1)|(1<<PB0);//Valor Inicial del puerto B.
+  bc:	88 bb       	out	0x18, r24	; 24
+	//Configuración Timer0
+	TCCR0=(0<<FOC0)|(0<<WGM00)|(0<<COM01)|(0<<COM00)|(0<<WGM01)|(1<<CS02)|(0<<CS01)|(1<<CS00);//Sin comparación, modo normal,0C0 desconectado,prescalador a 1024.
+  be:	85 e0       	ldi	r24, 0x05	; 5
+  c0:	83 bf       	out	0x33, r24	; 51
+	TCNT0=Carga_Inicial_T0;
+  c2:	86 e8       	ldi	r24, 0x86	; 134
+  c4:	82 bf       	out	0x32, r24	; 50
+	OCR0=0X00;
+  c6:	1c be       	out	0x3c, r1	; 60
+	//Configuración Timer2
+	TCCR2=(0<<FOC2)|(0<<WGM20)|(0<<COM21)|(0<<COM20)|(0<<WGM21)|(1<<CS22)|(1<<CS21)|(1<<CS20);//Sin comparación, modo normal,0C2 desconectado,prescalador a 1024.
+  c8:	87 e0       	ldi	r24, 0x07	; 7
+  ca:	85 bd       	out	0x25, r24	; 37
+	TCNT2=Carga_Inicial_T2;
+  cc:	8f ea       	ldi	r24, 0xAF	; 175
+  ce:	84 bd       	out	0x24, r24	; 36
+	OCR2=0X00;
+  d0:	13 bc       	out	0x23, r1	; 35
+	//Habilitar las interrupciones
+	TIMSK=(0<<OCIE2)|(1<<TOIE2)|(0<<TICIE1)|(0<<OCIE1A)|(0<<OCIE1B)|(0<<TOIE1)|(0<<OCIE0)|(1<<TOIE0);//Interrupción por overflow de Timer 0 y Timer 2.
+  d2:	81 e4       	ldi	r24, 0x41	; 65
+  d4:	89 bf       	out	0x39, r24	; 57
+	
+	sei();
+  d6:	78 94       	sei
+  d8:	ff cf       	rjmp	.-2      	; 0xd8 <main+0x28>
+
+000000da <_exit>:
+  da:	f8 94       	cli
+
+000000dc <__stop_program>:
+  dc:	ff cf       	rjmp	.-2      	; 0xdc <__stop_program>

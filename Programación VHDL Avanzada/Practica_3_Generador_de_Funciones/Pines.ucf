@@ -1,0 +1,43 @@
+net "clk_nexys" loc=B8;
+net "Sel_Senal<1>" loc=K17;
+net "Sel_Senal<0>" loc=K18;
+net "Sel_Escala<1>" loc=H18;
+net "Sel_Escala<0>" loc=G18;
+net "Boton_bajar" loc=H13;
+net "Boton_subir" loc=E18;
+net "reset" loc=D18;
+////DISPLAY DE 7 SEGMENTOS.
+net "Vsal<15>" loc=U18;
+net "Vsal<14>" loc=T18;
+net "Vsal<13>" loc=R16;
+net "Vsal<12>" loc=P17;
+net "Vsal<11>" loc=T17;
+net "Vsal<10>" loc=R15;
+net "Vsal<9>" loc=R18;
+net "Vsal<8>" loc=M13;
+net "Vsal<7>" loc=J12;
+net "Vsal<6>" loc=G16;
+net "Vsal<5>" loc=F14;
+net "Vsal<4>" loc=H15;
+net "Vsal<3>" loc=H16;
+net "Vsal<2>" loc=G13;
+net "Vsal<1>" loc=J16;
+net "Vsal<0>" loc=G15;
+
+net Salidas_7segc<7> loc=C17;
+net Salidas_7segc<6> loc=H14;
+net Salidas_7segc<5> loc=J17;
+net Salidas_7segc<4> loc=G14;
+net Salidas_7segc<3> loc=D16;
+net Salidas_7segc<2> loc=D17;
+net Salidas_7segc<1> loc=F18;
+net Salidas_7segc<0> loc=L18;
+net Control_Disp_7segc<3> loc=F17;
+net Control_Disp_7segc<2> loc=H17;
+net Control_Disp_7segc<1> loc=C18;
+net Control_Disp_7segc<0> loc=F15;
+
+
+
+
+

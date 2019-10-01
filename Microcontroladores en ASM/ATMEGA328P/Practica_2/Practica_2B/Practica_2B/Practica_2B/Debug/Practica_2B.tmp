@@ -1,0 +1,44 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Debug/Practica_2B.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_2B.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_2B.map</FILE>
+  <FILE>Practica_2B.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>15</LINE></config>
+  <CompA_2><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>62</LINE></CompA_2>
+  <CompB_2><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>65</LINE></CompB_2>
+  <CompA_0><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>56</LINE></CompA_0>
+  <CompB_0><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>59</LINE></CompB_0>
+  <inicio><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>69</LINE></inicio>
+  <Dec_R><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>87</LINE></Dec_R>
+  <Inc_R><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>104</LINE></Inc_R>
+  <Dec_G><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>121</LINE></Dec_G>
+  <Inc_G><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>138</LINE></Inc_G>
+  <Dec_B><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>154</LINE></Dec_B>
+  <Inc_B><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>172</LINE></Inc_B>
+  <Dec_R1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>101</LINE></Dec_R1>
+  <Inc_R1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>118</LINE></Inc_R1>
+  <Dec_G1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>135</LINE></Dec_G1>
+  <Inc_G1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>151</LINE></Inc_G1>
+  <Dec_B1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>169</LINE></Dec_B1>
+  <Inc_B1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_2\Practica_2B\Practica_2B\Practica_2B\Practica_2B.asm</FILE><LINE>186</LINE></Inc_B1>
+ </LABELS>
+</ASSEMBLER_INFO>

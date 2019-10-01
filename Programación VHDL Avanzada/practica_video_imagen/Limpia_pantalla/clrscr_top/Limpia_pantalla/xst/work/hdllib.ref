@@ -1,0 +1,17 @@
+EN mux2g NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/mux2g.vhd sub00/vhpl13 1492785936
+AR debounce4 behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/debounce4.vhd sub00/vhpl12 1492785935
+AR vga_640x480 behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_640x480.vhd sub00/vhpl04 1492785927
+EN buff3 NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/buff3.vhd sub00/vhpl07 1492785930
+EN clkdiv NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clkdiv.vhd sub00/vhpl01 1492785924
+EN vga_ram NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_ram.vhd sub00/vhpl05 1492785928
+AR mux2g behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/mux2g.vhd sub00/vhpl14 1492785937
+EN vga_640x480 NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_640x480.vhd sub00/vhpl03 1492785926
+EN debounce4 NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/debounce4.vhd sub00/vhpl11 1492785934
+AR clrscr_top behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr_top.vhd sub00/vhpl16 1492785939
+EN clrscr NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr.vhd sub00/vhpl09 1492785932
+AR clkdiv behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clkdiv.vhd sub00/vhpl02 1492785925
+AR clrscr behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr.vhd sub00/vhpl10 1492785933
+PH vgacomp NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vgacomp.vhd sub00/vhpl00 1492785923
+EN clrscr_top NULL //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/clrscr_top.vhd sub00/vhpl15 1492785938
+AR vga_ram behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/vga_ram.vhd sub00/vhpl06 1492785929
+AR buff3 behavioral //VBOXSVR/vhdl/practica_video_imagen/Limpia_pantalla/clrscr_top/Limpia_pantalla/buff3.vhd sub00/vhpl08 1492785931

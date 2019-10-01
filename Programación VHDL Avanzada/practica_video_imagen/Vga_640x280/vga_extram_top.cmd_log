@@ -1,0 +1,29 @@
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vgapin.ucf -p xc3s500e-fg320-5 vga_extram_top.ngc vga_extram_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o vga_extram_top_map.ncd vga_extram_top.ngd vga_extram_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_extram_top_map.ncd vga_extram_top.ncd vga_extram_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml vga_extram_top.twx vga_extram_top.ncd -o vga_extram_top.twr vga_extram_top.pcf -ucf vgapin.ucf 
+bitgen -intstyle ise -f vga_extram_top.ut vga_extram_top.ncd 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vgapin.ucf -p xc3s500e-fg320-5 vga_extram_top.ngc vga_extram_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o vga_extram_top_map.ncd vga_extram_top.ngd vga_extram_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_extram_top_map.ncd vga_extram_top.ncd vga_extram_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml vga_extram_top.twx vga_extram_top.ncd -o vga_extram_top.twr vga_extram_top.pcf -ucf vgapin.ucf 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vgapin.ucf -p xc3s500e-fg320-5 vga_extram_top.ngc vga_extram_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o vga_extram_top_map.ncd vga_extram_top.ngd vga_extram_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_extram_top_map.ncd vga_extram_top.ncd vga_extram_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml vga_extram_top.twx vga_extram_top.ncd -o vga_extram_top.twr vga_extram_top.pcf -ucf vgapin.ucf 
+bitgen -intstyle ise -f vga_extram_top.ut vga_extram_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc vgapin.ucf -p xc3s500e-fg320-5 vga_extram_top.ngc vga_extram_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o vga_extram_top_map.ncd vga_extram_top.ngd vga_extram_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_extram_top_map.ncd vga_extram_top.ncd vga_extram_top.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml vga_extram_top.twx vga_extram_top.ncd -o vga_extram_top.twr vga_extram_top.pcf -ucf vgapin.ucf 
+bitgen -intstyle ise -f vga_extram_top.ut vga_extram_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Vga_640x280/vga_extram_top.syr" 

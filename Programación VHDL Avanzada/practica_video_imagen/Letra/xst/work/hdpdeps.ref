@@ -1,0 +1,29 @@
+V3 15
+FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch12_01_vga_sync.vhd 2017/06/01.19:14:48 P.20131013
+EN work/vga_sync 1496417437 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch12_01_vga_sync.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/vga_sync/arch 1496417438 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch12_01_vga_sync.vhd \
+      EN work/vga_sync 1496417437
+FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_01_font_rom.vhd 2017/06/01.19:16:10 P.20131013
+EN work/font_rom 1496417435 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_01_font_rom.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/font_rom/arch 1496417436 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_01_font_rom.vhd \
+      EN work/font_rom 1496417435
+FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_02_font_test_gen.vhd 2017/06/01.19:16:10 P.20131013
+EN work/font_test_gen 1496417439 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_02_font_test_gen.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/font_test_gen/arch 1496417440 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_02_font_test_gen.vhd \
+      EN work/font_test_gen 1496417439 CP work/font_rom
+FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_03_font_test_top.vhd 2017/06/01.19:15:32 P.20131013
+EN work/font_test_top 1496417441 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_03_font_test_top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/font_test_top/arch 1496417442 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_03_font_test_top.vhd \
+      EN work/font_test_top 1496417441 CP work/vga_sync CP work/font_test_gen

@@ -1,0 +1,52 @@
+clc, clear all, close all
+syms s
+Den=s*(s+2)*(s+4)*(s+6)*(s+7)^2*(s^2+2*s+3)*(s^2+5*s+10);
+G1=1/(s+7);
+G2=1/(s^2+2*s+3);
+G3=1/(s+4);
+G4=1/s;
+G5=5/(s+7);
+G6=1/(s^2+5*s+10);
+G7=3/(s+2);
+G8=1/(s+6);
+G9=6/(s*(s+4)*(s+7))
+R3=G1*G2;
+R4=G1*G2*G6*G7;
+R5=G1*G3*G5;
+R6=-G3*G7*G8;
+R7=G1*G4*G5;
+R8=-G4*G7*G8;
+R9=G6*G7;
+T1=R3
+T2=R4
+T3=R5
+T4=R6
+T5=R7
+T6=R8
+T7=R9
+% T1=1/((s+7)*(s^2+2*s+3));
+% T2=3/((s+2)*(s+7)*(s^2+2*s+3)*(s^2+5*s+10));
+% T3=5/((s+4)*(s+7)^2);
+% T4=5/(s*(s+7)^2);
+% T5=-3/((s+2)*(s+4)*(s+6));
+% T6=-3/(s*(s+2)*(s+6));
+% T7=3/((s+2)*(s^2+5*s+10));
+Res0=expand(Den)
+Res1=expand(T1*Den)/1
+Res2=expand(T2*Den)/3
+Res3=expand(T3*Den)/5
+Res4=expand(T4*Den)/5
+Res5=expand(T5*Den)/3
+Res6=expand(T6*Den)/3
+Res7=expand(T7*Den)/3
+
+Res0=expand(Den)
+Res1=expand(T1*Den)
+Res2=expand(T2*Den)
+Res3=expand(T3*Den)
+Res4=expand(T4*Den)
+Res5=expand(T5*Den)
+Res6=expand(T6*Den)
+Res7=expand(T7*Den)
+Res=Res0+Res1+Res2+Res3+Res4+Res5+Res6+Res7
+expand(G9*Den)

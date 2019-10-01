@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="790" delta="old" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_imagen.vhd</arg>&quot; line <arg fmt="%d" index="2">54</arg>: Index value(s) does not match array range, simulation mismatch.
+</msg>
+
+<msg type="warning" file="Xst" num="790" delta="old" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_imagen.vhd</arg>&quot; line <arg fmt="%d" index="2">55</arg>: Index value(s) does not match array range, simulation mismatch.
+</msg>
+
+<msg type="warning" file="Xst" num="790" delta="old" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/vga_imagen.vhd</arg>&quot; line <arg fmt="%d" index="2">56</arg>: Index value(s) does not match array range, simulation mismatch.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">rom_addr&lt;10:4&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+</messages>
+

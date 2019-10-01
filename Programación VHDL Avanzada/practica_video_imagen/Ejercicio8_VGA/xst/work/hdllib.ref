@@ -1,0 +1,9 @@
+PH costal NULL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/costal.vhd sub00/vhpl01 1489765780
+EN principal NULL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/principal.vhd sub00/vhpl07 1489765787
+AR vga_640x480 behavioral C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_640x480.vhd sub00/vhpl04 1489765784
+EN clkdiv NULL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/clkdiv.vhd sub00/vhpl02 1489765781
+EN vga_640x480 NULL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_640x480.vhd sub00/vhpl00 1489765783
+AR principal behavioral C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/principal.vhd sub00/vhpl08 1489765788
+EN vga_stripes NULL C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_stripes.vhd sub00/vhpl05 1489765785
+AR clkdiv behavioral C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/clkdiv.vhd sub00/vhpl03 1489765782
+AR vga_stripes behavioral C:/Users/azapi/Desktop/DLP's/Ejercicio8_VGA/vga_stripes.vhd sub00/vhpl06 1489765786

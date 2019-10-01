@@ -1,0 +1,39 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\Debug/MAX_DISPLAY.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>MAX_DISPLAY.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>MAX_DISPLAY.map</FILE>
+  <FILE>MAX_DISPLAY.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>15</LINE></config>
+  <SPI_MasterInit><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>25</LINE></SPI_MasterInit>
+  <Inicializar_Max><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>34</LINE></Inicializar_Max>
+  <Actualizar_Max><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>92</LINE></Actualizar_Max>
+  <Inicio><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>59</LINE></Inicio>
+  <Repetir><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>90</LINE></Repetir>
+  <Transmitir_SPI><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>109</LINE></Transmitir_SPI>
+  <Espera_SPI><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>113</LINE></Espera_SPI>
+  <Retardo><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>121</LINE></Retardo>
+  <WGLOOP3><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>126</LINE></WGLOOP3>
+  <WGLOOP0><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>128</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>129</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\LuisFernando\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_8\MAX_DISPLAY\MAX_DISPLAY\MAX_DISPLAY.asm</FILE><LINE>136</LINE></WGLOOP2>
+ </LABELS>
+</ASSEMBLER_INFO>

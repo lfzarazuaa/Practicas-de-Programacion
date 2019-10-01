@@ -1,0 +1,48 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega2560"</DEVICE>
+ <WORKING_DIR>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m2560def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\Debug\Practica_1a_Mega.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_1a_Mega.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_1a_Mega.map</FILE>
+  <FILE>Practica_1a_Mega.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>14</LINE></config>
+  <inicio><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>27</LINE></inicio>
+  <OnOff><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>33</LINE></OnOff>
+  <Apagar><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>37</LINE></Apagar>
+  <Velocidades><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>41</LINE></Velocidades>
+  <Vel_1><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>49</LINE></Vel_1>
+  <Vel_0><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>45</LINE></Vel_0>
+  <Comb><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>52</LINE></Comb>
+  <Comb_0><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>65</LINE></Comb_0>
+  <Comb_1><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>68</LINE></Comb_1>
+  <Comb_2><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>71</LINE></Comb_2>
+  <Comb_3><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>74</LINE></Comb_3>
+  <SecuenciaA><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>77</LINE></SecuenciaA>
+  <SecuenciaB><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>83</LINE></SecuenciaB>
+  <SecuenciaC><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>93</LINE></SecuenciaC>
+  <SecuenciaD><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>111</LINE></SecuenciaD>
+  <Mostrar><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>125</LINE></Mostrar>
+  <Retardo><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>131</LINE></Retardo>
+  <Retardo_100><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>133</LINE></Retardo_100>
+  <WGLOOP0><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>137</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>138</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\Sanorte\Documents\Micros_Mau\Practica_1a_Mega\Practica_1a_Mega\main.asm</FILE><LINE>139</LINE></WGLOOP2>
+ </LABELS>
+</ASSEMBLER_INFO>

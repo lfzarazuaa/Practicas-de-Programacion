@@ -1,0 +1,162 @@
+
+Practica6_4.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000ba  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  0000010e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  0000010e  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000140  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000028  00000000  00000000  0000017c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000006ef  00000000  00000000  000001a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005f1  00000000  00000000  00000893  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002aa  00000000  00000000  00000e84  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000034  00000000  00000000  00001130  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000037a  00000000  00000000  00001164  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000d6  00000000  00000000  000014de  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  000015b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+  64:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <main>:
+#include <avr/io.h>
+#include <avr/interrupt.h>
+void Velocidad_Motor(uint8_t);
+int main(void)
+{
+	cli();
+  6c:	f8 94       	cli
+	DDRB=(0<<DDB7)|(0<<DDB6)|(0<<DDB5)|(0<<DDB4)|(1<<DDB3)|(0<<DDB2)|(0<<DDB1)|(0<<DDB0);//PB3 es OC0.
+  6e:	88 e0       	ldi	r24, 0x08	; 8
+  70:	87 bb       	out	0x17, r24	; 23
+	DDRD=(1<<DDD7)|(0<<DDD6)|(0<<DDD5)|(0<<DDD4)|(0<<DDD3)|(0<<DDD2)|(0<<DDD1)|(0<<DDD0);//PD7 es OC2.
+  72:	80 e8       	ldi	r24, 0x80	; 128
+  74:	81 bb       	out	0x11, r24	; 17
+	//Configuración Timer0
+	TCCR0=(0<<FOC0)|(1<<WGM00)|(1<<COM01)|(1<<COM00)|(0<<WGM01)|(1<<CS02)|(0<<CS01)|(1<<CS00);//Comparación, modo PWM Phase Correct,0C0 Conectado,prescalador a 256.
+  76:	85 e7       	ldi	r24, 0x75	; 117
+  78:	83 bf       	out	0x33, r24	; 51
+	TCNT0=0x00;
+  7a:	12 be       	out	0x32, r1	; 50
+	OCR0=0x00;
+  7c:	1c be       	out	0x3c, r1	; 60
+	//Habilitación interrupciones
+	TIMSK=(0<<OCIE2)|(0<<TOIE2)|(0<<TICIE1)|(0<<OCIE1A)|(0<<OCIE1B)|(0<<TOIE1)|(0<<OCIE0)|(0<<TOIE0);//Sin Interrupciones.
+  7e:	19 be       	out	0x39, r1	; 57
+	sei();
+  80:	78 94       	sei
+	/* Replace with your application code */
+	int i;
+	while (1)
+	{
+		for(i=0;i<=255;i=i+1){
+  82:	80 e0       	ldi	r24, 0x00	; 0
+  84:	90 e0       	ldi	r25, 0x00	; 0
+		}
+	}
+}
+
+void Velocidad_Motor(uint8_t Velocidad){
+	OCR0=Velocidad;
+  86:	8c bf       	out	0x3c, r24	; 60
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  88:	e3 ed       	ldi	r30, 0xD3	; 211
+  8a:	f0 e3       	ldi	r31, 0x30	; 48
+  8c:	31 97       	sbiw	r30, 0x01	; 1
+  8e:	f1 f7       	brne	.-4      	; 0x8c <main+0x20>
+  90:	00 c0       	rjmp	.+0      	; 0x92 <main+0x26>
+  92:	00 00       	nop
+	sei();
+	/* Replace with your application code */
+	int i;
+	while (1)
+	{
+		for(i=0;i<=255;i=i+1){
+  94:	01 96       	adiw	r24, 0x01	; 1
+  96:	81 15       	cp	r24, r1
+  98:	f1 e0       	ldi	r31, 0x01	; 1
+  9a:	9f 07       	cpc	r25, r31
+  9c:	a1 f7       	brne	.-24     	; 0x86 <main+0x1a>
+  9e:	84 eb       	ldi	r24, 0xB4	; 180
+		}
+	}
+}
+
+void Velocidad_Motor(uint8_t Velocidad){
+	OCR0=Velocidad;
+  a0:	8c bf       	out	0x3c, r24	; 60
+  a2:	e3 ed       	ldi	r30, 0xD3	; 211
+  a4:	f0 e3       	ldi	r31, 0x30	; 48
+  a6:	31 97       	sbiw	r30, 0x01	; 1
+  a8:	f1 f7       	brne	.-4      	; 0xa6 <main+0x3a>
+  aa:	00 c0       	rjmp	.+0      	; 0xac <main+0x40>
+  ac:	00 00       	nop
+  ae:	85 50       	subi	r24, 0x05	; 5
+	{
+		for(i=0;i<=255;i=i+1){
+			Velocidad_Motor(i);
+			_delay_ms(50);
+		}
+		for(i=180;i>=0;i=i-5){
+  b0:	8b 3f       	cpi	r24, 0xFB	; 251
+  b2:	b1 f7       	brne	.-20     	; 0xa0 <main+0x34>
+  b4:	e6 cf       	rjmp	.-52     	; 0x82 <main+0x16>
+
+000000b6 <_exit>:
+  b6:	f8 94       	cli
+
+000000b8 <__stop_program>:
+  b8:	ff cf       	rjmp	.-2      	; 0xb8 <__stop_program>

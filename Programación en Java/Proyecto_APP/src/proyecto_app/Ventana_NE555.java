@@ -1,0 +1,948 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package proyecto_app;
+
+import java.awt.Dimension;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import static proyecto_app.Proyecto_APP.Panel_Opcion;
+import javax.swing.*;
+import static proyecto_app.Proyecto_APP.Principal;
+/**
+ *
+ * @author LuisFernando
+ */
+public class Ventana_NE555 extends javax.swing.JFrame {
+    private int opcionModo;
+    private Numero_Compuesto Frecuencia_1,Ciclo_Util_1,Resistencia_A1,Resistencia_B1,Capacitancia_1;
+    private Numero_Compuesto Frecuencia_2,Ciclo_Util_2,Resistencia_A2,Resistencia_B2,Capacitancia_2;
+    private Numero_Compuesto Tiempo_pulso,Resistencia_3,Capacitancia_3;
+    private Numero_Compuesto Talto1,Tbajo1;
+    double ln2=-0.69314718055994530941723212145818,ln3=-1.0986122886681096913952452369225;
+    /**
+     * Creates new form Ventana_NE555
+     */
+    public Ventana_NE555(){
+        double operacion;
+        initComponents();
+        lblImagen.setText("");
+        Frecuencia_1=new Numero_Compuesto(1000);
+        Actualizar_Frecuencia_1(Frecuencia_1.getAbsoluto());
+        Ciclo_Util_1=new Numero_Compuesto(51);
+        Actualizar_Ciclo_Util_1(Ciclo_Util_1.getAbsoluto());
+        Capacitancia_1=new Numero_Compuesto(10,1);
+        Actualizar_Capacitancia_1(Capacitancia_1.getAbsoluto());
+        operacion=(100-2*Ciclo_Util_1.getAbsoluto())/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2));
+        Resistencia_A1=new Numero_Compuesto(operacion);
+        Actualizar_Resistencia_A1(Resistencia_A1.getAbsoluto());
+        operacion=(Ciclo_Util_1.getAbsoluto()-100)/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2));
+        Resistencia_B1=new Numero_Compuesto(operacion);
+        Actualizar_Resistencia_B1(Resistencia_B1.getAbsoluto());
+        Frecuencia_2=new Numero_Compuesto(1000);
+        Ciclo_Util_2=new Numero_Compuesto(10);
+        Capacitancia_2=new Numero_Compuesto(10,1);
+        operacion=(Ciclo_Util_2.getAbsoluto())/(-100*Frecuencia_2.getAbsoluto()*Capacitancia_2.getAbsoluto()*ln2);
+        Resistencia_A2=new Numero_Compuesto(operacion);
+        operacion=(Ciclo_Util_2.getAbsoluto()-100)/(100*Frecuencia_2.getAbsoluto()*Capacitancia_2.getAbsoluto()*ln2);
+        Resistencia_B2=new Numero_Compuesto(operacion);
+        Tiempo_pulso=new Numero_Compuesto(2,3);
+        Capacitancia_3=new Numero_Compuesto(10,2);
+        Resistencia_3=new Numero_Compuesto(-Tiempo_pulso.getAbsoluto()/(ln3*Capacitancia_3.getAbsoluto()));
+        Seleccionar_Imagen();
+    }
+    private void Actualizar_Frecuencia_1(double Numero){
+     Actualizar_Parametro(Numero,Frecuencia_1,txtFrecuencia,"Hz");
+    }
+    private void Actualizar_Ciclo_Util_1(double Numero){
+     Actualizar_Parametro(Numero,Ciclo_Util_1,txtCicloUtil,"%");
+    }
+    private void Actualizar_Capacitancia_1(double Numero){
+     Actualizar_Parametro(Numero,Capacitancia_1,txtCapacitancia,"F");
+    }
+    private void Actualizar_Resistencia_A1(double Numero){
+     Actualizar_Parametro(Numero,Resistencia_A1,txtResistenciaA,"Ω");
+    }
+    private void Actualizar_Resistencia_B1(double Numero){
+     Actualizar_Parametro(Numero,Resistencia_B1,txtResistenciaB,"Ω");
+    }
+    private void Actualizar_Frecuencia_2(double Numero){
+     Actualizar_Parametro(Numero,Frecuencia_2,txtFrecuencia,"Hz");
+    }
+    private void Actualizar_Ciclo_Util_2(double Numero){
+     Actualizar_Parametro(Numero,Ciclo_Util_2,txtCicloUtil,"%");
+    }
+    private void Actualizar_Capacitancia_2(double Numero){
+     Actualizar_Parametro(Numero,Capacitancia_2,txtCapacitancia,"F");
+    }
+    private void Actualizar_Resistencia_A2(double Numero){
+     Actualizar_Parametro(Numero,Resistencia_A2,txtResistenciaA,"Ω");
+    }
+    private void Actualizar_Resistencia_B2(double Numero){
+     Actualizar_Parametro(Numero,Resistencia_B2,txtResistenciaB,"Ω");
+    }
+    private void Actualizar_Tiempo_pulso(double Numero){
+     Actualizar_Parametro(Numero,Tiempo_pulso,txtTiempo,"s");
+    }
+    private void Actualizar_Capacitancia_3(double Numero){
+     Actualizar_Parametro(Numero,Capacitancia_3,txtCapacitancia,"F");
+    }
+    private void Actualizar_Resistencia_3(double Numero){
+     Actualizar_Parametro(Numero,Resistencia_3,txtResistenciaA,"Ω");
+    }
+    private void Actualizar_Parametro(double Numero,Numero_Compuesto Parametro,JFormattedTextField Campo,String Unidad){
+     Parametro.Actualizar_Absoluto(Numero);
+     Campo.setText(Parametro.Redondear4(Parametro.getRelativo())+Parametro.getSprefijo()+Unidad);
+    }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        lblFrecuencia = new javax.swing.JLabel();
+        lblCicloUtil = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        lblImagen = new javax.swing.JLabel();
+        txtFrecuencia = new javax.swing.JFormattedTextField();
+        txtCicloUtil = new javax.swing.JFormattedTextField();
+        lblRA = new javax.swing.JLabel();
+        txtResistenciaB = new javax.swing.JFormattedTextField();
+        lblRB = new javax.swing.JLabel();
+        txtResistenciaA = new javax.swing.JFormattedTextField();
+        lblC1 = new javax.swing.JLabel();
+        txtCapacitancia = new javax.swing.JFormattedTextField();
+        lblTiempo = new javax.swing.JLabel();
+        ComboModo = new javax.swing.JComboBox<>();
+        txtTiempo = new javax.swing.JFormattedTextField();
+        lblRegresar1 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblFrecuencia.setText("Frecuencia");
+
+        lblCicloUtil.setText("Ciclo de Trabajo");
+
+        lblImagen.setText("lblImagen");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        txtFrecuencia.setText("txtFrecuencia");
+        txtFrecuencia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtFrecuenciaMouseClicked(evt);
+            }
+        });
+        txtFrecuencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFrecuenciaActionPerformed(evt);
+            }
+        });
+
+        txtCicloUtil.setText("txtCicloutil");
+        txtCicloUtil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCicloUtilMouseClicked(evt);
+            }
+        });
+        txtCicloUtil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCicloUtilActionPerformed(evt);
+            }
+        });
+        txtCicloUtil.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCicloUtilKeyPressed(evt);
+            }
+        });
+
+        lblRA.setText("RA");
+
+        txtResistenciaB.setText("txtResistenciaB");
+        txtResistenciaB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtResistenciaBMouseClicked(evt);
+            }
+        });
+        txtResistenciaB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtResistenciaBActionPerformed(evt);
+            }
+        });
+
+        lblRB.setText("RB");
+
+        txtResistenciaA.setText("txtResistenciaA");
+        txtResistenciaA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtResistenciaAMouseClicked(evt);
+            }
+        });
+
+        lblC1.setText("C1");
+
+        txtCapacitancia.setText("txtCapacitancia");
+        txtCapacitancia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCapacitanciaMouseClicked(evt);
+            }
+        });
+        txtCapacitancia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCapacitanciaActionPerformed(evt);
+            }
+        });
+
+        lblTiempo.setText("Tiempo de Pulso");
+
+        ComboModo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Modo Astable", "Modo Astable (Ciclo de trabajo <50%)", "Modo Monoestable" }));
+        ComboModo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboModoActionPerformed(evt);
+            }
+        });
+
+        txtTiempo.setText("txtTiempo");
+        txtTiempo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtTiempoMouseClicked(evt);
+            }
+        });
+        txtTiempo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTiempoActionPerformed(evt);
+            }
+        });
+
+        lblRegresar1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblRegresar1.setText("Regresar");
+
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGap(158, 158, 158)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(txtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(lblFrecuencia)
+                                    .addGap(33, 33, 33)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblTiempo)
+                                .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(36, 36, 36)
+                                    .addComponent(txtCicloUtil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(26, 26, 26)
+                                    .addComponent(lblCicloUtil))))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(12, 12, 12)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtResistenciaA, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                                        .addComponent(txtResistenciaB)
+                                        .addComponent(txtCapacitancia)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(42, 42, 42)
+                                    .addComponent(lblC1))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(42, 42, 42)
+                                    .addComponent(lblRB))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(42, 42, 42)
+                                    .addComponent(lblRA)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(btnRegresar)
+                        .addGap(57, 57, 57)
+                        .addComponent(ComboModo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(250, Short.MAX_VALUE)
+                    .addComponent(lblRegresar1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(56, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboModo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegresar))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFrecuencia)
+                    .addComponent(lblCicloUtil)
+                    .addComponent(lblTiempo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCicloUtil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblRA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtResistenciaA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblRB)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtResistenciaB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblC1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCapacitancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(86, Short.MAX_VALUE)
+                    .addComponent(lblRegresar1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(153, Short.MAX_VALUE)))
+        );
+
+        jMenu1.setText("File");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Regresar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void txtFrecuenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFrecuenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFrecuenciaActionPerformed
+
+    private void txtCicloUtilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCicloUtilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCicloUtilActionPerformed
+
+    private void txtTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTiempoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTiempoActionPerformed
+
+    private void txtCapacitanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCapacitanciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCapacitanciaActionPerformed
+
+    private void ComboModoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboModoActionPerformed
+        // TODO add your handling code here:
+        if (opcionModo!=ComboModo.getSelectedIndex()){
+         Seleccionar_Imagen();
+        }
+    }//GEN-LAST:event_ComboModoActionPerformed
+
+    private void txtFrecuenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFrecuenciaMouseClicked
+        // TODO add your handling code here:
+        switch (opcionModo) {
+            case 0:
+                Ingresar_Frecuencia_1();
+                break;
+            case 1:
+                Ingresar_Frecuencia_2();
+                break;
+            default:
+                
+                break;
+        }
+        
+    }//GEN-LAST:event_txtFrecuenciaMouseClicked
+
+    private void txtResistenciaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResistenciaBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtResistenciaBActionPerformed
+
+    private void txtCapacitanciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCapacitanciaMouseClicked
+        // TODO add your handling code here:
+        switch (opcionModo) {
+            case 0:
+                Ingresar_Capacitancia_1();
+                break;
+            case 1:
+                Ingresar_Capacitancia_2();
+                break;
+            default:
+                Ingresar_Capacitancia_3();
+                break;
+        }
+        
+    }//GEN-LAST:event_txtCapacitanciaMouseClicked
+
+    private void txtCicloUtilKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCicloUtilKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCicloUtilKeyPressed
+
+    private void txtCicloUtilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCicloUtilMouseClicked
+        // TODO add your handling code here:
+        switch (opcionModo) {
+            case 0:
+                Ingresar_Ciclo_Util_1();
+                break;
+            case 1:
+                Ingresar_Ciclo_Util_2();
+                break;
+            default:
+                
+                break;
+        }
+        
+    }//GEN-LAST:event_txtCicloUtilMouseClicked
+
+    private void txtResistenciaAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtResistenciaAMouseClicked
+        // TODO add your handling code here:
+        switch (opcionModo) {
+            case 0:
+                Ingresar_Resistencia_A1();
+                break;
+            case 1:
+                Ingresar_Resistencia_A2();
+                break;
+            default:
+                Ingresar_Resistencia_3();
+                break;
+        }
+        
+    }//GEN-LAST:event_txtResistenciaAMouseClicked
+
+    private void txtResistenciaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtResistenciaBMouseClicked
+        // TODO add your handling code here:
+        switch (opcionModo) {
+            case 0:
+                Ingresar_Resistencia_B1();
+                break;
+            case 1:
+                Ingresar_Resistencia_B2();
+                break;
+            default:
+                
+                break;
+        }
+    }//GEN-LAST:event_txtResistenciaBMouseClicked
+
+    private void txtTiempoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTiempoMouseClicked
+        // TODO add your handling code here:
+        switch (opcionModo) {
+            case 0:
+                break;
+            case 1:
+                break;
+            default:
+                Ingresar_Tiempo_pulso();
+                break;
+        }
+    }//GEN-LAST:event_txtTiempoMouseClicked
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        Principal.setVisible(true);
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+         this.setVisible(false);
+        Principal.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Ventana_NE555.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Ventana_NE555.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Ventana_NE555.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Ventana_NE555.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Ventana_NE555().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboModo;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblC1;
+    private javax.swing.JLabel lblCicloUtil;
+    private javax.swing.JLabel lblFrecuencia;
+    private javax.swing.JLabel lblImagen;
+    private javax.swing.JLabel lblRA;
+    private javax.swing.JLabel lblRB;
+    private javax.swing.JLabel lblRegresar1;
+    private javax.swing.JLabel lblTiempo;
+    private javax.swing.JFormattedTextField txtCapacitancia;
+    private javax.swing.JFormattedTextField txtCicloUtil;
+    private javax.swing.JFormattedTextField txtFrecuencia;
+    private javax.swing.JFormattedTextField txtResistenciaA;
+    private javax.swing.JFormattedTextField txtResistenciaB;
+    private javax.swing.JFormattedTextField txtTiempo;
+    // End of variables declaration//GEN-END:variables
+
+    private void Seleccionar_Imagen() {
+    opcionModo=ComboModo.getSelectedIndex();
+        switch (opcionModo) {
+            case 0:
+                 ImageIcon icoModo = new ImageIcon(getClass().getResource("/Imagenes/Modo_Astable.png"));
+                 icoModo = new ImageIcon(icoModo.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+                 lblImagen.setIcon(icoModo);
+                 
+                 Actualizar_Frecuencia_1(Frecuencia_1.getAbsoluto());
+                 Actualizar_Ciclo_Util_1(Ciclo_Util_1.getAbsoluto());
+                 Actualizar_Capacitancia_1(Capacitancia_1.getAbsoluto());
+                 Actualizar_Resistencia_A1(Resistencia_A1.getAbsoluto());
+                 Actualizar_Resistencia_B1(Resistencia_B1.getAbsoluto());
+                 Modo_Astable_UI(true);
+                break;
+            case 1:
+                 icoModo = new ImageIcon(getClass().getResource("/Imagenes/Modo_Astable_menor_50.png"));
+                 icoModo = new ImageIcon(icoModo.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+                 lblImagen.setIcon(icoModo);
+                 lblTiempo.setVisible(true);
+                 txtTiempo.setVisible(false);
+                 txtTiempo.setEnabled(false);
+                 Actualizar_Frecuencia_2(Frecuencia_2.getAbsoluto());
+                 Actualizar_Ciclo_Util_2(Ciclo_Util_2.getAbsoluto());
+                 Actualizar_Capacitancia_2(Capacitancia_2.getAbsoluto());
+                 Actualizar_Resistencia_A2(Resistencia_A2.getAbsoluto());
+                 Actualizar_Resistencia_B2(Resistencia_B2.getAbsoluto());
+                 Modo_Astable_UI(true);
+                break;
+            default:
+                 icoModo = new ImageIcon(getClass().getResource("/Imagenes/Modo_Monoestable.png"));
+                 icoModo = new ImageIcon(icoModo.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+                 lblImagen.setIcon(icoModo);
+                 Actualizar_Tiempo_pulso(Tiempo_pulso.getAbsoluto());
+                 Actualizar_Capacitancia_3(Capacitancia_3.getAbsoluto());
+                 Actualizar_Resistencia_3(Resistencia_3.getAbsoluto());
+                 Modo_Astable_UI(false);
+                break;
+        }
+    }
+    private void Modo_Astable_UI(boolean Modo){
+      if (Modo){
+       lblTiempo.setVisible(false);
+       txtTiempo.setVisible(false);
+       txtTiempo.setEnabled(false);
+       lblRB.setVisible(true);
+       txtResistenciaB.setVisible(true);
+       txtResistenciaB.setEnabled(true);
+       lblCicloUtil.setVisible(true);
+       txtCicloUtil.setVisible(true);
+       txtCicloUtil.setEnabled(true);
+       lblFrecuencia.setVisible(true);
+       txtFrecuencia.setVisible(true);
+       txtFrecuencia.setEnabled(true);
+       lblRA.setText("RA");
+      }
+      else{
+       lblTiempo.setVisible(true);
+       txtTiempo.setVisible(true);
+       txtTiempo.setEnabled(true);
+       lblRB.setVisible(false);
+       txtResistenciaB.setVisible(false);
+       txtResistenciaB.setEnabled(false);
+       lblCicloUtil.setVisible(false);
+       txtCicloUtil.setVisible(false);
+       txtCicloUtil.setEnabled(false);
+       lblFrecuencia.setVisible(false);
+       txtFrecuencia.setVisible(false);
+       txtFrecuencia.setEnabled(false);
+       lblRA.setText("R");
+      }
+    }
+    private void Ingresar_Frecuencia_1() {
+        //int seleccion=Ingresar_Parametros("Hz",Frecuencia_1,"Ingrese la frecuencia");
+        Object[] Opciones=new Object[] {"Resistencias","Capacitancia"};
+        //int opcion=Actualizar_Parametros(seleccion,0,Frecuencia_1,txtFrecuencia,"Hz",Opciones);    
+        int opcion=Ingresar_Parametros("Hz",Frecuencia_1,"Ingresar la frecuencia",0,txtFrecuencia,Opciones);
+        switch (opcion) {
+            case 0:
+                Actualizar_Resistencia_A1((100-2*Ciclo_Util_1.getAbsoluto())/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2)));
+                Actualizar_Resistencia_B1((Ciclo_Util_1.getAbsoluto()-100)/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2)));
+                break;
+            case 1:
+                Actualizar_Capacitancia_1(-1/(ln2*Frecuencia_1.getAbsoluto()*(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto())));
+                break;
+            default:
+                break;
+        }       
+    }
+    
+    private void Ingresar_Capacitancia_1(){
+        Object[] Opciones=new Object[] {"Resistencias","Frecuencia"};  
+        int opcion=Ingresar_Parametros("F",Capacitancia_1,"Ingresar la capacitancia",0,txtCapacitancia,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Resistencia_A1((100-2*Ciclo_Util_1.getAbsoluto())/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2)));
+                Actualizar_Resistencia_B1((Ciclo_Util_1.getAbsoluto()-100)/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2)));
+                break;
+            case 1:
+                Actualizar_Frecuencia_1(-1/(ln2*Capacitancia_1.getAbsoluto()*(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto())));
+                break;
+            default:
+                break;
+        } 
+    }
+    
+    private void Ingresar_Ciclo_Util_1(){
+        Numero_Compuesto D=new Numero_Compuesto(50);
+        Panel_Opcion.Habiltar_Prefijos(false);
+        D.Actualizar_Absoluto(Ciclo_Util_1.getAbsoluto());
+        int seleccion=Ingresar_Parametros("%",D,"Ingrese el Ciclo Util");
+        if (seleccion==1){
+        if (D.getAbsoluto()>50 && D.getAbsoluto()<100){
+        Ciclo_Util_1.Actualizar_Absoluto(D.getAbsoluto());
+        txtCicloUtil.setText(Ciclo_Util_1.getRelativo()+Ciclo_Util_1.getSprefijo()+"%");
+        //Object[] Opciones=new Object[] {"Resistencias","Capacitancia"};
+        //int opcion=Actualizar_Parametros(seleccion,0,Ciclo_Util_1,txtCicloUtil,"%",Opciones);  
+        //int opcion=Ingresar_Parametros("%",D,"Ingresar el ciclo util",0,txtCicloUtil,Opciones);
+          Actualizar_Resistencia_A1((100-2*Ciclo_Util_1.getAbsoluto())/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2)));
+          Actualizar_Resistencia_B1((Ciclo_Util_1.getAbsoluto()-100)/(100*(Capacitancia_1.getAbsoluto()*Frecuencia_1.getAbsoluto()*ln2)));
+        }
+        else{
+         JOptionPane.showMessageDialog(null, "Ingrese un ciclo util mayor al 50% y menor al 100%",
+         "WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);   
+        }}
+        Panel_Opcion.Habiltar_Prefijos(true);
+    }
+    
+    private void Ingresar_Resistencia_A1(){
+      Object[] Opciones=new Object[] {"Ciclo de Trabajo y Capacitancia","Ciclo de Trabajo y Frecuencia"};  
+        int opcion=Ingresar_Parametros("Ω",Resistencia_A1,"Ingresar la resistencia",0,txtResistenciaA,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Ciclo_Util_1(100*(Resistencia_A1.getAbsoluto()+Resistencia_B1.getAbsoluto())/(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto()));
+                Actualizar_Capacitancia_1(-1/(ln2*Frecuencia_1.getAbsoluto()*(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto())));
+                break;
+            case 1:
+                Actualizar_Ciclo_Util_1(100*(Resistencia_A1.getAbsoluto()+Resistencia_B1.getAbsoluto())/(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto()));
+                Actualizar_Frecuencia_1(-1/(ln2*Capacitancia_1.getAbsoluto()*(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto())));
+                break;
+            default:
+                break;
+        }
+    }
+    
+    private void Ingresar_Resistencia_B1(){
+      Object[] Opciones=new Object[] {"Ciclo de Trabajo y Capacitancia","Ciclo de Trabajo y Frecuencia"};  
+        int opcion=Ingresar_Parametros("Ω",Resistencia_B1,"Ingresar la resistencia",0,txtResistenciaB,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Ciclo_Util_1(100*(Resistencia_A1.getAbsoluto()+Resistencia_B1.getAbsoluto())/(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto()));
+                Actualizar_Capacitancia_1(-1/(ln2*Frecuencia_1.getAbsoluto()*(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto())));
+                break;
+            case 1:
+                Actualizar_Ciclo_Util_1(100*(Resistencia_A1.getAbsoluto()+Resistencia_B1.getAbsoluto())/(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto()));
+                Actualizar_Frecuencia_1(-1/(ln2*Capacitancia_1.getAbsoluto()*(Resistencia_A1.getAbsoluto()+2*Resistencia_B1.getAbsoluto())));
+                break;
+            default:
+                break;
+        }
+    }
+    
+    private void Ingresar_Frecuencia_2() {
+        //int seleccion=Ingresar_Parametros("Hz",Frecuencia_1,"Ingrese la frecuencia");
+        Object[] Opciones=new Object[] {"Resistencias","Capacitancia"};
+        //int opcion=Actualizar_Parametros(seleccion,0,Frecuencia_1,txtFrecuencia,"Hz",Opciones);    
+        int opcion=Ingresar_Parametros("Hz",Frecuencia_2,"Ingresar la frecuencia",0,txtFrecuencia,Opciones);
+        switch (opcion) {
+            case 0:
+                Actualizar_Resistencia_A2(Ciclo_Util_2.getAbsoluto()/(100*Capacitancia_2.getAbsoluto()*Frecuencia_2.getAbsoluto()*ln2));
+                Actualizar_Resistencia_B2((Ciclo_Util_2.getAbsoluto()-100)/(100*(Capacitancia_2.getAbsoluto()*Frecuencia_2.getAbsoluto()*ln2)));
+                break;
+            case 1:
+                Actualizar_Capacitancia_2(-1/(ln2*Frecuencia_2.getAbsoluto()*(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto())));
+                break;
+            default:
+                break;
+        }       
+    }
+    
+    private void Ingresar_Capacitancia_2(){
+        Object[] Opciones=new Object[] {"Resistencias","Frecuencia"};  
+        int opcion=Ingresar_Parametros("F",Capacitancia_2,"Ingresar la capacitancia",0,txtCapacitancia,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Resistencia_A2(Ciclo_Util_2.getAbsoluto()/(100*Capacitancia_2.getAbsoluto()*Frecuencia_2.getAbsoluto()*ln2));
+                Actualizar_Resistencia_B2((Ciclo_Util_2.getAbsoluto()-100)/(100*(Capacitancia_2.getAbsoluto()*Frecuencia_2.getAbsoluto()*ln2)));
+                break;
+            case 1:
+                Actualizar_Frecuencia_2(-1/(ln2*Capacitancia_2.getAbsoluto()*(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto())));
+                break;
+            default:
+                break;
+        } 
+    }
+    
+    private void Ingresar_Ciclo_Util_2(){
+        Numero_Compuesto D=new Numero_Compuesto(10);
+        Panel_Opcion.Habiltar_Prefijos(false);
+        D.Actualizar_Absoluto(Ciclo_Util_2.getAbsoluto());
+        int seleccion=Ingresar_Parametros("%",D,"Ingrese el Ciclo Util");
+        if (seleccion==1){
+        if (D.getAbsoluto()>0 && D.getAbsoluto()<100){
+        Ciclo_Util_2.Actualizar_Absoluto(D.getAbsoluto());
+        txtCicloUtil.setText(Ciclo_Util_2.getRelativo()+Ciclo_Util_2.getSprefijo()+"%");
+          Actualizar_Resistencia_A2(Ciclo_Util_2.getAbsoluto()/(-100*Capacitancia_2.getAbsoluto()*Frecuencia_2.getAbsoluto()*ln2));
+          Actualizar_Resistencia_B2((Ciclo_Util_2.getAbsoluto()-100)/(100*Capacitancia_2.getAbsoluto()*Frecuencia_2.getAbsoluto()*ln2));
+        }
+        else{
+         JOptionPane.showMessageDialog(null, "Ingrese un ciclo util mayor al 0% y menor al 100%",
+         "WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);   
+        }}
+        Panel_Opcion.Habiltar_Prefijos(true);
+    }
+    
+    private void Ingresar_Resistencia_A2(){
+      Object[] Opciones=new Object[] {"Ciclo de Trabajo y Capacitancia","Ciclo de Trabajo y Frecuencia"};  
+        int opcion=Ingresar_Parametros("Ω",Resistencia_A2,"Ingresar la resistencia",0,txtResistenciaA,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Ciclo_Util_2(100*Resistencia_A2.getAbsoluto()/(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto()));
+                Actualizar_Capacitancia_2(-1/(ln2*Frecuencia_2.getAbsoluto()*(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto())));
+                break;
+            case 1:
+                Actualizar_Ciclo_Util_2(100*Resistencia_A2.getAbsoluto()/(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto()));
+                Actualizar_Frecuencia_2(-1/(ln2*Capacitancia_2.getAbsoluto()*(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto())));
+                break;
+            default:
+                break;
+        }
+    }
+    
+    private void Ingresar_Resistencia_B2(){
+      Object[] Opciones=new Object[] {"Ciclo de Trabajo y Capacitancia","Ciclo de Trabajo y Frecuencia"};  
+        int opcion=Ingresar_Parametros("Ω",Resistencia_B2,"Ingresar la resistencia",0,txtResistenciaB,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Ciclo_Util_2(100*Resistencia_A2.getAbsoluto()/(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto()));
+                Actualizar_Capacitancia_2(-1/(ln2*Frecuencia_2.getAbsoluto()*(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto())));
+                break;
+            case 1:
+                Actualizar_Ciclo_Util_2(100*Resistencia_A2.getAbsoluto()/(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto()));
+                Actualizar_Frecuencia_2(-1/(ln2*Capacitancia_2.getAbsoluto()*(Resistencia_A2.getAbsoluto()+Resistencia_B2.getAbsoluto())));
+                break;
+            default:
+                break;
+        }
+    }
+    
+    private void Ingresar_Tiempo_pulso() {
+        //int seleccion=Ingresar_Parametros("Hz",Frecuencia_1,"Ingrese la frecuencia");
+        Object[] Opciones=new Object[] {"Resistencia","Capacitancia"};
+        //int opcion=Actualizar_Parametros(seleccion,0,Frecuencia_1,txtFrecuencia,"Hz",Opciones);    
+        int opcion=Ingresar_Parametros("s",Tiempo_pulso,"Ingresar el tiempo del pulso",0,txtTiempo,Opciones);
+        switch (opcion) {
+            case 0:
+                Actualizar_Resistencia_3(-Tiempo_pulso.getAbsoluto()/(ln3*Capacitancia_3.getAbsoluto()));
+                break;
+            case 1:
+                Actualizar_Capacitancia_3(-Tiempo_pulso.getAbsoluto()/(ln3*Resistencia_3.getAbsoluto()));
+                break;
+            default:
+                break;
+        }       
+    }
+    
+    private void Ingresar_Capacitancia_3(){
+        Object[] Opciones=new Object[] {"Tiempo de pulso","Resistencia"};  
+        int opcion=Ingresar_Parametros("F",Capacitancia_3,"Ingresar la capacitancia",0,txtCapacitancia,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Tiempo_pulso(-ln3*Resistencia_3.getAbsoluto()*Capacitancia_3.getAbsoluto());
+                break;
+            case 1:
+                Actualizar_Resistencia_3(-Tiempo_pulso.getAbsoluto()/(ln3*Capacitancia_3.getAbsoluto()));
+                break;
+            default:
+                break;
+        } 
+    }
+    
+    private void Ingresar_Resistencia_3(){
+      Object[] Opciones=new Object[] {"Tiempo de pulso","Capacitancia"};  
+        int opcion=Ingresar_Parametros("Ω",Resistencia_3,"Ingresar la resistencia",0,txtResistenciaA,Opciones);
+        switch (opcion){
+            case 0:
+                Actualizar_Tiempo_pulso(-ln3*Resistencia_3.getAbsoluto()*Capacitancia_3.getAbsoluto());
+                break;
+            case 1:
+                Actualizar_Capacitancia_3(-Tiempo_pulso.getAbsoluto()/(ln3*Resistencia_3.getAbsoluto()));
+                break;
+            default:
+                break;
+        }
+    }
+    
+    private int Ingresar_Parametros(String Unidad,Numero_Compuesto Parametro,String Mensaje,double maximo,JFormattedTextField Campo, Object[] Opciones){
+        Panel_Opcion.removeAllItems_comboPrefijo();
+        Panel_Opcion.addItem_comboPrefijo("p"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("n"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("u"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("m"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo(Unidad);
+        Panel_Opcion.addItem_comboPrefijo("k"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("M"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("G"+Unidad);
+        Panel_Opcion.setText_txtCantidad(String.valueOf(Parametro.relativo));
+        Panel_Opcion.setSelectedItem_comboPrefijo(Parametro.nprefijo);
+        UIManager.put("OptionPane.minimumSize",new Dimension(250,150));
+        int seleccion = JOptionPane.showOptionDialog( null,Mensaje,
+        "Ingreso de Parámetros",JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.QUESTION_MESSAGE,null,// null para icono por defecto.
+        new Object[] {Panel_Opcion,"Aceptar"},"Aceptar");
+        if (seleccion==1){
+            if (Panel_Opcion.getNumber_txtCantidad()>maximo){
+             Parametro.Actualizar_Numero(Panel_Opcion.getNumber_txtCantidad(),Panel_Opcion.getSelectedIndex_comboPrefijo());
+             Campo.setText(Parametro.Redondear4(Parametro.getRelativo())+Parametro.getSprefijo()+Unidad);
+             int opcion = JOptionPane.showOptionDialog( null,"¿Qué desea calcular?",
+             "Ingreso de Parámetros",JOptionPane.YES_NO_CANCEL_OPTION,
+             JOptionPane.QUESTION_MESSAGE,null,// null para icono por defecto.
+             //new Object[] {"Resistencia","Capacitancia"},"Resistencia");
+             Opciones,Opciones[1]);
+             return opcion;
+             }
+        }
+       return -1;
+      }
+    
+    private int Ingresar_Parametros(String Unidad,Numero_Compuesto Parametro,String Mensaje){
+        Panel_Opcion.removeAllItems_comboPrefijo();
+        Panel_Opcion.addItem_comboPrefijo("p"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("n"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("u"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("m"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo(Unidad);
+        Panel_Opcion.addItem_comboPrefijo("k"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("M"+Unidad);
+        Panel_Opcion.addItem_comboPrefijo("G"+Unidad);
+        Panel_Opcion.setText_txtCantidad(String.valueOf(Parametro.relativo));
+        Panel_Opcion.setSelectedItem_comboPrefijo(Parametro.nprefijo);
+        UIManager.put("OptionPane.minimumSize",new Dimension(250,150));
+        int seleccion = JOptionPane.showOptionDialog( null,Mensaje,
+        "Ingreso de Parámetros",JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.QUESTION_MESSAGE,null,// null para icono por defecto.
+        new Object[] {Panel_Opcion,"Aceptar"},"Aceptar");
+        System.out.println(Parametro.getAbsoluto());
+        Parametro.Actualizar_Numero(Panel_Opcion.getNumber_txtCantidad(),Panel_Opcion.getSelectedIndex_comboPrefijo());
+        return seleccion;
+    }
+
+    private int Actualizar_Parametros(int seleccion,double maximo,Numero_Compuesto Parametro,JFormattedTextField Campo,String Unidad, Object[] Opciones) {
+     if (seleccion==1){
+            if (Panel_Opcion.getNumber_txtCantidad()>maximo){
+             Parametro.Actualizar_Numero(Panel_Opcion.getNumber_txtCantidad(),Panel_Opcion.getSelectedIndex_comboPrefijo());
+             Campo.setText(Parametro.getRelativo()+Parametro.getSprefijo()+Unidad);
+             int opcion = JOptionPane.showOptionDialog( null,"¿Qué desea calcular?",
+             "Ingreso de Parámetros",JOptionPane.YES_NO_CANCEL_OPTION,
+             JOptionPane.QUESTION_MESSAGE,null,// null para icono por defecto.
+             //new Object[] {"Resistencia","Capacitancia"},"Resistencia");
+             Opciones,Opciones[1]);
+             return opcion;
+             }
+        }
+     return -1;     
+    }
+
+}

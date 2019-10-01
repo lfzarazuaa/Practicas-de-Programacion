@@ -1,0 +1,2536 @@
+
+AVRASM ver. 2.1.52  C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7c\Practica_7c\Practica_7c.asm Mon May 30 22:08:01 2016
+
+[builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc'
+                 
+                 /*
+                 
+                 ;***** Created: 2011-02-09 12:03 ******* Source: ATmega328P.xml **********
+                 ;*************************************************************************
+                 ;* A P P L I C A T I O N   N O T E   F O R   T H E   A V R   F A M I L Y
+                 ;* 
+                 ;* Number            : AVR000
+                 ;* File Name         : "m328Pdef.inc"
+                 ;* Title             : Register/Bit Definitions for the ATmega328P
+                 ;* Date              : 2011-02-09
+                 ;* Version           : 2.35
+                 ;* Support E-mail    : avr@atmel.com
+                 ;* Target MCU        : ATmega328P
+                 ;* 
+                 ;* DESCRIPTION
+                 ;* When including this file in the assembly program file, all I/O register 
+                 ;* names and I/O register bit names appearing in the data book can be used.
+                 ;* In addition, the six registers forming the three data pointers X, Y and 
+                 ;* Z have been assigned names XL - ZH. Highest RAM address for Internal 
+                 ;* SRAM is also defined 
+                 ;* 
+                 ;* The Register names are represented by their hexadecimal address.
+                 ;* 
+                 ;* The Register Bit names are represented by their bit number (0-7).
+                 ;* 
+                 ;* Please observe the difference in using the bit names with instructions
+                 ;* such as "sbr"/"cbr" (set/clear bit in register) and "sbrs"/"sbrc"
+                 ;* (skip if bit in register set/cleared). The following example illustrates
+                 ;* this:
+                 ;* 
+                 ;* in    r16,PORTB             ;read PORTB latch
+                 ;* sbr   r16,(1<<PB6)+(1<<PB5) ;set PB6 and PB5 (use masks, not bit#)
+                 ;* out   PORTB,r16             ;output to PORTB
+                 ;* 
+                 ;* in    r16,TIFR              ;read the Timer Interrupt Flag Register
+                 ;* sbrc  r16,TOV0              ;test the overflow flag (use bit#)
+                 ;* rjmp  TOV0_is_set           ;jump if set
+                 ;* ...                         ;otherwise do something else
+                 ;*************************************************************************
+                 
+                 #ifndef _M328PDEF_INC_
+                 #define _M328PDEF_INC_
+                 
+                 
+                 #pragma partinc 0
+                 
+                 ; ***** SPECIFY DEVICE ***************************************************
+                 .device ATmega328P
+                 #pragma AVRPART ADMIN PART_NAME ATmega328P
+                 .equ	SIGNATURE_000	= 0x1e
+                 .equ	SIGNATURE_001	= 0x95
+                 .equ	SIGNATURE_002	= 0x0f
+                 
+                 #pragma AVRPART CORE CORE_VERSION V2E
+                 
+                 
+                 ; ***** I/O REGISTER DEFINITIONS *****************************************
+                 ; NOTE:
+                 ; Definitions marked "MEMORY MAPPED"are extended I/O ports
+                 ; and cannot be used with IN/OUT instructions
+                 .equ	UDR0	= 0xc6	; MEMORY MAPPED
+                 .equ	UBRR0L	= 0xc4	; MEMORY MAPPED
+                 .equ	UBRR0H	= 0xc5	; MEMORY MAPPED
+                 .equ	UCSR0C	= 0xc2	; MEMORY MAPPED
+                 .equ	UCSR0B	= 0xc1	; MEMORY MAPPED
+                 .equ	UCSR0A	= 0xc0	; MEMORY MAPPED
+                 .equ	TWAMR	= 0xbd	; MEMORY MAPPED
+                 .equ	TWCR	= 0xbc	; MEMORY MAPPED
+                 .equ	TWDR	= 0xbb	; MEMORY MAPPED
+                 .equ	TWAR	= 0xba	; MEMORY MAPPED
+                 .equ	TWSR	= 0xb9	; MEMORY MAPPED
+                 .equ	TWBR	= 0xb8	; MEMORY MAPPED
+                 .equ	ASSR	= 0xb6	; MEMORY MAPPED
+                 .equ	OCR2B	= 0xb4	; MEMORY MAPPED
+                 .equ	OCR2A	= 0xb3	; MEMORY MAPPED
+                 .equ	TCNT2	= 0xb2	; MEMORY MAPPED
+                 .equ	TCCR2B	= 0xb1	; MEMORY MAPPED
+                 .equ	TCCR2A	= 0xb0	; MEMORY MAPPED
+                 .equ	OCR1BL	= 0x8a	; MEMORY MAPPED
+                 .equ	OCR1BH	= 0x8b	; MEMORY MAPPED
+                 .equ	OCR1AL	= 0x88	; MEMORY MAPPED
+                 .equ	OCR1AH	= 0x89	; MEMORY MAPPED
+                 .equ	ICR1L	= 0x86	; MEMORY MAPPED
+                 .equ	ICR1H	= 0x87	; MEMORY MAPPED
+                 .equ	TCNT1L	= 0x84	; MEMORY MAPPED
+                 .equ	TCNT1H	= 0x85	; MEMORY MAPPED
+                 .equ	TCCR1C	= 0x82	; MEMORY MAPPED
+                 .equ	TCCR1B	= 0x81	; MEMORY MAPPED
+                 .equ	TCCR1A	= 0x80	; MEMORY MAPPED
+                 .equ	DIDR1	= 0x7f	; MEMORY MAPPED
+                 .equ	DIDR0	= 0x7e	; MEMORY MAPPED
+                 .equ	ADMUX	= 0x7c	; MEMORY MAPPED
+                 .equ	ADCSRB	= 0x7b	; MEMORY MAPPED
+                 .equ	ADCSRA	= 0x7a	; MEMORY MAPPED
+                 .equ	ADCH	= 0x79	; MEMORY MAPPED
+                 .equ	ADCL	= 0x78	; MEMORY MAPPED
+                 .equ	TIMSK2	= 0x70	; MEMORY MAPPED
+                 .equ	TIMSK1	= 0x6f	; MEMORY MAPPED
+                 .equ	TIMSK0	= 0x6e	; MEMORY MAPPED
+                 .equ	PCMSK1	= 0x6c	; MEMORY MAPPED
+                 .equ	PCMSK2	= 0x6d	; MEMORY MAPPED
+                 .equ	PCMSK0	= 0x6b	; MEMORY MAPPED
+                 .equ	EICRA	= 0x69	; MEMORY MAPPED
+                 .equ	PCICR	= 0x68	; MEMORY MAPPED
+                 .equ	OSCCAL	= 0x66	; MEMORY MAPPED
+                 .equ	PRR	= 0x64	; MEMORY MAPPED
+                 .equ	CLKPR	= 0x61	; MEMORY MAPPED
+                 .equ	WDTCSR	= 0x60	; MEMORY MAPPED
+                 .equ	SREG	= 0x3f
+                 .equ	SPL	= 0x3d
+                 .equ	SPH	= 0x3e
+                 .equ	SPMCSR	= 0x37
+                 .equ	MCUCR	= 0x35
+                 .equ	MCUSR	= 0x34
+                 .equ	SMCR	= 0x33
+                 .equ	ACSR	= 0x30
+                 .equ	SPDR	= 0x2e
+                 .equ	SPSR	= 0x2d
+                 .equ	SPCR	= 0x2c
+                 .equ	GPIOR2	= 0x2b
+                 .equ	GPIOR1	= 0x2a
+                 .equ	OCR0B	= 0x28
+                 .equ	OCR0A	= 0x27
+                 .equ	TCNT0	= 0x26
+                 .equ	TCCR0B	= 0x25
+                 .equ	TCCR0A	= 0x24
+                 .equ	GTCCR	= 0x23
+                 .equ	EEARH	= 0x22
+                 .equ	EEARL	= 0x21
+                 .equ	EEDR	= 0x20
+                 .equ	EECR	= 0x1f
+                 .equ	GPIOR0	= 0x1e
+                 .equ	EIMSK	= 0x1d
+                 .equ	EIFR	= 0x1c
+                 .equ	PCIFR	= 0x1b
+                 .equ	TIFR2	= 0x17
+                 .equ	TIFR1	= 0x16
+                 .equ	TIFR0	= 0x15
+                 .equ	PORTD	= 0x0b
+                 .equ	DDRD	= 0x0a
+                 .equ	PIND	= 0x09
+                 .equ	PORTC	= 0x08
+                 .equ	DDRC	= 0x07
+                 .equ	PINC	= 0x06
+                 .equ	PORTB	= 0x05
+                 .equ	DDRB	= 0x04
+                 .equ	PINB	= 0x03
+                 
+                 
+                 ; ***** BIT DEFINITIONS **************************************************
+                 
+                 ; ***** USART0 ***********************
+                 ; UDR0 - USART I/O Data Register
+                 .equ	UDR0_0	= 0	; USART I/O Data Register bit 0
+                 .equ	UDR0_1	= 1	; USART I/O Data Register bit 1
+                 .equ	UDR0_2	= 2	; USART I/O Data Register bit 2
+                 .equ	UDR0_3	= 3	; USART I/O Data Register bit 3
+                 .equ	UDR0_4	= 4	; USART I/O Data Register bit 4
+                 .equ	UDR0_5	= 5	; USART I/O Data Register bit 5
+                 .equ	UDR0_6	= 6	; USART I/O Data Register bit 6
+                 .equ	UDR0_7	= 7	; USART I/O Data Register bit 7
+                 
+                 ; UCSR0A - USART Control and Status Register A
+                 .equ	MPCM0	= 0	; Multi-processor Communication Mode
+                 .equ	U2X0	= 1	; Double the USART transmission speed
+                 .equ	UPE0	= 2	; Parity Error
+                 .equ	DOR0	= 3	; Data overRun
+                 .equ	FE0	= 4	; Framing Error
+                 .equ	UDRE0	= 5	; USART Data Register Empty
+                 .equ	TXC0	= 6	; USART Transmitt Complete
+                 .equ	RXC0	= 7	; USART Receive Complete
+                 
+                 ; UCSR0B - USART Control and Status Register B
+                 .equ	TXB80	= 0	; Transmit Data Bit 8
+                 .equ	RXB80	= 1	; Receive Data Bit 8
+                 .equ	UCSZ02	= 2	; Character Size
+                 .equ	TXEN0	= 3	; Transmitter Enable
+                 .equ	RXEN0	= 4	; Receiver Enable
+                 .equ	UDRIE0	= 5	; USART Data register Empty Interrupt Enable
+                 .equ	TXCIE0	= 6	; TX Complete Interrupt Enable
+                 .equ	RXCIE0	= 7	; RX Complete Interrupt Enable
+                 
+                 ; UCSR0C - USART Control and Status Register C
+                 .equ	UCPOL0	= 0	; Clock Polarity
+                 .equ	UCSZ00	= 1	; Character Size
+                 .equ	UCPHA0	= UCSZ00	; For compatibility
+                 .equ	UCSZ01	= 2	; Character Size
+                 .equ	UDORD0	= UCSZ01	; For compatibility
+                 .equ	USBS0	= 3	; Stop Bit Select
+                 .equ	UPM00	= 4	; Parity Mode Bit 0
+                 .equ	UPM01	= 5	; Parity Mode Bit 1
+                 .equ	UMSEL00	= 6	; USART Mode Select
+                 .equ	UMSEL0	= UMSEL00	; For compatibility
+                 .equ	UMSEL01	= 7	; USART Mode Select
+                 .equ	UMSEL1	= UMSEL01	; For compatibility
+                 
+                 ; UBRR0H - USART Baud Rate Register High Byte
+                 .equ	UBRR8	= 0	; USART Baud Rate Register bit 8
+                 .equ	UBRR9	= 1	; USART Baud Rate Register bit 9
+                 .equ	UBRR10	= 2	; USART Baud Rate Register bit 10
+                 .equ	UBRR11	= 3	; USART Baud Rate Register bit 11
+                 
+                 ; UBRR0L - USART Baud Rate Register Low Byte
+                 .equ	_UBRR0	= 0	; USART Baud Rate Register bit 0
+                 .equ	_UBRR1	= 1	; USART Baud Rate Register bit 1
+                 .equ	UBRR2	= 2	; USART Baud Rate Register bit 2
+                 .equ	UBRR3	= 3	; USART Baud Rate Register bit 3
+                 .equ	UBRR4	= 4	; USART Baud Rate Register bit 4
+                 .equ	UBRR5	= 5	; USART Baud Rate Register bit 5
+                 .equ	UBRR6	= 6	; USART Baud Rate Register bit 6
+                 .equ	UBRR7	= 7	; USART Baud Rate Register bit 7
+                 
+                 
+                 ; ***** TWI **************************
+                 ; TWAMR - TWI (Slave) Address Mask Register
+                 .equ	TWAM0	= 1	; 
+                 .equ	TWAMR0	= TWAM0	; For compatibility
+                 .equ	TWAM1	= 2	; 
+                 .equ	TWAMR1	= TWAM1	; For compatibility
+                 .equ	TWAM2	= 3	; 
+                 .equ	TWAMR2	= TWAM2	; For compatibility
+                 .equ	TWAM3	= 4	; 
+                 .equ	TWAMR3	= TWAM3	; For compatibility
+                 .equ	TWAM4	= 5	; 
+                 .equ	TWAMR4	= TWAM4	; For compatibility
+                 .equ	TWAM5	= 6	; 
+                 .equ	TWAMR5	= TWAM5	; For compatibility
+                 .equ	TWAM6	= 7	; 
+                 .equ	TWAMR6	= TWAM6	; For compatibility
+                 
+                 ; TWBR - TWI Bit Rate register
+                 .equ	TWBR0	= 0	; 
+                 .equ	TWBR1	= 1	; 
+                 .equ	TWBR2	= 2	; 
+                 .equ	TWBR3	= 3	; 
+                 .equ	TWBR4	= 4	; 
+                 .equ	TWBR5	= 5	; 
+                 .equ	TWBR6	= 6	; 
+                 .equ	TWBR7	= 7	; 
+                 
+                 ; TWCR - TWI Control Register
+                 .equ	TWIE	= 0	; TWI Interrupt Enable
+                 .equ	TWEN	= 2	; TWI Enable Bit
+                 .equ	TWWC	= 3	; TWI Write Collition Flag
+                 .equ	TWSTO	= 4	; TWI Stop Condition Bit
+                 .equ	TWSTA	= 5	; TWI Start Condition Bit
+                 .equ	TWEA	= 6	; TWI Enable Acknowledge Bit
+                 .equ	TWINT	= 7	; TWI Interrupt Flag
+                 
+                 ; TWSR - TWI Status Register
+                 .equ	TWPS0	= 0	; TWI Prescaler
+                 .equ	TWPS1	= 1	; TWI Prescaler
+                 .equ	TWS3	= 3	; TWI Status
+                 .equ	TWS4	= 4	; TWI Status
+                 .equ	TWS5	= 5	; TWI Status
+                 .equ	TWS6	= 6	; TWI Status
+                 .equ	TWS7	= 7	; TWI Status
+                 
+                 ; TWDR - TWI Data register
+                 .equ	TWD0	= 0	; TWI Data Register Bit 0
+                 .equ	TWD1	= 1	; TWI Data Register Bit 1
+                 .equ	TWD2	= 2	; TWI Data Register Bit 2
+                 .equ	TWD3	= 3	; TWI Data Register Bit 3
+                 .equ	TWD4	= 4	; TWI Data Register Bit 4
+                 .equ	TWD5	= 5	; TWI Data Register Bit 5
+                 .equ	TWD6	= 6	; TWI Data Register Bit 6
+                 .equ	TWD7	= 7	; TWI Data Register Bit 7
+                 
+                 ; TWAR - TWI (Slave) Address register
+                 .equ	TWGCE	= 0	; TWI General Call Recognition Enable Bit
+                 .equ	TWA0	= 1	; TWI (Slave) Address register Bit 0
+                 .equ	TWA1	= 2	; TWI (Slave) Address register Bit 1
+                 .equ	TWA2	= 3	; TWI (Slave) Address register Bit 2
+                 .equ	TWA3	= 4	; TWI (Slave) Address register Bit 3
+                 .equ	TWA4	= 5	; TWI (Slave) Address register Bit 4
+                 .equ	TWA5	= 6	; TWI (Slave) Address register Bit 5
+                 .equ	TWA6	= 7	; TWI (Slave) Address register Bit 6
+                 
+                 
+                 ; ***** TIMER_COUNTER_1 **************
+                 ; TIMSK1 - Timer/Counter Interrupt Mask Register
+                 .equ	TOIE1	= 0	; Timer/Counter1 Overflow Interrupt Enable
+                 .equ	OCIE1A	= 1	; Timer/Counter1 Output CompareA Match Interrupt Enable
+                 .equ	OCIE1B	= 2	; Timer/Counter1 Output CompareB Match Interrupt Enable
+                 .equ	ICIE1	= 5	; Timer/Counter1 Input Capture Interrupt Enable
+                 
+                 ; TIFR1 - Timer/Counter Interrupt Flag register
+                 .equ	TOV1	= 0	; Timer/Counter1 Overflow Flag
+                 .equ	OCF1A	= 1	; Output Compare Flag 1A
+                 .equ	OCF1B	= 2	; Output Compare Flag 1B
+                 .equ	ICF1	= 5	; Input Capture Flag 1
+                 
+                 ; TCCR1A - Timer/Counter1 Control Register A
+                 .equ	WGM10	= 0	; Waveform Generation Mode
+                 .equ	WGM11	= 1	; Waveform Generation Mode
+                 .equ	COM1B0	= 4	; Compare Output Mode 1B, bit 0
+                 .equ	COM1B1	= 5	; Compare Output Mode 1B, bit 1
+                 .equ	COM1A0	= 6	; Comparet Ouput Mode 1A, bit 0
+                 .equ	COM1A1	= 7	; Compare Output Mode 1A, bit 1
+                 
+                 ; TCCR1B - Timer/Counter1 Control Register B
+                 .equ	CS10	= 0	; Prescaler source of Timer/Counter 1
+                 .equ	CS11	= 1	; Prescaler source of Timer/Counter 1
+                 .equ	CS12	= 2	; Prescaler source of Timer/Counter 1
+                 .equ	WGM12	= 3	; Waveform Generation Mode
+                 .equ	WGM13	= 4	; Waveform Generation Mode
+                 .equ	ICES1	= 6	; Input Capture 1 Edge Select
+                 .equ	ICNC1	= 7	; Input Capture 1 Noise Canceler
+                 
+                 ; TCCR1C - Timer/Counter1 Control Register C
+                 .equ	FOC1B	= 6	; 
+                 .equ	FOC1A	= 7	; 
+                 
+                 ; GTCCR - General Timer/Counter Control Register
+                 .equ	PSRSYNC	= 0	; Prescaler Reset Timer/Counter1 and Timer/Counter0
+                 .equ	TSM	= 7	; Timer/Counter Synchronization Mode
+                 
+                 
+                 ; ***** TIMER_COUNTER_2 **************
+                 ; TIMSK2 - Timer/Counter Interrupt Mask register
+                 .equ	TOIE2	= 0	; Timer/Counter2 Overflow Interrupt Enable
+                 .equ	TOIE2A	= TOIE2	; For compatibility
+                 .equ	OCIE2A	= 1	; Timer/Counter2 Output Compare Match A Interrupt Enable
+                 .equ	OCIE2B	= 2	; Timer/Counter2 Output Compare Match B Interrupt Enable
+                 
+                 ; TIFR2 - Timer/Counter Interrupt Flag Register
+                 .equ	TOV2	= 0	; Timer/Counter2 Overflow Flag
+                 .equ	OCF2A	= 1	; Output Compare Flag 2A
+                 .equ	OCF2B	= 2	; Output Compare Flag 2B
+                 
+                 ; TCCR2A - Timer/Counter2 Control Register A
+                 .equ	WGM20	= 0	; Waveform Genration Mode
+                 .equ	WGM21	= 1	; Waveform Genration Mode
+                 .equ	COM2B0	= 4	; Compare Output Mode bit 0
+                 .equ	COM2B1	= 5	; Compare Output Mode bit 1
+                 .equ	COM2A0	= 6	; Compare Output Mode bit 1
+                 .equ	COM2A1	= 7	; Compare Output Mode bit 1
+                 
+                 ; TCCR2B - Timer/Counter2 Control Register B
+                 .equ	CS20	= 0	; Clock Select bit 0
+                 .equ	CS21	= 1	; Clock Select bit 1
+                 .equ	CS22	= 2	; Clock Select bit 2
+                 .equ	WGM22	= 3	; Waveform Generation Mode
+                 .equ	FOC2B	= 6	; Force Output Compare B
+                 .equ	FOC2A	= 7	; Force Output Compare A
+                 
+                 ; TCNT2 - Timer/Counter2
+                 .equ	TCNT2_0	= 0	; Timer/Counter 2 bit 0
+                 .equ	TCNT2_1	= 1	; Timer/Counter 2 bit 1
+                 .equ	TCNT2_2	= 2	; Timer/Counter 2 bit 2
+                 .equ	TCNT2_3	= 3	; Timer/Counter 2 bit 3
+                 .equ	TCNT2_4	= 4	; Timer/Counter 2 bit 4
+                 .equ	TCNT2_5	= 5	; Timer/Counter 2 bit 5
+                 .equ	TCNT2_6	= 6	; Timer/Counter 2 bit 6
+                 .equ	TCNT2_7	= 7	; Timer/Counter 2 bit 7
+                 
+                 ; OCR2A - Timer/Counter2 Output Compare Register A
+                 .equ	OCR2A_0	= 0	; Timer/Counter2 Output Compare Register Bit 0
+                 .equ	OCR2A_1	= 1	; Timer/Counter2 Output Compare Register Bit 1
+                 .equ	OCR2A_2	= 2	; Timer/Counter2 Output Compare Register Bit 2
+                 .equ	OCR2A_3	= 3	; Timer/Counter2 Output Compare Register Bit 3
+                 .equ	OCR2A_4	= 4	; Timer/Counter2 Output Compare Register Bit 4
+                 .equ	OCR2A_5	= 5	; Timer/Counter2 Output Compare Register Bit 5
+                 .equ	OCR2A_6	= 6	; Timer/Counter2 Output Compare Register Bit 6
+                 .equ	OCR2A_7	= 7	; Timer/Counter2 Output Compare Register Bit 7
+                 
+                 ; OCR2B - Timer/Counter2 Output Compare Register B
+                 .equ	OCR2B_0	= 0	; Timer/Counter2 Output Compare Register Bit 0
+                 .equ	OCR2B_1	= 1	; Timer/Counter2 Output Compare Register Bit 1
+                 .equ	OCR2B_2	= 2	; Timer/Counter2 Output Compare Register Bit 2
+                 .equ	OCR2B_3	= 3	; Timer/Counter2 Output Compare Register Bit 3
+                 .equ	OCR2B_4	= 4	; Timer/Counter2 Output Compare Register Bit 4
+                 .equ	OCR2B_5	= 5	; Timer/Counter2 Output Compare Register Bit 5
+                 .equ	OCR2B_6	= 6	; Timer/Counter2 Output Compare Register Bit 6
+                 .equ	OCR2B_7	= 7	; Timer/Counter2 Output Compare Register Bit 7
+                 
+                 ; ASSR - Asynchronous Status Register
+                 .equ	TCR2BUB	= 0	; Timer/Counter Control Register2 Update Busy
+                 .equ	TCR2AUB	= 1	; Timer/Counter Control Register2 Update Busy
+                 .equ	OCR2BUB	= 2	; Output Compare Register 2 Update Busy
+                 .equ	OCR2AUB	= 3	; Output Compare Register2 Update Busy
+                 .equ	TCN2UB	= 4	; Timer/Counter2 Update Busy
+                 .equ	AS2	= 5	; Asynchronous Timer/Counter2
+                 .equ	EXCLK	= 6	; Enable External Clock Input
+                 
+                 ; GTCCR - General Timer Counter Control register
+                 .equ	PSRASY	= 1	; Prescaler Reset Timer/Counter2
+                 .equ	PSR2	= PSRASY	; For compatibility
+                 ;.equ	TSM	= 7	; Timer/Counter Synchronization Mode
+                 
+                 
+                 ; ***** AD_CONVERTER *****************
+                 ; ADMUX - The ADC multiplexer Selection Register
+                 .equ	MUX0	= 0	; Analog Channel and Gain Selection Bits
+                 .equ	MUX1	= 1	; Analog Channel and Gain Selection Bits
+                 .equ	MUX2	= 2	; Analog Channel and Gain Selection Bits
+                 .equ	MUX3	= 3	; Analog Channel and Gain Selection Bits
+                 .equ	ADLAR	= 5	; Left Adjust Result
+                 .equ	REFS0	= 6	; Reference Selection Bit 0
+                 .equ	REFS1	= 7	; Reference Selection Bit 1
+                 
+                 ; ADCSRA - The ADC Control and Status register A
+                 .equ	ADPS0	= 0	; ADC  Prescaler Select Bits
+                 .equ	ADPS1	= 1	; ADC  Prescaler Select Bits
+                 .equ	ADPS2	= 2	; ADC  Prescaler Select Bits
+                 .equ	ADIE	= 3	; ADC Interrupt Enable
+                 .equ	ADIF	= 4	; ADC Interrupt Flag
+                 .equ	ADATE	= 5	; ADC  Auto Trigger Enable
+                 .equ	ADSC	= 6	; ADC Start Conversion
+                 .equ	ADEN	= 7	; ADC Enable
+                 
+                 ; ADCSRB - The ADC Control and Status register B
+                 .equ	ADTS0	= 0	; ADC Auto Trigger Source bit 0
+                 .equ	ADTS1	= 1	; ADC Auto Trigger Source bit 1
+                 .equ	ADTS2	= 2	; ADC Auto Trigger Source bit 2
+                 .equ	ACME	= 6	; 
+                 
+                 ; ADCH - ADC Data Register High Byte
+                 .equ	ADCH0	= 0	; ADC Data Register High Byte Bit 0
+                 .equ	ADCH1	= 1	; ADC Data Register High Byte Bit 1
+                 .equ	ADCH2	= 2	; ADC Data Register High Byte Bit 2
+                 .equ	ADCH3	= 3	; ADC Data Register High Byte Bit 3
+                 .equ	ADCH4	= 4	; ADC Data Register High Byte Bit 4
+                 .equ	ADCH5	= 5	; ADC Data Register High Byte Bit 5
+                 .equ	ADCH6	= 6	; ADC Data Register High Byte Bit 6
+                 .equ	ADCH7	= 7	; ADC Data Register High Byte Bit 7
+                 
+                 ; ADCL - ADC Data Register Low Byte
+                 .equ	ADCL0	= 0	; ADC Data Register Low Byte Bit 0
+                 .equ	ADCL1	= 1	; ADC Data Register Low Byte Bit 1
+                 .equ	ADCL2	= 2	; ADC Data Register Low Byte Bit 2
+                 .equ	ADCL3	= 3	; ADC Data Register Low Byte Bit 3
+                 .equ	ADCL4	= 4	; ADC Data Register Low Byte Bit 4
+                 .equ	ADCL5	= 5	; ADC Data Register Low Byte Bit 5
+                 .equ	ADCL6	= 6	; ADC Data Register Low Byte Bit 6
+                 .equ	ADCL7	= 7	; ADC Data Register Low Byte Bit 7
+                 
+                 ; DIDR0 - Digital Input Disable Register
+                 .equ	ADC0D	= 0	; 
+                 .equ	ADC1D	= 1	; 
+                 .equ	ADC2D	= 2	; 
+                 .equ	ADC3D	= 3	; 
+                 .equ	ADC4D	= 4	; 
+                 .equ	ADC5D	= 5	; 
+                 
+                 
+                 ; ***** ANALOG_COMPARATOR ************
+                 ; ACSR - Analog Comparator Control And Status Register
+                 .equ	ACIS0	= 0	; Analog Comparator Interrupt Mode Select bit 0
+                 .equ	ACIS1	= 1	; Analog Comparator Interrupt Mode Select bit 1
+                 .equ	ACIC	= 2	; Analog Comparator Input Capture Enable
+                 .equ	ACIE	= 3	; Analog Comparator Interrupt Enable
+                 .equ	ACI	= 4	; Analog Comparator Interrupt Flag
+                 .equ	ACO	= 5	; Analog Compare Output
+                 .equ	ACBG	= 6	; Analog Comparator Bandgap Select
+                 .equ	ACD	= 7	; Analog Comparator Disable
+                 
+                 ; DIDR1 - Digital Input Disable Register 1
+                 .equ	AIN0D	= 0	; AIN0 Digital Input Disable
+                 .equ	AIN1D	= 1	; AIN1 Digital Input Disable
+                 
+                 
+                 ; ***** PORTB ************************
+                 ; PORTB - Port B Data Register
+                 .equ	PORTB0	= 0	; Port B Data Register bit 0
+                 .equ	PB0	= 0	; For compatibility
+                 .equ	PORTB1	= 1	; Port B Data Register bit 1
+                 .equ	PB1	= 1	; For compatibility
+                 .equ	PORTB2	= 2	; Port B Data Register bit 2
+                 .equ	PB2	= 2	; For compatibility
+                 .equ	PORTB3	= 3	; Port B Data Register bit 3
+                 .equ	PB3	= 3	; For compatibility
+                 .equ	PORTB4	= 4	; Port B Data Register bit 4
+                 .equ	PB4	= 4	; For compatibility
+                 .equ	PORTB5	= 5	; Port B Data Register bit 5
+                 .equ	PB5	= 5	; For compatibility
+                 .equ	PORTB6	= 6	; Port B Data Register bit 6
+                 .equ	PB6	= 6	; For compatibility
+                 .equ	PORTB7	= 7	; Port B Data Register bit 7
+                 .equ	PB7	= 7	; For compatibility
+                 
+                 ; DDRB - Port B Data Direction Register
+                 .equ	DDB0	= 0	; Port B Data Direction Register bit 0
+                 .equ	DDB1	= 1	; Port B Data Direction Register bit 1
+                 .equ	DDB2	= 2	; Port B Data Direction Register bit 2
+                 .equ	DDB3	= 3	; Port B Data Direction Register bit 3
+                 .equ	DDB4	= 4	; Port B Data Direction Register bit 4
+                 .equ	DDB5	= 5	; Port B Data Direction Register bit 5
+                 .equ	DDB6	= 6	; Port B Data Direction Register bit 6
+                 .equ	DDB7	= 7	; Port B Data Direction Register bit 7
+                 
+                 ; PINB - Port B Input Pins
+                 .equ	PINB0	= 0	; Port B Input Pins bit 0
+                 .equ	PINB1	= 1	; Port B Input Pins bit 1
+                 .equ	PINB2	= 2	; Port B Input Pins bit 2
+                 .equ	PINB3	= 3	; Port B Input Pins bit 3
+                 .equ	PINB4	= 4	; Port B Input Pins bit 4
+                 .equ	PINB5	= 5	; Port B Input Pins bit 5
+                 .equ	PINB6	= 6	; Port B Input Pins bit 6
+                 .equ	PINB7	= 7	; Port B Input Pins bit 7
+                 
+                 
+                 ; ***** PORTC ************************
+                 ; PORTC - Port C Data Register
+                 .equ	PORTC0	= 0	; Port C Data Register bit 0
+                 .equ	PC0	= 0	; For compatibility
+                 .equ	PORTC1	= 1	; Port C Data Register bit 1
+                 .equ	PC1	= 1	; For compatibility
+                 .equ	PORTC2	= 2	; Port C Data Register bit 2
+                 .equ	PC2	= 2	; For compatibility
+                 .equ	PORTC3	= 3	; Port C Data Register bit 3
+                 .equ	PC3	= 3	; For compatibility
+                 .equ	PORTC4	= 4	; Port C Data Register bit 4
+                 .equ	PC4	= 4	; For compatibility
+                 .equ	PORTC5	= 5	; Port C Data Register bit 5
+                 .equ	PC5	= 5	; For compatibility
+                 .equ	PORTC6	= 6	; Port C Data Register bit 6
+                 .equ	PC6	= 6	; For compatibility
+                 
+                 ; DDRC - Port C Data Direction Register
+                 .equ	DDC0	= 0	; Port C Data Direction Register bit 0
+                 .equ	DDC1	= 1	; Port C Data Direction Register bit 1
+                 .equ	DDC2	= 2	; Port C Data Direction Register bit 2
+                 .equ	DDC3	= 3	; Port C Data Direction Register bit 3
+                 .equ	DDC4	= 4	; Port C Data Direction Register bit 4
+                 .equ	DDC5	= 5	; Port C Data Direction Register bit 5
+                 .equ	DDC6	= 6	; Port C Data Direction Register bit 6
+                 
+                 ; PINC - Port C Input Pins
+                 .equ	PINC0	= 0	; Port C Input Pins bit 0
+                 .equ	PINC1	= 1	; Port C Input Pins bit 1
+                 .equ	PINC2	= 2	; Port C Input Pins bit 2
+                 .equ	PINC3	= 3	; Port C Input Pins bit 3
+                 .equ	PINC4	= 4	; Port C Input Pins bit 4
+                 .equ	PINC5	= 5	; Port C Input Pins bit 5
+                 .equ	PINC6	= 6	; Port C Input Pins bit 6
+                 
+                 
+                 ; ***** PORTD ************************
+                 ; PORTD - Port D Data Register
+                 .equ	PORTD0	= 0	; Port D Data Register bit 0
+                 .equ	PD0	= 0	; For compatibility
+                 .equ	PORTD1	= 1	; Port D Data Register bit 1
+                 .equ	PD1	= 1	; For compatibility
+                 .equ	PORTD2	= 2	; Port D Data Register bit 2
+                 .equ	PD2	= 2	; For compatibility
+                 .equ	PORTD3	= 3	; Port D Data Register bit 3
+                 .equ	PD3	= 3	; For compatibility
+                 .equ	PORTD4	= 4	; Port D Data Register bit 4
+                 .equ	PD4	= 4	; For compatibility
+                 .equ	PORTD5	= 5	; Port D Data Register bit 5
+                 .equ	PD5	= 5	; For compatibility
+                 .equ	PORTD6	= 6	; Port D Data Register bit 6
+                 .equ	PD6	= 6	; For compatibility
+                 .equ	PORTD7	= 7	; Port D Data Register bit 7
+                 .equ	PD7	= 7	; For compatibility
+                 
+                 ; DDRD - Port D Data Direction Register
+                 .equ	DDD0	= 0	; Port D Data Direction Register bit 0
+                 .equ	DDD1	= 1	; Port D Data Direction Register bit 1
+                 .equ	DDD2	= 2	; Port D Data Direction Register bit 2
+                 .equ	DDD3	= 3	; Port D Data Direction Register bit 3
+                 .equ	DDD4	= 4	; Port D Data Direction Register bit 4
+                 .equ	DDD5	= 5	; Port D Data Direction Register bit 5
+                 .equ	DDD6	= 6	; Port D Data Direction Register bit 6
+                 .equ	DDD7	= 7	; Port D Data Direction Register bit 7
+                 
+                 ; PIND - Port D Input Pins
+                 .equ	PIND0	= 0	; Port D Input Pins bit 0
+                 .equ	PIND1	= 1	; Port D Input Pins bit 1
+                 .equ	PIND2	= 2	; Port D Input Pins bit 2
+                 .equ	PIND3	= 3	; Port D Input Pins bit 3
+                 .equ	PIND4	= 4	; Port D Input Pins bit 4
+                 .equ	PIND5	= 5	; Port D Input Pins bit 5
+                 .equ	PIND6	= 6	; Port D Input Pins bit 6
+                 .equ	PIND7	= 7	; Port D Input Pins bit 7
+                 
+                 
+                 ; ***** TIMER_COUNTER_0 **************
+                 ; TIMSK0 - Timer/Counter0 Interrupt Mask Register
+                 .equ	TOIE0	= 0	; Timer/Counter0 Overflow Interrupt Enable
+                 .equ	OCIE0A	= 1	; Timer/Counter0 Output Compare Match A Interrupt Enable
+                 .equ	OCIE0B	= 2	; Timer/Counter0 Output Compare Match B Interrupt Enable
+                 
+                 ; TIFR0 - Timer/Counter0 Interrupt Flag register
+                 .equ	TOV0	= 0	; Timer/Counter0 Overflow Flag
+                 .equ	OCF0A	= 1	; Timer/Counter0 Output Compare Flag 0A
+                 .equ	OCF0B	= 2	; Timer/Counter0 Output Compare Flag 0B
+                 
+                 ; TCCR0A - Timer/Counter  Control Register A
+                 .equ	WGM00	= 0	; Waveform Generation Mode
+                 .equ	WGM01	= 1	; Waveform Generation Mode
+                 .equ	COM0B0	= 4	; Compare Output Mode, Fast PWm
+                 .equ	COM0B1	= 5	; Compare Output Mode, Fast PWm
+                 .equ	COM0A0	= 6	; Compare Output Mode, Phase Correct PWM Mode
+                 .equ	COM0A1	= 7	; Compare Output Mode, Phase Correct PWM Mode
+                 
+                 ; TCCR0B - Timer/Counter Control Register B
+                 .equ	CS00	= 0	; Clock Select
+                 .equ	CS01	= 1	; Clock Select
+                 .equ	CS02	= 2	; Clock Select
+                 .equ	WGM02	= 3	; 
+                 .equ	FOC0B	= 6	; Force Output Compare B
+                 .equ	FOC0A	= 7	; Force Output Compare A
+                 
+                 ; TCNT0 - Timer/Counter0
+                 .equ	TCNT0_0	= 0	; 
+                 .equ	TCNT0_1	= 1	; 
+                 .equ	TCNT0_2	= 2	; 
+                 .equ	TCNT0_3	= 3	; 
+                 .equ	TCNT0_4	= 4	; 
+                 .equ	TCNT0_5	= 5	; 
+                 .equ	TCNT0_6	= 6	; 
+                 .equ	TCNT0_7	= 7	; 
+                 
+                 ; OCR0A - Timer/Counter0 Output Compare Register
+                 .equ	OCR0A_0	= 0	; 
+                 .equ	OCR0A_1	= 1	; 
+                 .equ	OCR0A_2	= 2	; 
+                 .equ	OCR0A_3	= 3	; 
+                 .equ	OCR0A_4	= 4	; 
+                 .equ	OCR0A_5	= 5	; 
+                 .equ	OCR0A_6	= 6	; 
+                 .equ	OCR0A_7	= 7	; 
+                 
+                 ; OCR0B - Timer/Counter0 Output Compare Register
+                 .equ	OCR0B_0	= 0	; 
+                 .equ	OCR0B_1	= 1	; 
+                 .equ	OCR0B_2	= 2	; 
+                 .equ	OCR0B_3	= 3	; 
+                 .equ	OCR0B_4	= 4	; 
+                 .equ	OCR0B_5	= 5	; 
+                 .equ	OCR0B_6	= 6	; 
+                 .equ	OCR0B_7	= 7	; 
+                 
+                 ; GTCCR - General Timer/Counter Control Register
+                 ;.equ	PSRSYNC	= 0	; Prescaler Reset Timer/Counter1 and Timer/Counter0
+                 .equ	PSR10	= PSRSYNC	; For compatibility
+                 ;.equ	TSM	= 7	; Timer/Counter Synchronization Mode
+                 
+                 
+                 ; ***** EXTERNAL_INTERRUPT ***********
+                 ; EICRA - External Interrupt Control Register
+                 .equ	ISC00	= 0	; External Interrupt Sense Control 0 Bit 0
+                 .equ	ISC01	= 1	; External Interrupt Sense Control 0 Bit 1
+                 .equ	ISC10	= 2	; External Interrupt Sense Control 1 Bit 0
+                 .equ	ISC11	= 3	; External Interrupt Sense Control 1 Bit 1
+                 
+                 ; EIMSK - External Interrupt Mask Register
+                 .equ	INT0	= 0	; External Interrupt Request 0 Enable
+                 .equ	INT1	= 1	; External Interrupt Request 1 Enable
+                 
+                 ; EIFR - External Interrupt Flag Register
+                 .equ	INTF0	= 0	; External Interrupt Flag 0
+                 .equ	INTF1	= 1	; External Interrupt Flag 1
+                 
+                 ; PCICR - Pin Change Interrupt Control Register
+                 .equ	PCIE0	= 0	; Pin Change Interrupt Enable 0
+                 .equ	PCIE1	= 1	; Pin Change Interrupt Enable 1
+                 .equ	PCIE2	= 2	; Pin Change Interrupt Enable 2
+                 
+                 ; PCMSK2 - Pin Change Mask Register 2
+                 .equ	PCINT16	= 0	; Pin Change Enable Mask 16
+                 .equ	PCINT17	= 1	; Pin Change Enable Mask 17
+                 .equ	PCINT18	= 2	; Pin Change Enable Mask 18
+                 .equ	PCINT19	= 3	; Pin Change Enable Mask 19
+                 .equ	PCINT20	= 4	; Pin Change Enable Mask 20
+                 .equ	PCINT21	= 5	; Pin Change Enable Mask 21
+                 .equ	PCINT22	= 6	; Pin Change Enable Mask 22
+                 .equ	PCINT23	= 7	; Pin Change Enable Mask 23
+                 
+                 ; PCMSK1 - Pin Change Mask Register 1
+                 .equ	PCINT8	= 0	; Pin Change Enable Mask 8
+                 .equ	PCINT9	= 1	; Pin Change Enable Mask 9
+                 .equ	PCINT10	= 2	; Pin Change Enable Mask 10
+                 .equ	PCINT11	= 3	; Pin Change Enable Mask 11
+                 .equ	PCINT12	= 4	; Pin Change Enable Mask 12
+                 .equ	PCINT13	= 5	; Pin Change Enable Mask 13
+                 .equ	PCINT14	= 6	; Pin Change Enable Mask 14
+                 
+                 ; PCMSK0 - Pin Change Mask Register 0
+                 .equ	PCINT0	= 0	; Pin Change Enable Mask 0
+                 .equ	PCINT1	= 1	; Pin Change Enable Mask 1
+                 .equ	PCINT2	= 2	; Pin Change Enable Mask 2
+                 .equ	PCINT3	= 3	; Pin Change Enable Mask 3
+                 .equ	PCINT4	= 4	; Pin Change Enable Mask 4
+                 .equ	PCINT5	= 5	; Pin Change Enable Mask 5
+                 .equ	PCINT6	= 6	; Pin Change Enable Mask 6
+                 .equ	PCINT7	= 7	; Pin Change Enable Mask 7
+                 
+                 ; PCIFR - Pin Change Interrupt Flag Register
+                 .equ	PCIF0	= 0	; Pin Change Interrupt Flag 0
+                 .equ	PCIF1	= 1	; Pin Change Interrupt Flag 1
+                 .equ	PCIF2	= 2	; Pin Change Interrupt Flag 2
+                 
+                 
+                 ; ***** SPI **************************
+                 ; SPDR - SPI Data Register
+                 .equ	SPDR0	= 0	; SPI Data Register bit 0
+                 .equ	SPDR1	= 1	; SPI Data Register bit 1
+                 .equ	SPDR2	= 2	; SPI Data Register bit 2
+                 .equ	SPDR3	= 3	; SPI Data Register bit 3
+                 .equ	SPDR4	= 4	; SPI Data Register bit 4
+                 .equ	SPDR5	= 5	; SPI Data Register bit 5
+                 .equ	SPDR6	= 6	; SPI Data Register bit 6
+                 .equ	SPDR7	= 7	; SPI Data Register bit 7
+                 
+                 ; SPSR - SPI Status Register
+                 .equ	SPI2X	= 0	; Double SPI Speed Bit
+                 .equ	WCOL	= 6	; Write Collision Flag
+                 .equ	SPIF	= 7	; SPI Interrupt Flag
+                 
+                 ; SPCR - SPI Control Register
+                 .equ	SPR0	= 0	; SPI Clock Rate Select 0
+                 .equ	SPR1	= 1	; SPI Clock Rate Select 1
+                 .equ	CPHA	= 2	; Clock Phase
+                 .equ	CPOL	= 3	; Clock polarity
+                 .equ	MSTR	= 4	; Master/Slave Select
+                 .equ	DORD	= 5	; Data Order
+                 .equ	SPE	= 6	; SPI Enable
+                 .equ	SPIE	= 7	; SPI Interrupt Enable
+                 
+                 
+                 ; ***** WATCHDOG *********************
+                 ; WDTCSR - Watchdog Timer Control Register
+                 .equ	WDP0	= 0	; Watch Dog Timer Prescaler bit 0
+                 .equ	WDP1	= 1	; Watch Dog Timer Prescaler bit 1
+                 .equ	WDP2	= 2	; Watch Dog Timer Prescaler bit 2
+                 .equ	WDE	= 3	; Watch Dog Enable
+                 .equ	WDCE	= 4	; Watchdog Change Enable
+                 .equ	WDP3	= 5	; Watchdog Timer Prescaler Bit 3
+                 .equ	WDIE	= 6	; Watchdog Timeout Interrupt Enable
+                 .equ	WDIF	= 7	; Watchdog Timeout Interrupt Flag
+                 
+                 
+                 ; ***** CPU **************************
+                 ; SREG - Status Register
+                 .equ	SREG_C	= 0	; Carry Flag
+                 .equ	SREG_Z	= 1	; Zero Flag
+                 .equ	SREG_N	= 2	; Negative Flag
+                 .equ	SREG_V	= 3	; Two's Complement Overflow Flag
+                 .equ	SREG_S	= 4	; Sign Bit
+                 .equ	SREG_H	= 5	; Half Carry Flag
+                 .equ	SREG_T	= 6	; Bit Copy Storage
+                 .equ	SREG_I	= 7	; Global Interrupt Enable
+                 
+                 ; OSCCAL - Oscillator Calibration Value
+                 .equ	CAL0	= 0	; Oscillator Calibration Value Bit0
+                 .equ	CAL1	= 1	; Oscillator Calibration Value Bit1
+                 .equ	CAL2	= 2	; Oscillator Calibration Value Bit2
+                 .equ	CAL3	= 3	; Oscillator Calibration Value Bit3
+                 .equ	CAL4	= 4	; Oscillator Calibration Value Bit4
+                 .equ	CAL5	= 5	; Oscillator Calibration Value Bit5
+                 .equ	CAL6	= 6	; Oscillator Calibration Value Bit6
+                 .equ	CAL7	= 7	; Oscillator Calibration Value Bit7
+                 
+                 ; CLKPR - Clock Prescale Register
+                 .equ	CLKPS0	= 0	; Clock Prescaler Select Bit 0
+                 .equ	CLKPS1	= 1	; Clock Prescaler Select Bit 1
+                 .equ	CLKPS2	= 2	; Clock Prescaler Select Bit 2
+                 .equ	CLKPS3	= 3	; Clock Prescaler Select Bit 3
+                 .equ	CLKPCE	= 7	; Clock Prescaler Change Enable
+                 
+                 ; SPMCSR - Store Program Memory Control and Status Register
+                 .equ	SELFPRGEN	= 0	; Self Programming Enable
+                 .equ	PGERS	= 1	; Page Erase
+                 .equ	PGWRT	= 2	; Page Write
+                 .equ	BLBSET	= 3	; Boot Lock Bit Set
+                 .equ	RWWSRE	= 4	; Read-While-Write section read enable
+                 .equ	RWWSB	= 6	; Read-While-Write Section Busy
+                 .equ	SPMIE	= 7	; SPM Interrupt Enable
+                 
+                 ; MCUCR - MCU Control Register
+                 .equ	IVCE	= 0	; 
+                 .equ	IVSEL	= 1	; 
+                 .equ	PUD	= 4	; 
+                 .equ	BODSE	= 5	; BOD Sleep Enable
+                 .equ	BODS	= 6	; BOD Sleep
+                 
+                 ; MCUSR - MCU Status Register
+                 .equ	PORF	= 0	; Power-on reset flag
+                 .equ	EXTRF	= 1	; External Reset Flag
+                 .equ	EXTREF	= EXTRF	; For compatibility
+                 .equ	BORF	= 2	; Brown-out Reset Flag
+                 .equ	WDRF	= 3	; Watchdog Reset Flag
+                 
+                 ; SMCR - Sleep Mode Control Register
+                 .equ	SE	= 0	; Sleep Enable
+                 .equ	SM0	= 1	; Sleep Mode Select Bit 0
+                 .equ	SM1	= 2	; Sleep Mode Select Bit 1
+                 .equ	SM2	= 3	; Sleep Mode Select Bit 2
+                 
+                 ; GPIOR2 - General Purpose I/O Register 2
+                 .equ	GPIOR20	= 0	; 
+                 .equ	GPIOR21	= 1	; 
+                 .equ	GPIOR22	= 2	; 
+                 .equ	GPIOR23	= 3	; 
+                 .equ	GPIOR24	= 4	; 
+                 .equ	GPIOR25	= 5	; 
+                 .equ	GPIOR26	= 6	; 
+                 .equ	GPIOR27	= 7	; 
+                 
+                 ; GPIOR1 - General Purpose I/O Register 1
+                 .equ	GPIOR10	= 0	; 
+                 .equ	GPIOR11	= 1	; 
+                 .equ	GPIOR12	= 2	; 
+                 .equ	GPIOR13	= 3	; 
+                 .equ	GPIOR14	= 4	; 
+                 .equ	GPIOR15	= 5	; 
+                 .equ	GPIOR16	= 6	; 
+                 .equ	GPIOR17	= 7	; 
+                 
+                 ; GPIOR0 - General Purpose I/O Register 0
+                 .equ	GPIOR00	= 0	; 
+                 .equ	GPIOR01	= 1	; 
+                 .equ	GPIOR02	= 2	; 
+                 .equ	GPIOR03	= 3	; 
+                 .equ	GPIOR04	= 4	; 
+                 .equ	GPIOR05	= 5	; 
+                 .equ	GPIOR06	= 6	; 
+                 .equ	GPIOR07	= 7	; 
+                 
+                 ; PRR - Power Reduction Register
+                 .equ	PRADC	= 0	; Power Reduction ADC
+                 .equ	PRUSART0	= 1	; Power Reduction USART
+                 .equ	PRSPI	= 2	; Power Reduction Serial Peripheral Interface
+                 .equ	PRTIM1	= 3	; Power Reduction Timer/Counter1
+                 .equ	PRTIM0	= 5	; Power Reduction Timer/Counter0
+                 .equ	PRTIM2	= 6	; Power Reduction Timer/Counter2
+                 .equ	PRTWI	= 7	; Power Reduction TWI
+                 
+                 
+                 ; ***** EEPROM ***********************
+                 ; EEARL - EEPROM Address Register Low Byte
+                 .equ	EEAR0	= 0	; EEPROM Read/Write Access Bit 0
+                 .equ	EEAR1	= 1	; EEPROM Read/Write Access Bit 1
+                 .equ	EEAR2	= 2	; EEPROM Read/Write Access Bit 2
+                 .equ	EEAR3	= 3	; EEPROM Read/Write Access Bit 3
+                 .equ	EEAR4	= 4	; EEPROM Read/Write Access Bit 4
+                 .equ	EEAR5	= 5	; EEPROM Read/Write Access Bit 5
+                 .equ	EEAR6	= 6	; EEPROM Read/Write Access Bit 6
+                 .equ	EEAR7	= 7	; EEPROM Read/Write Access Bit 7
+                 
+                 ; EEARH - EEPROM Address Register High Byte
+                 .equ	EEAR8	= 0	; EEPROM Read/Write Access Bit 8
+                 .equ	EEAR9	= 1	; EEPROM Read/Write Access Bit 9
+                 
+                 ; EEDR - EEPROM Data Register
+                 .equ	EEDR0	= 0	; EEPROM Data Register bit 0
+                 .equ	EEDR1	= 1	; EEPROM Data Register bit 1
+                 .equ	EEDR2	= 2	; EEPROM Data Register bit 2
+                 .equ	EEDR3	= 3	; EEPROM Data Register bit 3
+                 .equ	EEDR4	= 4	; EEPROM Data Register bit 4
+                 .equ	EEDR5	= 5	; EEPROM Data Register bit 5
+                 .equ	EEDR6	= 6	; EEPROM Data Register bit 6
+                 .equ	EEDR7	= 7	; EEPROM Data Register bit 7
+                 
+                 ; EECR - EEPROM Control Register
+                 .equ	EERE	= 0	; EEPROM Read Enable
+                 .equ	EEPE	= 1	; EEPROM Write Enable
+                 .equ	EEMPE	= 2	; EEPROM Master Write Enable
+                 .equ	EERIE	= 3	; EEPROM Ready Interrupt Enable
+                 .equ	EEPM0	= 4	; EEPROM Programming Mode Bit 0
+                 .equ	EEPM1	= 5	; EEPROM Programming Mode Bit 1
+                 
+                 
+                 
+                 ; ***** LOCKSBITS ********************************************************
+                 .equ	LB1	= 0	; Lock bit
+                 .equ	LB2	= 1	; Lock bit
+                 .equ	BLB01	= 2	; Boot Lock bit
+                 .equ	BLB02	= 3	; Boot Lock bit
+                 .equ	BLB11	= 4	; Boot lock bit
+                 .equ	BLB12	= 5	; Boot lock bit
+                 
+                 
+                 ; ***** FUSES ************************************************************
+                 ; LOW fuse bits
+                 .equ	CKSEL0	= 0	; Select Clock Source
+                 .equ	CKSEL1	= 1	; Select Clock Source
+                 .equ	CKSEL2	= 2	; Select Clock Source
+                 .equ	CKSEL3	= 3	; Select Clock Source
+                 .equ	SUT0	= 4	; Select start-up time
+                 .equ	SUT1	= 5	; Select start-up time
+                 .equ	CKOUT	= 6	; Clock output
+                 .equ	CKDIV8	= 7	; Divide clock by 8
+                 
+                 ; HIGH fuse bits
+                 .equ	BOOTRST	= 0	; Select reset vector
+                 .equ	BOOTSZ0	= 1	; Select boot size
+                 .equ	BOOTSZ1	= 2	; Select boot size
+                 .equ	EESAVE	= 3	; EEPROM memory is preserved through chip erase
+                 .equ	WDTON	= 4	; Watchdog Timer Always On
+                 .equ	SPIEN	= 5	; Enable Serial programming and Data Downloading
+                 .equ	DWEN	= 6	; debugWIRE Enable
+                 .equ	RSTDISBL	= 7	; External reset disable
+                 
+                 ; EXTENDED fuse bits
+                 .equ	BODLEVEL0	= 0	; Brown-out Detector trigger level
+                 .equ	BODLEVEL1	= 1	; Brown-out Detector trigger level
+                 .equ	BODLEVEL2	= 2	; Brown-out Detector trigger level
+                 
+                 
+                 
+                 ; ***** CPU REGISTER DEFINITIONS *****************************************
+                 .def	XH	= r27
+                 .def	XL	= r26
+                 .def	YH	= r29
+                 .def	YL	= r28
+                 .def	ZH	= r31
+                 .def	ZL	= r30
+                 
+                 
+                 
+                 ; ***** DATA MEMORY DECLARATIONS *****************************************
+                 .equ	FLASHEND	= 0x3fff	; Note: Word address
+                 .equ	IOEND	= 0x00ff
+                 .equ	SRAM_START	= 0x0100
+                 .equ	SRAM_SIZE	= 2048
+                 .equ	RAMEND	= 0x08ff
+                 .equ	XRAMEND	= 0x0000
+                 .equ	E2END	= 0x03ff
+                 .equ	EEPROMEND	= 0x03ff
+                 .equ	EEADRBITS	= 10
+                 #pragma AVRPART MEMORY PROG_FLASH 32768
+                 #pragma AVRPART MEMORY EEPROM 1024
+                 #pragma AVRPART MEMORY INT_SRAM SIZE 2048
+                 #pragma AVRPART MEMORY INT_SRAM START_ADDR 0x100
+                 
+                 
+                 
+                 ; ***** BOOTLOADER DECLARATIONS ******************************************
+                 .equ	NRWW_START_ADDR	= 0x3800
+                 .equ	NRWW_STOP_ADDR	= 0x3fff
+                 .equ	RWW_START_ADDR	= 0x0
+                 .equ	RWW_STOP_ADDR	= 0x37ff
+                 .equ	PAGESIZE	= 64
+                 .equ	FIRSTBOOTSTART	= 0x3f00
+                 .equ	SECONDBOOTSTART	= 0x3e00
+                 .equ	THIRDBOOTSTART	= 0x3c00
+                 .equ	FOURTHBOOTSTART	= 0x3800
+                 .equ	SMALLBOOTSTART	= FIRSTBOOTSTART
+                 .equ	LARGEBOOTSTART	= FOURTHBOOTSTART
+                 
+                 
+                 
+                 ; ***** INTERRUPT VECTORS ************************************************
+                 .equ	INT0addr	= 0x0002	; External Interrupt Request 0
+                 .equ	INT1addr	= 0x0004	; External Interrupt Request 1
+                 .equ	PCI0addr	= 0x0006	; Pin Change Interrupt Request 0
+                 .equ	PCI1addr	= 0x0008	; Pin Change Interrupt Request 0
+                 .equ	PCI2addr	= 0x000a	; Pin Change Interrupt Request 1
+                 .equ	WDTaddr	= 0x000c	; Watchdog Time-out Interrupt
+                 .equ	OC2Aaddr	= 0x000e	; Timer/Counter2 Compare Match A
+                 .equ	OC2Baddr	= 0x0010	; Timer/Counter2 Compare Match A
+                 .equ	OVF2addr	= 0x0012	; Timer/Counter2 Overflow
+                 .equ	ICP1addr	= 0x0014	; Timer/Counter1 Capture Event
+                 .equ	OC1Aaddr	= 0x0016	; Timer/Counter1 Compare Match A
+                 .equ	OC1Baddr	= 0x0018	; Timer/Counter1 Compare Match B
+                 .equ	OVF1addr	= 0x001a	; Timer/Counter1 Overflow
+                 .equ	OC0Aaddr	= 0x001c	; TimerCounter0 Compare Match A
+                 .equ	OC0Baddr	= 0x001e	; TimerCounter0 Compare Match B
+                 .equ	OVF0addr	= 0x0020	; Timer/Couner0 Overflow
+                 .equ	SPIaddr	= 0x0022	; SPI Serial Transfer Complete
+                 .equ	URXCaddr	= 0x0024	; USART Rx Complete
+                 .equ	UDREaddr	= 0x0026	; USART, Data Register Empty
+                 .equ	UTXCaddr	= 0x0028	; USART Tx Complete
+                 .equ	ADCCaddr	= 0x002a	; ADC Conversion Complete
+                 .equ	ERDYaddr	= 0x002c	; EEPROM Ready
+                 .equ	ACIaddr	= 0x002e	; Analog Comparator
+                 .equ	TWIaddr	= 0x0030	; Two-wire Serial Interface
+                 .equ	SPMRaddr	= 0x0032	; Store Program Memory Read
+                 
+                 .equ	INT_VECTORS_SIZE	= 52	; size in words
+                 
+                 #endif  /* _M328PDEF_INC_ */
+                 
+                 ; ***** END OF FILE ******************************************************
+                 
+                  * Practica_7c.asm
+                  *
+                  *  Created: 29/05/2016 11:34:55 p. m.
+                  *   Author: LuisFernando
+                  */ 
+                 
+000000 940c 0006  .org 0x000 jmp config;
+000002 940c 0082  .org 0x0002 jmp INT_0 ; INT0.
+000004 940c 0084  .org 0x0004 jmp INT_1 ; INT1.
+                 
+                 .equ       Enable=0; Define el pin del Puerto donde va el Enable.
+                 .equ       RS=1; Define el pin del Puerto donde va RS.
+                 
+                 .equ       Dir_DDRAM=0x100; Define el lugar de la RAM donde se guarda el dato(Dirección DDRAM).
+                 .equ       Cod_ASCCI=0x101; Define el lugar de la RAM donde se guarda el dato(Código ASCCI).
+                 .equ       Dir_CGRAM=0x102; Define el lugar de la RAM donde se guarda el dato(Dirección CGRAM).
+                 .equ       Des_Dis=0x103; Define el lugar de la RAM donde se guarda el dato(Descripción del Display).
+                 .equ       EEPROM_Dirh=0x104;Define el lugar de la RAM donde se guarda la dirección alta de la EEPROM.
+                 .equ       EEPROM_Dirl=0x105;Define el lugar de la RAM donde se guarda la dirección baja de la EEPROM.
+                 .equ       EEPROM_Dato=0x106;Define el lugar de la RAM donde se guarda el dato de la EEPROM.
+                 .equ       Bandera_Juego=0x107;;Define el lugar de la RAM donde se guarda la bandera.
+                 .equ       ContadorU=0x108;;Define el lugar de la RAM donde se guarda el Contador de Unidades.
+                 .equ       ContadorD=0x109;;Define el lugar de la RAM donde se guarda el Contador de Decenas.
+                 .equ       ContadorC=0x10A;;Define el lugar de la RAM donde se guarda el Contador de Centenas.
+                 .equ       ContadorM=0x10B;;Define el lugar de la RAM donde se guarda el Contador de Millares.
+                 .equ       ContadorUa=0x10C;;Define el lugar de la RAM donde se guarda el Contador de Unidades ASCII.
+                 .equ       ContadorDa=0x10D;;Define el lugar de la RAM donde se guarda el Contador de Decenas ASCII.
+                 .equ       ContadorCa=0x10E;;Define el lugar de la RAM donde se guarda el Contador de Centenas ASCII.
+                 .equ       ContadorMa=0x10F;;Define el lugar de la RAM donde se guarda el Contador de Millares ASCII.
+                 .equ       Const_EEPROM=0x110;;Define el lugar de la RAM donde se guarda el lugar a modificar.
+                 .equ       Cont_L=0x111;;Define el lugar de la RAM donde se guarda el contador de Letra.
+                 .equ       Cont_LCD=0x112;;Define el lugar de la RAM donde se guarda el contador de la posición del LCD.
+                 .equ       LED_Inicio=3;Define el pin del LED de Inicio.
+                 .equ       LED_Paro=2;Define el pin del LED de Paro.
+                 .equ       Boton_Mas=6;
+                 .equ       Boton_Menos=7;
+000006 ef0f      config: ldi R16, LOW(RAMEND);
+000007 bf0d              out spl, R16;
+000008 e008              ldi R16, HIGH(RAMEND);
+000009 bf0e              out sph, R16;
+00000a ef0f              ser R16;
+00000b b904      		out DDRB, R16;Configura el puerto B.
+00000c e002              ldi R16,0x02;
+00000d b90a              out DDRD, R16;Configura el puerto D.
+00000e e00f      		ldi R16,0x0F;
+00000f b907              out DDRC, R16; Configura el puerto C.
+                 		;INTERRUPCIÓN EXTERNA
+000010 e00f      		ldi R16,0x0F; Carga 0x0F a R16.
+000011 9300 0069         sts EICRA,R16; Configura las interrupciones de INT0 e INT1 en flanco de Subida.
+000013 e003              ldi R16,0x03; Carga 0x01 a R16.
+000014 bb0d              out EIMSK,R16; Habilita la interrupción de INT0 e INT1.
+                 		;Inicializar el LCD
+000015 940e 03af 		call LCD_Inicio;Llama a la función de Inicialización del LCD.
+                 		;Inicializar EEPROM
+000017 e000      		ldi R16,0x00;
+000018 9300 0104 		sts EEPROM_Dirh,R16;
+00001a e000      	    ldi R16,0x00;
+00001b 9300 0105 		sts EEPROM_Dirl,R16;
+00001d 940e 039e 		call LEER_EEPROM;
+00001f 9100 0106 	    lds R16,EEPROM_Dato;Carga el dato a R16.
+000021 3001      		cpi R16,0x01;
+000022 f411      		brne Cargar_EE;
+000023 940c 0029 		jmp Continuar;
+                 Cargar_EE:		
+000025 940e 041a         call Carga_Inicial;
+                 		;Guarda un nuevo caracter en la CGRAM.
+000027 9843      		cbi portc,LED_Inicio;
+000028 9a42      	    sbi portc,LED_Paro;
+                 Continuar:
+000029 2700      		clr R16;
+00002a 9300 0102 		sts Dir_CGRAM,R16;Carga la dirección 0 al registro asociado con la CGRAM;
+00002c e000      		ldi R16,0b00000;
+00002d 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+00002f 940e 03d2 		call LCD_CGRAM;Llama a la subrutina para guardar el dato con una dirección inicial.
+000031 e00a      	    ldi R16, 0b01010;
+000032 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000034 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+000036 e00a      	    ldi R16, 0b01010;
+000037 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000039 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+00003b e00a      	    ldi R16, 0b01010;
+00003c 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+00003e 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+000040 e000      	    ldi R16, 0b00000;
+000041 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000043 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+000045 e101      	    ldi R16, 0b10001;
+000046 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000048 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+00004a e10f      	    ldi R16, 0b11111;
+00004b 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+00004d 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+00004f e00e      	    ldi R16, 0b01110; 
+000050 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000052 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+                 		;Termina el guardado del nuevo caracter.
+                 		;Guarda un nuevo caracter en la CGRAM.
+000054 e008      		ldi R16,8;
+000055 9300 0102 		sts Dir_CGRAM,R16;Carga la dirección 0 al registro asociado con la CGRAM;
+000057 e105      		ldi R16,0b10101;
+000058 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+00005a 940e 03d2 		call LCD_CGRAM;Llama a la subrutina para guardar el dato con una dirección inicial.
+00005c e00a      	    ldi R16, 0b01010;
+00005d 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+00005f 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+000061 e105      	    ldi R16, 0b10101;
+000062 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000064 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+000066 e00a      	    ldi R16, 0b01010;
+000067 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000069 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+00006b e105      	    ldi R16, 0b10101;
+00006c 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+00006e 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+000070 e00a      	    ldi R16, 0b01010;
+000071 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000073 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+000075 e105      	    ldi R16, 0b10101;
+000076 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+000078 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+00007a e00a      	    ldi R16, 0b01010; 
+00007b 9300 0103 		sts Des_Dis,R16;Carga el dato al registro asociado con Descripción del Display;
+00007d 940e 03dd 		call LCD_CGR;Llama a la subrutina para guardar el dato en la dirección siguiente.
+00007f 9478      		sei;
+000080 940c 008b 		jmp inicio;
+                 INT_0:;Botón de pulso.
+000082 6088      	   ori R24,0x08;Pone el alto el bit 3 de R24 para indicar que hubo una int_0.
+000083 9518      	   reti;
+                 INT_1:;Botón de Inicio.
+000084 fd82             sbrc R24,2;
+000085 940c 008a 	   jmp FIN_1;
+000087 930f      	   push R16;
+000088 6084      	   ori R24,0x04;Pone en alto el bit para acceder solo una vez al juego.
+                 	   ;call Limpiar_LCD;
+                 	   ;call Jugar;
+                 	   ;call Obtener Datos;
+                 	   ;cbr R24,2;Pone en bajo el bit para poder volver a jugar.
+000089 910f             pop R16;
+                 FIN_1:
+00008a 9518      	   reti;
+                 ;
+                 ;ldi R16,0x00;
+                 ;	   sts EEPROM_Dirh,R16;
+                 ;	   inc R17;
+                 ;	   sts EEPROM_Dirl,R17;
+                 ;	   sts EEPROM_Dato,R17;
+                 ;       call ES_EEPROM;
+                 ;FIN_0:
+                 ;	   pop R16;
+                 ;       call LEER_EEPROM;
+                 ;	    lds R16,EEPROM_Dato;Carga el dato a R16.
+                 inicio:   ;PONER PRIMER JUGADOR
+00008b 940e 037a           call LCD_1;Pone en la línea 1 del LCD.
+00008d e030                ldi R19,0x00;
+00008e 9330 0105 Linea_1:  sts EEPROM_Dirl,R19;Carga la dirección baja de la EEPROM.
+000090 940e 039e 		  call LEER_EEPROM;Lee el dato de la EEPROM.
+000092 9100 0106           lds R16,EEPROM_Dato;Carga el dato a R16.
+000094 9300 0101 		  sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+000096 940e 03cb 		  call LCD_Rapido;
+000098 9533      		  inc R19;Incrementa el registro R19.
+000099 3130      		  cpi R19,0x10;
+00009a f799      		  brne Linea_1;
+                 		  ;
+00009b 940e 0380 		  call LCD_2;Pone en la línea 2 del LCD.
+00009d e130      		  ldi R19,0x10;
+00009e 9330 0105 Linea_2:  sts EEPROM_Dirl,R19;Carga la dirección baja de la EEPROM.
+0000a0 940e 039e 		  call LEER_EEPROM;Lee el dato de la EEPROM.
+0000a2 9100 0106           lds R16,EEPROM_Dato;Carga el dato a R16.
+0000a4 9300 0101 		  sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+0000a6 940e 03cb 		  call LCD_Rapido;
+0000a8 9533      		  inc R19;Incrementa el registro R19.
+0000a9 3230      		  cpi R19,0x20;
+0000aa f799      		  brne Linea_2;
+                 		  ;
+0000ab 940e 00f9 		  call retardo_1;
+0000ad 940e 0386 		  call Limpiar_LCD;
+                 		  ;PONER SEGUNDO JUGADOR.
+0000af 940e 037a 		  call LCD_1;Pone en la línea 1 del LCD.
+0000b1 e230                ldi R19,0x20;
+0000b2 9330 0105 Linea_1b: sts EEPROM_Dirl,R19;Carga la dirección baja de la EEPROM.
+0000b4 940e 039e 		  call LEER_EEPROM;Lee el dato de la EEPROM.
+0000b6 9100 0106           lds R16,EEPROM_Dato;Carga el dato a R16.
+0000b8 9300 0101 		  sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+0000ba 940e 03cb 		  call LCD_Rapido;
+0000bc 9533      		  inc R19;Incrementa el registro R19.
+0000bd 3330      		  cpi R19,0x30;
+0000be f799      		  brne Linea_1b;
+                 		  ;
+0000bf 940e 0380 		  call LCD_2;Pone en la línea 2 del LCD.
+0000c1 e330      		  ldi R19,0x30;
+0000c2 9330 0105 Linea_2b: sts EEPROM_Dirl,R19;Carga la dirección baja de la EEPROM.
+0000c4 940e 039e 		  call LEER_EEPROM;Lee el dato de la EEPROM.
+0000c6 9100 0106           lds R16,EEPROM_Dato;Carga el dato a R16.
+0000c8 9300 0101 		  sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+0000ca 940e 03cb 		  call LCD_Rapido;
+0000cc 9533      		  inc R19;Incrementa el registro R19.
+0000cd 3430      		  cpi R19,0x40;
+0000ce f799      		  brne Linea_2b;
+                 		  ;
+0000cf 940e 00f9 		  call retardo_1;
+0000d1 940e 0386 		  call Limpiar_LCD;
+                 		  ;PONER EL TERCER JUGADOR.
+0000d3 940e 037a 		  call LCD_1;Pone en la línea 1 de la LCD.
+0000d5 e430                ldi R19,0x40;
+0000d6 9330 0105 Linea_1c: sts EEPROM_Dirl,R19;Carga la dirección baja de la EEPROM.
+0000d8 940e 039e 		  call LEER_EEPROM;Lee el dato de la EEPROM.
+0000da 9100 0106           lds R16,EEPROM_Dato;Carga el dato a R16.
+0000dc 9300 0101 		  sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+0000de 940e 03cb 		  call LCD_Rapido;
+0000e0 9533      		  inc R19;Incrementa el registro R19.
+0000e1 3530      		  cpi R19,0x50;
+0000e2 f799      		  brne Linea_1c;
+                 		  ;
+0000e3 940e 0380 		  call LCD_2;Pone en la línea 2 de la LCD.
+0000e5 e530      		  ldi R19,0x50;
+0000e6 9330 0105 Linea_2c: sts EEPROM_Dirl,R19;Carga la dirección baja de la EEPROM.
+0000e8 940e 039e 		  call LEER_EEPROM;Lee el dato de la EEPROM.
+0000ea 9100 0106           lds R16,EEPROM_Dato;Carga el dato a R16.
+0000ec 9300 0101 		  sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+0000ee 940e 03cb 		  call LCD_Rapido;
+0000f0 9533      		  inc R19;Incrementa el registro R19.
+0000f1 3630      		  cpi R19,0x60;
+0000f2 f799      		  brne Linea_2c;
+                 		  ;
+0000f3 940e 00f9 		  call retardo_1;
+0000f5 940e 0386 		  call Limpiar_LCD;
+                 FINAL:
+0000f7 940c 008b           jmp inicio;Regresa al inicio.
+                 retardo_1:
+                           ; ============================= 
+                           ;    delay loop generator 
+                           ;     2000000 cycles:
+                           ; ----------------------------- 
+                           ; delaying 1999998 cycles:
+0000f9 e142                ldi  R20, $12
+0000fa eb5c      WGLOOP0C: ldi  R21, $BC
+0000fb ec64      WGLOOP1C: ldi  R22, $C4
+0000fc fd82      WGLOOP2C: sbrc R24,2;
+0000fd 940e 0107           call Mostar_Juego; 
+0000ff 956a                dec  R22
+000100 f7d9                brne WGLOOP2C
+000101 955a                dec  R21
+000102 f7c1                brne WGLOOP1C
+000103 954a                dec  R20
+000104 f7a9                brne WGLOOP0C
+                           ; ----------------------------- 
+                           ; delaying 2 cycles:
+000105 0000                nop
+000106 9508                ret;
+                           ; =============================
+                  Mostar_Juego:
+000107 934f                  push R20;
+000108 935f      			push R21;
+000109 936f      			push R22;
+00010a 9a43      			sbi portc,LED_Inicio;
+00010b 9842      			cbi portc,LED_Paro;
+00010c 940e 0386             call Limpiar_LCD;
+00010e 940e 032e             call Jugar;
+000110 940e 011c 			call Mostrar_Resultado;
+000112 9843      			cbi portc,LED_Inicio;
+000113 9a42      			sbi portc,LED_Paro;
+000114 7f8b      			andi R24,0xFB;Pone en bajo el bit 2 para limpiarlo.
+000115 916f      			pop R22;
+000116 915f      			pop R21;
+000117 914f      			pop R20;
+000118 e041      			ldi R20,0x01;
+000119 e051      			ldi R21,0x01;
+00011a e061      			ldi R22,0x01;
+00011b 9508      			ret;
+                 Mostrar_Resultado:
+00011c e310                  ldi R17,0x30;
+00011d 9100 0108             lds R16,ContadorU;
+00011f 0f01      			add R16,R17;
+000120 9300 010c 			sts ContadorUa,R16;Decodifica ContadorU a ASCII.
+                 			;Decenas
+000122 9100 0109 			lds R16,ContadorD;
+000124 0f01      			add R16,R17;
+000125 9300 010d 			sts ContadorDa,R16;Decodifica ContadorD a ASCII.
+                 			;Centenas
+000127 9100 010a 			lds R16,ContadorC;
+000129 0f01      			add R16,R17;
+00012a 9300 010e 			sts ContadorCa,R16;Decodifica ContadorC a ASCII.
+                 			;Millares
+00012c 9100 010b 			lds R16,ContadorM;
+00012e 0f01      			add R16,R17;
+00012f 9300 010f 			sts ContadorMa,R16;Decodifica ContadorM a ASCII.
+                 			;Mostar en el LCD el resultado.
+000131 e806      			ldi R16,0x86;
+000132 9300 0100 		    sts Dir_DDRAM,R16;
+000134 940e 03e4 		    call LCD_Comando;Pone en la dirección 80 de la LCD.
+000136 9100 010f 			lds R16,ContadorMa;
+000138 9300 0101 			sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+00013a 940e 03cb 		    call LCD_Rapido;
+00013c 9100 010e 			lds R16,ContadorCa;
+00013e 9300 0101 			sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+000140 940e 03cb 		    call LCD_Rapido;
+000142 9100 010d 			lds R16,ContadorDa;
+000144 9300 0101 			sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+000146 940e 03cb 		    call LCD_Rapido;
+000148 9100 010c 			lds R16,ContadorUa;
+00014a 9300 0101 			sts Cod_ASCCI,R16;Poner el dato en el registro del LCD.
+00014c 940e 03cb 		    call LCD_Rapido;
+00014e 940e 036d 			call retardo_2;
+                 Comparacion:
+                 			;Comparar datos con el primer jugador.
+                 			;---------------------------------------------------------------------
+                 			;Millares
+000150 e017      	        ldi R17,0x07;Obtener Dato de Millares.
+000151 9310 0105 		    sts EEPROM_Dirl,R17;
+000153 940e 039e 		    call LEER_EEPROM;
+000155 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000157 9100 010f 			lds R16,ContadorMa;
+000159 1b10      			sub R17,R16;
+00015a f178      			brlo Guardar1;Guarda si R17 es menor que R16.
+00015b 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+00015d 1b01      			sub R16,R17;
+00015e f148      			brlo Comp2;Si R16 es menor que R17 deja de comparar.
+                 			;Centenas
+00015f e018      			ldi R17,0x08;Obtener Dato de Centenas.
+000160 9310 0105 		    sts EEPROM_Dirl,R17;
+000162 940e 039e 		    call LEER_EEPROM;
+000164 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000166 9100 010e 			lds R16,ContadorCa;
+000168 1b10      			sub R17,R16;
+000169 f100      			brlo Guardar1;Guarda si R17 es menor que R16.
+00016a 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+00016c 1b01      			sub R16,R17;
+00016d f0d0      			brlo Comp2;Si R16 es menor que R17 deja de comparar.
+                 			;Decenas
+00016e e019      			ldi R17,0x09;Obtener Dato de Decenas.
+00016f 9310 0105 		    sts EEPROM_Dirl,R17;
+000171 940e 039e 		    call LEER_EEPROM;
+000173 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000175 9100 010d 			lds R16,ContadorDa;
+000177 1b10      			sub R17,R16;
+000178 f088      			brlo Guardar1;Guarda si R17 es menor que R16.
+000179 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+00017b 1b01      			sub R16,R17;
+00017c f058      			brlo Comp2;Si R16 es menor que R17 deja de comparar.
+                 			;Unidades
+00017d e01a      			ldi R17,0x0A;Obtener Dato de Centenas.
+00017e 9310 0105 		    sts EEPROM_Dirl,R17;
+000180 940e 039e 		    call LEER_EEPROM;
+000182 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000184 9100 010c 			lds R16,ContadorUa;
+000186 1b10      			sub R17,R16;
+000187 f010      			brlo Guardar1;Guarda si R17 es menor que R16.
+000188 940c 01d9 Comp2:		jmp Comparar_2;
+                 Guardar1:
+                             ;Guardar Tercer Lugar
+00018a e217      			ldi R17,0x27;
+00018b 9310 0105 Copiar_3a:  sts EEPROM_Dirl,R17;
+00018d 940e 039e 			call LEER_EEPROM;Leer Dato de la EEPROM.
+00018f 9100 0106 			lds R16,EEPROM_Dato;Carga el dato a R16 de la EEPROM.
+000191 9300 0106 			sts EEPROM_Dato,R16;
+000193 e200      			ldi R16,0x20;Coloca 0x20 en R16.
+000194 0f01      			add R16,R17;Suma a R16 la dirección de R17.
+000195 9300 0105 			sts EEPROM_Dirl,R16;
+000197 940e 038c             call ES_EEPROM;
+000199 9513      			inc R17;
+00019a 3410      			cpi R17,0x40;
+00019b f779      			brne Copiar_3a;
+                 			;Guardar Segundo Lugar
+00019c e017      			ldi R17,0x07;
+00019d 9310 0105 Copiar_2a:  sts EEPROM_Dirl,R17;
+00019f 940e 039e 			call LEER_EEPROM;Leer Dato de la EEPROM.
+0001a1 9100 0106 			lds R16,EEPROM_Dato;Carga el dato a R16 de la EEPROM.
+0001a3 9300 0106 			sts EEPROM_Dato,R16;
+0001a5 e200      			ldi R16,0x20;Coloca 0x20 en R16.
+0001a6 0f01      			add R16,R17;Suma a R16 la dirección de R17.
+0001a7 9300 0105 			sts EEPROM_Dirl,R16;
+0001a9 940e 038c             call ES_EEPROM;
+0001ab 9513      			inc R17;
+0001ac 3210      			cpi R17,0x20;
+0001ad f779      			brne Copiar_2a;
+                             ;Guardar Primer lugar
+                 			;Dato 7
+0001ae e007      	        ldi R16,0x07;
+0001af 9300 0105 		    sts EEPROM_Dirl,R16;
+0001b1 9100 010f 		    lds R16,ContadorMa;
+0001b3 9300 0106 		    sts EEPROM_Dato,R16;
+0001b5 940e 038c             call ES_EEPROM;
+                 		    ;Dato 8
+0001b7 e008      	        ldi R16,0x08;
+0001b8 9300 0105 		    sts EEPROM_Dirl,R16;
+0001ba 9100 010e 		    lds R16,ContadorCa;
+0001bc 9300 0106 		    sts EEPROM_Dato,R16;
+0001be 940e 038c             call ES_EEPROM;
+                 		    ;Dato 9
+0001c0 e009      	        ldi R16,0x09;
+0001c1 9300 0105 		    sts EEPROM_Dirl,R16;
+0001c3 9100 010d 		    lds R16,ContadorDa;
+0001c5 9300 0106 		    sts EEPROM_Dato,R16;
+0001c7 940e 038c             call ES_EEPROM;
+                 		    ;Dato 10
+0001c9 e00a      	        ldi R16,0x0A;
+0001ca 9300 0105 		    sts EEPROM_Dirl,R16;
+0001cc 9100 010c 		    lds R16,ContadorUa;
+0001ce 9300 0106 		    sts EEPROM_Dato,R16;
+0001d0 940e 038c             call ES_EEPROM;
+0001d2 e100      			ldi R16,0x10;
+0001d3 9300 0110 			sts Const_EEPROM,R16;
+0001d5 940e 02b4 			call Ing_Datos;
+0001d7 940c 02b3             jmp Fin_Comp;
+                 			;Comparar datos con el segundo jugador.
+                 			;---------------------------------------------------------------------
+                 			;Millares
+0001d9 e217      Comparar_2: ldi R17,0x27;Obtener Dato de Millares.
+0001da 9310 0105 		    sts EEPROM_Dirl,R17;
+0001dc 940e 039e 		    call LEER_EEPROM;
+0001de 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+0001e0 9100 010f 			lds R16,ContadorMa;
+0001e2 1b10      			sub R17,R16;
+0001e3 f178      			brlo Guardar2;Guarda si R17 es menor que R16.
+0001e4 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+0001e6 1b01      			sub R16,R17;
+0001e7 f148      			brlo Comp3;Si R16 es menor que R17 deja de comparar.
+                 			;Centenas
+0001e8 e218      			ldi R17,0x28;Obtener Dato de Centenas.
+0001e9 9310 0105 		    sts EEPROM_Dirl,R17;
+0001eb 940e 039e 		    call LEER_EEPROM;
+0001ed 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+0001ef 9100 010e 			lds R16,ContadorCa;
+0001f1 1b10      			sub R17,R16;
+0001f2 f100      			brlo Guardar2;Guarda si R17 es menor que R16.
+0001f3 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+0001f5 1b01      			sub R16,R17;
+0001f6 f0d0      			brlo Comp3;Si R16 es menor que R17 deja de comparar.
+                 			;Decenas
+0001f7 e219      			ldi R17,0x29;Obtener Dato de Decenas.
+0001f8 9310 0105 		    sts EEPROM_Dirl,R17;
+0001fa 940e 039e 		    call LEER_EEPROM;
+0001fc 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+0001fe 9100 010d 			lds R16,ContadorDa;
+000200 1b10      			sub R17,R16;
+000201 f088      			brlo Guardar2;Guarda si R17 es menor que R16.
+000202 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+000204 1b01      			sub R16,R17;
+000205 f058      			brlo Comp3;Si R16 es menor que R17 deja de comparar.
+                 			;Unidades
+000206 e21a      			ldi R17,0x2A;Obtener Dato de Centenas.
+000207 9310 0105 		    sts EEPROM_Dirl,R17;
+000209 940e 039e 		    call LEER_EEPROM;
+00020b 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+00020d 9100 010c 			lds R16,ContadorUa;
+00020f 1b10      			sub R17,R16;
+000210 f010      			brlo Guardar2;Guarda si R17 es menor que R16.
+000211 940c 0250 Comp3:		jmp Comparar_3;
+                 Guardar2:
+                             ;Tercer Lugar
+000213 e217      			ldi R17,0x27;
+000214 9310 0105 Copiar_3b:  sts EEPROM_Dirl,R17;
+000216 940e 039e 			call LEER_EEPROM;Leer Dato de la EEPROM.
+000218 9100 0106 			lds R16,EEPROM_Dato;Carga el dato a R16 de la EEPROM.
+00021a 9300 0106 			sts EEPROM_Dato,R16;
+00021c e200      			ldi R16,0x20;Coloca 0x20 en R16.
+00021d 0f01      			add R16,R17;Suma a R16 la dirección de R17.
+00021e 9300 0105 			sts EEPROM_Dirl,R16;
+000220 940e 038c             call ES_EEPROM;
+000222 9513      			inc R17;
+000223 3410      			cpi R17,0x40;
+000224 f779      			brne Copiar_3b;
+                 			;Segundo Lugar
+                 			;Dato 7
+000225 e207      	        ldi R16,0x27;
+000226 9300 0105 		    sts EEPROM_Dirl,R16;
+000228 9100 010f 		    lds R16,ContadorMa;
+00022a 9300 0106 		    sts EEPROM_Dato,R16;
+00022c 940e 038c             call ES_EEPROM;
+                 		    ;Dato 8
+00022e e208      	        ldi R16,0x28;
+00022f 9300 0105 		    sts EEPROM_Dirl,R16;
+000231 9100 010e 		    lds R16,ContadorCa;
+000233 9300 0106 		    sts EEPROM_Dato,R16;
+000235 940e 038c             call ES_EEPROM;
+                 		    ;Dato 9
+000237 e209      	        ldi R16,0x29;
+000238 9300 0105 		    sts EEPROM_Dirl,R16;
+00023a 9100 010d 		    lds R16,ContadorDa;
+00023c 9300 0106 		    sts EEPROM_Dato,R16;
+00023e 940e 038c             call ES_EEPROM;
+                 		    ;Dato 10
+000240 e20a      	        ldi R16,0x2A;
+000241 9300 0105 		    sts EEPROM_Dirl,R16;
+000243 9100 010c 		    lds R16,ContadorUa;
+000245 9300 0106 		    sts EEPROM_Dato,R16;
+000247 940e 038c             call ES_EEPROM;
+000249 e300      			ldi R16,0x30;
+00024a 9300 0110 			sts Const_EEPROM,R16;
+00024c 940e 02b4 			call Ing_Datos;
+00024e 940c 02b3             jmp Fin_Comp;
+                 			;Comparar datos con el tercer jugador.
+                 			;---------------------------------------------------------------------
+                 			;Millares
+000250 e417      Comparar_3: ldi R17,0x47;Obtener Dato de Millares.
+000251 9310 0105 		    sts EEPROM_Dirl,R17;
+000253 940e 039e 		    call LEER_EEPROM;
+000255 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000257 9100 010f 			lds R16,ContadorMa;
+000259 1b10      			sub R17,R16;
+00025a f178      			brlo Guardar3;Guarda si R17 es menor que R16.
+00025b 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+00025d 1b01      			sub R16,R17;
+00025e f148      			brlo CompF;Si R16 es menor que R17 deja de comparar.
+                 			;Centenas
+00025f e418      			ldi R17,0x48;Obtener Dato de Centenas.
+000260 9310 0105 		    sts EEPROM_Dirl,R17;
+000262 940e 039e 		    call LEER_EEPROM;
+000264 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000266 9100 010e 			lds R16,ContadorCa;
+000268 1b10      			sub R17,R16;
+000269 f100      			brlo Guardar3;Guarda si R17 es menor que R16.
+00026a 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+00026c 1b01      			sub R16,R17;
+00026d f0d0      			brlo CompF;Si R16 es menor que R17 deja de comparar.
+                 			;Decenas
+00026e e419      			ldi R17,0x49;Obtener Dato de Decenas.
+00026f 9310 0105 		    sts EEPROM_Dirl,R17;
+000271 940e 039e 		    call LEER_EEPROM;
+000273 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000275 9100 010d 			lds R16,ContadorDa;
+000277 1b10      			sub R17,R16;
+000278 f088      			brlo Guardar3;Guarda si R17 es menor que R16.
+000279 9110 0106 			lds R17,EEPROM_Dato;Carga el dato a R17.
+00027b 1b01      			sub R16,R17;
+00027c f058      			brlo CompF;Si R16 es menor que R17 deja de comparar.
+                 			;Unidades
+00027d e41a      			ldi R17,0x4A;Obtener Dato de Centenas.
+00027e 9310 0105 		    sts EEPROM_Dirl,R17;
+000280 940e 039e 		    call LEER_EEPROM;
+000282 9110 0106 	        lds R17,EEPROM_Dato;Carga el dato a R17.
+000284 9100 010c 			lds R16,ContadorUa;
+000286 1b10      			sub R17,R16;
+000287 f010      			brlo Guardar3;Guarda si R17 es menor que R16.
+000288 940c 02b3 CompF:      jmp Fin_Comp;
+                 Guardar3:
+                             ;Dato 7
+00028a e407      	        ldi R16,0x47;
+00028b 9300 0105 		    sts EEPROM_Dirl,R16;
+00028d 9100 010f 		    lds R16,ContadorMa;
+00028f 9300 0106 		    sts EEPROM_Dato,R16;
+000291 940e 038c             call ES_EEPROM;
+                 		    ;Dato 8
+000293 e408      	        ldi R16,0x48;
+000294 9300 0105 		    sts EEPROM_Dirl,R16;
+000296 9100 010e 		    lds R16,ContadorCa;
+000298 9300 0106 		    sts EEPROM_Dato,R16;
+00029a 940e 038c             call ES_EEPROM;
+                 		    ;Dato 9
+00029c e409      	        ldi R16,0x49;
+00029d 9300 0105 		    sts EEPROM_Dirl,R16;
+00029f 9100 010d 		    lds R16,ContadorDa;
+0002a1 9300 0106 		    sts EEPROM_Dato,R16;
+0002a3 940e 038c             call ES_EEPROM;
+                 		    ;Dato 10
+0002a5 e40a      	        ldi R16,0x4A;
+0002a6 9300 0105 		    sts EEPROM_Dirl,R16;
+0002a8 9100 010c 		    lds R16,ContadorUa;
+0002aa 9300 0106 		    sts EEPROM_Dato,R16;
+0002ac 940e 038c             call ES_EEPROM;
+0002ae e500      			ldi R16,0x50;
+0002af 9300 0110 			sts Const_EEPROM,R16;
+0002b1 940e 02b4 			call Ing_Datos;
+0002b3 9508      Fin_Comp:   ret;
+                 Ing_Datos:
+0002b4 7f87                  andi R24,0xF7;
+0002b5 ec00                  ldi R16,0xC0;
+0002b6 9300 0112             sts Cont_LCD,R16;Carga con la dirección inicial del LCD.
+0002b8 e401      			ldi R16,65;
+0002b9 9300 0111             sts Cont_L,R16;Carga con 65 corresponiente a la letra A.
+0002bb 940e 031d 			call Colocar_Letra;Coloca la letra en la posición correspondiente.
+0002bd 940e 03eb 			call Parpadeo_ON;
+0002bf 994e      Punto:	    sbic pind,Boton_mas;
+0002c0 940e 02ca 			call Bmas;
+0002c2 994f      			sbic pind,Boton_menos;
+0002c3 940e 02df 			call Bmenos;
+0002c5 fd83      			sbrc R24,3;
+0002c6 940c 02f4 			jmp Ingresar;
+0002c8 940c 02bf             jmp Punto;
+                 Bmas:
+0002ca 994e                  sbic pind,Boton_mas;
+0002cb 940c 02ca 			jmp Bmas;
+0002cd 9100 0111 			lds R16,Cont_L;
+0002cf 350a      			cpi R16,90;
+0002d0 f041      			breq Pon_esp1;
+0002d1 350f      			cpi R16,95;
+0002d2 f049      			breq Pon_l_a1;
+0002d3 9503      			inc R16;
+0002d4 9300 0111 Letra1:     sts Cont_L,R16;
+0002d6 940e 031d          	call Colocar_Letra;Coloca la letra en la posición correspondiente del LCD.
+0002d8 9508      			ret;
+                 Pon_esp1:
+0002d9 e50f                  ldi R16,95;
+0002da 940c 02d4             jmp Letra1;
+                 Pon_l_a1:
+0002dc e401                  ldi R16,65;
+0002dd 940c 02d4             jmp Letra1;
+                 Bmenos:
+0002df 994f                  sbic pind,Boton_menos;
+0002e0 940c 02df 			jmp Bmenos;
+0002e2 9100 0111 			lds R16,Cont_L;
+0002e4 3401      			cpi R16,65;
+0002e5 f041      			breq Pon_esp2;
+0002e6 350f      			cpi R16,95;
+0002e7 f049      			breq Pon_l_z2;
+0002e8 950a      			dec R16;
+0002e9 9300 0111 Letra2:     sts Cont_L,R16;
+0002eb 940e 031d          	call Colocar_Letra;Coloca la letra en la posición correspondiente del LCD.
+0002ed 9508      			ret;
+                 Pon_esp2:
+0002ee e50f                  ldi R16,95;
+0002ef 940c 02e9             jmp Letra2;
+                 Pon_l_z2:
+0002f1 e50a                  ldi R16,90;
+0002f2 940c 02e9             jmp Letra2;
+                 Ingresar:
+0002f4 7f87                  andi R24,0xF7;
+0002f5 9100 0112 			lds R16,Cont_LCD;
+0002f7 9503      			inc R16
+0002f8 3d00      			cpi R16,0xD0;
+0002f9 f0b1      	        breq Termina_2;
+0002fa 9300 0112             sts Cont_LCD,R16;
+                 			;Escribir EEPROM.
+0002fc 9100 0110 			lds R16,Const_EEPROM;
+0002fe 9300 0105 		    sts EEPROM_Dirl,R16;
+000300 9100 0111 			lds R16,Cont_L;
+000302 9300 0106 		    sts EEPROM_Dato,R16;
+000304 940e 038c             call ES_EEPROM;Escribir EEPROM e incrementar su contador.
+                 			;
+000306 9100 0110 			lds R16,Const_EEPROM;
+000308 9503      		    inc R16;
+000309 9300 0110 			sts Const_EEPROM,R16;
+00030b e401      			ldi R16,65;
+00030c 940e 031d 			call Colocar_Letra;
+00030e 940c 02bf 			jmp Punto;
+000310 9100 0110 Termina_2:	lds R16,Const_EEPROM;
+000312 9300 0105 		    sts EEPROM_Dirl,R16;
+000314 9100 0111 			lds R16,Cont_L;
+000316 9300 0106 		    sts EEPROM_Dato,R16;
+000318 940e 038c             call ES_EEPROM;Escribir EEPROM e incrementar su contador.
+00031a 940e 03f1             call Parpadeo_OFF;
+00031c 9508                  ret;Termina de ingresar los datos.
+                 
+                 Colocar_Letra:
+00031d 9100 0112             lds R16,Cont_LCD;
+00031f 9300 0100 			sts Dir_DDRAM,R16;
+000321 9100 0111 			lds R16,Cont_L;
+000323 9300 0101 			sts Cod_ASCCI,R16;
+000325 940e 03c1 			call LCD_Cargar;
+000327 9100 0100 			lds R16,Dir_DDRAM;
+000329 9300 0100 			sts Dir_DDRAM,R16;
+00032b 940e 03e4 			call LCD_Comando;
+00032d 9508      			ret
+                 Jugar:    
+00032e e000                 ldi R16,0x00;
+00032f 9300 0108 		   sts ContadorU,R16;
+000331 9300 0109 		   sts ContadorD,R16;
+000333 9300 010a 		   sts ContadorC,R16;
+000335 9300 010b 		   sts ContadorM,R16;
+                 ; delaying 1499928 cycles:
+000337 e048                 ldi  R20, $08
+000338 ef58      WGLOOP0D:  ldi  R21, $F8
+000339 ef6b      WGLOOP1D:  ldi  R22, $FB
+                 WGLOOP2D:
+00033a 940e 0343 	       call Verificar;
+                 ; ----------------------------- 
+00033c 956a                 dec  R22
+00033d f7e1                 brne WGLOOP2D
+00033e 955a                 dec  R21
+00033f f7c9                 brne WGLOOP1D
+000340 954a                 dec  R20
+000341 f7b1                 brne WGLOOP0D
+000342 9508      		   ret;
+                 ; -----------------------------
+                 Verificar: 
+000343 ff83                 sbrs R24,3;Verifica que se haya oprimido el botón.
+000344 940c 036c 		   jmp Terminar;
+000346 7f87      		   andi R24,0xF7;Pone en bajo el bit de int.
+000347 9100 0108 		   lds R16,ContadorU;Carga el ContadorU a R16.
+000349 9503      		   inc R16;incrementa R16.
+00034a 9300 0108 		   sts ContadorU,R16;Carga el valor al Contador.
+00034c 300a      		   cpi R16,0xA;Compara si es A.
+00034d f4f1      		   brne Terminar;
+                 		   ;Decenas
+00034e e000      		   ldi R16,0x00;
+00034f 9300 0108 		   sts ContadorU,R16;
+000351 9100 0109 		   lds R16,ContadorD;
+000353 9503      		   inc R16;Incrementa R16.
+000354 9300 0109 		   sts ContadorD,R16;Carga el valor al Contador.
+000356 300a      		   cpi R16,0xA;Compara si es A.
+000357 f4a1      		   brne Terminar;
+                 		   ;Centenas
+000358 e000      		   ldi R16,0x00;
+000359 9300 0109 		   sts ContadorD,R16;
+00035b 9100 010a 		   lds R16,ContadorC;
+00035d 9503      		   inc R16;Incrementa R16.
+00035e 9300 010a 		   sts ContadorC,R16;Carga el valor al Contador.
+000360 300a      		   cpi R16,0xA;Compara si es A.
+000361 f451      		   brne Terminar;
+                 		   ;Millares
+000362 e000      		   ldi R16,0x00;
+000363 9300 010a 		   sts ContadorC,R16;
+000365 9100 010b 		   lds R16,ContadorM;
+000367 9503      		   inc R16;Incrementa R16.
+000368 9300 010b 		   sts ContadorM,R16;Carga el valor al Contador.
+00036a 940c 036c 		   jmp Terminar;
+                 Terminar:
+00036c 9508                 ret;
+                 retardo_2:   
+                             ; ----------------------------- 
+                 ; delaying 2999856 cycles:
+00036d e140                ldi  R20, $10
+00036e ef58      WGLOOP0E:  ldi  R21, $F8
+00036f ef6b      WGLOOP1E:  ldi  R22, $FB
+000370 956a      WGLOOP2E:  dec  R22
+000371 f7f1                brne WGLOOP2E
+000372 955a                dec  R21
+000373 f7d9                brne WGLOOP1E
+000374 954a                dec  R20
+000375 f7c1                brne WGLOOP0E
+                 ; ----------------------------- 
+                 ; delaying 144 cycles:
+000376 e340                ldi  R20, $30
+000377 954a      WGLOOP3E:  dec  R20
+000378 f7f1                brne WGLOOP3E
+                 ; ============================= 
+000379 9508                  ret;
+                 LCD_1:
+00037a e800                ldi R16,0x80;
+00037b 9300 0100 		  sts Dir_DDRAM,R16;
+00037d 940e 03e4 		  call LCD_Comando;Pone en la dirección 80 de la LCD.
+00037f 9508      		  ret;
+                 LCD_2:    
+000380 ec00                ldi R16,0xC0;
+000381 9300 0100 		  sts Dir_DDRAM,R16;
+000383 940e 03e4 		  call LCD_Comando;Pone en la dirección C0 de la LCD.
+000385 9508      		  ret;
+                 Limpiar_LCD:
+000386 e001                ldi R16,0x01;
+000387 9300 0100 		  sts Dir_DDRAM,R16;
+000389 940e 03e4 		  call LCD_Comando;Pone en la dirección 01 de la LCD.
+00038b 9508      		  ret;
+                 ES_EEPROM:
+                           
+00038c 99f9      		  sbic EECR,EEPE;
+00038d cffe      		  rjmp ES_EEPROM;Espera a que se termine de guardar el dato pasado.
+                 		  ;
+00038e 931f      		  push R17;
+00038f 932f      		  push R18;
+000390 9120 0104 		  lds R18,EEPROM_Dirh;Carga la dirección alta a R18.
+000392 9110 0105 		  lds R17,EEPROM_Dirl;Carga la dirección baja a R17.
+000394 9100 0106 		  lds R16,EEPROM_Dato;Carga el dato a R16.
+000396 bd22      		  out EEARH,R18;Carga la dirección alta.
+000397 bd11      		  out EEARL,R17;Carga la dirección baja.
+000398 bd00      		  out EEDR,R16;Carga la información al registro.
+000399 9afa      		  sbi EECR,EEMPE;
+00039a 9af9      		  sbi EECR,EEPE;Comienza a escribir el dato poniendo en alto EEPE.
+00039b 912f      		  pop R18;
+00039c 911f      		  pop R17;
+00039d 9508                ret;
+                 LEER_EEPROM:
+00039e 99f9                  sbic EECR,EEPE;
+00039f cffe      		    rjmp LEER_EEPROM;Espera a que se termine de guardar el dato pasado.
+                 		    ;
+0003a0 931f      			push R17;
+0003a1 932f      		    push R18;
+0003a2 9120 0104 		    lds R18,EEPROM_Dirh;Carga la dirección alta a R18.
+0003a4 9110 0105 		    lds R17,EEPROM_Dirl;Carga la dirección baja a R17.
+                 			;
+0003a6 bd22      		    out EEARH,R18;Carga la dirección alta.
+0003a7 bd11      		    out EEARL,R17;Carga la dirección baja.
+                 			;
+0003a8 9af8      		    sbi EECR,EERE;Pone la EEPROM en lectura.
+0003a9 b500         		    in R16,EEDR;Lee el dato del registro.
+0003aa 9300 0106 			sts EEPROM_Dato,R16;Guarda el dato en EEPROM_Dato.
+0003ac 912f      			pop R18;
+0003ad 911f      		    pop R17;
+0003ae 9508      			ret;
+                 LCD_Inicio: ;Ini. el LCD.
+0003af 9841                  cbi PortC,RS;Pone en modo Comando al LCD.
+0003b0 e308      		    ldi R16,0x38;
+0003b1 b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003b2 940e 03f7 		    call Pulso_E;Ejecuta comando para
+0003b4 e006      		    ldi R16,0x06;
+0003b5 b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003b6 940e 03f7 		    call Pulso_E;Ejecuta comando para
+0003b8 e001      		    ldi R16,0x01;
+0003b9 b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003ba 940e 03f7 		    call Pulso_E;Ejecuta comando para
+0003bc e00c      		    ldi R16,0x0C;
+0003bd b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003be 940e 03f7 		    call Pulso_E;Ejecuta comando para
+0003c0 9508      		    ret;
+                 LCD_Cargar: ;Pone la Dirección de la DDRAM y coloca un caracter ASCCI en el LCD.
+0003c1 9841                  cbi PortC,RS;Pone en modo Comando al LCD.
+0003c2 9100 0100 			lds R16,Dir_DDRAM;Carga el dato almacenado para mandarlo a la DDRAM.
+0003c4 6800      			ori R16,0x80;
+0003c5 b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003c6 940e 03f7 			call Pulso_E;Realiza la actualización del Dato en el LCD.
+0003c8 940e 03cb 			call LCD_Rapido;
+0003ca 9508      		    ret;
+                 LCD_Rapido: ;Pone un caracter ASCII en la dirección que se quedo.
+0003cb 9a41                  sbi PortC,RS;Pone en modo Datos al LCD.
+0003cc 9100 0101 			lds R16,Cod_ASCCI;Carga el dato almacenado para mostrarlo en el LCD.
+0003ce b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003cf 940e 03f7 			call Pulso_E;Realiza la actualización del Dato en el LCD.
+0003d1 9508      		    ret;
+                 LCD_CGRAM:; Pone la Dirección de la CGRAM y actualiza un Dato de la CGRAM (0100,0000-0111,1111).
+0003d2 9841                  cbi PortC,RS;Pone en modo Comando al LCD.
+0003d3 9100 0102 			lds R16,Dir_CGRAM;Carga el dato almacenado para mandarlo a la CGRAM.
+0003d5 6400      			ori R16,0x40;
+0003d6 770f      			andi R16,0x7F;
+0003d7 b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003d8 940e 03f7 			call Pulso_E;Realiza el comando en el LCD.
+0003da 940e 03dd 			call LCD_CGR;
+0003dc 9508      		    ret;
+                 LCD_CGR:    ;Almacena un Dato en la CGRAM.
+0003dd 9a41                  sbi PortC,RS;Pone en modo Datos al LCD.
+0003de 9100 0103 			lds R16,Des_Dis;Carga el dato almacenado para guardarlo en la LCD.
+0003e0 b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003e1 940e 03f7 			call Pulso_E;Realiza la actualización del Dato en el LCD.
+0003e3 9508      		    ret;
+                 LCD_Comando:
+0003e4 9841                  cbi PortC,RS;Pone en modo Comando al LCD.
+0003e5 9100 0100 			lds R16,Dir_DDRAM;Carga el dato almacenado para mandarlo a la DDRAM.
+0003e7 b905      			out PortB,R16;Pone el dato en el Puerto B.
+0003e8 940e 03f7 			call Pulso_E;Realiza el comando en el LCD.
+0003ea 9508      			ret;
+                 Parpadeo_ON:
+0003eb e00d                  ldi R16,0x0D;
+0003ec 9300 0100 			sts Dir_DDRAM,R16;
+0003ee 940e 03e4             call LCD_Comando;
+0003f0 9508                  ret;
+                 Parpadeo_OFF:
+0003f1 e00c                  ldi R16,0x0C;
+0003f2 9300 0100 			sts Dir_DDRAM,R16;
+0003f4 940e 03e4             call LCD_Comando;
+0003f6 9508                  ret;
+                 Pulso_E:;Hace un pulso de reloj para actualizar la información en el LCD.
+0003f7 9a40                sbi PortC,Enable;
+0003f8 940e 03fe 		  call Retardo1;
+0003fa 9840      		  cbi PortC,Enable;
+0003fb 940e 040e 		  call Retardo15;
+0003fd 9508      		  ret;
+                 Retardo1:; 1000 Ciclos para 1ms.
+0003fe 932f      		  push R18;
+0003ff 933f      		  push R19;
+                 ; ============================= 
+                 ;    delay loop generator 
+                 ;     995 cycles:
+                 ; ----------------------------- 
+                 ; delaying 990 cycles:
+000400 e022                ldi  R18, $02;
+000401 ea34      WGLOOP0A: ldi  R19, $A4;
+000402 953a      WGLOOP1A: dec  R19;
+000403 f7f1                brne WGLOOP1A;
+000404 952a                dec  R18;
+000405 f7d9                brne WGLOOP0A;
+                 ; ----------------------------- 
+                 ; delaying 3 cycles:
+000406 e021                ldi  R18, $01;
+000407 952a      WGLOOP2A: dec  R18;
+000408 f7f1                brne WGLOOP2A;
+                 ; ----------------------------- 
+                 ; delaying 2 cycles:
+000409 0000                nop;
+00040a 0000                nop;
+                 ; =============================
+00040b 913f      		  pop R19;
+00040c 912f      		  pop R18;
+00040d 9508                ret;
+                 Retardo15:; 15000 Ciclos para 15ms.
+00040e 932f      		  push R18;
+00040f 933f      		  push R19;
+                 ; ============================= 
+                 ;    delay loop generator 
+                 ;     14995 cycles:
+                 ; ----------------------------- 
+                 ; delaying 14994 cycles:
+000410 e125                ldi  R18, $15;
+000411 ee3d      WGLOOP0B: ldi  R19, $ED;
+000412 953a      WGLOOP1B: dec  R19;
+000413 f7f1                brne WGLOOP1B;
+000414 952a                dec  R18;
+000415 f7d9                brne WGLOOP0B;
+                 ; ----------------------------- 
+                 ; delaying 1 cycle:
+000416 0000                nop;
+                 ; ============================= 
+000417 913f      		  pop R19;
+000418 912f      		  pop R18;
+000419 9508                ret;
+                 
+                 Carga_Inicial:
+00041a 931f                 push R17;
+00041b 932f      		   push R18;
+00041c e000                 ldi R16,0x00;
+00041d 9300 0104 		   sts EEPROM_Dirh,R16;
+                 		   ;Dato 0
+00041f e000      	       ldi R16,0x00;
+000420 9300 0105 		   sts EEPROM_Dirl,R16;
+000422 e001      		   ldi R16,0x01;
+000423 9300 0106 		   sts EEPROM_Dato,R16;
+000425 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1
+000427 e001      	       ldi R16,0x01;
+000428 9300 0105 		   sts EEPROM_Dirl,R16;
+00042a e001      		   ldi R16,0x01;
+00042b 9300 0106 		   sts EEPROM_Dato,R16;
+00042d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 2
+00042f e002      	       ldi R16,0x02;
+000430 9300 0105 		   sts EEPROM_Dirl,R16;
+000432 e001      		   ldi R16,0x01;
+000433 9300 0106 		   sts EEPROM_Dato,R16;
+000435 940e 038c            call ES_EEPROM;
+                 		   ;Dato 3
+000437 e003      	       ldi R16,0x03;
+000438 9300 0105 		   sts EEPROM_Dirl,R16;
+00043a e001      		   ldi R16,0x01;
+00043b 9300 0106 		   sts EEPROM_Dato,R16;
+00043d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 4
+00043f e004      	       ldi R16,0x04;
+000440 9300 0105 		   sts EEPROM_Dirl,R16;
+000442 e001      		   ldi R16,0x01;
+000443 9300 0106 		   sts EEPROM_Dato,R16;
+000445 940e 038c            call ES_EEPROM;
+                 		   ;Dato 5
+000447 e005      	       ldi R16,0x05;
+000448 9300 0105 		   sts EEPROM_Dirl,R16;
+00044a e301      		   ldi R16,'1';
+00044b 9300 0106 		   sts EEPROM_Dato,R16;
+00044d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 6
+00044f e006      	       ldi R16,0x06;
+000450 9300 0105 		   sts EEPROM_Dirl,R16;
+000452 e20d      		   ldi R16,'-';
+000453 9300 0106 		   sts EEPROM_Dato,R16;
+000455 940e 038c            call ES_EEPROM;
+                 		   ;Dato 7
+000457 e007      	       ldi R16,0x07;
+000458 9300 0105 		   sts EEPROM_Dirl,R16;
+00045a e300      		   ldi R16,'0';
+00045b 9300 0106 		   sts EEPROM_Dato,R16;
+00045d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 8
+00045f e008      	       ldi R16,0x08;
+000460 9300 0105 		   sts EEPROM_Dirl,R16;
+000462 e300      		   ldi R16,'0';
+000463 9300 0106 		   sts EEPROM_Dato,R16;
+000465 940e 038c            call ES_EEPROM;
+                 		   ;Dato 9
+000467 e009      	       ldi R16,0x09;
+000468 9300 0105 		   sts EEPROM_Dirl,R16;
+00046a e300      		   ldi R16,'0';
+00046b 9300 0106 		   sts EEPROM_Dato,R16;
+00046d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 10
+00046f e00a      	       ldi R16,0x0A;
+000470 9300 0105 		   sts EEPROM_Dirl,R16;
+000472 e302      		   ldi R16,'2';
+000473 9300 0106 		   sts EEPROM_Dato,R16;
+000475 940e 038c            call ES_EEPROM;
+                 		   ;Dato B
+000477 e00b      	       ldi R16,0x0B;
+000478 9300 0105 		   sts EEPROM_Dirl,R16;
+00047a e001      		   ldi R16,0x01;
+00047b 9300 0106 		   sts EEPROM_Dato,R16;
+00047d 940e 038c            call ES_EEPROM;
+                 		   ;Dato C
+00047f e00c      	       ldi R16,0x0C;
+000480 9300 0105 		   sts EEPROM_Dirl,R16;
+000482 e001      		   ldi R16,0x01;
+000483 9300 0106 		   sts EEPROM_Dato,R16;
+000485 940e 038c            call ES_EEPROM;
+                 		   ;Dato D
+000487 e00d      	       ldi R16,0x0D;
+000488 9300 0105 		   sts EEPROM_Dirl,R16;
+00048a e001      		   ldi R16,0x01;
+00048b 9300 0106 		   sts EEPROM_Dato,R16;
+00048d 940e 038c            call ES_EEPROM;
+                 		   ;Dato E
+00048f e00e      	       ldi R16,0x0E;
+000490 9300 0105 		   sts EEPROM_Dirl,R16;
+000492 e001      		   ldi R16,0x01;
+000493 9300 0106 		   sts EEPROM_Dato,R16;
+000495 940e 038c            call ES_EEPROM;
+                 		   ;Dato F
+000497 e00f      	       ldi R16,0x0F;
+000498 9300 0105 		   sts EEPROM_Dirl,R16;
+00049a e001      		   ldi R16,0x01;
+00049b 9300 0106 		   sts EEPROM_Dato,R16;
+00049d 940e 038c            call ES_EEPROM;
+                 		   ;2da Linea
+                 		   ;Dato 10
+00049f e100      	       ldi R16,0x10;
+0004a0 9300 0105 		   sts EEPROM_Dirl,R16;
+0004a2 e40c      		   ldi R16,'L';
+0004a3 9300 0106 		   sts EEPROM_Dato,R16;
+0004a5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 11
+0004a7 e101      	       ldi R16,0x11;
+0004a8 9300 0105 		   sts EEPROM_Dirl,R16;
+0004aa e505      		   ldi R16,'U';
+0004ab 9300 0106 		   sts EEPROM_Dato,R16;
+0004ad 940e 038c            call ES_EEPROM;
+                 		   ;Dato 12
+0004af e102      	       ldi R16,0x12;
+0004b0 9300 0105 		   sts EEPROM_Dirl,R16;
+0004b2 e409      		   ldi R16,'I';
+0004b3 9300 0106 		   sts EEPROM_Dato,R16;
+0004b5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 13
+0004b7 e103      	       ldi R16,0x13;
+0004b8 9300 0105 		   sts EEPROM_Dirl,R16;
+0004ba e503      		   ldi R16,'S';
+0004bb 9300 0106 		   sts EEPROM_Dato,R16;
+0004bd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 14
+0004bf e104      	       ldi R16,0x14;
+0004c0 9300 0105 		   sts EEPROM_Dirl,R16;
+0004c2 e20d      		   ldi R16,'-';
+0004c3 9300 0106 		   sts EEPROM_Dato,R16;
+0004c5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 15
+0004c7 e105      	       ldi R16,0x15;
+0004c8 9300 0105 		   sts EEPROM_Dirl,R16;
+0004ca e406      		   ldi R16,'F';
+0004cb 9300 0106 		   sts EEPROM_Dato,R16;
+0004cd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 16
+0004cf e106      	       ldi R16,0x16;
+0004d0 9300 0105 		   sts EEPROM_Dirl,R16;
+0004d2 e405      		   ldi R16,'E';
+0004d3 9300 0106 		   sts EEPROM_Dato,R16;
+0004d5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 17
+0004d7 e107      	       ldi R16,0x17;
+0004d8 9300 0105 		   sts EEPROM_Dirl,R16;
+0004da e502      		   ldi R16,'R';
+0004db 9300 0106 		   sts EEPROM_Dato,R16;
+0004dd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 18
+0004df e108      	       ldi R16,0x18;
+0004e0 9300 0105 		   sts EEPROM_Dirl,R16;
+0004e2 e40e      		   ldi R16,'N';
+0004e3 9300 0106 		   sts EEPROM_Dato,R16;
+0004e5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 19
+0004e7 e109      	       ldi R16,0x19;
+0004e8 9300 0105 		   sts EEPROM_Dirl,R16;
+0004ea e401      		   ldi R16,'A';
+0004eb 9300 0106 		   sts EEPROM_Dato,R16;
+0004ed 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1A
+0004ef e10a      	       ldi R16,0x1A;
+0004f0 9300 0105 		   sts EEPROM_Dirl,R16;
+0004f2 e40e      		   ldi R16,'N';
+0004f3 9300 0106 		   sts EEPROM_Dato,R16;
+0004f5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1B
+0004f7 e10b      	       ldi R16,0x1B;
+0004f8 9300 0105 		   sts EEPROM_Dirl,R16;
+0004fa e404      		   ldi R16,'D';
+0004fb 9300 0106 		   sts EEPROM_Dato,R16;
+0004fd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1C
+0004ff e10c      	       ldi R16,0x1C;
+000500 9300 0105 		   sts EEPROM_Dirl,R16;
+000502 e40f      		   ldi R16,'O';
+000503 9300 0106 		   sts EEPROM_Dato,R16;
+000505 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1D
+000507 e10d      	       ldi R16,0x1D;
+000508 9300 0105 		   sts EEPROM_Dirl,R16;
+00050a e20d      		   ldi R16,'-';
+00050b 9300 0106 		   sts EEPROM_Dato,R16;
+00050d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1E
+00050f e10e      	       ldi R16,0x1E;
+000510 9300 0105 		   sts EEPROM_Dirl,R16;
+000512 e20d      		   ldi R16,'-';
+000513 9300 0106 		   sts EEPROM_Dato,R16;
+000515 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1F
+000517 e10f      	       ldi R16,0x1F;
+000518 9300 0105 		   sts EEPROM_Dirl,R16;
+00051a e20d      		   ldi R16,'-';
+00051b 9300 0106 		   sts EEPROM_Dato,R16;
+00051d 940e 038c            call ES_EEPROM;
+                 		   ;2 Jugador
+                 		   ;----------------------------
+                 		   ;----------------------------
+                 		   ;Dato 0
+00051f e200      	       ldi R16,0x20;
+000520 9300 0105 		   sts EEPROM_Dirl,R16;
+000522 e001      		   ldi R16,0x01;
+000523 9300 0106 		   sts EEPROM_Dato,R16;
+000525 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1
+000527 e201      	       ldi R16,0x21;
+000528 9300 0105 		   sts EEPROM_Dirl,R16;
+00052a e001      		   ldi R16,0x01;
+00052b 9300 0106 		   sts EEPROM_Dato,R16;
+00052d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 2
+00052f e202      	       ldi R16,0x22;
+000530 9300 0105 		   sts EEPROM_Dirl,R16;
+000532 e001      		   ldi R16,0x01;
+000533 9300 0106 		   sts EEPROM_Dato,R16;
+000535 940e 038c            call ES_EEPROM;
+                 		   ;Dato 3
+000537 e203      	       ldi R16,0x23;
+000538 9300 0105 		   sts EEPROM_Dirl,R16;
+00053a e001      		   ldi R16,0x01;
+00053b 9300 0106 		   sts EEPROM_Dato,R16;
+00053d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 4
+00053f e204      	       ldi R16,0x24;
+000540 9300 0105 		   sts EEPROM_Dirl,R16;
+000542 e001      		   ldi R16,0x01;
+000543 9300 0106 		   sts EEPROM_Dato,R16;
+000545 940e 038c            call ES_EEPROM;
+                 		   ;Dato 5
+000547 e205      	       ldi R16,0x25;
+000548 9300 0105 		   sts EEPROM_Dirl,R16;
+00054a e302      		   ldi R16,'2';
+00054b 9300 0106 		   sts EEPROM_Dato,R16;
+00054d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 6
+00054f e206      	       ldi R16,0x26;
+000550 9300 0105 		   sts EEPROM_Dirl,R16;
+000552 e20d      		   ldi R16,'-';
+000553 9300 0106 		   sts EEPROM_Dato,R16;
+000555 940e 038c            call ES_EEPROM;
+                 		   ;Dato 7
+000557 e207      	       ldi R16,0x27;
+000558 9300 0105 		   sts EEPROM_Dirl,R16;
+00055a e300      		   ldi R16,'0';
+00055b 9300 0106 		   sts EEPROM_Dato,R16;
+00055d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 8
+00055f e208      	       ldi R16,0x28;
+000560 9300 0105 		   sts EEPROM_Dirl,R16;
+000562 e300      		   ldi R16,'0';
+000563 9300 0106 		   sts EEPROM_Dato,R16;
+000565 940e 038c            call ES_EEPROM;
+                 		   ;Dato 9
+000567 e209      	       ldi R16,0x29;
+000568 9300 0105 		   sts EEPROM_Dirl,R16;
+00056a e300      		   ldi R16,'0';
+00056b 9300 0106 		   sts EEPROM_Dato,R16;
+00056d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 10
+00056f e20a      	       ldi R16,0x2A;
+000570 9300 0105 		   sts EEPROM_Dirl,R16;
+000572 e301      		   ldi R16,'1';
+000573 9300 0106 		   sts EEPROM_Dato,R16;
+000575 940e 038c            call ES_EEPROM;
+                 		   ;Dato B
+000577 e20b      	       ldi R16,0x2B;
+000578 9300 0105 		   sts EEPROM_Dirl,R16;
+00057a e001      		   ldi R16,0x01;
+00057b 9300 0106 		   sts EEPROM_Dato,R16;
+00057d 940e 038c            call ES_EEPROM;
+                 		   ;Dato C
+00057f e20c      	       ldi R16,0x2C;
+000580 9300 0105 		   sts EEPROM_Dirl,R16;
+000582 e001      		   ldi R16,0x01;
+000583 9300 0106 		   sts EEPROM_Dato,R16;
+000585 940e 038c            call ES_EEPROM;
+                 		   ;Dato D
+000587 e20d      	       ldi R16,0x2D;
+000588 9300 0105 		   sts EEPROM_Dirl,R16;
+00058a e001      		   ldi R16,0x01;
+00058b 9300 0106 		   sts EEPROM_Dato,R16;
+00058d 940e 038c            call ES_EEPROM;
+                 		   ;Dato E
+00058f e20e      	       ldi R16,0x2E;
+000590 9300 0105 		   sts EEPROM_Dirl,R16;
+000592 e001      		   ldi R16,0x01;
+000593 9300 0106 		   sts EEPROM_Dato,R16;
+000595 940e 038c            call ES_EEPROM;
+                 		   ;Dato F
+000597 e20f      	       ldi R16,0x2F;
+000598 9300 0105 		   sts EEPROM_Dirl,R16;
+00059a e001      		   ldi R16,0x01;
+00059b 9300 0106 		   sts EEPROM_Dato,R16;
+00059d 940e 038c            call ES_EEPROM;
+                 		   ;2da Linea
+                 		   ;Dato 10
+00059f e300      	       ldi R16,0x30;
+0005a0 9300 0105 		   sts EEPROM_Dirl,R16;
+0005a2 e406      		   ldi R16,'F';
+0005a3 9300 0106 		   sts EEPROM_Dato,R16;
+0005a5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 11
+0005a7 e301      	       ldi R16,0x31;
+0005a8 9300 0105 		   sts EEPROM_Dirl,R16;
+0005aa e502      		   ldi R16,'R';
+0005ab 9300 0106 		   sts EEPROM_Dato,R16;
+0005ad 940e 038c            call ES_EEPROM;
+                 		   ;Dato 12
+0005af e302      	       ldi R16,0x32;
+0005b0 9300 0105 		   sts EEPROM_Dirl,R16;
+0005b2 e401      		   ldi R16,'A';
+0005b3 9300 0106 		   sts EEPROM_Dato,R16;
+0005b5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 13
+0005b7 e303      	       ldi R16,0x33;
+0005b8 9300 0105 		   sts EEPROM_Dirl,R16;
+0005ba e40e      		   ldi R16,'N';
+0005bb 9300 0106 		   sts EEPROM_Dato,R16;
+0005bd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 14
+0005bf e304      	       ldi R16,0x34;
+0005c0 9300 0105 		   sts EEPROM_Dirl,R16;
+0005c2 e403      		   ldi R16,'C';
+0005c3 9300 0106 		   sts EEPROM_Dato,R16;
+0005c5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 15
+0005c7 e305      	       ldi R16,0x35;
+0005c8 9300 0105 		   sts EEPROM_Dirl,R16;
+0005ca e409      		   ldi R16,'I';
+0005cb 9300 0106 		   sts EEPROM_Dato,R16;
+0005cd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 16
+0005cf e306      	       ldi R16,0x36;
+0005d0 9300 0105 		   sts EEPROM_Dirl,R16;
+0005d2 e503      		   ldi R16,'S';
+0005d3 9300 0106 		   sts EEPROM_Dato,R16;
+0005d5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 17
+0005d7 e307      	       ldi R16,0x37;
+0005d8 9300 0105 		   sts EEPROM_Dirl,R16;
+0005da e403      		   ldi R16,'C';
+0005db 9300 0106 		   sts EEPROM_Dato,R16;
+0005dd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 18
+0005df e308      	       ldi R16,0x38;
+0005e0 9300 0105 		   sts EEPROM_Dirl,R16;
+0005e2 e300      		   ldi R16,'0';
+0005e3 9300 0106 		   sts EEPROM_Dato,R16;
+0005e5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 19
+0005e7 e309      	       ldi R16,0x39;
+0005e8 9300 0105 		   sts EEPROM_Dirl,R16;
+0005ea e20d      		   ldi R16,'-';
+0005eb 9300 0106 		   sts EEPROM_Dato,R16;
+0005ed 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1A
+0005ef e30a      	       ldi R16,0x3A;
+0005f0 9300 0105 		   sts EEPROM_Dirl,R16;
+0005f2 e50a      		   ldi R16,'Z';
+0005f3 9300 0106 		   sts EEPROM_Dato,R16;
+0005f5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1B
+0005f7 e30b      	       ldi R16,0x3B;
+0005f8 9300 0105 		   sts EEPROM_Dirl,R16;
+0005fa e401      		   ldi R16,'A';
+0005fb 9300 0106 		   sts EEPROM_Dato,R16;
+0005fd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1C
+0005ff e30c      	       ldi R16,0x3C;
+000600 9300 0105 		   sts EEPROM_Dirl,R16;
+000602 e502      		   ldi R16,'R';
+000603 9300 0106 		   sts EEPROM_Dato,R16;
+000605 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1D
+000607 e30d      	       ldi R16,0x3D;
+000608 9300 0105 		   sts EEPROM_Dirl,R16;
+00060a e401      		   ldi R16,'A';
+00060b 9300 0106 		   sts EEPROM_Dato,R16;
+00060d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1E
+00060f e30e      	       ldi R16,0x3E;
+000610 9300 0105 		   sts EEPROM_Dirl,R16;
+000612 e50a      		   ldi R16,'Z';
+000613 9300 0106 		   sts EEPROM_Dato,R16;
+000615 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1F
+000617 e30f      	       ldi R16,0x3F;
+000618 9300 0105 		   sts EEPROM_Dirl,R16;
+00061a e505      		   ldi R16,'U';
+00061b 9300 0106 		   sts EEPROM_Dato,R16;
+00061d 940e 038c            call ES_EEPROM;
+                 		   ;3 Jugador
+                 		   ;----------------------------
+                 		   ;----------------------------
+                 		   ;Dato 0
+00061f e400      	       ldi R16,0x40;
+000620 9300 0105 		   sts EEPROM_Dirl,R16;
+000622 e001      		   ldi R16,0x01;
+000623 9300 0106 		   sts EEPROM_Dato,R16;
+000625 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1
+000627 e401      	       ldi R16,0x41;
+000628 9300 0105 		   sts EEPROM_Dirl,R16;
+00062a e001      		   ldi R16,0x01;
+00062b 9300 0106 		   sts EEPROM_Dato,R16;
+00062d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 2
+00062f e402      	       ldi R16,0x42;
+000630 9300 0105 		   sts EEPROM_Dirl,R16;
+000632 e001      		   ldi R16,0x01;
+000633 9300 0106 		   sts EEPROM_Dato,R16;
+000635 940e 038c            call ES_EEPROM;
+                 		   ;Dato 3
+000637 e403      	       ldi R16,0x43;
+000638 9300 0105 		   sts EEPROM_Dirl,R16;
+00063a e001      		   ldi R16,0x01;
+00063b 9300 0106 		   sts EEPROM_Dato,R16;
+00063d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 4
+00063f e404      	       ldi R16,0x44;
+000640 9300 0105 		   sts EEPROM_Dirl,R16;
+000642 e001      		   ldi R16,0x01;
+000643 9300 0106 		   sts EEPROM_Dato,R16;
+000645 940e 038c            call ES_EEPROM;
+                 		   ;Dato 5
+000647 e405      	       ldi R16,0x45;
+000648 9300 0105 		   sts EEPROM_Dirl,R16;
+00064a e303      		   ldi R16,'3';
+00064b 9300 0106 		   sts EEPROM_Dato,R16;
+00064d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 6
+00064f e406      	       ldi R16,0x46;
+000650 9300 0105 		   sts EEPROM_Dirl,R16;
+000652 e20d      		   ldi R16,'-';
+000653 9300 0106 		   sts EEPROM_Dato,R16;
+000655 940e 038c            call ES_EEPROM;
+                 		   ;Dato 7
+000657 e407      	       ldi R16,0x47;
+000658 9300 0105 		   sts EEPROM_Dirl,R16;
+00065a e300      		   ldi R16,'0';
+00065b 9300 0106 		   sts EEPROM_Dato,R16;
+00065d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 8
+00065f e408      	       ldi R16,0x48;
+000660 9300 0105 		   sts EEPROM_Dirl,R16;
+000662 e300      		   ldi R16,'0';
+000663 9300 0106 		   sts EEPROM_Dato,R16;
+000665 940e 038c            call ES_EEPROM;
+                 		   ;Dato 9
+000667 e409      	       ldi R16,0x49;
+000668 9300 0105 		   sts EEPROM_Dirl,R16;
+00066a e300      		   ldi R16,'0';
+00066b 9300 0106 		   sts EEPROM_Dato,R16;
+00066d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 10
+00066f e40a      	       ldi R16,0x4A;
+000670 9300 0105 		   sts EEPROM_Dirl,R16;
+000672 e300      		   ldi R16,'0';
+000673 9300 0106 		   sts EEPROM_Dato,R16;
+000675 940e 038c            call ES_EEPROM;
+                 		   ;Dato B
+000677 e40b      	       ldi R16,0x4B;
+000678 9300 0105 		   sts EEPROM_Dirl,R16;
+00067a e001      		   ldi R16,0x01;
+00067b 9300 0106 		   sts EEPROM_Dato,R16;
+00067d 940e 038c            call ES_EEPROM;
+                 		   ;Dato C
+00067f e40c      	       ldi R16,0x4C;
+000680 9300 0105 		   sts EEPROM_Dirl,R16;
+000682 e001      		   ldi R16,0x01;
+000683 9300 0106 		   sts EEPROM_Dato,R16;
+000685 940e 038c            call ES_EEPROM;
+                 		   ;Dato D
+000687 e40d      	       ldi R16,0x4D;
+000688 9300 0105 		   sts EEPROM_Dirl,R16;
+00068a e001      		   ldi R16,0x01;
+00068b 9300 0106 		   sts EEPROM_Dato,R16;
+00068d 940e 038c            call ES_EEPROM;
+                 		   ;Dato E
+00068f e40e      	       ldi R16,0x4E;
+000690 9300 0105 		   sts EEPROM_Dirl,R16;
+000692 e001      		   ldi R16,0x01;
+000693 9300 0106 		   sts EEPROM_Dato,R16;
+000695 940e 038c            call ES_EEPROM;
+                 		   ;Dato F
+000697 e40f      	       ldi R16,0x4F;
+000698 9300 0105 		   sts EEPROM_Dirl,R16;
+00069a e001      		   ldi R16,0x01;
+00069b 9300 0106 		   sts EEPROM_Dato,R16;
+00069d 940e 038c            call ES_EEPROM;
+                 		   ;2da Linea
+                 		   ;Dato 10
+00069f e500      	       ldi R16,0x50;
+0006a0 9300 0105 		   sts EEPROM_Dirl,R16;
+0006a2 e404      		   ldi R16,'D';
+0006a3 9300 0106 		   sts EEPROM_Dato,R16;
+0006a5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 11
+0006a7 e501      	       ldi R16,0x51;
+0006a8 9300 0105 		   sts EEPROM_Dirl,R16;
+0006aa e401      		   ldi R16,'A';
+0006ab 9300 0106 		   sts EEPROM_Dato,R16;
+0006ad 940e 038c            call ES_EEPROM;
+                 		   ;Dato 12
+0006af e502      	       ldi R16,0x52;
+0006b0 9300 0105 		   sts EEPROM_Dirl,R16;
+0006b2 e40e      		   ldi R16,'N';
+0006b3 9300 0106 		   sts EEPROM_Dato,R16;
+0006b5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 13
+0006b7 e503      	       ldi R16,0x53;
+0006b8 9300 0105 		   sts EEPROM_Dirl,R16;
+0006ba e409      		   ldi R16,'I';
+0006bb 9300 0106 		   sts EEPROM_Dato,R16;
+0006bd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 14
+0006bf e504      	       ldi R16,0x54;
+0006c0 9300 0105 		   sts EEPROM_Dirl,R16;
+0006c2 e405      		   ldi R16,'E';
+0006c3 9300 0106 		   sts EEPROM_Dato,R16;
+0006c5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 15
+0006c7 e505      	       ldi R16,0x55;
+0006c8 9300 0105 		   sts EEPROM_Dirl,R16;
+0006ca e40c      		   ldi R16,'L';
+0006cb 9300 0106 		   sts EEPROM_Dato,R16;
+0006cd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 16
+0006cf e506      	       ldi R16,0x56;
+0006d0 9300 0105 		   sts EEPROM_Dirl,R16;
+0006d2 e20d      		   ldi R16,'-';
+0006d3 9300 0106 		   sts EEPROM_Dato,R16;
+0006d5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 17
+0006d7 e507      	       ldi R16,0x57;
+0006d8 9300 0105 		   sts EEPROM_Dirl,R16;
+0006da e50a      		   ldi R16,'Z';
+0006db 9300 0106 		   sts EEPROM_Dato,R16;
+0006dd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 18
+0006df e508      	       ldi R16,0x58;
+0006e0 9300 0105 		   sts EEPROM_Dirl,R16;
+0006e2 e401      		   ldi R16,'A';
+0006e3 9300 0106 		   sts EEPROM_Dato,R16;
+0006e5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 19
+0006e7 e509      	       ldi R16,0x59;
+0006e8 9300 0105 		   sts EEPROM_Dirl,R16;
+0006ea e502      		   ldi R16,'R';
+0006eb 9300 0106 		   sts EEPROM_Dato,R16;
+0006ed 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1A
+0006ef e50a      	       ldi R16,0x5A;
+0006f0 9300 0105 		   sts EEPROM_Dirl,R16;
+0006f2 e401      		   ldi R16,'A';
+0006f3 9300 0106 		   sts EEPROM_Dato,R16;
+0006f5 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1B
+0006f7 e50b      	       ldi R16,0x5B;
+0006f8 9300 0105 		   sts EEPROM_Dirl,R16;
+0006fa e50a      		   ldi R16,'Z';
+0006fb 9300 0106 		   sts EEPROM_Dato,R16;
+0006fd 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1C
+0006ff e50c      	       ldi R16,0x5C;
+000700 9300 0105 		   sts EEPROM_Dirl,R16;
+000702 e505      		   ldi R16,'U';
+000703 9300 0106 		   sts EEPROM_Dato,R16;
+000705 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1D
+000707 e50d      	       ldi R16,0x5D;
+000708 9300 0105 		   sts EEPROM_Dirl,R16;
+00070a e401      		   ldi R16,'A';
+00070b 9300 0106 		   sts EEPROM_Dato,R16;
+00070d 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1E
+00070f e50e      	       ldi R16,0x5E;
+000710 9300 0105 		   sts EEPROM_Dirl,R16;
+000712 e20d      		   ldi R16,'-';
+000713 9300 0106 		   sts EEPROM_Dato,R16;
+000715 940e 038c            call ES_EEPROM;
+                 		   ;Dato 1F
+000717 e50f      	       ldi R16,0x5F;
+000718 9300 0105 		   sts EEPROM_Dirl,R16;
+00071a e20d      		   ldi R16,'-';
+00071b 9300 0106 		   sts EEPROM_Dato,R16;
+00071d 940e 038c            call ES_EEPROM;
+                 		   ;FINAL
+00071f 912f      		   pop R18;
+000720 911f      		   pop R17;
+000721 9508      		   ret;
+                 
+                 ;      ldi R16,0x00;
+                 ;	   sts EEPROM_Dirh,R16;
+                 ;	   inc R17;
+                 ;	   sts EEPROM_Dirl,R17;
+                 ;	   sts EEPROM_Dato,R17;
+                 ;       call ES_EEPROM;
+                 ;FIN_0:
+                 ;	   pop R16;
+                 ;       call LEER_EEPROM;
+                 ;	    lds R16,EEPROM_Dato;Carga el dato a R16.
+
+
+RESOURCE USE INFORMATION
+------------------------
+
+Notice:
+The register and instruction counts are symbol table hit counts,
+and hence implicitly used resources are not counted, eg, the
+'lpm' instruction without operands implicitly uses r0 and z,
+none of which are counted.
+
+x,y,z are separate entities in the symbol table and are
+counted separately from r26..r31 here.
+
+.dseg memory usage only counts static data declared with .byte
+
+"ATmega328P" register use summary:
+r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
+r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
+r16: 681 r17:  96 r18:  20 r19:  32 r20:  11 r21:   9 r22:   9 r23:   0 
+r24:  10 r25:   0 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
+x  :   0 y  :   0 z  :   0 
+Registers used: 8 out of 35 (22.9%)
+
+"ATmega328P" instruction use summary:
+.lds  :   0 .sts  :   0 adc   :   0 add   :   7 adiw  :   0 and   :   0 
+andi  :   5 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   5 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :  21 brlt  :   0 brmi  :   0 
+brne  :  28 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  : 213 cbi   :   8 cbr   :   0 
+clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   1 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
+cpi   :  18 cpse  :   0 dec   :  16 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :  16 jmp   :  23 
+ld    :   0 ldd   :   0 ldi   : 297 lds   :  88 lpm   :   0 lsl   :   0 
+lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   4 or    :   0 ori   :   4 out   :  20 pop   :  14 
+push  :  14 rcall :   0 ret   :  27 reti  :   2 rjmp  :   2 rol   :   0 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :   9 sbic  :   6 sbis  :   0 
+sbiw  :   0 sbr   :   0 sbrc  :   3 sbrs  :   1 sec   :   0 seh   :   0 
+sei   :   1 sen   :   0 ser   :   1 ses   :   0 set   :   0 sev   :   0 
+sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   : 313 
+sub   :  21 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
+Instructions used: 31 out of 113 (27.4%)
+
+"ATmega328P" memory use summary [bytes]:
+Segment   Begin    End      Code   Data   Used    Size   Use%
+---------------------------------------------------------------
+[.cseg] 0x000000 0x000e44   3652      0   3652   32768  11.1%
+[.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
+[.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
+
+Assembly complete, 0 errors, 0 warnings

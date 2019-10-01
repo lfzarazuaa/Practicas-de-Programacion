@@ -1,0 +1,44 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Debug/Practica_5c.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_5c.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_5c.map</FILE>
+  <FILE>Practica_5c.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>33</LINE></config>
+  <recep><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>127</LINE></recep>
+  <LCD_Inicio><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>154</LINE></LCD_Inicio>
+  <LCD_CGRAM><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>183</LINE></LCD_CGRAM>
+  <LCD_CGR><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>192</LINE></LCD_CGR>
+  <LCD_Cargar><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>169</LINE></LCD_Cargar>
+  <Lcd_Rapido><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>177</LINE></Lcd_Rapido>
+  <inicio><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>123</LINE></inicio>
+  <Carga_L2><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>139</LINE></Carga_L2>
+  <Carga_L1><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>145</LINE></Carga_L1>
+  <LCD_Comando><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>198</LINE></LCD_Comando>
+  <Pulso_E><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>204</LINE></Pulso_E>
+  <Retardo1><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>210</LINE></Retardo1>
+  <Retardo15><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>237</LINE></Retardo15>
+  <WGLOOP0A><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>219</LINE></WGLOOP0A>
+  <WGLOOP1A><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>220</LINE></WGLOOP1A>
+  <WGLOOP2A><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>227</LINE></WGLOOP2A>
+  <WGLOOP0B><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>246</LINE></WGLOOP0B>
+  <WGLOOP1B><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_5\Practica_5c\Practica_5c\Practica_5c.asm</FILE><LINE>247</LINE></WGLOOP1B>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,0 +1,9 @@
+INFO:sim:172 - Generating IP...
+WARNING:sim:830 - The working directory for this project is located on a
+   UNC-mounted drive.  To ensure generation completes successfully, you should
+   locate your working directory on a drive which is identified by a drive
+   letter.  You can change this path in the Project Options dialog.
+Applying current project options...
+Finished applying current project options.
+Cancelled executing Tcl generator.
+Wrote CGP file for project 'rom240x160'.

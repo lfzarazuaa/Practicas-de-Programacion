@@ -1,0 +1,5 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_16_LFZA\vga_stripes.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_16_LFZA\vga_640x480.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_16_LFZA\costal.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_16_LFZA\clkdiv.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\VGA_16_LFZA\principal.vhd"

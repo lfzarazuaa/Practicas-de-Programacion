@@ -1,0 +1,6 @@
+Net a LOC=R17;
+Net b LOC=N17;
+Net c LOC=L13;
+Net d LOC=L14;
+Net sx LOC=P15;
+Net sy LOC=E17;

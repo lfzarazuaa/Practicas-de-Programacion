@@ -1,0 +1,11 @@
+AR vga_sprite_top behavioral //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite_top.vhd sub00/vhpl10 1490417363
+AR vga_640x480 behavioral //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_640x480.vhd sub00/vhpl04 1490417357
+EN clkdiv NULL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/clkdiv.vhd sub00/vhpl01 1490417354
+EN vga_640x480 NULL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_640x480.vhd sub00/vhpl03 1490417356
+EN vga_sprite NULL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite.vhd sub00/vhpl05 1490417358
+AR clkdiv behavioral //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/clkdiv.vhd sub00/vhpl02 1490417355
+AR vga_sprite behavioral //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite.vhd sub00/vhpl06 1490417359
+EN rom240x160 NULL //VBOXSVR/vhdl/practica_video_imagen/Imag/Imagen/ipcore_dir/rom240x160.vhd sub00/vhpl07 1490417360
+PH vgacomp NULL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vgacomp.vhd sub00/vhpl00 1490417353
+AR rom240x160 rom240x160_a //VBOXSVR/vhdl/practica_video_imagen/Imag/Imagen/ipcore_dir/rom240x160.vhd sub00/vhpl08 1490417361
+EN vga_sprite_top NULL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite_top.vhd sub00/vhpl09 1490417362

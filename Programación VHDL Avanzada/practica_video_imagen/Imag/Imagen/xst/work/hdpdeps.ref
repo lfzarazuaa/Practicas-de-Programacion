@@ -1,0 +1,46 @@
+V3 25
+FL //VBOXSVR/vhdl/practica_video_imagen/Imag/Imagen/ipcore_dir/rom240x160.vhd 2017/03/24.11:26:02 P.20131013
+EN work/rom240x160 1490417360 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/Imagen/ipcore_dir/rom240x160.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/rom240x160/rom240x160_a 1490417361 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/Imagen/ipcore_dir/rom240x160.vhd \
+      EN work/rom240x160 1490417360
+FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/clkdiv.vhd 2013/02/18.09:28:28 P.20131013
+EN work/clkdiv 1490417354 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/clkdiv.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clkdiv/Behavioral 1490417355 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/clkdiv.vhd \
+      EN work/clkdiv 1490417354
+FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vgacomp.vhd 2013/10/16.07:11:18 P.20131013
+PH work/vgacomp 1490417353 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vgacomp.vhd \
+      PB ieee/std_logic_1164 1381692176 CD clkdiv CD vga_640x480 CD vga_sprite \
+      CD rom240x160
+FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_640x480.vhd 2013/02/15.11:25:28 P.20131013
+EN work/vga_640x480 1490417356 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_640x480/Behavioral 1490417357 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_640x480.vhd \
+      EN work/vga_640x480 1490417356
+FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite.vhd 2017/03/24.22:48:59 P.20131013
+EN work/vga_sprite 1490417358 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_sprite/Behavioral 1490417359 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite.vhd \
+      EN work/vga_sprite 1490417358
+FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite_top.vhd 2013/10/16.07:12:42 P.20131013
+EN work/vga_sprite_top 1490417362 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite_top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PH work/vgacomp 1490417353
+AR work/vga_sprite_top/Behavioral 1490417363 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/Imag/vga240x160/vga_sprite_top.vhd \
+      EN work/vga_sprite_top 1490417362 CP clkdiv CP vga_640x480 CP vga_sprite \
+      CP rom240x160

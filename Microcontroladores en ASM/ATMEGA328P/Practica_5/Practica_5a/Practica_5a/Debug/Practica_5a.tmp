@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Debug/Practica_5a.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_5a.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_5a.map</FILE>
+  <FILE>Practica_5a.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>13</LINE></config>
+  <recep><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>78</LINE></recep>
+  <inicio><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>34</LINE></inicio>
+  <trans><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>42</LINE></trans>
+  <Retardo><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>54</LINE></Retardo>
+  <trans1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>46</LINE></trans1>
+  <WGLOOP0><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>59</LINE></WGLOOP0>
+  <WGLOOP1><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>60</LINE></WGLOOP1>
+  <WGLOOP2><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>61</LINE></WGLOOP2>
+  <Ver_A><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>90</LINE></Ver_A>
+  <R_1A><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>95</LINE></R_1A>
+  <R_0A><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>93</LINE></R_0A>
+  <Ver_B><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>96</LINE></Ver_B>
+  <R_1B><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>101</LINE></R_1B>
+  <R_0B><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>99</LINE></R_0B>
+  <Ver_C><FILE>C:\Users\Luis\Dropbox\Micros\Practica_5\Practica_5a\Practica_5a\Practica_5a.asm</FILE><LINE>102</LINE></Ver_C>
+ </LABELS>
+</ASSEMBLER_INFO>

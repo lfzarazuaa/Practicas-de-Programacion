@@ -1,0 +1,61 @@
+V3 37
+FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/clkdiv.vhd 2017/04/09.18:32:04 P.20131013
+EN work/clkdiv 1493511646 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/clkdiv.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clkdiv/Behavioral 1493511647 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/clkdiv.vhd \
+      EN work/clkdiv 1493511646
+FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/ipcore_dir/rom240x160.vhd 2017/03/31.10:55:26 P.20131013
+EN work/rom240x160 1493511652 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/ipcore_dir/rom240x160.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/rom240x160/rom240x160_a 1493511653 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/ipcore_dir/rom240x160.vhd \
+      EN work/rom240x160 1493511652
+FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vgacomp.vhd 2017/03/31.11:07:45 P.20131013
+PH work/vgacomp 1493511645 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vgacomp.vhd \
+      PB ieee/std_logic_1164 1381692176 CD clkdiv CD vga_640x480 CD vga_sprite \
+      CD rom240x160 CD vga_bounce
+FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_640x480.vhd 2013/02/15.13:25:28 P.20131013
+EN work/vga_640x480 1493511648 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_640x480/Behavioral 1493511649 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_640x480.vhd \
+      EN work/vga_640x480 1493511648
+FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_bounce.vhd 2017/04/09.18:20:16 P.20131013
+EN work/vga_bounce 1493511654 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_bounce.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_bounce/Behavioral 1493511655 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_bounce.vhd \
+      EN work/vga_bounce 1493511654
+FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_sprite.vhd 2017/04/09.17:46:50 P.20131013
+EN work/vga_sprite 1493511650 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_sprite.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_sprite/Behavioral 1493511651 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_sprite.vhd \
+      EN work/vga_sprite 1493511650
+FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_sprite_top.vhd 2017/04/29.19:20:34 P.20131013
+EN work/vga_sprite_top 1493511656 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_sprite_top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PH work/vgacomp 1493511645
+AR work/vga_sprite_top/Behavioral 1493511657 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vga_sprite_top.vhd \
+      EN work/vga_sprite_top 1493511656 CP clkdiv CP vga_640x480 CP vga_sprite \
+      CP rom240x160 CP vga_bounce
+FL C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/clkdiv.vhd 2017/03/31.10:07:51 P.20131013
+FL C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/ipcore_dir/rom240x160.vhd 2017/03/31.09:55:26 P.20131013
+FL C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vgacomp.vhd 2017/03/31.10:07:45 P.20131013
+FL C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/vga_640x480.vhd 2013/02/15.12:25:28 P.20131013
+FL C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/vga_bounce.vhd 2017/03/31.09:22:22 P.20131013
+FL C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/vga_sprite.vhd 2013/10/17.08:39:14 P.20131013
+FL C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/vga_sprite_top.vhd 2013/10/17.08:40:48 P.20131013

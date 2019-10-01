@@ -1,0 +1,68 @@
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+xst -intstyle ise -ifn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc C:/Users/LuisFernando/Desktop/VHDL/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc //VBOXSVR/vhdl/practica_video_imagen/salvapantalla/vgapin.ucf -p xc3s500e-fg320-4 vga_sprite_top.ngc vga_sprite_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o vga_sprite_top_map.ncd vga_sprite_top.ngd vga_sprite_top.pcf 
+par -w -intstyle ise -ol high -t 1 vga_sprite_top_map.ncd vga_sprite_top.ncd vga_sprite_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_sprite_top.twx vga_sprite_top.ncd -o vga_sprite_top.twr vga_sprite_top.pcf 
+bitgen -intstyle ise -f vga_sprite_top.ut vga_sprite_top.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/salvapantalla/Salvapantalla/vga_sprite_top.syr" 

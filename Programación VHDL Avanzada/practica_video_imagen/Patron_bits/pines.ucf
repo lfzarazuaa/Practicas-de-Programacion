@@ -1,0 +1,25 @@
+NET	"mclk"					loc=b8;
+NET	"clr"					loc=h13;
+
+NET	"red<2>"				loc=R9;
+NET	"red<1>"				loc=T8;
+NET	"red<0>"				loc=R8;
+
+NET	"green<2>"			loc=N8;
+NET	"green<1>"			loc=P8;
+NET	"green<0>"			loc=P6;
+
+NET	"blue<1>"			loc=U5;
+NET	"blue<0>"			loc=U4;
+
+NET	"hsync"					loc=T4;
+NET	"vsync"					loc=U3;
+
+NET	"sw<7>"					loc=R17;
+NET	"sw<6>"					loc=N17;
+NET	"sw<5>"					loc=L13;
+NET	"sw<4>"					loc=L14;
+NET	"sw<3>"					loc=K17;
+NET	"sw<2>"					loc=K18;
+NET	"sw<1>"					loc=H18;
+NET	"sw<0>"					loc=G18;

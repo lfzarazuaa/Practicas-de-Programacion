@@ -1,0 +1,23 @@
+V3 11
+FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/bat_n_ball.vhd 2017/06/02.10:13:24 P.20131013
+EN work/bat_n_ball 1496416423 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/bat_n_ball.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/bat_n_ball/Behavioral 1496416424 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/bat_n_ball.vhd \
+      EN work/bat_n_ball 1496416423
+FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/pong.vhd 2017/06/02.09:58:52 P.20131013
+EN work/pong 1496416427 FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/pong.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/pong/Behavioral 1496416428 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/pong.vhd EN work/pong 1496416427 \
+      CP bat_n_ball CP vga_sync
+FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/vga_sync.vhd 2013/05/06.11:11:18 P.20131013
+EN work/vga_sync 1496416425 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/vga_sync.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_sync/Behavioral 1496416426 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/PONG_2/vga_sync.vhd \
+      EN work/vga_sync 1496416425

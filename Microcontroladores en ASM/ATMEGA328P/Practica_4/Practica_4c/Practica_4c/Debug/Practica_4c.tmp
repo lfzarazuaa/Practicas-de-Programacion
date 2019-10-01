@@ -1,0 +1,38 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Debug/Practica_4c.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_4c.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_4c.map</FILE>
+  <FILE>Practica_4c.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>12</LINE></config>
+  <ADC_INT><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>34</LINE></ADC_INT>
+  <inicio><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>38</LINE></inicio>
+  <CANAL_0><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>44</LINE></CANAL_0>
+  <CANAL_1><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>48</LINE></CANAL_1>
+  <Ob_Dato><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>51</LINE></Ob_Dato>
+  <Loop1><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>54</LINE></Loop1>
+  <T_30><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>79</LINE></T_30>
+  <T_20><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>74</LINE></T_20>
+  <T_00><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>69</LINE></T_00>
+  <Retardo><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>84</LINE></Retardo>
+  <WGLOOP0><FILE>C:\Users\Luis\Documents\Luis Fernando Zarazua Aguilar\UPIITA\4to Semestre\Microcontroladores\Practica_4\Practica_4c\Practica_4c\Practica_4c.asm</FILE><LINE>91</LINE></WGLOOP0>
+ </LABELS>
+</ASSEMBLER_INFO>

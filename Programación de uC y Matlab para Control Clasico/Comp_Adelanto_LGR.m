@@ -1,0 +1,26 @@
+clc,clear all, close all
+Mp=15/100;
+ts=0.8;
+z=-log(Mp)/sqrt(log(Mp)^2+pi^2);
+wn=4/(z*ts);
+sx=roots([1,2*z*wn,wn^2])';%Raiz del plano de Laplace deseada.
+sx1=sx(2);
+k1=100e3;
+polo1=0;
+polo2=3;
+polo3=35;
+polo4=40;
+th1=abs(angle(sx1+polo1)*180/pi);
+th2=abs(angle(sx1+polo2)*180/pi);
+th3=abs(angle(sx1+polo3)*180/pi);
+th4=abs(angle(sx1+polo4)*180/pi);
+thr=th1+th2+th3+th4;%%%Suma de los ángulos.
+n=floor(thr/360)+1;
+thx=180-360*n+thr;
+Cero_Comp=real(sx1)-imag(sx1)*tand(75-thx);
+Cero_Comp=round(Cero_Comp*100)/100;
+Angulo_Cero=atand(abs(Cero_Comp-real(sx1))/imag(sx1));
+Angulo_Total=Angulo_Cero+thx;
+Polo_Comp=real(sx1)-imag(sx1)*tand(Angulo_Total);
+s=sx1;
+k=abs((s+polo1)*(s+polo2)*(s+polo3)*(s+polo4)*(s+Polo_Comp)/(k1*(s+Cero_Comp)));

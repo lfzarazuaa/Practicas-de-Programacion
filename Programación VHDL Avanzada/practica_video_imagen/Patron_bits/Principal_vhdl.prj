@@ -1,0 +1,6 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Patron_bits\vga_imagen.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Patron_bits\vga_640x480.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Patron_bits\prom.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Patron_bits\costal.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Patron_bits\clkdiv.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\Patron_bits\Principal.vhd"

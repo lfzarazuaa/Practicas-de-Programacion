@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/PONG/pong.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/PONG/pong.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 pong.ngc pong.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o pong_map.ncd pong.ngd pong.pcf 
+par -w -intstyle ise -ol high -t 1 pong_map.ncd pong.ncd pong.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml pong.twx pong.ncd -o pong.twr pong.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f pong.ut pong.ncd 

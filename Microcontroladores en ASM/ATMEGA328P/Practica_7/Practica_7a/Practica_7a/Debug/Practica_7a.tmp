@@ -1,0 +1,47 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.52</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1117\avrassembler\Include\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Debug/Practica_7a.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Practica_7a.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Practica_7a.map</FILE>
+  <FILE>Practica_7a.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <config><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>38</LINE></config>
+  <INT_0><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>112</LINE></INT_0>
+  <INT_1><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>123</LINE></INT_1>
+  <LCD_Inicio><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>158</LINE></LCD_Inicio>
+  <LCD_CGRAM><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>187</LINE></LCD_CGRAM>
+  <LCD_CGR><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>196</LINE></LCD_CGR>
+  <inicio><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>127</LINE></inicio>
+  <ES_EEPROM><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>131</LINE></ES_EEPROM>
+  <FIN_0><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>120</LINE></FIN_0>
+  <LEER_EEPROM><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>144</LINE></LEER_EEPROM>
+  <FINAL><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>129</LINE></FINAL>
+  <Pulso_E><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>208</LINE></Pulso_E>
+  <LCD_Cargar><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>173</LINE></LCD_Cargar>
+  <LCD_Rapido><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>181</LINE></LCD_Rapido>
+  <LCD_Comando><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>202</LINE></LCD_Comando>
+  <Retardo1><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>214</LINE></Retardo1>
+  <Retardo15><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>241</LINE></Retardo15>
+  <WGLOOP0A><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>223</LINE></WGLOOP0A>
+  <WGLOOP1A><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>224</LINE></WGLOOP1A>
+  <WGLOOP2A><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>231</LINE></WGLOOP2A>
+  <WGLOOP0B><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>250</LINE></WGLOOP0B>
+  <WGLOOP1B><FILE>C:\Users\LuisFernando\Dropbox\Micros\Practica_7\Practica_7a\Practica_7a\Practica_7a.asm</FILE><LINE>251</LINE></WGLOOP1B>
+ </LABELS>
+</ASSEMBLER_INFO>

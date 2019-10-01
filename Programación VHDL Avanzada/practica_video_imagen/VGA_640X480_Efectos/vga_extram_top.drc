@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Sun Apr 09 22:58:35 2017
+
+drc -z vga_extram_top.ncd vga_extram_top.pcf
+
+DRC detected 0 errors and 0 warnings.

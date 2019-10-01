@@ -1,0 +1,37 @@
+V3 20
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/clkdiv.vhd 2013/03/11.12:53:10 P.20131013
+EN work/clkdiv 1491796541 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/clkdiv.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/clkdiv/Behavioral 1491796542 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/clkdiv.vhd \
+      EN work/clkdiv 1491796541
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vgacomp.vhd 2017/04/09.21:17:14 P.20131013
+PH work/vgacomp 1491796540 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vgacomp.vhd \
+      PB ieee/std_logic_1164 1381692176 CD clkdiv CD vga_640x480 CD vga_ram
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_640x480.vhd 2013/02/15.13:25:28 P.20131013
+EN work/vga_640x480 1491796543 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_640x480.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_640x480/Behavioral 1491796544 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_640x480.vhd \
+      EN work/vga_640x480 1491796543
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_extram_top.vhd 2017/04/09.21:19:47 P.20131013
+EN work/vga_extram_top 1491796547 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_extram_top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PH work/vgacomp 1491796540
+AR work/vga_extram_top/Behavioral 1491796548 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_extram_top.vhd \
+      EN work/vga_extram_top 1491796547 CP clkdiv CP vga_640x480 CP vga_ram
+FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd 2017/04/09.22:55:27 P.20131013
+EN work/vga_ram 1491796545 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/vga_ram/Behavioral 1491796546 \
+      FL //VBOXSVR/vhdl/practica_video_imagen/VGA_640X480_Efectos/vga_ram.vhd \
+      EN work/vga_ram 1491796545

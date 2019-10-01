@@ -1,0 +1,3 @@
+vhdl work "vga_sync.vhd"
+vhdl work "bat_n_ball.vhd"
+vhdl work "pong.vhd"

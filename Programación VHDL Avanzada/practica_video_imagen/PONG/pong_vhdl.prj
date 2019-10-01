@@ -1,0 +1,4 @@
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\PONG\vga_sync.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\PONG\bat_n_ball.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\PONG\adc_if.vhd"
+vhdl work "\\VBOXSVR\vhdl\practica_video_imagen\PONG\pong.vhd"

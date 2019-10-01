@@ -1,0 +1,29 @@
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 Principal.ngc Principal.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Principal_map.ncd Principal.ngd Principal.pcf 
+par -w -intstyle ise -ol high -t 1 Principal_map.ncd Principal.ncd Principal.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Principal.twx Principal.ncd -o Principal.twr Principal.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f Principal.ut Principal.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 Principal.ngc Principal.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Principal_map.ncd Principal.ngd Principal.pcf 
+par -w -intstyle ise -ol high -t 1 Principal_map.ncd Principal.ncd Principal.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Principal.twx Principal.ncd -o Principal.twr Principal.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f Principal.ut Principal.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 Principal.ngc Principal.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Principal_map.ncd Principal.ngd Principal.pcf 
+par -w -intstyle ise -ol high -t 1 Principal_map.ncd Principal.ncd Principal.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Principal.twx Principal.ncd -o Principal.twr Principal.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f Principal.ut Principal.ncd 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.syr" 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 Principal.ngc Principal.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Principal_map.ncd Principal.ngd Principal.pcf 
+par -w -intstyle ise -ol high -t 1 Principal_map.ncd Principal.ncd Principal.pcf 
+xst -intstyle ise -ifn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.xst" -ofn "//VBOXSVR/vhdl/practica_video_imagen/Patron_bits/Principal.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pines.ucf -p xc3s500e-fg320-4 Principal.ngc Principal.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Principal_map.ncd Principal.ngd Principal.pcf 
+par -w -intstyle ise -ol high -t 1 Principal_map.ncd Principal.ncd Principal.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Principal.twx Principal.ncd -o Principal.twr Principal.pcf -ucf pines.ucf 
+bitgen -intstyle ise -f Principal.ut Principal.ncd 

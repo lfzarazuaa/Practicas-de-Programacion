@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd</arg>&quot; line <arg fmt="%d" index="2">49</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;game_on&gt;</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="new" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd</arg>&quot; line <arg fmt="%d" index="2">87</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">ball_y_motion</arg>&gt; has a width of <arg fmt="%d" index="4">10</arg> bits but assigned expression is <arg fmt="%d" index="5">11</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="new" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd</arg>&quot; line <arg fmt="%d" index="2">91</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">ball_y_motion</arg>&gt; has a width of <arg fmt="%d" index="4">10</arg> bits but assigned expression is <arg fmt="%d" index="5">11</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="new" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd</arg>&quot; line <arg fmt="%d" index="2">97</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">ball_x_motion</arg>&gt; has a width of <arg fmt="%d" index="4">10</arg> bits but assigned expression is <arg fmt="%d" index="5">11</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="new" >&quot;<arg fmt="%s" index="1">//VBOXSVR/vhdl/practica_video_imagen/PONG/bat_n_ball.vhd</arg>&quot; line <arg fmt="%d" index="2">107</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">ball_y_motion</arg>&gt; has a width of <arg fmt="%d" index="4">10</arg> bits but assigned expression is <arg fmt="%d" index="5">11</arg>-bit wide.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">adout&lt;2:0&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ball_x_motion_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">add_bb</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">6 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;ball_x_motion_4&gt; &lt;ball_x_motion_5&gt; &lt;ball_x_motion_6&gt; &lt;ball_x_motion_7&gt; &lt;ball_x_motion_8&gt; &lt;ball_x_motion_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ball_y_motion_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">add_bb</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">6 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;ball_y_motion_4&gt; &lt;ball_y_motion_5&gt; &lt;ball_y_motion_6&gt; &lt;ball_y_motion_7&gt; &lt;ball_y_motion_8&gt; &lt;ball_y_motion_9&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ball_y_motion_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">add_bb</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ball_y_motion_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">add_bb</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ball_x_motion_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">add_bb</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ball_x_motion_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">add_bb</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">data_2_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">adc</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">data_2_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">adc</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">data_2_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">adc</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ball_y_motion_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">bat_n_ball</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ball_y_motion_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">bat_n_ball</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ball_x_motion_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">bat_n_ball</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ball_x_motion_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">bat_n_ball</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ball_x_motion_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">bat_n_ball</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">6 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;ball_x_motion_4&gt; &lt;ball_x_motion_5&gt; &lt;ball_x_motion_6&gt; &lt;ball_x_motion_7&gt; &lt;ball_x_motion_8&gt; &lt;ball_x_motion_9&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ball_y_motion_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">bat_n_ball</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">6 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;ball_y_motion_4&gt; &lt;ball_y_motion_5&gt; &lt;ball_y_motion_6&gt; &lt;ball_y_motion_7&gt; &lt;ball_y_motion_8&gt; &lt;ball_y_motion_9&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ball_x_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">bat_n_ball</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ball_y_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">bat_n_ball</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">adc/data_2_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">pong</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">adc/data_2_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">pong</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">adc/data_2_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">pong</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">vga_driver/green_out</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">pong</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;vga_driver/blue_out&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

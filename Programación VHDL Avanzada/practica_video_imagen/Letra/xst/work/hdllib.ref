@@ -1,0 +1,8 @@
+EN vga_sync NULL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch12_01_vga_sync.vhd sub00/vhpl02 1496417437
+AR font_test_top arch //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_03_font_test_top.vhd sub00/vhpl07 1496417442
+AR vga_sync arch //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch12_01_vga_sync.vhd sub00/vhpl03 1496417438
+EN font_rom NULL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_01_font_rom.vhd sub00/vhpl00 1496417435
+AR font_rom arch //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_01_font_rom.vhd sub00/vhpl01 1496417436
+AR font_test_gen arch //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_02_font_test_gen.vhd sub00/vhpl05 1496417440
+EN font_test_top NULL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_03_font_test_top.vhd sub00/vhpl06 1496417441
+EN font_test_gen NULL //VBOXSVR/vhdl/practica_video_imagen/Letra/list_ch13_02_font_test_gen.vhd sub00/vhpl04 1496417439

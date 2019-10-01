@@ -1,0 +1,10 @@
+Net w LOC=R17;
+Net x LOC=N17;
+Net y LOC=L13;
+Net z LOC=L14;
+Net scc1 LOC=R4;
+Net scr1 LOC=F4;
+Net scc2 LOC=P15;
+Net scr2 LOC=E17;
+Net scc3 LOC=K14;
+Net scr3 LOC=K15;
