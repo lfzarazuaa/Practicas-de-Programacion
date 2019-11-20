@@ -1,0 +1,10 @@
+show databases;
+use nombreBase;
+show tables;
+drop nombreTabla;
+describe nombreTabla;
+desc nombreTabla;
+show full columns from books;
+mysqldump -u root -p pruebaplatzi--Con datos
+mysqldump -u root -p -D pruebaplatzi--Sin datos
+mysqldump -u root -p -D pruebaplatzi > esquema.sql--Sin datos

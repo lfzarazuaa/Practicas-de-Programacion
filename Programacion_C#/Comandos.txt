@@ -1,0 +1,15 @@
+﻿dotnet -- Verificar instalacion de c#.
+dotnet new -- Ver comandos con dotnet new.
+dotnet new console -- Crear proyecto de c# en consola.
+ls--Listar las carpetas.
+cat--Visualizar contido de archivo.
+dotnet run--Ejecutar programa de la carpeta del proyecto.
+dotnet build--Compilar el programa para generar su ejecutable.
+dotnet archivo.dll--Archivo .dll de netcore para ejecutar el programa en cualquier SO.
+dotnet new console --output sample1 --Escoger la carpeta donde se hará el proyecto.
+dotnet new console --output helloworld.
+dotnet build -c Release -r win10-x64--Compila la versión de producción optimizada para el SO escogido (win7-x64,win10-x64,osx.10.11-x64,ubuntu.16.04-x64).
+cls-- Limpiar consola.
+
+
+
