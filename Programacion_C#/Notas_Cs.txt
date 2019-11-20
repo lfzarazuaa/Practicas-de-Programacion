@@ -71,3 +71,7 @@ delegate%% tipo que encapsula de forma segura un método, en una función anóni
 (objeto) => objeto.atributo == variable%%Función lambda para retorno de true/false.
 static %% Tipo de clase que no permite nuevas clases es basicamente un objeto.
 Por regla general si un método tiene mas de 50 líneas probablemente está mal diseñado.
+--------------------------
+Herencia%%Se pueden heredar distintos métodos ya sea implementados o que la clase hijo tenga que implementar a su manera.
+
+

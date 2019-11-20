@@ -9,6 +9,7 @@ namespace platziHelloWorld
         {
             Console.WriteLine("Hola Platzi!");
             EjemploAs();
+            
             while (true) ;
         }
 

@@ -36,7 +36,6 @@ namespace CoreEscuela
         {
             foreach (var curso in Escuela.Cursos)
             {
-                curso.Evaluaciones=new List<Evaluacion>();
                 string[] formato={"Presencial","Web","Grabado","Preadquirido"};
                 string[] TipoEvaluacion={"Escrito","Práctico","Oral"};
                 foreach (var alumno in curso.Alumnos)
@@ -48,13 +47,12 @@ namespace CoreEscuela
                             Random rnd= new Random();
                                 string fo=formato[rnd.Next(0,formato.Length)];
                                 string ti=TipoEvaluacion[rnd.Next(0,TipoEvaluacion.Length)];
-                                var evaluacion = new Evaluacion(){Nombre=$"Examen {fo} {ti} de {alumno.Nombre}",
-                                AlumnoId=alumno.UniqueId,AsignaturaId=asignatura.UniqueId,
-                                Alumno=alumno.Nombre,Asignatura=asignatura.Nombre,
-                                Parcial=(uint)cont,Nota=rnd.NextDouble()*5
+                                var evaluacion = new Evaluación(){Nombre=$"Examen {fo} {ti} de {alumno.Nombre}",
+                                Alumno=alumno,Asignatura=asignatura,
+                                Nota=rnd.NextDouble()*5
                             };
 
-                            curso.Evaluaciones.Add(evaluacion);
+                            alumno.Evaluaciones.Add(evaluacion);
                         }
                     }
                     
@@ -90,6 +88,7 @@ namespace CoreEscuela
                                 select new Alumno{Nombre=$"{n1} {n2} {a1}"};//Uso de Linq.
 
             return listaAlumnos.OrderBy((al)=> al.UniqueId).Take(cantidad).ToList();
+            //return new List<Alumno>(listaAlumnos.OrderBy((al)=> al.UniqueId).Take(cantidad));
         }
 
         private void CargarCursos()

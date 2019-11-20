@@ -11,9 +11,8 @@ namespace CoreEscuela.Entidades
         public string Nombre { get; set; }
         public TiposJornada Jornada { get; set; }
         
-        public List<Asignatura> Asignaturas { get; set; }
-        public List<Alumno> Alumnos { get; set; }
-        public List<Evaluacion> Evaluaciones { get; set; }
+        public List<Asignatura> Asignaturas { get; set; } = new List<Asignatura>();
+        public List<Alumno> Alumnos { get; set; } = new List<Alumno>();
 
         public override string ToString()
         {
