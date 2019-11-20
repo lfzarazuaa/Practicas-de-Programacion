@@ -1,0 +1,11 @@
+Herencia
+Sobreescritura de métodos.
+Debugger y el método ToString().
+Clases abstractas y selladas.
+Polimorfismo
+GetType()
+Casting
+Varias referencias a un mismo objeto(dentro de las listas,o con datos polimórficos).
+Exepciones en tiempo de ejecución.
+Operadores: is, as.
+----------

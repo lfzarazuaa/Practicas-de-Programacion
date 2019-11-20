@@ -15,7 +15,7 @@ namespace CoreEscuela
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             Printer.Beep(1000, cantidad: 1);
             ImprimirCursosEscuela(engine.Escuela);
-            PruebasDePolimorfismo();
+            var listaObjetos = engine.GetObjetosEscuela();
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
@@ -28,7 +28,7 @@ namespace CoreEscuela
                 }
             }
         }
-        
+
         private static void PruebasDePolimorfismo()
         {
             Printer.DrawLine(20);
