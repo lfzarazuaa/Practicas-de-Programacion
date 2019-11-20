@@ -39,9 +39,9 @@ alt+shift%%Seleccionar multiplemente.
 https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf %%Consultar todos los atajos.
 cw%%Método writeline.
 class,prop, propfull%%Permite crear clases, setter y getter.
-F2 o click derecho "Rename Symbol"%%Renombra todas las entidades con la nueva cadena.
+F2 o click derecho "Rename Symbol"%%Renombra todas las entidades con la nueva cadena, aplica para modificar varios archivos.
 $ $"Nombre{Nombre}" %% Permite poner cadenas con variables.
-En C# todo es un objeto que hereda de la clase objet.
+En C# todo es un objeto que hereda de la clase object.
 type variable=dato%% Se asignan valores por defecto que no necesariamente se tienen que declarar.
  => %%Asignar mas cortamente.
  (Var1,Var2) =  (Var1,Var2);%%Asignación de tuplas.
@@ -77,3 +77,10 @@ public class ClaseA:ClaseB%% implementar herencia de métodos.
 Modificadores de acceso%%
 abstract%%Indica que la clase no crea objetos pero es usada usa para herencia.
 sealed&&No permite que la clase pueda ser usada para herencia como clase padre.
+Polimorfismo%%Todos las clases hijo pueden tratarse como objetos padre.
+ObjetoBase ob=ObjetoHijo%%Guardar en un objeto Padre el Objeto Hijo.
+objetohijo= (tipoHijo) objetopadreh;%%objetopadreh es tipoHijo guardado en un objetobase, para usar cast el objeto original debe ser del tipo Hijo de lo contrario generará una exepción en poliformismo.
+.GetType()%%Regresa el tipo del objeto como fue construido originalmete.
+El poliformismo puede presentar problemas si no se sabe bien que tipo de dato es.
+objeto is tipo%%Is-Manda un true si es de ese tipo de dato.
+tipo variable=objeto as tipo%%As-Si es del tipo lo asigna completo sino retorna null.
