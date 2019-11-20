@@ -2,13 +2,11 @@ using System;
 
 namespace CoreEscuela.Entidades
 {
-    public class Evaluación
+    public class Evaluación:ObjetoEscuelaBase
     {
-        public string UniqueId{ get; private set;} 
-        public string Nombre { get; set; }
         public Alumno Alumno { get; set; }
-        public Asignatura Asignatura { get; set; }
+        public Asignatura Asignatura { get; set; } = new Asignatura();
         public double Nota;
-        public Evaluación() => Guid.NewGuid().ToString();
+        public Evaluación() => Alumno = new Alumno();
     }
 }

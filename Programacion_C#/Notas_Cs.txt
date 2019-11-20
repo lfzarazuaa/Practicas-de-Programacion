@@ -73,5 +73,7 @@ static %% Tipo de clase que no permite nuevas clases es basicamente un objeto.
 Por regla general si un método tiene mas de 50 líneas probablemente está mal diseñado.
 --------------------------
 Herencia%%Se pueden heredar distintos métodos ya sea implementados o que la clase hijo tenga que implementar a su manera.
-
-
+public class ClaseA:ClaseB%% implementar herencia de métodos.
+Modificadores de acceso%%
+abstract%%Indica que la clase no crea objetos pero es usada usa para herencia.
+sealed&&No permite que la clase pueda ser usada para herencia como clase padre.

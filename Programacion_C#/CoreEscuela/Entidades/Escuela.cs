@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CoreEscuela.Entidades
 {
-    public class Escuela 
+    public class Escuela : ObjetoEscuelaBase
     {
         //public Escuela (string nombre, int año){
         //    this.nombre = nombre;
@@ -11,15 +11,8 @@ namespace CoreEscuela.Entidades
         //}
         public Escuela (string nombre, int año) => (Nombre,AñoDeCreación) = (nombre,año);
         public Escuela (string nombre, int año, TiposEscuela tipo, string pais="", string ciudad= "")
-             => (Nombre,AñoDeCreación,Pais,Ciudad) = (nombre,año,pais,ciudad);
-        public string UniqueId{ get; private set;} = Guid.NewGuid().ToString();      
-        private string nombre;
-        public string Nombre
-        {
-            get { return "Escuela: " + nombre; }
-            set { nombre = value.ToUpper(); }
-        }
-
+             => (Nombre,AñoDeCreación,Pais,Ciudad) = (nombre,año,pais,ciudad);   
+        
         private int añoDeCreación;
         public int AñoDeCreación
         {

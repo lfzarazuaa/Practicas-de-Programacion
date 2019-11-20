@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace CoreEscuela.Entidades
 {
-    public class Asignatura
+    public class Asignatura:ObjetoEscuelaBase
     {
-        public string UniqueId{ get; private set;} = Guid.NewGuid().ToString();
-        public string Nombre { get; set; }
+        
     }
 }
