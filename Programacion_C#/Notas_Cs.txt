@@ -85,3 +85,15 @@ El poliformismo puede presentar problemas si no se sabe bien que tipo de dato es
 objeto is tipo%%Is-Manda un true si es de ese tipo de dato.
 tipo variable=objeto as tipo%%As-Si es del tipo lo asigna completo sino retorna null.
 override string ToString()%%Modificar método ToString() del objeto para mostrarlo en consolo y en el debug.
+Para Interfaces usar I antes del nombre como identificador sugerido.
+Todos los atributos de una interfaz deben ser públicos.
+Ilugar.metodo%% Interfaz explícita que no puede ser llamada fuera de la clase.
+Las interfaces son como un contrato porque mínimo deben cumplir la funcionalidad específicada en la clase.
+obj is Ilugar%%Uso de la interfaz para identificar un objeto como si fuera de ese tipo.
+var listaIlugar = from obj in listaObjetos %%Diccionario de datos.
+                  where obj is Ilugar
+                  select (Ilugar) obj;
+El modo en como se ve un objeto es una interfaz.
+Las regiones no cambian nada en cuanto a la programación pero si en su visualización en el IDE.
+#region %% Es una directiva
+				  

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;//Para poder usar List
+using System.Linq;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
 using static System.Console;
@@ -13,9 +14,17 @@ namespace CoreEscuela
             var engine = new EscuelaEngine();
             engine.Inicializar();
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
-            Printer.Beep(1000, cantidad: 1);
+            //Printer.Beep(1000, cantidad: 1);
             ImprimirCursosEscuela(engine.Escuela);
             var listaObjetos = engine.GetObjetosEscuela();
+            
+            var listaIlugar = from obj in listaObjetos
+                                where obj is Evaluación
+                                select (Evaluación) obj;
+
+            List<Evaluación> Evaluaciones = listaIlugar.ToList();
+            //engine.Escuela.LimpiarLugar();
+
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)

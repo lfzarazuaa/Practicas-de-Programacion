@@ -24,6 +24,7 @@ namespace CoreEscuela
             CargarEvaluaciones();
 
         }
+    #region Métodos de carga.
         /// 5 Evaluaciones X Asignatura
         /// Notas al azar entre 0 y 0.5
         /// Cada curso tiene una lista de asignaturas y
@@ -111,7 +112,7 @@ namespace CoreEscuela
                 curso.Alumnos = GenerarAlumnosAlAzar(cantRandom);
             }
         }
-
+#endregion
         public List<ObjetoEscuelaBase> GetObjetosEscuela()
         {
             var listaObj = new List<ObjetoEscuelaBase>();

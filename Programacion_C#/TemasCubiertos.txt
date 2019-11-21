@@ -9,3 +9,11 @@ Varias referencias a un mismo objeto(dentro de las listas,o con datos polimórfic
 Exepciones en tiempo de ejecución.
 Operadores: is, as.
 ----------
+Interfaces
+Implementación explicita e implicita.
+Palabra clave this.
+Parámetros opcionales.
+Uso del depurador.
+Inspección de variables.
+Inspección automática (linq).
+Uso de #region.
