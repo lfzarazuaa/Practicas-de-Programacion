@@ -22,7 +22,19 @@ namespace CoreEscuela
             CargarCursos();
             CargarAsignaturas();
             CargarEvaluaciones();
+        }
 
+        public void ImprimirDiccionario(Dictionary<LLaveDiccionario,List<ObjetoEscuelaBase>> dic)
+        {
+            foreach (var obj in dic)
+            {
+                System.Console.WriteLine(obj);
+                foreach (var val in obj.Value)
+                {
+                    System.Console.WriteLine(val);
+                }
+            }
+            
         }
 
         public Dictionary<LLaveDiccionario, List<ObjetoEscuelaBase>> GetDiccionarioObjetos()

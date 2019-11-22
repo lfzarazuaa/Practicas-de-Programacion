@@ -18,6 +18,7 @@ namespace CoreEscuela
             ImprimirCursosEscuela(engine.Escuela);
             PruebaDiccionario();
             var dicObjetos=engine.GetDiccionarioObjetos();
+            engine.ImprimirDiccionario(dicObjetos);
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
