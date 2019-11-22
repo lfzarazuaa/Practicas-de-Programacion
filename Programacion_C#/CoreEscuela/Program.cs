@@ -16,15 +16,8 @@ namespace CoreEscuela
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             //Printer.Beep(1000, cantidad: 1);
             ImprimirCursosEscuela(engine.Escuela);
-            var listaObjetos = engine.GetObjetosEscuela();
-            
-            var listaIlugar = from obj in listaObjetos
-                                where obj is Evaluación
-                                select (Evaluación) obj;
-
-            List<Evaluación> Evaluaciones = listaIlugar.ToList();
-            //engine.Escuela.LimpiarLugar();
-
+            PruebaDiccionario();
+            var dicObjetos=engine.GetDiccionarioObjetos();
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
@@ -37,7 +30,43 @@ namespace CoreEscuela
                 }
             }
         }
+        private static void PruebaDiccionario()
+        {
+            Dictionary<int, string> diccionario = new Dictionary<int, string>();
+            diccionario.Add(10, "JuanK");
+            diccionario.Add(23, "Lorem Ipsum");
 
+            foreach (var keyValPair in diccionario)
+            {
+                System.Console.WriteLine($"Key: {keyValPair.Key} Valor:{keyValPair.Value}");
+            }
+
+            Printer.WriteTitle("Acceso a Diccionario.");
+            diccionario[0] = "Pekerman";
+            WriteLine(diccionario[0]);
+            WriteLine("Otro diccionario");
+            var dic = new Dictionary<string, string>();
+            dic["Luna"] = "Cuerpo Celeste qie gira alrededor de la tierra.";
+            WriteLine(dic["Luna"]);
+            dic["Luna"] = "Protagonista de caricatura.";
+            WriteLine(dic["Luna"]);
+        }
+        private static void PruebaDeInterfacesReadOnly(EscuelaEngine engine)
+        {
+            var listaObjetos = engine.GetObjetosEscuela(
+                            out int conteoEvaluaciones, out int conteoCursos,
+                            out int conteoAsignaturas, out int conteoAlumnos
+                        );
+            listaObjetos = engine.GetObjetosEscuela(
+                out conteoEvaluaciones, out conteoCursos
+            );
+            var listaIlugar = from obj in listaObjetos
+                              where obj is Evaluación
+                              select (Evaluación)obj;
+
+            List<Evaluación> Evaluaciones = listaIlugar.ToList();
+            //engine.Escuela.LimpiarLugar();
+        }
         private static void PruebasDePolimorfismo()
         {
             Printer.DrawLine(20);

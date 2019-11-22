@@ -95,5 +95,19 @@ var listaIlugar = from obj in listaObjetos %%Diccionario de datos.
                   select (Ilugar) obj;
 El modo en como se ve un objeto es una interfaz.
 Las regiones no cambian nada en cuanto a la programación pero si en su visualización en el IDE.
-#region %% Es una directiva
-				  
+#region %% Es una directiva para hacer una división en el código no afecta la funcionalidad pero mejora la legibilidad.
+Las tuplas pueden retornarse de una función.
+tipo Método(out tipo parametro1, out tipo parametro2, tipo variable){}%%Método con parámetros de salida.
+%%La asignación de un valor a los parámetros de salida es forzosa en la definición de la función.
+%%En la llamada de función se deben invocar todas las salidas, pero se pueden asignar a una misma variable si no nos interesa el valor.
+%%Usar la sobrecarga de métodos para realizar un retorno de solo el valor deseado.
+IReadOnlyList%%Interfaz de lista, para que la lista solo sea de consulta y que el desarrollador solo la use los métodos previamente hechos.
+Dictionary <int,string> diccionario = new Dictionary<int, string>();Crea Diccionario (similar a arreglo), que puede ser controlado por índice del tipo específicado en este caso int.
+diccionario.Add(key,valor);%%Agrega un valor específicando la key(indice) donde se guardará.
+dic["Martes"]=variable;Diccionario con key tipo string.
+diccionario.Add(key,nuevalor);%%Si ya se inicializó con un valor no se puede actualizar asi puesto que las key son irrepetibles.
+%%Al tener una lista se pierde la herencia sobre el objeto del tipo que contiene la lista.
+List<ObjetoEscuelaBase> o = new List<ObjetoEscuelaBase>();
+List<Curso> c = new List<Curso>();//El curso hereda de ObjetoEscuelaBase.
+o = (List<ObjetoEscuelaBase>) c;//Lista de cursos no herda de lista de objetosEscuelaBase.
+o = c.Cast<ObjetoEscuelaBase>;%%Para poder convertirlo a una lista se usa cast que lo convierte a una lista IEnumerable.
