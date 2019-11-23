@@ -43,13 +43,13 @@ F2 o click derecho "Rename Symbol"%%Renombra todas las entidades con la nueva ca
 $ $"Nombre{Nombre}" %% Permite poner cadenas con variables.
 En C# todo es un objeto que hereda de la clase object.
 type variable=dato%% Se asignan valores por defecto que no necesariamente se tienen que declarar.
- => %%Asignar mas cortamente.
- (Var1,Var2) =  (Var1,Var2);%%Asignación de tuplas.
- public string Ciudad { get; set; }%% Crear getter y setter.
- type var=dato%%Declarar uso de los parámetros opcionales.
- var:dato%%Usar parámetros opcionales.
-La Firma del método es que valor tiene cual devuelve y que recibe.
-Extensión jchanon c# para facilitar crear clases en c#.
+=> %%Asignar mas cortamente (implica que).
+(Var1,Var2) =  (Var1,Var2);%%Asignación de tuplas.
+public string Ciudad { get; set; }%% Crear getter y setter.
+type var=dato%%Declarar uso de los parámetros opcionales.
+var:dato%%Usar parámetros opcionales.
+La Firma del método es que valor tiene, cual devuelve y que recibe.
+Extensión jchanon en visual studio c# para facilitar crear clases en c#.
 %%3 formas de mostrar las cadenas en pantalla.
 System.Console.WriteLine(curso1.Nombre + "," + curso1.UniqueId);%%
 System.Console.WriteLine($"{curso2.Nombre},{curso2.UniqueId}");%%
@@ -85,8 +85,9 @@ El poliformismo puede presentar problemas si no se sabe bien que tipo de dato es
 objeto is tipo%%Is-Manda un true si es de ese tipo de dato.
 tipo variable=objeto as tipo%%As-Si es del tipo lo asigna completo sino retorna null.
 override string ToString()%%Modificar método ToString() del objeto para mostrarlo en consolo y en el debug.
-Para Interfaces usar I antes del nombre como identificador sugerido.
+interface%%Para Interfaces usar I antes del nombre como identificador sugerido.
 Todos los atributos de una interfaz deben ser públicos.
+Interfaz es un medio común para que los objetos no relacionados se comuniquen entre sí. 
 Ilugar.metodo%% Interfaz explícita que no puede ser llamada fuera de la clase.
 Las interfaces son como un contrato porque mínimo deben cumplir la funcionalidad específicada en la clase.
 obj is Ilugar%%Uso de la interfaz para identificar un objeto como si fuera de ese tipo.
@@ -101,7 +102,7 @@ tipo Método(out tipo parametro1, out tipo parametro2, tipo variable){}%%Método
 %%La asignación de un valor a los parámetros de salida es forzosa en la definición de la función.
 %%En la llamada de función se deben invocar todas las salidas, pero se pueden asignar a una misma variable si no nos interesa el valor.
 %%Usar la sobrecarga de métodos para realizar un retorno de solo el valor deseado.
-IReadOnlyList%%Interfaz de lista, para que la lista solo sea de consulta y que el desarrollador solo la use los métodos previamente hechos.
+IReadOnlyList%%Interfaz de lista, para que la lista solo sea de consulta y que el desarrollador solo la use en los métodos previamente hechos.
 Dictionary <int,string> diccionario = new Dictionary<int, string>();Crea Diccionario (similar a arreglo), que puede ser controlado por índice del tipo específicado en este caso int.
 diccionario.Add(key,valor);%%Agrega un valor específicando la key(indice) donde se guardará.
 dic["Martes"]=variable;Diccionario con key tipo string.
@@ -109,5 +110,46 @@ diccionario.Add(key,nuevalor);%%Si ya se inicializó con un valor no se puede ac
 %%Al tener una lista se pierde la herencia sobre el objeto del tipo que contiene la lista.
 List<ObjetoEscuelaBase> o = new List<ObjetoEscuelaBase>();
 List<Curso> c = new List<Curso>();//El curso hereda de ObjetoEscuelaBase.
-o = (List<ObjetoEscuelaBase>) c;//Lista de cursos no herda de lista de objetosEscuelaBase.
-o = c.Cast<ObjetoEscuelaBase>;%%Para poder convertirlo a una lista se usa cast que lo convierte a una lista IEnumerable.
+o = (List<ObjetoEscuelaBase>) c;//Lista de cursos no hereda de lista de objetosEscuelaBase.
+o = c.Cast<ObjetoEscuelaBase>();%%Para poder convertirlo a una lista se usa cast que lo convierte a una lista IEnumerable.
+AppDomain.CurrentDomain.ProcessExit+=AccionDelEvento;%%Añadir evento de salida con +=, con -=se puede remover.
+AppDomain.CurrentDomain.ProcessExit+=(o,s)=> Printer.Beep(2000,1000,1);%%Añadir evento con expresión Lambda.
+Por convención los elementos privados comienzan por "_".
+nameof(variable)%%Asigna el tipo correcto requerido por la función.
+Tener un generador de reportes es importante para poder hacer pétición de la información.
+Siempre es importante separar la presentación de la información de la extracción de la información.
+El reporteador se encarga de extraer la información.
+Dictinct() %%Selecciona elementos sin repetirse.
+Sentencia Linq
+var evalAsignatura= from eval in listaEvaluaciones
+                    where eval.Asignatura.Nombre == asig//Condiciona que solo queden las asignaturas de las evaluaciones que coinciden con la lista de asignaturas.
+                    select eval;
+Consejo si el problema es muy complicado es debido a que el problema no es solo uno sino varios y se procede a partirlo en fracciones.
+new { eval.Alumno.UniqueId,
+      AlumnoNombre = eval.Nombre,
+      NombreEval = eval.Nombre,
+      eval.Nota}; Creación de objeto anonimo con atributos UniqueId, AlumnoNombre, NombreEval, Nota.
+linq con delegate
+var dummy = from eval in asigConEval.Value//Obtiene los valores del diccionario como elemento para hacer el recorrimiento.
+            group eval by eval.Alumno.UniqueId//eval es la variable recorrida, pero esta no es accesible puesto que es agrupada por UniqueId de Alumno.
+            into grupoEvalsAlumno // La variable que contiene los datos agrupados se llama grupoEvalsAlumno
+            select new
+            {
+              AlumnoId = grupoEvalsAlumno.Key,//Obtiene el identificador que este caso es el primer dato tomado pero como es el mismo para cada Alumno en su respectiva evaluacion no importa.
+              Promedio = grupoEvalsAlumno.Average(evaluación => evaluación.Nota),//Del arreglo de datos que contiene grupoEvalsAlumno obtiene el método
+              PromedioD = grupoEvalsAlumno.Average(delegate(Evaluación eval2) {return eval2.Nota})
+            };
+Linq es un lenguaje declarativo que opera por medio de sentencias sin usar ciclos iterativos.
+throw Exeption();%%Arroja una exepción.
+try y catch%%Prueba código y atrapa la exepción para procesarla.
+try{} catch(Exep1){} catch(Exep2){}%%Exepciones en casacada, realiza la primera que atrape.
+catch(ArgumentOutOfRangeException arge){Printer.WriteTitle(arge.Message)};%%Obtiene como parametro1 la exepción.
+finally%%Siempre se ejecuta algo justo antes de salir a pesar de que exista una exepción.
+En todos los escenarios posibles es mejor evitar la exepción antes que usar try y catch.
+override%%sobrescritura de método.
+()(parm1)%% sobrecarga de método.
+Para reaccionar ante acontecimientos generados por algún objeto dentro del programa se puede hacer uso de: Event,Handler.
+Linq es un lenguaje de programación para consultar bases de datos: Falso.
+Si quiero que el resultado de una consulta con Linq no me devuelva elementos duplicados debo hacer uso del método: Distinct().
+nombre = Console.ReadLine();%%Leer de la consola una variable.
+double.Parse()%%Convertir a tipo double una cadena.

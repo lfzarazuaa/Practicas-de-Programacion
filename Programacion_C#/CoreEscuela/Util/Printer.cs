@@ -1,3 +1,5 @@
+using System;
+
 namespace CoreEscuela.Util
 {
     public static class Printer
@@ -21,6 +23,11 @@ namespace CoreEscuela.Util
             {
                 System.Console.Beep(hz, tiempo);
             }
+        }
+
+        internal static void PresioneEnter()
+        {
+            System.Console.WriteLine("Presione Enter para continuar.");
         }
     }
 }

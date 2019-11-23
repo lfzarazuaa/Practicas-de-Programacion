@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using CoreEscuela.Entidades;
+using CoreEscuela.Util;
 
-namespace CoreEscuela
+namespace CoreEscuela.App
 {
     public sealed class EscuelaEngine
     {
@@ -24,14 +25,39 @@ namespace CoreEscuela
             CargarEvaluaciones();
         }
 
-        public void ImprimirDiccionario(Dictionary<LLaveDiccionario,List<ObjetoEscuelaBase>> dic)
+        public void ImprimirDiccionario(Dictionary<LLaveDiccionario,List<ObjetoEscuelaBase>> dic,
+            bool imprEval=false)
         {
-            foreach (var obj in dic)
+            foreach (var objdic in dic)
             {
-                System.Console.WriteLine(obj);
-                foreach (var val in obj.Value)
+                Printer.WriteTitle(objdic.Key.ToString());
+                foreach (var val in objdic.Value)
                 {
-                    System.Console.WriteLine(val);
+                    switch (objdic.Key)
+                    {
+                        case LLaveDiccionario.Evaluación:
+                            if(imprEval)//Imprime todos los objetos si imprEval es verdadero sino imprime solo no imprime Evaluaciones.
+                                System.Console.WriteLine(val);
+                        break;
+                        case LLaveDiccionario.Escuela:
+                            System.Console.WriteLine($"Escuela: {val}");
+                        break;
+                        case LLaveDiccionario.Alumno:
+                            System.Console.WriteLine($"Alumno: {val.Nombre}");
+                        break;
+                        case LLaveDiccionario.Curso:
+                            var curtmp = val as Curso;
+                            if (curtmp != null)
+                                System.Console.WriteLine($"Curso: {val} Cantidad de alumnos: {curtmp.Alumnos.Count()}");
+                        break;
+                        case LLaveDiccionario.Asignatura:
+                            System.Console.WriteLine($"Asignatura: {val}");
+                        break;
+                        default:
+                        break;
+                    }
+                    /* if(imprEval || !(val is Evaluación))//Imprime todos los objetos si imprEval es verdadero sino imprime solo no imprime Evaluaciones.
+                        System.Console.WriteLine(val); */
                 }
             }
             
@@ -129,6 +155,7 @@ namespace CoreEscuela
         // 
         private void CargarEvaluaciones()
         {
+             Random rnd = new Random();
             foreach (var curso in Escuela.Cursos)
             {
                 string[] formato = { "Presencial", "Web", "Grabado", "Preadquirido" };
@@ -139,7 +166,6 @@ namespace CoreEscuela
                     {
                         for (int cont = 0; cont < 5; cont++)
                         {
-                            Random rnd = new Random();
                             string fo = formato[rnd.Next(0, formato.Length)];
                             string ti = TipoEvaluacion[rnd.Next(0, TipoEvaluacion.Length)];
                             var evaluacion = new Evaluación()
@@ -147,7 +173,7 @@ namespace CoreEscuela
                                 Nombre = $"Examen {fo} {ti} de {alumno.Nombre}",
                                 Alumno = alumno,
                                 Asignatura = asignatura,
-                                Nota = rnd.NextDouble() * 5
+                                Nota = Math.Round(rnd.NextDouble() * 5,2)
                             };
 
                             alumno.Evaluaciones.Add(evaluacion);

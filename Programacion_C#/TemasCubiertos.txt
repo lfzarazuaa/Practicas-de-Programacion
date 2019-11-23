@@ -17,3 +17,25 @@ Uso del depurador.
 Inspección de variables.
 Inspección automática (linq).
 Uso de #region.
+----------
+Dictionary<K,T>
+Refactoring como sobrecargas para parámetos de salida.
+Ienumerable<T>,ReadOnlyList<T>
+Cast<T>()
+Operador Switch.
+Detectar la salida de un programa por consola.
+Event con sus delegados.
+Variables de salida out.
+-------
+DictionaryTryGet
+Linq Query
+Distinct
+from, select, where
+Orderby, groupby
+--
+Como capturar información desde la consola.
+Exepciones.
+Try/catch, finally
+Cascadeo de exepciones
+Buenas prácticas de las exepciones.
+

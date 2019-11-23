@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;//Para poder usar List
 using System.Linq;
+using CoreEscuela.App;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
 using static System.Console;
@@ -11,14 +12,65 @@ namespace CoreEscuela
     {
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.ProcessExit += AccionDelEvento;
+            //AppDomain.CurrentDomain.ProcessExit += (o, s) => Printer.Beep(2000, 1000, 1);
             var engine = new EscuelaEngine();
             engine.Inicializar();
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
-            //Printer.Beep(1000, cantidad: 1);
-            ImprimirCursosEscuela(engine.Escuela);
-            PruebaDiccionario();
-            var dicObjetos=engine.GetDiccionarioObjetos();
-            engine.ImprimirDiccionario(dicObjetos);
+            var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
+            //new Reporteador(null);
+            var evaluaciones=reporteador.GetListaEvaluaciones();
+            var asignaturas=reporteador.GetListaAsignaturas();
+            var dicEvalXAsig=reporteador.GetDicEvaluaXAsig();
+            var listaPromXAsig=reporteador.GetPromedioAlumnosPorAsignaturas();
+            var mejoresPromedios=reporteador.GetMejoresPromediosPorAsignaturas(10);
+            Printer.WriteTitle("Captura de una evaluación por consola.");
+            var eval = new Evaluación ();
+            string nombre;
+            WriteLine("Ingrese el nombre de la evaluación");
+            Printer.PresioneEnter();
+            nombre = Console.ReadLine();
+            if(string.IsNullOrWhiteSpace(nombre)){
+                throw new ArgumentException("El valor del nombre no puede ser vacio.");
+            }
+            else
+            {
+                eval.Nombre=nombre.ToLower();
+                System.Console.WriteLine("El nombre de la evaluación ha sido ingresado correctamente.");
+            }
+
+            WriteLine("Ingrese el valor de la nota");
+            Printer.PresioneEnter();
+            var notastring = Console.ReadLine();
+            if(string.IsNullOrWhiteSpace(notastring)){
+                throw new ArgumentException("El valor de la nota no puede ser vacio.");
+            }
+            else
+            {
+                try{
+                    eval.Nota=double.Parse(notastring);
+                    if (eval.Nota < 0 ||eval.Nota > 5)
+                    {
+                        throw new ArgumentOutOfRangeException("La nota debe estar entre 0 y 5.");
+                    }
+                    System.Console.WriteLine("El valor de la nota ha sido ingresado correctamente.");
+                }
+                catch(ArgumentOutOfRangeException arge){
+                    Printer.WriteTitle(arge.Message);
+                    WriteLine("Saliendo del programa.");
+                }
+                catch(Exception){
+                    Printer.WriteTitle("El valor de la nota no es un número válido.");
+                    WriteLine("Saliendo del programa.");
+                }
+            }
+        }
+
+        private static void AccionDelEvento(object sender, EventArgs e)
+        {
+            Printer.WriteTitle("SALIENDO");
+            //Printer.Beep(3000,1000,3);
+            Printer.WriteTitle("SALIÓ");
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
@@ -30,6 +82,15 @@ namespace CoreEscuela
                     WriteLine(curso);
                 }
             }
+        }
+        private static void PruebaDictionary(EscuelaEngine engine)
+        {
+
+            //Printer.Beep(1000, cantidad: 1);
+            ImprimirCursosEscuela(engine.Escuela);
+            PruebaDiccionario();
+            var dicObjetos = engine.GetDiccionarioObjetos();
+            engine.ImprimirDiccionario(dicObjetos, true);
         }
         private static void PruebaDiccionario()
         {
