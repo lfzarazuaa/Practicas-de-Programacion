@@ -1,0 +1,15 @@
+alt+shift+LineaAbajo%%Duplicar linea en visual studio code.
+Se tienen que dividir las secciones que tiene el website para codificarlas parte por parte.
+Document Object Mode(DOM)-Modelo de documento que se carga en el navegador web y que representa el documento como un árbol de nodos.
+Etiquetas de HTML.
+<nombre>contenido</nombre>%%Sintaxis de etiqueta.
+<nombre sr/>Etiqueta con cierre en si misma.
+<header></header>%%Encabezado de la página web.
+<section></section>%%Divide en secciones nuestra página
+<footer></footer>%%Coloca el pie de página.
+<ol></ol>%%Listas ordenadas.
+<ul></ul>%%Lista desordenada.
+<li></li>%%Elemento de lista.
+<a href=""></a>%%Poner hipervinculos a viene de ancla o anchor.
+<h1></h1>%%Colocar primer nivel de títulos.
+<br/>  Salto de línea.

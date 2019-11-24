@@ -93,7 +93,7 @@ namespace CoreEscuela.App
                             }).OrderByDescending(delegate(AlumnoPromedio ap){return ap.Promedio;}).Take(X);
                 rta.Add(asigConEval.Key,promsAlumnos);
             }
-
+            
             return rta;
         }
 

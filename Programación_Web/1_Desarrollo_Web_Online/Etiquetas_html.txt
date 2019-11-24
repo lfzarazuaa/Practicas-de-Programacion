@@ -1,0 +1,33 @@
+Una etiqueta es usada para crear contenido.
+html
+	head
+		title-Colocar el título de la página.
+		meta-Estilo de la página.
+	body
+		header
+			nav
+		section
+			article
+		footer
+<p> Esto es un párrafo</p>
+<img src="imagen.jpg"/>
+Etiquetas de cabecera
+doctype-tipo de datos.
+link-hojas de estilo
+script-para poner código de js.
+noscript- Decir que no hay javascript en el navegador.
+Etiquetas de secciones
+article-Porción del sitio web
+nav-
+aside-
+section-Diferenciar secciones del proyecto.
+header-
+footer-Pie de página.
+h1-h6-Títulos principales.
+main-Partes principales.
+Etiquetas de agrupamiento
+p
+hr
+pre
+figure
+
