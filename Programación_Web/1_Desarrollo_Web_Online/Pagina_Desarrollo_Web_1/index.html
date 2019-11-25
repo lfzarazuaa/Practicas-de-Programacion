@@ -1,25 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang=es>
     <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <title>Hola soy Luis Fernando</title>
+        <link rel="icon" type="images/png" href="images/favicon.png">
+        <style>
+                header {
+                    background: green;
+                }
+        </style>
+        <link rel="stylesheet" href="css/estilos.css">
+        
     </head>
     <body>
+        <!-- <header style="color:red; background: blue;"> -->
         <header>
-            <nav>
-                <ol>
-                    <li>
-                        <a href="https://github.com/lfzarazuaa">Portafolio</a>
-                        <a>Experiencia</a>
-                        <a>Trabajemos juntos</a>
-                    </li>
-                </ol>
-            </nav>
+            <div>
+                <figure>
+                    <img src="images/logo.jpg" alt="Logo de" width="250" height="300"> logo
+                </figure>
+                <nav>
+                    <ol>
+                        <li>
+                            <a href="./Portafolio/portafolio.html">Portafolio</a>
+                            <a href="#eventos">Experiencia</a>
+                            <a href="#contacto">Trabajemos juntos</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
         </header>
-        <section> <!--Sección portafolio-->
+        <section id="portafolio"> <!--Sección portafolio-->
             <h1>
                 Hola Soy <strong> Luis Fernando Zarazua Aguilar </strong>  <br/> Desarrollador de Software de Ingeniería <br/> con pasión por la <strong>Mecatrónica</strong>.
             </h1>
-            <img> imagen de portada
+            <img src="images/propia.jpg" width="500" alt="Imagen principal del sitio"> imagen de portada
             <h2>Portafolio (Proyectos destacados)</h2>
             <article>
                 <h3>Proyecto 1</h3>
@@ -29,19 +44,30 @@
             </article>
             
         </section>
-        <section><!--Sección de eventos -->
+        <section id="eventos"> <!--Sección de eventos -->
             <article>
                 <h2>Más sobre mi experiencia</h2>
                 <figure>
-                    <img/>
+                    <img src="images/reunion.jpg" width="300" alt="Reunión de adolescentes decembrina.">
                 </figure>
                 <h3>Curso en el Museo 2019.</h3>
-                <p>Semana de capcitación en robótica para niños.</p>
+                <p>Semana de capacitación en robótica para niños.</p>
                 <a>Ver mas detalles</a>
+                <h3>Esquema Lider Seguidor</h3>
+                <a href="https://www.youtube.com/watch?v=33_XDodUHAQ&t=394s" target="_blank">Ver proyecto funcionando</a>
+                <img src="images/liderseguidor.jpg" alt="Esquema Lider Seguidor" width="500">
             </article>
         </section>
-        <section>Sección contacto</section>
+        <section id="contacto"> <!--Sección contacto-->
+            <form action="/suscripcion/">
+                <label for="email">Déjame tu e-mail.</label>
+                <input type="text" , placeholder="Dejános tu e-mail." id="email">
+                <input type="submit" value="texto del botón">
+                <button>Enviar</button>
+            </form>
+        </section>
         <footer>footer</footer>
+        
     </body>
 </html>
 

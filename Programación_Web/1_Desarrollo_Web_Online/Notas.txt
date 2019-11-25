@@ -13,3 +13,26 @@ Etiquetas de HTML.
 <a href=""></a>%%Poner hipervinculos a viene de ancla o anchor.
 <h1></h1>%%Colocar primer nivel de títulos.
 <br/>  Salto de línea.
+</small> hace un poco mas chico el texto.
+Atributos en html
+alt="valorAtributo"%%Texto alternativo.
+src="https://media.licdn.com/dms/image/C5603AQEzaLRFm33GBA/profile-displayphoto-shrink_200_200/0?e=1580342400&v=beta&t=ra-qS31HY_v85a4FaishCOfTJSzP0RAOdms6JGjORc8"%%Imagen usando un link web.
+src="images/logo.jpg"%%Dentro de la carpeta.
+src="../images/logo.jpg"%%De la carpeta anterior.
+<html lang=es> %%Reconoce el idioma español.
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">%%Reconoce caracteres con acento y demás en mas navegadores.
+width="250" height="300"%%Dan ancho y largo respectivamente.
+<form action=""> </form>%%Crea un formulario y en action se específica a donde será enviada la información.
+<input type="submit" value="texto del botón"> texto con botón.
+<label for="email">Déjame tu e-mail.</label>%%Label que hace referencia al objeto email.
+<input type="text", placeholder="Dejános tu e-mail." id="email">
+<input type="text">%%Hay varios tipos de input.
+<a href="#portafolio">Portafolio</a>  <section id="portafolio"> %%Enlace interno denominado por #.
+<a href="./Portafolio/portafolio.html">%%Ruta relativa a la carpeta.
+<a href="https://www.youtube.com/watch?v=33_XDodUHAQ&t=394s" target="_blank">Ver proyecto funcionando</a>%%Abrir enlace en otra página.
+<header style="color:red; background: blue;">%%Estilos en línea (in-line).
+Un style in line tiene mas peso que uno externo.
+Un style dentro del html tiene menos peso que uno in line.
+Estilo en cascada porque van en forma de cascada de agua tiene prioridad el ultimo elemento.
+%%!important para darle mas prioridad que otros pero rompe la cascada.
+Selectores de css
