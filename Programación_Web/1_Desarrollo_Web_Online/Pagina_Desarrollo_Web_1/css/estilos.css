@@ -1,3 +1,22 @@
-header{
-    background: pink !important;
+/* reglas Estan conformadas por selectores, declaraciones, propiedades y valores.
+selectores Como identificar un elemento de html.
+declaraciones Todo lo que se hace con el selector.
+propiedades Lo que se puede realizar particularmente con cada elemento.
+valores Variables de las propiedades.
+*/
+
+header{ /*Todo el bloque es una regla. Un selector puede ser header.*/
+    background: pink !important; /*La declaración inicia y termina con los corchetes*/
+    color:red/* Se puede dejar sin ";" si ya es la ultima propiedad poque el ";" solo identifica el fin de una propiedad.*/
+    /*La propiedad es background y el valor es pink*/
 }
+/*selector de etiqueta -header -section -article -nav*/
+
+/* selector descendente */
+/* body header div nav ol li a */
+
+/* Selector de clase */
+/* .link */
+
+/* Selecto de Id */
+/* #portafolio */

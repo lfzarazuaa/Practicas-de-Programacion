@@ -14,59 +14,72 @@
     </head>
     <body>
         <!-- <header style="color:red; background: blue;"> -->
-        <header>
+        <header class="header">
             <div>
-                <figure>
+                <figure class="logo">
                     <img src="images/logo.jpg" alt="Logo de" width="250" height="300"> logo
                 </figure>
-                <nav>
+                <nav class="menu">
                     <ol>
                         <li>
-                            <a href="./Portafolio/portafolio.html">Portafolio</a>
-                            <a href="#eventos">Experiencia</a>
-                            <a href="#contacto">Trabajemos juntos</a>
+                            <a class="link" href="./Portafolio/portafolio.html">Portafolio</a>
+                        </li>
+                        <li>
+                            <a class="link" href="#eventos">Experiencia</a>
+                        </li>
+                        <li>
+                            <a class="link" href="#contacto">Trabajemos juntos</a>
                         </li>
                     </ol>
                 </nav>
             </div>
         </header>
-        <section id="portafolio"> <!--Sección portafolio-->
+        <section class"hero" ><!--  Hero es por convención por ser la parte de hasta arriba -->
             <h1>
                 Hola Soy <strong> Luis Fernando Zarazua Aguilar </strong>  <br/> Desarrollador de Software de Ingeniería <br/> con pasión por la <strong>Mecatrónica</strong>.
             </h1>
             <img src="images/propia.jpg" width="500" alt="Imagen principal del sitio"> imagen de portada
+        </section>
+        <section id="portafolio" class="portfolio"> <!--Sección portafolio.-->
             <h2>Portafolio (Proyectos destacados)</h2>
-            <article>
-                <h3>Proyecto 1</h3>
-                <h6>Proyecto 2</h6>
-                <p></small><strong>Fecha:</strong>dd/mm/aaaa</p>
-                <p></small><strong>Puedes verlo en : </strong> <a href="https://github.com/lfzarazuaa">Mi página de github.</a></p>
+            <article class="project">
+                <h3 class="project-title">Esquema Robot Lider-Seguidor</h3>
+                <h6 class="project-course">ROS/Qt/Python</h6>
+                <p class="project-date"></small><strong>Fecha:</strong>26/05/2019</p>
+                <p class="project-url"></small><strong>Puedes verlo en : </strong> <a href="https://github.com/lfzarazuaa">Mi página de github.</a></p>
+                <p class="project-description"> Este proyecto fue el resultado de una propuesta de investigación para desarrollar un sistema multiagente donde
+                    se usarán un esquema líder seguidor para facilitar las tareas de cada robot y no volverlas repetitivas, en
+                    particular el lider seguia una trayectoria predefinida y el seguidor imitaba los movimientos del lider.
+                </p>
+                <figure class="project-imageContainer"><!-- Container para diferenciarlo como contenedor -->
+                    <img class="project-image" src="images/liderseguidor.jpg" alt="Esquema Lider Seguidor A" width="500">
+                </figure>
             </article>
-            
         </section>
         <section id="eventos"> <!--Sección de eventos -->
-            <article>
-                <h2>Más sobre mi experiencia</h2>
-                <figure>
-                    <img src="images/reunion.jpg" width="300" alt="Reunión de adolescentes decembrina.">
+            <h2>Más sobre mi experiencia</h2>
+            <article class="event">
+                <figure class="event-imageContainer">
+                    <img class="event-image" src="images/reunion.jpg" width="300" alt="Reunión en el museo.">
                 </figure>
-                <h3>Curso en el Museo 2019.</h3>
-                <p>Semana de capacitación en robótica para niños.</p>
-                <a>Ver mas detalles</a>
-                <h3>Esquema Lider Seguidor</h3>
-                <a href="https://www.youtube.com/watch?v=33_XDodUHAQ&t=394s" target="_blank">Ver proyecto funcionando</a>
-                <img src="images/liderseguidor.jpg" alt="Esquema Lider Seguidor" width="500">
+                <h3 class="event-title">Curso en el Museo 2018.</h3>
+                <p class="event-description">Semana de capacitación en robótica para niños.</p>
+                <a href="https://www.facebook.com/erick.huitronramirez/videos/vb.100002602181954/1771135862983136/?type=2&video_source=user_video_tab" target="_blank">Taller nahuales</a>
+                <!-- <a>Ver más detalles</a> -->
+                <!-- <h3>Esquema Lider Seguidor</h3> -->
+                <!-- <img src="images/liderseguidor.jpg" alt="Esquema Lider Seguidor" width="500"> -->
             </article>
         </section>
-        <section id="contacto"> <!--Sección contacto-->
-            <form action="/suscripcion/">
-                <label for="email">Déjame tu e-mail.</label>
+        <section id="contacto" class="contact"> <!--Sección contacto-->
+            <form action="/suscripcion/" class="form-email">
+                <h3>¿Creamos algo juntos?</h3>
+                <!-- <label for="email">Déjame tu e-mail.</label> -->
                 <input type="text" , placeholder="Dejános tu e-mail." id="email">
-                <input type="submit" value="texto del botón">
+                <!-- <input type="submit" value="texto del botón"> -->
                 <button>Enviar</button>
             </form>
         </section>
-        <footer>footer</footer>
+        <footer class="footer">footer</footer>
         
     </body>
 </html>

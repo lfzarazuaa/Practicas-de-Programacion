@@ -35,4 +35,10 @@ Un style in line tiene mas peso que uno externo.
 Un style dentro del html tiene menos peso que uno in line.
 Estilo en cascada porque van en forma de cascada de agua tiene prioridad el ultimo elemento.
 %%!important para darle mas prioridad que otros pero rompe la cascada.
-Selectores de css
+Selectores de css%%Los selectores son la forma de indentificar a uno o más elementos dentro del html.
+Selector descendente es un elemento hijo dentro de algún otro elemento. /* body header div nav ol li a */
+Selector de clase para tomar al objeto deseado.
+Muchos elementos pueden recibir el mismo estilo por medio de la duplicación de clases.
+Los elementos de Id son unicos dentro del website.
+User agent stylesheet es el encargado de los estilos default en cada navegador web.
+Wrapper o Container para identificar contenedores.
