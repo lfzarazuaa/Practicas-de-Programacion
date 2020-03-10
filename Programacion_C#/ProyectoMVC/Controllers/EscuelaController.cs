@@ -10,7 +10,11 @@ namespace ProyectoMVC.Controllers
         {
             var escuela = new Escuela(){
                 AñoDeCreación=2005,
-                Nombre = "Escuela ESANS"
+                Nombre = "Escuela ESANS",
+                Dirección = "Guanabana #137",
+                Pais = "México",
+                Ciudad = "Ciudad de México",
+                TipoEscuela = TiposEscuela.Secundaria
             };
             ViewBag.CosaDinámica="Texto Dinámico";
             return View(escuela);

@@ -1,12 +1,18 @@
 ﻿@model Escuela
 @{
-    ViewData["Title"] = "Informacón Escuela";
+    ViewData["Title"] = "Información Escuela";
     Layout = "_LayoutSimple";
 }
 
 <h1>Página: @ViewData["Title"]</h1>
 <h1>Escuela: @Model.UniqueId</h1>
 <h2>Nombre: @Model.Nombre</h2>
+<h3>Tipo de Escuela: @Model.TipoEscuela</h3>
+<address>
+    <p>Dirección: @Model.Dirección</p>
+    <p>País: @Model.Pais</p>
+    <p>Ciudad: @Model.Ciudad</p>
+</address>
 <p><strong>Año de fundación: @Model.AñoDeCreación</strong></p>
 
 <p><strong>View Bag</strong></p>
