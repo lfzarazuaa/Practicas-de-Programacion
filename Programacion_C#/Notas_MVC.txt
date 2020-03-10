@@ -1,0 +1,28 @@
+Frontend, Backend y modelo de datos.
+El controlador se dedica a orquestar pero nunca pasa directo de la vista al modelo.
+El controlador responde a los request de la página http.
+El controlador reponde con get put post.
+ASP NET de tipo page para páginas de una sola página.
+Cada modelo se comunica solo con el que puede comunicarse.
+POCO Plain Old CLR Object (Common Language Runtime).
+C# tiene distintas convenciones en MVC.
+C# es un framework que funciona por convención en vez de configuración.
+Los controladores siempre terminar llamándose controller (HomeController.cs)
+En las vistas se ponen las carpetas en como se quieren separar las vistas.
+Para manejar mvc en la clase del controlador se debe extender a la clase Controller.
+Método para generar una vista desde el controlador. public IActionResult Index(){return View();}
+El método se debe llamar igual que la vista que se quiere mostrar.
+_ViewImports dice que espacios de nombres va a usar por defecto en todas las vistas.
+En el _ViewStart se dice que Layout por defecto se va a usar.
+Cada vez que se ejecuta una vista esta se ejecuta en donde está la etiqueta @RenderBody() en el Layout.
+MVC renderiza código en una página dinámica.
+Sintaxis Razor creada para poner código de c# en html y asi evitar numerosos llamados de función.
+Con Razor se pueden crear segmentos de html con base en la información que se tiene.
+Razor se usa en la vista, para tener una sentencia mas limpia.
+La sintaxis para usar Razor es @{} o @Variable.
+Con @model TipoClase se hace fuertemente tipada la vista.
+En Startup.cs se cambia el origen de la página web patern: "{controller=Escuela}/{action=Index}/{id?}");
+En View Bag se pueden almacenar nuevos campos dinámicos desde el controlador para ser leídos en la vista.
+En View Data se pueden leer los datos guardados en View Bag usando el diccionario @ViewData["CosaDinámica"].
+Para asignar una plantilla se usa en razor Layout = "_LayoutSimple";
+Para cambiar la plantilla por defecto se modifica el archivo _ViewStart.csthtml
