@@ -50,7 +50,7 @@ namespace ProyectoMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Escuela}/{action=Index}/{id?}");
+                    pattern: "{controller=Asignatura}/{action=MultiAsignatura}/{id?}");
             });
         }
     }

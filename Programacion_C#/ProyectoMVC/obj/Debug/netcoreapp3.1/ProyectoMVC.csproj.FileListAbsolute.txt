@@ -35,3 +35,8 @@ c:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programa
 C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\ProyectoMVC.csproj.CopyComplete
 c:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Escuela\Index.cshtml.g.cs
 c:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutSimple.cshtml.g.cs
+C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Asignatura\Index.cshtml.g.cs
+C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Asignatura\MultiAsignatura.cshtml.g.cs
+C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ObjetoEscuelaSimple.cshtml.g.cs
+C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Alumno\Index.cshtml.g.cs
+C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Alumno\MultiAlumno.cshtml.g.cs

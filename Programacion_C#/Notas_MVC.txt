@@ -26,3 +26,5 @@ En View Bag se pueden almacenar nuevos campos dinámicos desde el controlador par
 En View Data se pueden leer los datos guardados en View Bag usando el diccionario @ViewData["CosaDinámica"].
 Para asignar una plantilla se usa en razor Layout = "_LayoutSimple";
 Para cambiar la plantilla por defecto se modifica el archivo _ViewStart.csthtml
+Para incluir una vista parcial se usa <partial name="AsignaturaSimple" />
+Si a una vista parcial no se le especifica el modelo recibe por defecto el modelo que se paso desde el controlador.
