@@ -84,7 +84,7 @@ objetohijo= (tipoHijo) objetopadreh;%%objetopadreh es tipoHijo guardado en un ob
 El poliformismo puede presentar problemas si no se sabe bien que tipo de dato es.
 objeto is tipo%%Is-Manda un true si es de ese tipo de dato.
 tipo variable=objeto as tipo%%As-Si es del tipo lo asigna completo sino retorna null.
-override string ToString()%%Modificar método ToString() del objeto para mostrarlo en consolo y en el debug.
+override string ToString()%%Modificar método ToString() del objeto para mostrarlo en consola y en el debug.
 interface%%Para Interfaces usar I antes del nombre como identificador sugerido.
 Todos los atributos de una interfaz deben ser públicos.
 Interfaz es un medio común para que los objetos no relacionados se comuniquen entre sí. 
