@@ -40,3 +40,4 @@ C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programa
 C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ObjetoEscuelaSimple.cshtml.g.cs
 C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Alumno\Index.cshtml.g.cs
 C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Alumno\MultiAlumno.cshtml.g.cs
+C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ListaObjetoEscuela.cshtml.g.cs

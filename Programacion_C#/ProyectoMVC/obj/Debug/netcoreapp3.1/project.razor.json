@@ -20536,6 +20536,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Shared\\ListaObjetoEscuela.cshtml",
+      "TargetPath": "Views\\Shared\\ListaObjetoEscuela.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Asignatura\\MultiAsignatura.cshtml",
       "TargetPath": "Views\\Asignatura\\MultiAsignatura.cshtml",
       "FileKind": "mvc"

@@ -2,7 +2,7 @@ using System;
 
 namespace ProyectoMVC.Models
 {
-    public class Asignatura:ObjetoEscuelaBase
+    public class Asignatura : ObjetoEscuelaBase
     {
 
     }

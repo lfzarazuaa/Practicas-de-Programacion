@@ -5,11 +5,11 @@
 }
 
 <strong>Desde la vista parcial.</strong>
-
-@foreach (var asignatura in Model)
+<partial name="ListaObjetoEscuela" model="@Model"/>
+@* @foreach (var asignatura in Model)
 {
     <partial name="ObjetoEscuelaSimple" model="asignatura"/>
-}
+} *@
 
 <p><i>@ViewData["Fecha"]</i></p>
 
