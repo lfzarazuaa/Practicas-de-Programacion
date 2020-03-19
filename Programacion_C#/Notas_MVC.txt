@@ -28,3 +28,7 @@ Para asignar una plantilla se usa en razor Layout = "_LayoutSimple";
 Para cambiar la plantilla por defecto se modifica el archivo _ViewStart.csthtml
 Para incluir una vista parcial se usa <partial name="AsignaturaSimple" />
 Si a una vista parcial no se le especifica el modelo recibe por defecto el modelo que se paso desde el controlador.
+Entity Framework Core ORM (Object Relational Model) Sirve de medio entre la base de datos y las entidades POCO.
+Un ORM evita la inyección de datos sql y no le importa si es sql server o mysql (lo generaliza).
+InMemory se usa para la parte del diseño en bases de datos, evita acciones complejas para cambiar la estructura de la base de datos.
+
