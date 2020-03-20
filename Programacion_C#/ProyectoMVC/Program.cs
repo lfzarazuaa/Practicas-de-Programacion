@@ -17,7 +17,7 @@ namespace ProyectoMVC
         {
             //CreateHostBuilder(args).Build().Run();//Crea el webservice.
             var host = CreateHostBuilder(args).Build();//Se construye el objeto para luego ejecutarlo.
-
+            //Garantizar que los datos ya hayan sido creados.
             using (var scope = host.Services.CreateScope())//Una vez creado el servicio finaliza el looger.
             {
                 //Lee las lista de servicios.

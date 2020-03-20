@@ -8,6 +8,12 @@ namespace ProyectoMVC.Controllers
     public class EscuelaController : Controller
     {
         private EscuelaContext _context { get; set; }
+        
+        public EscuelaController(EscuelaContext context)
+        {
+            _context=context;
+        }
+
         public IActionResult Index()
         {
             // var escuela = new Escuela(){
@@ -23,9 +29,5 @@ namespace ProyectoMVC.Controllers
             return View(escuela);
         }
 
-        public EscuelaController(EscuelaContext context)
-        {
-            _context=context;
-        }
     }
 }
