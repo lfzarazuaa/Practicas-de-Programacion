@@ -31,4 +31,9 @@ Si a una vista parcial no se le especifica el modelo recibe por defecto el model
 Entity Framework Core ORM (Object Relational Model) Sirve de medio entre la base de datos y las entidades POCO.
 Un ORM evita la inyección de datos sql y no le importa si es sql server o mysql (lo generaliza).
 InMemory se usa para la parte del diseño en bases de datos, evita acciones complejas para cambiar la estructura de la base de datos.
-
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+Contexto Inyectado para leer la base de datos.
+Constructor por defecto public NombreClase(){}.
+La instrucción "base" sirve para llamar al constructor de la clase heredada.
+public EscuelaContext(DbContextOptions<EscuelaContext> options): base(options){}

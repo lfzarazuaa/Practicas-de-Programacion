@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProyectoMVC.Models;
 
 namespace ProyectoMVC
 {
@@ -24,6 +26,15 @@ namespace ProyectoMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<EscuelaContext>(
+               options => options.UseInMemoryDatabase(databaseName: "testDB") //Específica el nombre de la base de datos
+            );
+            //services.AddDbContext<EscuelaContext>(Delgado);
+        }
+
+        private void Delgado(DbContextOptionsBuilder opciones)
+        {
+            opciones.UseInMemoryDatabase("testDB");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
