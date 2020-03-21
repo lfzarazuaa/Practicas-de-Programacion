@@ -13,10 +13,22 @@ namespace ProyectoMVC.Controllers
         {
             _context=context;
         }
-        public IActionResult Index()
+        [Route("Asignatura/Index")]
+        [Route("Asignatura/Index/{asignaturaId}")]
+        public IActionResult Index(string asignaturaId)
         {
-            var asignatura = _context.Asignaturas.FirstOrDefault();
-            return View(asignatura);
+            if (!string.IsNullOrWhiteSpace(asignaturaId))
+            {
+                var asignatura = from asig in _context.Asignaturas
+                                 where asig.Id == asignaturaId
+                                 select asig;
+                var Asignatura= asignatura.SingleOrDefault();
+                if (Asignatura!=null)
+                {   
+                    return View(Asignatura);
+                }
+            }
+            return View("MultiAsignatura",_context.Asignaturas);
         }
 
         public IActionResult MultiAsignatura()

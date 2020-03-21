@@ -20541,6 +20541,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Curso\\Index.cshtml",
+      "TargetPath": "Views\\Curso\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Asignatura\\MultiAsignatura.cshtml",
       "TargetPath": "Views\\Asignatura\\MultiAsignatura.cshtml",
       "FileKind": "mvc"
@@ -20551,6 +20556,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Curso\\MultiCurso.cshtml",
+      "TargetPath": "Views\\Curso\\MultiCurso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Escuela\\Index.cshtml",
       "TargetPath": "Views\\Escuela\\Index.cshtml",
       "FileKind": "mvc"
@@ -20558,6 +20568,11 @@
     {
       "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lfzar\\Documents\\Luis Fernando Zarazua Aguilar\\git\\Practicas-de-Programacion\\Programacion_C#\\ProyectoMVC\\Views\\Curso\\Create.cshtml",
+      "TargetPath": "Views\\Curso\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

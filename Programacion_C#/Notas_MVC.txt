@@ -42,3 +42,5 @@ Orientado a inyección de servicios.
 Covención de nombre Id o ClaseId como llave primaria.
 ASP verifica que cada controlador tenga un coonstructor que reciba un contexto.
 Llave primaria (Identificador de la tabla) y llave foránea (Apunta a otra tabla).
+Enrutamiento por atributos.
+[Route("Asignatura/Index/{asignaturaId}")] para especificar un parametro de entrada por medio de la ruta.

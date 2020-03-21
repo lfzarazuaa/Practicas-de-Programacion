@@ -14,11 +14,20 @@ namespace ProyectoMVC.Controllers
             _context=context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string Id)
         {
-            var alumno = _context.Alumnos.FirstOrDefault();
-            ViewBag.Fecha=DateTime.Now;
-            return View(alumno);
+            if (!string.IsNullOrWhiteSpace(Id))
+            {
+                var alumno = from alumnos in _context.Alumnos
+                                 where alumnos.Id == Id
+                                 select alumnos;
+                var Alumno= alumno.SingleOrDefault();
+                if (Alumno!=null)
+                {   
+                    return View(Alumno);
+                }
+            }
+            return View("MultiAlumno",_context.Alumnos);
         }
 
         public IActionResult MultiAlumno()
