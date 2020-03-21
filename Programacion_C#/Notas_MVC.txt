@@ -41,3 +41,4 @@ Sembrar datos es insertar datos por primera vez a la base de datos.
 Orientado a inyección de servicios.
 Covención de nombre Id o ClaseId como llave primaria.
 ASP verifica que cada controlador tenga un coonstructor que reciba un contexto.
+Llave primaria (Identificador de la tabla) y llave foránea (Apunta a otra tabla).
