@@ -1,0 +1,8 @@
+Señal del teclado->Motherboard->CPU>O.S. Windows()->
+Google Chrome->Evento->Javascript->AJAX->JSON->REST->HTTP->
+https://google.com/enviarMail (protocolo, dominio(dns), instrucción)->
+dns->servidor->linux->ethernet->tcp/ip->http->apache->java o php->base de datos->
+stmp/pop->dns/ip->email->server (postfix)->bandeja->notificación de email.
+servidor de email->
+
+ 
