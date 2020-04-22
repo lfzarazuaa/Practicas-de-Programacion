@@ -1,0 +1,10 @@
+{
+    "require": {
+        "zendframework/zend-diactoros": "^1.8",
+        "relay/relay": "2.x@dev",
+        "middlewares/aura-router": "^1.1",
+        "middlewares/request-handler": "^1.2",
+        "twig/twig": "^2.12",
+        "illuminate/database": "^7.4"
+    }
+}

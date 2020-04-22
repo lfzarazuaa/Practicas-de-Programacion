@@ -1,3 +1,7 @@
+Dev Ops Developer operation y servidores.
+html Hypertex Markup Language Lenguaje de marcado para hacer websites.
+CSS Cascade Sytle Sheet (Diseño hecho código).
+JavaScript Lenguaje de programación de programación.
 alt+shift+LineaAbajo%%Duplicar linea en visual studio code.
 Se tienen que dividir las secciones que tiene el website para codificarlas parte por parte.
 Document Object Mode(DOM)-Modelo de documento que se carga en el navegador web y que representa el documento como un árbol de nodos.

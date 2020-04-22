@@ -1,0 +1,27 @@
+{% extends "layout.twig" %}
+{% block pageTitle %}
+  Menú de opciones
+{% endblock %}
+{% block content %}
+    <h1>
+        Dashboard
+    </h1>
+
+    <ul>
+        <li>
+            <a href="/cursophp/">Visualizar Curriculum</a>
+        </li>
+        <li>
+            <a href="/cursophp/users/Add">Agregar usuario</a>
+        </li>
+        <li>
+            <a href="/cursophp/projects/Add">Agregar proyecto</a>
+        </li>
+        <li>
+            <a href="/cursophp/jobs/Add">Agregar trabajo</a>
+        </li>
+    </ul>
+    <br><br>
+    <a href="/cursophp/logout">Logout</a>
+    
+{% endblock %}

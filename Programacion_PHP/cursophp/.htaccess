@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /cursophp/public/([^\s?]*) [NC] //Si se está dentro de la carpeta public ya no se hará otro redireccionamiento.
+RewriteRule ^ %1 [L,NE,R=302] //Cuando encuentre el request se envie como un redireccionamiento al puerto 302 hacia public.
+RewriteRule ^((?!cursophp/public/).*)$ /cursophp/public/$1 [L,NC]

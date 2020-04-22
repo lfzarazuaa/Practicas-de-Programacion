@@ -1,0 +1,20 @@
+{% extends "layout.twig" %}
+{% block pageTitle %}
+  Agregar Trabajo
+{% endblock %}
+{% block content %}
+    <h1>Agregar Trabajo.</h1>
+    <div class="alert alert-primary" role="alert">
+        {{responseMessage}}
+    </div>
+    <form action="Add" method="post" enctype="multipart/form-data">
+        <label for="">Titulo:</label>
+        <input type="text" name='title'><br>
+        <label for="">Descripción:</label>
+        <input type="text" name='description'><br>
+        <label for="">Meses:</label>
+        <input type="text" name='months'><br>
+        <input type="file" name='logo'><br>
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}

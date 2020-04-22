@@ -1,0 +1,151 @@
+//API Rest para conectar las aplicaciones propias con las de terceros.
+Aplication Programing Interface
+En POO una API es el concepto de todos los miembros publicos de una clase (Propiedades y funciones).
+CURL para realizar pedidos http.
+HTTP - Hyper-ter-transfer-Protocol o Protocolo de transferencia de hypertextos.
+Protocolo- Conjunto de reglas que definen la comunicación entre dispositivos.
+Hypertexto- Texto con enlace a otros lugares.
+En analogia http es el español y la información o lo que se quiere decir en concreto (sin importar el idioma) es tcp-ip.
+En inspeccionar en network para ver la peticiones http realizadas en el navegador.
+Al inspeccionar cada elemento en headers se puede ver cada elemento con su método invocado, su url request, su status, su direccion remota, los datos contenidos al momento de realizar la petición (formulario).
+Con curl nos regresa el html de la vista o pagina en cuestión, el navegador hace lo mismo pero además interpreta y dibuja el html.
+Con los encabezados se envian los datos al navegador de a donde ir y que hacer.
+REST- Represententional State Transfer o Transferencia de estados representacional, es una pequeña capa agregada al protocolo http.
+Rest es un protocolo basado en el intercambio de recursos.
+HTTP se basa generalmente en el intercambio de archivos.
+API Restful, API diseñada alrededor de los conceptos de REST.
+Conceptos REST (Recurso, URI(Universal Resource Identifier), Accion).
+El recurso es lo que se utilizará, la acción lo que se hará y el URI es su identificador.Una petición REST se basa en una URL (incluye mas cosas que URI), y un verbo http (Obtener un recurso, crear un recurso, eliminar un recurso).
+El recurso puede ser cualquier cosa que en realidad depende de la logica de la aplicación.
+Un ejemplo de recurso puede ser un autor, un libro o un genero del libro.
+GET /books/1 Obtener los datos del libro con id 1.
+DELETE /books/50 Borrar el libro con id 50.
+Con REST en vez de solo pedir al servidor y que este servidor responda el servidor pide a un nuevo servidor para obtener la información y cuando este se la regrese darsela de regreso al cliente original.
+La acción de pedir al nuevo sevidor y recibir es la parte de REST.
+Como utilizar servicios Restful de terceros (realizar peticiones http e interpretar las respuestas http), no necesariamente disparada por un humano sino por el mismo sistema.
+Una URL se divide en protocolo, dominio y la url final.
+curl https://xkcd.com/info.0.json
+curl https://xkcd.com/730/info.0.json | jq Ver la información de la pagina formateada en json.
+Con php archivo.php se puede ejecutar el código php (solo nos mostrará texto).
+El consumo de webservices via REST se basan en el los verbos HTTP (GET, POST, PUT, DELETE).
+Cuando se usa get toda la información solicitada al servidor viaja atraves de la url.
+Al crear aplicaciones con REST se realizará un servidor que reciba peticiones http y envie respuestas http.
+http puede usarse con xml o json entre otros.
+Con la superglobal $_SERVER['REQUEST_METHOD'] se obtiene el verbo HTTP usado.
+php -S localhost:8002 servidor.php //Hace que el servidor se ejecute.
+curl -X 'POST' http://localhost:8002/books -d '{"titulo":"Nuevo Libro","id_autor":2,"id_genero":2}' 
+Hacer una petición con el verbo POST.
+curl -X 'POST' http://localhost:8002/books -d '{"titulo":"Nuevo Libro","id_autor":2,"id_genero":2}'
+Para el caso de POST, debemos validar dentro de la sentencia switch en el caso de que el verbo en la petición sea POST. Debemos asumir que los datos enviados, vengan en formato JSON, tipo de datos que definiríamos en primera instancia al crear nuestro web service.
+Al momento de hacer la consulta mediante CURL, usamos a diferencia de GET, el modificador X luego del curl,
+seguido de esto, especificamos con ‘POST’, seguido escribimos la URL, el puerto y el identificador al que queremos agregar el elemento (en este caso books).
+Finalmente escribimos el modificador -d y escribimos la cadena JSON con los datos que vamos a almacenar.
+curl -X 'PUT' http://localhost:8002/books -d '{"titulo":"Libro Remplazado","id_autor":3,"id_genero":1}'
+El método PUT no permite realizar modificaciones puntuales.
+curl -X 'DELETE' http://localhost:8002/books/1
+Con el método DELETE como su nombre lo indica borra el registro pedido.
+Metodos de autenticación http.
+Para autenficiar con usuario y contraseña se usa curl http://mauro:1234@localhost:8002/books
+En la autenticación de parte del servidor.
+$user = array_key_exists('PHP_AUTH_USER', $_SERVER)?$_SERVER['PHP_AUTH_USER']:'';
+$pwd = array_key_exists('PHP_AUTH_PW', $_SERVER)?$_SERVER['PHP_AUTH_PW']:'';
+user:password@url.
+La autenticación es poco segura e ineficiente.
+Autenticación vía HMAC hash message authentication code.
+3 conceptos en HMAC un hash una palabra secreta y la información pública.
+curl http://localhost:8002/books -H 'X-HASH:$bb953b7673c9b03a9e082a15cb73fb72b810f50c' -H 'X-UID: 1' -H 'X-TIMESTAMP: 1586908260'
+Con Access Tokens existen 2 servidores uno encargado de la autenticación y otro del la gestion de recursos.
+Primero el cliente está previamente registrado en el servidor de la aplicacion con una id y su clave secreta.
+a)El cliente solicita el acceso (con sus credenciales) al servidor de autenticación.
+b)El servidor de autenticación responde con un token(acceso).
+c)El cliente realiza su pedido al servidor de recursos con su token y su petición.
+d)El servidor de recursos realiza una petición al servidor de autenticación para validar el token, si es valido le regresa que si es valido al servidor de recursos.
+e)El servidor de recursos emite una respuesta al cliente.
+Para este tipo de acceso se acostumbra la conexión de cliente servidor con POST y la de servidor de recursos con servidor de autenticación en GET.
+Con http_response_code() Funcion para devolver el codigo de error.
+curl_init($url)Inicia el objeto de comunicación.
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);Se le informan de los parametros a ejecutar.
+curl_exec($ch) Ejecuta la acción.
+Para aplicaciones de una sola página el cliente se conecta con el servidor para obtener mas datos o realizar cambios.
+Cuando se quiere hacer uso de la comunicación cliente servidor se usa una tecnologia llamada AJAX (Asynchronous JavaScript XML).
+En AJAX el cliente no espera a que el servidor le responda sino que este sigue trabajando.
+El cliente realiza una petición http get y el servidor le manda html + js, luego se da un nuevo pedido al servidor (via AJAX) y el servidor responde con json.
+Con JQuery y la instrucción $("loadBooks") se puede buscar el elemento en el DOM haciendo referencia asi a nuestro objeto declarado en el html.
+Con $('#bookTitle').val() se puede asignar el valor de un elemento deseado.
+Ejemplo de Ajax con Post.
+$.ajax(//Ejecuta la llamada al servidor mediante el método ajax.
+	{//Objeto JSON
+		'url' : 'http://localhost:8002/books',
+        'method': 'POST',
+        'data' : JSON.stringify( newBook ),//Dato que se va a mandar al servidor.
+        'headers' : {"Content-Type" : "application/json"},
+        'success': function (data) {
+        $('#messages').hide();//Oculta el mensaje de cargando libros.
+        $('#booksTable > tbody').empty();//Se obtiene el cuerpo de la tabla y la vacia.
+        for (const b in data) {
+            addBookToTable(data[b]);
+        }
+        $('#bookForm').show();
+        }//Función cuando la llamada al servidor sea exitosa.
+	});
+Buenas prácticas para las api.
+Siempre utilizar sustantivos para los recursos no verbos.
+En las url siempre usar los nombres en plural ejemplo (.../books).
+En las modicaciones usar los verbos que corresponden POST, PUT o DELETE a su acción.
+Una petición tipo get siempre debe devolver lo mismo.
+Usar relaciones con / en subrecursos books/1/pages obtener las paginas del libro 1.
+Los registros deben ser filtrables(where), ordenables(order by) y paginables (top 10).
+Versionar la API.
+
+Api Rest
+¿Qué es un API y para que sirve?
+API: Application Programming Interface, conjunto de reglas que definen como se van a comunicar dos aplicaciones, por ejemplo qué tipos de request y response se van a utilizar.
+En POO una API son todos los elemento públicos que están disponibles.
+Conocer conceptos principales de Rest
+¿Qué es y cómo funciona el protocolo HTTP?
+HTTP: Hytpertext Transfer Protocol, conjunto de reglas en las que se van a comunicar dos entidades.
+Protocolo: conjunto de reglas.
+¿Qué significa Rest?
+REST: Representational State Transfer o bien transferencia de estado representacional.
+API RESTful es una API diseñada con los conceptos de REST.
+Recurso: todo dentro de una Api RESTFul debe ser un recurso.
+URI: Todos los recursos se manipulan a partir de una URL (Identificadores Universales de Recursos).
+Acction: todas las peticiones de un Api Rest debe de estar asociado con un verbo HTTP: 
+Get: para obtener recursos.
+Post: para escribir un recurso.
+Put: Para editar un recurso.
+Delete: para eliminar un recurso.
+Métodos de autenticación
+HTTP
+Mediante HTTP auth user, debe de ir en el encabezado authorization.
+HMAC
+HMAC: (Hash Message Authorizarion Code) para lo cual se necesita 3 elementos, Basado en Hash de Mensajes: 
+Función hash: Difícil de romper y que sea conocida por el cliente y el servidor.
+Clave Secreta: para corroborar el HASH.
+UID: Id de usuario será utilizado dentro del HASH junto con la clave secreta y el timestamp
+Es mucho más seguro que la autenticación vía HTTP.
+Acceso mediante Tokens
+Roles del servidores:
+Uno se encarga de la autenticación.
+Otro se encarga de desplegar los recursos del API.
+Flujo.
+Petición para la solicitud de Token
+El servidor devuelve token
+El usuario hace una petición para pedir recurso.
+El servidor con los recursos hace una petición al servidor de autenticación para verificar token sea valido.
+Una vez verificado el token, el servidor devuelve los recursos al cliente.
+Manejo de Errores en servicio REST
+Para las respuestas con error se utilizaran los siguientes códigos: en los encabezados HTTP.
+400: Bad Request, que el servidor no puede procesar la petición.
+404: Not Found, el servidor no encuentra el recurso buscado.
+500 Invernal Error Server, la petición no se pudo procesar por un error en el servidor.
+Buenas prácticas
+Utilizar sustantivos para nombrar los recursos.
+Añadir los nombres en plural para las URLs
+Las modificaciones se deben de hacer con su verbo HTTP correspondiente.
+Para devolver recursos asociados se debe incorporar sub-recursos
+autos/1/choferes
+Navegabilida vía vínculos
+Cuando devuelva colecciones deben de ser filtrables, ordenables y paginables.
+Versionar las api
+v1/autos/1/choferes

@@ -1,0 +1,14 @@
+En c los valores 0 son falso y todo lo distinto a 0 es verdadero.
+Estructuras repetitivas 0-x (Primero se verifica la condición) 1-x (Primero se ejecuta luego se verifica).
+Directivas de pre-procesador o precompilador. Instrucciones de como interpretar la información para el compilador.
+Cada lenguaje define un conjunto de tipos y operaciones permitidas sobre ellos. A estos tipos se los conoce como primitivos.
+Un puntero es una variable la cual contiene direcciones de memoria.
+Teniendo una función con punteros se puede pasar por referencia y afectar a la variable desde afuera de la función.
+Todo arreglo es un puntero, pero no todo puntero es un arreglo a[5]=*(a+5).
+C no hace tantas validaciones como otros programas (revisar direcciones fuera de memoria).
+Argc = Cantidad de argumentos.
+Argv = Valores.
+con (*variablepuntero).propiedad se accede a la dirección apuntada la cual se puede sustituir por variablepuntero.propiedad.
+Con typedef se especifica un nuevo tipo de dato (alias) que sirve para dar sentido a la variable de la aplicación y redefinirla facilmente si es necesario.
+Memory Leak o Goteo de memoria.
+Listas enlazadas son punteros para posiciones no contiguas de memoria en la cual se indica ademas del valor cual es la dirección del siguiente elemento.

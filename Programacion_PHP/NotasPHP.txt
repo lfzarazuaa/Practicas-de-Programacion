@@ -1,0 +1,173 @@
+Para ejecutar PHP se puede instalar XAMPP
+Para ejecutar xampp correctamente se debe escoger un puerto libre y cambiar la ip en el archivo config.inc.php
+$cfg['Servers'][$i]['host'] = 'localhost:3307';//'127.0.0.1';
+Para Ejecutar el proyecto se debe crear una carpeta (cursophp) en la ruta C:\xampp\htdocs de preferencia en una nueva carpeta para ejecutar el código en http://localhost/cursophp/.
+Para usar php siempre se deben de abrir y cerrar los tags de php.
+<?php ?> Todo se debe poner entre los tags para que lo interprete, lo de afuera lo ignora.
+El codigo fuente de php no se va a ver solo se visualizará la salida.
+<h1><?php echo 'Luis Fenrnado Zarazua Aguilar';?></h1>
+El servidor está configurado para leer php si el archivo termina en .php.
+En php las variables son dinámicas y debilmente tipadas.
+Variable en php $var1 = 1;
+Con var_dump($name) se puede imprimir el valor y tipo de dato de la variable.
+$name = 'Hector ' . $lastName;//Concatena las variables.
+$name = "Hector $lastName";//Acepta variables dentro de la cadena de texto.
+Algunos tipos de datos en php: boolean, Integer, float, double, string, array, object, callable, iterable, resource, NULL.
+callable- Representa algo que puede ser llamado. $firstOfArray = function(array $array).
+iterable- Pseudo tipo de datos que puede ser recorrido.
+function foo(iterable $iterable) { foreach ($iterable as $valor) {// ...} }
+resource- Es un tipo de dato especial que representa un recurso externo. $res = fopen("c:\\dir\\file.txt", "r");
+NULL- Tipo de dato sin valor.
+En php los arreglos son mapeados con una llave.
+$arreglo = [0 => 'PHP Dev'];
+PHP puede almacenar diferentes tipos de datos en un mismo arreglo.
+foreach ($array as $valor) {sentencias que pueden usar $valor}//$array variable a iterar, $valor segun la iteración.
+Operadores en PHP (Aritméticos, Asignación, Condicionales, Incremento).
+continue: regresa al inicio del código del for cambiando su valor (similar a break pero continua con el conteo).
+i++ Operador de postincremento.
+i-- Operador de preincremento.
+$a**$b Eleva a la potencia b.
+$a /= $b $a = $a / $b Divide a entre.
+$a .= $b $a = $a . $b Concatena a y b.
+//Operador de comparación.
+$a==$b True si $a es igual a $b.
+$a===$b True si $a es igual a $b y del mismo tipo.
+$a!=$b True si $a es distinto a $b.
+$a<>$b TRUE si $a no es igual a $b después de la manipulación de tipos.
+$a!=$b True si $a es distinto a $b o si no son del mismo tipo.
+$a and $b
+$a or $b
+$a xor $b
+$a && $b
+$a || $b
+"||" tiene una precedencia mayor que "or"
+El scope o el alcance de una función es que variables puede modificar.
+Las funciones en php pueden no tener return en ese caso regresa NULL.
+include: sirve para incluir un archivo externo, si no lo encuentra manda un warning
+include_once: sirve para incluir un archivo externo una única vez. Es el más recomendado para usar.
+require: sirve para incluir un archivo externo, si no lo encuentra manda un fatal error y detiene el compilado
+require_once: sirve para incluir un archivo externo una única vez. Es el más recomendado para usar.
+Instancia: Representación concreta de una clase.
+$objeto->propiedad.
+__construct constructor de un objeto.
+__ Métodos mágicos.
+Uso de __construct():
+__construct se utiliza para la inserción de parametros y dependencias para construir el objeto. No necesita ser llamado ya que lo hace automaticamente cuando se crea un objeto.
+Uso de __destruct():
+Al igual que __construct, __destruct se llama automaticamente al finalizar los procesos del objeto creado. se utiliza para eliminar referencia del objeto creado, el cual liberará la memoria utilizada al crear ese objeto. casi no se utiliza en programas pequeños. pero puede servir como por ejemplo cerrar la conexion a una base de datos al terminar de hacer un consulta. __destruct nunca se le debe pasar variables como parametros.
+Uso de __get():
+__get() sirve para poder acceder a una variable, que no pueda ser accedida afuera de la clase(ya sea private o protected). para esto se tiene que pasar el nombre de la variable que se quiere acceder como argumento del metodo. Al igual que construct y destruct, no necesita ser llamada ya que lo hace automaticamente. Si intentamos acceder a la variable sin el uso del metodo magico __get, lanzará una excepción.
+Uso de __set():
+__set que sirve ya sea para cambiar el valor de una propiedad que no es accesible afuera de la clase se tiene que pasar por medio del argumento del metodo la propiedad a acceder y el valor nuevo que desea cambiar. Igual sirve para crear nuevas propiedades de la clase
+NOTA: El uso de estos __get() y __set() por ser lentos lentos, no facilitan el autocompletado de código en los IDE, hacen que el mantenimiento y refactorizar sea más largo y complicado. En su lugar se pueden emplear getters y setters.
+Uso de __isset():
+Con __isset() se verifica la existencia de una propiedad o array. se lanza al llamar a isset() o a empty() sobre propiedades inaccesibles.
+Uso de __unset():
+Con __unset() se elimina una propiedad de la clase. dicho en otras palabras, se invoca cuando se usa unset() sobre propiedades inaccesibles…
+Uso de __sleep():
+El método sleep sera invocado cuando pasemos el objeto por la función serialize, de esta forma podremos prepararlo para ser almacenado o para lo que queramos, como siempre el limite es la imaginación de cada cual y los posibles usos que se le pueden dar a esto son muchísimos. Hay que tener en cuenta que siempre ha de devolver un array, es preferible no usar sleep a hacer un return que no sea un array porque php dará un error.
+Uso de __wakeup():
+El método wakeup se encarga de realizar exactamente lo contrario que sleep, en el momento que deserializamos un objeto con unserialize se invoca a este método, para por ejemplo, restablecer la conexión con la base de datos, o alterar algún atributo.
+Uso de __call():
+Se utiliza el método mágico __call() para llamar una función que sea inaccesible afuera de la clase
+Static
+Definir propiedades o métodos estáticos nos permiten crear métodos y propiedades que son accesibles sin la necesidad de instanciar una clase. Pero recuerden que estos métodos no serán únicos para cada instancia, es decir que si ustedes de alguna forma modifican la propiedad estática, esta será cambiada para todos los objetos (global compartida entre todas las clases del mismo tipo).
+Uso de __callStatic():
+Si el método al que se quiere llamar es static se puede emplear __callStatic(). Este método funciona de la misma forma que __call() pero la sintaxis con la que llamar a los métodos será como a los métodos estáticos.
+Es recomendable tener una clase por archivo.
+Con polimorfismo podemos tener un método conforme al contexto que fue llamado.
+Con parent::__construct(...) se llama al constructor de la clase padre a ejecutarse.
+
+protected Nivel de acceso solo para las clases Hijas( que heredan de la clase padre).
+Polimorfismo de Sobrescritura para redefinir métodos.
+Interfaces Especie de contrato o acuerdo para estandarizar algunos elementos.
+TypeHinting permite validar a la función que tipo de objeto puede recibir.
+En PHP no existe Herencia Multiple, pero se posee implementación multiple de interfaces.
+Los NameSpaces vienen a dar un contexto distinto para clases con el mismo nombre.
+En php se usan namespaces para no tener colisiones de nombres con otras librerías.
+Phpfig creo una estandarización para php.
+Composer puede traer librerías de terceros a nuestro proyecto.
+Composer implementa el estandar PSR4.
+"psr-4": {
+            "App\\":"app/"//Cuando encuentre algo con App\\ hara referencia a app/.
+        }
+Para implementar el composer se necesita llamar un json con las carpetas incluir.
+copiar composer.phar al proyecto.
+php composer.phar install
+php composer.phar requiere nombrePaquete
+Composer crea una nueva carpeta llamada vendor con archivo autoload.php
+Un ORM, que significa Object Relational Mapping.
+PDO Php Data Object. Capa de datos que permite estandarizar como trabajar con una base de datos (mysql, postgresql).
+Con ORM se crean objetos con base en las capas que se tienen.
+Con el atributo name se le da nombre al atributo recibido por el formulario.
+?title=efef&description=224
+El método action vacio envia los datos hacia la misma página.
+Variables superglobales.
+Para guardar datos de paginación es recomendable que la información se vea en la url.
+Para guardar datos lo mas recomendable es que el usuario no vea los datos en la url.
+Cuando se envia información atraves de un formulario y la url de la página se usa el método get.
+Cuando se usa post los datos no se muestran en la url.
+packagist Página web con paquetes de php https://packagist.org/packages/illuminate/database.
+Indica las versiones aceptadas de "illuminate/database": "^7.4", dado que pueden haber nuevas versiones con las cuales trabaje.
+Composer.lock hace que sea específica la versión aceptada.
+La carpeta vendor debe ser ignorada en github, sino incluir las instrucciones del composer install y paquetes usados.
+Comando para incluir los archivos automaticamente require_once 'vendor/autoload.php'.
+use Illuminate\Database\Eloquent\Model y extends:Model para poder seguir definiendo un espacio de trabajo como namespace App\Models;
+$jobs= Job::all();//Para guardar en un arreglo toda la tabla.
+Patrón de diseño:Soluciones estudiadas para problemas comunes.
+Front Controller: Patrón de diseño para incluir funciones que van a ser usadas en distintos archivos a modo de despachador.
+Se genera una entrada principal que suministra a las demas (levanta la v¿base de datos, el logger y todo lo demás).
+La carpeta public es la carpeta que realmente se va a exponer hacia los usuarios para evitar que vean información de más.
+Para hacer peticiones de otra página web redirecciona a la otra pagina con la entrada y despues se redericciona a la pagina que lo mando a llamar.
+Post es cuando enviamos datos de formulario y get cuando se envian a una url.
+../ Ruta para acceder desde la raiz del proyecto.
+PSR-7 Se usa como estandar para normalizar como funciona un request y una respuesta.
+php composer.phar require laminas/laminas-diactoros como substituto de zend\diactoros(respuestas http).
+Siempre que llegue una petición a la aplicación se va a manipular con un request basado en el objeto diactoros que se crea a traves del ServerRequestFactory y este a partir de las globales.
+$request->getUri()->getPath() Obtiene la url correcta con base en su route.
+https://www.php-fig.org/psr/psr-7/  documentación de PSR7
+Expresiones regulares en php.
+RewriteCond ${THE_REQUEST} /public/([^\s?]*) [NC] Si ya se está en la carpeta ya no haga otro direccionamiento correcto.
+RewriteEngine Inicializar
+RewriteCond Condición
+RewriteRule Regla
+https://ticket.cdmon.com/es/support/solutions/articles/7000006237-información-y-usos-del-fichero-htaccess
+URL usando .htaccess http://localhost:81/cursophp/public/jobs , http://localhost:81/cursophp/public/
+RewriteRule Patron Substitución Banderas.
+Con la configuración de htaccess se logra que cuarlquier url que comience con http://localhost:81/cursophp/xxxxxxxx se rediriga a public/index (donde se cargan las variables globales) y ya de ahi se llame a la dirección donde se queria acceder.
+php composer.phar require aura/router
+Con la función $map->get('identificador', 'entrada', 'salida') se cambia el resultado de entrada por el de salida para request con get.
+Con la función $map->post('identificador', 'entrada', 'salida') se cambia el resultado de entrada por el de salida para request con post.
+Cada cosa realizada dentro de un controller se le denomina acción.
+Hacer la mayor cantidad de funciones o acciones dentro del controlador en vez de tener una que se encargue de todo.
+Con include '../views/addJob.php'; se ejecuta la vista ya que ejecuta el código.
+$request->getMethod() nos da el método de la petición.
+$request->getParsedBody(); Nos da los valores enviados ya sea ppor el metodo get o por el post.
+Template engines Son motores que sirven para renderear el código html y sustituir las partes de código con los datos que se tienen que imprimir.
+Twig ya no permite el uso de php dentro del archivo .twig pero puede ser remplazado con sus propios comandos mostrados en https://twig.symfony.com/doc/2.x/
+Con twig verifica los caracteres especiales para ponerlos en su secuencia de escape correcta en html y que los datos ingresados no sean instrucciones ejecutables.
+Extendiendo Templates se puede tener en un solo documento el header del html y partes de código repetitivas que siempre se usan.
+Para el layout (plantilla) {% block nombreBloque %}{% endblock %}, para el archivo que ocupa el layout {% extends layout.twig %}.
+new stdclass;//Declaración de clase generica para uso en pruebas de código.
+php composer.phar require respect/validation
+use Respect\Validation\Validator as v;/Uso de alias para llamar a una clase o espacio de nombres.
+Validator::attribute //Valida los miembros de un objeto.
+Validator::key//Valida los miembros de un arreglo.
+Con Validator se crea un objeto que valide los parámetros que querramos evaluar, posteriormente se ejecuta el método validate con el objeto que deseamos validar.
+Una manera de bloquear o permitir el acceso a las rutas es usando el frontcontroller con un bit de acceso y en las que se requiera se configura como true, en las que no se define como falso.
+$jobValidator = Validator::key('title', Validator::stringType()->notEmpty())
+                ->key('description', Validator::stringType()->notEmpty())
+                ->key('months', Validator::intVal()->between(0, 200)); //Condiciones para validar
+$jobValidator->assert($postData); //Validar lanzando exepcion.
+$jobValidator->validate($postData); //Validar con tru or false.
+Validaciones que puede realizar. https://respect-validation.readthedocs.io/en/1.1/list-of-rules/
+Para subir archivos se usa en el formulario enctype="multipart/form-data".
+$request contiene las superglobales entre ellas $files-
+La superglobal _SESSION puede guardar si el usuario entró con $_SESSION['userId'] = $user->id;
+Con unset($_SESSION['userId']) se elimina el registro del usuario
+Con use Laminas\Diactoros\Response\RedirectResponse se puede redireccionar a otra página a pesar de la ruta indicada por el formulario.
+Las variables de configuración no deben estar escritas en el código sino en variables de entorno.
+Paquete para variables de entorno php composer.phar require vlucas/phpdotenv.
+__DIR__ nos da la ruta del directorio actual del archivo.
+.env para configurar variables de entorno.
+heroku config:add \ HEROKU_OAUTH_ID=9574d6bc-f19a-4bbe-8d95-e5a229844d86 \ HEROKU_OAUTH_SECRET=3ee10f54-0212-47c6-b9b1-3b6e6ecdcaf4

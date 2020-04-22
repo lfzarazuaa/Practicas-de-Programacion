@@ -44,3 +44,6 @@ ASP verifica que cada controlador tenga un coonstructor que reciba un contexto.
 Llave primaria (Identificador de la tabla) y llave foránea (Apunta a otra tabla).
 Enrutamiento por atributos.
 [Route("Asignatura/Index/{asignaturaId}")] para especificar un parametro de entrada por medio de la ruta.
+Con [HttpPost] se específica que el método solo se ejecuta cuando se realice una acción post.
+html helpers para crear lista con base en enumeraciones.
+Con la sentencia [Required] se forza a necesitar un valor para la propiedad.

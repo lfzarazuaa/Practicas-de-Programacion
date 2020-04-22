@@ -77,3 +77,4 @@ C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programa
 C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Curso\Index.cshtml.g.cs
 C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Curso\MultiCurso.cshtml.g.cs
+C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\ProyectoMVC\obj\Debug\netcoreapp3.1\Razor\Views\Curso\Create.cshtml.g.cs
