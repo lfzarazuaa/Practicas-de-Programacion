@@ -1,0 +1,70 @@
+¿A quién beneficia tener código bien escrito?
+A tu persona (cuando retomes un proyecto despues de un tiempo).
+A tus compañeros (a cualquiera que deba modificar el código despues de tí).
+A tu cliente (mas facil y economico hacer el mantenimiento del código).
+A todos los involucrados en el proyecto.
+Ejes de un código bien escrito (Caracteristicas externas e internas).
+3 caracteristas internas para un código bien escrito.
+Legibilidad: Que tan fácil es interpretar lo que el código dice.
+Mantenibilidad: Adaptar el software a nuevos requerimientos (problema del año 2038).
+Testeabilidad: Cuanto esfuerzo conlleva el realizar pruebas para demostrar que el código realiza lo que debe hacer.
+Con la mentalidad código agradable para humanos para las computadoras existen las versiones compiladas.
+Usar identación para mejorar la legibilidad del código.
+No tener códigos con un estándar de codificación (usar siempre los paréntesis en if de una sola sentencia o no usarlos).
+Define un estándar: Piénsalo una vez y déjalo por escrito.
+Respétalo: Haz un esfuerzo por adherir al estándar durante tu día a día.
+Apóyate en algún linter: Esta sencilla herramienta te ayudará a incorporar buenas prácticas.
+Identificador para variables, funciones clases, modulos y complementos.
+Hay que tener buenos identificadores tanto en parametros de una función como en la acción que se va a realizar.
+Cuando se modifique una función hay que revisarla por completo para que este actualizada a lo que en verdad realiza asi como que tenga su descripción correcta.
+Ejemplo sin un identificador mnemotécnico una función se vería así:
+function f( int $b, int $a ) : float {
+        return ( $b * $a ) / 2;
+}
+Los identificadores deben ser precisos y conforme a la verdadera funcionalidad (debido a modificaciones a traves del tiempo).
+Una técnica para ver que tan efectivos son los identificadores es pedirle a un compañero que lea el código y que te lo explique.
+Mantenibilidad:
+Para lograr facilmente un código de alta mantenibilidad este debe de ser modular.
+Si no es modular el código es más grande y con mayor dificultad see pueden encontrar los bugs.
+Candidatos típicos a ser modularizados: Bloques dentro de una repetitiva, dentro de un condicional, las expresiones dentro de una condición larga, código con cálculos complejos o llamados con mucha frecuencia.
+El codigo organizado hace referencia a como está el código distribuido dentro del sistema de archivos (como está dispuesto).
+Un ejemplo de mala organización es tener una carpeta de nombre funciones con códigos que no son funciones.
+En php una organización común de las carpetas es /public, /src, /test, /vendor.
+Al tener una convención se facilita como otros programadores podrán entender tu código ademas de tenerlo organizado con una mejor visión de lo que se realiza.
+Evitar el harcoding que es poner valores en vez de identificadores, para solo cambiar el valor una vez en el código en vez de querer modicar todas las referencias.
+Otro aspecto importante por el cual se debe evitar el harcoding es porque el valor pierde el contexto por el cual fue definida como un limite de edad o algun valor obtenido fuera del código.
+Una buena práctica es no utilizar variables globales para asi evitar efectos colaterales en el código.
+SOLID Cinco principios básicos de la POO. Ayuda a crear software mantenible en el tiempo.
+(S: Single Reponsibility Principle
+O: Open/Closed Principle
+L: Liskov Substitution Principle
+I: Interface Segregation Principle
+D: Dependency Inversion Principle)
+El principio de responsabilidad única nos indica que una clase debe tener un solo objetivo conciso y acotado, sirve para saber di hibo un fallo que clase fue la culpable.
+Ejemplo de no aplicar el principio, una clase usuario con 3 métodos (Enviar la información al cliente,validar un usuario, traer un usuario de la base de datos), en este caso lo mejor es tener 3 clases distintas, una para cada tipo de operación.
+El principio de Abierto Cerrado nos propone estructurar nuestras clases para adaptarse a nuevos requerimientos sin tirar todo el código antiguo (Abierto a la extensión, cerrado a la módificación).
+Un ejemplo del principio abierto cerrado es no dejar que una clase se encarge de tener un método específico para cada tipo de objeto de entrada sino que se encarge de mandar a llamar al método en el objeto que se requiere (interfaz).
+if($doc instanceof Invoice){$doc->sendToClient();}elseif($doc instanceof Receipt){$doc->archieve();} cambia a $doc->process();
+El principio de Substitución de Liskov establece que para cualquier situación (método) de una clase padre, debe poder recibir una clase hija sin conocer los detalles de la clase hija.
+Una violación al principio es realizar una sobreescritura a algun método heredado y cambiar sus restricciones de manera que ignora por completo las de la clase padre. 
+Este método está relacionado con no sobrescribir los métodos sino en vez de eso usar una interfaz.
+El principio de segregación de interfaces nos dice como estructurar una clase implementando métodos que no necesita o no le son propios.
+Un ejemplo común es cuando una interfaz tiene varios métodos para funcionalidades distintas (calcular area y perímetro), o cuando algo se liga por herencia con un metodo de control y otro que siempre arroja una exepción (se puede sustituir por una interfaz y el método que necesite por deafult esa interfaz).
+El principio de inversión de dependencias establece como se vinculan las distintas clases que deben darle servicio a otras (clases de alto nivel las que son parte de la lógica de negocio y las de bajo nivel son las que ayudan a las de alto nivel a incorporarse).
+Para respetar este principio se debe evitar instanciar en los contructores de clases y en vez de eso requerir interfaces como tipo de dato de entrada.
+Patrón de diseño:Soluciones de arquitectura de software aplicables a diferentes problemas.
+3 tipos de patrones de diseño: Los de creación (crear nuevas instancias de los objetos), los estructurales (como estructurar nuestras clases),comportamiento (como deben comportarse los objetos).
+Los patrones no deben aplicarse a todos los problemas sino como un recurso cuando se quiera comenzar y no se tenga una muy buena idea de como lograrlo.
+Patron singleton: Solo instanciar una vez la clase en toda la aplicación.
+Patrón Factory: Clase auxiliar para crear objetos con parámetros por defecto para clases (con constructores) muy complejas.
+Para implementarla se debe crear una nueva clase por lo general estática que mande a llamar al constructor de la clase y lo regrese.
+Patrón Command: Se utiliza para una operación compleja para varios tipos de objetos, usualmente se ejecuta con una interfaz.
+Testing
+El testing si esposible es mejor cuando es automatizado pues puede comprobar más rapid y efectivamente que el testing manual.
+Test unitario: Se toma cada unidad de software por separado y se valida.
+Test integración: Para un software ya integrado, su interacción.
+Test Driven Development.
+En php para hacer los test se puede usar el paquete php unit con el cual atraves de pruebas en las cuales tenemos un resultado esperado se logran las acciones.
+Pull request es una herramienta de github, en la cual sugieres una mejor versión de un repositorio.
+Para documentar hay que pensar que es lo aconsejable que alguien debe saber para entender y continuar el código.
+Tambien se puede documentar graficamente por ejemplo con diagramas UML.
