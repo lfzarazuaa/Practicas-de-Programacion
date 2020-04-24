@@ -1,0 +1,15 @@
+Para configurar la macros se debe visualizar la cinta de opciones de programador.
+Para desplegar la cinta de opciones de da clic derecho en la cinta luego personalizar cinta de opciones y se marca la casilla de programador.
+En esa cinta se usaran principalmente el grupo código y el grupo controles.
+Una macros graba todas las acciones que realizamos para posteriormente repetirlas, por lo tanto es necesario hacerla sin equivocaciones.
+Para grabar macros se puede seleccionar desde cinta de programador, en la cinta de vista o el icono de la esquina inferior izquierda.
+Para nombrar las macros deben ser nombres descriptivos, en mayuscula cada inicial, sin espacios y no usar nombre reservados por exel o vba.
+Si se selecciona guardar la macros en un libro de marcos personal se guardara en un libro propio de excel.
+Para detener la grabación se selecciona la opción detener grabación y como sugerencia se elimina todo lo que pueda sobreescribirse.
+Para no perder la macros grabada se debe guardar el archivo y ademas al momento de guardarlo se debe guardar como libro macros.
+Para abrir el archivo de macros se debe tener cuidado pues al ser un código de prgramación puede ser malintencionado.
+Hay 3 opciones para abrir macros: Continuar sin Macros, Habilitar solo para la apertura actual, "Habilitar para siempre."
+Para habilitar por una apertura la macros se presiona en "Las macros se han deshabilitado." alli en Información, Habilitar Contenido, Opciones Avanzadas y Habilitar contenido para esta sesión.
+Cuando se habilita contenido se añade a la lista de confianza pero debe conservar la misma ruta y nombre.
+Para ignorar los documentos de confianza se va a Seguridad de Macros en Programador, Documentos de confianza y se marca la casilla Deshabilitar documentos de confianza.
+En Seguridad de Macros se puede configurar 4 opciones.
