@@ -1,8 +1,62 @@
+﻿https://platzi.com/clases/ingenieria/
 Señal del teclado->Motherboard->CPU>O.S. Windows()->
 Google Chrome->Evento->Javascript->AJAX->JSON->REST->HTTP->
 https://google.com/enviarMail (protocolo, dominio(dns), instrucción)->
 dns->servidor->linux->ethernet->tcp/ip->http->apache->java o php->base de datos->
 stmp/pop->dns/ip->email->server (postfix)->bandeja->notificación de email.
 servidor de email->
-
- 
+Bits y Bytes.
+IBM define en 1956 definió el ASCII y el Byte como estándar para los nuevos cpu.
+El estándar utf-8 puede usar desde 1 byte hasta 4 dependiendo del simbolo a representar.
+El estándar utf-16 puede usar desde 2 bytes hasta 4 dejando más espacios libres para representar hasta emojis.
+UNICODE es la empresa que define los estandares de codificación.
+Las cpu se pueden comparar mediante hz, Cores y utroas propiedades.
+Las cpu están hechas de silicio.
+La Bios es un SO de arranque detectando todo lo que está conectado y le da la señal de inicio a la cpu.
+El disco duro contiene el Sistema Operativo y se conecta al cpu cuando la BIOS lo detecta.
+Para comunicarse el disco duro con la cpu usa la RAM como bus para comunicarse.
+Un Memristor lográ guardar la onda eléctrica aun desconectada, siendo igual de veloz que la memoria RAM.
+La GPU se comunica entre la pantalla y la cpu y se especializa en hacer muchos procesos en paralelo.
+Las GPU pueden estar optimizadas para matematicas tridimensionales y algebra vectorial mas rapido, esto permite mejor velocidad en render y videojuegos.
+SoC System on a chip conjunto de varios elementos(cpu, ram, dsp, gpu) en un solo chip.
+En un sistema movil hay un controlador de bateria para saber su estado y cuando suministra energía.
+Los discos duros antiguos funcionan como los vinilos antiguos: tienen un cabezal que va leyendo los datos que pasan por debajo de ella a medida que el disco gira a una velocidad constante.
+Un disco duro es persistente, secuencial y guarda los archivos estructuradamente.
+Sistemas de archivos en linux: Ext3, ext4 Windows: FAT(File Alocation Table), NTFS (New Technology File System) Mac: HFS(Herarchical File System), APFS (Apple File System).
+En la cabecera del disco duro o indice los archivos es donde están todas las direcciones de los archivos.
+Un software de recuperación de datos inspecciona todo el disco duro buscando un patrón conocido para asi recuperar las localidades del archivo.
+La memoria cache es una memoria aun mas veloz que la RAM donde se ejecutan los procesos principales del SO.
+Una parte del sistema Operativo se guarda en cache, otra en la ram y lo demas en el disco duro.
+La CPU y la RAM tienen un indice compartido por el cual accede a los datos de una manera mas veloz.
+El bus de datos de un disco duro es sata o antiguanmente IDE.
+El puerto PCI Express comunica la GPU con con el CPU.
+La GPU tiene muchos nucleos y una velocidad de reloj menor a la de un CPU.
+La GPU puede realizar operaciones 3d, codecs y otros algoritmos.
+La GPU tienen muchos módulos para realizar en paralelo los calculos fisicos, codificaciones de audio, el render entre otros.
+Los sistemas operativos cuando se cargan se cargan en un formato de anillo, los SO tienen un nucleo o Kernel lo cual se carga en el inicio en la memoria RAM.
+El Kernel tiene acceso a todo el sistema.
+Entre mas lejos estemos del nivel del Kernel menos permisos se tienen (Kernel, Drivers, Drivers Apps).
+Para que google tenga acceso al microfono del SO le pide permisos a cada capa hasta llegar a la del kernel donde se verifica la correcta identidad, de ahi le puede dar un permiso momentaneo o por todo el tiempo necesario.
+La estandarización en la computación facilta mucho la interoperabilidad en distintos sistemas.
+Internet no funciona con satelites.
+Internet no es a prueba de armas nucleares.
+Un switch comparte la red entre varios equipos PC1, Lap1, PC2.
+Un switch rebota la señal hasta encontrar cual es el correcto destinario.
+Router wifi emite una señal que permite la conexión inalambrica entre miembros de una misma red.
+El router wifi necesita saber el nombre de la red, el password y la lista de Ip.
+DHCP
+Todos los dispositvos con conexión a internet tienen un hardware con una MAC address.
+La MAC Adress es un número unico.
+Modem del ISP es el elemento que provee de internet a los demás, se puede conectar por ADSL, Telefono, 4G/LTE, Fibra óptica.
+En una red local Ipv4 no cambia mas que el ultimo byte. El numero asignado depende de quien llego primero a la lista del router.
+La ip por default o localhost es la 127.0.0.1;
+Si en una red local hay mas de 255 dispositvos se tiene que crear una subred.
+Para calcular el número de ip se consideran 255*255 ya que la terminación 255 está reservada para Broadcast y el ultimo número tampoco puede ser 0.
+En los esquemas de red se crea una red virtual al que se le llama puerto.
+Hay 2^16 puertos distintos.
+El SO distribuye los puertos atraves de anillos como los del kernel.
+Los puertos del 1-1024 son puertos reservados para ejecutarse atraves del administrador.
+Hay muchos protocolos que corren sobre los puertos el mas popular es el http y su puerto es el 80.
+Un computador corriendo por ejemplo BitTorrent usa multiples puertos (6881-6889).
+El protocolo https usa el puerto 443.
+Otro protocolo es el SSH (Secure Shell).

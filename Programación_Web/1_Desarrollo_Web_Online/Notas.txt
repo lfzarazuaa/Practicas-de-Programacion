@@ -2,15 +2,29 @@ Dev Ops Developer operation y servidores.
 html Hypertex Markup Language Lenguaje de marcado para hacer websites.
 CSS Cascade Sytle Sheet (Diseño hecho código).
 JavaScript Lenguaje de programación de programación.
+Stack Tecnologias que vas dominando.
+Desarrollo_We->Responsive->CSS_Grid_Layout->Animaciones->PostCSS->jQuery a JavaScript->
+Fundamentos_de_JS->Webpack->React.js->Redux->React_Router.
+En github se puede subir un html para poderlo visualizar en la red.
+https://leonidasesteban.github.io/desarrollo-web-2018-preview/
+En VS Code en la esquina inferior derecha se puede configuar que tipo de archivo va a leer para que muestre sugerencias pertinentes al lenguaje usado.
+Con html:5 en VS Code genera el mimino para trabajar con un html.
+En Vs Code con renderWhiteSpace (en settings) se pueden ver los espacios en blanco con puntos.
+Una página web se recomienda dividir en secciones.
 alt+shift+LineaAbajo%%Duplicar linea en visual studio code.
 Se tienen que dividir las secciones que tiene el website para codificarlas parte por parte.
 Document Object Mode(DOM)-Modelo de documento que se carga en el navegador web y que representa el documento como un árbol de nodos.
-Etiquetas de HTML.
+Dependiendo de la complejidad de la página web el DOM podrá agrandarse mas en numero de objetos.
+En un hosting de archivos estáticos es donde se almacen los archivos del sitio web.
+<br>Salto</br> Realiza 1 salto de linea por cada br.
+Etiquetas de HTML (html5doctor.com/ para consultar información sobre las etiquetas).
 <nombre>contenido</nombre>%%Sintaxis de etiqueta.
 <nombre sr/>Etiqueta con cierre en si misma.
 <header></header>%%Encabezado de la página web.
-<section></section>%%Divide en secciones nuestra página
+<section></section>%%Divide en secciones nuestra página.
 <footer></footer>%%Coloca el pie de página.
+<nav></nav>Etiqueta para secciones con links dentro de ella.
+<aside></aside>//Etiqueta para contendio no relevante a la página(anuncio).
 <ol></ol>%%Listas ordenadas.
 <ul></ul>%%Lista desordenada.
 <li></li>%%Elemento de lista.
@@ -19,7 +33,7 @@ Etiquetas de HTML.
 <br/>  Salto de línea.
 </small> hace un poco mas chico el texto.
 Atributos en html
-alt="valorAtributo"%%Texto alternativo.
+alt="valorAtributo"%%Texto alternativo cuando no cargo la imagen.
 src="https://media.licdn.com/dms/image/C5603AQEzaLRFm33GBA/profile-displayphoto-shrink_200_200/0?e=1580342400&v=beta&t=ra-qS31HY_v85a4FaishCOfTJSzP0RAOdms6JGjORc8"%%Imagen usando un link web.
 src="images/logo.jpg"%%Dentro de la carpeta.
 src="../images/logo.jpg"%%De la carpeta anterior.
@@ -29,13 +43,15 @@ width="250" height="300"%%Dan ancho y largo respectivamente.
 <form action=""> </form>%%Crea un formulario y en action se específica a donde será enviada la información.
 <input type="submit" value="texto del botón"> texto con botón.
 <label for="email">Déjame tu e-mail.</label>%%Label que hace referencia al objeto email.
-<input type="text", placeholder="Dejános tu e-mail." id="email">
+<input type="text", placeholder="Dejános tu e-mail." id="email">%%Con placeholder se puede escribir un texto guia.
 <input type="text">%%Hay varios tipos de input.
 <a href="#portafolio">Portafolio</a>  <section id="portafolio"> %%Enlace interno denominado por #.
 <a href="./Portafolio/portafolio.html">%%Ruta relativa a la carpeta.
 <a href="https://www.youtube.com/watch?v=33_XDodUHAQ&t=394s" target="_blank">Ver proyecto funcionando</a>%%Abrir enlace en otra página.
 <header style="color:red; background: blue;">%%Estilos en línea (in-line).
-Un style in line tiene mas peso que uno externo.
+href indica a donde acceder para recopilar la información.
+
+    Un style in line tiene mas peso que uno externo.
 Un style dentro del html tiene menos peso que uno in line.
 Estilo en cascada porque van en forma de cascada de agua tiene prioridad el ultimo elemento.
 %%!important para darle mas prioridad que otros pero rompe la cascada.
