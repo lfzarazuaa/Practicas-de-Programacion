@@ -12,4 +12,14 @@ Hay 3 opciones para abrir macros: Continuar sin Macros, Habilitar solo para la a
 Para habilitar por una apertura la macros se presiona en "Las macros se han deshabilitado." alli en Información, Habilitar Contenido, Opciones Avanzadas y Habilitar contenido para esta sesión.
 Cuando se habilita contenido se añade a la lista de confianza pero debe conservar la misma ruta y nombre.
 Para ignorar los documentos de confianza se va a Seguridad de Macros en Programador, Documentos de confianza y se marca la casilla Deshabilitar documentos de confianza.
-En Seguridad de Macros se puede configurar 4 opciones.
+En Seguridad de Macros se puede configurar 4 opciones ya sea para no mostrar adevertencia, mostrarla, aceptar solo firmadas y aceptar todas las macros.
+Para agregar una cinta personalizada se da clic derecho en la cinta de opciones->personalizar cinta de opciones->Nueva pestaña.
+Para personalizar la pestaña se le da clic derecho en el elemento a modificar para desplegar las distintas opciones como cambiar nombre e icono.
+Para agregar macros a la cinta se accede al menu de personalizar cinta de opciones y en comandos disponibles se selecciona macros de ahi se arrastra la macros deseada a la cinta que se quiera.
+Para configurar solo para el archivo la opción se puede anclar en la barra de herramientas (superior izquierda)-> seleccionando barra de herramientas, la macros y en personalizar solo para el archivo.
+Un control de formulario es menos tiene menos atributos por programación que uno ActiveX.
+Para añadir un control de formulario se da clic en insertar de la pestaña Programador, luego se selecciona la macro que se quiere ejecutar con el elemento.
+Para ocupar la macro se da clic izquierdo, para editarla clic derechosobre esta.
+Al seleccionar la macros deseada y opciones se pueden editar las configuraciones de la macros que se piden al inicio como la descripción y su atajo con teclado.
+Si a la macros se le asigna una combinación de teclas substituye a la default de excel (ctrl+i Ir a), mientras se tenga abierto el archivo ejecutando asi en nuevos libros la macros.
+La recomendación para usar una combinación es que sea ctrl+shif+Letra siempre y cuando este disponible.
