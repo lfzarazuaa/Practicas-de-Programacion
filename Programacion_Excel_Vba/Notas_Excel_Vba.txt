@@ -23,3 +23,17 @@ Para ocupar la macro se da clic izquierdo, para editarla clic derechosobre esta.
 Al seleccionar la macros deseada y opciones se pueden editar las configuraciones de la macros que se piden al inicio como la descripción y su atajo con teclado.
 Si a la macros se le asigna una combinación de teclas substituye a la default de excel (ctrl+i Ir a), mientras se tenga abierto el archivo ejecutando asi en nuevos libros la macros.
 La recomendación para usar una combinación es que sea ctrl+shif+Letra siempre y cuando este disponible.
+Las macros no siempre pueden grabar todos los pasos (caundo se muestran advertencias), por lo cual es necesario modificarla por código.
+La macros no es capaz de ignorar las advertencias que se nos dieron al grabar, sino que se deben resolver por código.
+Como alternativa se puede usar la macros para ver el código que deseamos agregar a nuestro código como eliminar un objeto o modificar alguna propiedad.
+Con Application.DisplayAlerts = False se desactivan los mensajes de alerta que pueda llegar a mandar excel.
+Con Application.ScreenUpdating = False se desactiva la actualización de pantalla mientras se está ejecutando la macros (esto la hace mas rapida).
+Al momento de grabar una macros puede ser Absoluta(por defecto), la cual hace los cambios conforme a la celda  o celdas que se seleccionaron al momento de grabar.
+Con las macros relativas se puede grabar con respecto a la celda presiona al momento de ejecutar la macros, calculando los offset necesarios.
+Con Range("B1").Select se selecciona la celda a posicionarse.
+ActiveCell.FormulaR1C1 = "Máquina A" Modifica el texto de la celda seleccionada.
+Los efectos de las macros no se pueden deshacer, por lo cual hay que tener datos de prueba para realizar las acciones.
+Al momento de la grabación se puede intercalar entre grabar absolutamente o relativamente.
+Para activar las referencias relativas se debe seleccionar Usar referencias relativas en el menu de código.
+Con ActiveCell.Offset(0, 1) se indica un desplazamiento relativo 0 hacia abajo, 1 a la derecha.
+ActiveCell.Offset(0, 1).Range("A1").Select Con el offset y range se logra una selección relativa siendo A1 la primera celda conforme a la selección.
