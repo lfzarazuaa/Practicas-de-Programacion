@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leonidas Esteban</title>
     <link rel="icon" type="image/png" href="images/favicon.png"><!-- link para poder enlazar el favicon o logo de la pestaña relación=icon tipo=image/png y referencia=ruta de la imagen. -->
-    
+    <link rel="stylesheet" href="css/estilos.css">
+    <style> /* Declaración de los atributos de un estilo */
+        header{
+            background: wheat;
+        }
+    </style>
 </head>
 <body>
-    <header> <!-- Encabezado -->
+    <!-- Con el atributo style se incluye un estilo en linea. -->
+    <header style="color:red; background: salmon;"> <!-- Encabezado -->
         <div>
             <figure><!-- Contenedor para la imagen. -->
                 <img src="images/logo.png" alt="Logo de https://leonidasesteban.github.io/desarrollo-web-2018-preview/images/logo.png"> <!-- alt para colocar un texto alternativo cuando no se carga la imagen. -->
@@ -16,17 +22,17 @@
             <nav><!-- Menu de links. -->
             <ol><!-- Definir elementos ordenados -->
                 <li><!-- List item(elemento de lista). -->
-                    <a href="#"><!-- Anchor ancla (enlace) -->
+                    <a href="#portafolio"><!-- Anchor ancla (enlace) -->
                         Portafolio.
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#eventos">
                         Experiencia.
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#contacto">
                         Trabajemos juntos.
                     </a>
                 </li>
@@ -42,7 +48,7 @@
         </h1>
         <img src="images/hero.jpg" width="500"  height="300" alt="imagen principal del sitio."> 
     </section>
-    <section>
+    <section id="portafolio">
         <h2>Portafolio de proyectos destacados.</h2>
         <article>
             <h3>Platzi Video</h3><!-- Titulo tamaño 3 (intermedio). -->
@@ -58,7 +64,7 @@
                 <img src="images/platzi-video-react-native.png" alt="Proyecto del curso de React Native.">
         </article>
     </section>
-    <section>
+    <section id="eventos">
         <h2>Mas sobre mi experiencia</h2>
         <article>
             <figure><!-- Contenedor para la imagen. -->
@@ -67,9 +73,18 @@
             <h3>Platzi Conf México 2018</h3>
             <p>El evento más grande sobre gente que quiere aprender más de internet.
                 En esté evento te comparto como tener una vida de constante aprendizaje.</p>
+                <a href="https://www.youtube.com/watch?v=BIS7cWGgJg0" target="_blank">Ver Plática</a><!-- Con target se puede controlar donde se abrirá la ventana. -->
         </article>
     </section>
-    <section>sección contactos</section>
+    <section id="contacto">
+        <form action="index.html"><!-- action define hacia donde se redirecciona. -->
+            <h2>¿Creamos algo juntos?</h2>
+            <label for="email">Déjame tu email.</label><!-- Con for hace que al oprimir se centre (focus) en el id del elemento nombrado. -->
+            <input type="text" placeholder="Déjame tu email." id="email"><!-- Con placeholder se tiene mensaje antes de escibrir. -->
+            <input type="submit" value="texto del boton."><!-- Con type submit se lográ también un boton. -->
+            <button>Enviar</button>
+        </form>
+    </section>
     <footer>footer</footer>
 </body>
 </html>

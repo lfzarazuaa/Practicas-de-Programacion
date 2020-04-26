@@ -44,12 +44,17 @@ width="250" height="300"%%Dan ancho y largo respectivamente.
 <input type="submit" value="texto del botón"> texto con botón.
 <label for="email">Déjame tu e-mail.</label>%%Label que hace referencia al objeto email.
 <input type="text", placeholder="Dejános tu e-mail." id="email">%%Con placeholder se puede escribir un texto guia.
+<input type="checkbox", placeholder="Dejános tu e-mail." id="email">%%Conel checkbox y un for tambien cambia a marcado o desmarcado.
 <input type="text">%%Hay varios tipos de input.
-<a href="#portafolio">Portafolio</a>  <section id="portafolio"> %%Enlace interno denominado por #.
+<a href="#portafolio">Portafolio</a>  <section id="portafolio"> %%Enlace interno denominado por # (Redirecciona por GET).
+<section id="portafolio"> Con el id del elemento se hace referencia con #portafolio.
 <a href="./Portafolio/portafolio.html">%%Ruta relativa a la carpeta.
 <a href="https://www.youtube.com/watch?v=33_XDodUHAQ&t=394s" target="_blank">Ver proyecto funcionando</a>%%Abrir enlace en otra página.
 <header style="color:red; background: blue;">%%Estilos en línea (in-line).
+<link rel="stylesheet" href="css/estilos.css"> Para llamar un estilo.
 href indica a donde acceder para recopilar la información.
+Un estilo en cascada se llama asi por su nivel de prioridad.
+Pueden haber estilos dentro del html en el header, en la linea o desde un archivo.
 Un style in line tiene mas peso que uno externo.
 Un style dentro del html tiene menos peso que uno in line.
 Estilo en cascada porque van en forma de cascada de agua tiene prioridad el ultimo elemento.
