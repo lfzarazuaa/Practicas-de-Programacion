@@ -50,8 +50,7 @@ width="250" height="300"%%Dan ancho y largo respectivamente.
 <a href="https://www.youtube.com/watch?v=33_XDodUHAQ&t=394s" target="_blank">Ver proyecto funcionando</a>%%Abrir enlace en otra página.
 <header style="color:red; background: blue;">%%Estilos en línea (in-line).
 href indica a donde acceder para recopilar la información.
-
-    Un style in line tiene mas peso que uno externo.
+Un style in line tiene mas peso que uno externo.
 Un style dentro del html tiene menos peso que uno in line.
 Estilo en cascada porque van en forma de cascada de agua tiene prioridad el ultimo elemento.
 %%!important para darle mas prioridad que otros pero rompe la cascada.
