@@ -55,6 +55,7 @@ width="250" height="300"%%Dan ancho y largo respectivamente.
 href indica a donde acceder para recopilar la información.
 Un estilo en cascada se llama asi por su nivel de prioridad.
 Pueden haber estilos dentro del html en el header, en la linea o desde un archivo.
+Es preferible usar un estilo en un archivo css para mejorar la legibilidad y marcar una diferencia entre la estructura y los estilos.
 Un style in line tiene mas peso que uno externo.
 Un style dentro del html tiene menos peso que uno in line.
 Estilo en cascada porque van en forma de cascada de agua tiene prioridad el ultimo elemento.
