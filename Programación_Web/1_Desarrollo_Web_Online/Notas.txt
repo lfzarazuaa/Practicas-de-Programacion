@@ -134,4 +134,49 @@ margin-bottom: 10px;/* Crea un margen a 10 pixeles solo abajo (Se puede aplicar 
 Así como el margen separa a los elementos html entre sí, la propiedad padding de relleno, permite definir una separación entre el contenido interno y el borde de un elemento.
 Al inspeccionar los elementos html en el navegador, se puede apreciar el margin con color naranja y el padding con color verde.
 Una forma de identificar cuándo es mejor usar margin o padding en un elemento, es evaluando la necesidad de usar borde o background, ya que son éstos: el borde y el background, los que realmente diferencian el uso de uno u otro.
-El background al rellenar de color tambien nos muestra los bordes y ahi es donde se aprecía cuanto queremos de margin o de padding
+El background al rellenar de color tambien nos muestra los bordes y ahi es donde se aprecía cuanto queremos de margin o de padding.header
+El modelo de caja es un concepto teórico de css que representa a cada elemento html en base sus propiedades de: margin, border, padding y dimensiones (alto y ancho).
+Para visualizar un elemento html en su representación como modelo de caja debemos irnos a la parte baja de la sección styles del inspector de elementos, o en la sección llamada Computed.
+En el modelo de caja, el ancho total de un elemento html equivale a la sumatoria de los valores de: width, padding-left, padding-right, border-left-width, border-right-width. De manera similar aplica para el alto total de cada elemento. Aunque margin-left y margin-right, forman parte del modelo de caja, no se incluyen para el calculo del ancho total.
+Con la propiedad box-sizing, y en particular con el valor border-box de esta propiedad, podemos modificar el comportamiento del modelo de caja para que nuestro elemento nunca supere el tamaño máximo que le hayamos definido en width y height. Esta es la opción recomendada para trabajar.
+box-sizing: border-box;/* Impide que la caja crezca de tamaño mas alla de lo permitido por height y width. */
+Todos los elementos tienen un tag display.
+display: none Hace que no se vea en pantalla.
+display: block Un elemento puede ocupar todo el ancho en específico.
+display: inline Permite que un elemento al costado se pueda mostrar si le queda espacio de texto (no respeta width).
+display: inline-block Permite mostrar un elemento al costado(si lo hay y si hay espacio), pero respentando el width.
+Los elementos li por defecto son display:inline.
+display: block: El elemento intenta abarcar todo el ancho posible.
+display: inline: Reduce su tamaño exclusivamente hasta lo que abarca su contenido, descartando las propiedades width y height.
+display: inline-block: Combina lo mejor de block e inline, ya que respeta las dimensiones indicadas en las propiedades width y height, pero coloca el elemento en línea (al costado) de elementos hermanos que también tengan display: inline o inline-block.
+display: flex: Asume algunas propiedades por defecto que favorecen la alineación de los elementos internos.
+display: grid: Similar a flex, asume algunas propiedades por defecto organizando los contenidos en filas y columnas.
+display: none: Oculta el elemento.
+Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación, dimensionamiento y distribución de elementos html.
+Esta propiedad se aplica a un elemento padre, pero va a afectar principalmente a sus elementos hijos directos. Por defecto, los elementos internos quedan alineados unos seguidos de los otros. El comportamiento del modelo de caja de estos elementos hijos también se ha modificado, ya que pierden el efecto de su propiedad margin.
+Los elementos hijos de un padre con propiedad display: flex tienen a su disposición algunas nuevas propiedades que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es flex-shrink que, junto a la propiedad flex-wrap del padre, permite adaptar y distribuir los elementos de manera dinámica en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar dinamicamente las siguiente filas hacia abajo.
+El modelo de flex se pone en el elemento padre y afecta a los hijos, respeta las propiedades de los hijos siempre que estos quepan en pantalla, sino realiza un ajuste.
+flex-direction: column; Realiza una disposición de los elementos en columna (también se puede usar row para filas).
+flex-shrink: Propiedad de los hijos (padres con display:flex) que impide que se les modifique el ancho, son valores entre 0 (nada encogible) o 1(muy encogible).
+flex-wrap: nowrap;Propiedad del elemento padre(por defecto) que impide que los elementos caigan cuando se acaba el espacio de pantalla (genera scroll en pantalla).
+flex-wrap: wrap;Propiedad del elemento padre(por defecto) que permite que los elementos caigan cuando se el ancho de la pantalla.
+Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación, dimensionamiento y distribución de elementos html.
+Esta propiedad se aplica a un elemento padre, pero va a afectar principalmente a sus elementos hijos directos. Por defecto, los elementos internos quedan alineados unos seguidos de los otros. El comportamiento del modelo de caja de estos elementos hijos también se ha modificado, ya que pierden el efecto de su propiedad margin.
+Los elementos hijos de un padre con propiedad display: flex tienen a su disposición algunas nuevas propiedades que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es flex-shrink que, junto a la propiedad flex-wrap del padre, permite adaptar y distribuir los elementos de manera dinámica en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar dinamicamente las siguiente filas hacia abajo.
+flex-flow: column wrap;Combinación entre flex-shrink y flex-wrap: Modifica si se quiere vertical y con caida.
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+El margin Colapsing ya no es válido cuando se usa flexbox (los margenes se suman).
+justify-content: Tipo de jsutificación de contenido.
+justify-content: flex-start; flex-start: para alinear todos los elementos hacia el inicio del espacio disponible.
+justify-content: flex-end; flex-end: para alinear todos los elementos hacia el final, a la derecha.
+justify-content: center; center: para alinear todos los elementos al centro del espacio disponible.
+justify-content: space-between; space-between: para distribuir los elementos con un espacio proporcional e igual entre ellos.
+justify-content: space-evenly; space-evenly: para distribuir los elementos con un espacio proporcional e igual entre ellos (incluyendo el primer y último elementos con respecto a los extremos del espacio disponible).
+justify-content: space-around; space-around: similar a space-evenly pero tanto en el primero como en el último elemento, el espacio hacia los extremos es la mitad del espacio usado entre los elementos.
+Similar a como sucede con justify-content, es posible alinear y distribuir los elementos internos en el espacio vertical disponible usando la propiedad align-items, que puede tomar también los valores de: flex-start, flex-end y center.
+align-items center; center: para alinear todos los elementos al centro vertical del espacio disponible (si flex-direction está en row, en column se invierte).
+Algo que es muy importante y se debe tener en cuenta a la hora de usar align-items y justify-content es que dependiendo de la propiedad flex-direction que se haya definido, el efecto de ambos se invierte, no en cuanto a sus elementos internos, sino en cuanto a si se debe usar uno u otro de manera vertical u horizontal.
+IMPORTANTE: Cuando la propiedad flex-direction se ha definido como column, la propiedad justify-content ya no va a aplicar sobre la alineación horizontal, sino sobre la vertical. Y align-items ya no aplicaría sobre la alineación vertical sino la horizontal. Se intercambian sus efectos.
+Para centrar completamente los elementos internos de manera vertical y horizontal en su elemento padre, debemos usar el valor center en ambas propiedades.
+justify-self: flex-start;Rompe la propiedad impuesta (horizontal) por el padre ajustandose a la posición deseada.
+align-self: flex-start;Rompe la propiedad impuesta (vertical) por el padre ajustandose a la posición deseada.
