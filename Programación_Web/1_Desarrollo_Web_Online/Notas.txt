@@ -52,6 +52,11 @@ width="250" height="300"%%Dan ancho y largo respectivamente.
 <a href="https://www.youtube.com/watch?v=33_XDodUHAQ&t=394s" target="_blank">Ver proyecto funcionando</a>%%Abrir enlace en otra página.
 <header style="color:red; background: blue;">%%Estilos en línea (in-line).
 <link rel="stylesheet" href="css/estilos.css"> Para llamar un estilo.
+<style> /* Declaración de los atributos de un estilo */
+    body {
+        background: wheat; justify-content: center;
+    }
+</style>
 href indica a donde acceder para recopilar la información.
 Un estilo en cascada se llama asi por su nivel de prioridad.
 Pueden haber estilos dentro del html en el header, en la linea o desde un archivo.
@@ -65,5 +70,68 @@ Selector descendente es un elemento hijo dentro de algún otro elemento. /* body
 Selector de clase para tomar al objeto deseado.
 Muchos elementos pueden recibir el mismo estilo por medio de la duplicación de clases.
 Los elementos de Id son unicos dentro del website.
+Los id no son muy utilizados en css.
+Por semántica se usan varios tags en html para diferenciar partes del documento aunque se vean iguales.
+Usar solo un id en un html pero varios class en el mismo html para que tengan el mismo estilo.
 User agent stylesheet es el encargado de los estilos default en cada navegador web.
 Wrapper o Container para identificar contenedores.
+<figure class="project-imageContainer"><!-- Contenedor de imagen con clase project-image. -->
+    <img class="project-image" width="500" src="images/platzi-video-react-native.png" alt="Proyecto del curso de React Native.">
+</figure>
+El pixel es la mínima unidad homogenea de color en una imagen.
+El color en html se representa con #FFFFFF donde el byte mas significativo es el rojo, luego verde y el menos significativo el azul.
+Developer tools (Inspector de elementos html), con F12 se abre el inspector de elementos.
+Al hacer click sobre el elemento y se seleccionar inspeccionar se puede ver el html y sus propiedades, ademas se puede editar el texto del contenido.
+En la esquina superior izquierda hay un icono de celular con el cual se accede modo responsive design.
+Con la propiedad texto-decoration se pone o quita el subrayado a los links.
+Antes de tipos de display.
+Los tipos de texto, también conocidos como tipos de letras o fuentes, son el conjunto de diseños tipográficos que representan a cada una de las letras y los caracteres gráficos en el documento. Su nombre correcto es tipografía. Los diferentes tipos de fuente están basados en archivos que existen en cada sistema operativo.
+CSS permite utilizar fuentes diferentes a las disponibles en el sistema operativo del cliente, mediante la importación o el enlace a archivos de fuentes externas. Las más usadas son las que están disponibles a través del sitio web de Google Fonts.
+Al definir el tipo de texto asociado a una clase css con la propioedad font-family indicamos al navegador, que debe intentar usar esa fuente en particular para darle la apariencia tipográfica a los textos de ese elemento html.
+Si no hay una fuente para nuestro sistema se puede incluir una externa por ejemplo desde Google Fonts.
+h1,h2,h3,h4,h5,h6 {/*Selector de etiqueta para los distintos headers.*/}
+Para colocar todo en mayúsculas es mejor hacerlo desde el css antes del html para mejorar su busqueda y legibilidad.
+font-family: define el tipo de fuente aplicado al texto.
+color: define el colore del texto.
+line-height: define la altura desde la base del texto hasta la base de la siguiente línea de texto.
+font-size: define el tamaño del texto, admite cualquiera de las unidades de medida disponibles.
+letter-spacing: define el espaciado entre las letras del texto.
+font-weight: define el ““peso”” de la letra, negrita, normal, light y normalmente se indica en múltiplos de 100 o usando keywords.
+text-decoration: define el decorado del texto como subrayado, tachado, con subrayado superior, etc.
+text-transform: permite transformar el estado de mayúsculas / minúsculas en el texto, usando uppercase para mayúsculas sostenidas, lowercase para minúsculas sostenidas, etc.
+font-family: 'Fjalla One', Times, serif;/*Cambia letra para los elementos tiene prioridad sobre el elemento padre.*/
+font-weight: 400;/*Peso de negritas 600 es negritas 400 es normal
+font-style: italic; Tipo de fuente cursiva.
+font-size: 40px;/*Tamaño de la letra.
+line-height: 1.5;/* Interlineado, debe ser al menos del tamaño de la fuente en px, 150%.
+letter-spacing: -2px;/* Sepración entre letras.
+text-transform: uppercase;/*Hace la transformación del texto en mayúsculas.
+text-decoration: underline;/* Subraya el texto.
+Div se utiliza como una división solo para diferenciar entre estilos.
+Con alt+teclaDireccional se mueve el contendio seleccionado.
+Con el height y weight se pueden traslapar los elementos.
+border-top: 10px solid red;/*Dibuja un borde en la parte indicada tamaño tipo estilo;
+border-right: 10px solid green;/*Dibuja un borde en la parte indicada tamaño tipo estilo;
+border-left: 10px solid orange;/*Dibuja un borde en la parte indicada tamaño tipo estilo;
+border-bottom: 10px solid pink;/*Dibuja un borde en la parte indicada tamaño tipo estilo;
+border-top-color: red;/* Define el color del borde en la parte superior. */
+border-top-width: red;/* Define el ancho del borde en la parte superior. */
+border-top-style: red;/* Define el estilo del borde en la parte superior. */
+border-color: red;/* Define el color del borde. */
+border-width: 15px;/* Ancho del borde, sin este no se puede definir el borde. */
+border-style: solid;/* Tipo de borde (solid, dashed, doted, none, initial).Se pueden consultar inspeccionando y editanto el elemento.*/
+Si no se define algun color de borde toma por defecto el color del texto. CurrentColor.
+Con la propiedad boder-radius se define el redondeado de las esquinas de los bordes.
+border-radius: 10px;/* Define un redondeo del borde a 10px. */
+border-top-left-radius: 50px;/* Define un redondeo del borde superior izquierdo a 50px. Sobrescribiendo los bordes ya definidos si los hay.*/
+El margen es el espacio de separación entre 2 elementos.
+En Css los objetos tienen margen por defecto y cada se queda el margen mas grande entre los objetos colindantes Margin Colapsin.
+Los margenes sirven tambien para un diseño responsivo, por ejemplo para evitar que se junten una imagen y un texto.
+margin: 100px 150px 70px 30px;/* Define el margen en top right bottom left. */
+margin: 100px 30px;/* Define el margen en (top bottom) (rightleft). */
+margin: 0 auto;/* Define el margen en (top bottom) (rightleft) para centrarse. */
+margin-bottom: 10px;/* Crea un margen a 10 pixeles solo abajo (Se puede aplicar left bottom y top).*/
+Así como el margen separa a los elementos html entre sí, la propiedad padding de relleno, permite definir una separación entre el contenido interno y el borde de un elemento.
+Al inspeccionar los elementos html en el navegador, se puede apreciar el margin con color naranja y el padding con color verde.
+Una forma de identificar cuándo es mejor usar margin o padding en un elemento, es evaluando la necesidad de usar borde o background, ya que son éstos: el borde y el background, los que realmente diferencian el uso de uno u otro.
+El background al rellenar de color tambien nos muestra los bordes y ahi es donde se aprecía cuanto queremos de margin o de padding

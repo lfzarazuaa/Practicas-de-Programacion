@@ -1,3 +1,111 @@
-body{
+/* reglas:El conjunto de todo
+    header{
     background:forestgreen;
+    } 
+*/
+/* selectores: Identificar un elemento html.
+    header {
+ */
+/* declaraciones: Todo lo que se hace con el selector.
+    background:forestgreen; justify-content: center;
+*/
+/* propiedades: Los atributos.
+    background, justify-content  */
+/* valores: El contenido en específico que tiene 
+    forestgreen. 
+*/
+
+/* Selector de etiqueta: Hace referencia al elemento html que se desea. 
+ header -section -article -nav */
+/* selector descendente: Selector de hijos todos los elementos hijos dentro de la lista.
+     body header div nav ol li a {} */
+/* selector de clase: Se usan para darle estilo a una clase, se anteceden por un ".".
+    .link <a class="link" href="#eventos">Experiencia.</a>
+*/
+/* selector de id: Se usan para darle estilo a un id, se anteceden por un "#".
+    #eventos <a class="link" href="#eventos">Experiencia.</a>
+*/
+
+/* gris oscuro = #1d252c */
+/* gris claro = #626262 */
+/* backgroud gris #1b2127 */
+/* celeste #026fff */
+body {
+    font-family:Comic-Sans, Arial, Helvetica, sans-serif ;/*Utiliza el tipo de fuente Arial, si no la encuentra, entonces Helvetica y si no sans-serif.*/
+    font-family: 'Source Sans Pro';
+    margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {/*Selector de etiqueta para los distintos headers.*/
+    font-family: 'Fjalla One', Times, serif;/*Cambia letra para los elementos tiene prioridad sobre el elemento padre.*/
+    font-weight: 400;/*Peso de negritas 600 es negritas 400 es normal*/
+    /* font-style: italic; Tipo de fuente cursiva.*/
+}
+
+h1{
+    color: white;
+    font-size: 40px;/*Tamaño de la letra.*/
+    line-height: 1.5;/* Interlineado, debe ser al menos del tamaño de la fuente en px, 150%. */
+    letter-spacing: -2px;/* Sepración entre letras. */
+    margin: 100px 150px 70px 30px;/* Define el margen en top right bottom left. */
+    /* text-transform: uppercase;Hace la transformación del texto en mayúsculas. */
+    /* text-decoration: underline;Subraya el texto. */
+}
+
+h1 strong{/* Selector descendente de las propiedades strong de h1. */
+    color: rgb(0, 100, 255);
+}
+
+.hero{
+    height: 300px;
+    background-color: #1b2127;
+    background-image: url('../images/hero.jpg');/*Usa la imagen como background usando la dirección del proyecto.*/
+    background-size: 500px, 300px;/* Background size recibe , width, height, (repite las imagenes). */
+    background-repeat: no-repeat;/* Propiedad de patron de repetición en el background. */
+    background-position-x: right;/* Posiciona la imagen del background (También se puede indicar el desplazamiento en pixeles). */ 
+}
+ 
+.portfolio{
+    background: #fafafa;
+}
+.project{
+    border-top: 10px solid red;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-right: 10px solid green;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-left: 10px solid orange;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-bottom: 10px solid pink;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-color: red;/* Define el color del borde. */
+    border-width: 15px;/* Ancho del borde, sin este no se puede definir el borde. */
+    border-style: solid;/* Tipo de borde.*/
+    border: 1px solid gray;/* Declara un borde de 1px, solido y gris. */
+    border-radius: 10px;/* Define un redondeo del borde a 10px. */
+    border-top-left-radius: 50px;/* Define un redondeo del borde superior izquierdo a 50px. Sobrescribiendo los bordes ya definidos.*/
+    margin-bottom: 10px;/* Crea un margen a 10 pixeles para todo. */
+    margin-bottom: 15px;/* Crea un margen a 10 pixeles solo abajo */
+    padding: 20px;/* Define el padding (separación interna) de 20 pixeles. */
+    background: white;
+}
+    
+
+.project-details{
+    width: 500px;
+}
+
+.project-imageContainer{
+    width: 500px;
+}
+
+.header {
+    background-color: #1b2127;
+    color: white;/* Color del texto. */
+    text-decoration: none;
+}
+
+.header a{/*Anclas del header (se modificaron porque los anchor van debajo de la cascada del header).*/
+    color: white;/* Color del texto. */
+    text-decoration: none;
 }
