@@ -54,3 +54,12 @@ El proyecto de visual basic tambien se puede ocultar con usuario y contraseña p
 El nombre del módulo se cambia en la ventana de propiedades.
 En Vba de Excel hay 3 estructuras de código: Funciones, procedimientos, y los procedimientos de eventos.
 En Vba no hay comentarios multíneas, los comentarios se inician con '.
+Para ejecutar el código también se puede desde Vba en los iconos de play, pero se debe tener el cursor sobre el método a ejecutar.
+Para lograr una efectiva programación en Vba de Excel se usan eventos.
+Los eventos son los momentos en los que se realizan acciones determinadas como pulsar un botón, pasar el mouse sobre el, pulsar una tecla, etc.
+En un control Active X se entra en sus propiedades y se debe seleccionar modo diseño para su mejor edicción, para ejecutarla se debe desactivar el modo diseño.
+La propiedad name cambia el nombre identificador del botón.
+La propiedad caption modifica el texto visible.
+Haciendo doble click sobre un botón nos lleva a su evento principal en el caso del botón es el click.
+Para ver los distintos eventos de un control se verifica en la ventana del código en la esquina superior izquierda que control se está eligiendo y en la superior derecha se sitúan los distintos eventos.
+
