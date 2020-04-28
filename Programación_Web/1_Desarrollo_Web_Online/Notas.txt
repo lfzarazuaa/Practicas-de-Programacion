@@ -180,3 +180,21 @@ IMPORTANTE: Cuando la propiedad flex-direction se ha definido como column, la pr
 Para centrar completamente los elementos internos de manera vertical y horizontal en su elemento padre, debemos usar el valor center en ambas propiedades.
 justify-self: flex-start;Rompe la propiedad impuesta (horizontal) por el padre ajustandose a la posición deseada.
 align-self: flex-start;Rompe la propiedad impuesta (vertical) por el padre ajustandose a la posición deseada.
+display:flex; solo se aplica a los hijos directos.
+vertical-align: middle; Alinea conforme al conetdor los elementos (Se usa cuando se tiene texto e imagenes).
+object-fit: cover;/* Ajusta la imagen para no desproporcionarla. */
+overflow: hidden;/* Todo lo que se salga de los bordes lo oculta. */
+object-fit: cover;/* Ajusta la imagen para no desproporcionarla. */
+position: relative;/* Permite que el texto se vea por encima de la imagen. */
+text-align: center; /* Centra el texto dentro de su contenedor. */
+Al agregar un div que actúe como contenedor se pueden perder los display flex para alinear los elementos (herencia).
+Una posible solución es ponerler paramatros de herencia de las propiedades que se perdieron y luego realizar pequeños ajustes para solucionar los bugs.
+.container {
+    border: 1px solid red;
+    width: 1000px;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+}

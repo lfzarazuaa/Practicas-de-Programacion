@@ -53,6 +53,7 @@ h1{
     line-height: 1.5;/* Interlineado, debe ser al menos del tamaño de la fuente en px, 150%. */
     letter-spacing: -2px;/* Sepración entre letras. */
     margin: 100px 150px 70px 30px;/* Define el margen en top right bottom left. */
+    margin: 0;
     /* text-transform: uppercase;Hace la transformación del texto en mayúsculas. */
     /* text-decoration: underline;Subraya el texto. */
 }
@@ -61,18 +62,41 @@ h1 strong{/* Selector descendente de las propiedades strong de h1. */
     color: rgb(0, 100, 255);
 }
 
+h2 strong{/* Selector descendente de las propiedades strong de h2. */
+    color: rgb(0, 100, 255);
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro';
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+ol,
+ul{/* Quita el formato a todas las listas y las deja sin separaciones posibles */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no están restringidas por otro elemento. */
+    margin: 0;
+}
+
 .hero{
     height: 300px;
     background-color: #1b2127;
-    background-image: url('../images/hero.jpg');/*Usa la imagen como background usando la dirección del proyecto.*/
-    background-size: 500px, 300px;/* Background size recibe , width, height, (repite las imagenes). */
-    background-repeat: no-repeat;/* Propiedad de patron de repetición en el background. */
-    background-position-x: right;/* Posiciona la imagen del background (También se puede indicar el desplazamiento en pixeles). */ 
+    display: flex;
+    align-items: center;/* Centra el texto en el centro horizontal. */
+    justify-content: space-between;
 }
  
+.hero-image{
+    object-fit: cover;/* Ajusta la imagen. */
+}
 .portfolio{
     background: #fafafa;
+    padding: 20px;    
 }
+
 .project{
     border-top: 10px solid red;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
     border-right: 10px solid green;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
@@ -84,14 +108,30 @@ h1 strong{/* Selector descendente de las propiedades strong de h1. */
     border: 1px solid gray;/* Declara un borde de 1px, solido y gris. */
     border-radius: 10px;/* Define un redondeo del borde a 10px. */
     border-top-left-radius: 50px;/* Define un redondeo del borde superior izquierdo a 50px. Sobrescribiendo los bordes ya definidos.*/
-    margin-bottom: 10px;/* Crea un margen a 10 pixeles para todo. */
     margin-bottom: 15px;/* Crea un margen a 10 pixeles solo abajo */
     padding: 20px;/* Define el padding (separación interna) de 20 pixeles. */
     background: white;
     box-sizing: border-box;/* Impide que la caja crezca de tamaño mas alla de lo permitido por height y width. */
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-    
+
+.project-title{
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+}
+.project-course,
+.project-date,
+.project-url{
+    margin: 10px 0;
+}
+
+.project strong{
+    font-family: 'Fjalla One', Times, serif;
+}
 
 .project-details{
     width: 500px;
@@ -102,27 +142,179 @@ h1 strong{/* Selector descendente de las propiedades strong de h1. */
 }
 
 .header {
-    background-color: #1b2127;
+    background-color: #1b2127;/* Color de fondo */
     color: white;/* Color del texto. */
-    text-decoration: none;
+    text-decoration: none;/* Impide que se muestren distintos los hipervinculos.*/
+    height: 70px;/* Altura de 70px. */
+    align-items: center;
+    display: flex;/* Display flex para que los elementos hijos (el <figure> y el <nav>) se alineen en forma horizontal. */
+    justify-content: space-between;/* Distribuye el contenido en este caso la imagen y las caracteristicas en los extremos. */
+    height: 90px; /* <---- Define la altura del header para aplicar los comandos de align-content. */
+}
+
+.menu { /* .menu hereda height de .header */
+    height: inherit;
+}
+  
+.header ol { /* .header ol hereda height de .menu */
+    display: flex;/* Muestra los elementos de la lista en forma horizontal(ya no usa block) en lugar de vertical.La propiedad display:flex; solo se aplica a los hijos directos. */
+    height: inherit;
+}
+
+.header ol li { /* .header ol li hereda height de .header ol */
+    height: inherit;
+    
 }
 
 .header a{/*Anclas del header (se modificaron porque los anchor van debajo de la cascada del header).*/
     color: white;/* Color del texto. */
-    text-decoration: none;
+    text-decoration: none;/*Quita el subrayado.*/
+    height: inherit;/* .header a hereda height de .header ol li */
+    display: flex;/* Aplica display flex para permitir distribuirlos. */
+    align-items: center;/* Alinear en el centro vertical. */
+    padding: 0 10px; /* Margenes interiores con 0 en superior e inferior y 10px en derecho e izquierdo. */
 }
 
-.flexbox{
+.event-list-title{
+    margin-left: 20px;
+}
+
+.event-list{
     display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
+    flex-wrap: wrap;/* Cuando un elemento no cabe sigue en la siguiente linea. */
 }
 
-.box{
+.event{
+    margin: 10px;
+    width: 480px;
+    flex-shrink: 0;/* Impide que se reajuste. */
+    border-radius: 15px;/* Redondea los borde de event. */
+    overflow: hidden;/* Todo lo que se salga de los bordes lo oculta. */
+    background: #fafafa;
+}
+
+.event-image{
+    width:  480px;
+    height: 200px;
+    object-fit: cover;/* Ajusta la imagen para no desproporcionarla. */
+    /* object-fit: hidden; */
     
+}
+
+.event-detail{
+    margin: 20px 40px;/* Margen para separar del elemento padre. */
+    margin-top: -40px;/* Para invadir parte del espacio de la imagen. */
+    background-color: white;
+    position: relative;/* Permite que el texto se vea por encima de la imagen. */
+    padding: 20px;/* Separación interior para que se vea centrado. */
+    text-align: center; /* Centra el texto dentro de su contenedor. */
+   
+}
+    
+.event-description{
+    text-align: left;
+}
+
+.event-url{
+    color: rgb(0, 100, 255);
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.contact{
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social{
+
+}
+
+.social-link{
+    display: inline-block;
     width: 50px;
     height: 50px;
-    margin: 20px;
-    border: 1px solid red;
-    flex-shrink: 0.5;
+    margin: 0 10px;
+    background-size: 50px 50px;
+}
+
+.social-link.twitter{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/twitter.svg');
+}
+
+.social-link.facebook{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/facebook.svg');
+}
+
+.social-link.github{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/github.svg');
+}
+
+.social-link.instagram{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/instagram.svg');
+}
+
+.form-email{
+    margin: 0 10px;
+}
+
+.form-email input{
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px 20px 10px 25px;
+    background-image: url('../images/envelope.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+}
+
+.form-email button{
+    display: block;
+    margin-top: 10px;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.form-email h3{
+    font-family: 'Source Sans Pro';
+}
+
+.footer {
+    color: white;
+    background-color: #1d252c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer img{
+    vertical-align: middle;/* Alinea la imagen verticalmente para que todo este alineado (sino solo se alinea conforme a la imagen). */
+}
+
+.footer a{
+    color: white;
+}
+
+.footer p{
+    margin: 0 10px;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
 }
