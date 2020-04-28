@@ -37,3 +37,20 @@ Al momento de la grabación se puede intercalar entre grabar absolutamente o rel
 Para activar las referencias relativas se debe seleccionar Usar referencias relativas en el menu de código.
 Con ActiveCell.Offset(0, 1) se indica un desplazamiento relativo 0 hacia abajo, 1 a la derecha.
 ActiveCell.Offset(0, 1).Range("A1").Select Con el offset y range se logra una selección relativa siendo A1 la primera celda conforme a la selección.
+Para escribir código se accede al editor Visual Basic atraves de la Cinta de opciones Programador en la pestaña Código o usando la combinación de teclas Alt+F11.
+Para un buen manejo del código es aconsejable tener en la barra de herramientas la de edición y la estándar para activarlas hay que hacer click derecho y darle click para que esten marcadas (o desmarcadas).
+La parte de la izquierda de las ventana tiene el explorador de proyectos y la ventanas de propiedades (para activarlas se pueden configurar desde el menu Ver).
+ThisWorkbook representa al documento en completo.
+Se divide en Microsoft Excel Objetos y Módulos.
+En las Hojas de Microsoft Excel Objetos se colocan las funcionalidades referentes a la hoja en específico.
+En los módulos se ponen funcionalidades generales que pueden ser usadas ya sea como macros o por las hojas.
+En el menú Insertar se pueden insertar Procedimientos, UserForm, Módulos o Módulos de clase.
+En la ventana de propiedades se mostraran las propiedades del objeto seleccionado.
+En Excel las hojas tienen un nombre para el usuario y otro para el programador en vba.
+En la esquina superior izquierda se encuentra un icono de excel que nos permite intercambiar de vba a Excel.
+Una hoja tiene 3 formas de visible Visible, Hidden y VeryHidden, la VeryHidden solo puede ser vista por Vba y la hidden se puede mostrar desde la opción ocultar de Excel.
+Para mostrar hoja se accede a Formato, ocultar y mostrar, y mostrar hoja (o ocultar hoja para ocultarla).
+El proyecto de visual basic tambien se puede ocultar con usuario y contraseña para proteger el código y las opciones configuradas en él.
+El nombre del módulo se cambia en la ventana de propiedades.
+En Vba de Excel hay 3 estructuras de código: Funciones, procedimientos, y los procedimientos de eventos.
+En Vba no hay comentarios multíneas, los comentarios se inician con '.
