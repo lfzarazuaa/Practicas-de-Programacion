@@ -60,6 +60,33 @@ Los eventos son los momentos en los que se realizan acciones determinadas como p
 En un control Active X se entra en sus propiedades y se debe seleccionar modo diseño para su mejor edicción, para ejecutarla se debe desactivar el modo diseño.
 La propiedad name cambia el nombre identificador del botón.
 La propiedad caption modifica el texto visible.
+Celda.Value nos da el valor de una celda.
+Celda.Interior.Color nos dice el color de relleno de la celda (color-rojo vbRed).
 Haciendo doble click sobre un botón nos lleva a su evento principal en el caso del botón es el click.
 Para ver los distintos eventos de un control se verifica en la ventana del código en la esquina superior izquierda que control se está eligiendo y en la superior derecha se sitúan los distintos eventos.
-
+Errores en tiempo de ejecución y tiempo de compilación.
+Con click derecho
+El editor de excel cuando detecta una sentencia incorrecta nos da una adevertencia, cuando se trata de una variable lo detecta hasta compilarlo.
+En las sugerencias los métodos se representan con verde y las propiedades con azul.
+Range("F6").Value = Range("F6").Value + 1 'Aumenta en 1 el valor de la celda.
+Range("F6") = Range("F6") + 1 'Interpreta la propiedad mas importante de una celda (Value).
+El evento change verifica cuando se cambia el valor en una celda y accede a el desde el elemento worksheet.
+Operadores en Vba =,>,<,>=,<=,<>(diferente),NOT(negación).
+En la ventana Inmediato se pueden evaluar expresiones sin necesidad de crear un documento, si se antecede por ? despliega el carácter.
+Private Sub Worksheet_Change(ByVal Target As Range) Target es el objeto de celda (Range) cambiada.
+Con Target.Offset(0, 1).Value se accede al valor de la celda a la derecha.
+Format(Target.Value, "dddd") Regresa el valor con el formato deseado, en este caso "dddd" es el día.
+If Target.Column = 1 And Target.Row >= 2 Then 'Verifica que sea la Columna 1 y mayor a la fila 2. Condicionales con And Or.
+MsgBox "El dato introducido no es una fecha, corrígelo.", vbCritical, "Error." ' Despliega un mensaje (mensaje, tipo, título).
+En el MsgBox se muestra iconos de vbCritical-tache, vbInformation-Signo de Admiración, vbExclamation-Advertencia,vbQuestion-Pregunta
+Al usar el autocompletar de EXcel para el Msgbox nos muestra los distintos objetos.
+If Weekday(Target) = 7 Or Weekday(Target) = 1 Then 'Si es Sábado(7) o Domingo(1)
+    Target.Offset(0, 1).Interior.Color = rgbOrange 'Marca la celda de anaranjado.
+End If
+If Weekday(Target) = Martes Or Weekday(Target) = Miercoles Then
+    Target.Offset(0, 1).Interior.Color = vbBlue
+ElseIf Weekday(Target) = Jueves Or Weekday(Target) = Viernes Then
+    Target.Offset(0, 1).Interior.Color = vbYellow
+Else 'Sabado y Domingo
+    Target.Offset(0, 1).Interior.Color = vbRed
+End If
