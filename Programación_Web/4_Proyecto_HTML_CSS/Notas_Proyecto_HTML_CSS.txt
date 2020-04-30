@@ -13,3 +13,7 @@ Sin embargo, también existe la Comunicación Asíncrona, comunicación en tiemp
 Html Hyper Text Markup Language (Sistema de marcas de hipertexto) Se enfoca en la diferenciación y síntesis.
 La estructura básica de html es html, head y body.
 HTML es un lenguaje de markup pues se va jerarquizando y categorizando.
+https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos
+Con la etiqueta meta se le da información al buscador que clase de sitio eres.
+<meta name="" content="">
+Las etiquetas meta (meta tags) son etiquetas que se incorporan en el encabezado de una página web y son invisibles para los usuarios normales, sin embargo, son de gran utilidad para navegadores u otros programas que pueden valerse de esta información:
