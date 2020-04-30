@@ -1,0 +1,15 @@
+Frontend Parte que interactua con el usuario.
+Backend Parte que porcesa las solicitudes.
+Atom Install package emmet.
+Internet Conjunto descentralizado de redes de comunicación interconectadas.
+Protocolos Conjunto de reglas o pautas que posibilitan que distintos elmentos que forman parte de un sistema establezcan comunicaciones entre si.
+La World Wide Web es un sistema de distribución de documentos (de hipertexto o hipermedia) interconectados y accesibles vía internet, mientras que, los Hipertextos son textos que contienen enlaces a otros textos.
+FTP es el protocolo de transferencia de archivos entre sistemas conectados a una red, así es cómo diferentes personas podemos compartir documentos entre nosotros.
+Peer to Peer (Protocolo de Comunicación entre varios equipos para transferirse información en la cual una computadora sirve como cliente y servidor).
+Hay algunas computadoras que solo utilizamos para entregar documentos los conocemos como servidores, en cambio, las computadoras que solo leen y reciben estos documentos los conocemos como clientes. También existe el protocolo de comunicación P2P (Peer to Peer) donde una misma computadora trabaja como servidor y cliente al mismo tiempo.
+La tecnología de la la información es la aplicación de ordenadores y equipos de telecomunicación para almacenar, recuperar, transmitir y manipular datos, con frecuencia, utilizado en el contexto de negocios o empresas.
+La Comunicación Síncrona es comunicación en tiempo real, por ejemplo, en aplicaciones de mensajería y video-chat.
+Sin embargo, también existe la Comunicación Asíncrona, comunicación en tiempo NO real, así funciona Gmail, puede pasar que recibamos un nuevo correo pero no lo leemos inmediatamente lo envían, por eso es comunicación asíncrona.
+Html Hyper Text Markup Language (Sistema de marcas de hipertexto) Se enfoca en la diferenciación y síntesis.
+La estructura básica de html es html, head y body.
+HTML es un lenguaje de markup pues se va jerarquizando y categorizando.
