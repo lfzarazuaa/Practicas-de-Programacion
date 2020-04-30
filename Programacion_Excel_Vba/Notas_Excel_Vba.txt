@@ -90,3 +90,24 @@ ElseIf Weekday(Target) = Jueves Or Weekday(Target) = Viernes Then
 Else 'Sabado y Domingo
     Target.Offset(0, 1).Interior.Color = vbRed
 End If
+Target.Address = "$F$5" Verifica que casilla es.
+Application.EnableEvents = False 'Desactiva los eventos porque también se ejecutan al correr código.
+Select Case Weekday(Target)
+    Case 2: Target.Interior.Color = 11854022
+    Case 3, 4: Target.Interior.Color = 15189684
+    Case 5 To 6: Target.Interior.Color = 4127996
+    Case Else:
+        Target.Interior.Color = 6740479
+        MsgBox "La fecha es sábado o domingo, verifícalo.", vbInformation, "Advertencia."
+End Select
+El case también funciona con String
+Select Case Target.Offset(0, 1)
+    Case "martes", "miercoles": Target.Interior.Color = 15189684
+    Case Else: Target.Interior.Color = 6740479
+End Select
+Select Case con Is para reañiza comparación con el valor.
+Select Case Target.Value
+            Case Is <= Range("K3"): Target.Offset(0, 1) = Range("H3") 'Verifica que la celda(target) sea menor o igual que 500 (k3).
+            Case Is <= Range("K2"): Target.Offset(0, 1) = Range("H2") 'Verifica que la celda(target) sea menor o igual que 1000 (k3).
+            Case Is > 1000: Target.Offset(0, 1) = Range("H1") 'Verifica que la celda(target) sea mayor que 1000.
+        End Select
