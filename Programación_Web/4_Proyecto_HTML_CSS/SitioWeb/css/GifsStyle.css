@@ -1,0 +1,77 @@
+
+body {
+    /* background-color: rgb(182, 194, 148); */
+    background-image: url('../images/goku_logo.jpg');
+    background-size: 100px 100px;
+    display: flex;
+    flex-direction: column;/* Alinear primero en columna */
+    justify-items: space-between;
+    align-items: center;
+    /* border: 2px solid red; */
+    margin: 0px;
+
+}
+
+header{
+    background-color: rgb(201, 117, 27);
+    width: -webkit-fill-available;
+    height: 70px;
+    /* border: 2px solid red; */
+    margin: 0;
+    padding: 15px 50px;
+    display: inherit;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+h1{
+    color: rgb(38, 74, 171);;
+}
+
+.Gifs{
+    width: 1080px;
+    height: auto;
+    /* border: 2px solid grey; */
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;/* Permite una siguiente fila. */
+}
+
+.GifContainer{
+    background-color: rgb(247, 98, 34);
+    /* border: 2px solid red; */
+    margin: 15px;
+    padding: 5px;
+}
+
+.Gif-image-title{
+    text-align: center;
+    font-style: italic;
+    color: rosybrown;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Gif-image{
+    width:  300px;
+    height: 120px;
+    margin-bottom: 0;
+    /* object-fit: cover; */
+}
+
+footer{
+    background-color: rgb(34, 155, 40);
+    width: -webkit-fill-available;
+    height: 90px;
+    /* border: 2px solid red; */
+    margin: 0px 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer p{
+    margin: 0px 15px;
+}

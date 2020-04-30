@@ -16,4 +16,6 @@ HTML es un lenguaje de markup pues se va jerarquizando y categorizando.
 https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos
 Con la etiqueta meta se le da información al buscador que clase de sitio eres.
 <meta name="" content="">
-Las etiquetas meta (meta tags) son etiquetas que se incorporan en el encabezado de una página web y son invisibles para los usuarios normales, sin embargo, son de gran utilidad para navegadores u otros programas que pueden valerse de esta información:
+Las etiquetas meta (meta tags) son etiquetas que se incorporan en el encabezado de una página web y son invisibles para los usuarios normales.
+Los id son selectores únicos las class son genereales.
+JavaScript es la parte de programación que permite realizar actividades de interacción en la página web.
