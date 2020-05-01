@@ -56,3 +56,12 @@ Al inicio se debe definir un tamaño y tipo de letra predeterminados en html y b
 Usar listas como elementos de un menu para facilitar su vista y luego modificar sus estilos (en ul display:flex y en li modificar estilo de letra).
 Una vez que se alineó el contenido del menu pero aun no se sentra aplicar los colores desdeados y luego dejar la disposición correcta.
 a:hover Hover indica el estilo cuando el usuario pasa el mouse por encima.
+Si se encima el contenedor sobre una imagen de fondo conviene usarla como imagen de fondo y que se alinea y se acomode segun el tamaño.
+background-size: cover;/* Escala la imagen al tamaño del contenedor. */
+background-position: center top;/* Especifica la alineación de la imagen. */
+Se uso un contenedor product y uno content para que el contenido de content pueda salir de los bordes específicados por product.
+Como técnica se puede usar padding para separar elementos o contenedores interiores.
+Aplicar margenes negativos para sobreponer una imagen sobre otra.
+Con el padding en %(porcentaje) se logra centrar contenedores dentro del contenedor padre.
+Con hover se le puede dar mas interactividad sin necesidad de realizar un cambio total.
+cursor: pointer;/* Al pasar el cursor aperece la manita. */

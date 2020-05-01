@@ -31,3 +31,52 @@ nav li a{
 nav li a:hover{/* Hover indica el estilo cuando el usuario pasa el mouse por encima. */
     color: white;
 }
+
+/* Main section */
+
+.main_section{
+    padding: 15%;
+    text-align: center;
+}
+
+.products{
+    background-image: url("../images/curve.png");
+    height: 50px;
+    background-size: cover;/* Escala la imagen al tamaño del contenedor. */
+    background-position: center top;/* Especifica la alineación de la imagen. */
+    padding: 10%;/* División entre los distintos productos. */
+    display: flex;
+    justify-content: center;
+}
+
+.product{
+    padding: 10px;/* División entre productos. */
+    margin-top: -300px;/* Hace que la imagen aparezca arriba. */
+
+}
+    
+
+.product .content{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px #c1bcbc;/* Sombrea por los bordes del contenedor al color y grueso especificado. */
+}
+    
+
+.product .img_content{
+    text-align: center;/* Alinea las imagenes al centro. */
+}
+
+.main_button{
+    background-color: #7ACC2D;
+    width: 100%;/* Ocupa todo el espacio del contenedor. */
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;/* Al pasar el cursor aperece la manita. */
+}
+
+.main_button:hover{
+    background-color: #5E9E22;
+}
