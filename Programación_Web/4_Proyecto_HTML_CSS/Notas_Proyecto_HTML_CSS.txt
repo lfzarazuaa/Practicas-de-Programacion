@@ -65,3 +65,25 @@ Aplicar margenes negativos para sobreponer una imagen sobre otra.
 Con el padding en %(porcentaje) se logra centrar contenedores dentro del contenedor padre.
 Con hover se le puede dar mas interactividad sin necesidad de realizar un cambio total.
 cursor: pointer;/* Al pasar el cursor aperece la manita. */
+Para darle nombre a los estilos podemos utilizar diferentes métodos, aunque es recomendable seguir estos pasos:
+-No utilizar palabras en español: la mayoría de los lenguajes no aceptan ñ o tildes, es por eso que evitamos esta característica.
+-Para los espacios utilizamos guión medio o guión bajo, recuerda usar solo uno de los dos caracteres.
+-Describir el nombre de manera general a particular, por ejemplo: home_bar
+También podemos definir las siguientes etiquetas, las cuales nos permiten crear secciones dentro de HTML y evitamos un concepto llamado divismo.
+<section> Lo usamos para dividir secciones
+<footer> Define el footer ya sea de toda la página o solo de un componente.
+<iframe> Nos ayuda a incrustar otra página en nuestro html.
+<video> Nos ayuda a incrustar video dentro de nuestra web.
+:root{ /* Variables */
+--green-color:#7ACC2D;
+--white-color:white;
+--black-color: #313337;
+/* Tipografia */
+--normal: 12px;
+/* Espaciado */
+--space: 10px;
+/* BoxShadow */
+--box:  0 0 15px #c1bcbc;
+}
+
+font-size: var(--normal); /* Uso de variables. */
