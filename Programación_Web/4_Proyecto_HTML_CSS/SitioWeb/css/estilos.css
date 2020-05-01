@@ -1,0 +1,33 @@
+html, body { /* Elimnar los margenes para tener control de toda la ventana. */
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;/* Separa logo de menu de opciones. */
+    align-items: center;
+    background-color: #7ACC2D;
+    padding: 10px;
+    color: white;
+}
+
+nav ul{
+    display:flex
+}
+
+nav li{
+    padding-left: 20px;
+    list-style: none;/* Le quita el estilo default a la lista (puntos).*/
+}
+
+nav li a{
+    text-decoration: none;
+    color: gray;/* Le asigna el color correcto a anchor(a).*/
+}
+
+nav li a:hover{/* Hover indica el estilo cuando el usuario pasa el mouse por encima. */
+    color: white;
+}
