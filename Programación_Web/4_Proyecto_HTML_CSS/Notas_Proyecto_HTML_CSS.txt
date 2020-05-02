@@ -74,6 +74,8 @@ También podemos definir las siguientes etiquetas, las cuales nos permiten crear
 <footer> Define el footer ya sea de toda la página o solo de un componente.
 <iframe> Nos ayuda a incrustar otra página en nuestro html.
 <video> Nos ayuda a incrustar video dentro de nuestra web.
+Ayuda para centrar. http://howtocenterincss.com/
+Aplicar sobras con mas estilo https://www.cssmatic.com/box-shadow
 :root{ /* Variables */
 --green-color:#7ACC2D;
 --white-color:white;
@@ -85,5 +87,34 @@ También podemos definir las siguientes etiquetas, las cuales nos permiten crear
 /* BoxShadow */
 --box:  0 0 15px #c1bcbc;
 }
-
 font-size: var(--normal); /* Uso de variables. */
+@media (max-width: 600px ) {
+.products{
+        display: inherit;
+        height: auto;
+    }
+} Se usa para adaptar el diseño a sitios web para dispositivos moviles.
+Se acostumbra quitar o modicar el flexbox para que quepan los elementos necesarios a mostrarse.
+En google chrome en inspeccionar hay una opcion para ver en pantalla movil en la esquina superior izquierda.
+Para animaciones se definen 2 selectores
+.fadeInUp{
+    -webkit-animation-duration: 1s;Soporte para el navegador.
+    animation-duration: 1s;Duracion
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;Define valores despues de la animación.
+    -webkit-animation-name: fadeInUp;Nombre de la anaimación.
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;Cambia la opacidad o transparencia.
+        -webkit-transform: translate3d(0,100%,0);Define donde inicia el objeto.
+        transform: translate3d(0,100%,0);
+    }
+    to{
+        opacity: 1;Cambia la opacidad o transparencia.
+        -webkit-transform: translate3d(0,0,0);Define donde termina el objeto.
+        transform: translate3d(0,0,0);
+    }
+}
