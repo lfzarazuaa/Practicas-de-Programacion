@@ -50,7 +50,8 @@ nav li a:hover{/* Hover indica el estilo cuando el usuario pasa el mouse por enc
 /* Main section */
 
 .main_section{
-    padding: 15%;
+    margin-bottom: 110px;
+    padding: 2% 5% 20% 5%;
     text-align: center;
 }
 
@@ -92,4 +93,96 @@ nav li a:hover{/* Hover indica el estilo cuando el usuario pasa el mouse por enc
 
 .main_button:hover{
     background-color: #5E9E22;
+}
+
+.benefits{
+    display: flex;
+    justify-content: center;
+    padding: var(--space);
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.benefit{
+    /* padding: var(--space); */
+    width: 15%;
+    margin: 0 5%;
+    padding: 0 0;
+}
+
+.content_benefit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2px 2px;
+}
+
+.content_benefit img{
+    width: 70%;/* Ajusta la imagen. */
+    height: 100px;
+    margin: 20px 0px;/* Separación mayor entre imagen y descripción. */
+    /* object-fit: cover;
+    object-position: center center; */
+}
+
+.benefit_title{
+    margin: 5px 0px;/* Margen de separación entre textos. */
+    align-self: center;
+}
+
+.mention_head{
+    text-align: center;
+}
+
+.mentions{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.mention{
+    width: 18%;
+    margin: 0 10px;
+    border-radius: 2px;
+}
+
+.content_mention{
+    margin: 0;
+    box-shadow: var(--box);
+}
+
+.mention img{
+    width: 100%;/* Ajusta la imagen. */
+    margin: 0 auto;
+    /* object-fit: cover;
+    object-position: center center; */
+}
+
+.mention_title, .mention_description{
+    margin: 0 0 5px 10px;
+}
+
+footer{
+    background-color: var(--black-color);
+    margin: 0;
+}
+
+.page_end{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5%;
+}
+
+.page_end a{
+    color: var(--green-color);
+    text-decoration: none;
+}
+
+.page_end a:hover{
+    color: var(--white-color);
+    text-decoration: none;
 }
