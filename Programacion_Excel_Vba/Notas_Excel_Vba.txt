@@ -110,4 +110,32 @@ Select Case Target.Value
             Case Is <= Range("K3"): Target.Offset(0, 1) = Range("H3") 'Verifica que la celda(target) sea menor o igual que 500 (k3).
             Case Is <= Range("K2"): Target.Offset(0, 1) = Range("H2") 'Verifica que la celda(target) sea menor o igual que 1000 (k3).
             Case Is > 1000: Target.Offset(0, 1) = Range("H1") 'Verifica que la celda(target) sea mayor que 1000.
-        End Select
+End Select
+Las variables en Excel se declaran con Dim.
+MsgBox("Seguro que quieres eliminar esta factura", vbCritical + vbYesNo + vbDefaultButton2, "Cuidado.") 'MsgBox se usa con paréntesis cuando se quiere asignar su valor a una variable con vbDefaultButton2 asigna por default el boton 2.
+OK-1, Cancel-2, Abort-3, Retry-4, Ignore-5, Yes-6, No-7.
+Para consultar el valor de un boton en inmediato se puede poner ?vbyes.
+En Excel se pueden crear variables sin declaracción previa que por default van a ser variant.
+Option Explicit 'Forza declarar variables antes de usarlas.
+Excel al compilar primero el programa crea todas las variables necesarias para su ejecución inicial con lo cual trabaja option explicit para detectar problemas de compilación.
+Para ejecutar línea a línea el código se usa F8 y puntos de interrupción.
+Las variables variant son genéricas pues reciben todo tipo de valores.
+Las variables se destruyen cuando termina su bloque de código que los contenga (procedimiento, módulo).
+Para forzar la declaración de variables se debe ingresar a herramientas-opciones en vba y alli marcar la casilla de requerir declaración de variables.
+Al marcar la casilla de requerir declaración de variables se ejecutará hasta crear un nuevo modulo o código en Excel.
+Mensaje = "¿Deseas guardar esta información?" & vbCrLf'Concatena usando el operador &.
+Mensaje = Mensaje  & "Fecha: " & Fecha & vbCrLf'Para agregar un salto de linea se usa vbCrLf.
+Fila = ActiveSheet.Cells(1048576, "A").End(xlUp).Row + 1'Obtiene la ultima con datos en la columna A, contando desde la celda 1048576.
+Static Fila As Long'Declaración de variable estática la cual mantiene su valor a pesar que se termine su función.
+If (Fila = 0) Then 'Si es cero significa que el documento se acaba de abrir u ocurrió un error en tiempo de ejecución al ser estáticos.
+    Fila = ActiveSheet.Cells(1048576, "A").End(xlUp).Row + 1'Obtiene la ultima con datos en la columna A, contando desde la celda 1048576.
+Else
+    Fila = Fila + 1'Guarda el valor de la ultima fila a modificar.
+End If
+Dim ProductoA As Integer, ProductoB As Integer, ProductoC As Integer, Boton As Integer'Declaración multiples variables.
+Cuando una variable String es de longitud definida entonces la rellena con espacios en blanco donde no haya texto.
+Application es el método de Excel.
+Application.Inputbox es mejor que Inputbox ya que puede verificar el tipo de la variable.
+ProductoA = Application.InputBox("Introduce las unidades producidas del Producto A.", "Producto A.", , , , , , 1) 'Paso de parámetros por posición.
+ProductoB = Application.InputBox(Prompt:="Introduce las unidades producidas del Producto B.", Title:="Producto B.", Type:=1) 'Paso de parámetros por argumento Type=1 acepta enteros.
+        
