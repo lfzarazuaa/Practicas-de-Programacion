@@ -181,3 +181,32 @@ Ejemplo de eliminar
 For Fila = FilaFinal - 1 To 2 Step -2
     ActiveSheet.Rows(Fila).Delete 'Borra la fila de donde se copiaron los datos.
 Next
+Ciclo con cambio de hojas.
+For Each Hoja In Worksheets
+    Hoja.Select 'Selecciona la hoja para poderla editar.
+    Hoja.Unprotect "123456" 'Desprotege la hoja para escribir sobre esta.
+	Hoja.Protect "123456" 'Protege la hoja con la contraseña.
+Next
+Range("B:D").Insert 'Se selecciona que se insertaran 3 columnas.
+Range("B1:D1").Interior.Color = vbBlack 'Establece el color negro en el fondo.
+Range("B1:D1").Font.Bold = True 'Coloca en negritas.
+Range("B1:D1").Font.Color = vbWhite 'Coloca en blanco las letras.
+Range("B1:D1").HorizontalAlignment = xlCenter 'Centra el texto.
+Celda.Offset(0, 1) = "'" & Left(Celda, 4) 'Left extrae la cantidad determinada de caracteres de la celda asignada desde la izquierda (Se añade ' para que se interprete como string y no como número).
+Celda.Offset(0, 2) = Right(Celda, 10) 'Extrae los siguientes 10 caracteres para descomponer la cadena.
+Left(Celda, 4) 'Left extrae la cantidad determinada de caracteres de la celda asignada desde la izquierda (Se añade ' para que se interprete como string y no como número). 
+Mid(Celda, 5, 2) 'Extrae de la cadena 2 caracteres apartir del carácter 5.
+Con Do Until se sigue repitiendo hasta que se cumpla la condición.
+Do Until Planta = ""'Verifica la condición al inicio.
+	sentencias
+Loop
+Do 'Verifica la condición al final.
+	sentencias
+Loop Until Planta = ""
+Con Do While se sigue repitiendo hasta que ya no se cumpla la condición.
+Do While Planta <> ""'Verifica la condición al inicio.
+	sentencias
+Loop
+Do 'Verifica la condición al final.
+	sentencias
+Loop While Planta <> ""
