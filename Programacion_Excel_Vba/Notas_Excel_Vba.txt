@@ -157,3 +157,9 @@ ControlErrores:
         MsgBox "Se ha producido un error." & vbCrLf & "Código" & Err.Number & vbCrLf & "Descripción: " & Err.Description, vbCritical,"Error." 'Al producirse un error Exel nos guarda en Err sus distintas propiedades.
     End If
 Las variables globales pueden ser accedidas desde cualquier parte del proyecto.
+Public FilasAñadidas As Integer'Se usa la palabra reservada Public en vez de Dim, asi es accesible a todo el proyecto.
+Private Sub Workbook_BeforeClose(Cancel As Boolean) 'Evento antes de cerrar el documento.
+    MsgBox "Hoy se han añadido " & FilasAñadidas & " líneas de producción.", vbInformation, "Filas Añadidas"
+End Sub
+En los módulos Public es global y Private es local como Dim.
+Las variables constantes se definen con la palabra reservada Const (Const ColorRojo As Long = 8696052). 
