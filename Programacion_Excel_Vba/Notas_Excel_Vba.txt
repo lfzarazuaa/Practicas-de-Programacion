@@ -162,4 +162,22 @@ Private Sub Workbook_BeforeClose(Cancel As Boolean) 'Evento antes de cerrar el d
     MsgBox "Hoy se han añadido " & FilasAñadidas & " líneas de producción.", vbInformation, "Filas Añadidas"
 End Sub
 En los módulos Public es global y Private es local como Dim.
-Las variables constantes se definen con la palabra reservada Const (Const ColorRojo As Long = 8696052). 
+Las variables constantes se definen con la palabra reservada Const (Const ColorRojo As Long = 8696052).
+Para declarar un For se usa la siguiente sintaxis:
+For Fila = FilaInicial To FilaFinal step 1
+	sentencias
+Next Fila 'Indica donde termina el for.
+ActiveSheet.Rows(Fila).Hidden = True 'Oculta la celda.
+cmdFiltrar.Enabled = True 'Activa la propiedad Enabled el boton de Filtrar.
+cmdFiltrar.Enabled = True 'Activa la propiedad Enabled el boton de Filtrar.
+cmdFiltrar.Enabled = True 'Activa la propiedad Enabled el boton de Filtrar.
+Ejemplo de cortar y pegar
+For Fila = 1 To FilaFinal Step 2
+        Range("B" & Fila + 1 & ":C" & Fila + 1).Cut 'Indica cortar.
+        Range("E" & Fila).Select 'Selecciona la celda donde pegar.
+        ActiveSheet.Paste 'Pega en la celda seleccionada.
+    Next
+Ejemplo de eliminar
+For Fila = FilaFinal - 1 To 2 Step -2
+    ActiveSheet.Rows(Fila).Delete 'Borra la fila de donde se copiaron los datos.
+Next
