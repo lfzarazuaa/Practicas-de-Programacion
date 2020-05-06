@@ -47,6 +47,10 @@ nav li a:hover{/* Hover indica el estilo cuando el usuario pasa el mouse por enc
     color: var(--white-color);
 }
 
+p, label{
+    font-size: var(--normal);
+}
+
 /* Main section */
 
 .main_section{
@@ -185,4 +189,39 @@ footer{
 .page_end a:hover{
     color: var(--white-color);
     text-decoration: none;
+}
+/* Pagina de producto */
+.product-container{
+    width: 80%;
+    margin: 0% 5%;
+    padding: 0% 5%;
+}
+
+.image-product img{
+    width: 100%;
+}
+
+.product-details{
+    margin: auto 0;
+}
+
+/* Pagina de venta. */
+.payment_module{
+    background-color: var(--white-color);
+    box-shadow: var(--box);/* Efecto de sombras. */
+    padding: var(--space);/* Padding para centrar los elementos internos. */
+}
+
+.payment_module_images{
+    max-width: 150px;/* Evita que la imagen pierda calidad al incrementar su tamaño. */
+    margin: auto;/* Centra la imagen aplicando margenes iguales. */
+}
+
+.module_data{
+    margin: var(--space) auto;/* Espaciado entre los input y el texto del label. */
+    width: 100%;/* Logra que los input ocupen todo el tamaño del contenedor. */
+    box-sizing: border-box;/* Toma como referencia del 100% los margenes de la caja. */
+    height: 35px;/* Hace mas grande el input en altura. */
+    border-radius: 5px;/* Redondea los bordes del input. */
+    border: 1px solid var(--black-color);
 }

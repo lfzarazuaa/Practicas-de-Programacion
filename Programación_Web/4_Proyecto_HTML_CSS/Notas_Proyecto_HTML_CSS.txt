@@ -1,4 +1,4 @@
-Frontend Parte que interactua con el usuario.
+﻿Frontend Parte que interactua con el usuario.
 Backend Parte que porcesa las solicitudes.
 Atom Install package emmet.
 Internet Conjunto descentralizado de redes de comunicación interconectadas.
@@ -56,7 +56,7 @@ Al inicio se debe definir un tamaño y tipo de letra predeterminados en html y b
 Usar listas como elementos de un menu para facilitar su vista y luego modificar sus estilos (en ul display:flex y en li modificar estilo de letra).
 Una vez que se alineó el contenido del menu pero aun no se sentra aplicar los colores desdeados y luego dejar la disposición correcta.
 a:hover Hover indica el estilo cuando el usuario pasa el mouse por encima.
-Si se encima el contenedor sobre una imagen de fondo conviene usarla como imagen de fondo y que se alinea y se acomode segun el tamaño.
+Si se encima el contenedor sobre una imagen de fondo conviene usarla como imagen de fondo y que se alinee y se acomode segun el tamaño.
 background-size: cover;/* Escala la imagen al tamaño del contenedor. */
 background-position: center top;/* Especifica la alineación de la imagen. */
 Se uso un contenedor product y uno content para que el contenido de content pueda salir de los bordes específicados por product.
@@ -93,7 +93,7 @@ font-size: var(--normal); /* Uso de variables. */
         display: inherit;
         height: auto;
     }
-} Se usa para adaptar el diseño a sitios web para dispositivos moviles.
+} Se usa para adaptar el diseño a sitios web para dispositivos móviles.
 Se acostumbra quitar o modicar el flexbox para que quepan los elementos necesarios a mostrarse.
 En google chrome en inspeccionar hay una opcion para ver en pantalla movil en la esquina superior izquierda.
 Para animaciones se definen 2 selectores
@@ -118,3 +118,18 @@ Para animaciones se definen 2 selectores
         transform: translate3d(0,0,0);
     }
 }
+
+Framework: Es basicamente un marco de trabajo. Un marco de trabajo con el cual laborar, todo esto basado en una metodología para hacer más rapido tu trabajo.
+Un ejemplo de framework es Bootstrap o Foundation, una forma de trabajar con herramientas ya probadas y listas para implementarse y hacer mas rapido tu trabajo.
+Uno también puede generar su propio Framework o marco de trabajo.
+Libreria: Conjunto de rutinas, funciones que tienen un objetivo.
+Para aplicar un sistema de grid se pueden definir los distintos tamaños de columna con sus respectivos porcentajes.
+Para un espaciado sin tener que repetir los margenes en un contenedor se puede poner un padding para que asi centre los elementos y al mismo tiempo no utilizar tantas líneas.
+Para centrar una imagen conviene ver cual es su calidad maxima (max-width) y de ahi definir sus margenes (preferible dentro de un figure).
+Elementos para testing de una página web.
+Revisar que reglas estan presentes en css yu que animaciones están.
+En consola revisar la funcionalidad de Js.
+En Sources nos deja ver como está organizado nuestro proyecto en archivos.
+En Network se pueden verficar los tiempos de carga de la página y como es su flujo en llamado de objetos, hay que revisar que sea un tiempo conveniente.
+button no soporta href al menos que use un form, para no perder los estilos se puede usar <a> para usar un hipervinculo.
+Revisar que los textos de las vistas sean correctos.

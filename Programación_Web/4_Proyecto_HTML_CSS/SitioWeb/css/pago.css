@@ -1,0 +1,19 @@
+body{
+    background-color: var(--black-color);
+    height: 100vh;/* Mide el 100% de la pantalla visible. */
+    text-align: center;/* Alinea los componentes al centro. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+}
+
+.content_payment a{
+    color: var(--green-color);
+}
+
+.content_payment .row{
+    justify-content: center;
+}
+
+

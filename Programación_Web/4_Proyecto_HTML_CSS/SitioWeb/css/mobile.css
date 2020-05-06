@@ -23,4 +23,8 @@
         width: 80%;
         margin: 5% auto;/* Marca la separación entre los distintos elementos(top y bottom). */
     }
+
+    .image-product{
+        width: 75%;
+    }
 }

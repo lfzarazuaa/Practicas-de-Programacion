@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="fadeInDown">
+    <a href="index.html">
+      <div class="brand_image">
+        <img src="images/logo.png" alt="logo">
+      </div>
+    </a>
+    <div class="nav_options">
+      <ul>
+        <li><a href="index.html#faqs-section">Faqs</a></li>
+        <li><a href="producto.html">Producto y descripción</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Formulario de Venta -->
+  <br> <br> <br> <br> 
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="payment_module">
+          <figure class="payment_module_images">
+            <img src="images/box2.png" alt="Producto 2">
+          </figure>
+          <h3>
+            Producto 3
+          </h3>
+          <p>
+            Miles de productos hay en el mercado, pero nada como una caja con gatitos.
+          </p>
+        </div>
+      </div>
+      <div class="col-7">
+        <div class="payment_module">
+          <form action="confirmarpago.html">
+            <label for="buyer_name">Nombre</label> <br>
+            <input class="module_data" type="text" placeholder="" name="buyer_name"> <br>
+            <label for="buyer_email">E-mail</label> <br>
+            <input class="module_data" type="email" placeholder="" name="buyer_email"> <br>
+            <label for="buyer_phone">Teléfono</label> <br>
+            <input class="module_data" type="text" placeholder="" name="buyer_phone"> <br>
+            <input type="submit" class="main_button" value="Confirmar Pago" name="submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br> <br> <br> <br>
+  <footer>
+    <section class="page_end">
+      <p><a href="#">Terminios y condiciones</a></p>
+      <p><a href="#">contacto@gmail.com</a></p>
+    </section>
+  </footer>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
