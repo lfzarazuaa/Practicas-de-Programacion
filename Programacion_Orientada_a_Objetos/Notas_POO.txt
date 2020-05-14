@@ -1,0 +1,34 @@
+Algunos de los lenguajes de programación Orientados a Objetos son:
+Java:
+– Orientado a Objetos naturalmente
+– Es muy útilizado en Android
+– Y es usado del lado del servidor o Server Side
+PHP
+– Lenguaje interpretado
+– Pensado para la Web
+Python
+– Diseñado para ser fácil de usar
+– Múltiples usos: Web, Server Side, Análisis de Datos, Machine Learning, etc
+Javascript
+– Lenguaje interpretado
+– Orientado a Objetos pero basado en prototipos
+– Pensado para la Web
+C#
+Ruby
+Kotlin
+OMT: Object Modeling Techniques. Es una metodología para el análisis orientado a objetos.
+UML: Unified Modeling Language o Lenguaje de Modelado Unificado. Tomó las bases y técnicas de OMT unificándolas. Tenemos más opciones de diagramas como lo son Clases, Casos de Uso, Objetos, Actividades, Iteración, Estados, Implementación.
+Con UML se ven: Clases, casos de usos, objetos, actividades, iteración, estados. implementación.
+En los UML: En la parte superior se colocan los atributos o propiedades, y debajo las operciones de la clase. Notarás que el primer caractér con el que empiezan es un símbolo. Este denotará la visibilidad del atributo o método, esto es un termino que tiene que ver con Encapsulamiento y veremos más adelante a detalle.
+Estos son los niveles de visibilidad que puedes tener:
+- private
++ public
+# protected
+~ default.
+Asociación: Como su nombre lo dice, notarás que cada vez que esté referenciada este tipo de flecha(-->) significará que ese elemento contiene al otro en su definición. La flecha apuntará hacia la dependencia.
+Con esto vemos que la ClaseA está asociada y depende de la ClaseB.
+Herencia: Siempre que veamos este tipo de flecha(--|>) se estará expresando la herencia.
+La dirección de la flecha irá desde el hijo hasta el padre.
+Agregación: Este se parece a la asociación en que un elemento dependerá del otro, pero en este caso será: Un elemento dependerá de muchos otros. Aquí tomamos como referencia la multiplicidad del elemento. Lo que comúnmente conocerías en Bases de Datos como Relaciones uno a muchos.
+Con esto decimos que la ClaseA contiene varios elementos de la ClaseB. Estos últimos son comúnmente representados con listas o colecciones de datos.
+Composición: Este es similar al anterior solo que su relación es totalmente compenetrada de tal modo que conceptualmente una de estás clases no podría vivir si no existiera la otra.
