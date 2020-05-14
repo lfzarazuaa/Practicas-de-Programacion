@@ -32,3 +32,20 @@ La dirección de la flecha irá desde el hijo hasta el padre.
 Agregación: Este se parece a la asociación en que un elemento dependerá del otro, pero en este caso será: Un elemento dependerá de muchos otros. Aquí tomamos como referencia la multiplicidad del elemento. Lo que comúnmente conocerías en Bases de Datos como Relaciones uno a muchos.
 Con esto decimos que la ClaseA contiene varios elementos de la ClaseB. Estos últimos son comúnmente representados con listas o colecciones de datos.
 Composición: Este es similar al anterior solo que su relación es totalmente compenetrada de tal modo que conceptualmente una de estás clases no podría vivir si no existiera la otra.
+En la POO lo primero que se debe hacer es identificar los objetos, haciendo un análisis primero observando los objetos involucrados.
+Los objetos siempre son sustantivos y contienen propiedades y comportamientos.
+Los objetos pueden ser físicos o conceptuales(simbología de procesos que están ocurriendo).
+Un ejemplo de objeto físico es un usuario y uno conceptuales es sesión.
+Las Propiedades también pueden llamarse atributos y estos también serán sustantivos. Algunos atributos o propiedades son nombre, tamaño, forma, estado, etc. Son todas las características del objeto.
+Los Comportamientos serán todas las operaciones que el objeto puede hacer, suelen ser verbos o sustantivos y verbo. Algunos ejemplos pueden ser que el usuario pueda hacer login y logout.
+Una Clase es el modelo por el cual nuestros objetos se van a construir y nos van a permitir generar más objetos.
+Analizamos Objetos para crear Clases. Las Clases son los modelos sobres los cuales construiremos nuestros objetos.
+Abstracción es cuando separamos los datos de un objeto para generar un molde.
+La modularidad va muy relacionada con las clases y es un principio de la Programación Orientado a Objetos y va de la mano con el Diseño Modular que significa dividir un sistema en partes pequeñas y estas serán nuestros módulos pudiendo funcionar de manera independiente.
+La modularidad de nuestro código nos va a permitir
+- Reutilizar código
+- Evitar colapsos
+- Hacer nuestro código más mantenible
+- Legibilidad
+- Resolución rápida de problemas
+- Una buena práctica es separando las clases en archivos diferentes.
