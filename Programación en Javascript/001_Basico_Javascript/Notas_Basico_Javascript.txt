@@ -75,3 +75,16 @@ var ultimo = frutas.pop();//Elimina el ultimo elemento del array.
 var nuevaLongitud = frutas.unshift("Uvas");//Agrega el elemento al inicio del array.
 var borrarPrimerElemento = frutas.shift();//Elimina el primer elemento del array.
 var posicion = frutas.indexOf("Plátano");//Obtener el índice del elemento buscado.
+//For usando una variable iterativa (incremental).
+for (var i = 0; i < estudiantes.length; i++) {
+    saludarEstudiantes(estudiantes[i]);
+}
+//For usando un elemento de la lista.
+for (var estudiante of estudiantes) {
+    saludarEstudiantes(estudiante);
+}
+//For in para iterar sobre cada propiedad que tenga un objeto.
+var obj = {a: 1, b: 2, c: 3};
+for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
