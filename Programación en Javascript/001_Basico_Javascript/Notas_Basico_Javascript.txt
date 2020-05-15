@@ -53,3 +53,10 @@ Coerción implicita: El compilador pasa automáticamente un tipo de valor a otro
 Coerción explicita: El código es el que expresa a que tipo de dato se va a transformar.
 var a = 4 * "7";//Coerción implicita resultante en Number.
 var c = String(4);//Coerción explicita resultante en String.
+Con Boolean() se evalua una expresión para que regrese verdadero o falso.
+Boolean regresa falso con false, null, undefined, 0, "".
+Operdores binarios +,-,*,/
+Operadores unarios !
+Operadores de comparación ==, ===, <, >, >=, <=.
+Operadores lógicos &&, ||.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
