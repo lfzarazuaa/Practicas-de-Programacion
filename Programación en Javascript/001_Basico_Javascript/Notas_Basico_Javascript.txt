@@ -93,4 +93,20 @@ while (estudiantes.length>0) {
     var estudiante=estudiantes.shift();//Método shift para eliminar el primer elemento de un array.
     saludarEstudiantes(estudiante);
 }
-
+Javascript es un lenguaje orientado a objetos.
+var miAuto = {//Definir objeto en JS sin plantilla.
+    marca: "Toyota",//Propiedad marca del objeto.
+    modelo: "Corolla",//Propiedad modelo del objeto.
+    annio: 2020,//Propiedad año del objeto.
+    //Definición de función.
+    detalleDelAuto: function () {
+        console.log(`Auto ${this.modelo} ${this.annio}`); //this para ingresar a miembros del objeto.
+    }
+};
+//Constructor de objeto usando una plantilla.
+function auto(marca, modelo, annio) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.annio = annio;
+}
+auto1 = new auto("Tesla", "Model X", 2018);//Crear objeto nuevo.
