@@ -60,3 +60,5 @@ Operadores unarios !
 Operadores de comparación ==, ===, <, >, >=, <=.
 Operadores lógicos &&, ||.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+Con if se verifica una condicional booleana , else nos da el valor si no se cumplió y adicionalmente verifica con else if condicionales extra.
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Conditional_Operator
