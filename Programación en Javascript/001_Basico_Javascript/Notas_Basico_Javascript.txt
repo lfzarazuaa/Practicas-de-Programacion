@@ -11,3 +11,15 @@ Para solucionar este problema existen compiladores como Babel que traducen el c√
 Javascript tienes muchas aplicaciones y proyectos.
 Con node js puedes trabajar backend usando javascript.
 Hay dos elementos principales en javascript, las variables y las funciones.
+Los valores placeholder son null o undefined cuando se necisita forzosamente un valor.
+En la secci√≥n de console se prueba lo relacionado con js.
+Con la palabra reservada typeof nos dice de que tipo es la variable.
+Con la palabra reservada var se indica que es una variable.
+En javascript se puede declarar una variable sin inicializarla.
+var edad;
+edad = 30;
+Para declar un objeto sin crear una clase se usa la siguiente sintaxis.
+var persona = {
+    nombre: "Diego",
+    edad: 30
+}
