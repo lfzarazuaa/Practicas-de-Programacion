@@ -37,3 +37,15 @@ A las funciones declarativas se les aplica hoisting, y a la expresión de funci�
 Lo que quiere decir que con las funciones declarativas, podemos mandar llamar la función antes de que ésta sea declarada, y con la expresión de función, no, tendríamos que declararla primero, y después mandarla llamar.
 En la expresión de función, la función podría o no llevar nombre, aunque es más común que se hagan anónimas.
 Con console.log() imprimimos en el html.
+El scope de una variable es que alcance puede tener, en términos básicos puede ser global o local.
+El scope también se aplica a las funciones.
+El hoisting es cuando las variables y funciones se procesan antes de ejecutar cualquier tipo de código.
+Cuando js trata de llamar una variable no definida en su proceso de compliación le asigna undefined.
+Si mandamos a llamar una función antes de declarar (declarada abajo en el código), si se manda a llamar correctamente.
+Una buena práctica es declarar la funcón al inicio del archivo.
+Es esencial quedarnos con dos conceptos:
+Las funciones siempre se mueven arriba del scope. Por lo tanto, podemos elegir donde declararlas y usarlas.
+La declaración de las variables se mueven arriba del scope, pero no la asignación. Antes de usar una variable, habrá que crearla y asignarla.
+https://developer.mozilla.org/es/docs/Glossary/Hoisting
+https://medium.com/@anamartinezaguilar/qu%C3%A9-es-el-hoisting-327870f67b36
+
