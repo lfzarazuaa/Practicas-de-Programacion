@@ -1,0 +1,13 @@
+Java Script es debilmente tipado, orientado a objetos y dinámico.
+Javascript al hacer sumas del tipo int mas string asume que todo es string.
+4 + "7" = 47
+4 * "7" = 28
+Javascript es un lenguaje dinámico (corre en el Runtime), no estático (como c# que tiene que ser compilado).
+El motor de javascript es v8.
+El navegador toma el javascript, luego interpreta el código, hace la compilación y entrega el binario.
+Forwards significa que las nuevas versiones serán compatibles con código antiguo.
+Javascript es Backwards pues no podrás utilizar funcionalidades nuevas (librerías) en el código nuevo.
+Para solucionar este problema existen compiladores como Babel que traducen el código nuevo al antiguo que entienda el navegador.
+Javascript tienes muchas aplicaciones y proyectos.
+Con node js puedes trabajar backend usando javascript.
+Hay dos elementos principales en javascript, las variables y las funciones.
