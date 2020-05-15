@@ -110,3 +110,11 @@ function auto(marca, modelo, annio) {
     this.annio = annio;
 }
 auto1 = new auto("Tesla", "Model X", 2018);//Crear objeto nuevo.
+var articulosFiltrados = articulos2.filter(function(articulo){//Con filter se regresan los elementos que cumplan con la condición.
+    return articulo.costo <= 900; //Se específica la condición de filtrado.
+});
+
+var nombreArticulos = articulos2.map(function (articulo) {//Itera sobre la variable, ejecutando la función indicada que regresa el parámetro indicado.
+    articulo.nombre = "Nombre " + articulo.nombre;
+    return articulo.nombre;//Específica que elementos regresar.
+});
