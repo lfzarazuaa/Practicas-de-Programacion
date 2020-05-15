@@ -48,4 +48,8 @@ Las funciones siempre se mueven arriba del scope. Por lo tanto, podemos elegir d
 La declaración de las variables se mueven arriba del scope, pero no la asignación. Antes de usar una variable, habrá que crearla y asignarla.
 https://developer.mozilla.org/es/docs/Glossary/Hoisting
 https://medium.com/@anamartinezaguilar/qu%C3%A9-es-el-hoisting-327870f67b36
-
+Coerción: Es cuando se intenta de operar entre dos variables o mas variables de distintos tipos (La forma en que se puede cambiar un tipo de valor a otro tipo de valor).
+Coerción implicita: El compilador pasa automáticamente un tipo de valor a otro.
+Coerción explicita: El código es el que expresa a que tipo de dato se va a transformar.
+var a = 4 * "7";//Coerción implicita resultante en Number.
+var c = String(4);//Coerción explicita resultante en String.
