@@ -88,3 +88,9 @@ var obj = {a: 1, b: 2, c: 3};
 for (const prop in obj) {
   console.log(`obj.${prop} = ${obj[prop]}`);
 }
+//While con el elemento shift para eliminar el primer elemento de un array.
+while (estudiantes.length>0) {
+    var estudiante=estudiantes.shift();//Método shift para eliminar el primer elemento de un array.
+    saludarEstudiantes(estudiante);
+}
+
