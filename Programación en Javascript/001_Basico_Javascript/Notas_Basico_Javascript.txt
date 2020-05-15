@@ -68,3 +68,10 @@ switch (key) {
     default:
         break;
 }
+Declaración de array var frutas = ["Manzana", "Plátano", "Cereza", "Fresa"];.
+var longitud = frutas.length;//Calcula la longitud del array.
+var masFrutas = frutas.push("Uvas");//Agrega mas elementos al array al final del array.
+var ultimo = frutas.pop();//Elimina el ultimo elemento del array.
+var nuevaLongitud = frutas.unshift("Uvas");//Agrega el elemento al inicio del array.
+var borrarPrimerElemento = frutas.shift();//Elimina el primer elemento del array.
+var posicion = frutas.indexOf("Plátano");//Obtener el índice del elemento buscado.
