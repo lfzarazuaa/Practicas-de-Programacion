@@ -118,3 +118,17 @@ var nombreArticulos = articulos2.map(function (articulo) {//Itera sobre la varia
     articulo.nombre = "Nombre " + articulo.nombre;
     return articulo.nombre;//Específica que elementos regresar.
 });
+
+var encuentraArticulo = articulos.find(function(articulo){//Con find se regresa el primer elemento que regresa true en la función definida.
+    return articulo.nombre === "Laptop"; //Se específica la condición de filtrado.
+});
+
+articulos.forEach(function (articulo) {//Itera para cada elemento ejecutando la función declarada.
+    console.log(articulo.nombre)
+});
+
+var articulosBaratos = articulos.some(function (articulo) {//Itera sobre cada elemento y si en algun momento se regresa true por medio de la función devuelve true a la variable.
+    return articulo.costo <= 700;//Devuelve si hay al menos un artículo que cumpla con esta condición.
+});
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array
