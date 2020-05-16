@@ -1,0 +1,2 @@
+JavaScript es un lenguaje debilmente típado.
+Al ser debilmente típado una variable puede ser reasignada con otro tipo de dato al de origen.
