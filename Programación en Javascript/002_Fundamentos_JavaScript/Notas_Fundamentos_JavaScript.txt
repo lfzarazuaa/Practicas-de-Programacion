@@ -30,3 +30,5 @@ function sumarEdadEnObjetoNuevo(persona) {//Paso de objeto sin modificar su valo
 Para comparar haciendo una conversión automatica del tipo de dato (para que sean iguales) se usa ==, 4=="4"
 Para comparar incluyendo el tipo de dato 4==="4".
 Cuando realizamos operaciones es recomendable usar tres símbolos de igual (===). Esto permite que JavasScript no iguale las variables que son de distinto tipo. Te recomendamos que uses el triple igual siempre que estés comparando variables.
+Para que un valor no pueda ser modificado una vez despues de ser asignado se usa la palabra reservada const.
+Compo buena práctica las constantes se escriben todas en mayúsculas.
