@@ -21,3 +21,9 @@ Escribir el nombre de un objeto separado por un punto del nombre de un atributo,
 Las últimas versiones de JavaScript nos permiten desglosar el objeto para acceder únicamente al atributo que nos interesa. Esto se consigue encerrando el nombre del atributo entre llaves { }.
 var { nombre } = persona;//Desestructra el objeto, creando una variable local nombre que contiene el valor del nombre de la persona.
 En JavaScript los objetos que se pasan por párametro son tomados por referenia(a la misma localidad de memoria del objeto).
+function sumarEdadEnObjetoNuevo(persona) {//Paso de objeto sin modificar su valor.
+   return{
+      ...persona,//Crea una copia en memoria del objeto.
+      edad: persona.edad + 1//Sobrescribe el valor del atributo edad.
+   }
+}
