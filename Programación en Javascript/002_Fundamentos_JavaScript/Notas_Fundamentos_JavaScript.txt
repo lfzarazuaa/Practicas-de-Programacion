@@ -9,3 +9,5 @@ function imprimirEdad(nombre, edad) {//Declaración de función.
 }
 imprimirEdad(25, "Carlos");//Javascript no le encuentra sentido al tipo de datos si no se le específica.
 imprimirEdad();//Sin párametros nos deja las variables con valor undefined.
+El entorno donde se guardan las variables globales es window.
+En Javascript se permite trabajar en ámbito local y global.
