@@ -3,3 +3,4 @@ Al ser debilmente típado una variable puede ser reasignada con otro tipo de dat
 var primeraLetraDelNombre = nombre.charAt(0);//Extraer la posición cero del String.
 var nombreCompleto =`${nombre} ${apellido.toUpperCase()}`;//Notación para interpolar variables.
 var str = nombre.charAt(1,3);//Nos devuelve el substring.
+JavaScript por defecto no es tan preciso con los números se le debe especificar el tipo de dato o incluir alguna Biblioteca como Math.
