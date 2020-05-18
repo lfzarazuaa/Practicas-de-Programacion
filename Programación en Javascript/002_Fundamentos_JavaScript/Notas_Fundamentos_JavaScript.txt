@@ -49,3 +49,6 @@ const pasarAlturaACms = persona => ({//Se usan los () para encerrar el objeto qu
 })
 
 var personasCms = personas.map(pasarAlturaACms)
+El método reduce() nos permite reducir, mediante una función que se aplica a cada uno de los elemento del array, todos los elementos de dicho array, a un valor único.
+const reducer = (acum, { cantidadDeLibros }) => acum + cantidadDeLibros
+var totalDeLibros = personas.reduce(reducer, 0)
