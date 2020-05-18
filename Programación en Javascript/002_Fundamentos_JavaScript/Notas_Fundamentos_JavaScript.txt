@@ -71,3 +71,14 @@ Persona.prototype.saludar = function () {//Declaración del método de una clase
 
 En prototipos con arrow function this ya no hace referencia al objeto.
 This en arrow function hace referencia al this del scope global, apuntando asi al objeto window.
+En JavaScript solo existe la herencia prototipal.
+Los objetos en JavaScript son “contenedores” dinámicos de propiedades. Estos objetos poseen un enlace a un objeto prototipo. Cuando intentamos acceder a la propiedad de un objeto, la propiedad no sólo se busca en el propio objeto sino también en el prototipo del objeto, en el prototipo del prototipo, y así sucesivamente hasta que se encuentre una propiedad que coincida con el nombre o se alcance el final de la cadena de prototipos.
+Todas las funciones tienen el atributo prototype y nos dice cual es el constructor y que métodos tiene.
+La palabra __proto__ nos dice como está definida la herencia prototipal en un objeto.
+function heredaDe(prototipoHijo, prototipoPadre) {
+  var fn = function () {}//Declara la función a sobreescribir.
+  fn.prototype = prototipoPadre.prototype//Asigna el prototipo del padre a la función
+  prototipoHijo.prototype = new fn//Asigna una nueva instacia de prototipo a la clase Hija usando la misma de clase padre.
+  prototipoHijo.prototype.constructor = prototipoHijo//Define que no compartan el mismo constructor el padre y el hijo.
+}
+heredaDe(Desarrollador, Persona)//Se debe invocar antes de declarar nuevos métodos de la clase.
