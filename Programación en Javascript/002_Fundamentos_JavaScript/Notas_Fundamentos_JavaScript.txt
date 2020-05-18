@@ -38,3 +38,7 @@ Con la palabra reservada debugger se realiza un breakpoint en el código.
 Switch se recomienda usar cuando se tienen muchos casos que verifican la misma variable.
 Javascript permite mezclar distintos elementos en un array.
 personas[2]['altura']//Obtiene la altura de la persona con índice 2.
+const esAlta = persona => {//Arrow function.
+  return persona.altura > 1.8
+}
+var personasAltas = personas.filter(esAlta)//Filtra todas las personas que cimplen con la condición.
