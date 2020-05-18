@@ -33,3 +33,4 @@ Cuando realizamos operaciones es recomendable usar tres símbolos de igual (===)
 Para que un valor no pueda ser modificado una vez despues de ser asignado se usa la palabra reservada const.
 Compo buena práctica las constantes se escriben todas en mayúsculas.
 const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD //Declaración de una arrow function en una sola línea.
+toFixed(1) //Para fijar cuantos decimales queremos.
