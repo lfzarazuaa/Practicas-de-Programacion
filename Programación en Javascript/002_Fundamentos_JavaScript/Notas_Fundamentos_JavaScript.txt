@@ -52,3 +52,19 @@ var personasCms = personas.map(pasarAlturaACms)
 El método reduce() nos permite reducir, mediante una función que se aplica a cada uno de los elemento del array, todos los elementos de dicho array, a un valor único.
 const reducer = (acum, { cantidadDeLibros }) => acum + cantidadDeLibros
 var totalDeLibros = personas.reduce(reducer, 0)
+Los clases JavaScript son mas parecidos a prototipos, ya que no existe la herencia como tal.
+Al crear una instancia de una función ya se esta creando un nuevo objeto.
+La función al llamarse con new actua como un constructor de una clase.
+Si no se usa la palabra reservada new se tendra que construir el prototipo del objeto en la función y regresarlo como respuesta.
+Las clases son funciones cuya sintaxis tiene dos componentes:
+- expresiones
+- declaraciones
+function Persona(nombre, apellido, altura) {//Declaración de clase.
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.altura = altura;
+}
+
+Persona.prototype.saludar = function () {//Declaración del método de una clase.
+  console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+}
