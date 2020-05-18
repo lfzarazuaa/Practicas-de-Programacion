@@ -113,3 +113,5 @@ class Desarrollador extends Persona{
     console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollador/a`)
   }
 }
+En JavaScript es facilmente pasar una función como parámetro.
+Al ingresar el nombre de una función la cual fue pasada como parámetro nos devuelve true si pasó y false si no.
