@@ -36,3 +36,5 @@ const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD //Declaración de un
 toFixed(1) //Para fijar cuantos decimales queremos.
 Con la palabra reservada debugger se realiza un breakpoint en el código.
 Switch se recomienda usar cuando se tienen muchos casos que verifican la misma variable.
+Javascript permite mezclar distintos elementos en un array.
+personas[2]['altura']//Obtiene la altura de la persona con índice 2.
