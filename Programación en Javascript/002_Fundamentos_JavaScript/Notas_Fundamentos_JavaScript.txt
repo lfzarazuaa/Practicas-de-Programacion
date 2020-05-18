@@ -82,3 +82,34 @@ function heredaDe(prototipoHijo, prototipoPadre) {
   prototipoHijo.prototype.constructor = prototipoHijo//Define que no compartan el mismo constructor el padre y el hijo.
 }
 heredaDe(Desarrollador, Persona)//Se debe invocar antes de declarar nuevos métodos de la clase.
+Los EmaScript son las actualizaciones del lenguaje para trabajar de una manera mas fácil y efectiva con ciertas funcionalidades del lenguaje.
+Una funcionalidad es la de tener clases que por debajo trabajan con herencia prototipal.
+Para usar Herencia (basada en Herencia Prototipal) se usa la palabra reservada extends.
+Para llamar al constructor de la clase padre se usa super(argumentos), y para llamar a un método dentro de la clase super.metodo() .
+
+class Persona {
+  constructor(nombre, apellido, altura) {
+    this.nombre = nombre
+    this.apellido = apellido
+    this.altura = altura
+  }
+
+  saludar() {
+    console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+  }
+
+  soyAlto() {
+    return this.altura > 1.8
+  }
+}
+
+class Desarrollador extends Persona{
+  constructor(nombre, apellido, altura) {
+    super(nombre,apellido,altura)//Llama al constructor del objeto padre.
+  }
+
+  saludar() {
+    super.saludar();//Llama a la función del objeto Hijo.
+    console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollador/a`)
+  }
+}
