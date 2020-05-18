@@ -42,3 +42,10 @@ const esAlta = persona => {//Arrow function.
   return persona.altura > 1.8
 }
 var personasAltas = personas.filter(esAlta)//Filtra todas las personas que cimplen con la condición.
+Con la función map nos devuelve un nuevo array, pero si no somos cuidadosos en la forma de editarlo tambien lo cambiaremos.
+const pasarAlturaACms = persona => ({//Se usan los () para encerrar el objeto que se devuelve.
+  ...persona,
+  altura: persona.altura * 100
+})
+
+var personasCms = personas.map(pasarAlturaACms)
