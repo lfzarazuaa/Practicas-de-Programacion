@@ -34,3 +34,4 @@ Para que un valor no pueda ser modificado una vez despues de ser asignado se usa
 Compo buena práctica las constantes se escriben todas en mayúsculas.
 const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD //Declaración de una arrow function en una sola línea.
 toFixed(1) //Para fijar cuantos decimales queremos.
+Con la palabra reservada debugger se realiza un breakpoint en el código.

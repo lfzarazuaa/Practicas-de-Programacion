@@ -1,5 +1,5 @@
-var sacha = {
-  nombre: 'Sacha',
+var luis  = {
+  nombre: 'luis ',
   apellido: 'Lifszyc',
   edad: 28,
   ingeniero: false,
@@ -51,4 +51,4 @@ function imprimirProfesiones(persona) {
   console.log(esMayorDeEdad(persona));
 }
 
-imprimirProfesiones(sacha)
+imprimirProfesiones(luis )
