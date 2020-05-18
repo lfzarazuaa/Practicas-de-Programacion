@@ -70,3 +70,4 @@ Persona.prototype.saludar = function () {//Declaración del método de una clase
 }
 
 En prototipos con arrow function this ya no hace referencia al objeto.
+This en arrow function hace referencia al this del scope global, apuntando asi al objeto window.

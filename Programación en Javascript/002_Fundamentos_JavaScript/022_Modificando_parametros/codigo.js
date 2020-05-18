@@ -7,8 +7,8 @@ function Persona(nombre, apellido, altura) {//Declaración de clase.
 Persona.prototype.saludar = () => console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
 
 Persona.prototype.soyAlto = () => {//Declaración del método soy Alto.
-  const Umbral_de_Altua=1.8
-  return this.altura>=Umbral_de_Altua;
+  const Umbral_de_Altura=1.8
+  return this.altura>=Umbral_de_Altura;
 }
 
 var luis = new Persona('Luis Fernando', 'Zarazua Aguilar', 1.75);

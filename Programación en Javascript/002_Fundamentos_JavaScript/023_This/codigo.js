@@ -13,9 +13,12 @@ Persona.prototype.soyAlto = function () {//Declaración del método soy Alto.
   return this.altura>=Umbral_de_Altura;
 }
 
+Persona.prototype.Ambito_global = () => console.log(this) //Regresa window.
+
 var luis = new Persona('Luis Fernando', 'Zarazua Aguilar', 1.75);
 
 var erika = new Persona('Erika', 'Luna', 1.82);
 
 var arturo = new Persona('Arturo', 'Martinez', 1.65);
 
+console.log(this)//Apunta al objeto window.
