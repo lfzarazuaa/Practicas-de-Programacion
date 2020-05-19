@@ -119,3 +119,8 @@ JavaScript sólo puede hacer una cosa a la vez, sin embargo; es capaz de delegar
 JavaScript delega en el navegador ciertas tareas y les asocia funciones que deberán ser ejecutadas al ser completadas. Estas funciones se llaman callbacks, y una vez que el navegador ha regresado con la respuesta, el callback asociado pasa a la cola de tareas para ser ejecutado una vez que JavaScript haya terminado todas las instrucciones que están en la pila de ejecución.
 Si se acumulan funciones en la cola de tareas y JavaScript se encuentra ejecutando procesos muy pesados, el EventLoop quedará bloqueado y esas funciones pudieran tardar demasiado en ejecutarse.
 Para comprobar el funcionamiento del event EventLoop se puede usar la función setTimeout( () => console.log("b"),ms), la cual realiza un llamado a la funcón despues de ocurrido el tiempo.
+JQuery como una libreria para obtener datos de una API.
+CDN Content Deliver Network (Servidor más cercano a nuestra ubicación).
+Usar JQuery CDN minified (incluirla en el html).
+Un callback es una función que se pasa a otra función como un argumento. Esta función se invoca, después, dentro de la función externa para completar alguna acción.
+$.get(Url, options, function)// Obtener datos de una API.
