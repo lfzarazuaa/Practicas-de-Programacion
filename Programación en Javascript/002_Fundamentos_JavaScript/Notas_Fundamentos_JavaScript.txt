@@ -158,3 +158,10 @@ obtenerPersonaje(1).then(function (personaje) {//Data (el parámetro de resolve)
 }).catch(function (id) {//Id es un parámetro que se envió en reject.
   onError(id);
 })
+Para hacer el llamado a múltiples promesas, nos apoyamos en un array de ids con el que luego construimos otro arreglo de Promesas, que pasaremos como parámetro a Promise.all( arregloDePromesas ), con las promesas podemos encadenar llamadas en paralelo, algo que no es posible usando callbacks.
+var ids = [1,2,3,4,5,6,7];
+var promesas = ids.map(id => obtenerPersonaje(id))
+Promise.all(promesas)//Método para ejecutar las promesas en paralelo.
+.then(personajes => console.log(personajes))
+.catch(onError);
+Promise.all()//Promise se ejecuta cuando las promesas (array) estan en estado rejected o accepted, lego se encarga de ejecutar en orden el manejador para cada promesa. 
