@@ -144,3 +144,17 @@ new Promise( ( resolve, reject ) => {
      reject()
   }
 } )
+
+Para encadenar una promesa en el then se debe regresar una nueva promesa, en la ultima petición ya no se regresa nada.
+obtenerPersonaje(1).then(function (personaje) {//Data (el parámetro de resolve), es el parámetro recibido en esta función.
+  console.log(`El personaje 1 es ${personaje.name}`);
+  return obtenerPersonaje(2);//Regresa una nueva promesa encadenándolas de tal forma.
+}).then(function (personaje) {
+  console.log(`El personaje 2 es ${personaje.name}`);
+  return obtenerPersonaje(3);//Regresa una nueva promesa encadenándolas de tal forma.
+}).then(function (personaje) {
+  console.log(`El personaje 3 es ${personaje.name}`);
+  return obtenerPersonaje(4);//Regresa una nueva promesa encadenándolas de tal forma.
+}).catch(function (id) {//Id es un parámetro que se envió en reject.
+  onError(id);
+})
