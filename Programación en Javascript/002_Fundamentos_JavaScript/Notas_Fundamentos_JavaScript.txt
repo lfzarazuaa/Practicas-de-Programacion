@@ -178,3 +178,5 @@ async function obtenerPersonajes() {//Async permite hacer una función asíncron
 }
 const btnEmpezar = document.getElementById("btnEmpezar") //Crea variable del elemento html que queremos usar en js.
 btnEmpezar.classList.add('hide')//Agrega la clase (css) hide al elemento btnEmpezar.
+Al declarar la clase y sus propiedades no es necesario usar var solo basta con poner this.propiedad dandole un ámbito global en la clase.
+this.secuencia = new Array(10).fill(0).map( n=> Math.floor(Math.random() * 4));//Genera un arreglo de 10 elementos al inicio con 0s y luego numeros aleatorios entre 0 y 3.
