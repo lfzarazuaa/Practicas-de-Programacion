@@ -126,3 +126,5 @@ Un callback es una función que se pasa a otra función como un argumento. Esta 
 $.get(Url, options, function)// Obtener datos de una API.
 Al ejecutar varios request podemos poner un orden pero cuando se ejecute dependerá de factores externos como el servidor, la red entre otros.
 Una manera de asegurar que se respete la secuencia en que hemos realizado múltiples tareas es utilizando callbacks, con lo que se ejecutará luego, en cada llamada. Lo importante es que el llamado al callback se haga a través de una función anónima. Sin embargo, al hacerlo de esta manera generamos una situación poco deseada llamada CallbackHell.
+Al ejecutar los callbacks encadenados se pierde el asincronismo de java y con ello una petición dependerá del tiempo que se ejecute la otra.
+Con .fail(function) se ejecuta una función en caso de no lograr obtener el recurso.
