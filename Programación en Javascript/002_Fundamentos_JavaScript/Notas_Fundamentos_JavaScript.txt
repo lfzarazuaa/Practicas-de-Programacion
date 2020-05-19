@@ -176,3 +176,5 @@ async function obtenerPersonajes() {//Async permite hacer una función asíncron
     onError(id);//Muestra el error.
   }
 }
+const btnEmpezar = document.getElementById("btnEmpezar") //Crea variable del elemento html que queremos usar en js.
+btnEmpezar.classList.add('hide')//Agrega la clase (css) hide al elemento btnEmpezar.
