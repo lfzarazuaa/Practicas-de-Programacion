@@ -128,3 +128,19 @@ Al ejecutar varios request podemos poner un orden pero cuando se ejecute depende
 Una manera de asegurar que se respete la secuencia en que hemos realizado múltiples tareas es utilizando callbacks, con lo que se ejecutará luego, en cada llamada. Lo importante es que el llamado al callback se haga a través de una función anónima. Sin embargo, al hacerlo de esta manera generamos una situación poco deseada llamada CallbackHell.
 Al ejecutar los callbacks encadenados se pierde el asincronismo de java y con ello una petición dependerá del tiempo que se ejecute la otra.
 Con .fail(function) se ejecuta una función en caso de no lograr obtener el recurso.
+Las promesas son valores que aun no conocemos.
+Las promesas tienen tres estados:
+- pending (antes de resolverse).
+- fullfilled (resulta).
+- rejected (fallida).
+Las promesas se invocan de la siguiente forma:
+new Promise( ( resolve, reject ) => {
+  // --- llamado asíncrono
+  if( todoOK ) {
+     // -- se ejecutó el llamado exitosamente
+     resolve()
+  } else {
+     // -- hubo un error en el llamado
+     reject()
+  }
+} )
