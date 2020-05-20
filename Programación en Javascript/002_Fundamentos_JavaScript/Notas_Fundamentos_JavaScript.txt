@@ -227,3 +227,4 @@ function crearSaludo(finalDeFrase) {
 }
 const saludoArgentino = crearSaludo('che');//Regresa una función como respuesta.
 saludoArgentino("Luis")//Llama a la función con closure.
+Las estructuras de datos inmutables forman parte de los principios de la Programación Funcional y nos permiten evitar tener efectos colaterales en los datos. En otras palabras, que hayan modificaciones en las variables sin nuestro consentimiento, produciendo comportamientos inesperados en el programa.
