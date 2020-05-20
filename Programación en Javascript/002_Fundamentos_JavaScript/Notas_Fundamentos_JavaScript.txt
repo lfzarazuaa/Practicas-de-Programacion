@@ -186,3 +186,8 @@ En procesos asincronos no se aconseja usar var ya que constantemente modifica el
 Para ciclos con procesos asincronos usar let para asegurar que no cambie el valor con el que fue llamado.
 Se recomienda siempre el uso de let cuando se trata de estructuras for, ya que al usar var, el valor de dicha variable se va a remplazar cada vez con la última asignación que se haga, mientras que con let, conservará su valor dentro de cada iteración.
 Siempre que sea posible debemos usar const sobre let, y let sobre var.
+Al ejecutar eventos siempre vendran acompañados de una acción a realizar.
+this.colores.celeste.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+En los eventos se pierde el contexto de this, pues apunta al elemento del evento no a la función que lo contiene.
+Con .bind(elemento) se indica a que elemento apuntara el this de la función afectada.
+this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al elemento html apunte con this, se apunte al objeto donde está contenido. 

@@ -7,10 +7,11 @@
     constructor() {
       this.inicializar()//Ejecuta la función de inicialización.
       this.generarSecuencia();//Genera aleatoriamente la secuencia que se seguirá.
-      this.siguientenivel();
+      this.siguienteNivel();
     }
 
     inicializar() {
+      this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al elemento html apunte con this, se apunte al objeto juego. 
       btnEmpezar.classList.add('hide');//Agrega la clase (css) hide al elemento btnEmpezar.
       this.nivel = 1;//Inicializa en el nivel 1.
       this.colores = {//Objeto con los valores de los objetos (autoasignados).
@@ -26,8 +27,9 @@
       this.secuencia = new Array(10).fill(0).map( n=> Math.floor(Math.random() * 4));//Genera un arreglo de 10 elementos al inicio con 0s y luego numeros aleatorios entre 0 y 3.
     }
 
-    siguientenivel(){
+    siguienteNivel(){
       this.iluminarSecuencia();
+      this.agregarEventosClick();
     }
 
     transformarNumeroAColor(numero){//Función para decodificar los numeros de la secuencia a un color.
@@ -58,8 +60,20 @@
       setTimeout(() => this.apagarColor(color),this.TiempoSecuencia);//Regresa al color original dentro del tiempo establecido.
     }
 
-    apagarColor(color){
+    apagarColor(color){//Devuelve al color original.
       this.colores[color].classList.remove('light');//Remueve la clase light del elemento para dejarlo en su condición original.
+    }
+
+    agregarEventosClick(){//Eventos al hacer click en los recuadros.
+      this.colores.celeste.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+      this.colores.verde.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+      this.colores.violeta.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+      this.colores.naranja.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+    }
+
+    elegirColor(evento){
+      console.log(evento);
+      console.log(this);
     }
   }
 
