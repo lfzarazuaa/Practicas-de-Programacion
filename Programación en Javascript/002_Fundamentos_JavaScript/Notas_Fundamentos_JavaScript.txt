@@ -196,3 +196,5 @@ setTimeout(this.siguienteNivel,2000)//Cuando se ejecuta la función delega al na
 Crear un nuevo objeto para reiniciar todos los valores o llamar a la función de inicializar declarada en el constructor.
 Let reduce su alcance al bloque de código donde es declarado.
 const solo acepta una asignación en el bloque de código.
+const hoy = new Date();//Nos da un objeto con la fecha actual.
+var nacimiento = new Date(1996,2,06);//Nos da un objeto con la fecha establecida.
