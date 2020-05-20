@@ -194,3 +194,5 @@ this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al e
 const nombreColor = evento.target.dataset.color
 setTimeout(this.siguienteNivel,2000)//Cuando se ejecuta la función delega al navegador ejecutar la función y el objeto this ahora apunta hacia a window (en todas las llamadas internas de la función).
 Crear un nuevo objeto para reiniciar todos los valores o llamar a la función de inicializar declarada en el constructor.
+Let reduce su alcance al bloque de código donde es declarado.
+const solo acepta una asignación en el bloque de código.
