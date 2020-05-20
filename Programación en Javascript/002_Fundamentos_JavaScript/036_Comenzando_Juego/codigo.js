@@ -3,11 +3,15 @@
   const naranja = document.getElementById('naranja')//Div del elemento naranja.
   const verde = document.getElementById('verde')//Div del elemento verde.
   const btnEmpezar = document.getElementById("btnEmpezar")
+  const ULTIMO_NIVEL = 10;
+  const TIEMPO_ENTRE_NIVELES = 1500;//Tiempo de espera entre un nivel y otro.
+  const TIEMPO_DE_INICIO = 500;//Tiempo de espera entre un nivel y otro.
+
   class Juego {//El juego consiste en repetir los patrones mostrados en pantalla, tiene 10 niveles.
     constructor() {
       this.inicializar()//Ejecuta la función de inicialización.
       this.generarSecuencia();//Genera aleatoriamente la secuencia que se seguirá.
-      this.siguienteNivel();
+      setTimeout(() => this.siguienteNivel(),TIEMPO_DE_INICIO);//Tiempo de espera para empezar a mostrar secuencia.
     }
 
     inicializar() {
@@ -24,10 +28,11 @@
     }
 
     generarSecuencia(){
-      this.secuencia = new Array(10).fill(0).map( n=> Math.floor(Math.random() * 4));//Genera un arreglo de 10 elementos al inicio con 0s y luego numeros aleatorios entre 0 y 3.
+      this.secuencia = new Array(ULTIMO_NIVEL).fill(0).map( n=> Math.floor(Math.random() * 4));//Genera un arreglo de 10 elementos al inicio con 0s y luego numeros aleatorios entre 0 y 3.
     }
 
     siguienteNivel(){
+      this.subnivel = 0;//Subnivel para indicarnos un botón seleccionado.
       this.iluminarSecuencia();
       this.agregarEventosClick();
     }
@@ -47,11 +52,24 @@
       }
     }
 
+    transformarColorANumero(color){//Función para decodificar los numeros de la secuencia a un color.
+      switch (color) {
+        case 'celeste':
+          return 0;
+        case 'violeta':
+          return 1;
+        case 'naranja':
+          return 2;
+        case 'verde':
+          return 3;
+      }
+    }
+
     iluminarSecuencia(){
       for (let i = 0; i < this.nivel; i++) {//Ilumina el número de elementos conforme al nivel en el que se este.
         let color = this.transformarNumeroAColor(this.secuencia[i]);//Nos devuelve un color para cada número.
         //Uso de setTimeout para indicar en multiplos del tiempo (asincronamente) cuando prender cada color (parecido a delay pero con panorama asincrono).
-        setTimeout(() => this.iluminarColor(color),this.TiempoSecuencia*i)//Ejecuta función para iluminar el color de la secuencia.
+        setTimeout(() => this.iluminarColor(color),this.TiempoSecuencia*(2*i))//Ejecuta función para iluminar el color de la secuencia.
       }
     }
 
@@ -71,9 +89,33 @@
       this.colores.naranja.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
     }
 
+    eliminarEventosClick(){//Eventos al hacer click en los recuadros.
+      this.colores.celeste.removeEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+      this.colores.verde.removeEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+      this.colores.violeta.removeEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+      this.colores.naranja.removeEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+    }
+
     elegirColor(evento){
-      console.log(evento);
-      console.log(this);
+      const nombreColor = evento.target.dataset.color//Obtener el color del boton presionado (nombre de la variable).
+      const numeroColor = this.transformarColorANumero(nombreColor)//Obtener el número del boton presionado con base en su color.
+      this.iluminarColor(nombreColor)//Indica al usuario el color seleccionado.
+      if (numeroColor === this.secuencia[this.subnivel]) {//Verifica que haya presionado la tecla de secuencia correcta.
+        this.subnivel++//Incrementar el subnivel (paso de la secuencia en la que se encuentre).
+        if (this.subnivel === this.nivel) {//Si se seleccionó toda la secuencia correcta.
+          this.nivel++;//Incrementa el nivel.
+          this.eliminarEventosClick();//Cuando se pasa de nivel se bloquean los eventos del click.
+          if (this.nivel === (ULTIMO_NIVEL + 1)) {//Verifica que sea el ultimo nivel.
+            console.log("Ganó");
+          }
+          else{
+            setTimeout(() => this.siguienteNivel(),TIEMPO_ENTRE_NIVELES)//Evita que se ejecute la secuencia hasta pasados 2 segundos.
+          }
+        }
+      }
+      else{
+        console.log("Perdió");
+      }
     }
   }
 

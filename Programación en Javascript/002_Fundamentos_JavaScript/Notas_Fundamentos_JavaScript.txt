@@ -190,4 +190,6 @@ Al ejecutar eventos siempre vendran acompañados de una acción a realizar.
 this.colores.celeste.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
 En los eventos se pierde el contexto de this, pues apunta al elemento del evento no a la función que lo contiene.
 Con .bind(elemento) se indica a que elemento apuntara el this de la función afectada.
-this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al elemento html apunte con this, se apunte al objeto donde está contenido. 
+this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al elemento html apunte con this, se apunte al objeto donde está contenido.
+const nombreColor = evento.target.dataset.color
+setTimeout(this.siguienteNivel,2000)//Cuando se ejecuta la función delega al navegador ejecutar la función y el objeto this ahora apunta hacia a window (en todas las llamadas internas de la función).
