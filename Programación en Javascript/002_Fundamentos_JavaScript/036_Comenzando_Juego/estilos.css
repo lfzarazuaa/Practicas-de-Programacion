@@ -34,6 +34,7 @@ body {
     background: #22a6b3;
   }
 
+  /* Define la clase light para atenuar el color simulando una iluminación del elemento.*/
   .celeste.light {
     background: #7ed6df;
   }
@@ -42,6 +43,7 @@ body {
     background: #be2edd;
   }
 
+  /* Define la clase light para atenuar el color simulando una iluminación del elemento.*/
   .violeta.light {
     background: #e056fd;
   }
@@ -50,6 +52,7 @@ body {
     background: #f0932b;
   }
 
+  /* Define la clase light para atenuar el color simulando una iluminación del elemento.*/
   .naranja.light {
     background: #ffbe76;
   }
@@ -58,6 +61,7 @@ body {
     background: #6ab04c;
   }
 
+  /* Define la clase light para atenuar el color simulando una iluminación del elemento.*/
   .verde.light {
     background: #badc58;
   }

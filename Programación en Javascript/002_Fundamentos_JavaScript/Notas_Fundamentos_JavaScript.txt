@@ -180,3 +180,9 @@ const btnEmpezar = document.getElementById("btnEmpezar") //Crea variable del ele
 btnEmpezar.classList.add('hide')//Agrega la clase (css) hide al elemento btnEmpezar.
 Al declarar la clase y sus propiedades no es necesario usar var solo basta con poner this.propiedad dandole un ámbito global en la clase.
 this.secuencia = new Array(10).fill(0).map( n=> Math.floor(Math.random() * 4));//Genera un arreglo de 10 elementos al inicio con 0s y luego numeros aleatorios entre 0 y 3.
+classList nos devuelve todas las clases que tiene.
+Cuando se necesita pasar una función como parámetro y se necesita indicarles su valor de entrada se aconseja usar una arrow function que adentro contenga la función a ejecutar.
+En procesos asincronos no se aconseja usar var ya que constantemente modifica el valor de la variable, provocando que cuando se pueda ejecutar la petición está ya tenga un valor distinto con la que fue invocada.
+Para ciclos con procesos asincronos usar let para asegurar que no cambie el valor con el que fue llamado.
+Se recomienda siempre el uso de let cuando se trata de estructuras for, ya que al usar var, el valor de dicha variable se va a remplazar cada vez con la última asignación que se haga, mientras que con let, conservará su valor dentro de cada iteración.
+Siempre que sea posible debemos usar const sobre let, y let sobre var.
