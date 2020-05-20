@@ -200,3 +200,21 @@ const hoy = new Date();//Nos da un objeto con la fecha actual.
 var nacimiento = new Date(1996,2,06);//Nos da un objeto con la fecha establecida.
 Las funciones recursivas en JS son posibles también llamando a la dunción misma.
 https://code.tutsplus.com/es/tutorials/understanding-recursion-with-javascript--cms-30346
+La memoización es una técnica de programación que nos permite ahorrar cómputo o procesamiento en JavaScript, al ir almacenando el resultado invariable de una función para que no sea necesario volver a ejecutar todas las instrucciones de nuevo, cuando se vuelva a llamar con los mismos parámetros. Es similar a usar memoria cache.
+En las funciones recursivas es muy conveniente guardar en un arreglo los resultados ya conocidos para asi volver a la recursividad un proceso de calculo solo cuando sea necesario.
+function Factorial(numero) {
+  if (!this.cache) {//Pregunta si existe una cache (memoria temporal).
+    this.cache ={}//Declara la cache.
+  }
+
+  if (this.cache[numero]){//Se verifica si ya tenia el resultado previamente calculado.
+    return this.cache[numero];//Se regresa el resultado
+  }
+
+  if (numero<2){
+    return 1;
+  }
+
+  this.cache[numero] = numero * Factorial(numero-1)//Guarda en la cache antes de realizar el return.
+  return this.cache[numero];//Regresamos el resultado.
+}

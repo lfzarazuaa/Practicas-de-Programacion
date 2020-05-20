@@ -6,4 +6,4 @@ function divisionEntera(dividendo, divisor) {
 }
 console.log(divisionEntera(100,11));
 console.log(divisionEntera(-11,11));
-console.log(divisionEntera(15,0.24));
+console.log(divisionEntera(15,0.2));
