@@ -193,3 +193,4 @@ Con .bind(elemento) se indica a que elemento apuntara el this de la función afe
 this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al elemento html apunte con this, se apunte al objeto donde está contenido.
 const nombreColor = evento.target.dataset.color
 setTimeout(this.siguienteNivel,2000)//Cuando se ejecuta la función delega al navegador ejecutar la función y el objeto this ahora apunta hacia a window (en todas las llamadas internas de la función).
+Crear un nuevo objeto para reiniciar todos los valores o llamar a la función de inicializar declarada en el constructor.

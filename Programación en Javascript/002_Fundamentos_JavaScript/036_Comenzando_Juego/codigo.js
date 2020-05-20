@@ -3,7 +3,7 @@
   const naranja = document.getElementById('naranja')//Div del elemento naranja.
   const verde = document.getElementById('verde')//Div del elemento verde.
   const btnEmpezar = document.getElementById("btnEmpezar")
-  const ULTIMO_NIVEL = 10;
+  const ULTIMO_NIVEL = 2;
   const TIEMPO_ENTRE_NIVELES = 1500;//Tiempo de espera entre un nivel y otro.
   const TIEMPO_DE_INICIO = 500;//Tiempo de espera entre un nivel y otro.
 
@@ -106,7 +106,7 @@
           this.nivel++;//Incrementa el nivel.
           this.eliminarEventosClick();//Cuando se pasa de nivel se bloquean los eventos del click.
           if (this.nivel === (ULTIMO_NIVEL + 1)) {//Verifica que sea el ultimo nivel.
-            console.log("Ganó");
+            this.ganoElJuego();//Método cuando se ganó el juego.
           }
           else{
             setTimeout(() => this.siguienteNivel(),TIEMPO_ENTRE_NIVELES)//Evita que se ejecute la secuencia hasta pasados 2 segundos.
@@ -114,14 +114,31 @@
         }
       }
       else{
-        console.log("Perdió");
+        this.perdioElJuego();//Método cuando se perdió el juego.
       }
+    }
+
+    ganoElJuego(){
+      swal("Simón Dice", "¡Felicitaciones, ganaste el juego!", "success").then(() => {//Promesa cuando se acepto el mensaje.
+          this.inicializar()//Reinicia el juego.
+          btnEmpezar.classList.remove('hide');//Quita la clase (css) hide al elemento btnEmpezar poder comenzar un nuevo juego..
+        })
+    }
+
+    perdioElJuego(){
+      swal("Simón Dice", "¡Muy mal, perdiste el juego!", "error").then(
+        () => {//Promesa cuando se acepto el mensaje.
+          this.eliminarEventosClick();
+          this.inicializar();
+          btnEmpezar.classList.remove('hide');//Quita la clase (css) hide al elemento btnEmpezar para poder comenzar un nuevo juego.
+        }
+      ) 
     }
   }
 
   function empezarJuego() {
-    alert('El juego va a comenzar');
-    window.juego = new Juego();
+    alert('El juego va a comenzar');//Alerta de inicio de nuevo juego.
+    window.juego = new Juego();//Comienza un nuevo juego.
   }
 
 
