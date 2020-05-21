@@ -1,0 +1,16 @@
+Responsive Design:
+Son todas esas técnicas que usamos para adaptar nuestras aplicaciones web a la mayor cantidad de pantallas (tamaños de pantallas).
+Responsive Design tiene patrones a seguir que nos da ejemplos o stiuaciones comunes de como aplicar responsive design en la práctica.
+Ejemplos de patrones responsive design: https://mediaqueri.es/
+Luke Wroblewski propone 5 técnicas para responsive design:
+- Mostly Fluid.
+- Colocación de Columnas.
+- Layout shifter (cambia la disposición de horizontal a vertical en algunos paneles).
+- Tiny tweaks (pequeñas modificaciones, por lo general cambiando el tamaño de fuente y de imágenes).
+- Off Canvas (fuera del lienzo).
+Conceptos útiles para responsive design:
+Viewport: Es el área visible del navegador.
+Portrait-Landscape: Define si vamos a ver el contenido en vertical o en horizontal.
+Mobile First - Mobile First: De donde parte o inicia la orientación de la página a un dispositivo móvil o de escritorio.
+En teoria es mejor partir de un mobile first y solo ir agregando código conforme la pantalla crezca y así hacer mas liviana la aplicación.
+Para decidir cual usar siempre es conveniente desde donde se le presta atención a nuestro sitio en particular.
