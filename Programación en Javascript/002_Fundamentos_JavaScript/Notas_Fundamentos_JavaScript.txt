@@ -11,7 +11,7 @@ imprimirEdad(25, "Carlos");//Javascript no le encuentra sentido al tipo de datos
 imprimirEdad();//Sin párametros nos deja las variables con valor undefined.
 El entorno donde se guardan las variables globales es window.
 En Javascript se permite trabajar en ámbito local y global.
-//Función para recibir objetos por parametros.
+//Función para recibir objetos por parámetros.
 function imprimirNombreEnMayusculas({ nombre }){//Del objeto que se le pase obtiene el atributo nombre.
    console.log(nombre.toUpperCase());//Imprime el nombre en consola.
 }
@@ -20,18 +20,18 @@ Un atributo se compone de una clave (key) y un valor (value), que se separan ent
 Escribir el nombre de un objeto separado por un punto del nombre de un atributo, nos permite acceder al valor de dicho atributo para ese objeto. Un objeto también se puede pasar como atributo en una función.
 Las últimas versiones de JavaScript nos permiten desglosar el objeto para acceder únicamente al atributo que nos interesa. Esto se consigue encerrando el nombre del atributo entre llaves { }.
 var { nombre } = persona;//Desestructra el objeto, creando una variable local nombre que contiene el valor del nombre de la persona.
-En JavaScript los objetos que se pasan por párametro son tomados por referenia(a la misma localidad de memoria del objeto).
+En JavaScript los objetos que se pasan por parámetro son tomados por referenia(a la misma localidad de memoria del objeto).
 function sumarEdadEnObjetoNuevo(persona) {//Paso de objeto sin modificar su valor.
    return{
       ...persona,//Crea una copia en memoria del objeto.
       edad: persona.edad + 1//Sobrescribe el valor del atributo edad.
    }
 }
-Para comparar haciendo una conversión automatica del tipo de dato (para que sean iguales) se usa ==, 4=="4"
+Para comparar haciendo una conversión automática del tipo de dato (para que sean iguales) se usa ==, 4=="4"
 Para comparar incluyendo el tipo de dato 4==="4".
 Cuando realizamos operaciones es recomendable usar tres símbolos de igual (===). Esto permite que JavasScript no iguale las variables que son de distinto tipo. Te recomendamos que uses el triple igual siempre que estés comparando variables.
 Para que un valor no pueda ser modificado una vez despues de ser asignado se usa la palabra reservada const.
-Compo buena práctica las constantes se escriben todas en mayúsculas.
+Como buena práctica las constantes se escriben todas en mayúsculas.
 const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD //Declaración de una arrow function en una sola línea.
 toFixed(1) //Para fijar cuantos decimales queremos.
 Con la palabra reservada debugger se realiza un breakpoint en el código.
@@ -41,7 +41,7 @@ personas[2]['altura']//Obtiene la altura de la persona con índice 2.
 const esAlta = persona => {//Arrow function.
   return persona.altura > 1.8
 }
-var personasAltas = personas.filter(esAlta)//Filtra todas las personas que cimplen con la condición.
+var personasAltas = personas.filter(esAlta)//Filtra todas las personas que cumplen con la condición.
 Con la función map nos devuelve un nuevo array, pero si no somos cuidadosos en la forma de editarlo tambien lo cambiaremos.
 const pasarAlturaACms = persona => ({//Se usan los () para encerrar el objeto que se devuelve.
   ...persona,
@@ -54,7 +54,7 @@ const reducer = (acum, { cantidadDeLibros }) => acum + cantidadDeLibros
 var totalDeLibros = personas.reduce(reducer, 0)
 Los clases JavaScript son mas parecidos a prototipos, ya que no existe la herencia como tal.
 Al crear una instancia de una función ya se esta creando un nuevo objeto.
-La función al llamarse con new actua como un constructor de una clase.
+La función al llamarse con new actúa como un constructor de una clase.
 Si no se usa la palabra reservada new se tendra que construir el prototipo del objeto en la función y regresarlo como respuesta.
 Las clases son funciones cuya sintaxis tiene dos componentes:
 - expresiones
@@ -77,8 +77,8 @@ Todas las funciones tienen el atributo prototype y nos dice cual es el construct
 La palabra __proto__ nos dice como está definida la herencia prototipal en un objeto.
 function heredaDe(prototipoHijo, prototipoPadre) {
   var fn = function () {}//Declara la función a sobreescribir.
-  fn.prototype = prototipoPadre.prototype//Asigna el prototipo del padre a la función
-  prototipoHijo.prototype = new fn//Asigna una nueva instacia de prototipo a la clase Hija usando la misma de clase padre.
+  fn.prototype = prototipoPadre.prototype//Asigna el prototipo del padre a la función.
+  prototipoHijo.prototype = new fn//Asigna una nueva instancia de prototipo a la clase Hija usando la misma de la clase padre.
   prototipoHijo.prototype.constructor = prototipoHijo//Define que no compartan el mismo constructor el padre y el hijo.
 }
 heredaDe(Desarrollador, Persona)//Se debe invocar antes de declarar nuevos métodos de la clase.
@@ -122,6 +122,8 @@ Para comprobar el funcionamiento del event EventLoop se puede usar la función s
 JQuery como una libreria para obtener datos de una API.
 CDN Content Deliver Network (Servidor más cercano a nuestra ubicación).
 Usar JQuery CDN minified (incluirla en el html).
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+</script>
 Un callback es una función que se pasa a otra función como un argumento. Esta función se invoca, después, dentro de la función externa para completar alguna acción.
 $.get(Url, options, function)// Obtener datos de una API.
 Al ejecutar varios request podemos poner un orden pero cuando se ejecute dependerá de factores externos como el servidor, la red entre otros.
@@ -164,8 +166,8 @@ var promesas = ids.map(id => obtenerPersonaje(id))
 Promise.all(promesas)//Método para ejecutar las promesas en paralelo.
 .then(personajes => console.log(personajes))
 .catch(onError);
-Promise.all()//Promise se ejecuta cuando las promesas (array) estan en estado rejected o accepted, lego se encarga de ejecutar en orden el manejador para cada promesa.
-Con async se vuelve a una función asincrona con capacidad de reanudar su ejecución(de tal manera no bloqueando el programa) cuando el método con await se ha completo (método que hace las peticiones).
+Promise.all()//Promise se ejecuta cuando las promesas (array) estan en estado rejected o accepted, luego se encarga de ejecutar en orden el manejador para cada promesa.
+Con async se vuelve a una función asíncrona con capacidad de reanudar su ejecución(de tal manera que no bloquea el programa) cuando el método con await se ha completado (método que hace las peticiones).
 El async await no es soportado por todos los navegadores, Google Chrome entre otros lo soporta.
 async function obtenerPersonajes() {//Async permite hacer una función asíncrona, lo que signifca que cuando no pueda seguir por falta de datos se espera, dejando hacer tareas en el código, luego retoma la función.
   var ids = [1,2,8,9,13,22,3,4,5,6,7]
@@ -182,14 +184,14 @@ Al declarar la clase y sus propiedades no es necesario usar var solo basta con p
 this.secuencia = new Array(10).fill(0).map( n=> Math.floor(Math.random() * 4));//Genera un arreglo de 10 elementos al inicio con 0s y luego numeros aleatorios entre 0 y 3.
 classList nos devuelve todas las clases que tiene.
 Cuando se necesita pasar una función como parámetro y se necesita indicarles su valor de entrada se aconseja usar una arrow function que adentro contenga la función a ejecutar.
-En procesos asincronos no se aconseja usar var ya que constantemente modifica el valor de la variable, provocando que cuando se pueda ejecutar la petición está ya tenga un valor distinto con la que fue invocada.
+En procesos asíncronos no se aconseja usar var ya que constantemente modifica el valor de la variable, provocando que cuando se pueda ejecutar la petición está ya tenga un valor distinto con la que fue invocada.
 Para ciclos con procesos asincronos usar let para asegurar que no cambie el valor con el que fue llamado.
 Se recomienda siempre el uso de let cuando se trata de estructuras for, ya que al usar var, el valor de dicha variable se va a remplazar cada vez con la última asignación que se haga, mientras que con let, conservará su valor dentro de cada iteración.
 Siempre que sea posible debemos usar const sobre let, y let sobre var.
 Al ejecutar eventos siempre vendran acompañados de una acción a realizar.
 this.colores.celeste.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
 En los eventos se pierde el contexto de this, pues apunta al elemento del evento no a la función que lo contiene.
-Con .bind(elemento) se indica a que elemento apuntara el this de la función afectada.
+Con .bind(elemento) se indica a que elemento apuntará el this de la función afectada.
 this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al elemento html apunte con this, se apunte al objeto donde está contenido.
 const nombreColor = evento.target.dataset.color
 setTimeout(this.siguienteNivel,2000)//Cuando se ejecuta la función delega al navegador ejecutar la función y el objeto this ahora apunta hacia a window (en todas las llamadas internas de la función).
@@ -235,3 +237,11 @@ Existen al menos tres maneras de cambiar el contexto de una función.
 - Usando el método .bind, enviamos la referencia a la función sin ejecutarla, pasando el contexto como parámetro.
 - Usando el método .call, ejecutamos inmediatamente la función con el contexto indicado
 - Usando el método .apply, es similar a .call pero los parámetros adicionales se pasan como un arreglo de valores
+
+El punto y coma es opcional en JavaScript, excepto en algunos casos:
+
+- Cuando usamos varias instrucciones en una mísma línea
+- Al comenzar la próxima línea con un array
+- Al comenzar la próxima línea con un template string
+
+Despues de un return no puede ir un enter pues lo detecta como punto y coma.
