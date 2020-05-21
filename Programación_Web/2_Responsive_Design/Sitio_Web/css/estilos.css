@@ -1,0 +1,321 @@
+/* reglas:El conjunto de todo
+    header{
+    background:forestgreen;
+    } 
+*/
+/* selectores: Identificar un elemento html.
+    header {
+ */
+/* declaraciones: Todo lo que se hace con el selector.
+    background:forestgreen; justify-content: center;
+*/
+/* propiedades: Los atributos.
+    background, justify-content  */
+/* valores: El contenido en específico que tiene 
+    forestgreen. 
+*/
+
+/* Selector de etiqueta: Hace referencia al elemento html que se desea. 
+ header -section -article -nav */
+/* selector descendente: Selector de hijos todos los elementos hijos dentro de la lista.
+     body header div nav ol li a {} */
+/* selector de clase: Se usan para darle estilo a una clase, se anteceden por un ".".
+    .link <a class="link" href="#eventos">Experiencia.</a>
+*/
+/* selector de id: Se usan para darle estilo a un id, se anteceden por un "#".
+    #eventos <a class="link" href="#eventos">Experiencia.</a>
+*/
+
+/* gris oscuro = #1d252c */
+/* gris claro = #626262 */
+/* backgroud gris #1b2127 */
+/* celeste #026fff */
+body {
+    font-family:Comic-Sans, Arial, Helvetica, sans-serif ;/*Utiliza el tipo de fuente Arial, si no la encuentra, entonces Helvetica y si no sans-serif.*/
+    font-family: 'Source Sans Pro';
+    margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {/*Selector de etiqueta para los distintos headers.*/
+    font-family: 'Fjalla One', Times, serif;/*Cambia letra para los elementos tiene prioridad sobre el elemento padre.*/
+    font-weight: 400;/*Peso de negritas 600 es negritas 400 es normal*/
+    /* font-style: italic; Tipo de fuente cursiva.*/
+}
+
+h1{
+    color: white;
+    font-size: 40px;/*Tamaño de la letra.*/
+    line-height: 1.5;/* Interlineado, debe ser al menos del tamaño de la fuente en px, 150%. */
+    letter-spacing: -2px;/* Sepración entre letras. */
+    margin: 100px 150px 70px 30px;/* Define el margen en top right bottom left. */
+    margin: 0;
+    /* text-transform: uppercase;Hace la transformación del texto en mayúsculas. */
+    /* text-decoration: underline;Subraya el texto. */
+}
+
+h1 strong{/* Selector descendente de las propiedades strong de h1. */
+    color: rgb(0, 100, 255);
+}
+
+h2 strong{/* Selector descendente de las propiedades strong de h2. */
+    color: rgb(0, 100, 255);
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro';
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+ol,
+ul{/* Quita el formato a todas las listas y las deja sin separaciones posibles */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no están restringidas por otro elemento. */
+    margin: 0;
+}
+
+.hero{
+    height: 300px;
+    background-color: #1b2127;
+    display: flex;
+    align-items: center;/* Centra el texto en el centro horizontal. */
+    justify-content: space-between;
+}
+ 
+.hero-image{
+    object-fit: cover;/* Ajusta la imagen. */
+}
+.portfolio{
+    background: #fafafa;
+    padding: 20px;    
+}
+
+.project{
+    border-top: 10px solid red;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-right: 10px solid green;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-left: 10px solid orange;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-bottom: 10px solid pink;/*Dibuja un borde en la parte indicada tamaño tipo estilo; */
+    border-color: red;/* Define el color del borde. */
+    border-width: 15px;/* Ancho del borde, sin este no se puede definir el borde. */
+    border-style: solid;/* Tipo de borde.*/
+    border: 1px solid gray;/* Declara un borde de 1px, solido y gris. */
+    border-radius: 10px;/* Define un redondeo del borde a 10px. */
+    border-top-left-radius: 50px;/* Define un redondeo del borde superior izquierdo a 50px. Sobrescribiendo los bordes ya definidos.*/
+    margin-bottom: 15px;/* Crea un margen a 10 pixeles solo abajo */
+    padding: 20px;/* Define el padding (separación interna) de 20 pixeles. */
+    background: white;
+    box-sizing: border-box;/* Impide que la caja crezca de tamaño mas alla de lo permitido por height y width. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-title{
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+}
+.project-course,
+.project-date,
+.project-url{
+    margin: 10px 0;
+}
+
+.project strong{
+    font-family: 'Fjalla One', Times, serif;
+}
+
+.project-details{
+    width: 500px;
+}
+
+.project-imageContainer{
+    width: 500px;
+}
+
+.header {
+    background-color: #1b2127;/* Color de fondo */
+    color: white;/* Color del texto. */
+    text-decoration: none;/* Impide que se muestren distintos los hipervinculos.*/
+    height: 70px;/* Altura de 70px. */
+    align-items: center;
+    display: flex;/* Display flex para que los elementos hijos (el <figure> y el <nav>) se alineen en forma horizontal. */
+    justify-content: space-between;/* Distribuye el contenido en este caso la imagen y las caracteristicas en los extremos. */
+    height: 90px; /* <---- Define la altura del header para aplicar los comandos de align-content. */
+}
+
+.menu { /* .menu hereda height de .header */
+    height: inherit;
+}
+  
+.header ol { /* .header ol hereda height de .menu */
+    display: flex;/* Muestra los elementos de la lista en forma horizontal(ya no usa block) en lugar de vertical.La propiedad display:flex; solo se aplica a los hijos directos. */
+    height: inherit;
+}
+
+.header ol li { /* .header ol li hereda height de .header ol */
+    height: inherit;
+    
+}
+
+.header a{/*Anclas del header (se modificaron porque los anchor van debajo de la cascada del header).*/
+    color: white;/* Color del texto. */
+    text-decoration: none;/*Quita el subrayado.*/
+    height: inherit;/* .header a hereda height de .header ol li */
+    display: flex;/* Aplica display flex para permitir distribuirlos. */
+    align-items: center;/* Alinear en el centro vertical. */
+    padding: 0 10px; /* Margenes interiores con 0 en superior e inferior y 10px en derecho e izquierdo. */
+}
+
+.event-list-title{
+    margin-left: 20px;
+}
+
+.event-list{
+    display: flex;
+    flex-wrap: wrap;/* Cuando un elemento no cabe sigue en la siguiente linea. */
+}
+
+.event{
+    margin: 10px;
+    width: 480px;
+    flex-shrink: 0;/* Impide que se reajuste. */
+    border-radius: 15px;/* Redondea los borde de event. */
+    overflow: hidden;/* Todo lo que se salga de los bordes lo oculta. */
+    background: #fafafa;
+}
+
+.event-image{
+    width:  480px;
+    height: 200px;
+    object-fit: cover;/* Ajusta la imagen para no desproporcionarla. */
+    /* object-fit: hidden; */
+    
+}
+
+.event-detail{
+    margin: 20px 40px;/* Margen para separar del elemento padre. */
+    margin-top: -40px;/* Para invadir parte del espacio de la imagen. */
+    background-color: white;
+    position: relative;/* Permite que el texto se vea por encima de la imagen. */
+    padding: 20px;/* Separación interior para que se vea centrado. */
+    text-align: center; /* Centra el texto dentro de su contenedor. */
+   
+}
+    
+.event-description{
+    text-align: left;
+}
+
+.event-url{
+    color: rgb(0, 100, 255);
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.contact{
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social{
+
+}
+
+.social-link{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    background-size: 50px 50px;
+}
+
+.social-link.twitter{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/twitter.svg');
+}
+
+.social-link.facebook{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/facebook.svg');
+}
+
+.social-link.github{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/github.svg');
+}
+
+.social-link.instagram{/* Modifica al elemento que contenga las 2 clases.  */
+   background-image: url('../images/instagram.svg');
+}
+
+.form-email{
+    margin: 0 10px;
+}
+
+.form-email input{
+    border-color: gray;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px 20px 10px 25px;
+    background-image: url('../images/envelope.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+}
+
+.form-email button{
+    display: block;
+    margin-top: 10px;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.form-email h3{
+    font-family: 'Source Sans Pro';
+}
+
+.footer {
+    color: white;
+    background-color: #1d252c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer img{
+    vertical-align: middle;/* Alinea la imagen verticalmente para que todo este alineado (sino solo se alinea conforme a la imagen). */
+}
+
+.footer a{
+    color: white;
+}
+
+.footer p{
+    margin: 0 10px;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+}
+            

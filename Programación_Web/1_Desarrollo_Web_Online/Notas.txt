@@ -8,13 +8,13 @@ Fundamentos_de_JS->Webpack->React.js->Redux->React_Router.
 En github se puede subir un html para poderlo visualizar en la red.
 https://leonidasesteban.github.io/desarrollo-web-2018-preview/
 En VS Code en la esquina inferior derecha se puede configuar que tipo de archivo va a leer para que muestre sugerencias pertinentes al lenguaje usado.
-Con html:5 en VS Code genera el mimino para trabajar con un html.
+Con html:5 en VS Code genera el mínimo para trabajar con un html.
 En Vs Code con renderWhiteSpace (en settings) se pueden ver los espacios en blanco con puntos.
 Una página web se recomienda dividir en secciones.
-alt+shift+LineaAbajo%%Duplicar linea en visual studio code.
+alt+shift+LineaAbajo%%Duplicar línea en visual studio code.
 Se tienen que dividir las secciones que tiene el website para codificarlas parte por parte.
 Document Object Mode(DOM)-Modelo de documento que se carga en el navegador web y que representa el documento como un árbol de nodos.
-Dependiendo de la complejidad de la página web el DOM podrá agrandarse mas en numero de objetos.
+Dependiendo de la complejidad de la página web el DOM podrá agrandarse mas en número de objetos.
 En un hosting de archivos estáticos es donde se almacen los archivos del sitio web.
 <br>Salto</br> Realiza 1 salto de linea por cada br.
 Etiquetas de HTML (html5doctor.com/ para consultar información sobre las etiquetas).
@@ -28,7 +28,7 @@ Etiquetas de HTML (html5doctor.com/ para consultar información sobre las etique
 <ol></ol>%%Listas ordenadas.
 <ul></ul>%%Lista desordenada.
 <li></li>%%Elemento de lista.
-<a href=""></a>%%Poner hipervinculos a viene de ancla o anchor.
+<a href=""></a>%%Poner hipervínculos "a" viene de ancla o anchor.
 <h1></h1>%%Colocar primer nivel de títulos.
 <br/>  Salto de línea.
 </small> hace un poco mas chico el texto.
@@ -38,7 +38,7 @@ src="https://media.licdn.com/dms/image/C5603AQEzaLRFm33GBA/profile-displayphoto-
 src="images/logo.jpg"%%Dentro de la carpeta.
 src="../images/logo.jpg"%%De la carpeta anterior.
 <html lang=es> %%Reconoce el idioma español.
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">%%Reconoce caracteres con acento y demás en mas navegadores.
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">%%Reconoce carácteres con acento y demás en mas navegadores.
 width="250" height="300"%%Dan ancho y largo respectivamente.
 <form action=""> </form>%%Crea un formulario y en action se específica a donde será enviada la información.
 <input type="submit" value="texto del botón"> texto con botón.
@@ -59,7 +59,7 @@ width="250" height="300"%%Dan ancho y largo respectivamente.
 </style>
 href indica a donde acceder para recopilar la información.
 Un estilo en cascada se llama asi por su nivel de prioridad.
-Pueden haber estilos dentro del html en el header, en la linea o desde un archivo.
+Pueden haber estilos dentro del html en el header, en la línea o desde un archivo.
 Es preferible usar un estilo en un archivo css para mejorar la legibilidad y marcar una diferencia entre la estructura y los estilos.
 Un style in line tiene mas peso que uno externo.
 Un style dentro del html tiene menos peso que uno in line.
@@ -81,7 +81,7 @@ Wrapper o Container para identificar contenedores.
 El pixel es la mínima unidad homogenea de color en una imagen.
 El color en html se representa con #FFFFFF donde el byte mas significativo es el rojo, luego verde y el menos significativo el azul.
 Developer tools (Inspector de elementos html), con F12 se abre el inspector de elementos.
-Al hacer click sobre el elemento y se seleccionar inspeccionar se puede ver el html y sus propiedades, ademas se puede editar el texto del contenido.
+Al hacer click sobre el elemento y se seleccionar inspeccionar se puede ver el html y sus propiedades, además se puede editar el texto del contenido.
 En la esquina superior izquierda hay un icono de celular con el cual se accede modo responsive design.
 Con la propiedad texto-decoration se pone o quita el subrayado a los links.
 Antes de tipos de display.
@@ -154,19 +154,19 @@ display: grid: Similar a flex, asume algunas propiedades por defecto organizando
 display: none: Oculta el elemento.
 Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación, dimensionamiento y distribución de elementos html.
 Esta propiedad se aplica a un elemento padre, pero va a afectar principalmente a sus elementos hijos directos. Por defecto, los elementos internos quedan alineados unos seguidos de los otros. El comportamiento del modelo de caja de estos elementos hijos también se ha modificado, ya que pierden el efecto de su propiedad margin.
-Los elementos hijos de un padre con propiedad display: flex tienen a su disposición algunas nuevas propiedades que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es flex-shrink que, junto a la propiedad flex-wrap del padre, permite adaptar y distribuir los elementos de manera dinámica en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar dinamicamente las siguiente filas hacia abajo.
+Los elementos hijos de un padre con propiedad display: flex tienen a su disposición algunas nuevas propiedades que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es flex-shrink que, junto a la propiedad flex-wrap del padre, permite adaptar y distribuir los elementos de manera dinámica en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar dinámicamente las siguiente filas hacia abajo.
 El modelo de flex se pone en el elemento padre y afecta a los hijos, respeta las propiedades de los hijos siempre que estos quepan en pantalla, sino realiza un ajuste.
 flex-direction: column; Realiza una disposición de los elementos en columna (también se puede usar row para filas).
 flex-shrink: Propiedad de los hijos (padres con display:flex) que impide que se les modifique el ancho, son valores entre 0 (nada encogible) o 1(muy encogible).
-flex-wrap: nowrap;Propiedad del elemento padre(por defecto) que impide que los elementos caigan cuando se acaba el espacio de pantalla (genera scroll en pantalla).
-flex-wrap: wrap;Propiedad del elemento padre(por defecto) que permite que los elementos caigan cuando se el ancho de la pantalla.
+flex-wrap: nowrap;Propiedad del elemento padre(por defecto) que impide que los elementos caigan cuando se acaba el espacio de pantalla (genera scroll horizontal en pantalla).
+flex-wrap: wrap;Propiedad del elemento padre(por defecto) que permite que los elementos caigan cuando se acaba el ancho de la pantalla.
 Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación, dimensionamiento y distribución de elementos html.
 Esta propiedad se aplica a un elemento padre, pero va a afectar principalmente a sus elementos hijos directos. Por defecto, los elementos internos quedan alineados unos seguidos de los otros. El comportamiento del modelo de caja de estos elementos hijos también se ha modificado, ya que pierden el efecto de su propiedad margin.
-Los elementos hijos de un padre con propiedad display: flex tienen a su disposición algunas nuevas propiedades que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es flex-shrink que, junto a la propiedad flex-wrap del padre, permite adaptar y distribuir los elementos de manera dinámica en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar dinamicamente las siguiente filas hacia abajo.
+Los elementos hijos de un padre con propiedad display: flex tienen a su disposición algunas nuevas propiedades que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es flex-shrink que, junto a la propiedad flex-wrap del padre, permite adaptar y distribuir los elementos de manera dinámica en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar dinámicamente las siguiente filas hacia abajo.
 flex-flow: column wrap;Combinación entre flex-shrink y flex-wrap: Modifica si se quiere vertical y con caida.
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-El margin Colapsing ya no es válido cuando se usa flexbox (los margenes se suman).
-justify-content: Tipo de jsutificación de contenido.
+El margin Colapsing ya no es válido cuando se usa flexbox (los márgenes se suman).
+justify-content: Tipo de justificación de contenido.
 justify-content: flex-start; flex-start: para alinear todos los elementos hacia el inicio del espacio disponible.
 justify-content: flex-end; flex-end: para alinear todos los elementos hacia el final, a la derecha.
 justify-content: center; center: para alinear todos los elementos al centro del espacio disponible.
@@ -181,14 +181,14 @@ Para centrar completamente los elementos internos de manera vertical y horizonta
 justify-self: flex-start;Rompe la propiedad impuesta (horizontal) por el padre ajustandose a la posición deseada.
 align-self: flex-start;Rompe la propiedad impuesta (vertical) por el padre ajustandose a la posición deseada.
 display:flex; solo se aplica a los hijos directos.
-vertical-align: middle; Alinea conforme al conetdor los elementos (Se usa cuando se tiene texto e imagenes).
+vertical-align: middle; Alinea conforme al contenedor los elementos (Se usa cuando se tiene texto e imagenes).
 object-fit: cover;/* Ajusta la imagen para no desproporcionarla. */
 overflow: hidden;/* Todo lo que se salga de los bordes lo oculta. */
 object-fit: cover;/* Ajusta la imagen para no desproporcionarla. */
 position: relative;/* Permite que el texto se vea por encima de la imagen. */
 text-align: center; /* Centra el texto dentro de su contenedor. */
 Al agregar un div que actúe como contenedor se pueden perder los display flex para alinear los elementos (herencia).
-Una posible solución es ponerler paramatros de herencia de las propiedades que se perdieron y luego realizar pequeños ajustes para solucionar los bugs.
+Una posible solución es ponerler parámetros de herencia de las propiedades que se perdieron y luego realizar pequeños ajustes para solucionar los bugs.
 .container {
     border: 1px solid red;
     width: 1000px;

@@ -14,3 +14,12 @@ Portrait-Landscape: Define si vamos a ver el contenido en vertical o en horizont
 Mobile First - Mobile First: De donde parte o inicia la orientación de la página a un dispositivo móvil o de escritorio.
 En teoria es mejor partir de un mobile first y solo ir agregando código conforme la pantalla crezca y así hacer mas liviana la aplicación.
 Para decidir cual usar siempre es conveniente desde donde se le presta atención a nuestro sitio en particular.
+Developer tools para Responsive Design
+Antes de empezar a aplicar las herramientas necesarias para realizar Responsive Design es fundamental que aprendas a visualizar y manejar el menú en donde se encuentran tales herramientas, el cual se encuentra en cualquier explorador desde el que trabajes.
+En el menú toogle device toolbar (ubicado en el inspector a la izquierda) se pueden hacer pruebas para responsive design ya sea cambiando el tamaño del área visible manualmente o escogiendo la pantalla de algun dispositivo móvil.
+La herramienta también tiene la opción para ver el dispositivo en un porcentaje de zoom y además la opción de rotar la pantalla.
+La cinta en el menú (barras grises), nos permiten seleccionar entre distintos tamaños de dispositivos convencionales (Mobile-S, Mobile-M, Mobile-L, Tablet, laptop, etc).
+También permite emular si está online, conexión móvil media, conexión móvil baja, o sin conexión.
+También se puede tomar un screenshot de la pantalla con full size, cubriendo, mas allá del área visible en vertical.
+En el donde se encuentran los 3 puntos (superior-derecho), hay opciones para ver con regla la aplicación, los configuración de los dispositivos.
+La mejor convención para el mínimo de una pantalla de de 320p horizontal.
