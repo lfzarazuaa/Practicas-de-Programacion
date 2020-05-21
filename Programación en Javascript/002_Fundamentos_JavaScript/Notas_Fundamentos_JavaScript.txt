@@ -1,0 +1,247 @@
+JavaScript es un lenguaje debilmente típado.
+Al ser debilmente típado una variable puede ser reasignada con otro tipo de dato al de origen.
+var primeraLetraDelNombre = nombre.charAt(0);//Extraer la posición cero del String.
+var nombreCompleto =`${nombre} ${apellido.toUpperCase()}`;//Notación para interpolar variables.
+var str = nombre.charAt(1,3);//Nos devuelve el substring.
+JavaScript por defecto no es tan preciso con los números se le debe especificar el tipo de dato o incluir alguna Biblioteca como Math.
+function imprimirEdad(nombre, edad) {//Declaración de función.
+   console.log(`${nombre} tiene ${edad} años`);
+}
+imprimirEdad(25, "Carlos");//Javascript no le encuentra sentido al tipo de datos si no se le específica.
+imprimirEdad();//Sin párametros nos deja las variables con valor undefined.
+El entorno donde se guardan las variables globales es window.
+En Javascript se permite trabajar en ámbito local y global.
+//Función para recibir objetos por parámetros.
+function imprimirNombreEnMayusculas({ nombre }){//Del objeto que se le pase obtiene el atributo nombre.
+   console.log(nombre.toUpperCase());//Imprime el nombre en consola.
+}
+imprimirNombreEnMayusculas({nombre: "Pepito"})//Llamada a función cuando se le pasa el objeto sin declarar una variable.
+Un atributo se compone de una clave (key) y un valor (value), que se separan entre sí por dos puntos “”:"". Los valores pueden ser de tipo string, número, booleano, etc. Cada atributo está separado del siguiente por una coma. Un objeto puede tener todos los atributos que sean necesarios.
+Escribir el nombre de un objeto separado por un punto del nombre de un atributo, nos permite acceder al valor de dicho atributo para ese objeto. Un objeto también se puede pasar como atributo en una función.
+Las últimas versiones de JavaScript nos permiten desglosar el objeto para acceder únicamente al atributo que nos interesa. Esto se consigue encerrando el nombre del atributo entre llaves { }.
+var { nombre } = persona;//Desestructra el objeto, creando una variable local nombre que contiene el valor del nombre de la persona.
+En JavaScript los objetos que se pasan por parámetro son tomados por referenia(a la misma localidad de memoria del objeto).
+function sumarEdadEnObjetoNuevo(persona) {//Paso de objeto sin modificar su valor.
+   return{
+      ...persona,//Crea una copia en memoria del objeto.
+      edad: persona.edad + 1//Sobrescribe el valor del atributo edad.
+   }
+}
+Para comparar haciendo una conversión automática del tipo de dato (para que sean iguales) se usa ==, 4=="4"
+Para comparar incluyendo el tipo de dato 4==="4".
+Cuando realizamos operaciones es recomendable usar tres símbolos de igual (===). Esto permite que JavasScript no iguale las variables que son de distinto tipo. Te recomendamos que uses el triple igual siempre que estés comparando variables.
+Para que un valor no pueda ser modificado una vez despues de ser asignado se usa la palabra reservada const.
+Como buena práctica las constantes se escriben todas en mayúsculas.
+const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD //Declaración de una arrow function en una sola línea.
+toFixed(1) //Para fijar cuantos decimales queremos.
+Con la palabra reservada debugger se realiza un breakpoint en el código.
+Switch se recomienda usar cuando se tienen muchos casos que verifican la misma variable.
+Javascript permite mezclar distintos elementos en un array.
+personas[2]['altura']//Obtiene la altura de la persona con índice 2.
+const esAlta = persona => {//Arrow function.
+  return persona.altura > 1.8
+}
+var personasAltas = personas.filter(esAlta)//Filtra todas las personas que cumplen con la condición.
+Con la función map nos devuelve un nuevo array, pero si no somos cuidadosos en la forma de editarlo tambien lo cambiaremos.
+const pasarAlturaACms = persona => ({//Se usan los () para encerrar el objeto que se devuelve.
+  ...persona,
+  altura: persona.altura * 100
+})
+
+var personasCms = personas.map(pasarAlturaACms)
+El método reduce() nos permite reducir, mediante una función que se aplica a cada uno de los elemento del array, todos los elementos de dicho array, a un valor único.
+const reducer = (acum, { cantidadDeLibros }) => acum + cantidadDeLibros
+var totalDeLibros = personas.reduce(reducer, 0)
+Los clases JavaScript son mas parecidos a prototipos, ya que no existe la herencia como tal.
+Al crear una instancia de una función ya se esta creando un nuevo objeto.
+La función al llamarse con new actúa como un constructor de una clase.
+Si no se usa la palabra reservada new se tendra que construir el prototipo del objeto en la función y regresarlo como respuesta.
+Las clases son funciones cuya sintaxis tiene dos componentes:
+- expresiones
+- declaraciones
+function Persona(nombre, apellido, altura) {//Declaración de clase.
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.altura = altura;
+}
+
+Persona.prototype.saludar = function () {//Declaración del método de una clase.
+  console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+}
+
+En prototipos con arrow function this ya no hace referencia al objeto.
+This en arrow function hace referencia al this del scope global, apuntando asi al objeto window.
+En JavaScript solo existe la herencia prototipal.
+Los objetos en JavaScript son “contenedores” dinámicos de propiedades. Estos objetos poseen un enlace a un objeto prototipo. Cuando intentamos acceder a la propiedad de un objeto, la propiedad no sólo se busca en el propio objeto sino también en el prototipo del objeto, en el prototipo del prototipo, y así sucesivamente hasta que se encuentre una propiedad que coincida con el nombre o se alcance el final de la cadena de prototipos.
+Todas las funciones tienen el atributo prototype y nos dice cual es el constructor y que métodos tiene.
+La palabra __proto__ nos dice como está definida la herencia prototipal en un objeto.
+function heredaDe(prototipoHijo, prototipoPadre) {
+  var fn = function () {}//Declara la función a sobreescribir.
+  fn.prototype = prototipoPadre.prototype//Asigna el prototipo del padre a la función.
+  prototipoHijo.prototype = new fn//Asigna una nueva instancia de prototipo a la clase Hija usando la misma de la clase padre.
+  prototipoHijo.prototype.constructor = prototipoHijo//Define que no compartan el mismo constructor el padre y el hijo.
+}
+heredaDe(Desarrollador, Persona)//Se debe invocar antes de declarar nuevos métodos de la clase.
+Los EmaScript son las actualizaciones del lenguaje para trabajar de una manera mas fácil y efectiva con ciertas funcionalidades del lenguaje.
+Una funcionalidad es la de tener clases que por debajo trabajan con herencia prototipal.
+Para usar Herencia (basada en Herencia Prototipal) se usa la palabra reservada extends.
+Para llamar al constructor de la clase padre se usa super(argumentos), y para llamar a un método dentro de la clase super.metodo() .
+
+class Persona {
+  constructor(nombre, apellido, altura) {
+    this.nombre = nombre
+    this.apellido = apellido
+    this.altura = altura
+  }
+
+  saludar() {
+    console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`)
+  }
+
+  soyAlto() {
+    return this.altura > 1.8
+  }
+}
+
+class Desarrollador extends Persona{
+  constructor(nombre, apellido, altura) {
+    super(nombre,apellido,altura)//Llama al constructor del objeto padre.
+  }
+
+  saludar() {
+    super.saludar();//Llama a la función del objeto Hijo.
+    console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy desarrollador/a`)
+  }
+}
+En JavaScript es facilmente pasar una función como parámetro.
+Al ingresar el nombre de una función la cual fue pasada como parámetro nos devuelve true si pasó y false si no.
+JavaScript sólo puede hacer una cosa a la vez, sin embargo; es capaz de delegar la ejecución de ciertas funciones a otros procesos. Este modelo de concurrencia se llama EventLoop.
+JavaScript delega en el navegador ciertas tareas y les asocia funciones que deberán ser ejecutadas al ser completadas. Estas funciones se llaman callbacks, y una vez que el navegador ha regresado con la respuesta, el callback asociado pasa a la cola de tareas para ser ejecutado una vez que JavaScript haya terminado todas las instrucciones que están en la pila de ejecución.
+Si se acumulan funciones en la cola de tareas y JavaScript se encuentra ejecutando procesos muy pesados, el EventLoop quedará bloqueado y esas funciones pudieran tardar demasiado en ejecutarse.
+Para comprobar el funcionamiento del event EventLoop se puede usar la función setTimeout( () => console.log("b"),ms), la cual realiza un llamado a la funcón despues de ocurrido el tiempo.
+JQuery como una libreria para obtener datos de una API.
+CDN Content Deliver Network (Servidor más cercano a nuestra ubicación).
+Usar JQuery CDN minified (incluirla en el html).
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+</script>
+Un callback es una función que se pasa a otra función como un argumento. Esta función se invoca, después, dentro de la función externa para completar alguna acción.
+$.get(Url, options, function)// Obtener datos de una API.
+Al ejecutar varios request podemos poner un orden pero cuando se ejecute dependerá de factores externos como el servidor, la red entre otros.
+Una manera de asegurar que se respete la secuencia en que hemos realizado múltiples tareas es utilizando callbacks, con lo que se ejecutará luego, en cada llamada. Lo importante es que el llamado al callback se haga a través de una función anónima. Sin embargo, al hacerlo de esta manera generamos una situación poco deseada llamada CallbackHell.
+Al ejecutar los callbacks encadenados se pierde el asincronismo de java y con ello una petición dependerá del tiempo que se ejecute la otra.
+Con .fail(function) se ejecuta una función en caso de no lograr obtener el recurso.
+Las promesas son valores que aun no conocemos.
+Las promesas tienen tres estados:
+- pending (antes de resolverse).
+- fullfilled (resulta).
+- rejected (fallida).
+Las promesas se invocan de la siguiente forma:
+new Promise( ( resolve, reject ) => {
+  // --- llamado asíncrono
+  if( todoOK ) {
+     // -- se ejecutó el llamado exitosamente
+     resolve()
+  } else {
+     // -- hubo un error en el llamado
+     reject()
+  }
+} )
+
+Para encadenar una promesa en el then se debe regresar una nueva promesa, en la ultima petición ya no se regresa nada.
+obtenerPersonaje(1).then(function (personaje) {//Data (el parámetro de resolve), es el parámetro recibido en esta función.
+  console.log(`El personaje 1 es ${personaje.name}`);
+  return obtenerPersonaje(2);//Regresa una nueva promesa encadenándolas de tal forma.
+}).then(function (personaje) {
+  console.log(`El personaje 2 es ${personaje.name}`);
+  return obtenerPersonaje(3);//Regresa una nueva promesa encadenándolas de tal forma.
+}).then(function (personaje) {
+  console.log(`El personaje 3 es ${personaje.name}`);
+  return obtenerPersonaje(4);//Regresa una nueva promesa encadenándolas de tal forma.
+}).catch(function (id) {//Id es un parámetro que se envió en reject.
+  onError(id);
+})
+Para hacer el llamado a múltiples promesas, nos apoyamos en un array de ids con el que luego construimos otro arreglo de Promesas, que pasaremos como parámetro a Promise.all( arregloDePromesas ), con las promesas podemos encadenar llamadas en paralelo, algo que no es posible usando callbacks.
+var ids = [1,2,3,4,5,6,7];
+var promesas = ids.map(id => obtenerPersonaje(id))
+Promise.all(promesas)//Método para ejecutar las promesas en paralelo.
+.then(personajes => console.log(personajes))
+.catch(onError);
+Promise.all()//Promise se ejecuta cuando las promesas (array) estan en estado rejected o accepted, luego se encarga de ejecutar en orden el manejador para cada promesa.
+Con async se vuelve a una función asíncrona con capacidad de reanudar su ejecución(de tal manera que no bloquea el programa) cuando el método con await se ha completado (método que hace las peticiones).
+El async await no es soportado por todos los navegadores, Google Chrome entre otros lo soporta.
+async function obtenerPersonajes() {//Async permite hacer una función asíncrona, lo que signifca que cuando no pueda seguir por falta de datos se espera, dejando hacer tareas en el código, luego retoma la función.
+  var ids = [1,2,8,9,13,22,3,4,5,6,7]
+  var promesas = ids.map(id => obtenerPersonaje(id))//Método para ejecutar las solicitudes en paralelo.
+  try {//Con await detiene la ejecución de la función hasta que todas las solucitudes tienen una respuesta.
+    var personajes = await Promise.all(promesas); //Cuando todas las promesas se resulevan guardar el resultado en personajes.
+  } catch (id) {//En caso de tener un id incorrecto.
+    onError(id);//Muestra el error.
+  }
+}
+const btnEmpezar = document.getElementById("btnEmpezar") //Crea variable del elemento html que queremos usar en js.
+btnEmpezar.classList.add('hide')//Agrega la clase (css) hide al elemento btnEmpezar.
+Al declarar la clase y sus propiedades no es necesario usar var solo basta con poner this.propiedad dandole un ámbito global en la clase.
+this.secuencia = new Array(10).fill(0).map( n=> Math.floor(Math.random() * 4));//Genera un arreglo de 10 elementos al inicio con 0s y luego numeros aleatorios entre 0 y 3.
+classList nos devuelve todas las clases que tiene.
+Cuando se necesita pasar una función como parámetro y se necesita indicarles su valor de entrada se aconseja usar una arrow function que adentro contenga la función a ejecutar.
+En procesos asíncronos no se aconseja usar var ya que constantemente modifica el valor de la variable, provocando que cuando se pueda ejecutar la petición está ya tenga un valor distinto con la que fue invocada.
+Para ciclos con procesos asincronos usar let para asegurar que no cambie el valor con el que fue llamado.
+Se recomienda siempre el uso de let cuando se trata de estructuras for, ya que al usar var, el valor de dicha variable se va a remplazar cada vez con la última asignación que se haga, mientras que con let, conservará su valor dentro de cada iteración.
+Siempre que sea posible debemos usar const sobre let, y let sobre var.
+Al ejecutar eventos siempre vendran acompañados de una acción a realizar.
+this.colores.celeste.addEventListener('click', this.elegirColor);//Agrega el nombre del evento que dispara la acción y que función debe de realizar. 
+En los eventos se pierde el contexto de this, pues apunta al elemento del evento no a la función que lo contiene.
+Con .bind(elemento) se indica a que elemento apuntará el this de la función afectada.
+this.elegirColor = this.elegirColor.bind(this);//Hace que en vez de apuntar al elemento html apunte con this, se apunte al objeto donde está contenido.
+const nombreColor = evento.target.dataset.color
+setTimeout(this.siguienteNivel,2000)//Cuando se ejecuta la función delega al navegador ejecutar la función y el objeto this ahora apunta hacia a window (en todas las llamadas internas de la función).
+Crear un nuevo objeto para reiniciar todos los valores o llamar a la función de inicializar declarada en el constructor.
+Let reduce su alcance al bloque de código donde es declarado.
+const solo acepta una asignación en el bloque de código.
+const hoy = new Date();//Nos da un objeto con la fecha actual.
+var nacimiento = new Date(1996,2,06);//Nos da un objeto con la fecha establecida.
+Las funciones recursivas en JS son posibles también llamando a la dunción misma.
+https://code.tutsplus.com/es/tutorials/understanding-recursion-with-javascript--cms-30346
+La memoización es una técnica de programación que nos permite ahorrar cómputo o procesamiento en JavaScript, al ir almacenando el resultado invariable de una función para que no sea necesario volver a ejecutar todas las instrucciones de nuevo, cuando se vuelva a llamar con los mismos parámetros. Es similar a usar memoria cache.
+En las funciones recursivas es muy conveniente guardar en un arreglo los resultados ya conocidos para asi volver a la recursividad un proceso de calculo solo cuando sea necesario.
+function Factorial(numero) {
+  if (!this.cache) {//Pregunta si existe una cache (memoria temporal).
+    this.cache ={}//Declara la cache.
+  }
+
+  if (this.cache[numero]){//Se verifica si ya tenia el resultado previamente calculado.
+    return this.cache[numero];//Se regresa el resultado
+  }
+
+  if (numero<2){
+    return 1;
+  }
+
+  this.cache[numero] = numero * Factorial(numero-1)//Guarda en la cache antes de realizar el return.
+  return this.cache[numero];//Regresamos el resultado.
+}
+
+Un closure, básicamente, es una función que recuerda el estado de las variables al momento de ser invocada, y conserva este estado a través de reiteradas ejecuciones. Un aspecto fundamental de los closures es que son funciones que retornan otras funciones.
+function crearSaludo(finalDeFrase) {
+  return function (nombre) {
+    console.log(`Hola ${finalDeFrase}, eres ${nombre}`);    
+  }
+}
+const saludoArgentino = crearSaludo('che');//Regresa una función como respuesta.
+saludoArgentino("Luis")//Llama a la función con closure.
+Las estructuras de datos inmutables forman parte de los principios de la Programación Funcional y nos permiten evitar tener efectos colaterales en los datos. En otras palabras, que hayan modificaciones en las variables sin nuestro consentimiento, produciendo comportamientos inesperados en el programa.
+El contexto (o alcance) de una función es por lo general, window. Así que en ciertos casos, cuando intentamos referirnos a this en alguna parte del código, es posible que tengamos un comportamiento inesperado, porque el contexto quizás no sea el que esperamos.
+
+Existen al menos tres maneras de cambiar el contexto de una función.
+
+- Usando el método .bind, enviamos la referencia a la función sin ejecutarla, pasando el contexto como parámetro.
+- Usando el método .call, ejecutamos inmediatamente la función con el contexto indicado
+- Usando el método .apply, es similar a .call pero los parámetros adicionales se pasan como un arreglo de valores
+
+El punto y coma es opcional en JavaScript, excepto en algunos casos:
+
+- Cuando usamos varias instrucciones en una mísma línea
+- Al comenzar la próxima línea con un array
+- Al comenzar la próxima línea con un template string
+
+Despues de un return no puede ir un enter pues lo detecta como punto y coma.
