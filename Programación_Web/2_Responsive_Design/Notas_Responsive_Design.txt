@@ -52,3 +52,5 @@ Los medias queries pueden aplicarse directo a un archivo de estilos con:
 <link rel="stylesheet" href="css/media.css" media="screen and (max-width:768px)">
 Cuando se aplican las 4 condiciones de media queries se cubre con un estándar que cubre la mayoria de los dispositivos.
 https://github.com/LeonidasEsteban/responsive-design-portafolio
+Para aplicar diseño responsivo se necesita poner medidas variables un ejemplo es usar max-width en vez de width.
+Cuando un elemento no quepa lo mas aconsejable es usar flexbox y aplicar flex-wrap: wrap para permitir que los elementos se apilen abajo y no se salgan de la pantalla.
