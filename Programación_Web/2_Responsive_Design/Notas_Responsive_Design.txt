@@ -26,3 +26,9 @@ La mejor convención para el mínimo de una pantalla de de 320p horizontal.
 <meta name="viewport" content="width=320"> //Coloca el área visible a 320px.
 <meta name="viewport" content="width=device-width, initial-scale=1"> //Con device width se tiene el ancho del dispositivo y el zoom inicial 100%=1
 Con view port solo se cambian las medidas de la pantalla para que todo sea legible pero aun queda desacomodado.
+Las medidas en CSS son maleables, en la medida en que dependen de su fuente de origen o medida madre.
+Tipos de medidas en CSS:
+- Porcentaje %: longitud referente al tamaño de los elementos padre).
+- em : unidad relativa al tamaño de fuente especificada más cercano, incluye al elemento mismo, los elementos que no son font-size leen respecto al font-size del mismo elemento.
+- rem : Unidad relativa al tamaño de fuente especificada en el ancestro más lejano, como html o body.
+- vw/vh : Unidad relativa porcentual con respecto al Viewport(tamaño de la pantalla).
