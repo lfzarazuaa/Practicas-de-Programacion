@@ -207,8 +207,8 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 .event{
-    margin: 10px;
-    width: 480px;
+    margin: 1%;/* Margen de 1% para hacerlo responsive. */
+    width: 48%;/* Ocupa 48% del espacio total para que con el margen logren el 100% y no se salga del contendor.*/
     flex-shrink: 0;/* Impide que se reajuste. */
     border-radius: 15px;/* Redondea los borde de event. */
     overflow: hidden;/* Todo lo que se salga de los bordes lo oculta. */
@@ -407,10 +407,27 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
         font-size: 1em;
     }
 
+    .project-description{
+        font-size: 0.8em;
+    }
+
     .project-imageContainer{
         width: auto;/* Ajustar imagen del proyecto evitando que solo ocupe la mitad. */
         text-align: center;
     }
+
+    /* eventos */
+    
+    .event{
+        width: auto;
+        /* Eliminar el scroll horizontal */
+        flex-shrink: initial;/* Hacer reajustable el tamaño del contenedor, anteriormente configurado a no reajustarse.*/
+    }
+    
+    .event img{
+        width: 100%;/* Hace que la imagen ocupe todo el tamaño del contenedor. */
+    }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -419,6 +436,14 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     .project-details{
         font-size: 12px;
     }
+
+    /* eventos */
+
+    .event-detail{
+        margin: -2em 0.5em 0.5em 0.5em;/* Margen para sobreponer en la imagen */
+        padding: 1em;/* Ajustar el padding. */
+    }
+    
 }
 
 @media screen and (max-width: 320px) {

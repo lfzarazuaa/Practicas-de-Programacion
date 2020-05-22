@@ -62,3 +62,5 @@ Es mejor usar width: auto que width:100% para obtener un mejor rendimiento.
 Para hacer una imagen responsive conforme a su contenedor se usa la propiedad max-width: 100%, logrando que asi siempre se adapte al tamaño del contenedor.
 Una buena práctica para hacer responsive en el texto es definirle tamaño relativo a cada tamaño de texto de una sección con em y en cada media querie solo definir el tamaño de texto base.
 Al momento de realizar responsive design no hay que descuidar darle responsive design al margen, margin: 0.4em 0;
+Cuando el elemento se sale de pantatalla o para hacer responsive desing con un número de elementos predefinido conviene usar width: % y margin: % calculando con respecto al de elementos que se quieran visualizar y flex-wrap: wrap, en el contenedor.
+Si un elemento tiene una clase y una etiqueta (ejemplo: img), la etiqueta prevalecerá arriba de la clase ignorando la clase.
