@@ -183,11 +183,16 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 .project-details{
-    width: 500px;
+    width: 50%;/* Usa la mitad del ancho total.*/
+    
 }
 
 .project-imageContainer{
-    width: 500px;
+    width: 50%;/* Usa la mitad del ancho total.*/
+}
+
+.project-imageContainer img{
+    max-width: 100%;
 }
 
 /* eventos */
@@ -225,7 +230,6 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     position: relative;/* Permite que el texto se vea por encima de la imagen. */
     padding: 20px;/* Separación interior para que se vea centrado. */
     text-align: center; /* Centra el texto dentro de su contenedor. */
-   
 }
     
 .event-description{
@@ -333,7 +337,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 
 .container {
     max-width: 1000px;/* Se aplica tamaño maximo para evitar que el tamaño sea fijo. */
-    flex: 1;/* Permite que ocupe todo el ancho del elemento padre sin paddings similar a width 100%. */
+    flex: 1;/* Permite que ocupe todo el ancho del elemento padre similar a width 100% pero menos restrictivo. */
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -372,11 +376,48 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     .header .logo {
         text-align: center;/* Centra la imagen y su descripción al centro.*/
     }
+
+    /* Project */
+    .project{
+        display: block;/* Manda la imagen para abajo impidiendo que salga del margen. */
+    }
+    
+    .project-details{
+        width: auto;/* Ajustar descripción del proyecto evitando que solo ocupe la mitad. */
+    }
+
+    .project-course, .project-date, .project-url{
+        margin: 0.4em 0;/* Define con 0.4em los margenes superiores para que se ajusten también al tamaño de letra. */
+    }
+
+    .project-title{
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+    }
+
+    .project-url{
+        font-size: 1em;
+    }
+
+    .project-course{
+        font-size: 0.8em;
+    }
+
+    .project-date{
+        font-size: 1em;
+    }
+
+    .project-imageContainer{
+        width: auto;/* Ajustar imagen del proyecto evitando que solo ocupe la mitad. */
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    body{
-        font-size: inherit;
+    /* Project */
+    
+    .project-details{
+        font-size: 12px;
     }
 }
 
