@@ -32,3 +32,19 @@ Tipos de medidas en CSS:
 - em : unidad relativa al tamaño de fuente especificada más cercano, incluye al elemento mismo, los elementos que no son font-size leen respecto al font-size del mismo elemento.
 - rem : Unidad relativa al tamaño de fuente especificada en el ancestro más lejano, como html o body.
 - vw/vh : Unidad relativa porcentual con respecto al Viewport(tamaño de la pantalla).
+Media queries: Gracias a este módulo de CSS existe el Responsive Design pues posibilita dar el acomodo y medidas para determinados rangos de pantallas.
+El media queries es un módulo de css3 que hace posible al responsive design, éste existe desde el 2010 y se encarga de adaptar la representación del contenido a características del dispositivo.
+https://developer.mozilla.org/es/docs/CSS/Media_queries
+@media media type and (condición){} Prototipo de un media querie.
+@media screen and (max-width: 768px) and (min-width: 480 px) {} Para pantallas con un maximo de 768px en horizontal.
+También se puede declar @media type para print que es cuando se manda a imprimir una página web y esta debe ir sin background para ahorrar tinta.
+Diseño para una aplicación que use Mobile first, preferencia a pantallas pequeñas.
+@media screen and (min-width: 320px) {} //Desde 320px.
+@media screen and (min-width: 480px) {} //Desde 480px.
+@media screen and (min-width: 768px) {} //Desde 768px.
+@media screen and (min-width: 1024px) {} //Desde 1024px.
+Diseño para una aplicación que use Desktop first, preferencia a pantallas grandes.
+@media screen and (min-width: 1024px) {} //Hasta 1024px.
+@media screen and (min-width: 768px) {} //Hasta 768px.
+@media screen and (min-width: 480px) {} //Hasta 480px.
+@media screen and (min-width: 320px) {} //Hasta 320px.
