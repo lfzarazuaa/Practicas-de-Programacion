@@ -44,7 +44,11 @@ Diseño para una aplicación que use Mobile first, preferencia a pantallas peque
 @media screen and (min-width: 768px) {} //Desde 768px.
 @media screen and (min-width: 1024px) {} //Desde 1024px.
 Diseño para una aplicación que use Desktop first, preferencia a pantallas grandes.
-@media screen and (min-width: 1024px) {} //Hasta 1024px.
-@media screen and (min-width: 768px) {} //Hasta 768px.
-@media screen and (min-width: 480px) {} //Hasta 480px.
-@media screen and (min-width: 320px) {} //Hasta 320px.
+@media screen and (max-width: 1024px) {} //Hasta 1024px.
+@media screen and (max-width: 768px) {} //Hasta 768px.
+@media screen and (max-width: 480px) {} //Hasta 480px.
+@media screen and (max-width: 320px) {} //Hasta 320px.
+Los medias queries pueden aplicarse directo a un archivo de estilos con:
+<link rel="stylesheet" href="css/media.css" media="screen and (max-width:768px)">
+Cuando se aplican las 4 condiciones de media queries se cubre con un estándar que cubre la mayoria de los dispositivos.
+https://github.com/LeonidasEsteban/responsive-design-portafolio

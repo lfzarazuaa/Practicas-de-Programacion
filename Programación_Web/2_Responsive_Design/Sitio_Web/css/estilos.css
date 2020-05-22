@@ -232,7 +232,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 .social{
-
+    background-color: inherit
 }
 
 .social-link{
@@ -318,4 +318,29 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     height: inherit;
     flex-wrap: inherit;
 }
-            
+
+/* Media Querie Desktop First */
+
+@media screen and (max-width: 1024px) {
+    body{
+        border: 10px solid wheat;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        border: 10px solid red;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body{
+        border: 10px solid green;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    body{
+        border: 10px solid blue;
+    }
+}
