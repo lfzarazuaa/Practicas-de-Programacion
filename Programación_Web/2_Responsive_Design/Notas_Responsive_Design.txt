@@ -54,3 +54,6 @@ Cuando se aplican las 4 condiciones de media queries se cubre con un estándar q
 https://github.com/LeonidasEsteban/responsive-design-portafolio
 Para aplicar diseño responsivo se necesita poner medidas variables un ejemplo es usar max-width en vez de width.
 Cuando un elemento no quepa lo mas aconsejable es usar flexbox y aplicar flex-wrap: wrap para permitir que los elementos se apilen abajo y no se salgan de la pantalla.
+Si se usa en combinación para un contenedor max-width: 500px y width:100% logrará que el contenedor tenga el ancho del elemento padre hasta el maximo permitido, ocupando así todo el espacio para acomodarse.
+Se puede usar display: block en un media query cuando queremos que se caiga un elemento que no cabe (posicionarlo por debajo) en determinadas posiciones de un media querie, sin importar su ancho.
+Cuando se aplica un display block de muchos elementos que no caben se debe quitar el alto fijo y sustituirlo por uno automático.

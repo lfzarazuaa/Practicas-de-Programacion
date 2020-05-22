@@ -333,6 +333,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 
 .container {
     max-width: 1000px;/* Se aplica tamaño maximo para evitar que el tamaño sea fijo. */
+    flex: 1;/* Permite que ocupe todo el ancho del elemento padre sin paddings similar a width 100%. */
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -345,24 +346,42 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 
 @media screen and (max-width: 1024px) {
     body{
-        border: 10px solid wheat;
+        font-size: inherit;
     }
 }
 
-@media screen and (max-width: 768px) {
-    body{
-        border: 10px solid red;
+@media screen and (max-width: 767px) {
+    .header{
+        display: block;/*Al quitarle flexbox hace que un elemento se apile por debajo forzosamente */
+        height: auto;/* Permite que todos los elementos apilados se muestren. */
+    }
+
+    .header ol{
+        display: initial;/* Mostrar en lista los elementos */
+    }
+
+    .header ol li {
+        height: 50px;/* Especifica un alto en pixeles para cada elemento evitando que se vean muy juntos. */
+        text-align: center;
+    }
+
+    .header a {
+        justify-content: center;/* Centra los elementos de los links. */
+    }
+    
+    .header .logo {
+        text-align: center;/* Centra la imagen y su descripción al centro.*/
     }
 }
 
 @media screen and (max-width: 480px) {
     body{
-        border: 10px solid green;
+        font-size: inherit;
     }
 }
 
 @media screen and (max-width: 320px) {
     body{
-        border: 10px solid blue;
+        font-size: inherit;
     }
 }
