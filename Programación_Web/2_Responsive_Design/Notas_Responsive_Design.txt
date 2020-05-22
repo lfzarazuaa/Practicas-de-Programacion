@@ -23,3 +23,6 @@ También permite emular si está online, conexión móvil media, conexión móvi
 También se puede tomar un screenshot de la pantalla con full size, cubriendo, mas allá del área visible en vertical.
 En el donde se encuentran los 3 puntos (superior-derecho), hay opciones para ver con regla la aplicación, los configuración de los dispositivos.
 La mejor convención para el mínimo de una pantalla de de 320p horizontal.
+<meta name="viewport" content="width=320"> //Coloca el área visible a 320px.
+<meta name="viewport" content="width=device-width, initial-scale=1"> //Con device width se tiene el ancho del dispositivo y el zoom inicial 100%=1
+Con view port solo se cambian las medidas de la pantalla para que todo sea legible pero aun queda desacomodado.
