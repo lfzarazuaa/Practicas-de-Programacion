@@ -127,3 +127,21 @@ Burger Button (Menu de opciones) tratando una imagen como una fuente.
     color: white;/* Color de la imagen, generada como una letra. */
     font-size: 15px;/* Hacer mas grande el ícono. */
 }
+Para desplegar un menú se puede otorgarle la posición de fixed al contenedor del menú e incluir dentro de su color de fondo una transparencia para poder seguir viendo el contenido.
+.menu{
+        position: fixed;/* Fija la posición del elemento en pantalla (no se ve afectada por scroll). */
+        background: rgba(0, 100, 255, 0.8);/* Define color azul con trasnparencia. */
+        z-index: 3;/* Encima de los elementos. */
+        top: 0;/* Estira el contenedor. */
+        left: -100vw;/* Estira el contenedor. */
+        bottom: 0;/* Estira el contenedor. */
+        width: 100vw;/* Ocupa todo el ancho de la pantalla. */
+        display: flex;/* Display flexbox. */
+        align-items: center;/* Alinea los elementos hacia el centro verticalmente */
+        justify-content: center;/* Alinea los elementos al centro horizontalmente. */
+        transition: .3s;
+    }
+Al momento de querer realizar una acción cuando dos clases esten presentes se necesitan colocar los selectores juntos.  
+    .menu.es-activo{
+        left: 0;/* Dadas las condiciones declaradas en menu hace visible en pantalla el menu. */
+    }

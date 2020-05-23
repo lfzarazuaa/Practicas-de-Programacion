@@ -47,7 +47,7 @@
   [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: none;
+    /* speak: none; */
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -399,7 +399,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     left: 0;/* Estira el video a cada esquina. */
     width: 100%;/* Ocupar todo el espacio en horizontal. */
     height: 100%;/* Ocupar todo el espacio en vertical. */
-    z-index: 3;    /* Indica que irá al frente de los elementos definidos por z-index 2 y 3. */
+    z-index: 2;    /* Indica que irá al frente de los elementos definidos por z-index 2 y 3. */
 }
 
 .flexible-video{/* Contenedor donde se moverá de posición el video. */
@@ -442,9 +442,31 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 @media screen and (max-width: 767px) {
+
     .burger-button{
         display: block;/* Cambio de display none a block. */
     }
+
+    .menu{
+        position: fixed;/* Fija la posición del elemento en pantalla (no se ve afectada por scroll). */
+        background: rgba(0, 100, 255, 0.8);/* Define color azul con trasnparencia. */
+        z-index: 3;/* Encima de los elementos. */
+        top: 0;/* Estira el contenedor. */
+        left: -100vw;/* Estira el contenedor. */
+        bottom: 0;/* Estira el contenedor. */
+        width: 100vw;/* Ocupa todo el ancho de la pantalla. */
+        display: flex;/* Display flexbox. */
+        align-items: center;/* Alinea los elementos hacia el centro verticalmente */
+        justify-content: center;/* Alinea los elementos al centro horizontalmente. */
+        transition: .3s;
+    }
+
+    .menu.es-activo{
+        left: 0;/* Dadas las condiciones declaradas en menu hace visible en pantalla el menu. */
+    }
+
+    /*  Hero  */
+
     .hero{
         height: auto;/* Alto dinámico para evitar que todo el hero choque con otras secciones. */
         position: relative;/* Logra que el absolute del hero-image se reubique al inicio del hero. */
@@ -467,6 +489,8 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
         z-index: 2;/*2 Para encimar el texto sobre la imagen. */
     }
 
+    /* Header */
+
     .header{
         display: block;/*Al quitarle flexbox hace que un elemento se apile por debajo forzosamente */
         height: auto;/* Permite que todos los elementos apilados se muestren. */
@@ -483,6 +507,10 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 
     .header a {
         justify-content: center;/* Centra los elementos de los links. */
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: 0.5em;
     }
     
     .header .logo {
@@ -490,6 +518,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     }
 
     /* Project */
+
     .project{
         display: block;/* Manda la imagen para abajo impidiendo que salga del margen. */
     }
