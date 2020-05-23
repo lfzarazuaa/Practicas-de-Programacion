@@ -358,6 +358,26 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     margin: 0 30%;
     /* max-width: 100%; */
 }
+
+.youtube-video{
+    position: absolute;/* Posición absoluta para posicionarse en flexible-video. */
+    top: 0;/* Estira el video a cada esquina. */
+    bottom: 0;/* Estira el video a cada esquina. */
+    right: 0;/* Estira el video a cada esquina. */
+    left: 0;/* Estira el video a cada esquina. */
+    width: 100%;/* Ocupar todo el espacio en horizontal. */
+    height: 100%;/* Ocupar todo el espacio en vertical. */
+    z-index: 3;    /* Indica que irá al frente de los elementos definidos por z-index 2 y 3. */
+}
+
+.flexible-video{/* Contenedor donde se moverá de posición el video. */
+    width: 100%;/* Porcentaje que se desea ocupar en el contenedor padre. */
+    height: 0;/* Altura 0, pues esta se establecerá por padding. */
+    padding-top: 56.25%;/* Pd-t=Porcentaje/100*height*100/width*/
+    position: relative;/* Relativo, para asi lograr que el absolute se posicione aqui. */
+}
+
+
 /* Media Querie Desktop First */
 
 @media screen and (max-width: 1024px) {
