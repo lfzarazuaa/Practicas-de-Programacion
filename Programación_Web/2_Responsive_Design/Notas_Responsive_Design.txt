@@ -73,5 +73,7 @@ relative: De donde estaba ubicado originalmente se sale.
 absolute: Se reubica conforme a body o html, o si hay un elemento con posición relativa se reubica conforme a ese.
 fixed: Pone una posición fija, nunca se quita de pantalla.
 sticky: Cuando el elemento llega a cierta posición indicada se pega o fija allí.
-Propiedad z-index: n Se sobrepone sobre un elemento donde n es el numero de elemento del dom.
+Propiedad z-index: n Se sobrepone sobre un elemento donde n un número donde el mayor tapará al menor.
 Propiedades top, left, rigth y botoom: Se usan en conjunto con position para saber cuanto mover en que dirección.
+Cuando se usan medias queries es recomendable ir ajustando los tamaños de fuente para que mantegan su proporción conforme se disminuye el tamaño.
+Tamaño de la fuente que cumpla con los renglones (si se requiere) y propoción de la página.

@@ -355,12 +355,43 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 /* Media Querie Desktop First */
 
 @media screen and (max-width: 1024px) {
-    body{
-        font-size: inherit;
+    .hero{
+        height: auto;/* Alto dinámico para evitar que choque con otras secciones. */
+    }
+
+    h1 {
+        font-size: 2.4em;/* Definir tamaño de letra para evitar desbordamientos. */
+    }
+
+    .hero-image{
+        width: 50%;/* Dar un ancho de imagen relativo. */
     }
 }
 
 @media screen and (max-width: 767px) {
+
+    .hero{
+        height: auto;/* Alto dinámico para evitar que todo el hero choque con otras secciones. */
+        position: relative;/* Logra que el absolute del hero-image se reubique al inicio del hero. */
+        overflow: hidden;/* Oculta todo lo desbordado, (la imagen se desbordo al querer que ocupe toda la pantalla). */
+        padding: 2em;
+    }
+
+    .hero-image{
+        position: absolute;
+        z-index: 1;/*1 Para permitir que la imagen tenga contenido arriba. */
+        left: 0;/* Estira el elemento hasta el inicio de la izquierda. */
+        right: 0;/* Estira el elemento hasta el inicio de la derecha. */
+        top: 0;/* Estira el elemento hasta arriba. */
+        bottom: 0;/* Estira el elemento hasta abajo. */
+        width: 100%;/* Forza el estirado de la imagen cuando ya alcanzo sus dimensiones originales. */
+    }
+
+    h1 {
+        font-size: 2em;/*  Reducir tamaño del texto para visualizarlo bien. */
+        z-index: 2;/*2 Para encimar el texto sobre la imagen. */
+    }
+
     .header{
         display: block;/*Al quitarle flexbox hace que un elemento se apile por debajo forzosamente */
         height: auto;/* Permite que todos los elementos apilados se muestren. */
@@ -437,6 +468,10 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 @media screen and (max-width: 570px) and (min-width: 481px){
+    h1{
+        font-size: 1.5em;/* Tamaño de la fuente que cumpla con los renglones y propoción de la página. */
+    }
+
     .form-email{
         width: 30%;
         /* Evita que sea mas grande de lo necesario. */
@@ -447,13 +482,17 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
        display: flex;
        justify-content: center;
     }
-    
+
     .social-link{
         margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 480px) {
+    h1{
+        font-size: 1.6em;/* Ajuste de tamaño de fuente. */
+    }
+
     /* Project */
     
     .project-details{
@@ -497,7 +536,11 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 @media screen and (max-width: 320px) {
-    body{
-        font-size: inherit;
+    h1{
+        font-size: 1.2em;
+    }
+
+    .hero{
+        padding: 2em 1em;
     }
 }
