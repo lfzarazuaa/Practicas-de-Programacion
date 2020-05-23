@@ -77,3 +77,12 @@ Propiedad z-index: n Se sobrepone sobre un elemento donde n un número donde el 
 Propiedades top, left, rigth y botoom: Se usan en conjunto con position para saber cuanto mover en que dirección.
 Cuando se usan medias queries es recomendable ir ajustando los tamaños de fuente para que mantegan su proporción conforme se disminuye el tamaño.
 Tamaño de la fuente que cumpla con los renglones (si se requiere) y propoción de la página.
+Para insertar videos del mismo sitio se usa.
+<video src="videos/viedowall.mp4" width="244" height="400" controls></video>
+Los navegadores dejaron de implementar el autoplay en videos.
+.html-video{
+    width: 40%; /* Ancho fijo del video. */
+    height: auto;/* Ajusta para respetar las proporciones del video. */
+    margin: 0 30%;
+    /* max-width: 100%; */
+}

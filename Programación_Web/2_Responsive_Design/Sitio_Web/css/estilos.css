@@ -352,6 +352,12 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     flex-wrap: inherit;
 }
 
+.html-video{
+    width: 40%; /* Ancho fijo del video. */
+    height: auto;/* Ajusta para respetar las proporciones del video. */
+    margin: 0 30%;
+    /* max-width: 100%; */
+}
 /* Media Querie Desktop First */
 
 @media screen and (max-width: 1024px) {
