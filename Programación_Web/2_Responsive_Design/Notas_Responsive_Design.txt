@@ -108,3 +108,6 @@ Para mantener las proporciones un iframe al ser insertado se usa height*100/widt
     padding-top: 5.625%;/* Pd-t=Porcentaje/100*height*100/width*/
     position: relative;/* Relativo, para asi lograr que el absolute se posicione aqui. */
 }
+https://icomoon.io/ para crear iconos.
+Se puede descargar como una fuente, una vez descargada se copia la carpeta fonts, postiormente se lee el archivo css del .zip y se copia al css de nuestra página asignandole la url correcta de la carpeta fonts.
+Para mandar a llamar se usa <i class="icon-menu"></i>.
