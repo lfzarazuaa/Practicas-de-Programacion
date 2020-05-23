@@ -305,6 +305,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     background: transparent;
     color: white;
     border-radius: 5px;
+    border-color: white;
     width: 100px;
     margin-top: 10px;
 }
@@ -323,6 +324,10 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     justify-content: space-between;
 }
 
+.footer-course, .footer-design{
+    margin: 1em auto;
+}
+
 .footer img{
     vertical-align: middle;/* Alinea la imagen verticalmente para que todo este alineado (sino solo se alinea conforme a la imagen). */
 }
@@ -339,6 +344,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     max-width: 1000px;/* Se aplica tamaño maximo para evitar que el tamaño sea fijo. */
     flex: 1;/* Permite que ocupe todo el ancho del elemento padre similar a width 100% pero menos restrictivo. */
     margin: 0 auto;
+    padding: 0 0.5em;
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
@@ -427,7 +433,23 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     .event img{
         width: 100%;/* Hace que la imagen ocupe todo el tamaño del contenedor. */
     }
+    
+}
 
+@media screen and (max-width: 570px) and (min-width: 481px){
+    .form-email{
+        width: 30%;
+        /* Evita que sea mas grande de lo necesario. */
+    }
+    
+    .social{
+        width: 50%;
+       display: flex;
+       justify-content: center;
+    }
+    .social-link{
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -443,7 +465,34 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
         margin: -2em 0.5em 0.5em 0.5em;/* Margen para sobreponer en la imagen */
         padding: 1em;/* Ajustar el padding. */
     }
+
+    /* Contacto */
     
+    .contact{
+        height: auto;/* Pone un alto automático para que quepan los elemento, pues ya no estan en una línea. */
+        padding: 1.5em 0;/* Ajusta el padding vertical para que no esten pegados los elementos al momento de realizar el wrap. */
+        display: block;/* Quita el display flex para poder usar text-align: center, para centrar el contenido. */
+        text-align: center;/* Centra el contenido (deben tener margenes). */
+    }
+
+    .social-link{
+        margin: 5px 10px;
+    }
+
+    .form-email h3{
+        margin-top: 0;/* Fija en cero el margen para que no exista tanta separación. */
+    }
+
+    .form-email button{
+        margin: 1em auto;/* Coloca margen para poder centrar el elemento. */
+    }
+
+    /* Footer */
+    .footer{
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+    }
 }
 
 @media screen and (max-width: 320px) {

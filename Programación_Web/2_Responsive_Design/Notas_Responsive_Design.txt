@@ -64,3 +64,5 @@ Una buena práctica para hacer responsive en el texto es definirle tamaño relat
 Al momento de realizar responsive design no hay que descuidar darle responsive design al margen, margin: 0.4em 0;
 Cuando el elemento se sale de pantatalla o para hacer responsive desing con un número de elementos predefinido conviene usar width: % y margin: % calculando con respecto al de elementos que se quieran visualizar y flex-wrap: wrap, en el contenedor.
 Si un elemento tiene una clase y una etiqueta (ejemplo: img), la etiqueta prevalecerá arriba de la clase ignorando la clase.
+Para centrar un elemento en un viewport mas pequeño se pude cambiar la disposición a block y centrar los elementos con text-align y margin auto.
+Siempre es aconsejable revisar si la disposición es adecuada para todo el intervalo de media querie, si está bien modificar en la primera donde existan problemas.
