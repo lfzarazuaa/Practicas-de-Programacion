@@ -441,12 +441,13 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
         width: 30%;
         /* Evita que sea mas grande de lo necesario. */
     }
-    
+
     .social{
         width: 50%;
        display: flex;
        justify-content: center;
     }
+    
     .social-link{
         margin: 0 auto;
     }

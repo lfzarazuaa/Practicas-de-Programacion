@@ -66,3 +66,12 @@ Cuando el elemento se sale de pantatalla o para hacer responsive desing con un n
 Si un elemento tiene una clase y una etiqueta (ejemplo: img), la etiqueta prevalecerá arriba de la clase ignorando la clase.
 Para centrar un elemento en un viewport mas pequeño se pude cambiar la disposición a block y centrar los elementos con text-align y margin auto.
 Siempre es aconsejable revisar si la disposición es adecuada para todo el intervalo de media querie, si está bien modificar en la primera donde existan problemas.
+https://codepen.io/LeonidasEsteban/pen/VGWzWK
+Posiciones en css (position: (static, relative, absolute, fixed, sticky)):
+static: Posición por defecto los elementos no se mezclan.
+relative: De donde estaba ubicado originalmente se sale.
+absolute: Se reubica conforme a body o html, o si hay un elemento con posición relativa se reubica conforme a ese.
+fixed: Pone una posición fija, nunca se quita de pantalla.
+sticky: Cuando el elemento llega a cierta posición indicada se pega o fija allí.
+Propiedad z-index: n Se sobrepone sobre un elemento donde n es el numero de elemento del dom.
+Propiedades top, left, rigth y botoom: Se usan en conjunto con position para saber cuanto mover en que dirección.
