@@ -409,6 +409,21 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     position: relative;/* Relativo, para asi lograr que el absolute se posicione aqui. */
 }
 
+.burger-button{
+    width: 40px;/* Tamaño del contenedor del burger-boton. */
+    height: 40px;/* Tamaño del contenedor del burger-boton. */
+    border-radius: 50%;/* Redondea el contenedor. */
+    background-color: rgba(0, 0, 0, 0.8);/* Color del contenedor con opacidad. */
+    display: none;/* Cambio de display inline a none para ocultarlo. */
+    line-height: 40px;/* Igualar la posición del texto a la altura del contendor.*/
+    text-align: center;/* Alinear el texto al centro. */
+    position: fixed;/* Define el elemento estático. */
+    z-index: 4;/* Pone hasta el frente de todos los elementos. */
+    left: 5px;
+    top: 5px;
+    color: white;/* Color de la imagen, generada como una letra. */
+    font-size: 15px;/* Hacer mas grande el ícono. */
+}
 
 /* Media Querie Desktop First */
 
@@ -427,7 +442,9 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 @media screen and (max-width: 767px) {
-
+    .burger-button{
+        display: block;/* Cambio de display none a block. */
+    }
     .hero{
         height: auto;/* Alto dinámico para evitar que todo el hero choque con otras secciones. */
         position: relative;/* Logra que el absolute del hero-image se reubique al inicio del hero. */

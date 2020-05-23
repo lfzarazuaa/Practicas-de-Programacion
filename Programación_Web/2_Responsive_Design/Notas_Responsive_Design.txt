@@ -111,3 +111,19 @@ Para mantener las proporciones un iframe al ser insertado se usa height*100/widt
 https://icomoon.io/ para crear iconos.
 Se puede descargar como una fuente, una vez descargada se copia la carpeta fonts, postiormente se lee el archivo css del .zip y se copia al css de nuestra página asignandole la url correcta de la carpeta fonts.
 Para mandar a llamar se usa <i class="icon-menu"></i>.
+Burger Button (Menu de opciones) tratando una imagen como una fuente.
+.burger-button{
+    width: 40px;/* Tamaño del contenedor del burger-boton. */
+    height: 40px;/* Tamaño del contenedor del burger-boton. */
+    border-radius: 50%;/* Redondea el contenedor. */
+    background-color: rgba(0, 0, 0, 0.8);/* Color del contenedor con opacidad. */
+    display: none;/* Cambio de display inline a none para ocultarlo. */
+    line-height: 40px;/* Igualar la posición del texto a la altura del contendor.*/
+    text-align: center;/* Alinear el texto al centro. */
+    position: fixed;/* Define el elemento estático. */
+    z-index: 4;/* Pone hasta el frente de todos los elementos. */
+    left: 5px;
+    top: 5px;
+    color: white;/* Color de la imagen, generada como una letra. */
+    font-size: 15px;/* Hacer mas grande el ícono. */
+}
