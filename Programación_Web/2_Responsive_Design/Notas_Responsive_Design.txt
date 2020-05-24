@@ -145,3 +145,15 @@ Al momento de querer realizar una acción cuando dos clases esten presentes se n
     .menu.es-activo{
         left: 0;/* Dadas las condiciones declaradas en menu hace visible en pantalla el menu. */
     }
+Con document.querySelector(".menu") podemos obtener la clase y su contenido html.
+Javascript para controlar un boton booleano.
+const menu = document.querySelector(".menu");//Obtiene el elemento menu. 
+const burgerbutton = document.getElementById("burger-menu");Obtiene el elemento burger-menu para ver eventos.
+burgerbutton.addEventListener("click",hideShow);//Agrega unfunción para el evento de click.
+function hideShow() {
+    if (menu.classList.contains('es-activo')) {
+        menu.classList.remove("es-activo");//Quita la clase eactivo a la lista.
+    } else {
+        menu.classList.add("es-activo");//Añade la clase eactivo a la lista.
+    }
+}

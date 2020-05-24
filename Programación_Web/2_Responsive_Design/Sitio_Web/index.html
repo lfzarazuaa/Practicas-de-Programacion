@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <i class="icon-menu burger-button"></i>
+    <i class="icon-menu burger-button" id="burger-menu"></i>
     <header class="header"> <!-- Encabezado con estilo definido por la clase header.-->
         <div class="container">
             <figure class="logo"><!-- Contenedor para la imagen. -->
                 <img src="images/logo.png" height="50" alt="Logo de https://leonidasesteban.github.io/desarrollo-web-2018-preview/images/logo.png"> <!-- alt para colocar un texto alternativo cuando no se carga la imagen. -->
             </figure>
-            <nav class="menu es-activo"><!-- Menu de links, definido por la clase de estilo menu. -->
+            <nav class="menu"><!-- Menu de links, definido por la clase de estilo menu. -->
                 <ol><!-- Definir elementos ordenados -->
                     <li><!-- List item(elemento de lista). -->
                         <a class="link" href="#portafolio"><!-- Anchor ancla (enlace) con clase de estilo link-->
@@ -176,5 +176,17 @@
             </div>
         </div>
     </footer>
+    <script>
+        const menu = document.querySelector(".menu");//Obtiene el elemento menu. 
+        const burgerbutton = document.getElementById("burger-menu");//Obtiene el elemento burger-menu para ver eventos.
+        burgerbutton.addEventListener("click",hideShow);//Agrega una función para el evento de click.
+        function hideShow() {
+            if (menu.classList.contains('es-activo')) {
+                menu.classList.remove("es-activo");//Quita la clase es activo a la lista.
+            } else {
+                menu.classList.add("es-activo");//Añade la clase es activo a la lista.
+            }
+        }
+    </script>
 </body>
 </html>
