@@ -162,3 +162,10 @@ console.log(window.matchMedia("screen and (max-width: 767px)"));
 El método nos devuelve un objeto donde la propiedad matches nos indica si cumple con el media querie o no.
 const pantallaTablet = window.matchMedia("screen and (max-width: 767px)");//Nos devuelve el estado de la pantalla.
 pantallaTablet.addListener(validation);//Agrega función manejadora cada vez que hay un cambio en el objeto del media querie.
+validation(pantallaTablet);//Se indica el objeto de parámetro.
+Para usar node static server se necesita usar node.js.
+Para descargar node static-server se dirige a la página https://www.npmjs.com/package/static-server.
+npm -g install static-server Se debe ejecutar como administrador.
+Una vez instalado el static server se debe ejecutar el comando static-server dentro de nuestra carpeta base (donde se encuentra index)
+Accedemos al sito con nuestra ip y el puerto asignado http://192.168.1.80:9080/
+El dominio es el nombre del sitio que viene a substituir la ip.

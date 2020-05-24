@@ -177,6 +177,7 @@
         </div>
     </footer>
     <script>
+
         const pantallaTablet = window.matchMedia("screen and (max-width: 767px)");//Nos devuelve el estado de la pantalla.
         const menu = document.querySelector(".menu");//Obtiene el elemento menu. 
         const burgerbutton = document.getElementById("burger-menu");//Obtiene el elemento burger-menu para ver eventos.
@@ -185,19 +186,19 @@
         const link_contacto = document.querySelector(".link-contacto");//Obtiene los links del menu.
         
         pantallaTablet.addListener(validation);//Agrega función manejadora cada vez que hay un cambio en el objeto.
-
+        validation(pantallaTablet);//Se indica el objeto de parámetro.
         function validation(evento) {//Se ejecuta cada vez que el objeto cambia.
             if (evento.matches){
-                burgerbutton.addEventListener("click",hideShow);//Agrega una función para el evento de click.
-                link_portafolio.addEventListener("click",hide);
-                link_eventos.addEventListener("click",hide);
-                link_contacto.addEventListener("click",hide);
+                burgerbutton.addEventListener('click',hideShow);//Agrega una función para el evento de click.
+                link_portafolio.addEventListener('click',hide);
+                link_eventos.addEventListener('click',hide);
+                link_contacto.addEventListener('click',hide);
             }
             else{
-                burgerbutton.removeEventListener("click",hideShow);//Remueve el listener.
-                link_portafolio.removeEventListener("click",hide);
-                link_eventos.removeEventListener("click",hide);
-                link_contacto.removeEventListener("click",hide);
+                burgerbutton.removeEventListener('click',hideShow);//Remueve el listener.
+                link_portafolio.removeEventListener('click',hide);
+                link_eventos.removeEventListener('click',hide);
+                link_contacto.removeEventListener('click',hide);
             }
         }
         
