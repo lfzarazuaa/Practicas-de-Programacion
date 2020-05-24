@@ -169,3 +169,5 @@ npm -g install static-server Se debe ejecutar como administrador.
 Una vez instalado el static server se debe ejecutar el comando static-server dentro de nuestra carpeta base (donde se encuentra index)
 Accedemos al sito con nuestra ip y el puerto asignado http://192.168.1.80:9080/
 El dominio es el nombre del sitio que viene a substituir la ip.
+Cuando se usa un addListener y se requiere que al menos se ejecute una vez tambien se debe llamar a la función para realizar los cambios pues el eventListener solo se llama ante los cambios.
+Para depurar se debe conectar el celular en modo programador y permitir el depurador usb, posteroriormente se accede a chrome://inspect, una vez se accedio al sitio en el celular se accede a la ruta deseada y en la pc se busca la pestaña y se accede con inspect.

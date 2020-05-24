@@ -442,7 +442,10 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
 }
 
 @media screen and (max-width: 767px) {
-
+    h2{
+        font-size: 1.2em;
+        margin: 0.5em;
+    }
     .burger-button{
         display: block;/* Cambio de display none a block. */
     }
@@ -549,7 +552,7 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     }
 
     .project-description{
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .project-imageContainer{
@@ -596,11 +599,16 @@ figure {/* Permite que el logo y las demas figuras puedan tocar los bordes si no
     h1{
         font-size: 1.6em;/* Ajuste de tamaño de fuente. */
     }
+    /* Portafolio */
+
+    .portfolio{
+        padding: 0;    
+    }
 
     /* Project */
     
     .project-details{
-        font-size: 12px;
+        font-size: 14px;
     }
 
     /* eventos */

@@ -186,7 +186,7 @@
         const link_contacto = document.querySelector(".link-contacto");//Obtiene los links del menu.
         
         pantallaTablet.addListener(validation);//Agrega función manejadora cada vez que hay un cambio en el objeto.
-        validation(pantallaTablet);//Se indica el objeto de parámetro.
+        validation(pantallaTablet);//Ejecuta por primera vez la función (la otra solo se ejecuta con resize), se indica el objeto de parámetro.
         function validation(evento) {//Se ejecuta cada vez que el objeto cambia.
             if (evento.matches){
                 burgerbutton.addEventListener('click',hideShow);//Agrega una función para el evento de click.
