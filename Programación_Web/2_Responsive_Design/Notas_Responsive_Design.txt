@@ -157,3 +157,8 @@ function hideShow() {
         menu.classList.add("es-activo");//Añade la clase eactivo a la lista.
     }
 }
+Para poder usar medias queries y ejecuttar el código solo cuando sea necesario se usa window.matchMedia.
+console.log(window.matchMedia("screen and (max-width: 767px)"));
+El método nos devuelve un objeto donde la propiedad matches nos indica si cumple con el media querie o no.
+const pantallaTablet = window.matchMedia("screen and (max-width: 767px)");//Nos devuelve el estado de la pantalla.
+pantallaTablet.addListener(validation);//Agrega función manejadora cada vez que hay un cambio en el objeto del media querie.

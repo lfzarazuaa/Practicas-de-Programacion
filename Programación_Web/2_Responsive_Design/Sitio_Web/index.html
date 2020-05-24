@@ -18,17 +18,17 @@
             <nav class="menu"><!-- Menu de links, definido por la clase de estilo menu. -->
                 <ol><!-- Definir elementos ordenados -->
                     <li><!-- List item(elemento de lista). -->
-                        <a class="link" href="#portafolio"><!-- Anchor ancla (enlace) con clase de estilo link-->
+                        <a class="link link-portafolio" href="#portafolio"><!-- Anchor ancla (enlace) con clase de estilo link-->
                             Portafolio
                         </a>
                     </li>
                     <li>
-                        <a class="link" href="#eventos">
+                        <a class="link link-eventos" href="#eventos">
                             Experiencia
                         </a>
                     </li>
                     <li>
-                        <a class="link" href="#contacto">
+                        <a class="link link-contacto" href="#contacto">
                             Trabajemos juntos
                         </a>
                     </li>
@@ -177,15 +177,40 @@
         </div>
     </footer>
     <script>
+        const pantallaTablet = window.matchMedia("screen and (max-width: 767px)");//Nos devuelve el estado de la pantalla.
         const menu = document.querySelector(".menu");//Obtiene el elemento menu. 
         const burgerbutton = document.getElementById("burger-menu");//Obtiene el elemento burger-menu para ver eventos.
-        burgerbutton.addEventListener("click",hideShow);//Agrega una función para el evento de click.
+        const link_portafolio = document.querySelector(".link-portafolio");//Obtiene los links del menu.
+        const link_eventos = document.querySelector(".link-eventos");//Obtiene los links del menu.
+        const link_contacto = document.querySelector(".link-contacto");//Obtiene los links del menu.
+        
+        pantallaTablet.addListener(validation);//Agrega función manejadora cada vez que hay un cambio en el objeto.
+
+        function validation(evento) {//Se ejecuta cada vez que el objeto cambia.
+            if (evento.matches){
+                burgerbutton.addEventListener("click",hideShow);//Agrega una función para el evento de click.
+                link_portafolio.addEventListener("click",hide);
+                link_eventos.addEventListener("click",hide);
+                link_contacto.addEventListener("click",hide);
+            }
+            else{
+                burgerbutton.removeEventListener("click",hideShow);//Remueve el listener.
+                link_portafolio.removeEventListener("click",hide);
+                link_eventos.removeEventListener("click",hide);
+                link_contacto.removeEventListener("click",hide);
+            }
+        }
+        
         function hideShow() {
             if (menu.classList.contains('es-activo')) {
                 menu.classList.remove("es-activo");//Quita la clase es activo a la lista.
             } else {
                 menu.classList.add("es-activo");//Añade la clase es activo a la lista.
             }
+        }
+
+        function hide() {
+            menu.classList.remove("es-activo");//Quita la clase es activo a la lista.
         }
     </script>
 </body>
