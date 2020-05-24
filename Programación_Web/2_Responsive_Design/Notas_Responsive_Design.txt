@@ -10,30 +10,30 @@ Luke Wroblewski propone 5 técnicas para responsive design:
 - Off Canvas (fuera del lienzo).
 Conceptos útiles para responsive design:
 Viewport: Es el área visible del navegador.
-Portrait-Landscape: Define si vamos a ver el contenido en vertical o en horizontal.
+Portrait-Landscape: Define si vamos a ver el contenido en vertical(portrait) o en horizontal(landscape).
 Mobile First - Mobile First: De donde parte o inicia la orientación de la página a un dispositivo móvil o de escritorio.
-En teoria es mejor partir de un mobile first y solo ir agregando código conforme la pantalla crezca y así hacer mas liviana la aplicación.
+En teoria es mejor partir de un mobile first y solo ir agregando código conforme la pantalla crezca y así hacer más liviana la aplicación.
 Para decidir cual usar siempre es conveniente desde donde se le presta atención a nuestro sitio en particular.
-Developer tools para Responsive Design
+Developer tools para Responsive Design.
 Antes de empezar a aplicar las herramientas necesarias para realizar Responsive Design es fundamental que aprendas a visualizar y manejar el menú en donde se encuentran tales herramientas, el cual se encuentra en cualquier explorador desde el que trabajes.
 En el menú toogle device toolbar (ubicado en el inspector a la izquierda) se pueden hacer pruebas para responsive design ya sea cambiando el tamaño del área visible manualmente o escogiendo la pantalla de algun dispositivo móvil.
 La herramienta también tiene la opción para ver el dispositivo en un porcentaje de zoom y además la opción de rotar la pantalla.
 La cinta en el menú (barras grises), nos permiten seleccionar entre distintos tamaños de dispositivos convencionales (Mobile-S, Mobile-M, Mobile-L, Tablet, laptop, etc).
 También permite emular si está online, conexión móvil media, conexión móvil baja, o sin conexión.
 También se puede tomar un screenshot de la pantalla con full size, cubriendo, mas allá del área visible en vertical.
-En el donde se encuentran los 3 puntos (superior-derecho), hay opciones para ver con regla la aplicación, los configuración de los dispositivos.
-La mejor convención para el mínimo de una pantalla de de 320p horizontal.
+En donde se encuentran los 3 puntos (superior-derecho), hay opciones para ver con regla(medidas) la aplicación, los configuración de los dispositivos entre otras.
+La mejor convención para el mínimo de una pantalla es de 320p horizontal.
 <meta name="viewport" content="width=320"> //Coloca el área visible a 320px.
-<meta name="viewport" content="width=device-width, initial-scale=1"> //Con device width se tiene el ancho del dispositivo y el zoom inicial 100%=1
-Con view port solo se cambian las medidas de la pantalla para que todo sea legible pero aun queda desacomodado.
+<meta name="viewport" content="width=device-width, initial-scale=1"> //Con device width se tiene el ancho del dispositivo y el zoom inicial com initial scale (100%=1).
+Con view port solo se cambian las medidas de la pantalla para que todo sea legible pero aún queda desacomodado.
 Las medidas en CSS son maleables, en la medida en que dependen de su fuente de origen o medida madre.
 Tipos de medidas en CSS:
-- Porcentaje %: longitud referente al tamaño de los elementos padre).
+- Porcentaje %: longitud referente al tamaño de los elementos padre.
 - em : unidad relativa al tamaño de fuente especificada más cercano, incluye al elemento mismo, los elementos que no son font-size leen respecto al font-size del mismo elemento.
 - rem : Unidad relativa al tamaño de fuente especificada en el ancestro más lejano, como html o body.
 - vw/vh : Unidad relativa porcentual con respecto al Viewport(tamaño de la pantalla).
 Media queries: Gracias a este módulo de CSS existe el Responsive Design pues posibilita dar el acomodo y medidas para determinados rangos de pantallas.
-El media queries es un módulo de css3 que hace posible al responsive design, éste existe desde el 2010 y se encarga de adaptar la representación del contenido a características del dispositivo.
+El media querie es un módulo de css3 que hace posible al responsive design, éste existe desde el 2010 y se encarga de adaptar la representación del contenido a características del dispositivo.
 https://developer.mozilla.org/es/docs/CSS/Media_queries
 @media media type and (condición){} Prototipo de un media querie.
 @media screen and (max-width: 768px) and (min-width: 480 px) {} Para pantallas con un maximo de 768px en horizontal.
@@ -53,16 +53,16 @@ Los medias queries pueden aplicarse directo a un archivo de estilos con:
 Cuando se aplican las 4 condiciones de media queries se cubre con un estándar que cubre la mayoria de los dispositivos.
 https://github.com/LeonidasEsteban/responsive-design-portafolio
 Para aplicar diseño responsivo se necesita poner medidas variables un ejemplo es usar max-width en vez de width.
-Cuando un elemento no quepa lo mas aconsejable es usar flexbox y aplicar flex-wrap: wrap para permitir que los elementos se apilen abajo y no se salgan de la pantalla.
+Cuando un elemento no quepa lo mas aconsejable es usar flex y aplicar flex-wrap: wrap para permitir que los elementos se apilen abajo y no se salgan de la pantalla.
 Si se usa en combinación para un contenedor max-width: 500px y width:100% logrará que el contenedor tenga el ancho del elemento padre hasta el maximo permitido, ocupando así todo el espacio para acomodarse.
 Se puede usar display: block en un media query cuando queremos que se caiga un elemento que no cabe (posicionarlo por debajo) en determinadas posiciones de un media querie, sin importar su ancho.
 Cuando se deba ajustar un elemento dentro de un flexbox es mejor usar flex:1 que width: 100% para permitirle incluir margenes.
-Cuando se aplica un display block de muchos elementos que no caben se debe quitar el alto fijo y sustituirlo por uno automático width: auto.
+Cuando se aplica un display: block de muchos elementos que no caben se debe quitar el alto fijo y sustituirlo por uno automático width: auto.
 Es mejor usar width: auto que width:100% para obtener un mejor rendimiento.
 Para hacer una imagen responsive conforme a su contenedor se usa la propiedad max-width: 100%, logrando que asi siempre se adapte al tamaño del contenedor.
-Una buena práctica para hacer responsive en el texto es definirle tamaño relativo a cada tamaño de texto de una sección con em y en cada media querie solo definir el tamaño de texto base.
+Una buena práctica para hacer responsive design en el texto es definirle tamaño relativo a cada tamaño de texto de una sección con em y en cada media querie solo definir el tamaño de texto base.
 Al momento de realizar responsive design no hay que descuidar darle responsive design al margen, margin: 0.4em 0;
-Cuando el elemento se sale de pantatalla o para hacer responsive desing con un número de elementos predefinido conviene usar width: % y margin: % calculando con respecto al de elementos que se quieran visualizar y flex-wrap: wrap, en el contenedor.
+Cuando el elemento se sale de pantalla o para hacer responsive desing con un número de elementos predefinido conviene usar width: % y margin: % calculando con respecto al de elementos que se quieran visualizar y flex-wrap: wrap, en el contenedor.
 Si un elemento tiene una clase y una etiqueta (ejemplo: img), la etiqueta prevalecerá arriba de la clase ignorando la clase.
 Para centrar un elemento en un viewport mas pequeño se pude cambiar la disposición a block y centrar los elementos con text-align y margin auto.
 Siempre es aconsejable revisar si la disposición es adecuada para todo el intervalo de media querie, si está bien modificar en la primera donde existan problemas.
@@ -70,15 +70,15 @@ https://codepen.io/LeonidasEsteban/pen/VGWzWK
 Posiciones en css (position: (static, relative, absolute, fixed, sticky)):
 static: Posición por defecto los elementos no se mezclan.
 relative: De donde estaba ubicado originalmente se sale.
-absolute: Se reubica conforme a body o html, o si hay un elemento con posición relativa se reubica conforme a ese.
+absolute: Se reubica conforme a body o html, o si hay un elemento con posición relativa (el más cercano) se reubica conforme a ese.
 fixed: Pone una posición fija, nunca se quita de pantalla.
 sticky: Cuando el elemento llega a cierta posición indicada se pega o fija allí.
-Propiedad z-index: n Se sobrepone sobre un elemento donde n un número donde el mayor tapará al menor.
-Propiedades top, left, rigth y botoom: Se usan en conjunto con position para saber cuanto mover en que dirección.
+Propiedad z-index: n Se sobrepone sobre un elemento donde n nos dice el numero de capa y la capa mayor tapará a las demas(solo su parte visible).
+Propiedades top, left, rigth y bottom: Se usan en conjunto con position para saber cuanto mover en que dirección (habitualmente se usan las 4 como esquinas para lograr estirar un elemento).
 Cuando se usan medias queries es recomendable ir ajustando los tamaños de fuente para que mantegan su proporción conforme se disminuye el tamaño.
-Tamaño de la fuente que cumpla con los renglones (si se requiere) y propoción de la página.
-Para insertar videos del mismo sitio se usa.
-<video src="videos/viedowall.mp4" width="244" height="400" controls></video>
+Verificar el tamaño de la fuente que cumpla con los renglones (si se requiere) y propoción de la página en responsive design.
+Para insertar videos del mismo sitio se usa:
+<video src="videos/viedowall.mp4" width="244" height="400" controls></video> Con controls se le añaden los controles típicos de un video.
 Los navegadores dejaron de implementar el autoplay en videos.
 .html-video{
     width: 40%; /* Ancho fijo del video. */
@@ -108,13 +108,13 @@ Para mantener las proporciones un iframe al ser insertado se usa height*100/widt
     padding-top: 5.625%;/* Pd-t=Porcentaje/100*height*100/width*/
     position: relative;/* Relativo, para asi lograr que el absolute se posicione aqui. */
 }
-https://icomoon.io/ para crear iconos.
+https://icomoon.io/ para crear íconos.
 Se puede descargar como una fuente, una vez descargada se copia la carpeta fonts, postiormente se lee el archivo css del .zip y se copia al css de nuestra página asignandole la url correcta de la carpeta fonts.
-Para mandar a llamar se usa <i class="icon-menu"></i>.
+Para mandar a llamar se usa <i class="icon-menu burger-button"></i>.
 Burger Button (Menu de opciones) tratando una imagen como una fuente.
 .burger-button{
-    width: 40px;/* Tamaño del contenedor del burger-boton. */
-    height: 40px;/* Tamaño del contenedor del burger-boton. */
+    width: 40px;/* Tamaño del contenedor del burger-botton. */
+    height: 40px;/* Tamaño del contenedor del burger-botton. */
     border-radius: 50%;/* Redondea el contenedor. */
     background-color: rgba(0, 0, 0, 0.8);/* Color del contenedor con opacidad. */
     display: none;/* Cambio de display inline a none para ocultarlo. */
@@ -122,42 +122,42 @@ Burger Button (Menu de opciones) tratando una imagen como una fuente.
     text-align: center;/* Alinear el texto al centro. */
     position: fixed;/* Define el elemento estático. */
     z-index: 4;/* Pone hasta el frente de todos los elementos. */
-    left: 5px;
-    top: 5px;
+    left: 5px;/* Separa de la esquina un poco a la izquierda. */
+    top: 5px;/* Separa de la esquina un poco a la derecha. */
     color: white;/* Color de la imagen, generada como una letra. */
     font-size: 15px;/* Hacer mas grande el ícono. */
 }
 Para desplegar un menú se puede otorgarle la posición de fixed al contenedor del menú e incluir dentro de su color de fondo una transparencia para poder seguir viendo el contenido.
 .menu{
         position: fixed;/* Fija la posición del elemento en pantalla (no se ve afectada por scroll). */
-        background: rgba(0, 100, 255, 0.8);/* Define color azul con trasnparencia. */
+        background: rgba(0, 100, 255, 0.8);/* Define color azul con transparencia. */
         z-index: 3;/* Encima de los elementos. */
         top: 0;/* Estira el contenedor. */
         left: -100vw;/* Estira el contenedor. */
         bottom: 0;/* Estira el contenedor. */
         width: 100vw;/* Ocupa todo el ancho de la pantalla. */
         display: flex;/* Display flexbox. */
-        align-items: center;/* Alinea los elementos hacia el centro verticalmente */
+        align-items: center;/* Alinea los elementos hacia el centro verticalmente. */
         justify-content: center;/* Alinea los elementos al centro horizontalmente. */
-        transition: .3s;
+        transition: .3s;//Animación entre las posiciones.
     }
 Al momento de querer realizar una acción cuando dos clases esten presentes se necesitan colocar los selectores juntos.  
     .menu.es-activo{
-        left: 0;/* Dadas las condiciones declaradas en menu hace visible en pantalla el menu. */
+        left: 0;/* Dadas las condiciones declaradas en la clase menu hace visible en pantalla el menu. */
     }
-Con document.querySelector(".menu") podemos obtener la clase y su contenido html.
+Con document.querySelector(".menu") podemos obtener el selector deseado y su contenido html.
 Javascript para controlar un boton booleano.
 const menu = document.querySelector(".menu");//Obtiene el elemento menu. 
 const burgerbutton = document.getElementById("burger-menu");Obtiene el elemento burger-menu para ver eventos.
-burgerbutton.addEventListener("click",hideShow);//Agrega unfunción para el evento de click.
+burgerbutton.addEventListener("click",hideShow);//Agrega una función para el evento de click.
 function hideShow() {
     if (menu.classList.contains('es-activo')) {
-        menu.classList.remove("es-activo");//Quita la clase eactivo a la lista.
+        menu.classList.remove("es-activo");//Quita la clase es-activo de la lista.
     } else {
         menu.classList.add("es-activo");//Añade la clase eactivo a la lista.
     }
 }
-Para poder usar medias queries y ejecuttar el código solo cuando sea necesario se usa window.matchMedia.
+Para poder usar medias queries y ejecutar el código solo cuando sea necesario se usa window.matchMedia.
 console.log(window.matchMedia("screen and (max-width: 767px)"));
 El método nos devuelve un objeto donde la propiedad matches nos indica si cumple con el media querie o no.
 const pantallaTablet = window.matchMedia("screen and (max-width: 767px)");//Nos devuelve el estado de la pantalla.
@@ -169,5 +169,5 @@ npm -g install static-server Se debe ejecutar como administrador.
 Una vez instalado el static server se debe ejecutar el comando static-server dentro de nuestra carpeta base (donde se encuentra index)
 Accedemos al sito con nuestra ip y el puerto asignado http://192.168.1.80:9080/
 El dominio es el nombre del sitio que viene a substituir la ip.
-Cuando se usa un addListener y se requiere que al menos se ejecute una vez tambien se debe llamar a la función para realizar los cambios pues el eventListener solo se llama ante los cambios.
-Para depurar se debe conectar el celular en modo programador y permitir el depurador usb, posteroriormente se accede a chrome://inspect, una vez se accedio al sitio en el celular se accede a la ruta deseada y en la pc se busca la pestaña y se accede con inspect.
+Cuando se usa un addListener y se requiere que al menos se ejecute una vez tambien se debe llamar a la función para realizar los cambios pues el eventListener sólo se llama ante los cambios.
+Para depurar se debe conectar el celular en modo programador y permitir el depurador usb, posteroriormente se accede a chrome://inspect, una vez se accedió al sitio en el celular se accede a la ruta deseada y en la pc se busca la pestaña y se accede con inspect.
