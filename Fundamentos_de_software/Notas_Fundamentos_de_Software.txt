@@ -73,3 +73,13 @@ El router se conecta con el modem a través del protocolo NAT.
 El router es el que tiene el Gateway Ip.
 NAT( Network Adress Translation) protocolo que traduce de las direcciones de internet a las direcciones de la red local.
 IP es la sigla de Internet Protocol y una dirección IP es un número único con el cual una computadora o un dispositivo se identifica cuando está conectada a una red con el protocolo IP.
+Internet funciona con satelites en menos del 1% de tráfico, la mayoria es cableado.
+Los ISP(provedores de internet) los que nos mandan un cable con la señal a nuestras casas y a su vez ellos se conectan a internet.
+London Internet Exchange (LINX) es un punto de acceso para poder intercambiar datos por internet.
+Internet Exchange Point es una infraestructura física a través de la cual los proveedores de servicios de Internet intercambian el tráfico de Internet entre sus redes.
+Los barcos y casos especiales si se conectan por satélite, pero en la mayoria de los casos todos se conectan por cables que interconectan distintos lugares a través del mundo siendo algunos de ellos cables submarinos.
+La concentración mayor de estos cables estan en europa, los cuales superan a los de toda latinoamerica a pesar de ser esta mas grande en extensión.
+Hay cables que no estan interconectados con la red pública sino en una red privada como la de china.
+Los primeros cables submarinos fueron de cobre para transmitir señales entre los telégrafos de europa y estados unidos.
+Los cables actuales son de muchos alambres de fibra optica recubiertos y que pasan por lo mas profundo del mar para que asi esten mas seguros.
+Los cables tienen mantenimiento por empresas dedicadas a esto y se enfrentan a diversas situaciones.
