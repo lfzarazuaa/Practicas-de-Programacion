@@ -38,25 +38,28 @@ El Kernel tiene acceso a todo el sistema.
 Entre mas lejos estemos del nivel del Kernel menos permisos se tienen (Kernel, Drivers, Drivers Apps).
 Para que google tenga acceso al microfono del SO le pide permisos a cada capa hasta llegar a la del kernel donde se verifica la correcta identidad, de ahi le puede dar un permiso momentaneo o por todo el tiempo necesario.
 La estandarización en la computación facilta mucho la interoperabilidad en distintos sistemas.
-Internet no funciona con satelites.
+Internet no funciona con satélites.
 Internet no es a prueba de armas nucleares.
 Un switch comparte la red entre varios equipos PC1, Lap1, PC2.
 Un switch rebota la señal hasta encontrar cual es el correcto destinario.
 Router wifi emite una señal que permite la conexión inalambrica entre miembros de una misma red.
 El router wifi necesita saber el nombre de la red, el password y la lista de Ip.
-DHCP
-Todos los dispositvos con conexión a internet tienen un hardware con una MAC address.
+DHCP (Protocolo para decidir a que equipo entregar la información).
+Todos los dispositvos con conexión a internet tienen un hardware con una MAC address para poderse identificar.
 La MAC Adress es un número unico.
-Modem del ISP es el elemento que provee de internet a los demás, se puede conectar por ADSL, Telefono, 4G/LTE, Fibra óptica.
+Modem del ISP(Internet service provider) es el elemento que provee de internet a los demás, se puede conectar por ADSL, Teléfono, 4G/LTE, Fibra óptica.
 En una red local Ipv4 no cambia mas que el ultimo byte. El numero asignado depende de quien llego primero a la lista del router.
-La ip por default o localhost es la 127.0.0.1;
+La ip por default o localhost es la 127.0.0.1.
+IPLan: Ip del área local.
+Los router distribuyen una lista de ip en la LAN.
+Si hay mas de 255 dispositvos entonces se necesitan subredes.
 Si en una red local hay mas de 255 dispositvos se tiene que crear una subred.
 Para calcular el número de ip se consideran 255*255 ya que la terminación 255 está reservada para Broadcast y el ultimo número tampoco puede ser 0.
-En los esquemas de red se crea una red virtual al que se le llama puerto.
-Hay 2^16 puertos distintos.
+En los esquemas de red se crea una red virtual dentro del SO al que se le llama puerto.
+Hay 65,535=2^16 puertos distintos.
 El SO distribuye los puertos atraves de anillos como los del kernel.
 Los puertos del 1-1024 son puertos reservados para ejecutarse atraves del administrador.
 Hay muchos protocolos que corren sobre los puertos el mas popular es el http y su puerto es el 80.
 Un computador corriendo por ejemplo BitTorrent usa multiples puertos (6881-6889).
 El protocolo https usa el puerto 443.
-Otro protocolo es el SSH (Secure Shell).
+Otro protocolo es el SSH (Secure Shell) este funciona en el puerto 22.
