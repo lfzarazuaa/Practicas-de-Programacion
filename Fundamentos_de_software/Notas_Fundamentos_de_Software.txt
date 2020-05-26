@@ -63,3 +63,13 @@ Hay muchos protocolos que corren sobre los puertos el mas popular es el http y s
 Un computador corriendo por ejemplo BitTorrent usa multiples puertos (6881-6889).
 El protocolo https usa el puerto 443.
 Otro protocolo es el SSH (Secure Shell) este funciona en el puerto 22.
+La máscara de red nos indica cuales son los bits de la ip que no pueden cambiar dentro de una red local.
+A lo largo de internet hay muchas ip por lo cual se necesita una ip global y una ip local.
+Para que existan las ip globales y locales un grupo de ingenieros creó un documento (RFC), un rango de ips que nunca estaran disponibles en el internet público sino solo en el internet privado (del 192-255).
+Hay esquemas de red solo disponibles para redes locales, por lo general la máscara de red es 255.255.255.0.
+El Gateway comunmente 192.168.10.1, es hacia donde se dirige la información.
+El gateway hace parte del router wifi aunque no necesariamente del modem.
+El router se conecta con el modem a través del protocolo NAT.
+El router es el que tiene el Gateway Ip.
+NAT( Network Adress Translation) protocolo que traduce de las direcciones de internet a las direcciones de la red local.
+IP es la sigla de Internet Protocol y una dirección IP es un número único con el cual una computadora o un dispositivo se identifica cuando está conectada a una red con el protocolo IP.
