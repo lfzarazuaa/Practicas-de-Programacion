@@ -92,3 +92,10 @@ Los emails tienen un protocolo único.
 MX Records = IP Server Gmail.
 Los DNS también guardan Records txt, donde solo se almacena texto, al hacerle la consulta de este texto no necesita dar una ip pues ya tiene el texto guardado en el DNS.
 En la computadora se guarda una copia local del DNS con las Ip de los sitios visitados.
+Las conexiones cableadas en internet son muy caras, y el tráfico de datos es compartido entre todos, siendo de esta manera caro conectarse a los internet exchange points (red cableada mundialmente).
+La ultima milla es la conexión entre el modem y el isp.
+Si hay una petición de datos entre 2 dispositivos con el mismo isp, lo que habitualmente pasa es transferir los datos a través de una MAN (Metropolitan Area Network), sin pasar por el IXP (Internet Exchange Point), de esta manera el ISP no paga por el uso del IXP.
+Usando este principio los ISP pueden ofrecer servicios locales de alta velocidad de transferencia.
+Cuando es necesario conectarse por IXP, los servidores crean prioridad, angostando la conexión a través de routers ,firewalls y network shapers, para asignar la prioridad a emails, llamadas por internet o acciones empresariales (de donde mas fondos obtienen) y bajan la prioridad a videos o descargas de archivos secundarios como los de bitorrent.
+Quality of Service (también llamado Network Shaping o Throttling) sirve para regular que sitios tienen preferencia a una mayor velocidad y cuales no, esto se hace en la ultima milla.
+Los dueños de los dominios en un intento para contrarrestar el efecto del Throttling, implementaron un concepto llamado CDN ( Content Delivery Networks), con lo cual basicamente hacen una copia de los archivos que son estáticos en distintas partes del mundo para asi tener mas cerca de cada usuario la información y esta pueda viajar sin problemas.
