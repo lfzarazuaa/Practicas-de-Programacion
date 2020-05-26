@@ -83,3 +83,12 @@ Hay cables que no estan interconectados con la red pública sino en una red priv
 Los primeros cables submarinos fueron de cobre para transmitir señales entre los telégrafos de europa y estados unidos.
 Los cables actuales son de muchos alambres de fibra optica recubiertos y que pasan por lo mas profundo del mar para que asi esten mas seguros.
 Los cables tienen mantenimiento por empresas dedicadas a esto y se enfrentan a diversas situaciones.
+Los DNS (Domain Name Server) son servidores con una base de datos, con la cual saben a que IP pertenece un nombre.
+Antes de abrir un sitio web primero se debe hacer una petición al DNS.
+twiter.com=104.244.42.65
+Un dominio puede tener subdominios, como ejemplo: su versión móvil, la api entre otros, estos subdominios pueden tener la misma ip o una distinta.
+Los DNS guardan el servidor especial de envio de emails.
+Los emails tienen un protocolo único.
+MX Records = IP Server Gmail.
+Los DNS también guardan Records txt, donde solo se almacena texto, al hacerle la consulta de este texto no necesita dar una ip pues ya tiene el texto guardado en el DNS.
+En la computadora se guarda una copia local del DNS con las Ip de los sitios visitados.
