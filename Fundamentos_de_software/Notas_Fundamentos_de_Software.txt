@@ -107,3 +107,17 @@ La velocidad del ping se ve limitada por la distancia que tiene que recorrer, po
 El tiempo de un ping es muy importante para videojuegos en tiempo real o videos.
 Una señal que viaja de Mountain view a Madrid demora 9344Km/(300Km/ms)=31.14ms, siendo esto el tiempo mínimo para transferirse, para aumentar su velocidad si son muchos datos se pueden enviar en grandes paquetes en paralelo para que lleguen mas datos a la vez.
 Lo que en verdad venden los ISP es el ancho de banda que puede transmitir al mismo tiempo.
+El cliente esta conformado por el navegador desde el cual se invoca un archivo Javascript para mostrar distintas cosas en el navegador, sin embargo también se pueden hacer peticiones de información al servidor remoto.
+Esto se divide en Backend y Frontend.
+El lenguaje mas popular de backend es php, sin embargo existen otros como python, node js, java.
+Los servidores mas populares son programas que procesan el código del backend, como nginix, apache, internet information service y node JS.
+Un stack es un grupo de tecnologías, uno de estos es LAMP.
+El ciclo de un stack es asi:
+El navegador le pasa la url al servidor DNS (DIN DNS),el servidor DNS cambia el domino de platzi por una IP,luego el servidor de platzi recibe la url con apache o nginix, luego los datos son pasados al backend, en este caso go, python y node js, estos procesan la información para hacer una petición a la base de datos, obtienen los datos y mandan de respuesta una página con html, css y js, el cual le mandan al navegador.
+El código del frontend siempre es visible, por lo cual este le hace peticiones al backend el cual se encargar de obtener la información y a la vez protegerla.
+Existen muchos metódos para conectarse desde el el frontend (html, css y Javascript) como el get, post, ajax, sockets.
+Get manda los datos en la url, Post los manda a través de los headers http.
+Para hacer cambios sin recargar la página ya sea por usar post o get se puede usar AJAX, el cual en el mismo javascript hace una petición asíncrona y modifica una cierta parte del html o css.
+Un stack popular es MEAN el cual está formado por mongoDB, express, AngularJS (libreria para frontend) y Node-JS.
+Noje JS es muy efectivo para sockects transfiriendo información entre cliente servidor en tiempo real.
+Los videojuegos y los chats usan sockets para una transmición mas rapida.
