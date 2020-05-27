@@ -99,3 +99,11 @@ Usando este principio los ISP pueden ofrecer servicios locales de alta velocidad
 Cuando es necesario conectarse por IXP, los servidores crean prioridad, angostando la conexión a través de routers ,firewalls y network shapers, para asignar la prioridad a emails, llamadas por internet o acciones empresariales (de donde mas fondos obtienen) y bajan la prioridad a videos o descargas de archivos secundarios como los de bitorrent.
 Quality of Service (también llamado Network Shaping o Throttling) sirve para regular que sitios tienen preferencia a una mayor velocidad y cuales no, esto se hace en la ultima milla.
 Los dueños de los dominios en un intento para contrarrestar el efecto del Throttling, implementaron un concepto llamado CDN ( Content Delivery Networks), con lo cual basicamente hacen una copia de los archivos que son estáticos en distintas partes del mundo para asi tener mas cerca de cada usuario la información y esta pueda viajar sin problemas.
+La conexión de los servidores de internet se mide en Megabits Mb, pero la información viene en bytes, por ende son velocidades mas lentas de lo que esperaríamos en tiempo de descarga.
+Con una conexión de 10Mb/s solo se pueden transmitir 1.25 MB/s.
+Además la velocidad de red se ve reflejada por cuanto tiempo tarda la conexión en establecerse y pues fisícamente tiene que viajar de un lugar a otro y para ello se usa el ping que es el tiempo que tarda la conexión en establecerse.
+ping www.platzi.com Es lo que tarda un bit en llegar desde la pc hasta el servidor.
+La velocidad del ping se ve limitada por la distancia que tiene que recorrer, por ejemplo un barco manda la señal al satelite luego al IXP y de ahi se dirige al servidor.
+El tiempo de un ping es muy importante para videojuegos en tiempo real o videos.
+Una señal que viaja de Mountain view a Madrid demora 9344Km/(300Km/ms)=31.14ms, siendo esto el tiempo mínimo para transferirse, para aumentar su velocidad si son muchos datos se pueden enviar en grandes paquetes en paralelo para que lleguen mas datos a la vez.
+Lo que en verdad venden los ISP es el ancho de banda que puede transmitir al mismo tiempo.
