@@ -120,4 +120,39 @@ Get manda los datos en la url, Post los manda a través de los headers http.
 Para hacer cambios sin recargar la página ya sea por usar post o get se puede usar AJAX, el cual en el mismo javascript hace una petición asíncrona y modifica una cierta parte del html o css.
 Un stack popular es MEAN el cual está formado por mongoDB, express, AngularJS (libreria para frontend) y Node-JS.
 Noje JS es muy efectivo para sockects transfiriendo información entre cliente servidor en tiempo real.
-Los videojuegos y los chats usan sockets para una transmición mas rapida.
+Los videojuegos y los chats usan sockets para una transmisión mas rápida.
+Pasos para acceder a un sitio web www.platzi.com/fundamentos.
+El sitio web ve si tiene la ip en cache, sino la consulta del dns.
+El navegador forma un http request usando el verbo GET.
+En el mensaje manda [GET /fundamentos HHTP/2, Host:www.platzi.com, User-Agent: Chrome 28]
+Se le pasa el host ya que una dirección ip puede tener multíples dominios.
+Los datos en el mensaje GET son enviados a la IP del servidor en el puerto 80(http) y el servidor recibe la petición.
+El servidor responde la petición (http response) en un formato muy parecido al request.
+[HTTP 200OK //Estado de la respuesta.
+Date: xxxx
+Server: nginx 18 (Linux) //Servidor en que corre la aplicación.
+Last-Modified: xxxx //Permite saber si no hay modificaciones.
+Content-Length:13 //Cantidad de bytes que tiene la petición.
+Conecction: close //Especifíca si va a mantener la conexión cerrada o abierta (chats por sockets).
+Content-type: text/html //Tipo de dato que se envía.
+<h1>hola</h1>]//Manda el código HTML.
+Si se vuelven a hacer peticiones desde el sitio como usar AJAX (Assets) o nuevas peticiones(Resquest) se vuelve a repetir el proceso pero usando los links de la página web.
+Las cookies siempre se envian por medio del request, se vayan a usar o no, luego el servidor actualiza la cookie y la manda de regreso.
+La cantidad de cookies en una aplicación hacen mas pesado tanto el envío como la respuesta ya que siempre van en ambas.
+1.- Los protocolos se encargan de manejar todas las peticiones que hacen la páginas de internet desde tu navegador hacia los servidores DNS, éstos transforman la dirección de la página web en una dirección IP y tu navegador se conecta a esa IP.
+2.- Una vez se tiene la dirección IP el navegador envía un HTTP request en donde envía información con las características del cliente y los requerimientos del mismo, es decir, Host requerido, página del sitio que necesita, tipo de navegador, versión del navegador, etc.
+3.- El servidor envía los resultados por medio del mismo protocolo HTTP en forma de un HTTP Response en donde manda todo el HTML del sitio web así como otros datos que el navegador necesita.
+4.- Por último se cargan los assets de nuestro sitio web y es aquí donde se descargan imágenes, sonidos, etc.+
+Por lo general se usa TCP/IP como protocolo de transmisión pero también se puede usar UDP siendo mas rapido pero mas errático.
+Hay varios tipos de wifi con estándares distintos y cifrados distintos.
+Se pueden adicionalmente hacer conexiones con sockets en vez de usar http, siendo estas útiles para conexiones persistentes que nunca se caen.
+Para detener las conexiones y permitirles el acceso se usa un firewall.
+La dark web también denyro de ella TOR, siendo una forma compleja y cifrada de conectarse a internet en la que no se tiene registro de quien accedió.
+Para poderse conectar a internet desde el celular se usa una tecnología llamada Tethering (con un puerto usb o bluetooth puede darnos internet).
+Cuando no se quiere usar Internet Exchange Points se debe usar Peer to Peer.
+Con las redes Mesh se puede tener un internet mas robusto que no dependa de cables submarinos.
+Con un VPN se puede tener mas privacidad en la ip.
+La mayoria de las ip son asignandas dinámicamente pero también hay fijas.
+El protocolo http envía la información en paquetes.
+Para combinar múltiples redes se puede usar Multi-WAN y Round Robin.
+Sync/Ack, Sync Acknowledge (enviar dato y aceptar que el dato fue envíado).
