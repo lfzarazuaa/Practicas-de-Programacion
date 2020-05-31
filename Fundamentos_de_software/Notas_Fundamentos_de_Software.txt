@@ -156,3 +156,26 @@ La mayoria de las ip son asignandas dinámicamente pero también hay fijas.
 El protocolo http envía la información en paquetes.
 Para combinar múltiples redes se puede usar Multi-WAN y Round Robin.
 Sync/Ack, Sync Acknowledge (enviar dato y aceptar que el dato fue envíado).
+Sistemas Operativos:
+-Windows es el sistema operativo de propósito general más usado a nivel mundial, es un sistema operativo cerrado y se encuentra en la gran mayoría de computadoras para consumidores además utiliza un núcleo propietario perteneciente a Microsoft.
+-Linux es el sistema operativo más utilizado en servidores, es libre y su creador Linus Torvalds aún sigue desarrollando su núcleo destacado por su alto rendimiento y alta seguridad, tienen una licencia del tipo GNU-GPL que no solo permite redistribuir si no también garantiza que las personas que redistribuyen el código deban aportar a la licencia entre otras cosas.
+-FreeBSD es el sistema operativo en el que está basado Mac OS y muchos sistemas embebidos así como firewalls como pfsense y más, tiene una licencia del tipo BSD.
+Hay una diferencia entre Open-Source y Libre, donde libre puede modificarse y distribuirse.
+GPL es la licencia GNU para distribución de software libre.
+Hay códigos que en algunas partes son libres y en otras cerrados, pues hay logos o diseños protegidos por marcas.
+La licencia mas popular para distribuir linux es GNU-GPL.
+El Kernel es el núcleo del SO.
+En el Kernel no está como se representa gráficamente la información, solo los drivers más básicos, ni la capa de aplicaciones y permisos.
+El Kernel de Windows es un kernel de Microsoft, han existido versiones del Windows que no cambian de Kernel.
+Linux tiene una organización sin lucro llamada Kernel.org siendo el Kernel del So.
+En Linux todas las piezas son separadas como la interfaz gráfica, los drivers, etc.
+FreeBSD, quiere encargarse de desarrollar todo SO, en vez de que este sea separado por piezas.
+MacOS comomenzo usando BSD como Kernel y llegando así a Next, luego Darwin y finalmente XNU el cual es el Kernel de MacOS.
+Los SO basados en UNIX son SO inicialmente basados en Consola.
+En Windows a partir de Windows 1.0 se tuvo una interfaz gráfica propia, evolucionando asi hasta windows 10 donde se tiene responsive design para distintos dispositivos.
+La capa de interfaz gráfica para los SO basados en UNIX es X11, de donde se crean distintos sistemas visuales como KDE y Gnome.
+Existen varias distribuciones de Linux como Ubuntu, RedHat, Mandriva, además existen distribuciones orientadas a hacking como Kali Linux.
+Existen iOS, tvOS y watchOS como SO de macOS.
+Android es un SO basado en el Kernel de Linux, pero modificado para funcionar con sistemas móviles, con drivers para GPS y Telecomunicaciones, todo esto fue hecho por Google.
+Además cada Android fue modificado por los distintos fabricantes de teléfonos celulares como Samsung, Sony.
+Los SO vienen de una empresa llamada Xerox, ya que está fue la primera que dió un SO visual (Xerox Star), pero no lo consideró relevante.
