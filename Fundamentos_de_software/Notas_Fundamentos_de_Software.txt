@@ -191,3 +191,20 @@ En la administración de archivos la capacidad de utilizar permisos te permite d
 Read ®: permisos de lectura.
 Write (w): permisos de escritura.
 Execute (x): permisos de ejecución.
+Los sistemas operativos móviles difieren de los normales sobretodo en los permisos especiales que requiere la app para funcionar, al momento de distribuir tu app ya debes tener o saber que permisos vas a usar.
+En Android se encuentra la tienda de Google y la de Amazon para aplicaciones entre otras.
+Las primeras aplicaciones en los iphones se instalaron furtivamente usando Cydia.
+Tanto en Windows, MacOS y Linux se pueden instalar apliciaciones de diversas formas, en Linux se usan los distribuidores de paquetes como apt-get o como yum que se conectan a un repositorio de donde pueden descargar todo lo necesario.
+En Windows se puede usar chocolatey o en MacOS HomeBrew como distribuidores de paquetes opcionales a instalar.
+Algunos permisos solicitados son el GPS, Accounts, acelerómetros, cámara, micrófono, contactos, galería de fotos, archivos.
+Android permite acceder a la tarjeta SD si lo permite, con un sistema de archivos basado en un sistema Linux(*nix).
+Los Iphone tienen un sistema de archivos basados en contenedores (sanbox) por lo cual no se podrá acceder a él mas que desde la app que lo hizó. También usa file sharing api, para crear un enlace entre aplicaciones y asi pasarse los archivos. La principal manera de guardar en IOS es mediante icloud almacenando todo el contenido en la nube, pero para mayor almacenamiento se debe pagar.
+Para desarrollar nativimente en Android se usa Java (Dalvik), mientras que en IOS se usa Objective C o en Swift.
+En ambos se puede usar C#, C++, Unity, Unreal ya que son multiplataforma y se usan en general para videojuegos.
+Un entorno para programar en Apple es XCode, mientras que para Android es Android Studio.
+En 2014 Google entregó 7 mil millones de dólares a los desarrolladores de Android, mientras que Apple le entregó 10 mil millones de dólares a los desarrolladores de IOS.
+En Google también se puede ganar donero por medio de adds, en apple no hay publicidad pero es mas común pagar las apps.
+Existen herramientas que se pueden usar para desarrollar aplicaciones que funcionaran para ambos SO pero con un coste en rendimiento.
+Xamarin-Se usa c#.
+React Native- Se usa JS y React.
+Ionic- Angular.
