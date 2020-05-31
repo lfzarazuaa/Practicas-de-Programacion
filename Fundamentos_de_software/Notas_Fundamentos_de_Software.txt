@@ -179,3 +179,15 @@ Existen iOS, tvOS y watchOS como SO de macOS.
 Android es un SO basado en el Kernel de Linux, pero modificado para funcionar con sistemas móviles, con drivers para GPS y Telecomunicaciones, todo esto fue hecho por Google.
 Además cada Android fue modificado por los distintos fabricantes de teléfonos celulares como Samsung, Sony.
 Los SO vienen de una empresa llamada Xerox, ya que está fue la primera que dió un SO visual (Xerox Star), pero no lo consideró relevante.
+Los niveles de permisos en los SO están en general dados por Admin (crear y modificar) Team(modificar) y Public(leer).
+Todo archivo puede ser ejecutable si se le otorga permiso de execute.
+rwx - read write execute. Son instrucciones que otorgan los distintos permisos al archivo.
+En linux con chmod comando se le dice que permisos tiene ese archivo.
+Si se le otorga un permiso de ejecutar a un archivo no deseado puede generar un hueco de seguridad, por ejemplo en el servidor.
+Para cambiar las propiedades de un archivo se deben tener permisos de administrador.
+El comando sudo es para acceder como administrador o root.
+Permisos, niveles de procesos y privilegios de ejecución
+En la administración de archivos la capacidad de utilizar permisos te permite definir entre las siguientes características, los permisos existen en todos los sistemas operativos de diversas formas y se crean con las siguientes opciones:
+Read ®: permisos de lectura.
+Write (w): permisos de escritura.
+Execute (x): permisos de ejecución.
