@@ -266,3 +266,4 @@ Para los algoritmos de vision artificial con redes neuronales, se usan multiples
 En una base de datos no relacional se tienen documentos o variables, que se parecen entre si, pero no son similares del todo.
 Sus ventajas son su velocidad y livianez.
 Las bases de datos no relacionales usan en su mayoria JSON para guardar los datos.
+Un algoritmo es un conjunto de acciones entrelazadas entre si para tener una funcion de acuerdo a como sea estructurada, es decir un algoritmo puede ser basicámente una forma de resolver una suma simple donde tiene un inicio un proceso y un final.
