@@ -10,44 +10,44 @@ IBM define en 1956 definió el ASCII y el Byte como estándar para los nuevos cp
 El estándar utf-8 puede usar desde 1 byte hasta 4 dependiendo del simbolo a representar.
 El estándar utf-16 puede usar desde 2 bytes hasta 4 dejando más espacios libres para representar hasta emojis.
 UNICODE es la empresa que define los estandares de codificación.
-Las cpu se pueden comparar mediante hz, Cores y utroas propiedades.
+Las cpu se pueden comparar mediante hz, Cores y u otras propiedades.
 Las cpu están hechas de silicio.
 La Bios es un SO de arranque detectando todo lo que está conectado y le da la señal de inicio a la cpu.
 El disco duro contiene el Sistema Operativo y se conecta al cpu cuando la BIOS lo detecta.
 Para comunicarse el disco duro con la cpu usa la RAM como bus para comunicarse.
 Un Memristor lográ guardar la onda eléctrica aun desconectada, siendo igual de veloz que la memoria RAM.
 La GPU se comunica entre la pantalla y la cpu y se especializa en hacer muchos procesos en paralelo.
-Las GPU pueden estar optimizadas para matematicas tridimensionales y algebra vectorial mas rapido, esto permite mejor velocidad en render y videojuegos.
+Las GPU pueden estar optimizadas para matemáticas tridimensionales y algebra vectorial calculando mas rapido, esto permite mejor velocidad en render y videojuegos.
 SoC System on a chip conjunto de varios elementos(cpu, ram, dsp, gpu) en un solo chip.
-En un sistema movil hay un controlador de bateria para saber su estado y cuando suministra energía.
+En un sistema movil hay un controlador de batería para saber su estado y cuando suministra energía.
 Los discos duros antiguos funcionan como los vinilos antiguos: tienen un cabezal que va leyendo los datos que pasan por debajo de ella a medida que el disco gira a una velocidad constante.
 Un disco duro es persistente, secuencial y guarda los archivos estructuradamente.
 Sistemas de archivos en linux: Ext3, ext4 Windows: FAT(File Alocation Table), NTFS (New Technology File System) Mac: HFS(Herarchical File System), APFS (Apple File System).
-En la cabecera del disco duro o indice los archivos es donde están todas las direcciones de los archivos.
-Un software de recuperación de datos inspecciona todo el disco duro buscando un patrón conocido para asi recuperar las localidades del archivo.
+En la cabecera del disco duro o índice los archivos es donde están todas las direcciones de los archivos.
+Un software de recuperación de datos inspecciona todo el disco duro buscando un patrón conocido para así recuperar las localidades del archivo.
 La memoria cache es una memoria aun mas veloz que la RAM donde se ejecutan los procesos principales del SO.
-Una parte del sistema Operativo se guarda en cache, otra en la ram y lo demas en el disco duro.
-La CPU y la RAM tienen un indice compartido por el cual accede a los datos de una manera mas veloz.
+Una parte del sistema Operativo se guarda en cache, otra en la ram y lo demás en el disco duro.
+La CPU y la RAM tienen un índice compartido por el cual accede a los datos de una manera mas veloz.
 El bus de datos de un disco duro es sata o antiguanmente IDE.
 El puerto PCI Express comunica la GPU con con el CPU.
 La GPU tiene muchos nucleos y una velocidad de reloj menor a la de un CPU.
 La GPU puede realizar operaciones 3d, codecs y otros algoritmos.
-La GPU tienen muchos módulos para realizar en paralelo los calculos fisicos, codificaciones de audio, el render entre otros.
-Los sistemas operativos cuando se cargan se cargan en un formato de anillo, los SO tienen un nucleo o Kernel lo cual se carga en el inicio en la memoria RAM.
+La GPU tienen muchos módulos para realizar en paralelo los cálculos físicos, codificaciones de audio, el render entre otros.
+Los sistemas operativos cuando se cargan se cargan en un formato de anillo, los SO tienen un núcleo o Kernel lo cual se carga en el inicio en la memoria RAM.
 El Kernel tiene acceso a todo el sistema.
-Entre mas lejos estemos del nivel del Kernel menos permisos se tienen (Kernel, Drivers, Drivers Apps).
-Para que google tenga acceso al microfono del SO le pide permisos a cada capa hasta llegar a la del kernel donde se verifica la correcta identidad, de ahi le puede dar un permiso momentaneo o por todo el tiempo necesario.
-La estandarización en la computación facilta mucho la interoperabilidad en distintos sistemas.
+Entre mas lejos estemos del nivel del Kernel menos permisos se tienen, el nivel de organización es Kernel, Drivers, Drivers Apps.
+Para que google tenga acceso al micrófono del SO le pide permisos a cada capa hasta llegar a la del kernel donde se verifica la correcta identidad, de ahí le puede dar un permiso moméntaneo o por todo el tiempo necesario.
+La estandarización en la computación facilita mucho la interoperabilidad en distintos sistemas.
 Internet no funciona con satélites.
 Internet no es a prueba de armas nucleares.
 Un switch comparte la red entre varios equipos PC1, Lap1, PC2.
 Un switch rebota la señal hasta encontrar cual es el correcto destinario.
-Router wifi emite una señal que permite la conexión inalambrica entre miembros de una misma red.
+Router wifi emite una señal que permite la conexión inalámbrica entre miembros de una misma red.
 El router wifi necesita saber el nombre de la red, el password y la lista de Ip.
 DHCP (Protocolo para decidir a que equipo entregar la información).
 Todos los dispositvos con conexión a internet tienen un hardware con una MAC address para poderse identificar.
-La MAC Adress es un número unico.
-Modem del ISP(Internet service provider) es el elemento que provee de internet a los demás, se puede conectar por ADSL, Teléfono, 4G/LTE, Fibra óptica.
+La MAC Adress es un número único.
+Modem del ISP (Internet Service Provider) es el elemento que provee de internet a los demás, se puede conectar por ADSL, Teléfono, 4G/LTE, Fibra óptica.
 En una red local Ipv4 no cambia mas que el ultimo byte. El numero asignado depende de quien llego primero a la lista del router.
 La ip por default o localhost es la 127.0.0.1.
 IPLan: Ip del área local.
@@ -56,38 +56,38 @@ Si hay mas de 255 dispositvos entonces se necesitan subredes.
 Si en una red local hay mas de 255 dispositvos se tiene que crear una subred.
 Para calcular el número de ip se consideran 255*255 ya que la terminación 255 está reservada para Broadcast y el ultimo número tampoco puede ser 0.
 En los esquemas de red se crea una red virtual dentro del SO al que se le llama puerto.
-Hay 65,535=2^16 puertos distintos.
-El SO distribuye los puertos atraves de anillos como los del kernel.
-Los puertos del 1-1024 son puertos reservados para ejecutarse atraves del administrador.
+Hay 2^16=65,535 puertos distintos.
+El SO distribuye los puertos a través de anillos como los del kernel.
+Los puertos del 1-1024 son puertos reservados para ejecutarse a través del administrador.
 Hay muchos protocolos que corren sobre los puertos el mas popular es el http y su puerto es el 80.
-Un computador corriendo por ejemplo BitTorrent usa multiples puertos (6881-6889).
+Un computador corriendo por ejemplo BitTorrent usa múltiples puertos (6881-6889).
 El protocolo https usa el puerto 443.
 Otro protocolo es el SSH (Secure Shell) este funciona en el puerto 22.
 La máscara de red nos indica cuales son los bits de la ip que no pueden cambiar dentro de una red local.
 A lo largo de internet hay muchas ip por lo cual se necesita una ip global y una ip local.
-Para que existan las ip globales y locales un grupo de ingenieros creó un documento (RFC), un rango de ips que nunca estaran disponibles en el internet público sino solo en el internet privado (del 192-255).
+Para que existan las ip globales y locales un grupo de ingenieros creó un documento (RFC), un rango de ips que nunca estarán disponibles en el internet público, sino solo en el internet privado (del 192-255).
 Hay esquemas de red solo disponibles para redes locales, por lo general la máscara de red es 255.255.255.0.
 El Gateway comunmente 192.168.10.1, es hacia donde se dirige la información.
 El gateway hace parte del router wifi aunque no necesariamente del modem.
 El router se conecta con el modem a través del protocolo NAT.
-El router es el que tiene el Gateway Ip.
-NAT( Network Adress Translation) protocolo que traduce de las direcciones de internet a las direcciones de la red local.
+El router es el elemento de la red que tiene el Gateway Ip.
+NAT (Network Adress Translation) protocolo que traduce de las direcciones de internet a las direcciones de la red local.
 IP es la sigla de Internet Protocol y una dirección IP es un número único con el cual una computadora o un dispositivo se identifica cuando está conectada a una red con el protocolo IP.
-Internet funciona con satelites en menos del 1% de tráfico, la mayoria es cableado.
-Los ISP(provedores de internet) los que nos mandan un cable con la señal a nuestras casas y a su vez ellos se conectan a internet.
+Internet funciona con satélites en menos del 1% de tráfico, la mayoria es cableado.
+Los ISP (provedores de internet) son los que nos mandan un cable con la señal a nuestras casas y a su vez ellos se conectan a internet.
 London Internet Exchange (LINX) es un punto de acceso para poder intercambiar datos por internet.
 Internet Exchange Point es una infraestructura física a través de la cual los proveedores de servicios de Internet intercambian el tráfico de Internet entre sus redes.
 Los barcos y casos especiales si se conectan por satélite, pero en la mayoria de los casos todos se conectan por cables que interconectan distintos lugares a través del mundo siendo algunos de ellos cables submarinos.
 La concentración mayor de estos cables estan en europa, los cuales superan a los de toda latinoamerica a pesar de ser esta mas grande en extensión.
 Hay cables que no estan interconectados con la red pública sino en una red privada como la de china.
 Los primeros cables submarinos fueron de cobre para transmitir señales entre los telégrafos de europa y estados unidos.
-Los cables actuales son de muchos alambres de fibra optica recubiertos y que pasan por lo mas profundo del mar para que asi esten mas seguros.
+Los cables actuales estan fabricados de muchos alambres de fibra óptica recubiertos y que pasan por lo mas profundo del mar para que así esten mas seguros.
 Los cables tienen mantenimiento por empresas dedicadas a esto y se enfrentan a diversas situaciones.
 Los DNS (Domain Name Server) son servidores con una base de datos, con la cual saben a que IP pertenece un nombre.
 Antes de abrir un sitio web primero se debe hacer una petición al DNS.
 twiter.com=104.244.42.65
 Un dominio puede tener subdominios, como ejemplo: su versión móvil, la api entre otros, estos subdominios pueden tener la misma ip o una distinta.
-Los DNS guardan el servidor especial de envio de emails.
+Los DNS guardan el servidor especial de envío de emails.
 Los emails tienen un protocolo único.
 MX Records = IP Server Gmail.
 Los DNS también guardan Records txt, donde solo se almacena texto, al hacerle la consulta de este texto no necesita dar una ip pues ya tiene el texto guardado en el DNS.
@@ -96,16 +96,16 @@ Las conexiones cableadas en internet son muy caras, y el tráfico de datos es co
 La ultima milla es la conexión entre el modem y el isp.
 Si hay una petición de datos entre 2 dispositivos con el mismo isp, lo que habitualmente pasa es transferir los datos a través de una MAN (Metropolitan Area Network), sin pasar por el IXP (Internet Exchange Point), de esta manera el ISP no paga por el uso del IXP.
 Usando este principio los ISP pueden ofrecer servicios locales de alta velocidad de transferencia.
-Cuando es necesario conectarse por IXP, los servidores crean prioridad, angostando la conexión a través de routers ,firewalls y network shapers, para asignar la prioridad a emails, llamadas por internet o acciones empresariales (de donde mas fondos obtienen) y bajan la prioridad a videos o descargas de archivos secundarios como los de bitorrent.
+Cuando es necesario conectarse por IXP, los servidores crean prioridad, angostando la conexión a través de routers ,firewalls y network shapers, para asignar la prioridad a emails, llamadas por internet o acciones empresariales (de donde mas fondos obtienen) y bajan la prioridad a vídeos o descargas de archivos secundarios como los de bitorrent.
 Quality of Service (también llamado Network Shaping o Throttling) sirve para regular que sitios tienen preferencia a una mayor velocidad y cuales no, esto se hace en la ultima milla.
-Los dueños de los dominios en un intento para contrarrestar el efecto del Throttling, implementaron un concepto llamado CDN ( Content Delivery Networks), con lo cual basicamente hacen una copia de los archivos que son estáticos en distintas partes del mundo para asi tener mas cerca de cada usuario la información y esta pueda viajar sin problemas.
+Los dueños de los dominios en un intento para contrarrestar el efecto del Throttling, implementaron un concepto llamado CDN ( Content Delivery Networks), con lo cual basicámente hacen una copia de los archivos que son estáticos en distintas partes del mundo para asi tener mas cerca de cada usuario la información y esta pueda viajar sin problemas.
 La conexión de los servidores de internet se mide en Megabits Mb, pero la información viene en bytes, por ende son velocidades mas lentas de lo que esperaríamos en tiempo de descarga.
 Con una conexión de 10Mb/s solo se pueden transmitir 1.25 MB/s.
 Además la velocidad de red se ve reflejada por cuanto tiempo tarda la conexión en establecerse y pues fisícamente tiene que viajar de un lugar a otro y para ello se usa el ping que es el tiempo que tarda la conexión en establecerse.
-ping www.platzi.com Es lo que tarda un bit en llegar desde la pc hasta el servidor.
-La velocidad del ping se ve limitada por la distancia que tiene que recorrer, por ejemplo un barco manda la señal al satelite luego al IXP y de ahi se dirige al servidor.
+ping www.platzi.com Es lo que tarda un bit en llegar desde la pc hasta el servidor en ms.
+La velocidad del ping se ve limitada por la distancia que tiene que recorrer, por ejemplo un barco manda la señal al satélite luego al IXP y de ahí se dirige al servidor.
 El tiempo de un ping es muy importante para videojuegos en tiempo real o videos.
-Una señal que viaja de Mountain view a Madrid demora 9344Km/(300Km/ms)=31.14ms, siendo esto el tiempo mínimo para transferirse, para aumentar su velocidad si son muchos datos se pueden enviar en grandes paquetes en paralelo para que lleguen mas datos a la vez.
+Una señal que viaja de Mountain View a Madrid demora 9344Km/(300Km/ms)=31ms.14ms, siendo esto el tiempo mínimo para transferirse, para aumentar su velocidad si son muchos datos se pueden enviar en grandes paquetes en paralelo para que lleguen mas datos a la vez.
 Lo que en verdad venden los ISP es el ancho de banda que puede transmitir al mismo tiempo.
 El cliente esta conformado por el navegador desde el cual se invoca un archivo Javascript para mostrar distintas cosas en el navegador, sin embargo también se pueden hacer peticiones de información al servidor remoto.
 Esto se divide en Backend y Frontend.
@@ -113,9 +113,9 @@ El lenguaje mas popular de backend es php, sin embargo existen otros como python
 Los servidores mas populares son programas que procesan el código del backend, como nginix, apache, internet information service y node JS.
 Un stack es un grupo de tecnologías, uno de estos es LAMP.
 El ciclo de un stack es asi:
-El navegador le pasa la url al servidor DNS (DIN DNS),el servidor DNS cambia el domino de platzi por una IP,luego el servidor de platzi recibe la url con apache o nginix, luego los datos son pasados al backend, en este caso go, python y node js, estos procesan la información para hacer una petición a la base de datos, obtienen los datos y mandan de respuesta una página con html, css y js, el cual le mandan al navegador.
+El navegador le pasa la url al servidor DNS (DIN DNS),el servidor DNS cambia el domino de platzi por una IP,luego el servidor de platzi recibe la url con apache o nginix, luego los datos son pasados al backend, en este caso son go, python y node js, estos procesan la información para hacer una petición a la base de datos, obtienen los datos y mandan de respuesta una página con html, css y js, el cual le mandan al navegador.
 El código del frontend siempre es visible, por lo cual este le hace peticiones al backend el cual se encargar de obtener la información y a la vez protegerla.
-Existen muchos metódos para conectarse desde el el frontend (html, css y Javascript) como el get, post, ajax, sockets.
+Existen muchos metódos para conectarse desde el frontend (html, css y Javascript) como el get, post, ajax, sockets.
 Get manda los datos en la url, Post los manda a través de los headers http.
 Para hacer cambios sin recargar la página ya sea por usar post o get se puede usar AJAX, el cual en el mismo javascript hace una petición asíncrona y modifica una cierta parte del html o css.
 Un stack popular es MEAN el cual está formado por mongoDB, express, AngularJS (libreria para frontend) y Node-JS.
@@ -124,54 +124,54 @@ Los videojuegos y los chats usan sockets para una transmisión mas rápida.
 Pasos para acceder a un sitio web www.platzi.com/fundamentos.
 El sitio web ve si tiene la ip en cache, sino la consulta del dns.
 El navegador forma un http request usando el verbo GET.
-En el mensaje manda [GET /fundamentos HHTP/2, Host:www.platzi.com, User-Agent: Chrome 28]
-Se le pasa el host ya que una dirección ip puede tener multíples dominios.
+En el mensaje manda [GET /fundamentos HHTP/2, Host:www.platzi.com, User-Agent: Chrome 28].
+Se le pasa el host ya que una dirección ip puede tener múltiples dominios.
 Los datos en el mensaje GET son enviados a la IP del servidor en el puerto 80(http) y el servidor recibe la petición.
 El servidor responde la petición (http response) en un formato muy parecido al request.
-[HTTP 200OK //Estado de la respuesta.
-Date: xxxx
-Server: nginx 18 (Linux) //Servidor en que corre la aplicación.
-Last-Modified: xxxx //Permite saber si no hay modificaciones.
-Content-Length:13 //Cantidad de bytes que tiene la petición.
-Conecction: close //Especifíca si va a mantener la conexión cerrada o abierta (chats por sockets).
-Content-type: text/html //Tipo de dato que se envía.
-<h1>hola</h1>]//Manda el código HTML.
+[-HTTP 200OK //Estado de la respuesta.
+-Date: xxxx
+-Server: nginx 18 (Linux) //Servidor en que corre la aplicación.
+-Last-Modified: xxxx //Permite saber si no hay modificaciones.
+-Content-Length:13 //Cantidad de bytes que tiene la petición.
+-Conecction: close //Especifíca si va a mantener la conexión cerrada o abierta (chats por sockets).
+-Content-type: text/html //Tipo de dato que se envía.
+-<h1>hola</h1>]//Manda el código HTML.
 Si se vuelven a hacer peticiones desde el sitio como usar AJAX (Assets) o nuevas peticiones(Resquest) se vuelve a repetir el proceso pero usando los links de la página web.
 Las cookies siempre se envian por medio del request, se vayan a usar o no, luego el servidor actualiza la cookie y la manda de regreso.
 La cantidad de cookies en una aplicación hacen mas pesado tanto el envío como la respuesta ya que siempre van en ambas.
-1.- Los protocolos se encargan de manejar todas las peticiones que hacen la páginas de internet desde tu navegador hacia los servidores DNS, éstos transforman la dirección de la página web en una dirección IP y tu navegador se conecta a esa IP.
+1.- Los protocolos se encargan de manejar todas las peticiones que hacen las páginas de internet desde tu navegador hacia los servidores DNS, éstos transforman la dirección de la página web en una dirección IP y tu navegador se conecta a esa IP.
 2.- Una vez se tiene la dirección IP el navegador envía un HTTP request en donde envía información con las características del cliente y los requerimientos del mismo, es decir, Host requerido, página del sitio que necesita, tipo de navegador, versión del navegador, etc.
 3.- El servidor envía los resultados por medio del mismo protocolo HTTP en forma de un HTTP Response en donde manda todo el HTML del sitio web así como otros datos que el navegador necesita.
 4.- Por último se cargan los assets de nuestro sitio web y es aquí donde se descargan imágenes, sonidos, etc.+
-Por lo general se usa TCP/IP como protocolo de transmisión pero también se puede usar UDP siendo mas rapido pero mas errático.
+Por lo general se usa TCP/IP como protocolo de transmisión pero también se puede usar UDP siendo más rapido pero mas errático.
 Hay varios tipos de wifi con estándares distintos y cifrados distintos.
 Se pueden adicionalmente hacer conexiones con sockets en vez de usar http, siendo estas útiles para conexiones persistentes que nunca se caen.
 Para detener las conexiones y permitirles el acceso se usa un firewall.
-La dark web también denyro de ella TOR, siendo una forma compleja y cifrada de conectarse a internet en la que no se tiene registro de quien accedió.
+La dark web también dentro de ella TOR, es una forma compleja y cifrada de conectarse a internet en la que no se tiene registro de quien accedió.
 Para poderse conectar a internet desde el celular se usa una tecnología llamada Tethering (con un puerto usb o bluetooth puede darnos internet).
 Cuando no se quiere usar Internet Exchange Points se debe usar Peer to Peer.
 Con las redes Mesh se puede tener un internet mas robusto que no dependa de cables submarinos.
 Con un VPN se puede tener mas privacidad en la ip.
-La mayoria de las ip son asignandas dinámicamente pero también hay fijas.
+La mayoría de las ip son asignandas dinámicamente pero también hay fijas.
 El protocolo http envía la información en paquetes.
 Para combinar múltiples redes se puede usar Multi-WAN y Round Robin.
 Sync/Ack, Sync Acknowledge (enviar dato y aceptar que el dato fue envíado).
 Sistemas Operativos:
 -Windows es el sistema operativo de propósito general más usado a nivel mundial, es un sistema operativo cerrado y se encuentra en la gran mayoría de computadoras para consumidores además utiliza un núcleo propietario perteneciente a Microsoft.
--Linux es el sistema operativo más utilizado en servidores, es libre y su creador Linus Torvalds aún sigue desarrollando su núcleo destacado por su alto rendimiento y alta seguridad, tienen una licencia del tipo GNU-GPL que no solo permite redistribuir si no también garantiza que las personas que redistribuyen el código deban aportar a la licencia entre otras cosas.
+-Linux es el sistema operativo más utilizado en servidores, es libre y su creador Linus Torvalds aún sigue desarrollando su núcleo destacado por su alto rendimiento y alta seguridad, tienen una licencia del tipo GNU-GPL que no sólo permite redistribuir sino también garantiza que las personas que redistribuyen el código deban aportar a la licencia entre otras cosas.
 -FreeBSD es el sistema operativo en el que está basado Mac OS y muchos sistemas embebidos así como firewalls como pfsense y más, tiene una licencia del tipo BSD.
 Hay una diferencia entre Open-Source y Libre, donde libre puede modificarse y distribuirse.
 GPL es la licencia GNU para distribución de software libre.
 Hay códigos que en algunas partes son libres y en otras cerrados, pues hay logos o diseños protegidos por marcas.
-La licencia mas popular para distribuir linux es GNU-GPL.
+La licencia mas popular para distribuir Linux es GNU-GPL.
 El Kernel es el núcleo del SO.
 En el Kernel no está como se representa gráficamente la información, solo los drivers más básicos, ni la capa de aplicaciones y permisos.
 El Kernel de Windows es un kernel de Microsoft, han existido versiones del Windows que no cambian de Kernel.
-Linux tiene una organización sin lucro llamada Kernel.org siendo el Kernel del So.
+Linux tiene una organización sin lucro llamada Kernel.org siendo el Kernel del SO.
 En Linux todas las piezas son separadas como la interfaz gráfica, los drivers, etc.
 FreeBSD, quiere encargarse de desarrollar todo SO, en vez de que este sea separado por piezas.
-MacOS comomenzo usando BSD como Kernel y llegando así a Next, luego Darwin y finalmente XNU el cual es el Kernel de MacOS.
-Los SO basados en UNIX son SO inicialmente basados en Consola.
+MacOS comenzó usando BSD como Kernel y llegando así a Next, luego Darwin y finalmente XNU el cual es el Kernel de MacOS.
+Los SO basados en UNIX son un SO inicialmente basados en Consola.
 En Windows a partir de Windows 1.0 se tuvo una interfaz gráfica propia, evolucionando asi hasta windows 10 donde se tiene responsive design para distintos dispositivos.
 La capa de interfaz gráfica para los SO basados en UNIX es X11, de donde se crean distintos sistemas visuales como KDE y Gnome.
 Existen varias distribuciones de Linux como Ubuntu, RedHat, Mandriva, además existen distribuciones orientadas a hacking como Kali Linux.
@@ -203,7 +203,7 @@ Para desarrollar nativimente en Android se usa Java (Dalvik), mientras que en IO
 En ambos se puede usar C#, C++, Unity, Unreal ya que son multiplataforma y se usan en general para videojuegos.
 Un entorno para programar en Apple es XCode, mientras que para Android es Android Studio.
 En 2014 Google entregó 7 mil millones de dólares a los desarrolladores de Android, mientras que Apple le entregó 10 mil millones de dólares a los desarrolladores de IOS.
-En Google también se puede ganar donero por medio de adds, en apple no hay publicidad pero es mas común pagar las apps.
+En Google también se puede ganar dinero por medio de adds, en apple no hay publicidad pero es mas común pagar las apps.
 Existen herramientas que se pueden usar para desarrollar aplicaciones que funcionaran para ambos SO pero con un coste en rendimiento.
 Xamarin-Se usa c#.
 React Native- Se usa JS y React.
@@ -224,7 +224,7 @@ Un sistema operativo lee los primeros bytes del archivo para entender a que arch
 Cada sistema operativo tiene una base de datos de que programa abre que tipo de archivo.
 Cuando estas transmitiendo un archivo por Internet se especifica el tipo de archivo con mime types, el cual se transmite en la cabecera de un paquete http.
 Los metadatos literalmente «sobre datos», son datos que describen otros datos. En general, un grupo de metadatos se refiere a un grupo de datos que describen el contenido informativo de un objeto al que se denomina recurso.
-Al inicio las extensiones (originarias de windows), tenian solo 3 carácteres y 8 bytes para el nombre del archivo. Debido a esto suceden cosas como que un navegador acepte archivos .htm en vez de .html .
+Al inicio las extensiones (originarias de windows), tenían solo 3 carácteres y 8 bytes para el nombre del archivo. Debido a esto suceden cosas como que un navegador acepte archivos .htm en vez de .html .
 Los archivos binarios o que no son de texto almacenan los datos en formato hexadecimal en vez de código ASCII o algún tipo de codificación.
 Con la extensión y los primeros datos guardados del archivo los Sistemas operativos pueden saber de que tipo de archivo se trata y si este no tiene errores de formato, ese patron se llama cabecera de archivo.
 Al instalar un nuevo programa al SO, este le puede agregar la información de como debe ser la cabecera de un archivo para una determinada extensión.
@@ -267,3 +267,9 @@ En una base de datos no relacional se tienen documentos o variables, que se pare
 Sus ventajas son su velocidad y livianez.
 Las bases de datos no relacionales usan en su mayoria JSON para guardar los datos.
 Un algoritmo es un conjunto de acciones entrelazadas entre si para tener una funcion de acuerdo a como sea estructurada, es decir un algoritmo puede ser basicámente una forma de resolver una suma simple donde tiene un inicio un proceso y un final.
+Raspberry Pi
+Contiene un SoC, que controla todos los procesos de la tarjeta, un puerto hdmi, lector de tarjeta SD, GPIO - entradas y salidas de propósito general.
+Creado con la intención de proveer un acercamiento con el software y hardware de manera fácil y barata, con un enfoque a la educación.
+Contiene todos los componentes para ser una computadora completa.
+Es del tamaño de una cartera.
+Servidor multimedia, servidor iot.
