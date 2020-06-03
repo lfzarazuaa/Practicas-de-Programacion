@@ -263,3 +263,6 @@ Keyframes: cada cierta cantidad de frame existe un frame que vuelve a definir to
 Una red neural está conformada por nodos de entradas, luego puede pasar por otras capas de procesamiento y finialmente arrojan una salida.
 Algunas redes normales son Perceptron, Feed Forward, Radial Basis Network, Deep Feed Forward, Recurrent Neural Network, etc.
 Para los algoritmos de vision artificial con redes neuronales, se usan multiples capas de redes neuronales, cada una encargada de detectar un patron en específico, para al final decidir entre todas si es o no lo que se buscaba.
+En una base de datos no relacional se tienen documentos o variables, que se parecen entre si, pero no son similares del todo.
+Sus ventajas son su velocidad y livianez.
+Las bases de datos no relacionales usan en su mayoria JSON para guardar los datos.
