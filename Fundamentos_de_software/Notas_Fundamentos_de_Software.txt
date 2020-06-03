@@ -239,3 +239,24 @@ DCT: Se aplica una transformada de fourier con base en cosenos.
 Cuantización: Se agrupan por rangos los resultados de la transformada.
 Huffman: Se eliminan los ultimos datos repetidos.
 Aplicando este algoritmo se puede comprimir una imagen en un rango de hasta 120:1.
+Para comprimir un video se usan lois frames y como estos van cambiando con el tiempo.
+Existen distintas codificaciones de video como .avi, .mp4, .flv, .mpg, .webm
+En japon existe un formato llamado mkv que permite aregar subtitulos y estilos a un video permitiendo asi su traducción a varios lenguajes.
+Con multipart se envia la cabecera del video para tener siempre la información del tipo de video y que asi se pueda reproducir sin tener la información anterior, esto se puede usar en transmiciones en vivo.
+Un codec es un algoritmo de compresión y descompresión de video.
+Algunos codecs son divx, h.264, vp9, ogg.
+El codec h.264 de mp4 tiene una patente conformada por un consorcio de Apple, Universal, Microsoft, Sony entre otros.
+La señal de TV llega codificada en .h264, además en los celulares y diversos dispositivos existen circuitos especializados en decodificar este codec, dejando incompatible con otros codecs de manera optima.
+Los circuitos especializados en decodificar son usados entre otros motivos para ahorro de batería pues no le deja los calculos al cpu.
+Existen distintos protocolos para transmitir los videos que es la forma en que se transmiten los videos, estos se encargan de poder ver cualquier parte del video en todo momento sin descargar todo el video.
+Algunos protocolos son HTTP, RTMP.
+Con los KeyFrames se puede asignar los momentos de tiempo en los que hay parecidos en la imagen para no cambiarla de estado y asi usar menos memoria.
+Para codificar el sonido se puede usar .mp3 el cual solo deja los datos audibles por el oído humano.
+Para guardar una menor cantidad de bytes en el audio se usan los Kbps, que representan los kilobits por segundo que tiene una onda de sonido.
+Algunos formatos de sonido son .mp3, .aac, .flac, .ogg y .wav.
+En un vídeo hay muchos factores para comprimir, un vídeo es si es una serie de fotos vistas muy rápido. por ejemplo si un vídeo tiene 100 frames a 24 frames/segundo y si cada frame pesara 1.9MB el vídeo pesaría más de 100MB por 4 segundos de vídeo.
+Por esto en los vídeos se utilizan varias formas de compresión
+Contenedores: es el formato es que se guarda el vídeo como .avi, .mp4, .flv, .mpg, .webm
+Codecs: es un algoritmo que comprime un vídeo y lo descomprime como divx, h.264, ogg, vp9
+Protocolos: es la forma de transmitir los vídeos como RTMP.
+Keyframes: cada cierta cantidad de frame existe un frame que vuelve a definir todo el área.
