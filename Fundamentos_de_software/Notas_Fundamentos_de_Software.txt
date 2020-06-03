@@ -231,3 +231,11 @@ Al instalar un nuevo programa al SO, este le puede agregar la información de co
 Cuando se usa un archivo de internet el cual no tiene extensión se usan los MIMES types, en la cual en los metadatos html, se manda el tipo de archivo que se está transmitiendo (en content-type).
 MIME: image/jpeg, text/html, video/mp4.
 Gracias a los MIMES types el navegador puede interpretar solo una parte del video, imagen o contenido sin tener que leer primero todo el archivo.
+Para realizar una compresión de imagen en jpg basicamente se analiza donde hay áreas de color semejante y estas se asignan a un numero determinado con el cual son guardadas.
+Pasan por el siguiente proceso:
+RGB a YCbCb: Pasan de RGB a luminancia y crominancia.
+Submuestreo: Se sacan escalas de mayor tamaño de las crominancias.
+DCT: Se aplica una transformada de fourier con base en cosenos.
+Cuantización: Se agrupan por rangos los resultados de la transformada.
+Huffman: Se eliminan los ultimos datos repetidos.
+Aplicando este algoritmo se puede comprimir una imagen en un rango de hasta 120:1.
