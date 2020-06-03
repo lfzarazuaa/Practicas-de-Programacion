@@ -260,3 +260,6 @@ Contenedores: es el formato es que se guarda el vídeo como .avi, .mp4, .flv, .m
 Codecs: es un algoritmo que comprime un vídeo y lo descomprime como divx, h.264, ogg, vp9
 Protocolos: es la forma de transmitir los vídeos como RTMP.
 Keyframes: cada cierta cantidad de frame existe un frame que vuelve a definir todo el área.
+Una red neural está conformada por nodos de entradas, luego puede pasar por otras capas de procesamiento y finialmente arrojan una salida.
+Algunas redes normales son Perceptron, Feed Forward, Radial Basis Network, Deep Feed Forward, Recurrent Neural Network, etc.
+Para los algoritmos de vision artificial con redes neuronales, se usan multiples capas de redes neuronales, cada una encargada de detectar un patron en específico, para al final decidir entre todas si es o no lo que se buscaba.
