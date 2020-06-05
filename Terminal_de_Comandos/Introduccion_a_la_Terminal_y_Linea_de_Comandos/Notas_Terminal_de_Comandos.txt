@@ -1,0 +1,17 @@
+Para comprender la terminal de comandos se sugiere ver:
+-Qué es la terminal.
+-Por qué usar la terminal.
+-Como usar la terminal.
+-Como aprovechar la terminal al máximo.
+En la pc tenemos una memoria donde de almacenan datos e instrucciones, la pc revisa periodicamente la memoria y conforme a los datos va modificando el contenido de la memoria. Para lograr que siga las instrucciones que nosotros deseamos mandarle debemos expresarlo pero ya que las computadoras no hablan, debe haber un intermediario que se encarge de eso.
+La terminal de comandos es entonces la encargada de recibir nuestras instrucciones por medio de texto y de esta manera ser nuestro de medio de comunicación con la pc y el SO.
+La terminal se usa en vez de una interfaz gráfica cuando se desea tener mayor eficiencia, sacrificando la parte gráfica.
+Para ingresar instrucciones a través de la terminal, se usa comandos los cuales estan conformados por el nombre de un programa, parámetros y modificadores, comando -flag1 -flag2 -arg1 arg2.
+El comando date nos muestra la fecha y hora actual.
+Con el comando man podemos ver el manual del comando a ejecutar por ejemplo "man date".
+La terminal aparte de comandos también contiene utilidades propias como combinaciones de teclas, comodines y substitución de comandos.
+Al presionar las iniciales de un comando y presionando la tecla tab se nos muestran las posibilades o se autocompleta el comando a ejecutar si es el unico posible.
+Al presionar las direccionales de arriba o abajo nos muestra los comandos usados en el orden en el que fueron llamados.
+Con ctrl+shift+r se hace una búsqueda de un comando usado anteriormente.
+Con history se muestra el historial de todos los comandos ejecutados.
+Usando el signo de admiración y el número de comando del historial nos permite ejecutar ese comando ejemplo !108.
