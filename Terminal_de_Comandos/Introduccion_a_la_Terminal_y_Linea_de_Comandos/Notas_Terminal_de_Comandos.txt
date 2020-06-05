@@ -17,3 +17,17 @@ Con history se muestra el historial de todos los comandos ejecutados.
 Usando el signo de admiración y el número de comando del historial nos permite ejecutar ese comando ejemplo !108.
 Para instalar la terminal de ubuntu en windows se debe ejecutar el comando siguiente comando en powershell: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux .
 Una vez realizado esto se abre la Microsoft store y desde allí se descarga la versión deseada de ubuntu y en automático la instalará.
+Para organizar la información en una pc se usan directorios y archivos, formando de tal forma el árbol de directorios.
+El path se conforma por la ruta de directorios y el nombre del archivo.
+Con ls se ven los archivos del directorio.
+Con ls -a se ven todos los archivos incluyendo los ocultos.
+Con .. se hace referencia al directorio padre y con . se hace referencia al directorio actual.
+Con pwd (print working directory), se imprime el directorio actual.
+Con cd se cambia al directorio que se le indique cd /home.
+Con cd ~ nos manda al directorio principal o base.
+Con cd - se manda al directorio anteriormente consultado.
+Con mkdir se crea el directorio.
+Con ls -l se listan los archivos y directorios así como sus permisos.
+Con cp se copia un archivo o directorio, cd ruta_archivo_origen directorio_destino.
+Con rm se borra el archivo indicado, rm ruta_archivo.
+Con rmdir se borra un directorio, pero este debe estar vacío.
