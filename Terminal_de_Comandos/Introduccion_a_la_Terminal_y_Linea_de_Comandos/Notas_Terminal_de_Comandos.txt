@@ -15,3 +15,5 @@ Al presionar las direccionales de arriba o abajo nos muestra los comandos usados
 Con ctrl+shift+r se hace una búsqueda de un comando usado anteriormente.
 Con history se muestra el historial de todos los comandos ejecutados.
 Usando el signo de admiración y el número de comando del historial nos permite ejecutar ese comando ejemplo !108.
+Para instalar la terminal de ubuntu en windows se debe ejecutar el comando siguiente comando en powershell: Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux .
+Una vez realizado esto se abre la Microsoft store y desde allí se descarga la versión deseada de ubuntu y en automático la instalará.
