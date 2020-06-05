@@ -50,3 +50,7 @@ Comandos para mover, copiar o borrar:
 -rm: eliminar un archivo: > rm archivo.txt
 -mv: mover un archivo, cambiar su ubicación. La sintaxis es así: >mv [ruta del archivo] [directorio hacia el que se va a mover]
 rmdir: eliminar un directorio. En este caso es importante resaltar que, para que el directorio pueda ser eliminado, no puede contener archivos u otros directorios en su interior: > rmdir [ruta / nombre del directorio a eliminar].
+En la pc los archivos se guardan en binario y en archivos de texto, siendo los archivos binarios aquellos que solo pueden ser ejecutados por una pc y en programa adecuado, algunos ejemplos son documentos, executables, fotos, videos. Los archivos de texto son aquellos que al abrirse con un editor de texto pueden ser leídos por humanos ya que tienen una codificación como ascci, utf, etc, ejemplos son código fuente, configuraciones y páginas web.
+En linux hay 2 editores comunes de texto vim y nano.
+En Vim para empezar a editar texto se presiona la letra i, con escape se sale del modo edición y con :w se guarda el archivo y con :q se sale del editor VIM.
+En nano siempre que se abre se está en modo edición y abajo aprecen los comandos para realizar diversas instrucciones como guardar, salir, buscar.
