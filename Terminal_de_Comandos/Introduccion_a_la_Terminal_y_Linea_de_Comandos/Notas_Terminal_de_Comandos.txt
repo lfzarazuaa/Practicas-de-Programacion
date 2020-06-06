@@ -54,3 +54,17 @@ En la pc los archivos se guardan en binario y en archivos de texto, siendo los a
 En linux hay 2 editores comunes de texto vim y nano.
 En Vim para empezar a editar texto se presiona la letra i, con escape se sale del modo edición y con :w se guarda el archivo y con :q se sale del editor VIM.
 En nano siempre que se abre se está en modo edición y abajo aprecen los comandos para realizar diversas instrucciones como guardar, salir, buscar.
+Utilidades batch o de procesamiento por lotes: Programas que procesan texto y emiten el resultado.
+cat: Nos muestra el contenido completo de un archivo cat nombre_archivo.
+head: Nos muestra las primeras líneas del archivo head -n #delíneas nombre_archivo. 
+tail: Nos muestra las ultimas líneas del archivo tail -n #delíneas nombre_archivo.
+grep: Búsqueda por expresiones regulares en el archivo.
+grep Hanks dump1.sql : Busca si existe la palabra en el archivo y devuelve la línea.
+grep -i hanks dump1.sql : Busca la palabra sin distinción de mayúsculas o minúsculas.
+grep -i "hanks$" dump1.sql : Busca que haya una línea que termine con la palabra hanks
+Sed (spread editor): Tratamiento de flujo de caracteres, nos muestra como quedaría un archivo si se remplazará una parte, pero no lo sobreescribe.
+sed 's/Hanks/Selleck/g' dump1.ql : Cambia la palabra Hanks por Selleck.
+sed '$d$ dump1.sql : Elimina la ultima línea del archivo.
+Awk: Se usa para Tratamiento de texto delimitado, sirve para texto separado por comas, punto y coma, entre otros además que puede realizar operaciones y condicionales.
+awk -F ',' '{print $1}' dump1.sql : Imprime todo lo que haya antes de la primera coma, con -F se indica el parámetro, con ',' el caracter delimitador y {print $1} indica que solo se imprime antes de la primera coma.
+awk -F ';' 'NR > 1 && $3 > 0 {print $1, $3 * $4}' dump1.sql : Usa ";" como delimitador y verifica que el número de línea sea mayor a 1 que el argumento 3 de cada renglon sea mayor a 0 e imprime el argumento 1 seguido de la multiplicación del argumento 3*4.
