@@ -87,3 +87,21 @@ No queremos editar este archivo. Solo necesitamos cambiar los caracteres NOMBRE_
 Para esto podemos utilizar el comando sed. Solo debemos indicarle que queremos realizar una sustitución (s/), la palabra que vamos a cambiar (NOMBRE_USUARIO), la nueva palabra que vamos a incluir (Ana) y cerrar con el símbolo / : > sed ‘s/NOMBRE_USUARIO/Ana’ archivo-saludo.txt .
 Ahora imagina que, además del nombre, debemos cambiar también la puntuación que obtuvo el usuario: > sed ‘s/NOMBRE_USUARIO/Ana/; s/PUNTOS_USUARIO/35/’ archivo-saludo.txt
 Puedes ver muchos más usos del comando sed en este tutorial: https://likegeeks.com/es/sed-de-linux/.
+El esquema más clásico de procesamiento de datos es cuando los datos ingresan a un proceso y este proceso devuelve información.
+Los canales por donde ingresan los datos a proceso y por donde sale la información se conocen como flujos o frames.
+En la terminal hay al menos 3 flujos estándar: Entrada Salida y Error.
+Por defecto la entrada está conectada a los periféricos comunes, la entrada al teclado y la salida en el display de la consola.
+Cuando la entrada de datos no proviene de una cadena de datos armada por nosotros si no por un archivo se ejecuta un proceso de redireccionamiento.
+Un ejemplo de entrada por archivo es: mysql -h 121.0.0.1 -u root -p1234 < dump1.sql, con esta opción vez de pasarle todo el texto estando sujeto a errores o un proceso mas largo simplemente se le pasa un archivo que contenga los datos a procesar.
+La segunda forma de redireccionamiento es usar la entrada por teclado (o por archivo) y que el resultado en vez de mostrarlo en pantalla, como con cat y gred, lo guarde en un archivo.
+ls > archivos.txt : Guarda la salida de ls en el archivo.txt
+ls -l >> archivo.txt : Guarda la salida de ls -l al final del archivo.txt.
+Cuando se necesita un proceso mas complejo, donde la salida de un proceso es la entrada de otro y así sucesivamente hasta donde se requiera, se usan pipes (tuberías) con lo cual pasamos la salida de a la entrada de otro con "|".
+cat archivo_grande.txt | more : Muestra el archivo por partes en la pantalla en vez de desplegarlo todo totalmente (con barra espaciadora muestra una nueva página y con enter una nueva línea).
+cat dump1.sql | wc -l: Cuenta cuantas palabras hay en el archivo.
+ls -al | more: Muestra las carpetas permitiendo avanzar por partes.
+cat archivo.txt
+head -n 64 matriz.c > primeraMitad.txt
+tail -n 64 matriz.c > segundaMitad.txt
+date >> segundaMitad.txt
+sed -n 1,30p file.csv > file1.txt | date >> file1.txt | sed -n 31,80p file.csv > file2.txt
