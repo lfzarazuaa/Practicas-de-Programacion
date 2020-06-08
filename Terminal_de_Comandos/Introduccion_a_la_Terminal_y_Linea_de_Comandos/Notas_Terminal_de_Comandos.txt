@@ -118,3 +118,52 @@ Con "ps ax | grep init" solo se muestran los procesos que contengan la palabra i
 Con el comando top se listan los procesos pero de una manera interactiva, con la letra "q" se sale.
 Con "kill -9 NumeroPID" se termina un proceso forzosamente.
 Con "killall -9 nombreComando" se termina un proceso forzosamente con su nombre de archivo.
+Permisos para Usuarios, Grupos y Super Usuarios.
+Nuestro trabajo consiste en limitar las acciones que pueden realizar los usuarios de nuestros sistemas. Debemos encargarnos de que los usuarios no tengan más permisos de los que deberían tener.
+Todo lo que no está explícitamente permitido, debe estar explícitamente prohibido.
+Cuando hablamos de permisos no solo hablamos de usuarios individuales, también hablamos de grupos y super usuarios:
+-Los grupos de usuarios nos permiten darles los mismos permisos a diferentes usuarios. Todos los usuarios que pertenezcan al mismo grupo tendrán los mismos permisos. Así evitamos tener que darle los mismos permisos a cada usuario individualmente, uno por uno. Con solo cambiar los permisos del grupo cambiamos el permiso de todos los usuarios.
+-También están los super usuarios, la parte más alta de la pirámide, los que pueden hacer cualquier cosa. Lo ideal no es trabajar con este tipo de usuarios, ya que podrá activar procesos o realizar tareas que afecten nuestro servidor o generar vulnerabilidades. Más bien, debemos crear usuarios para cada tarea en específico que realizamos en nuestros servidores.
+Cómo funcionan los permisos:
+Cuando ejecutamos el comando ls podemos ver la lista de archivos y subcarpetas de la ruta donde nos encontramos. Si usamos este comando con la opción -lh podemos ver un poco más de información: fecha de modificación, peso, usuario propietario, grupo al que es miembro este archivo y los permisos:
+- drwxrw-r-- usuario grupo
+- drwx------ usuario grupo
+- -rwxr-xr-x usuario grupo
+- -rwx------ usuario grupo
+La primera letra puede ser una d para indicar que hablamos de una subcarpeta o un guion (-) cuando evaluamos archivos.
+Las siguientes 9 letras debemos dividirlas en grupos de 3. El primer grupo son los permisos del usuario propietario del archivo. El segundo son los permisos del grupo al que pertenece el archivo. Y el tercero son los permisos para cualquier otro usuario del sistema operativo.
+Cada grupo de 3 puede comenzar con la letra r, refiriéndose a los permisos de lectura., continuar con w para referirse a los permisos de escritura y terminar con una x para indicar los permisos de ejecución.
+Si en vez de estas letras encuentras un guion (-) significa que ese usuario o grupo de usuarios no tienen ese tipo de permisos.
+Estos son los permisos: -rwxr-xr-- juandc estudiantes-platzi.
+- Estamos trabajando con un archivo.
+- El usuario propietario es juandc.
+- Este archivo pertenece al grupo de estudiantes-platzi.
+- El usuario propietario (juandc) tiene permiso para todo: leer, escribir y ejecutar el archivo.
+- El grupo al que pertenece el archivo solo tiene permisos para leer y ejecutar el archivo, no para editarlo.
+- El resto de usuarios de sistema operativo solo tienen permisos para leer el archivo, no para escribirlo ni ejecutarlo.
+Actualización de permisos y propietarios:
+Para cambiar los permisos se usa y usuarios see usa chmod y chown.
+- Cuando nos refiramos al usuario propietario debemos usar la letra u. Si cambiamos los permisos del grupo una g. Si queremos cambiar los permisos de cualquier otro usuario usamos la o. Y si queremos cambiar los permisos de TODOS usamos la a.
+- chmod g+w archivo.txt # Añadir permisos de escritura al grupo.
+- chmod o-r # Eliminar permisos de lectura a los usuarios no propietarios ni miembros del grupo al que pertenece el archivo.
+- chmod a+x archivo.txt # Añadir permisos de ejecución a todos (cualquier usuario).
+Asignar permisos con chmod: - = 0, x = 1, w = 2, r = 4 , rwx|rwx|rwx.
+chmod 754 archivo.txt: Con esto se aginan los siguientes permisos rwx para el usuario propietario, rx en el grupo, r para todos los demas usuarios.
+Ahora digamos que queremos cambiar el usuario propietario de nuestro archivo. Para esto usaremos el comando chown seguido del nuevo usuario o grupo propietario del archivo.
+- sudo chown nuevo-usuario archivo.txt# Cambiar el usuario propietario.
+- sudo chown :nuevo-grupo archivo.txt# Cambiar el grupo propietario.
+- sudo chown nuevo-usuario:nuevo-grupo archivo.txt# Cambiar el usuario y grupo propietario.
+¿Cuáles acciones y permisos puede tener un usuario sobre un archivo?
+​   Lectura, Escritura y Ejecución, los permisos son poder elegir cuales de estas acciones se pueden ejecutar.
+¿Todos los usuarios tienen los mismos permisos sobre todos los archivos? ¿Quiénes pueden o no trabajar con estos documentos? ¿Cómo se dividen los permisos de un archivo o carpeta?
+​   No todos los usuarios tienen los mismos permisos, depende de como se hayan configurado los permisos. Pueden trabajar los que tienen el permiso asignado. Se dividen en el usuario propietario, el grupo al que pertenezca y si es externo al grupo o no.
+Al hablar de usuarios y permisos en el sistema operativo, ¿qué significa un 777? ¿Deberíamos preocuparnos?
+​   777 significa que todos tiene permiso de leer, escribir y ejecutar un archivo, puede ser peligroso si es un archivo importante del SO, ya que se puede modificar incorrectamente causando errores o ejecutarlo cuando no es debido.
+¿Que permisos debes tener para poder editar un archivo que creo otro usuario de tu sistema operativo?
+​   El permiso xxrw- que sería xx6 o x6x si ese usuario pertenece al mismo grupo del usuario propietario del archivo.
+¿Con qué comando cambiamos los permisos que tienen los usuarios para trabajar con un archivo?
+​   Con chmod
+No quieres que nadie pueda editar ni mucho menos ejecutar un script muy peligroso que estás creando. ¿Qué permisos debe tener este script para conseguir este resultado?
+    En teoría solo se debería quitar w y x, pero al poderse copiar ese archivo en uno nuevo sería recomendable tambien quitar r, quedando 700.
+¿Quién es sudo? ¿Es peligroso?
+    Sudo es el superusuario del sistema operativo sirve para ejecutar comandos que requieren de todos los permisos. Puede ser peligroso si se deja al alcance de cualquiera ya que da acceso total a las configuraciones y puede desactivar la seguridad.
