@@ -179,3 +179,23 @@ sudo pip install pandas :Instala la librería pandas de python.
 composer - administrador de paquetes en php.
 npm - administrador de paquetes en node.js
 conda y homebrow son otros administradores de paquetes pero se necesitan instalar primero estos administradores desde la terminal.
+https://itsfoss.com/apt-vs-apt-get-difference/
+ls archivo -lh: Para ver el tamaño del archivo.
+Una utilidad para comprimir archivos es gzip.
+gzip archivo.txt: Comprime el archivo dando un archivo.txt.gz.
+gzip -d archivo.txt.gz: Descomprime el archivo dando un archivo.txt.
+Cuando se necesita combinar archivos en uno solo se puede usar la utilidad tar.
+tar cf backup.tar backup/*: Crea un archivo que contiene a los de la carpeta con el nombre backup.tar, pero sin comprimir cf(create file).
+tar tf backup.tar: Lista los archivos dentro del .tar.
+tar xf backup.tar: Restaura los archivos contenidos.
+tar czf backup.tar backup/*: Comprime la carpeta en un archivo backup.tar.
+tar xzf backup.tar: Descomprime la carpeta.
+GZIP - Compresión y Descompresión de archivos
+gzip [nombreArchivo] - comprime archivo generando un .gz
+gzip -d [nombreArchivo] -descomprime
+TAR - Agrupación y compresión de archivos
+tar cf archivo.tar [listadoArchivos] -> Agrupa los archivos
+tar tf archivo.tar -> lista los archivos dentro del agrupamiento
+tar xf archivo.tar -> desagrupa los archivos
+tar czf archivo.tgz [fichero] -> agrupa y comprime
+tar xzf archivo.tgz -> descomprime y desag
