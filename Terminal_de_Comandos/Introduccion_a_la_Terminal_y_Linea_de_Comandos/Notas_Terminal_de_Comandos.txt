@@ -105,3 +105,16 @@ head -n 64 matriz.c > primeraMitad.txt
 tail -n 64 matriz.c > segundaMitad.txt
 date >> segundaMitad.txt
 sed -n 1,30p file.csv > file1.txt | date >> file1.txt | sed -n 31,80p file.csv > file2.txt
+Al ejecutar cualquier comando mediante la terminal en realidad estamos lanzando un proceso, lo más comun es que ese proceso se ejecute rapidamente de tal forma que sea casi inmediata su respuesta.
+Existen casos en que el proceso bloquea la terminal y no se permite ejecutar nada hasta que termine, a este tipo de ejecución se le llama ejecución en primer plano (o foreground).
+Para permitir ejecutar un proceso en paralelo (segundo plano o background) se usa "&", lo que permite volver a tener el control de la terminal a pesar que el proceso se este ejecutando.
+Cuando se tiene un proceso continuamente ejecutándose, como un servidor que se necesita ejecurtar continuamente para responder al cliente, estos procesos de ejecución contínua se le conocen como servicios, daemons o demonios.
+Cuando proceso lanzado puede mandarse al background presionando ctrl-z y para reanudarlo se presiona fg, permitiendo asi su reanudación.
+Para identificar los procesos en ejecución se puede usar ps y top.
+Con "ps" se listan los procesos.
+Con "ps ax" se listan todos los procesos pero con mas información acerca de cada uno de ellos.
+Al ser ps una utilidad de tipo bash(manda resultado impreso en consola), se le puede agrgar un pipe para identificar lo que deseamos ver.
+Con "ps ax | grep init" solo se muestran los procesos que contengan la palabra init.
+Con el comando top se listan los procesos pero de una manera interactiva, con la letra "q" se sale.
+Con "kill -9 NumeroPID" se termina un proceso forzosamente.
+Con "killall -9 nombreComando" se termina un proceso forzosamente con su nombre de archivo.
