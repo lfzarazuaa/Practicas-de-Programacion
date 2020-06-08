@@ -167,3 +167,15 @@ No quieres que nadie pueda editar ni mucho menos ejecutar un script muy peligros
     En teoría solo se debería quitar w y x, pero al poderse copiar ese archivo en uno nuevo sería recomendable tambien quitar r, quedando 700.
 ¿Quién es sudo? ¿Es peligroso?
     Sudo es el superusuario del sistema operativo sirve para ejecutar comandos que requieren de todos los permisos. Puede ser peligroso si se deja al alcance de cualquiera ya que da acceso total a las configuraciones y puede desactivar la seguridad.
+Para descargar un programa primero se debe identificar la dirección de donde se descargará seguido de la descarga, luego copiar los archivos y hacer una configuración para instalarlo.
+Existen programas que realizan todas las tareas involucradas en la instalación estas se llamann paquetes de software.
+Los administradores de paquetes son los programas que conocen de donde descargar, cuales programas ya han sido descargados y como configurar todo de tal forma que no hayan conflictos, un ejemplo es cuando un paquete depende de otro paquete y la terminal no los informa.
+Existen varios manejadores de paquetes apt para distribuciones basadas en debian, zypper para suse y rpm es mas universal pero rústico.
+Un ejemplo es sudo apt install lynx: Para instalar lynx dentro de linux.
+lynx platzi.com :Se puede acceder a una versión en terminal de la página web solicitada.
+Para poder instalar paquetes o librerías para programas en especial se usan paquetes de lenguajes, estos son paquetes escritos en el mismo lenguaje a usar.
+pip - administrador de paquetes en python.
+sudo pip install pandas :Instala la librería pandas de python.
+composer - administrador de paquetes en php.
+npm - administrador de paquetes en node.js
+conda y homebrow son otros administradores de paquetes pero se necesitan instalar primero estos administradores desde la terminal.
