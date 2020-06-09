@@ -286,3 +286,24 @@ Ej:
 Si se tienen problemas hay que ejecutar los servicios.
 sudo service atd start
 sudo service cron start
+Además del terminal que utilizamos durante el curso (bash), existen muchos otros. Solamente en ambientes tipo *nix (Linux, BSD, etc…) puedes encontrarte con Korn-Shell y Zsh.
+Se trata de otros intérpretes que incorporan diferentes atajos, pero que esencialmente permiten realizar las mismas tareas, ya que en el fondo simplemente ejecutan los mismos comandos que están presentes en el sistema.
+Una terminal bastante diferente de la que vimos en el curso es la que viene de fábrica junto con Windows: el programa CMD.
+Equvalencia de comandos bash y CMD
+cd-cd
+ls-dir
+mkdir-mkdir
+rmdir-rmdir
+rm-del
+cp-copy
+mv-move
+cat-type
+gzip-no hay
+echo-echo
+echo $PATH- echo %PATH%
+CMD
+En esta consola puedes también crear scripts, claro que no serán basados en la sintaxis de bash, sino en la sintaxis batch.
+http://www.cristalab.com/tutoriales/programacion-batch-con-archivos-.bat-c48410l/
+Otra consola interesante que trae Windows es PowerShell:
+Una vez allí puedes utilizar todas las herramientas básicas de la terminal CMD, además de una serie de herramientas avanzadas que puedes encontrar con sólo escribir get-command y dar enter.
+https://esgeeks.com/como-usar-windows-powershell-guia-basica/
