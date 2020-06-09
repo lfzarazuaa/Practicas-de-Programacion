@@ -210,3 +210,10 @@ find . -user luis -perm 664 Busca archivos que su propietario sea luis y que ten
 find . -type f Que devuelva solo archivos.
 find . -type f -mtime +7 Que devuelva solo archivos y que hayan sido actualizados hace más de 7 días.
 find . -type f -mtime +7 -exec cp {} ./backup/; Copia a Backup aquellos archivos que hayan sido actualizados hace más de 7 días.
+Con curl y con wget se pueden realizar consultas http.
+https://www.solvetic.com/tutoriales/article/5925-como-usar-y-ejemplos-comando-curl-linux/
+curl https://platzi.com : Se envia el html que interpreta el navegador.
+curl -v https://platzi.com : Se envia el html que interpreta el navegador adicionando los headers http.
+curl -v https://platzi.com > dev/null: Se manda a escribir a dev/null, de tal forma evitando generar un archivo pero se queda con los headers.
+wget https://media-exp1.licdn.com/dms/image/C4D0BAQEnKdGryPPiJw/company-logo_100_100/0?e=1599696000&v=beta&t=eFBZ-22hPnJ-fFH5GMFSTmUG4ByUYxFze9FOtWld830 : Obtiene el recurso (archivo) y lo guarda en la pc.
+
