@@ -198,4 +198,15 @@ tar cf archivo.tar [listadoArchivos] -> Agrupa los archivos
 tar tf archivo.tar -> lista los archivos dentro del agrupamiento
 tar xf archivo.tar -> desagrupa los archivos
 tar czf archivo.tgz [fichero] -> agrupa y comprime
-tar xzf archivo.tgz -> descomprime y desag
+tar xzf archivo.tgz -> descomprime y desagrupa
+locate - Permite hacer una búsqueda en todo el sistema de archivo, mediante una búsqueda en una base de datos.
+sudo updatedb - Actualiza la base de datos de los directorios. Siempre es conveniente ejecutar este comando primero.
+locate [nombreArchivo] - busca el archivo y devuelve el path del archivo.
+whereis - Permite buscar archivos binarios (es decir, comandos)
+whereis [nombreComando] - busca los binarios y devuelve el path de donde esta el comando.
+find - Buscar dentro de un árbol de directorio, mediante una serie de criterio, es la mas complejo.
+find . -user luis Busca archivos que su usuario propietario sea luis
+find . -user luis -perm 664 Busca archivos que su propietario sea luis y que tengan permisos de 664 rw-rw-r--.
+find . -type f Que devuelva solo archivos.
+find . -type f -mtime +7 Que devuelva solo archivos y que hayan sido actualizados hace más de 7 días.
+find . -type f -mtime +7 -exec cp {} ./backup/; Copia a Backup aquellos archivos que hayan sido actualizados hace más de 7 días.
