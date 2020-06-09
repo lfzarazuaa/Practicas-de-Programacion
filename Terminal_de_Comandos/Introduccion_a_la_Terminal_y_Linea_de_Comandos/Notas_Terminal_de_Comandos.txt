@@ -236,3 +236,13 @@ Luego se procede a instalar mailutils.
 sudo apt install mailutils
 echo “Hola Mundo!” | mail -s “Testing” TU_EMAIL: Envia un email.
 https://www.linode.com/docs/email/postfix/configure-postfix-to-send-mail-using-gmail-and-google-apps-on-debian-or-ubuntu/
+Un comando es el nombre de un programa y sus modificadores, siendo el nombre de un programa el nombre de un archivo, pero al momento de ejecutarlo no es necesario llamar a toda su ruta en la terminal.
+Para poder ejecutar ciertos comandos se usan las variables de entorno de donde se pueden obtener las rutas de los programas.
+La variable de entorno utilizada para llamar a cada programa correctamente es la variable $PATH, aquí se almacenan todas las rutas de archivos ejecutables en la dirección /usr/bin/.
+Para mostrar el contenido de una variable se usa echo $PATH, para mostrar solo el nombre de la variable se usa echo PATH.
+Las variables de entorno se pueden asignar para un comando en particular o para toda la sesión.
+Para toda la sesión se usa export Variable=valor, export num1="uno".
+Para una asignanción particular se usa VAR=valor comando, ejecutarciclo=/cadena php ciclo.
+alias mi_comando = ls -al: Crea un alias para llamar a las instrucciones ls -al.
+mi_comando prueba.txt: Uso del alias.
+https://alvinalexander.com/blog/post/linux-unix/create-aliases/
