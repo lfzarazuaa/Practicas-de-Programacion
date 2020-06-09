@@ -263,4 +263,26 @@ nano /etc/environment: Archivo que carga la variable path al sistema.
 .bashrc :Archivo donde se guardan las variables de entorno.
 nano .bashrc, PATH=$PATH:~/cursos Agrega a path la ubicación descrita.
 source .bashrc :Actualiza las variables de entorno conforme a lo que se tenga en .bashrc.
- echo $PATH: Ver en pantalla si se agrego la instrucción.
+echo $PATH: Ver en pantalla si se agrego la instrucción.
+Para lograr tareas automatizadas se pueden usar 2 instrucciones at y cron.
+at now +2 minutes: Permite el ingreso del comando a ejecutar.
+at> echo "Hola Mundo!" > ~/hola.txt
+date; ls hola.txt: Da la hora y muestra en pantalla si existe el archivo.
+cron: el comando cron permite además de programar tareas, también que estás se puedan hacer de forma periódica. Este comando se apoya en un archivo “crontab” donde se guardan las tareas que se programan en el sistema.
+Para modificar el archivo mencionado, se ingresa: crontab -e. Al principio saldrá un texto con instrucciones; las tareas a programar deben ir al final de este texto.
+Las tareas a realizar se deben ingresar de la siguiente manera:
+Minuto Hora DiaDelMes Mes DiaDeLaSemana Usuario Comando
+Un asterisco * como valor en los primeros cinco campos, indicará que no tomará en cuenta ese parámetro.
+CRON
+crontab -e : Comando que nos permite editar las tareas.
+Y lo que demos insertar va en este orden:
+1.- Minuto a ejecutarse Numero=0 a 59
+2.- Hora a ejecutarse Hora=0 a 23
+3.- Dia del mes o Todos Dia = 1 - 31 / Todos = *
+4.- En que mes o Todos Meses = 1 - 12 / Todos = *
+5.- Dia de la semana o Todos Dia = 0 (Sunday) / Todos = *
+Ej:
+45 12 * * * <Rutadelarchivo>/archivo.extension
+Si se tienen problemas hay que ejecutar los servicios.
+sudo service atd start
+sudo service cron start
