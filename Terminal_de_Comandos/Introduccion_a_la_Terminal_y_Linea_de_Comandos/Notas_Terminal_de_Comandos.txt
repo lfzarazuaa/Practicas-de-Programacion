@@ -246,3 +246,21 @@ Para una asignanción particular se usa VAR=valor comando, ejecutarciclo=/cadena
 alias mi_comando = ls -al: Crea un alias para llamar a las instrucciones ls -al.
 mi_comando prueba.txt: Uso del alias.
 https://alvinalexander.com/blog/post/linux-unix/create-aliases/
+El shell o bash es a la vez un lenguaje de programación, por lo cual se puede hacer un script que ejecutara los comandos bash, con esto se pueden crear comandos propios.
+En la primera línea del archivo se define la dirección del interprete que ejecutará el script.
+Psteriormente se van llamando todos los comandos que se quieran utilizar.
+#!/bin/bash
+NEW_DIR=platzi #Define el directorio donde se guardará.
+
+if [ ! -d "~/$NEW_DIR" ]; then # Si no existe el directorio lo crea, con ~ se accede al directorio principal.
+    mkdir ~/$NEW_DIR #Crea el directorio.
+fi
+cp pagina.txt ~/$NEW_DIR/ #Copia el archivo pagina.txt al nuevo directorio.
+echo "`date`: Todo listo jefe! (programa terminado)"#Manda mensaje de finalización.
+La variable $PATH estaba definida antes de exportarla por un usuario, esto sucede gracias a que el SO ejecuta algunos archivos de inicializar.
+Con los archivos de configuración se pueden asignar las variables de entorno cargadas al inicializar el SO.
+nano /etc/environment: Archivo que carga la variable path al sistema.
+.bashrc :Archivo donde se guardan las variables de entorno.
+nano .bashrc, PATH=$PATH:~/cursos Agrega a path la ubicación descrita.
+source .bashrc :Actualiza las variables de entorno conforme a lo que se tenga en .bashrc.
+ echo $PATH: Ver en pantalla si se agrego la instrucción.
