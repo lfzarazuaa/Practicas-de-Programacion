@@ -221,3 +221,18 @@ https://www.hostinger.es/tutoriales/que-es-ssh
 https://computingforgeeks.com/install-and-configure-openssh-server-on-windows-server/
 ssh nombre de usuario@ host (host puede ser ip)
 ingresar contraseña
+Para envío de mail por la terminal se una postfix en conjunto con mailutils.
+sudo DEBIAN_PRIORITY=low apt install postfix.
+Configuración de correo en "sitio de internet".
+Dejar en blanco nombre del sistema de correo.
+En recipiente de correo para el administrador se ingresa el correo electrónico.
+En otros destinos para los cuales aceptar correo se deja en blanco.
+En forzar las actualizaciones díncronas en la cola de correo se presiona no.
+En redes locales: se deja en blanco.
+En límite del tamaño de buzón del correo se deja en blanco (predeterminado).
+En el carácter de extensión de direcciones locales se deja en blanco.
+En protocolos de internet a usar se coloca todos (ipv6 e ipv4).
+Luego se procede a instalar mailutils.
+sudo apt install mailutils
+echo “Hola Mundo!” | mail -s “Testing” TU_EMAIL: Envia un email.
+https://www.linode.com/docs/email/postfix/configure-postfix-to-send-mail-using-gmail-and-google-apps-on-debian-or-ubuntu/
