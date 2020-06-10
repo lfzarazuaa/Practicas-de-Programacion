@@ -3,14 +3,14 @@ Para comprender la terminal de comandos se sugiere ver:
 -Por qué usar la terminal.
 -Como usar la terminal.
 -Como aprovechar la terminal al máximo.
-En la pc tenemos una memoria donde de almacenan datos e instrucciones, la pc revisa periodicamente la memoria y conforme a los datos va modificando el contenido de la memoria. Para lograr que siga las instrucciones que nosotros deseamos mandarle debemos expresarlo pero ya que las computadoras no hablan, debe haber un intermediario que se encarge de eso.
+En la pc tenemos una memoria donde de almacenan datos e instrucciones, la pc revisa periódicamente la memoria y conforme a los datos va modificando el contenido de la memoria. Para lograr que siga las instrucciones que nosotros deseamos mandarle debemos expresarlo pero ya que las computadoras no hablan, debe haber un intermediario que se encargue de eso.
 La terminal de comandos es entonces la encargada de recibir nuestras instrucciones por medio de texto y de esta manera ser nuestro de medio de comunicación con la pc y el SO.
 La terminal se usa en vez de una interfaz gráfica cuando se desea tener mayor eficiencia, sacrificando la parte gráfica.
-Para ingresar instrucciones a través de la terminal, se usa comandos los cuales estan conformados por el nombre de un programa, parámetros y modificadores, comando -flag1 -flag2 -arg1 arg2.
+Para ingresar instrucciones a través de la terminal, se usan comandos los cuales estan conformados por el nombre de un programa, parámetros y modificadores, comando -flag1 -flag2 -arg1 arg2.
 El comando date nos muestra la fecha y hora actual.
 Con el comando man podemos ver el manual del comando a ejecutar por ejemplo "man date".
 La terminal aparte de comandos también contiene utilidades propias como combinaciones de teclas, comodines y substitución de comandos.
-Al presionar las iniciales de un comando y presionando la tecla tab se nos muestran las posibilades o se autocompleta el comando a ejecutar si es el unico posible.
+Al presionar las iniciales de un comando y presionando la tecla tab se nos muestran las posibilades o se autocompleta el comando a ejecutar si es el único posible.
 Al presionar las direccionales de arriba o abajo nos muestra los comandos usados en el orden en el que fueron llamados.
 Con ctrl+shift+r se hace una búsqueda de un comando usado anteriormente.
 Con history se muestra el historial de todos los comandos ejecutados.
@@ -21,7 +21,7 @@ Para organizar la información en una pc se usan directorios y archivos, formand
 El path se conforma por la ruta de directorios y el nombre del archivo.
 Con ls se ven los archivos del directorio.
 Con ls -a se ven todos los archivos incluyendo los ocultos.
-Con .. se hace referencia al directorio padre y con . se hace referencia al directorio actual.
+Con .. se hace referencia al directorio padre y con . se hace referencia al directorio actual, son apuntadores.
 Con pwd (print working directory), se imprime el directorio actual.
 Con cd se cambia al directorio que se le indique cd /home.
 Con cd ~ nos manda al directorio principal o base.
@@ -35,21 +35,21 @@ Lista los archivos que se encuentran en el directorio sobre el que estamos traba
 Lista todos los archivos incluyendo aquellos que se han definido como ocultos: > ls -a
 Todos los directorios contienen los archivos . y .., estos son punteros a directorios: .. --> directorio padre, . --> directorio actual.
 Otros parámetros que puedes usar con el comando ls:
--Ordena los archivos por fecha de modificación: > ls -t
--Ordena elementos primero por nombre y después por extensión: > ls -x
--Ordena los elementos primero por extensión y luego por nombre: > ls -X
--Muestra toda la información: usuario, grupo, permisos, tamaño, fecha y hora de creación: > ls -l
--Muestra la misma información que ls -l pero con las unidades de tamaño en KB, MB: > ls -lh
--Muestra el contenido de todos los subdirectorios de forma recursiva: > ls -R
--Ordena los resultados por tamaño de archivo: > ls -S
+- Ordena los archivos por fecha de modificación: > ls -t
+- Ordena elementos primero por nombre y después por extensión: > ls -x
+- Ordena los elementos primero por extensión y luego por nombre: > ls -X
+- Muestra toda la información: usuario, grupo, permisos, tamaño, fecha y hora de creación: > ls -l
+- Muestra la misma información que ls -l pero con las unidades de tamaño en KB, MB: > ls -lh
+- Muestra el contenido de todos los subdirectorios de forma recursiva: > ls -R
+- Ordena los resultados por tamaño de archivo: > ls -S
 Comandos para cambiar de ubicación:
--Print Working Directory: se usa para mostrar el directorio actual en el que nos encontramos trabajando: > pwd
--cd: se utiliza para cambiar de directorio. Luego del comando se debe especificar la ruta del directorio al que nos queremos mover. Por ejemplo: > cd /home/mi_usuario.
+- Print Working Directory: Se usa para mostrar el directorio actual en el que nos encontramos trabajando: > pwd
+- cd: Se utiliza para cambiar de directorio. Luego del comando se debe especificar la ruta del directorio al que nos queremos mover. Por ejemplo: > cd /home/mi_usuario.
 Comandos para mover, copiar o borrar:
--cp: copiar un archivo hacia un directorio: > cp [archivo que se va a copiar] [directorio hacia el que se va a mover].
--rm: eliminar un archivo: > rm archivo.txt
--mv: mover un archivo, cambiar su ubicación. La sintaxis es así: >mv [ruta del archivo] [directorio hacia el que se va a mover]
-rmdir: eliminar un directorio. En este caso es importante resaltar que, para que el directorio pueda ser eliminado, no puede contener archivos u otros directorios en su interior: > rmdir [ruta / nombre del directorio a eliminar].
+- cp: Copiar un archivo hacia un directorio: > cp [archivo que se va a copiar] [directorio hacia el que se va a mover].
+- rm: Eliminar un archivo: > rm archivo.txt
+- mv: Mover un archivo, cambiar su ubicación. La sintaxis es así: >mv [ruta del archivo] [directorio hacia el que se va a mover]
+rmdir: Eliminar un directorio. En este caso es importante resaltar que, para que el directorio pueda ser eliminado, no puede contener archivos u otros directorios en su interior: > rmdir [ruta / nombre del directorio a eliminar].
 En la pc los archivos se guardan en binario y en archivos de texto, siendo los archivos binarios aquellos que solo pueden ser ejecutados por una pc y en programa adecuado, algunos ejemplos son documentos, executables, fotos, videos. Los archivos de texto son aquellos que al abrirse con un editor de texto pueden ser leídos por humanos ya que tienen una codificación como ascci, utf, etc, ejemplos son código fuente, configuraciones y páginas web.
 En linux hay 2 editores comunes de texto vim y nano.
 En Vim para empezar a editar texto se presiona la letra i, con escape se sale del modo edición y con :w se guarda el archivo y con :q se sale del editor VIM.
@@ -61,18 +61,18 @@ tail: Nos muestra las ultimas líneas del archivo tail -n #delíneas nombre_arch
 grep: Búsqueda por expresiones regulares en el archivo.
 grep Hanks dump1.sql : Busca si existe la palabra en el archivo y devuelve la línea.
 grep -i hanks dump1.sql : Busca la palabra sin distinción de mayúsculas o minúsculas.
-grep -i "hanks$" dump1.sql : Busca que haya una línea que termine con la palabra hanks
+grep -i "hanks$" dump1.sql : Busca que haya una línea que termine con la palabra hanks sin distinción de mayúsculas o minúsculas.
 Sed (spread editor): Tratamiento de flujo de caracteres, nos muestra como quedaría un archivo si se remplazará una parte, pero no lo sobreescribe.
 sed 's/Hanks/Selleck/g' dump1.ql : Cambia la palabra Hanks por Selleck.
 sed '$d$ dump1.sql : Elimina la ultima línea del archivo.
 Awk: Se usa para Tratamiento de texto delimitado, sirve para texto separado por comas, punto y coma, entre otros además que puede realizar operaciones y condicionales.
 awk -F ',' '{print $1}' dump1.sql : Imprime todo lo que haya antes de la primera coma, con -F se indica el parámetro, con ',' el caracter delimitador y {print $1} indica que solo se imprime antes de la primera coma.
-awk -F ';' 'NR > 1 && $3 > 0 {print $1, $3 * $4}' dump1.sql : Usa ";" como delimitador y verifica que el número de línea sea mayor a 1 que el argumento 3 de cada renglon sea mayor a 0 e imprime el argumento 1 seguido de la multiplicación del argumento 3*4.
+awk -F ';' 'NR > 1 && $3 > 0 {print $1, $3 * $4}' dump1.sql : Usa ";" como delimitador y verifica que el número de línea sea mayor a 1 que el argumento 3 de cada renglón sea mayor a 0 e imprime el argumento 1 seguido de la multiplicación del argumento 3*4.
 Trabajo fundamental con archivos de texto:
-- touch: nos permite crear archivos : > touch archivo.txt
-- cat: nos permite visualizar todo el contenido de nuestros archivos: > cat archivo.txt
-- head: es muy parecido al comando cat. También nos permite visualizar el contenido de nuestros archivos, pero debemos indicarle cuántas líneas nos debe mostrar. Por defecto nos mostrará las primeras 10: # primeras 10 líneas > head archivo.txt , # primeras 20 líneas > head -n 20 archivo.txt
-tail: funciona igual que el comando head, pero al revés. También debemos indicarle cuántas líneas nos debe mostrar, la diferencia es que no las mostrará de abajo hacia arriba. Por defecto nos mostrará las últimas 10: # últimas 10 líneas > tail archivo.txt # últimas 5 líneas > tail -n 5 archivo.txt
+- touch: Nos permite crear archivos : > touch archivo.txt
+- cat: Nos permite visualizar todo el contenido de nuestros archivos: > cat archivo.txt
+- head: Es muy parecido al comando cat. También nos permite visualizar el contenido de nuestros archivos, pero debemos indicarle cuántas líneas nos debe mostrar. Por defecto nos mostrará las primeras 10: # primeras 10 líneas > head archivo.txt , # primeras 20 líneas > head -n 20 archivo.txt
+tail: funciona igual que el comando head, pero al revés. También debemos indicarle cuántas líneas nos debe mostrar, la diferencia es que nos las mostrará de abajo hacia arriba. Por defecto nos mostrará las últimas 10: # últimas 10 líneas > tail archivo.txt # últimas 5 líneas > tail -n 5 archivo.txt
 Búsqueda y tratamiento de texto:
 No solo podemos visualizar nuestros archivos (o parte de nuestros archivos) tal cual como escribimos, también podemos filtrar y cambiar el contenido que podemos ver en los archivos.
 Por ejemplo: imagina que tenemos un archivo gigante, con cientos o incluso miles de líneas. Si imprimieramos el contenido de todo el archivo sería muy difícil encontrar el nombre de una persona o elemento específico.
@@ -92,7 +92,7 @@ Los canales por donde ingresan los datos a proceso y por donde sale la informaci
 En la terminal hay al menos 3 flujos estándar: Entrada Salida y Error.
 Por defecto la entrada está conectada a los periféricos comunes, la entrada al teclado y la salida en el display de la consola.
 Cuando la entrada de datos no proviene de una cadena de datos armada por nosotros si no por un archivo se ejecuta un proceso de redireccionamiento.
-Un ejemplo de entrada por archivo es: mysql -h 121.0.0.1 -u root -p1234 < dump1.sql, con esta opción vez de pasarle todo el texto estando sujeto a errores o un proceso mas largo simplemente se le pasa un archivo que contenga los datos a procesar.
+Un ejemplo de entrada por archivo es: mysql -h 121.0.0.1 -u root -p1234 < dump1.sql, con esta opción en vez de pasarle todo el texto estando sujeto a errores o un proceso mas largo simplemente se le pasa un archivo que contenga los datos a procesar.
 La segunda forma de redireccionamiento es usar la entrada por teclado (o por archivo) y que el resultado en vez de mostrarlo en pantalla, como con cat y gred, lo guarde en un archivo.
 ls > archivos.txt : Guarda la salida de ls en el archivo.txt
 ls -l >> archivo.txt : Guarda la salida de ls -l al final del archivo.txt.
@@ -105,18 +105,18 @@ head -n 64 matriz.c > primeraMitad.txt
 tail -n 64 matriz.c > segundaMitad.txt
 date >> segundaMitad.txt
 sed -n 1,30p file.csv > file1.txt | date >> file1.txt | sed -n 31,80p file.csv > file2.txt
-Al ejecutar cualquier comando mediante la terminal en realidad estamos lanzando un proceso, lo más comun es que ese proceso se ejecute rapidamente de tal forma que sea casi inmediata su respuesta.
+Al ejecutar cualquier comando mediante la terminal en realidad estamos lanzando un proceso, lo más comun es que ese proceso se ejecute rápidamente de tal forma que sea casi inmediata su respuesta.
 Existen casos en que el proceso bloquea la terminal y no se permite ejecutar nada hasta que termine, a este tipo de ejecución se le llama ejecución en primer plano (o foreground).
 Para permitir ejecutar un proceso en paralelo (segundo plano o background) se usa "&", lo que permite volver a tener el control de la terminal a pesar que el proceso se este ejecutando.
-Cuando se tiene un proceso continuamente ejecutándose, como un servidor que se necesita ejecurtar continuamente para responder al cliente, estos procesos de ejecución contínua se le conocen como servicios, daemons o demonios.
-Cuando proceso lanzado puede mandarse al background presionando ctrl-z y para reanudarlo se presiona fg, permitiendo asi su reanudación.
+Cuando se tiene un proceso continuamente ejecutándose, como un servidor que se necesita ejecurtar continuamente para responder al cliente. A estos procesos de ejecución contínua se les conocen como servicios, daemons o demonios.
+Un proceso lanzado puede mandarse al background presionando ctrl-z y para reanudarlo se ingresa fg, permitiendo asi su reanudación.
 Para identificar los procesos en ejecución se puede usar ps y top.
 Con "ps" se listan los procesos.
 Con "ps ax" se listan todos los procesos pero con mas información acerca de cada uno de ellos.
-Al ser ps una utilidad de tipo bash(manda resultado impreso en consola), se le puede agrgar un pipe para identificar lo que deseamos ver.
+Al ser ps una utilidad de tipo bash (manda resultado impreso en consola), se le puede agregar un pipe para identificar lo que deseamos ver.
 Con "ps ax | grep init" solo se muestran los procesos que contengan la palabra init.
 Con el comando top se listan los procesos pero de una manera interactiva, con la letra "q" se sale.
-Con "kill -9 NumeroPID" se termina un proceso forzosamente.
+Con "kill -9 NumeroPID" se termina un proceso forzosamente el -9 indica su termino forsozo.
 Con "killall -9 nombreComando" se termina un proceso forzosamente con su nombre de archivo.
 Permisos para Usuarios, Grupos y Super Usuarios.
 Nuestro trabajo consiste en limitar las acciones que pueden realizar los usuarios de nuestros sistemas. Debemos encargarnos de que los usuarios no tengan más permisos de los que deberían tener.
@@ -142,13 +142,13 @@ Estos son los permisos: -rwxr-xr-- juandc estudiantes-platzi.
 - El grupo al que pertenece el archivo solo tiene permisos para leer y ejecutar el archivo, no para editarlo.
 - El resto de usuarios de sistema operativo solo tienen permisos para leer el archivo, no para escribirlo ni ejecutarlo.
 Actualización de permisos y propietarios:
-Para cambiar los permisos se usa y usuarios see usa chmod y chown.
+Para cambiar los permisos y usuarios se usa chmod y chown.
 - Cuando nos refiramos al usuario propietario debemos usar la letra u. Si cambiamos los permisos del grupo una g. Si queremos cambiar los permisos de cualquier otro usuario usamos la o. Y si queremos cambiar los permisos de TODOS usamos la a.
 - chmod g+w archivo.txt # Añadir permisos de escritura al grupo.
 - chmod o-r # Eliminar permisos de lectura a los usuarios no propietarios ni miembros del grupo al que pertenece el archivo.
 - chmod a+x archivo.txt # Añadir permisos de ejecución a todos (cualquier usuario).
 Asignar permisos con chmod: - = 0, x = 1, w = 2, r = 4 , rwx|rwx|rwx.
-chmod 754 archivo.txt: Con esto se aginan los siguientes permisos rwx para el usuario propietario, rx en el grupo, r para todos los demas usuarios.
+chmod 754 archivo.txt: Con esto se aginan los siguientes permisos rwx para el usuario propietario, rx en el grupo, r para todos los demás usuarios.
 Ahora digamos que queremos cambiar el usuario propietario de nuestro archivo. Para esto usaremos el comando chown seguido del nuevo usuario o grupo propietario del archivo.
 - sudo chown nuevo-usuario archivo.txt# Cambiar el usuario propietario.
 - sudo chown :nuevo-grupo archivo.txt# Cambiar el grupo propietario.
@@ -159,8 +159,8 @@ Ahora digamos que queremos cambiar el usuario propietario de nuestro archivo. Pa
 ​   No todos los usuarios tienen los mismos permisos, depende de como se hayan configurado los permisos. Pueden trabajar los que tienen el permiso asignado. Se dividen en el usuario propietario, el grupo al que pertenezca y si es externo al grupo o no.
 Al hablar de usuarios y permisos en el sistema operativo, ¿qué significa un 777? ¿Deberíamos preocuparnos?
 ​   777 significa que todos tiene permiso de leer, escribir y ejecutar un archivo, puede ser peligroso si es un archivo importante del SO, ya que se puede modificar incorrectamente causando errores o ejecutarlo cuando no es debido.
-¿Que permisos debes tener para poder editar un archivo que creo otro usuario de tu sistema operativo?
-​   El permiso xxrw- que sería xx6 o x6x si ese usuario pertenece al mismo grupo del usuario propietario del archivo.
+¿Qué permisos debes tener para poder editar un archivo que creo otro usuario de tu sistema operativo?
+​   El permiso xxrw- que sería xx6 si eres usuario externo al grupo o x6x si ese usuario pertenece al mismo grupo del usuario propietario del archivo.
 ¿Con qué comando cambiamos los permisos que tienen los usuarios para trabajar con un archivo?
 ​   Con chmod
 No quieres que nadie pueda editar ni mucho menos ejecutar un script muy peligroso que estás creando. ¿Qué permisos debe tener este script para conseguir este resultado?
@@ -168,7 +168,7 @@ No quieres que nadie pueda editar ni mucho menos ejecutar un script muy peligros
 ¿Quién es sudo? ¿Es peligroso?
     Sudo es el superusuario del sistema operativo sirve para ejecutar comandos que requieren de todos los permisos. Puede ser peligroso si se deja al alcance de cualquiera ya que da acceso total a las configuraciones y puede desactivar la seguridad.
 Para descargar un programa primero se debe identificar la dirección de donde se descargará seguido de la descarga, luego copiar los archivos y hacer una configuración para instalarlo.
-Existen programas que realizan todas las tareas involucradas en la instalación estas se llamann paquetes de software.
+Existen programas que realizan todas las tareas involucradas en la instalación estas se llaman paquetes de software.
 Los administradores de paquetes son los programas que conocen de donde descargar, cuales programas ya han sido descargados y como configurar todo de tal forma que no hayan conflictos, un ejemplo es cuando un paquete depende de otro paquete y la terminal no los informa.
 Existen varios manejadores de paquetes apt para distribuciones basadas en debian, zypper para suse y rpm es mas universal pero rústico.
 Un ejemplo es sudo apt install lynx: Para instalar lynx dentro de linux.
@@ -177,7 +177,7 @@ Para poder instalar paquetes o librerías para programas en especial se usan paq
 pip - administrador de paquetes en python.
 sudo pip install pandas :Instala la librería pandas de python.
 composer - administrador de paquetes en php.
-npm - administrador de paquetes en node.js
+npm - administrador de paquetes en node.js.
 conda y homebrow son otros administradores de paquetes pero se necesitan instalar primero estos administradores desde la terminal.
 https://itsfoss.com/apt-vs-apt-get-difference/
 ls archivo -lh: Para ver el tamaño del archivo.
@@ -191,20 +191,20 @@ tar xf backup.tar: Restaura los archivos contenidos.
 tar czf backup.tar backup/*: Comprime la carpeta en un archivo backup.tar.
 tar xzf backup.tar: Descomprime la carpeta.
 GZIP - Compresión y Descompresión de archivos
-gzip [nombreArchivo] - comprime archivo generando un .gz
-gzip -d [nombreArchivo] -descomprime
+gzip [nombreArchivo] - Comprime archivo generando un .gz
+gzip -d [nombreArchivo] -Descomprime
 TAR - Agrupación y compresión de archivos
-tar cf archivo.tar [listadoArchivos] -> Agrupa los archivos
-tar tf archivo.tar -> lista los archivos dentro del agrupamiento
-tar xf archivo.tar -> desagrupa los archivos
-tar czf archivo.tgz [fichero] -> agrupa y comprime
-tar xzf archivo.tgz -> descomprime y desagrupa
-locate - Permite hacer una búsqueda en todo el sistema de archivo, mediante una búsqueda en una base de datos.
+tar cf archivo.tar [listadoArchivos] -> Agrupa los archivos.
+tar tf archivo.tar -> Lista los archivos dentro del agrupamiento.
+tar xf archivo.tar -> Desagrupa los archivos.
+tar czf archivo.tgz [fichero] -> Agrupa y comprime.
+tar xzf archivo.tgz -> Descomprime y desagrupa.
+locate - Permite hacer una búsqueda en todo el sistema de archivos, mediante una búsqueda en una base de datos.
 sudo updatedb - Actualiza la base de datos de los directorios. Siempre es conveniente ejecutar este comando primero.
 locate [nombreArchivo] - busca el archivo y devuelve el path del archivo.
-whereis - Permite buscar archivos binarios (es decir, comandos)
+whereis - Permite buscar archivos binarios (es decir, comandos).
 whereis [nombreComando] - busca los binarios y devuelve el path de donde esta el comando.
-find - Buscar dentro de un árbol de directorio, mediante una serie de criterio, es la mas complejo.
+find - Buscar dentro de un árbol de directorio, mediante una serie de un criterio, es la más compleja.
 find . -user luis Busca archivos que su usuario propietario sea luis
 find . -user luis -perm 664 Busca archivos que su propietario sea luis y que tengan permisos de 664 rw-rw-r--.
 find . -type f Que devuelva solo archivos.
@@ -212,22 +212,22 @@ find . -type f -mtime +7 Que devuelva solo archivos y que hayan sido actualizado
 find . -type f -mtime +7 -exec cp {} ./backup/; Copia a Backup aquellos archivos que hayan sido actualizados hace más de 7 días.
 Con curl y con wget se pueden realizar consultas http.
 https://www.solvetic.com/tutoriales/article/5925-como-usar-y-ejemplos-comando-curl-linux/
-curl https://platzi.com : Se envia el html que interpreta el navegador.
-curl -v https://platzi.com : Se envia el html que interpreta el navegador adicionando los headers http.
-curl -v https://platzi.com > dev/null: Se manda a escribir a dev/null, de tal forma evitando generar un archivo pero se queda con los headers.
+curl https://platzi.com : Se envía el html que interpreta el navegador.
+curl -v https://platzi.com : Se envía el html que interpreta el navegador adicionando los headers http.
+curl -v https://platzi.com > dev/null: Se manda a escribir a dev/null, de tal forma evitando generar un archivo en memoria pero se queda con los headers ya que no se ingresan al archivo.
 wget https://media-exp1.licdn.com/dms/image/C4D0BAQEnKdGryPPiJw/company-logo_100_100/0?e=1599696000&v=beta&t=eFBZ-22hPnJ-fFH5GMFSTmUG4ByUYxFze9FOtWld830 : Obtiene el recurso (archivo) y lo guarda en la pc.
 Con ssh se puede controlar una terminal remota, si no se tienen llaves se necesitan ingresar las contraseñas y el usuario.
 https://www.hostinger.es/tutoriales/que-es-ssh
 https://computingforgeeks.com/install-and-configure-openssh-server-on-windows-server/
 ssh nombre de usuario@ host (host puede ser ip)
 ingresar contraseña
-Para envío de mail por la terminal se una postfix en conjunto con mailutils.
+Para envío de mail por la terminal se usa postfix en conjunto con mailutils.
 sudo DEBIAN_PRIORITY=low apt install postfix.
 Configuración de correo en "sitio de internet".
 Dejar en blanco nombre del sistema de correo.
 En recipiente de correo para el administrador se ingresa el correo electrónico.
 En otros destinos para los cuales aceptar correo se deja en blanco.
-En forzar las actualizaciones díncronas en la cola de correo se presiona no.
+En forzar las actualizaciones síncronas en la cola de correo se presiona no.
 En redes locales: se deja en blanco.
 En límite del tamaño de buzón del correo se deja en blanco (predeterminado).
 En el carácter de extensión de direcciones locales se deja en blanco.
@@ -246,10 +246,10 @@ Para una asignanción particular se usa VAR=valor comando, ejecutarciclo=/cadena
 alias mi_comando = ls -al: Crea un alias para llamar a las instrucciones ls -al.
 mi_comando prueba.txt: Uso del alias.
 https://alvinalexander.com/blog/post/linux-unix/create-aliases/
-El shell o bash es a la vez un lenguaje de programación, por lo cual se puede hacer un script que ejecutara los comandos bash, con esto se pueden crear comandos propios.
+El shell o bash es a la vez un lenguaje de programación, por lo cual se puede hacer un script que ejecutará los comandos bash, con esto se pueden crear comandos propios.
 En la primera línea del archivo se define la dirección del interprete que ejecutará el script.
-Psteriormente se van llamando todos los comandos que se quieran utilizar.
-#!/bin/bash
+Posteriormente se van llamando todos los comandos que se quieran utilizar.
+#!/bin/bash #Ruta del programa que ejecutará el script.
 NEW_DIR=platzi #Define el directorio donde se guardará.
 
 if [ ! -d "~/$NEW_DIR" ]; then # Si no existe el directorio lo crea, con ~ se accede al directorio principal.
@@ -268,14 +268,14 @@ Para lograr tareas automatizadas se pueden usar 2 instrucciones at y cron.
 at now +2 minutes: Permite el ingreso del comando a ejecutar.
 at> echo "Hola Mundo!" > ~/hola.txt
 date; ls hola.txt: Da la hora y muestra en pantalla si existe el archivo.
-cron: el comando cron permite además de programar tareas, también que estás se puedan hacer de forma periódica. Este comando se apoya en un archivo “crontab” donde se guardan las tareas que se programan en el sistema.
+cron: el comando cron permite además de programar tareas, también que estas se puedan hacer de forma periódica. Este comando se apoya en un archivo “crontab” donde se guardan las tareas que se programan en el sistema.
 Para modificar el archivo mencionado, se ingresa: crontab -e. Al principio saldrá un texto con instrucciones; las tareas a programar deben ir al final de este texto.
 Las tareas a realizar se deben ingresar de la siguiente manera:
 Minuto Hora DiaDelMes Mes DiaDeLaSemana Usuario Comando
 Un asterisco * como valor en los primeros cinco campos, indicará que no tomará en cuenta ese parámetro.
 CRON
 crontab -e : Comando que nos permite editar las tareas.
-Y lo que demos insertar va en este orden:
+Y lo que debemos insertar va en este orden:
 1.- Minuto a ejecutarse Numero=0 a 59
 2.- Hora a ejecutarse Hora=0 a 23
 3.- Dia del mes o Todos Dia = 1 - 31 / Todos = *
@@ -286,7 +286,7 @@ Ej:
 Si se tienen problemas hay que ejecutar los servicios.
 sudo service atd start
 sudo service cron start
-Además del terminal que utilizamos durante el curso (bash), existen muchos otros. Solamente en ambientes tipo *nix (Linux, BSD, etc…) puedes encontrarte con Korn-Shell y Zsh.
+Además de la terminal que utilizamos durante el curso (bash), existen muchos otros. Solamente en ambientes tipo *nix (Linux, BSD, etc…) puedes encontrarte con Korn-Shell y Zsh.
 Se trata de otros intérpretes que incorporan diferentes atajos, pero que esencialmente permiten realizar las mismas tareas, ya que en el fondo simplemente ejecutan los mismos comandos que están presentes en el sistema.
 Una terminal bastante diferente de la que vimos en el curso es la que viene de fábrica junto con Windows: el programa CMD.
 Equvalencia de comandos bash y CMD
@@ -298,7 +298,7 @@ rm-del
 cp-copy
 mv-move
 cat-type
-gzip-no hay
+gzip-no tiene equivalencia.
 echo-echo
 echo $PATH- echo %PATH%
 CMD
