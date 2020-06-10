@@ -56,3 +56,11 @@ Java - class Person {}
 Python - class Person:
 JavaScript - function Person() {}
 PHP - class Person{}
+Una vez que ya se tienen que objetos se van a necesitar se les deben asignar todos los atributos que sean necesarios para que puedan definirse completamente, muchos atributos se repetiran si los objetos son muy similares.
+Es recomendable que cada objeto tenga su identificador único.
+Cuando un atributo está repetido muchas veces en un código está violando la filosofía Don't repeat yourself.
+Don’t repeat yourself es una filosofía que promueve la reducción de duplicación en programación, esto nos va a inculcar que no tengamos líneas de código duplicadas.
+Toda pieza de información nunca debería ser duplicada debido a que incrementa la dificultad en los cambios y evolución (se hará mas difícil el desarrollo y entendimiento del código).
+La herencia nos permite crear nuevas clases a partir de otras, se basa en modelos y conceptos de la vida real. También tenemos una jerarquía de padre e hijo.
+La clase padre es llamada como la superclase, pues de está se derivan las demás, las subclases son las clases hijas.
+También se puede aplicar herencia a pesar que los objetos no tengan mucho en común, pero que si tengan atributos en común.
