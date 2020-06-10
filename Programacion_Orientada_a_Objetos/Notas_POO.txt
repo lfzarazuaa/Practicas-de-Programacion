@@ -69,3 +69,5 @@ En java el archivo Main.java es el archivo principal de donde empezará a correr
 Para ejecutar java será necesario tener el jdk instalado y el plugin de vscode para ejecutar java, luego se le puede dar click en run.
 Para ejecutar python será necesario posicionarse en la carpeta principal y de ahí correr el main.py.
 Para ejecutar código python se usa python archivo.py en la carpeta que contiene al archivo.
+En Javascript el concepto de clases no existía como tal hasta el nuevo estándar EcmaScript 6. El reto de encontrar sistemas construidos con este estándar es alto por esa razón te explicaré cuál fue por mucho tiempo su equivalente.
+Los Prototipos en JavaScript fue la forma de crear clases en JavaScript y las representaremos partiendo de la declaración de una función.
