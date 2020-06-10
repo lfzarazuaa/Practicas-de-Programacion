@@ -71,3 +71,21 @@ Para ejecutar python será necesario posicionarse en la carpeta principal y de a
 Para ejecutar código python se usa python archivo.py en la carpeta que contiene al archivo.
 En Javascript el concepto de clases no existía como tal hasta el nuevo estándar EcmaScript 6. El reto de encontrar sistemas construidos con este estándar es alto por esa razón te explicaré cuál fue por mucho tiempo su equivalente.
 Los Prototipos en JavaScript fue la forma de crear clases en JavaScript y las representaremos partiendo de la declaración de una función.
+Los objetos nos ayudan a crear instancia de una clase, el objeto es el resultado de lo que modelamos, de los parámetros declarados y usaremos los objetos para que nuestras clases cobren vida.
+Los métodos constructores dan un estado inicial al objeto y podemos añadirle algunos datos al objeto mediante estos métodos. Los atributos o elementos que pasemos a través del constructor serán los datos mínimos que necesita el objeto para que pueda vivir.
+Se instancia o reserva en memoria hasta que se coloca la palabra reservada new, a pesar de haber sido declarada antes.
+Java -> Person persona = new Person("Luis");
+Python -> persona = Person("Luis");
+JavaScript -> var person = new Person("Luis");
+PHP -> $person = new Person("Luis");
+Para instanciar una clase se debe llamar a un método, por lo general el método constructor de la clase.
+Algunas características del método constructor son:
+- Dar un estado inicial al objeto.
+- Tiene el mismo nombre de la clase.
+- Son los parámetros mínimos que necesita el objeto para que pueda vivir.
+Métodos constructores:
+Java -> public Person(String name){this.name = name;}
+Python -> def __init__(self,name):
+            self.name =name
+JavaScript -> function Person(name){this.name = name};
+PHP -> public function __construct ($name){ $this->name = name;}
