@@ -89,3 +89,6 @@ Python -> def __init__(self,name):
             self.name =name
 JavaScript -> function Person(name){this.name = name};
 PHP -> public function __construct ($name){ $this->name = name;}
+El compilador siempre nos provee de un un constructor predeterminado de la clase.
+Con syso en java se logra imprimir en pantalla.
+Con vars(objeto) se da el objeto en tipo json en python.
