@@ -1,0 +1,100 @@
+Algunos de los lenguajes de programación Orientados a Objetos son:
+Java:
+– Orientado a Objetos naturalmente
+– Es muy útilizado en Android
+– Y es usado del lado del servidor o Server Side
+PHP
+– Lenguaje interpretado
+– Pensado para la Web
+Python
+– Diseñado para ser fácil de usar
+– Múltiples usos: Web, Server Side, Análisis de Datos, Machine Learning, etc
+Javascript
+– Lenguaje interpretado
+– Orientado a Objetos pero basado en prototipos
+– Pensado para la Web
+C#
+Ruby
+Kotlin
+OMT: Object Modeling Techniques. Es una metodología para el análisis orientado a objetos.
+UML: Unified Modeling Language o Lenguaje de Modelado Unificado. Tomó las bases y técnicas de OMT unificándolas. Tenemos más opciones de diagramas como lo son Clases, Casos de Uso, Objetos, Actividades, Iteración, Estados, Implementación.
+Con UML se ven: Clases, casos de usos, objetos, actividades, iteración, estados. implementación.
+En los UML: En la parte superior se colocan los atributos o propiedades, y debajo las operciones de la clase. Notarás que el primer caractér con el que empiezan es un símbolo. Este denotará la visibilidad del atributo o método, esto es un termino que tiene que ver con Encapsulamiento y veremos más adelante a detalle.
+Estos son los niveles de visibilidad que puedes tener:
+- private
++ public
+# protected
+~ default.
+Asociación: Como su nombre lo dice, notarás que cada vez que esté referenciada este tipo de flecha(-->) significará que ese elemento contiene al otro en su definición. La flecha apuntará hacia la dependencia.
+Con esto vemos que la ClaseA está asociada y depende de la ClaseB.
+Herencia: Siempre que veamos este tipo de flecha(--|>) se estará expresando la herencia.
+La dirección de la flecha irá desde el hijo hasta el padre.
+Agregación: Este se parece a la asociación en que un elemento dependerá del otro, pero en este caso será: Un elemento dependerá de muchos otros. Aquí tomamos como referencia la multiplicidad del elemento. Lo que comúnmente conocerías en Bases de Datos como Relaciones uno a muchos.
+Con esto decimos que la ClaseA contiene varios elementos de la ClaseB. Estos últimos son comúnmente representados con listas o colecciones de datos.
+Composición: Este es similar al anterior solo que su relación es totalmente compenetrada (totalmente influyentes una sobre otra) de tal modo que conceptualmente una de estás clases no podría vivir si no existiera la otra.
+En la POO lo primero que se debe hacer es identificar los objetos, haciendo un análisis primero observando los objetos involucrados.
+Los objetos siempre son sustantivos y contienen propiedades y comportamientos.
+Los objetos pueden ser físicos o conceptuales (simbología de procesos que están ocurriendo).
+Un ejemplo de objeto físico es un usuario y uno conceptuales es sesión.
+Las Propiedades también pueden llamarse atributos y estos también serán sustantivos. Algunos atributos o propiedades son nombre, tamaño, forma, estado, etc. Son todas las características del objeto.
+Los Comportamientos serán todas las operaciones que el objeto puede hacer, suelen ser verbos o sustantivos y verbo. Algunos ejemplos pueden ser que el usuario pueda hacer login y logout.
+Una Clase es el modelo por el cual nuestros objetos se van a construir y nos van a permitir generar más objetos.
+Analizamos Objetos para crear Clases. Las Clases son los modelos sobres los cuales construiremos nuestros objetos.
+Abstracción es cuando separamos los datos de un objeto para generar un molde.
+La modularidad va muy relacionada con las clases y es un principio de la Programación Orientado a Objetos y va de la mano con el Diseño Modular que significa dividir un sistema en partes pequeñas y estas serán nuestros módulos pudiendo funcionar de manera independiente.
+La modularidad de nuestro código nos va a permitir:
+- Reutilizar código.
+- Evitar colapsos.
+- Hacer nuestro código más mantenible.
+- Legibilidad.
+- Resolución rápida de problemas.
+- Una buena práctica es separando las clases en archivos diferentes.
+Identificar las necesidades del proyecto, con su flujo y distintos posibles objetos.
+Una clase en UML puede ser dividida en Identidad (Nombre de la clase), Estado (Atributos) y comportamiento(Métodos).
+Para definir las clase Person en distintos lenguajes:
+Java - class Person {}
+Python - class Person:
+JavaScript - function Person() {}
+PHP - class Person{}
+Una vez que ya se tienen que objetos se van a necesitar se les deben asignar todos los atributos que sean necesarios para que puedan definirse completamente, muchos atributos se repetiran si los objetos son muy similares.
+Es recomendable que cada objeto tenga su identificador único.
+Cuando un atributo está repetido muchas veces en un código está violando la filosofía Don't repeat yourself.
+Don’t repeat yourself es una filosofía que promueve la reducción de duplicación en programación, esto nos va a inculcar que no tengamos líneas de código duplicadas.
+Toda pieza de información nunca debería ser duplicada debido a que incrementa la dificultad en los cambios y evolución (se hará mas difícil el desarrollo y entendimiento del código).
+La herencia nos permite crear nuevas clases a partir de otras, se basa en modelos y conceptos de la vida real. También tenemos una jerarquía de padre e hijo.
+La clase padre es llamada como la superclase, pues de está se derivan las demás, las subclases son las clases hijas.
+También se puede aplicar herencia a pesar que los objetos no tengan mucho en común, pero que si tengan atributos en común.
+Al momento de realizar los diagramas de clases también es muy importante hacer un diagrama completo donde se especifiquen las distintas relaciones entre las clases como Agregación, Asociación, Composición y Herencia.
+En java el archivo Main.java es el archivo principal de donde empezará a correr el programa.
+Para ejecutar java será necesario tener el jdk instalado y el plugin de vscode para ejecutar java, luego se le puede dar click en run.
+Para ejecutar python será necesario posicionarse en la carpeta principal y de ahí correr el main.py.
+Para ejecutar código python se usa python archivo.py en la carpeta que contiene al archivo.
+En Javascript el concepto de clases no existía como tal hasta el nuevo estándar EcmaScript 6. El reto de encontrar sistemas construidos con este estándar es alto por esa razón te explicaré cuál fue por mucho tiempo su equivalente.
+Los Prototipos en JavaScript fue la forma de crear clases en JavaScript y las representaremos partiendo de la declaración de una función.
+Los objetos nos ayudan a crear instancia de una clase, el objeto es el resultado de lo que modelamos, de los parámetros declarados y usaremos los objetos para que nuestras clases cobren vida.
+Los métodos constructores dan un estado inicial al objeto y podemos añadirle algunos datos al objeto mediante estos métodos. Los atributos o elementos que pasemos a través del constructor serán los datos mínimos que necesita el objeto para que pueda vivir.
+Se instancia o reserva en memoria hasta que se coloca la palabra reservada new, a pesar de haber sido declarada antes.
+Java -> Person persona = new Person("Luis");
+Python -> persona = Person("Luis");
+JavaScript -> var person = new Person("Luis");
+PHP -> $person = new Person("Luis");
+Para instanciar una clase se debe llamar a un método, por lo general el método constructor de la clase.
+Algunas características del método constructor son:
+- Dar un estado inicial al objeto.
+- Tiene el mismo nombre de la clase.
+- Son los parámetros mínimos que necesita el objeto para que pueda vivir.
+Métodos constructores:
+Java -> public Person(String name){this.name = name;}
+Python -> def __init__(self,name):
+            self.name =name
+JavaScript -> function Person(name){this.name = name};
+PHP -> public function __construct ($name){ $this->name = name;}
+El compilador siempre nos provee de un un constructor predeterminado de la clase.
+Con syso en java se logra imprimir en pantalla.
+Con vars(objeto) se da el objeto en tipo json en python.
+En js las clases son en verdad funciones y su constructor es la misma función, los métodos se llaman con clase.prototype.metodo = function (){}.
+En Python encontrarás un concepto denominado Métodos Mágicos, estos métodos son llamados automáticamente y estrictamente bajo ciertas reglas. El método constructor en Python forma parte de esta familia de métodos y como aprendimos en la clase anterior lo declaramos usando __init__, aunque si nos ponemos estrictos este método no construye el objeto en sí. El encargado de hacer esto es __new__ y el método __init__ se encargará de personalizar la instanciación de la clase, esto significa que lo que esté dentro de __init__ será lo primero que se ejecute cuando se cree un objeto de esta clase.
+super().__init__() : Inicializa con el constructor de la clase padre.
+from account import Account para importar la clase en python.
+public function __construct(String $name, Account $driver, String $brand, String $model){} : Constructor en php.
+Constructor de clase padre en php parent::__construct($license, $driver).
