@@ -95,4 +95,6 @@ Con vars(objeto) se da el objeto en tipo json en python.
 En js las clases son en verdad funciones y su constructor es la misma función, los métodos se llaman con clase.prototype.metodo = function (){}.
 En Python encontrarás un concepto denominado Métodos Mágicos, estos métodos son llamados automáticamente y estrictamente bajo ciertas reglas. El método constructor en Python forma parte de esta familia de métodos y como aprendimos en la clase anterior lo declaramos usando __init__, aunque si nos ponemos estrictos este método no construye el objeto en sí. El encargado de hacer esto es __new__ y el método __init__ se encargará de personalizar la instanciación de la clase, esto significa que lo que esté dentro de __init__ será lo primero que se ejecute cuando se cree un objeto de esta clase.
 super().__init__() : Inicializa con el constructor de la clase padre.
-from account import Account para imoportar la clase en python.
+from account import Account para importar la clase en python.
+public function __construct(String $name, Account $driver, String $brand, String $model){} : Constructor en php.
+Constructor de clase padre en php parent::__construct($license, $driver).
