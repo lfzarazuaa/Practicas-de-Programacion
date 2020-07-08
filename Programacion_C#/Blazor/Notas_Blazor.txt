@@ -54,3 +54,10 @@ Con bind se lográ vincular la información para que se actualice ya sea por có
         messageInp2 = message2;
     }
 }
+En _Imports.razor se carga la ruta relativa de la carpeta de donde tenemos las páginas que queremos mandar a llamar, esto para lograr cargarlas desde otra parte y asi tener un mejor control sobre el archivo.
+[Parameter] //Declaración de un parámetro.
+    public string Message { get; set; } //Parámetro por defecto público para poder ingresar datos con una misma estructura.
+protected override async Task OnInitializedAsync() //Transfiere el parámetro justo cuando se cargó el html.
+{
+    message = Message;//Se actualiza el mensaje cuando se crea el componente.
+}

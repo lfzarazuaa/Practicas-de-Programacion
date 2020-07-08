@@ -77,6 +77,13 @@ using Inventary.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 10 "C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\Blazor\Inventary\Inventary\_Imports.razor"
+using Inventary.Components.Ejercicios.BlazorPages;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\Blazor\Inventary\Inventary\Pages\FetchData.razor"
 using Inventary.Data;
 
