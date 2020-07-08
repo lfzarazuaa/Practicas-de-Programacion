@@ -1,5 +1,23 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<input type="text" @bind-value="@message1" />
+<br/>
+<input type="text" @bind-value="@message2" />
+<br/>
+<input type="button" value="Haga clic aqui" @onclick="ChangeText" />
+<div>
+    <p>Mensaje 1: @messageInp1</p>
+    <p>Mensaje 2: @messageInp2</p>
+</div>
 
-Welcome to your new app.
+@code{
+    string message1 = "Un contenido A";
+    string message2 = "Un contenido B";
+    string messageInp1 = "";
+    string messageInp2 = "";
+    private void ChangeText()
+    {
+        messageInp1 = message1;
+        messageInp2 = message2;
+    }
+}

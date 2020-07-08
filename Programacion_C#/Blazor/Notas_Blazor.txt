@@ -17,3 +17,40 @@ En shared se cargan las plantillas a usar.
 Program es un archivo en .net en donde se indica cual es la estructura de inicio, por default es Startup (archivo de configuración).
 En Startup se dice toda la configuración para arrancar, carga RazorPages, ServerSideBlazor y Singleton.
 En wwwroot se llaman todos los estilos (css).
+Las páginas con componentes Razor tienen una extensión .razor.
+Cada página tiene una estructura llamada enrutado, nos permite organizar toda la información de acuerdo a los parámetros que queremos darle @page "/counter".
+Para realizar el enrutamiento a la pagina por defecto se usa @page "/" la cual nos lleva al index por defecto.
+@code{} //Para indicar que habra código en c#.
+Razor nos permite combinar código del lado del cliente con código del lado del lado del servidor.
+<div> //Llama un código del lado del servidor sin recargar.
+    @message
+</div>
+@code{
+    string message = "Un contenido.";
+}
+
+<input type="text" value="@message"/> //Relaciona el valor del input con la variable pero solo lo lee una vez.
+Con bind se lográ vincular la información para que se actualice ya sea por código o por interacción con el usuario.
+//Código para leer un formulario con razor.
+<input type="text" @bind-value="@message"/> Comunicación bidireccional con la variable.
+<input type="text" @bind-value="@message1" />
+<br/>
+<input type="text" @bind-value="@message2" />
+<br/>
+<input type="button" value="Haga clic aqui" @onclick="ChangeText" />
+<div>
+    <p>Mensaje 1: @messageInp1</p>
+    <p>Mensaje 2: @messageInp2</p>
+</div>
+
+@code{
+    string message1 = "Un contenido A";
+    string message2 = "Un contenido B";
+    string messageInp1 = "";
+    string messageInp2 = "";
+    private void ChangeText()
+    {
+        messageInp1 = message1;
+        messageInp2 = message2;
+    }
+}
