@@ -3,3 +3,17 @@ El framework .net 2.0 (2005) fue un inició casi desde cero, convirtiéndose en 
 Con .net Core 1.0 (2016) se logró evolucionar el framework a uno multiplataforma (varios S.0.), el framework .net core 3.1 (2019) sera modificado a un framework universal llamado .net 5 (2020).
 Con blazor podemos trabajar del lado del cliente sin necesidad de conectarse al servidor, similar a lo que hace javascript.
 Con blazor se hace un proceso mas rápido, mejora la experiencia de usuario y en el desarrollo.
+Blazor Server y  WebAssembly(Blazor Client Server).
+En Blazor Server se comunica el cliente con el servidor para realizar las peticiones mientras que en WebAssembly todo se maneja del lado del cliente.
+Blazor Server se basa en Signal R el cual usa websockets para trabajar información en tiempo real, proporcionando compatibilidad para hospedar componentes de Razor en el servidor en una aplicación ASP.NET Core.
+https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-3.1
+Dependencias: Estructuras de código y librerías para utilizar en nuestra aplicación, se divide en analizadores y frameworks.
+Las propiedades son los settings generales que utiliza nuestra aplicación, se dice sobre que puerto trabajará bajo que dirección y con que herramienta se ejecutará.
+En la carpeta Data es donde se realiza el llamado a los datos de nuestra aplicación para posteriormente cargarlos.
+En pages viene como se veran las páginas en cuanto a su parte visual (html).
+Host es la página principal sobre la cual se monta toda la estructura.
+En el import se cargan todos los espacios de nombre necesarios a la aplicación.
+En shared se cargan las plantillas a usar.
+Program es un archivo en .net en donde se indica cual es la estructura de inicio, por default es Startup (archivo de configuración).
+En Startup se dice toda la configuración para arrancar, carga RazorPages, ServerSideBlazor y Singleton.
+En wwwroot se llaman todos los estilos (css).
