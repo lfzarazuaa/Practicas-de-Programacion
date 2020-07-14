@@ -1,0 +1,25 @@
+﻿<input type="text" @bind-value="@message" />
+<input type="text" @bind-value="@text" />
+<input type="button" value="Haga clic aqui" @onclick="ChangeText" />
+@*//Boton con evento.*@
+<div>
+    <p>@message</p>
+</div>
+
+@code{
+    [Parameter]
+    public string Message { get; set; } //Parámetro por defecto público para poder ingresar datos con una misma estructura.
+
+    string message = "Un contenido";//Mensaje a mostrar.
+    string text;//Mensaje para editar.
+
+    protected override async Task OnInitializedAsync() //El mensaje inicia justo cuando está cargando la información.
+    {
+        message = Message;//Se actualiza el mensaje cuando se crea el componente.
+    }
+
+    private void ChangeText()
+    {
+        message = text;//Actualiza el valor del mensaje a mostrar en el evento.
+    }
+}

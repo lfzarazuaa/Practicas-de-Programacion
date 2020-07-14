@@ -61,3 +61,64 @@ protected override async Task OnInitializedAsync() //Transfiere el parámetro ju
 {
     message = Message;//Se actualiza el mensaje cuando se crea el componente.
 }
+Arquitectura: Tiene que ver con todas las características generales del programa, bases que va a tener, librerías, etc.
+Patron de diseño: Como se van a almacenar las cosas internamente.
+Algunos patrones de diseño son mvc y singleton.
+Para la Arquitectura se usará una capa transversal llamada Entidades que se puede comunicar con caulquier otra capa.
+Con Entity framework nos vamos a poder conectar con la base de datos de una manera organizada y estructurada.
+Con Codefix vamos a poder organizar toda la base de datos desde código.
+Para tener un programa se debe considerar primero el esquema de la base de datos.
+Al agregar una biblioteca de clases (class library) se debe verificar que se use el framework adecuado (.net core) y el lenguaje usado c#.
+En la biblioteca de clases al momento de agregar una nueva clase se debe tener cuidado que estan sean públicas para que puedan ser accedidas posteriormente.
+Con la palabra reservada [Key] (using System.ComponentModel.DataAnnotations) se hace referencia a que la propiedad será la llave primaria en la base de datos.
+[StringLength(50)] Data Annotation que indica que la cadena será de 50 carácteres de longitud.
+[Required] Indica que esa propiedad va a ser obligatoria al momento de ingresarla en la base de datos.
+public string CategoryId { get; set; }
+https://docs.microsoft.com/es-es/dotnet/api/system.componentmodel.dataannotations?view=netcore-3.1
+Para relacionar una entidad en Core Entity se sugiere crear la lista donde se guarden todos los objetos contenidos, ademas que en la clase donde se tiene el Id a llamar tambien se tenga el objeto al que está haciendo referencia.
+Para trabajar con EntityCore se debe instalar la dependencia en la parte de dependencias y administrar paquetes Nuget, ahi se buca EntityFrameworkCore y se instala la ultima versión estabale.
+Para usar EntityFrameworkCore se usa la herencia en la clase: 
+public class InventoryContext:DbContext
+Para sincronizar dos proyectos distintos se debe dar clic en dependencias, agregar referencia y elegir el proyecto al cual se quiere referenciar.
+public class InventoryContext:DbContext //Extiende de la clase DbContext.
+{
+    public DbSet<ProductEntity> Products { get; set; }//Tabla de productos.
+}
+Para la conexión con la base de datos (cadena de conexión a la db) se usa el método OnConfiguring.
+Para usar sqlserver se necesita instalar la libreria EntityFrameworkCore.Sqlserver
+protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            if (!options.IsConfigured)//Si no hay una conexión establecida.
+            {
+                options.UseSqlServer("Server=SQLEXPRESS; Database=InventoryDb; UserId=sa; Password=letmein;");
+            }
+        }
+Para construir nuestra base de datos desde código se da clic en search, se digita package manager console (Consola del administrador de paquetes), desde aqui también se pueden instalar paquetes.
+Para crear el proyecto de migración se digita en consola "add-migration FirstMigration", para el cual se debe agregar otro paquete "EntityFrameworkCore.Tools", la cual contiene toda la herramienta de migración.
+Al volver a ejecutar el comando "add-migration FirstMigration" ahora nos dice que hay un error ya que no está llamando al proyecto adecuado, para esto se debe convertir al proyecto DataAccess como el proyecto de inicio (clic derecho y establecer como proyecto de inicio).
+En la consola del administrador de comandos en la parte superior se debe seleccionar DataAccess y al ejecutar el comando se creara la carpeta migraciones la cual contiene todo el código para generar las tablas y administrar la base de datos.
+Para remover las migraciones creadas hasta el momento se debe usar Remove-Migration.
+Con la migración aun no se tiene construida la base de datos pero ya se cuenta con el código para crearla y manejarla.
+Con la migración aun no se tiene construida la base de datos pero ya se cuenta con el código para crearla y manejarla.
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);//Ejecuta lo que ya se tenía definido previamente para OnModelCreating.
+
+            //Si no hay datos en la tabla CategoryEntity inserta los datos ingresados (default).
+            modelBuilder.Entity<CategoryEntity>().HasData(
+                new CategoryEntity {CategoryId="ASH", CategoryName="Aseo Hogar"},//Catergoria de Aseo Personal.
+                new CategoryEntity {CategoryId="ASP", CategoryName="Aseo Personal"},
+                new CategoryEntity {CategoryId="HGR", CategoryName="Hogar"},
+                new CategoryEntity {CategoryId="PRF", CategoryName="Perfumería"},
+                new CategoryEntity {CategoryId="SLD", CategoryName="Salud"},
+                new CategoryEntity {CategoryId="VDJ", CategoryName="Video Juegos"}
+                );
+            //Si no hay datos en la tabla WarehouseEntity inserta los datos ingresados (default).
+            modelBuilder.Entity<WarehouseEntity>().HasData(
+                new WarehouseEntity {WarehouseId=Guid.NewGuid().ToString(), WarehouseName="Bodega Cental", WarehouseAddress="Calle 8 con 23"},
+                new WarehouseEntity {WarehouseId=Guid.NewGuid().ToString(), WarehouseName="Bodega Norte", WarehouseAddress="Calle norte con occidente"},
+                new WarehouseEntity {WarehouseId=Guid.NewGuid().ToString(), WarehouseName="Bodega Cental", WarehouseAddress="Calle 8 con 23"}
+                );
+        }
+En la consola del administrador de paquetes se ejecuta update-database para crear la base de datos con las tablas propuestas, para ver los cambios se debe dar refresh en el administrador de bases de datos.
+Para cargar los datos se debe ejecutar "add-migration AddData" en la consola del administrador de paquetes y posteriormente ejecutar update-database. 

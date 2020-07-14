@@ -5,7 +5,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Inventary
+namespace Inventory
 {
     #line hidden
     using System;
@@ -79,6 +79,13 @@ using Inventary.Shared;
 #nullable restore
 #line 10 "C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\Blazor\Inventary\Inventary\_Imports.razor"
 using Inventary.Components.Ejercicios.BlazorPages;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\lfzar\Documents\Luis Fernando Zarazua Aguilar\git\Practicas-de-Programacion\Programacion_C#\Blazor\Inventary\Inventary\_Imports.razor"
+using Inventary.Components.Ejercicios.Forms;
 
 #line default
 #line hidden

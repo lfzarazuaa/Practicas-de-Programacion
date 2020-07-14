@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29505.145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory", "Inventory\Inventory.csproj", "{B90CE2E6-5029-47F3-B681-7728DB918A60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{B85635AC-38F2-4FD9-9468-B4B390CE4340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{856E73A2-1B99-41FF-A858-10B8D4B1BF57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B90CE2E6-5029-47F3-B681-7728DB918A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90CE2E6-5029-47F3-B681-7728DB918A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90CE2E6-5029-47F3-B681-7728DB918A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90CE2E6-5029-47F3-B681-7728DB918A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B85635AC-38F2-4FD9-9468-B4B390CE4340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B85635AC-38F2-4FD9-9468-B4B390CE4340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B85635AC-38F2-4FD9-9468-B4B390CE4340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B85635AC-38F2-4FD9-9468-B4B390CE4340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{856E73A2-1B99-41FF-A858-10B8D4B1BF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856E73A2-1B99-41FF-A858-10B8D4B1BF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856E73A2-1B99-41FF-A858-10B8D4B1BF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856E73A2-1B99-41FF-A858-10B8D4B1BF57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B77A26A8-F80D-4C0D-9336-2BDE3BF689C5}
+	EndGlobalSection
+EndGlobal
