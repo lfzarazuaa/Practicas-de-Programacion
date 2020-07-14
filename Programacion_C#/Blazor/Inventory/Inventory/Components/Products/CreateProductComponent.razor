@@ -1,0 +1,44 @@
+﻿@using Entities @* Usar la capa entidades *@
+@using Business
+<div>
+    <EditForm Model="oProduct">
+        <div class="form-group">
+            <label>Referencia:</label>
+            <InputText @bind-Value="oProduct.ProductId" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Nombre del producto:</label>
+            <InputText @bind-Value="oProduct.ProductName" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Descripción:</label>
+            <InputText @bind-Value="oProduct.ProductDescription" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Categoría:</label>
+            <InputSelect @bind-Value="oProduct.CategoryId" class="form-control">
+                @foreach(var category in categories)
+                {
+                    <option value="@category.CategoryId">@category.CategoryName</option>
+                }
+            </InputSelect>
+        </div>
+
+        <input type="button" value="Agregar Producto" @onclick="SaveProduct" />
+    </EditForm>
+</div>
+
+@code {
+    ProductEntity oProduct = new ProductEntity();//Crea el objeto para entidad de producto.
+    List<CategoryEntity> categories = new List<CategoryEntity>();//Crea objeto para guardar la lista de las categorias existentes.
+    
+    protected override async Task OnInitializedAsync()//Cuando se inicializo el componente.
+    {
+        categories = Business_Category.CategoryList();//Leer todas las categorias para mostrarlas en lista.
+    }
+
+    private void SaveProduct()
+    {
+        Business_Product.CreateProduct(oProduct);//Llamada al método estático de guardar producto para no tener que instanciarlo.
+    }
+}

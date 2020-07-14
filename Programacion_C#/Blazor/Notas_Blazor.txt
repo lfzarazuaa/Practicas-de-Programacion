@@ -122,3 +122,88 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         }
 En la consola del administrador de paquetes se ejecuta update-database para crear la base de datos con las tablas propuestas, para ver los cambios se debe dar refresh en el administrador de bases de datos.
 Para cargar los datos se debe ejecutar "add-migration AddData" en la consola del administrador de paquetes y posteriormente ejecutar update-database. 
+La capa de negocio es la encargada de crear las consultas específicas para intercambiar la información de la base de datos y los formularios.
+Para la capa de negocio se crea un nuevo proyecto como biblioteca de clases.
+En la capa de negocios de debe agregar una referencia hacia la capa de entidades y otra hacia la capa de Acceso a Datos.
+En la capa de inventory se debe agregar una referencia hacia la capa de negocio y entidades.
+Con las referencias asi se tiene toda la relación entre las distintas capas de la aplicación.
+Para crear el componente para agregar a la base de datos se debe recomienda crear una carpeta de componentes en inventory con cada una de las tablas a usar y como identificador usar component para distinguirlo de una vista.
+Se debe modificar _Imports.razor con @using Inventory.Components.Products
+@using Entities @* Usar la capa entidades *@
+@using Business
+<div>
+    <EditForm Model="oProduct">
+        <div class="form-group">
+            <label>Referencia:</label>
+            <InputText @bind-Value="oProduct.ProductId" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Nombre del producto:</label>
+            <InputText @bind-Value="oProduct.ProductName" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Descripción:</label>
+            <InputText @bind-Value="oProduct.ProductDescription" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Categoría:</label>
+            <InputSelect @bind-Value="oProduct.CategoryId" class="form-control">
+                @foreach(var category in categories)
+                {
+                    <option value="@category.CategoryId">@category.CategoryName</option>
+                }
+            </InputSelect>
+        </div>
+
+        <input type="button" value="Agregar Producto" @onclick="SaveProduct" />
+    </EditForm>
+</div>
+
+@code {
+    ProductEntity oProduct = new ProductEntity();//Crea el objeto para entidad de producto.
+    List<CategoryEntity> categories = new List<CategoryEntity>();//Crea objeto para guardar la lista de las categorias existentes.
+    
+    protected override async Task OnInitializedAsync()//Cuando se inicializo el componente.
+    {
+        categories = Business_Category.CategoryList();//Leer todas las categorias para mostrarlas en lista.
+    }
+
+    private void SaveProduct()
+    {
+        Business_Product.CreateProduct(oProduct);//Llamada al método estático de guardar producto para no tener que instanciarlo.
+    }
+}
+//Listar los datos.
+@using Entities
+@using Business
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Referencia</th>
+            <th>Nombre producto</th>
+            <th>Descripción del producto.</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var product in products)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.ProductDescription</td>
+                <td>@product.CategoryId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    List<ProductEntity> products = new List<ProductEntity>();//Inicializar listado de productos.
+
+    protected override async Task OnInitializedAsync()//Cuando se cargen los elementos
+    {
+        products = Business_Product.ProductList();//Actualiza los valores de los productos.
+    }
+}
