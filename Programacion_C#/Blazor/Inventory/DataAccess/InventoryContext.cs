@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,20 @@ namespace DataAccess
 {
     public class InventoryContext:DbContext //Extiende de la clase DbContext.
     {
+        public InventoryContext()
+        {
+
+        }
+
+        public InventoryContext(string connection)
+        {
+            Connection = connection;
+        }
+        //public InventoryContext(DbContextOptions<InventoryContext> options) : base(options)
+        //{
+
+        //}
+        public static string Connection { get; set; }
         public DbSet<ProductEntity> Products { get; set; }//Tabla de productos.
         public DbSet<CategoryEntity> Categories { get; set; }
         public DbSet<InputOutputEntity> InputOutputs { get; set; }
@@ -17,7 +32,7 @@ namespace DataAccess
         {
             if (!options.IsConfigured)//Si no hay una conexión establecida.
             {
-                options.UseSqlServer("Server=DESKTOP-UORMO40\\SQLEXPRESS; Database=InventoryDb; User Id=sa; Password=letmein;");//Configura la cadena de conexión.
+                options.UseSqlServer(Connection);
             }
         }
 

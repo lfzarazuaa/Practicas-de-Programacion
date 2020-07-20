@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Inventory.Data;
+using DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace Inventory
 {
@@ -29,6 +31,12 @@ namespace Inventory
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            string connString = ConfigurationExtensions
+                    .GetConnectionString(this.Configuration,
+                    "DefaultConnectionString");
+
+            using var db = new InventoryContext(connString);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

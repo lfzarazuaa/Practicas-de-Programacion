@@ -1,6 +1,6 @@
 .Net framework comenzó con su versión 1.0 (2002) y evolucionó a la versión 1.1(2003) sin embargo no fue lo que se esperaba.
 El framework .net 2.0 (2005) fue un inició casi desde cero, convirtiéndose en el núcleo hasta el framework 4.8 donde aun no era multiplataforma.
-Con .net Core 1.0 (2016) se logró evolucionar el framework a uno multiplataforma (varios S.0.), el framework .net core 3.1 (2019) sera modificado a un framework universal llamado .net 5 (2020).
+Con .net Core 1.0 (2016) se logró evolucionar el framework a uno multiplataforma (varios S.0.), el framework .net core 3.1 (2019) será modificado a un framework universal llamado .net 5 (2020).
 Con blazor podemos trabajar del lado del cliente sin necesidad de conectarse al servidor, similar a lo que hace javascript.
 Con blazor se hace un proceso mas rápido, mejora la experiencia de usuario y en el desarrollo.
 Blazor Server y  WebAssembly(Blazor Client Server).
@@ -76,7 +76,7 @@ Con la palabra reservada [Key] (using System.ComponentModel.DataAnnotations) se 
 public string CategoryId { get; set; }
 https://docs.microsoft.com/es-es/dotnet/api/system.componentmodel.dataannotations?view=netcore-3.1
 Para relacionar una entidad en Core Entity se sugiere crear la lista donde se guarden todos los objetos contenidos, ademas que en la clase donde se tiene el Id a llamar tambien se tenga el objeto al que está haciendo referencia.
-Para trabajar con EntityCore se debe instalar la dependencia en la parte de dependencias y administrar paquetes Nuget, ahi se buca EntityFrameworkCore y se instala la ultima versión estabale.
+Para trabajar con EntityCore se debe instalar la dependencia en la parte de dependencias y administrar paquetes Nuget, ahi se busca EntityFrameworkCore y se instala la ultima versión estabale.
 Para usar EntityFrameworkCore se usa la herencia en la clase: 
 public class InventoryContext:DbContext
 Para sincronizar dos proyectos distintos se debe dar clic en dependencias, agregar referencia y elegir el proyecto al cual se quiere referenciar.
@@ -98,7 +98,6 @@ Para crear el proyecto de migración se digita en consola "add-migration FirstMi
 Al volver a ejecutar el comando "add-migration FirstMigration" ahora nos dice que hay un error ya que no está llamando al proyecto adecuado, para esto se debe convertir al proyecto DataAccess como el proyecto de inicio (clic derecho y establecer como proyecto de inicio).
 En la consola del administrador de comandos en la parte superior se debe seleccionar DataAccess y al ejecutar el comando se creara la carpeta migraciones la cual contiene todo el código para generar las tablas y administrar la base de datos.
 Para remover las migraciones creadas hasta el momento se debe usar Remove-Migration.
-Con la migración aun no se tiene construida la base de datos pero ya se cuenta con el código para crearla y manejarla.
 Con la migración aun no se tiene construida la base de datos pero ya se cuenta con el código para crearla y manejarla.
 protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -242,3 +241,10 @@ public static List<StorageEntity> StoragesProductsByWarehouse(string idWarehouse
         <option value="@storage.StorageId">@storage.Product.ProductName</option>
     }
 </InputSelect>
+
+Para publicar la página web se debe primeramente cambiar la cadena de conexión de la base de datos de una local a una alojada en la web como sql azure.
+https://www.youtube.com/watch?v=NfETGeQ-GHY
+Posteriormente se debe registrar una cuenta en ms azure para poder publicar el sitio web.
+Una vez registrado se debe seleccionar en publicar en Inventory y de allí pasar a la configuración avanzada del proyecto se debe seleccionar release y marco de trabajo, se acepta el perfil y se procede al siguiente paso.
+En el siguiente paso se le asigna un nombre al sitio y se configura el plan que se quiera seleccionar conforme a su costo y prestaciones.
+Posteriormente se genera el sitio y se aloja en la web, para publicarlo se da clic en deploy o publicar en la ventana que aparece al cargar la página.
