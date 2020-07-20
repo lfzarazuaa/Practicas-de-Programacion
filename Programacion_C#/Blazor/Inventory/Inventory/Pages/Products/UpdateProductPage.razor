@@ -1,0 +1,13 @@
+﻿@page "/product/update/{IdProduct}"
+
+<UpdateProductComponent IdProduct="@IdProduct"></UpdateProductComponent> @* Pasa como parámetro el Identificador del producto que viene desde el link. *@
+
+@code{
+    [Parameter]
+    public string IdProduct { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        IdProduct = IdProduct;
+    }
+}

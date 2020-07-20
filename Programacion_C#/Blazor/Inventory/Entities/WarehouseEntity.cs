@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities
 {
-    public class WarehouseEntity
+    public class WarehouseEntity : ICloneable
     {
         [Key]
         [StringLength(50)]
@@ -17,5 +17,10 @@ namespace Entities
         [StringLength(100)]
         public string WarehouseAddress { get; set; }
         public ICollection<StorageEntity> Storages { get; set; } //Lista con todos los almacenes existentes.
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

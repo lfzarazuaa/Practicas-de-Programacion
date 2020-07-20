@@ -1,0 +1,13 @@
+﻿@page "/category/update/{IdCategory}"
+
+<UpdateCategoryComponent IdCategory="@IdCategory"></UpdateCategoryComponent> @* Pasa como parámetro el Identificador de la categoría que viene desde la url. *@
+
+@code{
+    [Parameter]
+    public string IdCategory { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        IdCategory = IdCategory;
+    }
+}

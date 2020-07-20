@@ -1,0 +1,70 @@
+﻿@using Entities
+@using Business
+
+<div>
+    <div class="form-group">
+        <label> Seleccionar Bodega:</label>
+        <select class="form-control" @onchange="OnChangedWarehouse">
+            <option value="@defaultWarehouse">Todas las bodegas.</option>
+            @foreach (var warehouse in warehouses)
+            {
+                <option value="@warehouse.WarehouseId">@warehouse.WarehouseName</option>
+            }
+        </select>
+    </div>
+    <hr />
+    <div class="form-group">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Referencia</th>
+                    <th>Bodega</th>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Cantidad en Bodega</th>
+                    <th>Cantidad Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var storage in storages)
+                {
+                    <tr>
+                        <td>@storage.StorageId</td>
+                        <td>@storage.Warehouse.WarehouseName.</td>
+                        <td>@storage.Product.ProductName</td>
+                        <td>@storage.Product.Category.CategoryName</td>
+                        <td>@storage.PartialQuantity</td>
+                        <td>@storage.Product.TotalQuantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    List<WarehouseEntity> warehouses = new List<WarehouseEntity>();
+    List<StorageEntity> storages = new List<StorageEntity>();
+
+    const string defaultWarehouse = "def1";
+    string idWarehouse = defaultWarehouse;
+
+    protected override async Task OnInitializedAsync()//Cuando se inicializó el componente.
+    {
+        warehouses = Business_Warehouse.WarehouseList();
+        storages = Business_Storage.StorageList();
+    }
+
+    private void OnChangedWarehouse(ChangeEventArgs eventArgs)
+    {
+        idWarehouse = eventArgs.Value.ToString();//Obtiene el id seleccionado.
+        if (idWarehouse != defaultWarehouse)
+        {
+            storages = Business_Storage.StoragesProductsByWarehouse(idWarehouse);
+        }
+        else
+        {
+            storages = Business_Storage.StorageList();
+        }
+    }
+}

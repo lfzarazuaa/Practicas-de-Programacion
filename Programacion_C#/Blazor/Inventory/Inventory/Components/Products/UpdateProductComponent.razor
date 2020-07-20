@@ -1,0 +1,53 @@
+﻿@using Entities
+@using Business
+
+@inject NavigationManager NavManager
+
+    <EditForm Model="oProduct">
+        <div class="form-group">
+            <label>Nombre del producto:</label>
+            <InputText class="form-control" @bind-Value="oProduct.ProductName"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Descripción:</label>
+            <InputTextArea @bind-Value="oProduct.ProductDescription" class="form-control"></InputTextArea>
+        </div>
+        <div class="form-group">
+            <label>Categoría:</label>
+            <InputSelect @bind-Value="oProduct.CategoryId" class="form-control">
+                @foreach (var category in categories)
+                {
+                    <option value="@category.CategoryId">@category.CategoryName</option>
+                }
+            </InputSelect>
+        </div>
+
+        <input type="button" value="Actualizar Producto" @onclick="UpdateProduct" />
+
+        <ErrorMessageComponent ErrorMessages="@errorMessages"></ErrorMessageComponent>
+    </EditForm>
+
+@code {
+    [Parameter]
+    public string IdProduct { get; set; }
+
+    ProductEntity oProduct = new ProductEntity();
+    List<CategoryEntity> categories = new List<CategoryEntity>();
+    Business_Response errorMessages = new Business_Response();//Crea objeto para guardar los mensajes de error al capturar la información.
+
+    protected override async Task OnInitializedAsync()
+    {
+        categories = Business_Category.CategoryList();
+        oProduct = Business_Product.ProductById(IdProduct);
+    }
+
+    private void UpdateProduct()
+    {
+        errorMessages = Business_Product.ValidateUpdateProduct(oProduct);//Validar si el producto cumple con los requisitos para ser creado.
+        if (!errorMessages.Error)//Si hubo algun error actualiza los mensajes.
+        {
+            Business_Product.UpdateProduct(oProduct);//Llamada al método estático de guardar producto para no tener que instanciarlo.
+            NavManager.NavigateTo("product/list");
+        }
+    }
+}

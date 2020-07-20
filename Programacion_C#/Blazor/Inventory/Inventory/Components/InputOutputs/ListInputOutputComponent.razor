@@ -1,0 +1,70 @@
+﻿@using Entities
+@using Business
+
+    <div>
+        <div class="form-group">
+            <label> Seleccionar Bodega:</label>
+            <select class="form-control" @onchange="OnChangedWarehouse">
+                <option value="@defaultWarehouse">Todas las bodegas.</option>
+                @foreach (var warehouse in warehouses)
+                {
+                    <option value="@warehouse.WarehouseId">@warehouse.WarehouseName</option>
+                }
+            </select>
+        </div>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Bodega</th>
+                    <th>Producto</th>
+                    <th>Estado</th>
+                    <th>Cantidad Operación</th>
+                    <th>Fecha</th>
+                    <th>Cantidad en Bodega</th>
+                    <th>Cantidad en Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var inputOutput in inputOutputs)
+                {
+                <tr>
+                    <td>@inputOutput.Storage.Warehouse.WarehouseName</td>
+                    <td>@inputOutput.Storage.Product.ProductName</td>
+                    <td>@(inputOutput.IsInput?"Entrada":"Salida")</td>
+                    <td>@inputOutput.Quantity</td>
+                    <td>@inputOutput.InputOutputDate.ToString()</td>
+                    <td>@inputOutput.Storage.PartialQuantity</td>
+                    <td>@inputOutput.Storage.Product.TotalQuantity.</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+
+@code {
+    List<InputOutputEntity> inputOutputs = new List<InputOutputEntity>();//Inicializar listado de entradas y salidas.
+    List<WarehouseEntity> warehouses = new List<WarehouseEntity>();
+
+    const string defaultWarehouse = "def1";
+    string idWarehouse = defaultWarehouse;
+
+    protected override async Task OnInitializedAsync()//Cuando se cargen los elementos.
+    {
+        inputOutputs = Business_InputOutput.InputOutputList();//Actualiza los valores de las entradas y salidas.
+        warehouses = Business_Warehouse.WarehouseList();
+    }
+
+    private void OnChangedWarehouse(ChangeEventArgs eventArgs)
+    {
+        idWarehouse = eventArgs.Value.ToString();//Obtiene el id seleccionado.
+        if (idWarehouse != defaultWarehouse)
+        {
+            inputOutputs = Business_InputOutput.InputOutputsByWarehouse(idWarehouse);
+        }
+        else
+        {
+            inputOutputs = Business_InputOutput.InputOutputList();
+        }
+    }
+}

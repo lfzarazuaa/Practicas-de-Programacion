@@ -1,0 +1,35 @@
+﻿@using Entities @* Usar la capa entidades *@
+@using Business
+
+@inject NavigationManager NavManager
+
+    <div>
+        <EditForm Model="oCategory">
+            <div class="form-group">
+                <label>Referencia:</label>
+                <InputText @bind-Value="oCategory.CategoryId" class="form-control"></InputText>
+            </div>
+            <div class="form-group">
+                <label>Nombre de la categoría:</label>
+                <InputText @bind-Value="oCategory.CategoryName" class="form-control"></InputText>
+            </div>
+            <input type="button" value="Agregar categoría" @onclick="SaveCategory" />
+        </EditForm>
+
+        <ErrorMessageComponent ErrorMessages="@errorMessages"></ErrorMessageComponent>
+    </div>
+
+@code {
+    CategoryEntity oCategory = new CategoryEntity();//Crea el objeto para entidad de categoría.
+    Business_Response errorMessages = new Business_Response();//Crea objeto para guardar los mensajes de error al capturar la información.
+
+    private void SaveCategory()
+    {
+        errorMessages = Business_Category.ValidateCreateCategory(oCategory);//Validar si el producto cumple con los requisitos para ser creado.
+        if (!errorMessages.Error)//Si hubo algun error actualiza los mensajes.
+        {
+            Business_Category.CreateCategory(oCategory);//Llamada al método estático de guardar categoría para no tener que instanciarlo.
+            NavManager.NavigateTo("category/list");
+        }
+    }
+}

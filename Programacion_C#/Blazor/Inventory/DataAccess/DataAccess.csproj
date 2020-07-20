@@ -1,8 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200719181214_FirstMigration.cs" />
+    <Compile Remove="Migrations\20200719181214_FirstMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200719181418_FirstMigration.cs" />
+    <Compile Remove="Migrations\20200719181418_FirstMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200719185846_AddData.cs" />
+    <Compile Remove="Migrations\20200719185846_AddData.Designer.cs" />
+    <Compile Remove="Migrations\20200719190346_AddData.cs" />
+    <Compile Remove="Migrations\20200719190346_AddData.Designer.cs" />
+    <Compile Remove="Migrations\20200719191003_MyFirstMigration.cs" />
+    <Compile Remove="Migrations\20200719191003_MyFirstMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200719191020_AddData.cs" />
+    <Compile Remove="Migrations\20200719191020_AddData.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />

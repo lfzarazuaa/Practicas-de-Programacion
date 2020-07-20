@@ -1,33 +1,69 @@
 ﻿@using Entities
 @using Business
 
+<hr />
+
+<select class="form-control" @onchange="CategoryChanged">
+    <option value="n">Ver Todos los Productos</option>
+    @foreach (var category in categories)
+    {
+        <option value="@category.CategoryId">@category.CategoryName</option>
+    }
+</select>
+
+<hr />
+
 <table class="table table-hover table-bordered">
     <thead>
         <tr>
             <th>Referencia</th>
             <th>Nombre producto</th>
             <th>Descripción del producto.</th>
-            <th>Categoria</th>
+            <th>Categoría</th>
+            <th>Cantidad</th>
+            <th>Modificar</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var product in products)
+        @foreach(var product in tempProducts)
         {
-            <tr>
-                <td>@product.ProductId</td>
-                <td>@product.ProductName</td>
-                <td>@product.ProductDescription</td>
-                <td>@product.CategoryId</td>
-            </tr>
+        <tr>
+            <td>@product.ProductId</td>
+            <td>@product.ProductName</td>
+            <td>@product.ProductDescription</td>
+            <td>@product.Category.CategoryName</td>
+            <td>@product.TotalQuantity</td>
+            <th><a href="/product/update/@product.ProductId">Editar</a></th>
+        </tr>
         }
     </tbody>
 </table>
 
 @code {
     List<ProductEntity> products = new List<ProductEntity>();//Inicializar listado de productos.
+    List<ProductEntity> tempProducts = new List<ProductEntity>();//Inicializar listado de productos.
+    List<CategoryEntity> categories = new List<CategoryEntity>();//Inicializar listado de categorías.
+
+    //string message;
 
     protected override async Task OnInitializedAsync()//Cuando se cargen los elementos
     {
-        products = Business_Product.ProductList();//Actualiza los valores de los productos.
+        products = Business_Product.ProductList();//Actualiza los valores de los productos en el objeto conforme a la base de datos.
+        tempProducts = products;
+        categories = Business_Category.CategoryList();//Actualiza los valores de los productos en el objeto conforme a la base de datos.
+    }
+
+    private void CategoryChanged(ChangeEventArgs e)
+    {
+        var id = e.Value.ToString();//Mensaje de prueba para ver que la categoría sea correcta.
+        
+        if (id != "n")
+        {
+            tempProducts= products.Where(c => c.CategoryId == e.Value.ToString()).ToList();//Filtra los productos por categoría.
+        }
+        else
+        {
+            tempProducts = products;
+        }        
     }
 }

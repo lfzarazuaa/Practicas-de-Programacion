@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(InventoryContext))]
-    [Migration("20200713202756_AddData")]
-    partial class AddData
+    [Migration("20200719195130_MySecondMigration")]
+    partial class MySecondMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,11 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
+                            CategoryId = "AOL",
+                            CategoryName = "Alimentos de origen animal"
+                        },
+                        new
+                        {
                             CategoryId = "ASH",
                             CategoryName = "Aseo Hogar"
                         },
@@ -46,6 +51,16 @@ namespace DataAccess.Migrations
                         {
                             CategoryId = "ASP",
                             CategoryName = "Aseo Personal"
+                        },
+                        new
+                        {
+                            CategoryId = "MVL",
+                            CategoryName = "Equipo de computo móvil"
+                        },
+                        new
+                        {
+                            CategoryId = "BNC",
+                            CategoryName = "Bancos de piezas"
                         },
                         new
                         {
@@ -71,11 +86,11 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entities.InputOutputEntity", b =>
                 {
-                    b.Property<string>("InOutId")
+                    b.Property<string>("InputOutputId")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime>("InOutDate")
+                    b.Property<DateTime>("InputOutputDate")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsInput")
@@ -87,7 +102,7 @@ namespace DataAccess.Migrations
                     b.Property<string>("StorageId")
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("InOutId");
+                    b.HasKey("InputOutputId");
 
                     b.HasIndex("StorageId");
 
@@ -120,6 +135,88 @@ namespace DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = "CEP-1Y8091",
+                            CategoryId = "ASP",
+                            ProductDescription = "Un cepillo de dientes para enjuage bucal.",
+                            ProductName = "Cepillo de dientes",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "CRD-1283",
+                            CategoryId = "AOL",
+                            ProductDescription = "Carne de los cerdos del monte",
+                            ProductName = "Carne de cerdo",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "ESC-87067",
+                            CategoryId = "ASH",
+                            ProductDescription = "Escoba para el hogar",
+                            ProductName = "Escoba",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "JBN-123456",
+                            CategoryId = "ASP",
+                            ProductDescription = "Mi jabón Juanito para el aseo personal ok.",
+                            ProductName = "Jabón Juanito",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "JUV-51658",
+                            CategoryId = "HGR",
+                            ProductDescription = "Globo color naranja",
+                            ProductName = "Globo",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "KBJ-6789",
+                            CategoryId = "SLD",
+                            ProductDescription = "Vendaje para uso comercial",
+                            ProductName = "Venda",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "KSP-10348",
+                            CategoryId = "PRF",
+                            ProductDescription = "Perfume marca Jafre",
+                            ProductName = "Jafre",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "RRR-576894",
+                            CategoryId = "VDJ",
+                            ProductDescription = "Juego de estrategia naval",
+                            ProductName = "Game Of War",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "SND-1325",
+                            CategoryId = "HGR",
+                            ProductDescription = "Par de Sandalias Blazor",
+                            ProductName = "Sandalia",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "TBC-916313",
+                            CategoryId = "SLD",
+                            ProductDescription = "Medicamento efervescente",
+                            ProductName = "Tabcin",
+                            TotalQuantity = 0
+                        });
                 });
 
             modelBuilder.Entity("Entities.StorageEntity", b =>
@@ -172,21 +269,33 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            WarehouseId = "6742a54a-231c-44dc-819c-92c8f20e50e7",
+                            WarehouseId = "4f04af79-0c22-459f-9fc0-b607758becce",
                             WarehouseAddress = "Calle 8 con 23",
-                            WarehouseName = "Bodega Cental"
+                            WarehouseName = "Bodega Central"
                         },
                         new
                         {
-                            WarehouseId = "cc698609-4882-4160-b8d5-6480934aaad0",
+                            WarehouseId = "ba713f00-e2bc-457d-b20d-9203dfb771b0",
                             WarehouseAddress = "Calle norte con occidente",
                             WarehouseName = "Bodega Norte"
                         },
                         new
                         {
-                            WarehouseId = "4ab66adf-9210-48be-8c8b-cd3e739dd29f",
-                            WarehouseAddress = "Calle 8 con 23",
-                            WarehouseName = "Bodega Cental"
+                            WarehouseId = "259f9779-8342-4579-b08b-35a58470b143",
+                            WarehouseAddress = "Cerro de la estrella #455",
+                            WarehouseName = "Bodega del Este"
+                        },
+                        new
+                        {
+                            WarehouseId = "55e6567f-01a5-4507-ab20-2434f152c91e",
+                            WarehouseAddress = "Calle 5 con 48",
+                            WarehouseName = "Bodega del Oeste"
+                        },
+                        new
+                        {
+                            WarehouseId = "90f336e1-026a-494c-bc80-28eb9d991ca7",
+                            WarehouseAddress = "Miramontes #227",
+                            WarehouseName = "Eje Central de Abasto"
                         });
                 });
 

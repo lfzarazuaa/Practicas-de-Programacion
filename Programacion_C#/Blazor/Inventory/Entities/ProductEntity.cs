@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities
 {
-    public class ProductEntity
+    public class ProductEntity : ICloneable
     {
         [Key]
         [StringLength(10)]
@@ -19,6 +19,9 @@ namespace Entities
         public string CategoryId { get; set; } //Identificador de la categoria.
         public CategoryEntity Category { get; set; }//Objeto que contiene a la categoria.
         public ICollection<StorageEntity> Storages { get; set; }//Lista con todos los almacenes.
-
+        public virtual object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

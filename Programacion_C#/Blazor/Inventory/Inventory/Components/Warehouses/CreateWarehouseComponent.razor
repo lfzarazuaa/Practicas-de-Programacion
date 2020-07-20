@@ -1,0 +1,34 @@
+﻿@using Entities @* Usar la capa entidades *@
+@using Business
+
+@inject NavigationManager NavManager
+
+    <div>
+        <EditForm Model="oWarehouse">
+            <div class="form-group">
+                <label>Nombre de la bodega:</label>
+                <InputText @bind-Value="oWarehouse.WarehouseName" class="form-control"></InputText>
+            </div>
+            <div class="form-group">
+                <label>Dirección:</label>
+                <InputText @bind-Value="oWarehouse.WarehouseAddress" class="form-control"></InputText>
+            </div>
+            <input type="button" value="Agregar bodega" @onclick="SaveWarehouse" />
+        </EditForm>
+        <ErrorMessageComponent ErrorMessages="@errorMessages"></ErrorMessageComponent>
+    </div>
+
+@code {
+    WarehouseEntity oWarehouse = new WarehouseEntity();//Crea el objeto para entidad de bodega.
+    Business_Response errorMessages = new Business_Response();//Crea objeto para guardar los mensajes de error al capturar la información.
+
+    private void SaveWarehouse()
+    {
+        errorMessages = Business_Warehouse.ValidateCreateWarehouse(oWarehouse);//Validar si el producto cumple con los requisitos para ser creado.
+        if (!errorMessages.Error)//Si hubo algun error actualiza los mensajes.
+        {
+            Business_Warehouse.CreateWarehouse(oWarehouse);//Llamada al método estático de guardar bodega para no tener que instanciarlo.
+            NavManager.NavigateTo("warehouse/list");
+        }
+    }
+}

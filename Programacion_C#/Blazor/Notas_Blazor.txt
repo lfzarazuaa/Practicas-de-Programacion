@@ -122,6 +122,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         }
 En la consola del administrador de paquetes se ejecuta update-database para crear la base de datos con las tablas propuestas, para ver los cambios se debe dar refresh en el administrador de bases de datos.
 Para cargar los datos se debe ejecutar "add-migration AddData" en la consola del administrador de paquetes y posteriormente ejecutar update-database. 
+Para reiniciar la base de datos borrarla, ejecutar add-migration FirstMigration, add-migration AddData, update-database.
 La capa de negocio es la encargada de crear las consultas específicas para intercambiar la información de la base de datos y los formularios.
 Para la capa de negocio se crea un nuevo proyecto como biblioteca de clases.
 En la capa de negocios de debe agregar una referencia hacia la capa de entidades y otra hacia la capa de Acceso a Datos.
@@ -207,3 +208,37 @@ Se debe modificar _Imports.razor con @using Inventory.Components.Products
         products = Business_Product.ProductList();//Actualiza los valores de los productos.
     }
 }
+Para crear una página de navegación es recomendable ponerle el sufijo Page, ademas que no se recomienda incluir código razor sino llamarlo todo mediante componentes.
+@inject NavigationManager NavManager
+NavManager.NavigateTo("product/list"); //Permite redireccionar a un link mediante código razor.
+Guardar almacenamiento verificando que no se repita el producto registrado.
+oStorage.StorageId = $"{oStorage.WarehouseId}-{oStorage.ProductId}";//Asigna un identificador al almacenamiento.
+    if(Business_Storage.IsProductInWarehouse(oStorage.StorageId))
+    { //Si ya está registrado el producto en esa bodega no lo almacena nuevamente.
+        message = "El producto ya existe en la bodega.";
+    }
+    else{ //Almacena el producto en la bodega.
+        oStorage.LastUpdate = DateTime.Now;//Asigna la hora actual.
+        Business_Storage.CreateStorage(oStorage);//Guarda el objeto en la base de datos.
+        message = "Producto registrado exitosamente.";
+    }
+
+//Método para buscar por Id relacional sobre una tabla, guardando el objeto al que se llama por Id relacional.
+public static List<StorageEntity> StoragesProductsByWarehouse(string idWarehouse)
+    {
+        using var db = new InventoryContext(); //Ejecuta dispose (Limpiar memoria) cuando ya no se usa db. 
+        return db.Storages
+            .Include(s=> s.Product)//Objeto relacional Product.
+            .Include(s=> s.Warehouse)//Objeto relacional Warehouse.
+            .Where(s => s.WarehouseId == idWarehouse)//Sentencia Where para definir condiciones de búsqueda.
+            .ToList();
+    }
+
+// Seleccionar un Id relacional llamando a un segundo objeto relacional.
+<InputSelect @bind-Value="oInputOutput.StorageId" class="form-control">
+    <option value="">Seleccionar un producto.</option>
+    @foreach (var storage in storages)
+    {
+        <option value="@storage.StorageId">@storage.Product.ProductName</option>
+    }
+</InputSelect>

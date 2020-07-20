@@ -1,0 +1,112 @@
+﻿@using Entities
+@using Business
+
+@inject NavigationManager NavManager
+
+<div>
+    <EditForm Model="oStorage">
+        <div class="form-group">
+            <label> Producto:</label>
+            <InputSelect @bind-Value="oStorage.ProductId" class="form-control">
+                <option value="@defaultProduct">Seleccionar Producto.</option>
+                @foreach (var product in products)
+                {
+                    <option value="@product.ProductId">@product.ProductName</option>
+                }
+            </InputSelect>
+        </div>
+        <div class="form-group">
+            <label> Bodega:</label>
+            <select class="form-control" @onchange="OnChangedWarehouse">
+                <option value="@defaultWarehouse">Seleccionar Bodega.</option>
+                @foreach (var warehouse in warehouses)
+                {
+                    <option value="@warehouse.WarehouseId">@warehouse.WarehouseName</option>
+                }
+            </select>
+        </div>
+        <input type="button" value="Almacenar Producto." @onclick="SaveStorage" />
+    </EditForm>
+
+    <ErrorMessageComponent ErrorMessages="@errorMessages"></ErrorMessageComponent>
+
+    <hr />
+
+    <div class="form-group">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Referencia</th>
+                    <th>Bodega</th>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Cantidad en Bodega</th>
+                    <th>Cantidad Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var storage in storages)
+                {
+                    <tr>
+                        <td>@storage.StorageId</td>
+                        <td>@storage.Warehouse.WarehouseName.</td>
+                        <td>@storage.Product.ProductName</td>
+                        <td>@storage.Product.Category.CategoryName</td>
+                        <td>@storage.PartialQuantity</td>
+                        <td>@storage.Product.TotalQuantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+@code {
+    StorageEntity oStorage = new StorageEntity();
+    List<ProductEntity> products = new List<ProductEntity>();
+    List<WarehouseEntity> warehouses = new List<WarehouseEntity>();
+    List<StorageEntity> storages = new List<StorageEntity>();
+    Business_Response errorMessages = new Business_Response();
+    const string defaultProduct = "def0";
+    const string defaultWarehouse = "def1";
+    
+    string idWarehouse = defaultWarehouse;
+
+    protected override async Task OnInitializedAsync()//Cuando se inicializó el componente.
+    {
+        oStorage.WarehouseId = defaultWarehouse;
+        products = Business_Product.ProductList();
+        warehouses = Business_Warehouse.WarehouseList();
+        storages = Business_Storage.StorageList();
+    }
+
+    private void SaveStorage()
+    {
+        errorMessages = Business_Storage.ValidateCreateStorage(oStorage);//Validar si el almacenamiento cumple con los requisitos para ser creado.
+        if (!errorMessages.Error)//Si hubo algun error actualiza los mensajes.
+        {
+            Business_Storage.CreateStorage(oStorage);//Llamada al método estático de guardar almacenamiento para no tener que instanciarlo.
+            errorMessages.Error = true;
+            var product = Business_Product.ProductById(oStorage.ProductId);
+            var warehouse = Business_Warehouse.WarehouseById(oStorage.WarehouseId);
+            errorMessages.ErrorMessages.Add($"El Producto {product.ProductName} ha sido registrado existosamente en la bodega {warehouse.WarehouseName}");
+
+            storages = Business_Storage.StoragesProductsByWarehouse(oStorage.WarehouseId);
+            //NavManager.NavigateTo("storage/list");
+        }
+    }
+
+    private void OnChangedWarehouse(ChangeEventArgs eventArgs)
+    {
+        oStorage.WarehouseId = eventArgs.Value.ToString();//Obtiene el id seleccionado.
+        if (oStorage.WarehouseId != defaultWarehouse)
+        {
+            storages = Business_Storage.StoragesProductsByWarehouse(oStorage.WarehouseId);
+        }
+        else
+        {
+            storages = Business_Storage.StorageList();
+        }
+    }
+}

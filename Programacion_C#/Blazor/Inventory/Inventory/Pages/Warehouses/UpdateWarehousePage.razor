@@ -1,0 +1,13 @@
+﻿@page "/warehouse/update/{IdWarehouse}"
+
+<UpdateWarehouseComponent IdWarehouse="@IdWarehouse"></UpdateWarehouseComponent> @* Pasa como parámetro el Identificador de la bodega que viene desde la url. *@
+
+@code{
+    [Parameter]
+    public string IdWarehouse { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        IdWarehouse = IdWarehouse;
+    }
+}

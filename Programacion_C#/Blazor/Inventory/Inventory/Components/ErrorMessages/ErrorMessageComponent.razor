@@ -1,0 +1,19 @@
+﻿@using Business
+
+@if (ErrorMessages.Error)
+{
+    <hr />
+
+    <ul class="form-group">
+        @foreach (var errorMessage in ErrorMessages.ErrorMessages)
+        {
+            <li class="form-control">@errorMessage</li>
+        }
+    </ul>
+}
+
+@code {
+    [Parameter]
+    public Business_Response ErrorMessages { get; set; }//Crea objeto para guardar los mensajes de error al capturar la información.
+
+}

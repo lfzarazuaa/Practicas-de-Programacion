@@ -1,0 +1,113 @@
+﻿@using Entities @* Usar la capa entidades *@
+@using Business @* Usar la capa de negocio *@
+
+@inject NavigationManager NavManager
+
+<div class="form-group">
+    <select class="form-control" @onchange="OnChangedWarehouse">
+        <option value="@defaultWarehouse">Seleccione una bodega...</option>
+        @foreach (var warehouse in warehouses)
+        {
+            <option value="@warehouse.WarehouseId">@warehouse.WarehouseName</option>
+        }
+    </select>
+    <hr />
+    <EditForm Model="oInputOutput">
+        <div class="form-group">
+            <label>Nombre del producto:</label>
+            <InputSelect @bind-Value="oInputOutput.StorageId" class="form-control">
+                <option value="@defaultStorage">Seleccionar un producto.</option>
+                @foreach (var storage in storages)
+                {
+                    <option value="@storage.StorageId">@storage.Product.ProductName</option>
+                }
+            </InputSelect>
+        </div>
+        <div class="form-group">
+            <label>Escriba la cantidad:</label>
+            <InputNumber @bind-Value="oInputOutput.Quantity" class="form-control"></InputNumber>
+        </div>
+        <div class="form-group">
+            <label>¿Es una entrada?</label>
+            <InputCheckbox @bind-Value="oInputOutput.IsInput" class="form-control"></InputCheckbox>
+        </div>
+
+        <input class="form-control" type="button" value="@buttonMsg" @onclick="SaveInputOutput" />
+    </EditForm>
+    <ErrorMessageComponent ErrorMessages="@errorMessages"></ErrorMessageComponent>
+</div>
+
+@code {
+    InputOutputEntity oInputOutput = new InputOutputEntity();//Crea el objeto para entidad de entradas-salidas.
+
+    List<WarehouseEntity> warehouses = new List<WarehouseEntity>();//Lista para mostrar las distintas bodegas.
+    List<StorageEntity> storages = new List<StorageEntity>();//Lista para mostrar los productos de los almacenamientos conforme a la bodega seleccionada.
+
+    ProductEntity oProduct = new ProductEntity();
+    StorageEntity oStorage = new StorageEntity();//Variable del almacenamiento seleccionado.
+
+    Business_Response errorMessages = new Business_Response();
+
+    const string defaultWarehouse = "def0";
+    const string defaultStorage = "def1";
+
+    string idWarehouse = defaultWarehouse;
+
+    string buttonMsg => oInputOutput.IsInput ? "Registrar entrada" : "Registrar Salida";
+
+
+
+    string message = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        warehouses = Business_Warehouse.WarehouseList();//Cargar las bodegas registradas.
+    }
+
+    private void OnChangedWarehouse(ChangeEventArgs eventArgs)
+    {
+        idWarehouse = eventArgs.Value.ToString();//Obtiene el id de la bodega seleccionada.
+        storages = Business_Storage.StoragesProductsByWarehouse(idWarehouse);//Obtiene los almacenamientos pertenecientes a la bodega (para listar el producto de cada almacenamiento).
+    }
+
+    private void SaveInputOutput()
+    {
+        errorMessages = Business_InputOutput.ValidateCreateInputOutput(oInputOutput);//Validar si el almacenamiento cumple con los requisitos para ser creado.
+        if (!errorMessages.Error)//Si no habian mensajes de error realiza la operación.
+        {
+            oStorage = storages.LastOrDefault(s => s.StorageId == oInputOutput.StorageId);//Evita volver a leer desde la base de datos Business_Storage.StorageById(oInputOutput.StorageId);
+            oProduct = oStorage.Product;
+
+            string srt = oInputOutput.Quantity > 1 ? "es" : "";
+            oStorage.LastUpdate = oInputOutput.InputOutputDate;
+            if (oInputOutput.IsInput)
+            {
+                oStorage.PartialQuantity += oInputOutput.Quantity;//Agrega la cantidad a registrar.
+                Business_Storage.UpdateStorage(oStorage);
+
+                oProduct.TotalQuantity += oInputOutput.Quantity;//Agrega la cantidad a registrar.
+                Business_Product.UpdateProduct(oProduct);
+
+                errorMessages.ErrorMessages.Add($"Se ha registrado la entrada de {oInputOutput.Quantity} unidad{srt} del Producto {oProduct.ProductName} en la bodega {oStorage.Warehouse.WarehouseName}.");
+            }
+            else
+            {
+                oStorage.PartialQuantity -= oInputOutput.Quantity;//Quita la cantidad a registrar.
+                Business_Storage.UpdateStorage(oStorage);
+
+                oProduct.TotalQuantity -= oInputOutput.Quantity;//Quita la cantidad a registrar.
+                Business_Product.UpdateProduct(oProduct);
+
+                errorMessages.ErrorMessages.Add($"Se ha registrado la salida de {oInputOutput.Quantity} unidad{srt} del Producto {oProduct.ProductName} en la bodega {oStorage.Warehouse.WarehouseName}.");
+            }
+
+            Business_InputOutput.CreateInputOutput(oInputOutput);//Llamada al método estático de guardar la entrada o salida para no tener que instanciarlo.
+            errorMessages.Error = true;
+
+            //NavManager.NavigateTo("storage/list");
+        }
+
+
+    }
+
+}

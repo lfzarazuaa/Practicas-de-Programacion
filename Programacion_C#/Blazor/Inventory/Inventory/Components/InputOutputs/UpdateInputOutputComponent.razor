@@ -1,0 +1,34 @@
+﻿@using Entities
+@using Business
+
+@inject NavigationManager NavManager
+
+<EditForm Model="oWarehouse">
+    <div class="form-group">
+        <label>Nombre de la bodega:</label>
+        <InputText class="form-control" @bind-Value="oWarehouse.WarehouseName"></InputText>
+    </div>
+    <div class="form-group">
+        <label>Dirección:</label>
+        <InputText @bind-Value="oWarehouse.WarehouseAddress" class="form-control"></InputText>
+    </div>
+    <input type="button" value="Actualizar bodega" @onclick="UpdateWarehouse" />
+</EditForm>
+
+@code {
+    [Parameter]
+    public string IdWarehouse { get; set; }
+
+    WarehouseEntity oWarehouse = new WarehouseEntity();
+
+    protected override async Task OnInitializedAsync()
+    {
+        oWarehouse = Business_Warehouse.WarehouseById(IdWarehouse);//Encuentra la bodega por su id.
+    }
+
+    private void UpdateWarehouse()
+    {
+        Business_Warehouse.UpdateWarehouse(oWarehouse);
+        NavManager.NavigateTo("warehouse/list");
+    }
+}

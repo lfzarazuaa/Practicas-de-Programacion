@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities
 {
-    public class StorageEntity
+    public class StorageEntity : ICloneable
     {
         [Key]
         [StringLength(50)]
@@ -22,5 +22,10 @@ namespace Entities
         public WarehouseEntity Warehouse { get; set; } //Objeto que contiene la bodega.
         
         public ICollection<InputOutputEntity> InputOutputs { get; set; } //Lista con todos las entradas/salidas existentes.
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

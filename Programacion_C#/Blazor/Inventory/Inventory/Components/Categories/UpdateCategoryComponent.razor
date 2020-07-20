@@ -1,0 +1,39 @@
+﻿@using Entities
+@using Business
+
+@inject NavigationManager NavManager
+
+<div>
+    <EditForm Model="oCategory">
+        <div class="form-group">
+            <label>Nombre de la categoría:</label>
+            <InputText class="form-control" @bind-Value="oCategory.CategoryName"></InputText>
+        </div>
+        <input type="button" value="Actualizar categoría" @onclick="UpdateCategory" />
+    </EditForm>
+    <ErrorMessageComponent ErrorMessages="@errorMessages"></ErrorMessageComponent>
+</div>
+
+
+@code {
+    [Parameter]
+    public string IdCategory { get; set; }
+
+    CategoryEntity oCategory = new CategoryEntity();
+    Business_Response errorMessages = new Business_Response();//Crea objeto para guardar los mensajes de error al capturar la información.
+
+    protected override async Task OnInitializedAsync()
+    {
+        oCategory = Business_Category.CategoryById(IdCategory);//Encuentra la categoría por su id.
+    }
+
+    private void UpdateCategory()
+    {
+        errorMessages = Business_Category.ValidateUpdateCategory(oCategory);
+        if (!errorMessages.Error)
+        {
+            Business_Category.UpdateCategory(oCategory);
+            NavManager.NavigateTo("category/list");
+        }
+    }
+}
