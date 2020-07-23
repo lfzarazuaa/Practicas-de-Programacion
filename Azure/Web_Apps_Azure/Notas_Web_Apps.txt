@@ -1,0 +1,18 @@
+Con Web Apps en Azure podemos publicar nuestro sitio web.
+Nos sirve para desplegar el sitio web, back ends móviles, APIs REST, cualquier plataforma en cualquier lenguaje, Windows/Linux/Container(Docker).
+Para crear una Web App se crea un nuevo recurso, se selecciona Web App y se da clic en crear.
+En la pantalla de creación o configuración se le asigna un nombre al sitio, si va a ser código o docker, el lenguaje con el que correrá, el sistema opertivo y la región donde se quiere el servidor, posteriormente se elige el plan que se quiere contratar (de las características dependerá el precio).
+Azure ofrece el servicio de integración continua con el cual al actualizar la rama master de nuestro repositorio de git podemos subir los cambios de como se verá y comportará la página.
+Para poder publicar nuestro sitio, primero se sube a github con el sitio ya programado y funcional.
+Si no se usará integración continua(sincronización con control de versiones), se tendría que usar un publish profile (un archivo xml) con el cual se dan las instrucciones para publicar el sitio, pero si algo algo falla no se puede recuperar el sitio estable pasado.
+Para seleccionar la implementación continua a usar se puede elegir entre azure repos, github, bitbucket o un local con git, esto desde el deployment center o centro de implementación continua.
+Posteriormente se procede a elegir el servicio de compilación en el cual podemos seleccionar KUDU para nuestro sitio.
+Luego se elige el usuario de github, el repositorio y la rama con la cual se quiere trabajar.
+Por ultimo se debe confirmar las opciones elegidas y se empieza a cargar el sitio en la plataforma.
+Una vez publicado el sitio será sensible a todas las actualizaciones que creemos en la rama elegida.
+https://exmvczarazua.azurewebsites.net/
+Para consultar las estadisticas del sitio se debe configurar la parte de application insights en enable o habilitar, a partir de que este habilitada nos dará las estadísticas del sitio.
+En aplication insights se da clic en ver datos de application insigths para ver las estadisticas del sitio.
+Para ver estadísticas mas profundas se da clic en panel de aplicación o dashboard.
+En las características te dice los usuarios que han ingresado, las solicitudes fallidas, el tiempo de respuesta del servidor, el tiempo promedio de caída de carga (distancia entre que la solicitud se elabora y el sitio web es envíado al usuario), exepciones del navegador, uso del cpu, disponibilidad en promedio(se da despues de una solicitud caída), operaciones de entrada y de salida (cpu + ram), la memoría restante que te queda para el sitio web (código e imágenes cargadas en el sitio).
+Al cambiar de plan por lo general se hace un cambio de hardware por lo cual es común que el sitio se caiga por un momento en lo que se recarga.
