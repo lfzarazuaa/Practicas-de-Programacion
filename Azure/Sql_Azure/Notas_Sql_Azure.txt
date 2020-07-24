@@ -7,3 +7,32 @@ Para crear una base de datos se accede a nuevo recurso, base de datos, en sql az
 Se selecciona SQL Database en la opcion default.
 Al crear la base de datos se crea un recurso, luego si no tiene, se crea un servidor(con el que se conectara con la cadena de conexión) se define no elástico(Elástico-tamaño variable para bases de datos muy grandes) y la capacidad de cómputo la necesaria para la aplicación.
 Posteriormente se puede elegir entre una base de datos en blanco, una restaurada o una de ejemplo(Adventure Works).
+En el editor de consultas se puede probar la base de datos sql y por medio de ella hacer algunas consultas prueba.
+Para ingresar a sql server se debe ingresar la contraseña del servidor y en el servidor dejar acceso a la ip con la que se está trabajando.
+Se puede guardar la consulta sql en un archivo sql o en un archivo .json , .csv o .xml.
+En transact sql no es sensible a las mayúsculas y minúsculas.
+SSDT- Sql Server Data Tools: Es un complemento para administrar las bases de datos está sql server managment studio (L), la versión para visual studio community edition, o desde visual studio code.
+Con la extensión mssql de visual studio code se puede trabajar sql desde visual studio code.
+Para aplicar la conexión se presiona ctrl+shift+p o en ver paleta de comandos y de ahi seleccionar ms sql: connect.
+Ir a VS Code
+-Ctrl + Shift + P
+ms sql: connect
+Nombre servidor (ej: mynewserver20170313.database.windows.net)
+Nombre Bases de Datos a conectarse.
+Autenticacion (Inicio de sesion)
+Usuario (de la cuenta que administra el servidor)
+-Password
+-Si o no
+-Nombre perfil (opcional)
+(Read)
+SELECT * FROM SalesLT.ProductCategory Permite ver los registros de la tabla.
+Operación Insert (Create)
+INSERT INTO SalesLT.ProductCategory (Name, rowguid, ModifiedDate)
+VALUES ('Coffee', 'cfbda25c-df65-47a7-b98b-64ee999aa37c',   2002-06-01)
+Operación UPDATE
+UPDATE SalesLT.ProductCategory SET Name = 'Chocolate'
+WHERE ProductCategoryID = 42
+Operación UPDATE
+DELETE FROM SalesLT.ProductCategory WHERE ProductCategoryID = 42
+Sentencias DML (INSERT, UPDATE, DELETE, SELECT) Estas son para crear,modificar o eliminar tuplas(registros) de la base de datos.
+Sentencias DDL (CREATE, ALTER, DROP) Estos son para crear, alterar o modificar las tablas que van a componer la base de datos.
