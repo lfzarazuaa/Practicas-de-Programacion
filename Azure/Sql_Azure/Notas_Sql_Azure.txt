@@ -1,0 +1,9 @@
+Sql Azure usa sql server.
+Plataforma como servicio- Se deslinda de la administración, la gestión, la instalción y la gestión.
+En la nube no importa el hardware solo el manejo de la información.
+Ventajas: Cero mantenimiento, sin preocupación por la administración del servidor, disponibilidad de hasta 99.99%, siempre la versión mas actualizada de sql.
+La seguridad da mejores accesos.
+Para crear una base de datos se accede a nuevo recurso, base de datos, en sql azure(distinta de sql server).
+Se selecciona SQL Database en la opcion default.
+Al crear la base de datos se crea un recurso, luego si no tiene, se crea un servidor(con el que se conectara con la cadena de conexión) se define no elástico(Elástico-tamaño variable para bases de datos muy grandes) y la capacidad de cómputo la necesaria para la aplicación.
+Posteriormente se puede elegir entre una base de datos en blanco, una restaurada o una de ejemplo(Adventure Works).
