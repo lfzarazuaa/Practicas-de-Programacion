@@ -16,3 +16,13 @@ En aplication insights se da clic en ver datos de application insigths para ver 
 Para ver estadísticas mas profundas se da clic en panel de aplicación o dashboard.
 En las características te dice los usuarios que han ingresado, las solicitudes fallidas, el tiempo de respuesta del servidor, el tiempo promedio de caída de carga (distancia entre que la solicitud se elabora y el sitio web es envíado al usuario), exepciones del navegador, uso del cpu, disponibilidad en promedio(se da despues de una solicitud caída), operaciones de entrada y de salida (cpu + ram), la memoría restante que te queda para el sitio web (código e imágenes cargadas en el sitio).
 Al cambiar de plan por lo general se hace un cambio de hardware por lo cual es común que el sitio se caiga por un momento en lo que se recarga.
+Logic Apps es una herramienta que nos da la posibilidad de en vez de programar código para identificar distintas situaciones o acciones en un sitio web, nos permite realizar eso de una manera automatizada usando una interfaz gráfica.
+Logic apps ofrece una gama de automatización de procesos, estos procesos son de tipo drag and drop, pueden ir desde cosas simples como enviar un correo hasta incluir tecnologías empresariales como SAP, sharepoint entre otras.
+Tienen 3 etapas entrada proceso y salida.
+Los procesos pueden ser complejos o simples segun se necesiten.
+La línea puede tener condiciones o no.
+*Loggic Apps nos permite automatizar procesos simplemente realizando los pasos de arrastrar y pegar.
+*Loggic apps se divide en tres etapas, entrada, proceso y salida, ejm para las entradas (petición HTTP, Cola, Registro en Azure ), estas etapas pueden llevar condiciones y se configuran con lo pasos mencionados anteriormente (arrastrar y pegar) no hay una cantidad de pasos definidos, los que se requieran*.
+Para crear una logic app se crea un nuevo recurso con Logic App, se rellena el formulario y se procede a confirmarla.
+Al abrir la logic app lo primero que hace es llevarnos al diseñador de Logic Apps.
+Una vez diseñada la logic app se debe guardar y correr para ejecutarla.
