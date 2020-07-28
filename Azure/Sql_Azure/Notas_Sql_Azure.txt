@@ -36,3 +36,94 @@ Operación UPDATE
 DELETE FROM SalesLT.ProductCategory WHERE ProductCategoryID = 42
 Sentencias DML (INSERT, UPDATE, DELETE, SELECT) Estas son para crear,modificar o eliminar tuplas(registros) de la base de datos.
 Sentencias DDL (CREATE, ALTER, DROP) Estos son para crear, alterar o modificar las tablas que van a componer la base de datos.
+Con una API se puede crear un puente para consultar la base de datos por medio de una interfaz web.
+Para instalar la plantilla para web api se usa dotnet new --install "Microsoft.DotNet.Web.Project.2.2"
+Para aplicar la sincronización entre una API y una Db se recomienda tener una lista de pasos que mencione como se va creando, pues a pesar que ya existen las librerías estas deben llamarse en un orden apropiado y un error en algun paso puede acarrearse en un futuro sin que este pueda ser detectado hasta la ejecución.
+Crear carpeta de Modelos (Models)
+El modelo se encarga de tener la estructura de datos con la que se va a comunicar la aplicación.
+Crear la clase de entidad o clases de entidades (que define las tablas).
+Para agregar entity framework core en vscode se busca el paquete en Nuget la mas estable y se selecciona la opcion PackageReference, se copia la instruccion y se pega en .csproj en itemgroup.
+Ademas se debe instalar entity framework core sql server para manejar ese tipo de base de datos.
+Posteriormente se actualiza con dotnet restore.
+En Visual Studio Community se ingresan los paquetes en administrar paquetes Nuget y de ahi se instalan las depencias del proyecto.
+Para crear la clase de contexto para la base de datos el constructor se debe inicializar de la siguiente manera:
+public ContactsContext(DbContextOptions options) : base(options)//Llama al constructor DbContext(DbContextOptions options); para que se ejecute.
+{    
+}
+Para asociar una tabla se coloca:  public DbSet<Contacts> Contacts { get; set; }//Tabla de contactos.
+Configurar la cadena de conexión en un archivo formato json en appsettings.json
+"ConnectionStrings": {
+    "DefaultConnection": "Server=tcp:azurelfzarazuaa.database.windows.net,1433;Initial Catalog=registrosprueba;Persist Security Info=False;User ID=lfzarazuaa1400;Password=LK7MuOL%2Im^Vp;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+},
+En Program.cs es el archivo principal que manda a llamar al inicializador y a la aplicación.
+El inicializador es la clase Startup.cs
+En la clase Startup se configura el siguiente método
+public void ConfigureServices(IServiceCollection services)
+    {
+        string connectionString = Configuration.GetConnectionString("DefaultConnection");//Obtiene connection String del archivo .json
+        services.AddDbContext<ContactsContext>(options => options.UseSqlServer(connectionString));//Pasa al contexto la cadena de conexión para que pueda conectarse y realizar las consultas.
+        services.AddControllers();
+    } 
+dotnet tool install --global dotnet-ef // Instalar la libreria de entity core para cli.
+dotnet ef migrations add InitialCreate //Crear código de migración con las clases 
+dotnet ef database update //Actualiza en la base de datos.
+Para consultar la api se puede usar postman y configurar el verbo http.
+Para poder consultar páginas sin certificado ssl para https se puede deshabilitar la opción en configuración.
+Si se presiona code se tiene el código fuente para realizar las peticiones en la aplicacion deseada.
+Con dotnet publish -c Release -o ./publish se publica la web app en un servidor.
+[HttpGet]
+public ActionResult<IEnumerable<Contacts>> Get()
+{
+    return db.Contacts.ToList();//Regresa la lista de contactos desde la base de datos.
+}
+
+[HttpGet("{id}")]//Get para obtener un recurso específico.
+public ActionResult<Contacts> Get(string id)
+{
+    var selectedContact = (from c in db.Contacts
+                           where c.ContactId == id
+                           select c).FirstOrDefault();
+    //var selectedContact = db.Contacts.Where(c => c.ContactId == id).FirstOrDefault();
+    return selectedContact;//Regresa el elemento seleccionado.   
+}
+
+[HttpPost] //Método Post para crear un registro.
+public IActionResult Post([FromBody] Contacts value)
+{
+    Contacts newContact = value;
+    newContact.ContactId = Guid.NewGuid().ToString();
+    newContact.Created_at = DateTime.Now;
+    newContact.Updated_at = DateTime.Now;
+    newContact.IsActive = true;
+    db.Contacts.Add(newContact);//Agrega al contexto la clase.
+    db.SaveChanges();//Guarda los cambios.
+    return Ok("Tu contacto ha sido agregado.");
+}
+
+[HttpPut("{id}")] //Actualizar un registro.
+public IActionResult Put(string id, [FromBody] Contacts value)
+{
+    Contacts updatedContact = value;
+    var selectedElement = db.Contacts.Find(updatedContact.ContactId);
+    selectedElement.Name = updatedContact.Name;
+    selectedElement.LastName = updatedContact.LastName;
+    selectedElement.MothersLastName = updatedContact.MothersLastName;
+    selectedElement.Age = updatedContact.Age;
+    selectedElement.Phone = updatedContact.Phone;
+    selectedElement.Email = updatedContact.Email;
+    selectedElement.Description = updatedContact.Description;
+    selectedElement.IsActive = updatedContact.IsActive;
+    selectedElement.Updated_at = DateTime.Now;
+    db.Contacts.Update(selectedElement);
+    db.SaveChanges();
+    return Ok("Tu contacto ha sido modificado.");
+}
+
+[HttpDelete("{id}")] //Borrar un recurso.
+public IActionResult Delete(string id)
+{
+    var selectedElement = db.Contacts.Find(id);//Encontrar el recurso.
+    db.Remove(selectedElement);//Eliminar el recurso seleccionado.
+    db.SaveChanges();
+    return Ok("Tu contacto ha sido eliminado.");
+}

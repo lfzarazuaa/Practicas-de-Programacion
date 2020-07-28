@@ -26,3 +26,18 @@ La línea puede tener condiciones o no.
 Para crear una logic app se crea un nuevo recurso con Logic App, se rellena el formulario y se procede a confirmarla.
 Al abrir la logic app lo primero que hace es llevarnos al diseñador de Logic Apps.
 Una vez diseñada la logic app se debe guardar y correr para ejecutarla.
+public ContactController(ContactsContext context)
+        {
+            db = context;//Guardar en la clase el valor de context.
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Contacts>> Get()
+        {
+            return db.Contacts.ToList();//Regresa la lista de contactos desde la base de datos.
+        }
+
+        ~ContactController()//Método Destructor.
+        {
+            db.Dispose();//Libera la memoria para no cerrar la conexión a la base de datos.
+        }
