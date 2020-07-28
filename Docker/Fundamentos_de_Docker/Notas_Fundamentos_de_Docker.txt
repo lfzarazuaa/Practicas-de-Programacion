@@ -1,0 +1,57 @@
+Docker es Open Source, que facilita el desarrollo.
+Docker no es para dar los primeros pasos en programación sino para resolver problemas que van mas alla de solo la escritura de código logrando hacer el trabajo de 3 personas de hace 10 años.
+Docker es un proyecto lanzado en el 2013 que de forma flexible ayuda al despliegue de aplicaciones dentro de contenedores de software, dentro de sus características más importantes se incluye el hecho de que no requiere de utilizar un sistema operativo independiente, lo que lo hace más ligero y rápido, para esto, cuenta con funcionalidades Kernel de Linux ; además de esto Docker posee una manera característica para hacer uso de los elementos de tu equipo, sin necesidad de mayor configuración.
+Problemas al construir:
+-Dependencias de desarrollo.
+-Versiones de entornos de ejecución.
+-Equivalencia de entornos de desarrollo.
+-Equivalencia de entornos de producción.
+-Versiones / compatibilidad.
+Problemas al Distribuir:
+-Generaciones del build diferentes.
+-Acceso a servidores de producción.
+-Ejecución nativa vs la distribuida.
+-Serverless
+Problemas al Ejecutar:
+-Dependencias de aplicación.
+-Compatibilidad de sistema operativo.
+-Disponibilidad de servicios externos.
+-Recursos de hardware.
+Docker permite:
+Construir, distribuir y correr tu código en cualquier lado.
+Al construir código tiene dependencias pues no solo es escribir código sino depender de programas, librerias, versiones.
+Otro problema común es cuando un programa corre en tu pc pero no en la de alguien más por las dependencias que tiene.
+Al ejecutar hay que considerar al servidor que tiene que correr varias versiones a la vez, el hardware que tiene disponible, el sistema opertivo.
+Docker permite distribuir, construir y ejecutar el código en cualquier lado sin problemas.
+Qué es Docker?
+-Docker Permite resolver problemas de construir, distribuir y ejecutar software en diferentes plataformas.
+Containarization: un estándar para llevar algo dentro. Agrupadores de procesos.
+Versátiles:
+-En el orden de los MB.
+-Tienen todas las dependencias que necesitan para funcionar correctamente.
+-Funcionan igual en todos lados.
+Eficientes:
+-Comparten archivos simultáneos con otros contenedores.
+-Solo se ejecutan procesos, no un SS.OO completo.
+Aislados:
+-Lo que pasa en el container queda en el container.
+-No pueden alterar su entorno de ejecución (a menos que explícitamente se indique lo contrario)
+Virtualization: es una imagen o archivo que contiene información dentro. Por lo general son pesadas de administración costosa y son lentas.
+Pesadas:
+-En el orden de los GB.
+-Muchas VMs en el mismo host suelen repetirse en lo que contienen.
+Administración costosa:
+-Una VM tiene que ser administrada como cualquier otra computadora: patching, update, etc
+-Hay que administrar la seguridad interna entre apps
+Lentas:
+-Correr nuestro código en una VM implica no solo arrancar aplicaciones, sino también esperar el boot de la VM en sí.
+Los contenedores son agrupaciones de procesos que están aislados de toda la máquina, parecidas a máquinas virtuales, pero muy distintas.
+Para descargar docker se debe instalar docker community for windows y registrarnos en la página de docker.
+Se puede configurar cuanta memoria y cpu puede usar docker.
+docker --version //Muestra la version.
+docker info //Muestra información de docker.
+docker necesita windows 10 pro para poder ejecutarse correctamente.
+Si se tiene menos de 8gb de ram es mejor iniciar con docker apagado.
+Al ejecutar docker run hello-world, si docker no encuentra localmente la imagen entonces la busca en la web, la descarga y corre la aplicación.
+La siguiente vez que se ejecute ya no lo descarga sino que usa lo que tiene localmente.
+La arquitectura de docker funciona con un cliente que le hace la petición al servicio de docker(daemon), este servicio se encarga de levantar cada contenedor y ponerlo en ejecución, por lo cual el servicio de docker puede estar corriendo en una máquina distinta a la del cliente sin problemas.
