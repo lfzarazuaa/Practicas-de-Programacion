@@ -55,3 +55,48 @@ Si se tiene menos de 8gb de ram es mejor iniciar con docker apagado.
 Al ejecutar docker run hello-world, si docker no encuentra localmente la imagen entonces la busca en la web, la descarga y corre la aplicación.
 La siguiente vez que se ejecute ya no lo descarga sino que usa lo que tiene localmente.
 La arquitectura de docker funciona con un cliente que le hace la petición al servicio de docker(daemon), este servicio se encarga de levantar cada contenedor y ponerlo en ejecución, por lo cual el servicio de docker puede estar corriendo en una máquina distinta a la del cliente sin problemas.
+Un contenedor ejecuta sus procesos de forma nativa como si fuera cualquier otro proceso del SO, los procesos que se ejecutan dentro del contenedor no pueden ver afuera del contenedor.
+Los contenedores no pueden disponer de mas memoria que la asignada.
+El único software que se comparte entre docker y el SO es el kernel.
+Los servidores productivos de docker se usa Linux ya que ahi corre nativamente en mac y windows hace un tipo de virtualización.
+Para un contenedor el root o su ruta origen es donde se empieza a ejecutar el contenedor, no sabrá si existe algún archivo en otra parte de la pc.
+https://itnext.io/chroot-cgroups-and-namespaces-an-overview-37124d995e3d
+docker ps -a //Nos muestra todos los contenedores aun los que ya terminaron.
+docker inspect e0b9d623ad6a//Nos da la información del contenedor dado su id o nombre, con eso podemos saber información del contenedor al momento de programar.
+docker ps = lista los contenedores
+docker ps -a = lista contenedores a detalles
+docker ps -aq = lista solo los ID de los contenedores (la q significa quiet, tranquilo o silencioso)
+docker inspect id_contenedor = detalles internos del contenedor
+docker inspect nombre_contenedor = lo mismo que el anterior
+docker inspect -f {{}} nombre_contenedor = filtra una variable especifico del contenedor
+docker rm nombre_contenedor = elimina un contenedor
+docker rm $(ps -aq) = borra TODOS los contenedores que no se esten ejecutando.
+Listar contendores en ejecución
+docker ps
+Listar todos los contenedores
+docker ps -a
+Cargar / Ejecutar una imagen de contenedor
+docker run [image]
+Imagino q “image” es la fuente del contenedor.
+Cargar / Ejecutar una imagen de contenedor con un nombre específico
+docker run --name [name a asignar] [image]
+Ver metadata de un contenedor
+docker inspect [name/id contenedor]
+Ver un dato exacto de la metadata de un contenedor:
+docker inspect -f '{{ json .Config.Env }}' [name/id]
+docker inspect -f "{{ json .Config.Env }}" [name/id]// En windows.
+Aquí se utiliza el template de filtro del leguaje GO q es el lenguaje en q fue programado DOCKER.
+LINUX … ver el path
+echo $PATH
+Cambiar el nombre de un contendor descargado
+docker rename [name actual] [name nuevo]
+Ver las salidas de contenedores ya ejecutados o cargados
+docker logs [name/id]
+Obtener como salida sólo los ID de los contendores cargados
+docker ps -aq
+Eliminar / Desmantelar contenedores
+docker rm [name/id]
+Para eliminar/desmantelar todos los contenedores cargados, utilizamos el comando q nos genera la salida de todos los ID de contendores cargados dentro de un docker rm y el comando quedaría así:
+docker rm $(docker ps -aq)
+Las rutas nombradas son con respecto al contenedor y no con respecto a la ruta de la pc principal.
+docker run genera un contenedor nuevo a partir de una imagen.
