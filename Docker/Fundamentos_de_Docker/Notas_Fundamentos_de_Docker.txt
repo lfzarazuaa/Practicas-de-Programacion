@@ -177,4 +177,49 @@ Docker hub permite repositorios privados pero son de paga.
 docker history ubuntu:mi_version//Historial de la imagen con versión.
 docker history --no-trunc ubuntu:mi_version//Historial de la imagen con versión sin truncar los datos.
 docker pull wagoodman/dive //Bajar la imagen:
-docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest ubuntu:platzi //Cuando se ejecute, deberá incluir el archivo de socket docker:
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest ubuntu:platzi //Cuando se ejecute, deberá incluir el archivo de socket docker.
+Dockerfile para aplicación con node js.
+    #Usa node js como imagen base.
+    FROM node:8
+    #Copia del contexto de build (root) a la ruta /usr/src/ para poner datos de usuario.
+    COPY [".", "/usr/src/"]
+    #Quita el paquete json.
+    RUN rm package-lock.json //Linea extra.
+    #Cambia el apuntador a ese directorio y lo establece como de trabajo (para correr npm install).
+    WORKDIR /usr/src
+    #Para ejecutar node.
+    RUN npm install
+    #Para trabajar con el puerto 3000.
+    EXPOSE 3000
+    #COMAND Comando por defecto que va a correr la imagen (lo que se ejecuta al hacer docker run).
+    CMD ["node", "index.js"]
+docker run --rm -p 3000:3000 platziapp //Ejecuta el contenedor con la imagen platziapp pero al tener --rm  lo remueve o elimina al terminar su ejecución.
+Cuando en el contexto de build del dockerfile hay cosas que cambian poco se tarda menos en recontruir ya que hace uso de la memoria cache.
+Para conectar un contenedor a la base de datos en otro puerto al ser un contenedor y estar aislado se puede crear un contenedor para la aplicación otro para la base de datos y enlazar cada uno a un puerto de la máquina local, otra solución es crear una red interna entre los dos contenedores.
+docker network ls//Nos da los nombres de las redes de docker.
+docker network create --attachable platzinet//Crea la red platzinet con --attachable para tener la posibilidad que contenedores futuros se conecten a la red.
+docker network connect platzinet db//Conecta el contenedor de la base de datos a la red.
+docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platzinode10//Crea el contenedor definiendo la variable de entorno para la red --env MONGO_URL=mongodb://db:27017/test.
+Borrar una redes en docker
+docker network rm <nombre de la red>
+Ej: docker network rm platzinet
+Crear una redes en docker
+docker network create --attachable <nombre de la red>
+—attachable es para que otros contenedores se puedan unir a esta red
+Ej: docker network create --attachable platzinet
+Ver redes disponibles docker
+docker network ls
+bridge red por defecto y se conectan con un keyword link esta en desuso, compatibilidad (deprecated)
+host simula la red del computador que corre docker (no usar)
+none hacer que tenga el network desabilitado
+Ver contenedores en un red
+docker network inspect <nombre de la red>
+Ej: docker network inspect platzinet
+Detallar la búsqueda
+docker network inspect -f '{{.Containers}}' platzinet
+Unir un contenedor a la red creada
+docker network connect <nombre de la red> <nombre del contenedor>
+Ej: docker network connect platzinet db
+docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp
+-env variable de entorno
+db es el nombre del contenedor sin necesidad de pasar la ip del contenedor para la conexión.
