@@ -223,3 +223,109 @@ Ej: docker network connect platzinet db
 docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp
 -env variable de entorno
 db es el nombre del contenedor sin necesidad de pasar la ip del contenedor para la conexión.
+Docker compose es una herramienta que permite describir de forma declarativa la arquitectura de nuestra aplicación.
+Docker compose usa un archivo .yml para describir la aplicación.
+Docker compose tiene varias versiones que se específican con "version: "3"".
+Para listar contenedores se usan servicios cada servicio tiene un contenedor, pero se pueden listar varios servicios.
+Dockercompose.yml 
+    # Específica la versión de docker compose.
+    version: "3"
+    # Declara que servicios o como será la arqquitectura de la aplicación.
+    services:
+    #Crear contenedor app para la aplicación.
+    app:
+        #Contenedor basado en la imagen platzinode10
+        image: platzinode10
+        #Declara la variable de entorno que tendrá app para conectarse a la base de datos.
+        environment:
+        MONGO_URL: "mongodb://db:27017/test"
+        #Específica que el contenedor depende de db (inicializa primero db).
+        depends_on:
+        - db
+        #Enlaza el puerto del contenedor con el de la máquina local.
+        ports:
+        - "3000:3000"
+    #Crear contenedor db para la base de datos.
+    db:
+        #Contenedor basado en la imagen mongo.
+        image: mongo
+docker-compose up //Realiza la ejecución de los contenedores descritos en el archivo .yml el cual nos dice la arquitectura de los servicios, para esto se necesita estar en la carpeta de donde tomará los archivos o la especificada según el archivo .yml (contexto de build).
+docker-compose up -d//Ejecución de contendores sin mostrar los logs.
+docker-compose logs app//Muestra los logs del contenedor app.
+docker-compose exec app bash//Explora con bash el servicio(app).
+Por defecto docker-compose crea un network para conectar los servicios (contenedores).
+Para que docker use el cache debe estar en el mismo repositorio y con la misma capa.
+docker-compose build//Hace el build para generar las imágenes faltantes si así se específico en el archivo .yml .
+Las imágenes <none> son imágenes que fueron sustituidas por una nueva y ahora quedan sin uso, se recomienda eliminarlas.
+docker-compose up -d//Se puede usar si en un servicio tiene build en el .yml ya que compilará las imágenes necesarias y luego las usará.
+Se pueden configurar los volumenes para hacer persistentes los datos y ejecutar cambios en el sistemas de archivos que se reflejen en el contenedor.
+docker-compose up permite volver a ejecutarse aun corriendo los contendores.
+docker-compose up --scale app=5 //Corre 5 contenedores de tipo app.
+Docker-compose.yml para escuchar por varios puertos, con build y volumenes.
+# Específica la versión de docker compose.
+version: "3"
+# Declara que servicios o como será la arqquitectura de la aplicación.
+    services:
+    #Crear contenedor app para la aplicación.
+    app:
+        #Construir la imagen a partir del directorio base donde se ejecutó docker-compose.
+        build: .
+        #Declara la variable de entorno que tendrá app para conectarse a la base de datos.
+        environment:
+        MONGO_URL: "mongodb://db:27017/test"
+        #Específica que el contenedor depende de db (inicializa primero db).
+        depends_on:
+        - db
+        #Enlaza el puerto del contenedor con el de la máquina local.
+        ports:
+        - "3000-3005:3000"
+        #Lista los directorios compartidos con la máquina local.
+        volumes: 
+        #Comparte el directorio root con la carpeta /usr/src/
+        - .:/usr/src/
+        #Excluye de la sincronización los archivos de dependencias de la carpeta base /usr/src/ evitando que cuando se sincronice se borre la carpeta.
+        - /usr/src/node_modules
+    #Crear contenedor db para la base de datos.
+    db:
+        #Contenedor basado en la imagen mongo.
+        image: mongo
+docker build -t platziapp -f build/production.Dockerfile . //Crea imagen a partir de un dockerfile explicito, usa para desarrollo y para producción usualmente.
+https://medium.com/@serrodcal/construcci%C3%B3n-de-im%C3%A1genes-docker-en-m%C3%BAltiples-etapas-7933179a3e1f
+https://docs.docker.com/develop/develop-images/multistage-build/
+Docker puede realizar la compilación multicapas lo que permite crear un contenedor de desarrollo donde se pueden correr todos los test y posteriormente eliminar esos test y dependencias solo usadas en desarrollo para implementar la imagen de producción ya comprobada pero mas liviana.
+docker build -t platziapp -f build/production.Dockerfile . //Imagen con dockerfile específicado.
+production.Dockerfile //Dockerfile de producción con etapa de desarrollo para probar código y de producción para solo tener lo esencial.
+    #Primera etapa
+    #Capa a partir de node10 que crea contexto llamado builder (contenido del primer contenedor).
+    FROM node:10 as builder
+    #Copia solo los archivos para las dependencias de node.
+    COPY ["package.json", "package-lock.json", "/usr/src/"]
+    #Establece como directorio de trabajo o principal /usr/src
+    WORKDIR /usr/src
+    #Instala dependencias de producción.
+    RUN npm install --only=production
+    #Copia los archivos faltantes (código propio del proyecto).
+    COPY [".", "/usr/src/"]
+    #Instala dependencias de desarrollo para realizar testing.
+    RUN npm install --only=development
+    #Realiza el test de la aplicación (si este comando corre bien se ejecuta lo demás).
+    RUN npm run test
+
+    #Segunda capa.
+    #Reinicia desde donde comenzar.
+    FROM node:10
+    #Copia solo los archivos para las dependencias de node.
+    COPY ["package.json", "package-lock.json", "/usr/src/"]
+    #Establece como directorio de trabajo o principal /usr/src
+    WORKDIR /usr/src
+    #Instala dependencias de producción.
+    RUN npm install --only=production
+    #Copia de la primera etapa solo el código propio del proyecto (index.js).
+    COPY --from=builder ["/usr/src/index.js", "/usr/src/"]
+    #Declara que va a correr en el puerto 3000 del contenedor.
+    EXPOSE 3000
+    #Ejecuta el comando para levantar el servidor de nuestra aplicación.
+    CMD ["node", "index.js"]
+Docker in Docker
+Docker in Docker nos da la posibilidad de correr comandos de docker dentro de un contenedor de docker.
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:18.06.1-ce //Permite correr docker con un volumen que hace referencia al docker local.
