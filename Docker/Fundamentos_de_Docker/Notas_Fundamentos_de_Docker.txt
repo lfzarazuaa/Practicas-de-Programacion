@@ -100,3 +100,81 @@ Para eliminar/desmantelar todos los contenedores cargados, utilizamos el comando
 docker rm $(docker ps -aq)
 Las rutas nombradas son con respecto al contenedor y no con respecto a la ruta de la pc principal.
 docker run genera un contenedor nuevo a partir de una imagen.
+docker permite correr un ubuntu con solo ejecutar una instrucción.
+Para poder correr el ubuntu necesita una ejecución interactiva pues ubuntu recibe parámetros por la terminal, pero al no tener ninguna entrada por defecto se sale pues no tiene nada que procesar.
+docker run -it ubuntu//Ejecuta ubuntu en un contenedor de manera interactiva.
+Con cat /etc/lsb-release podemos ver la versión de linux usada.
+Con exit se sale del modo interactivo de bash (consola de ubuntu).
+El significado de las flags -it:
+-t: Asignar un pseudo-tty (Terminal).
+-i: mantén STDIN abierto incluso si no está conectado.
+docker run ubuntu tail -f /dev/null —> Para no ejecutar el comando por defecto, le podemos decir que se ejecute y no se apague. La terminal se queda congelada.
+Abrir otra terminal
+docker ps —> para obtener nombre
+docker exec -it <nombre contenedor> bash —> Exec es para ejecutar un comando en un contenedor existente. -it para que sea de forma interactiva.
+ps —> En linux se pueden ver los procesos con ps, solo los de mi sesión.
+ps -fea —> Para ver procesos de todas las sesiones. Docker siempre por defecto le asigna el PID (ID del proceso) 1 al comando que corre con el contenedor, ahi esta la clave de cuando se apaga el contenedor. Todo contenedor tiene un root COMMAND, cuando haga exit se va apagar el contenedor.
+exit —> Salir del contenedor. Puedo hacer 2 cosas:
+docker rm -f <nombre contenedor> Elima brutalmente el contenedor. El -f significa “Si esta corriendo no me importa”
+docker kill <nombre contenedor> Manda una señal de matar el proceso.
+Si un contenedor se apaga es porque hubo un error en el proceso root e hizo exit o terminó de hacer lo que tenia que hacer.
+En docker el proceso principal o el primero siempre es el contenedor con PID 1 si este termina el contenedor deja de ejecutarse.
+-d: --detach: Impide que la terminal se quede congelada y de este modo aun cuando el proceso se este ejecutando tenemos control sobre la terminal.
+sha256: Es el algoritmo que usa para generar los identificadores únicos.
+Los contenedores están aislados del sistema esto tambíen se consideran en los puertos del contenedor.
+Para conectar un puerto del contenedor a la máquina donde se trabaja se debe espeecificar el puerto a conectar de la máquina.
+-p [puerto_máquina]:[puerto_del_contenedor]//Crea un enlace entre el puerto de la máquina y de la
+ docker run -d --name server -p 8080:80 nginx//Levanta el servidor con nginx con control de la terminal enlazando el puerto local al puerto del contenedor.
+ docker run -d --name dbmongo mongo//Crea un contenedor con mongo db.
+ docker logs dbmongo// Nos muestra los logs de un contenedor con mongo db.
+ docker exec -it dbmongo bash //Ejecuta el contenedor con una terminal bash.
+ mongo//Dentro de la terminal accede a los comandos de mongo.
+ use platzi//Crea una nueva base de datos.
+ db.users.insert({ "name": "Luis Fernando" })//Inserta una fila nueva dentro de la tabla.
+ db.users.find()//Lista todos los elementos de la tabla.
+ Con el contendor de mongo se puede insertar datos en la base de datos pero al momento de terminar la ejecución del contenedor o eliminarlo se pierden los datos ya que el contenedor está aislado, esto se puede evitar haciendo un enlace (bind) entre la ruta del contenedor y una de la máquina local.
+docker run --name dbmongo -d -v /Users/lfzar/docker/mongodata:"/data/db" mongo //Compartir un directorio local con uno del contenedor -v indica el volumen.
+Colocar la dirección sin el nombre del disco (C).
+bind mount es el tipo de compartir directorios por defecto de docker.
+Usar bind mount (rutas enlazadas o espejeadas) es fácil de usar pero puede ser vulnerable a escritura por parte de otros procesos lo cual puede ser peligroso.
+Otra forma de persistir los es usando directamente volume, que igual guarda en el sistema de archivos de la pc, pero la ruta es asignada por docker para evitar ser encontrada fácilmente, la ultima forma es usando una memoria temporal con tmpfs. 
+docker volume ls//Lista todos los volumenes locales
+docker run -d --name db --mount src=dbdata,dst=/data/db mongo //Crear contenedor de mongo con un el volumen dbdata y la carpeta del contenedor /data/db.
+Con los volumenes se puede asignar a una nube para asi tener persistencia de datos en la nube.
+https://docs.docker.com/storage/
+Las imágenes son un componente fundamental de Docker y sin ellas los contenedores no tendrían sentido. Estas imágenes son fundamentalmente plantillas o templates.
+Algo que debemos tener en cuenta es que las imágenes no van a cambiar, es decir, una vez este realizada no la podremos cambiar.
+Las imágenes pueden distribuirse de manera muy simple, pues con el nombre de la imagen y docker run puede correrla.
+Una imagen siempre parte de una capa base (que a su vez es una imagen), siendo cada capa una diferencia ya sea en archivos agregados, modificados o eliminados de la anterior capa (modelo atómico), con lo cual una imagen que descargar solo lo que le hace falta o necesita para completarse.
+Cada pull complete representa una capa descargada, que a su vez se pueden decargar en paralelo pero deben ser compiladas en serie, lo que hace mas rapido el proceso.
+docker image ls //Lista todas las imagenes.
+El tag es un identificador con el que se sabe que versión es.
+Antes de decargar cada capa docker verifica si no la tiene con base a su identificador único, si la tiene no la baja de nuevo.
+Eliminar imágenes descargadas en el host:
+docker image ls // para obtener el id de la imagen
+REPOSITORY TAG IMAGE ID CREATED SIZE
+ubuntu 18.04 93fd78260bd1 8 days ago 86.2MB
+docker rmi -f 93fd78260bd1
+-f => forzar
+Ej: docker rmi -f 93fd78260bd1
+Para construir una imagen se debe hacer un archivo dockerfile
+docker build -t ubuntu:mi_version . //Ejecuta el dockerfile de la carpeta donde se encuentre en la terminal (El "." sirve para indicar a build donde compilar).
+Contenido de Dockerfile (sin extensión)
+    # Imagen Base
+    FROM ubuntu 
+    # Comandos a ejecutar
+    RUN touch /usr/src/hola-mundo-mundial
+Para crear un contenedor primero se tiene un dockerfile ahi se dan las instrucciones para crear la imagen y a partir de la imagen se crea el contenedor.
+docker run -it ubuntu:mi_version//Crear contenedor a partir de versión propia.
+Por defecto docker usa el repositorio [docker.io/library/ubuntu] para intentar descargar imágenes, cuando lista repositorios de library no muestra toda la extensión.
+docker usa el concepto de tag para saber a que repositorio se quiere hacer push.
+docker tag [imagen] [nombre_tag(repositorio+tag)].
+docker tag ubuntu:mi_version lfzarazuaa/ubuntu:mi_version//Crea imagen con nuevo tag y nombre de repositorio para poderse publicar online.
+docker login//Acceder como usuario para modificar repositorios.
+docker push lfzarazuaa/ubuntu:mi_version//Publicar el repositorio online.
+Docker hub permite repositorios privados pero son de paga.
+"From scratch" es la capa más básica que solo contiene la imágen del kernel de linux.
+docker history ubuntu:mi_version//Historial de la imagen con versión.
+docker history --no-trunc ubuntu:mi_version//Historial de la imagen con versión sin truncar los datos.
+docker pull wagoodman/dive //Bajar la imagen:
+docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive:latest ubuntu:platzi //Cuando se ejecute, deberá incluir el archivo de socket docker:
