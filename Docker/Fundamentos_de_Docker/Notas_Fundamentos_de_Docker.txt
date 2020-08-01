@@ -1,5 +1,5 @@
 Docker es Open Source, que facilita el desarrollo.
-Docker no es para dar los primeros pasos en programación sino para resolver problemas que van mas alla de solo la escritura de código logrando hacer el trabajo de 3 personas de hace 10 años.
+Docker no es para dar los primeros pasos en programación sino para resolver problemas que van mas alla de solo la escritura de código logrando hacer el trabajo de 3 personas de hace 10 años con una sola persona.
 Docker es un proyecto lanzado en el 2013 que de forma flexible ayuda al despliegue de aplicaciones dentro de contenedores de software, dentro de sus características más importantes se incluye el hecho de que no requiere de utilizar un sistema operativo independiente, lo que lo hace más ligero y rápido, para esto, cuenta con funcionalidades Kernel de Linux ; además de esto Docker posee una manera característica para hacer uso de los elementos de tu equipo, sin necesidad de mayor configuración.
 Problemas al construir:
 -Dependencias de desarrollo.
@@ -11,7 +11,7 @@ Problemas al Distribuir:
 -Generaciones del build diferentes.
 -Acceso a servidores de producción.
 -Ejecución nativa vs la distribuida.
--Serverless
+-Serverless.
 Problemas al Ejecutar:
 -Dependencias de aplicación.
 -Compatibilidad de sistema operativo.
@@ -21,9 +21,9 @@ Docker permite:
 Construir, distribuir y correr tu código en cualquier lado.
 Al construir código tiene dependencias pues no solo es escribir código sino depender de programas, librerias, versiones.
 Otro problema común es cuando un programa corre en tu pc pero no en la de alguien más por las dependencias que tiene.
-Al ejecutar hay que considerar al servidor que tiene que correr varias versiones a la vez, el hardware que tiene disponible, el sistema opertivo.
+Al ejecutar hay que considerar al servidor que tiene que correr varias versiones a la vez, el hardware que tiene disponible, el sistema operativo.
 Docker permite distribuir, construir y ejecutar el código en cualquier lado sin problemas.
-Qué es Docker?
+¿Qué es Docker?
 -Docker Permite resolver problemas de construir, distribuir y ejecutar software en diferentes plataformas.
 Containarization: un estándar para llevar algo dentro. Agrupadores de procesos.
 Versátiles:
@@ -32,17 +32,17 @@ Versátiles:
 -Funcionan igual en todos lados.
 Eficientes:
 -Comparten archivos simultáneos con otros contenedores.
--Solo se ejecutan procesos, no un SS.OO completo.
+-Solo se ejecutan procesos, no un S.O. completo.
 Aislados:
 -Lo que pasa en el container queda en el container.
--No pueden alterar su entorno de ejecución (a menos que explícitamente se indique lo contrario)
+-No pueden alterar su entorno de ejecución (a menos que explícitamente se indique lo contrario).
 Virtualization: es una imagen o archivo que contiene información dentro. Por lo general son pesadas de administración costosa y son lentas.
 Pesadas:
 -En el orden de los GB.
 -Muchas VMs en el mismo host suelen repetirse en lo que contienen.
 Administración costosa:
--Una VM tiene que ser administrada como cualquier otra computadora: patching, update, etc
--Hay que administrar la seguridad interna entre apps
+-Una VM tiene que ser administrada como cualquier otra computadora: patching, update, etc.
+-Hay que administrar la seguridad interna entre apps.
 Lentas:
 -Correr nuestro código en una VM implica no solo arrancar aplicaciones, sino también esperar el boot de la VM en sí.
 Los contenedores son agrupaciones de procesos que están aislados de toda la máquina, parecidas a máquinas virtuales, pero muy distintas.
@@ -58,17 +58,17 @@ La arquitectura de docker funciona con un cliente que le hace la petición al se
 Un contenedor ejecuta sus procesos de forma nativa como si fuera cualquier otro proceso del SO, los procesos que se ejecutan dentro del contenedor no pueden ver afuera del contenedor.
 Los contenedores no pueden disponer de mas memoria que la asignada.
 El único software que se comparte entre docker y el SO es el kernel.
-Los servidores productivos de docker se usa Linux ya que ahi corre nativamente en mac y windows hace un tipo de virtualización.
+En los servidores productivos de docker se usa Linux ya que ahi corre nativamente en mac y windows hace un tipo de virtualización.
 Para un contenedor el root o su ruta origen es donde se empieza a ejecutar el contenedor, no sabrá si existe algún archivo en otra parte de la pc.
 https://itnext.io/chroot-cgroups-and-namespaces-an-overview-37124d995e3d
-docker ps -a //Nos muestra todos los contenedores aun los que ya terminaron.
+docker ps -a //Nos muestra todos los contenedores aún los que ya terminaron.
 docker inspect e0b9d623ad6a//Nos da la información del contenedor dado su id o nombre, con eso podemos saber información del contenedor al momento de programar.
 docker ps = lista los contenedores
 docker ps -a = lista contenedores a detalles
 docker ps -aq = lista solo los ID de los contenedores (la q significa quiet, tranquilo o silencioso)
 docker inspect id_contenedor = detalles internos del contenedor
-docker inspect nombre_contenedor = lo mismo que el anterior
-docker inspect -f {{}} nombre_contenedor = filtra una variable especifico del contenedor
+docker inspect nombre_contenedor = lo mismo que el anterior pero para nombre
+docker inspect -f {{}} nombre_contenedor = filtra una variable especifica del contenedor
 docker rm nombre_contenedor = elimina un contenedor
 docker rm $(ps -aq) = borra TODOS los contenedores que no se esten ejecutando.
 Listar contendores en ejecución
@@ -77,15 +77,15 @@ Listar todos los contenedores
 docker ps -a
 Cargar / Ejecutar una imagen de contenedor
 docker run [image]
-Imagino q “image” es la fuente del contenedor.
+“image” es la fuente del contenedor.
 Cargar / Ejecutar una imagen de contenedor con un nombre específico
 docker run --name [name a asignar] [image]
-Ver metadata de un contenedor
+Ver metadatos de un contenedor
 docker inspect [name/id contenedor]
-Ver un dato exacto de la metadata de un contenedor:
+Ver un dato exacto de los metadatos de un contenedor:
 docker inspect -f '{{ json .Config.Env }}' [name/id]
 docker inspect -f "{{ json .Config.Env }}" [name/id]// En windows.
-Aquí se utiliza el template de filtro del leguaje GO q es el lenguaje en q fue programado DOCKER.
+Aquí se utiliza el template de filtro del leguaje GO que es el lenguaje en que fue programado DOCKER.
 LINUX … ver el path
 echo $PATH
 Cambiar el nombre de un contendor descargado
@@ -96,7 +96,7 @@ Obtener como salida sólo los ID de los contendores cargados
 docker ps -aq
 Eliminar / Desmantelar contenedores
 docker rm [name/id]
-Para eliminar/desmantelar todos los contenedores cargados, utilizamos el comando q nos genera la salida de todos los ID de contendores cargados dentro de un docker rm y el comando quedaría así:
+Para eliminar/desmantelar todos los contenedores cargados, utilizamos el comando que nos genera la salida de todos los ID de contendores cargados dentro de un docker rm y el comando quedaría así:
 docker rm $(docker ps -aq)
 Las rutas nombradas son con respecto al contenedor y no con respecto a la ruta de la pc principal.
 docker run genera un contenedor nuevo a partir de una imagen.
@@ -111,47 +111,48 @@ El significado de las flags -it:
 docker run ubuntu tail -f /dev/null —> Para no ejecutar el comando por defecto, le podemos decir que se ejecute y no se apague. La terminal se queda congelada.
 Abrir otra terminal
 docker ps —> para obtener nombre
-docker exec -it <nombre contenedor> bash —> Exec es para ejecutar un comando en un contenedor existente. -it para que sea de forma interactiva.
+docker exec -it <nombre contenedor> bash —> Exec es para ejecutar un comando en un contenedor existente, -it para que sea de forma interactiva.
+docker exec -it <nombre contenedor> <comando> —> Exec es para ejecutar un comando en un contenedor existente, -it para que sea de forma interactiva.
 ps —> En linux se pueden ver los procesos con ps, solo los de mi sesión.
 ps -fea —> Para ver procesos de todas las sesiones. Docker siempre por defecto le asigna el PID (ID del proceso) 1 al comando que corre con el contenedor, ahi esta la clave de cuando se apaga el contenedor. Todo contenedor tiene un root COMMAND, cuando haga exit se va apagar el contenedor.
 exit —> Salir del contenedor. Puedo hacer 2 cosas:
-docker rm -f <nombre contenedor> Elima brutalmente el contenedor. El -f significa “Si esta corriendo no me importa”
+docker rm -f <nombre contenedor> Elima brutalmente el contenedor. El -f significa “Si esta corriendo no me importa”.
 docker kill <nombre contenedor> Manda una señal de matar el proceso.
 Si un contenedor se apaga es porque hubo un error en el proceso root e hizo exit o terminó de hacer lo que tenia que hacer.
 En docker el proceso principal o el primero siempre es el contenedor con PID 1 si este termina el contenedor deja de ejecutarse.
 -d: --detach: Impide que la terminal se quede congelada y de este modo aun cuando el proceso se este ejecutando tenemos control sobre la terminal.
 sha256: Es el algoritmo que usa para generar los identificadores únicos.
-Los contenedores están aislados del sistema esto tambíen se consideran en los puertos del contenedor.
-Para conectar un puerto del contenedor a la máquina donde se trabaja se debe espeecificar el puerto a conectar de la máquina.
--p [puerto_máquina]:[puerto_del_contenedor]//Crea un enlace entre el puerto de la máquina y de la
- docker run -d --name server -p 8080:80 nginx//Levanta el servidor con nginx con control de la terminal enlazando el puerto local al puerto del contenedor.
- docker run -d --name dbmongo mongo//Crea un contenedor con mongo db.
- docker logs dbmongo// Nos muestra los logs de un contenedor con mongo db.
- docker exec -it dbmongo bash //Ejecuta el contenedor con una terminal bash.
- mongo//Dentro de la terminal accede a los comandos de mongo.
- use platzi//Crea una nueva base de datos.
- db.users.insert({ "name": "Luis Fernando" })//Inserta una fila nueva dentro de la tabla.
- db.users.find()//Lista todos los elementos de la tabla.
- Con el contendor de mongo se puede insertar datos en la base de datos pero al momento de terminar la ejecución del contenedor o eliminarlo se pierden los datos ya que el contenedor está aislado, esto se puede evitar haciendo un enlace (bind) entre la ruta del contenedor y una de la máquina local.
+Los contenedores están aislados del sistema esto tambíen se considera en los puertos del contenedor.
+Para conectar un puerto del contenedor a la máquina donde se trabaja se debe especificar el puerto a conectar de la máquina huesped.
+-p [puerto_máquina]:[puerto_del_contenedor]//Crea un enlace entre el puerto de la máquina y del puerto del contendor.
+docker run -d --name server -p 8080:80 nginx//Levanta el servidor con nginx con control de la terminal enlazando el puerto local al puerto del contenedor.
+docker run -d --name dbmongo mongo//Crea un contenedor con mongo db.
+docker logs dbmongo// Nos muestra los logs de un contenedor con mongo db.
+docker exec -it dbmongo bash //Ejecuta el contenedor con una terminal bash.
+mongo//Dentro de la terminal accede a los comandos de mongo.
+use platzi//Crea una nueva base de datos.
+db.users.insert({ "name": "Luis Fernando" })//Inserta una fila nueva dentro de la tabla.
+db.users.find()//Lista todos los elementos de la tabla.
+Con el contendor de mongo se puede insertar datos en la base de datos pero al momento de terminar la ejecución del contenedor o eliminarlo se pierden los datos ya que el contenedor está aislado, esto se puede evitar haciendo un enlace (bind) entre la ruta del contenedor y una de la máquina local.
 docker run --name dbmongo -d -v /Users/lfzar/docker/mongodata:"/data/db" mongo //Compartir un directorio local con uno del contenedor -v indica el volumen.
 Colocar la dirección sin el nombre del disco (C).
 bind mount es el tipo de compartir directorios por defecto de docker.
 Usar bind mount (rutas enlazadas o espejeadas) es fácil de usar pero puede ser vulnerable a escritura por parte de otros procesos lo cual puede ser peligroso.
 Otra forma de persistir los es usando directamente volume, que igual guarda en el sistema de archivos de la pc, pero la ruta es asignada por docker para evitar ser encontrada fácilmente, la ultima forma es usando una memoria temporal con tmpfs. 
-docker volume ls//Lista todos los volumenes locales
+docker volume ls//Lista todos los volumenes locales.
 docker run -d --name db --mount src=dbdata,dst=/data/db mongo //Crear contenedor de mongo con un el volumen dbdata y la carpeta del contenedor /data/db.
 Con los volumenes se puede asignar a una nube para asi tener persistencia de datos en la nube.
 https://docs.docker.com/storage/
 Las imágenes son un componente fundamental de Docker y sin ellas los contenedores no tendrían sentido. Estas imágenes son fundamentalmente plantillas o templates.
 Algo que debemos tener en cuenta es que las imágenes no van a cambiar, es decir, una vez este realizada no la podremos cambiar.
 Las imágenes pueden distribuirse de manera muy simple, pues con el nombre de la imagen y docker run puede correrla.
-Una imagen siempre parte de una capa base (que a su vez es una imagen), siendo cada capa una diferencia ya sea en archivos agregados, modificados o eliminados de la anterior capa (modelo atómico), con lo cual una imagen que descargar solo lo que le hace falta o necesita para completarse.
-Cada pull complete representa una capa descargada, que a su vez se pueden decargar en paralelo pero deben ser compiladas en serie, lo que hace mas rapido el proceso.
-docker image ls //Lista todas las imagenes.
+Una imagen siempre parte de una capa base (que a su vez es una imagen), siendo cada capa una diferencia ya sea en archivos agregados, modificados o eliminados de la anterior capa (modelo atómico), con lo cual una imagen descarga solo lo que le hace falta o necesita para completarse.
+Cada pull complete representa una capa descargada, que a su vez se pueden descargar en paralelo pero deben ser compiladas en serie, lo que hace mas rapido el proceso.
+docker image ls //Lista todas las imágenes.
 El tag es un identificador con el que se sabe que versión es.
 Antes de decargar cada capa docker verifica si no la tiene con base a su identificador único, si la tiene no la baja de nuevo.
 Eliminar imágenes descargadas en el host:
-docker image ls // para obtener el id de la imagen
+docker image ls // para obtener el id de la imágen.
 REPOSITORY TAG IMAGE ID CREATED SIZE
 ubuntu 18.04 93fd78260bd1 8 days ago 86.2MB
 docker rmi -f 93fd78260bd1
@@ -184,7 +185,7 @@ Dockerfile para aplicación con node js.
     #Copia del contexto de build (root) a la ruta /usr/src/ para poner datos de usuario.
     COPY [".", "/usr/src/"]
     #Quita el paquete json.
-    RUN rm package-lock.json //Linea extra.
+    RUN rm package-lock.json //Línea extra.
     #Cambia el apuntador a ese directorio y lo establece como de trabajo (para correr npm install).
     WORKDIR /usr/src
     #Para ejecutar node.
@@ -195,33 +196,33 @@ Dockerfile para aplicación con node js.
     CMD ["node", "index.js"]
 docker run --rm -p 3000:3000 platziapp //Ejecuta el contenedor con la imagen platziapp pero al tener --rm  lo remueve o elimina al terminar su ejecución.
 Cuando en el contexto de build del dockerfile hay cosas que cambian poco se tarda menos en recontruir ya que hace uso de la memoria cache.
-Para conectar un contenedor a la base de datos en otro puerto al ser un contenedor y estar aislado se puede crear un contenedor para la aplicación otro para la base de datos y enlazar cada uno a un puerto de la máquina local, otra solución es crear una red interna entre los dos contenedores.
+Para conectar un contenedor a la base de datos en otro puerto al ser un contenedor y estar aislado se puede crear un contenedor para la aplicación otro para la base de datos y enlazar cada uno a un puerto de la máquina huésped, otra solución es crear una red interna entre los dos contenedores.
 docker network ls//Nos da los nombres de las redes de docker.
 docker network create --attachable platzinet//Crea la red platzinet con --attachable para tener la posibilidad que contenedores futuros se conecten a la red.
 docker network connect platzinet db//Conecta el contenedor de la base de datos a la red.
 docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platzinode10//Crea el contenedor definiendo la variable de entorno para la red --env MONGO_URL=mongodb://db:27017/test.
-Borrar una redes en docker
-docker network rm <nombre de la red>
-Ej: docker network rm platzinet
-Crear una redes en docker
-docker network create --attachable <nombre de la red>
-—attachable es para que otros contenedores se puedan unir a esta red
-Ej: docker network create --attachable platzinet
-Ver redes disponibles docker
-docker network ls
-bridge red por defecto y se conectan con un keyword link esta en desuso, compatibilidad (deprecated)
-host simula la red del computador que corre docker (no usar)
-none hacer que tenga el network desabilitado
-Ver contenedores en un red
-docker network inspect <nombre de la red>
-Ej: docker network inspect platzinet
-Detallar la búsqueda
-docker network inspect -f '{{.Containers}}' platzinet
-Unir un contenedor a la red creada
-docker network connect <nombre de la red> <nombre del contenedor>
-Ej: docker network connect platzinet db
-docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp
--env variable de entorno
+Borrar una red en docker.
+docker network rm <nombre de la red>.
+Ej: docker network rm platzinet.
+Crear una red en docker.
+docker network create --attachable <nombre de la red>.
+—attachable es para que otros contenedores se puedan unir a esta red.
+Ej: docker network create --attachable platzinet.
+Ver redes disponibles docker.
+docker network ls.
+bridge red por defecto y se conectan con un keyword link esta en desuso, compatibilidad (deprecated).
+host simula la red del computador que corre docker (no usar).
+none hacer que tenga el network deshabilitado.
+Ver contenedores en un red.
+docker network inspect <nombre de la red>.
+Ej: docker network inspect platzinet.
+Detallar la búsqueda.
+docker network inspect -f '{{.Containers}}' platzinet.
+Unir un contenedor a la red creada.
+docker network connect <nombre de la red> <nombre del contenedor>.
+Ej: docker network connect platzinet db.
+docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test platziapp.
+-env variable de entorno.
 db es el nombre del contenedor sin necesidad de pasar la ip del contenedor para la conexión.
 Docker compose es una herramienta que permite describir de forma declarativa la arquitectura de nuestra aplicación.
 Docker compose usa un archivo .yml para describir la aplicación.
@@ -230,7 +231,7 @@ Para listar contenedores se usan servicios cada servicio tiene un contenedor, pe
 Dockercompose.yml 
     # Específica la versión de docker compose.
     version: "3"
-    # Declara que servicios o como será la arqquitectura de la aplicación.
+    # Declara que servicios o como será la arquitectura de la aplicación.
     services:
     #Crear contenedor app para la aplicación.
     app:
@@ -249,22 +250,22 @@ Dockercompose.yml
     db:
         #Contenedor basado en la imagen mongo.
         image: mongo
-docker-compose up //Realiza la ejecución de los contenedores descritos en el archivo .yml el cual nos dice la arquitectura de los servicios, para esto se necesita estar en la carpeta de donde tomará los archivos o la especificada según el archivo .yml (contexto de build).
+docker-compose up //Realiza la ejecución de los contenedores descritos en el archivo .yml el cual nos dice la arquitectura de los servicios, para esto se necesita estar en la carpeta de donde tomará los archivos o la específicada según el archivo .yml (contexto de build).
 docker-compose up -d//Ejecución de contendores sin mostrar los logs.
 docker-compose logs app//Muestra los logs del contenedor app.
 docker-compose exec app bash//Explora con bash el servicio(app).
 Por defecto docker-compose crea un network para conectar los servicios (contenedores).
 Para que docker use el cache debe estar en el mismo repositorio y con la misma capa.
-docker-compose build//Hace el build para generar las imágenes faltantes si así se específico en el archivo .yml .
+docker-compose build//Hace el build para generar las imágenes faltantes si así se específico en el archivo .yml.
 Las imágenes <none> son imágenes que fueron sustituidas por una nueva y ahora quedan sin uso, se recomienda eliminarlas.
 docker-compose up -d//Se puede usar si en un servicio tiene build en el .yml ya que compilará las imágenes necesarias y luego las usará.
-Se pueden configurar los volumenes para hacer persistentes los datos y ejecutar cambios en el sistemas de archivos que se reflejen en el contenedor.
-docker-compose up permite volver a ejecutarse aun corriendo los contendores.
+Se pueden configurar los volúmenes para hacer persistentes los datos y ejecutar cambios en el sistemas de archivos que se reflejen en el contenedor.
+docker-compose up permite volver a ejecutarse aún corriendo los contendores.
 docker-compose up --scale app=5 //Corre 5 contenedores de tipo app.
-Docker-compose.yml para escuchar por varios puertos, con build y volumenes.
+Docker-compose.yml para escuchar por varios puertos, con build y volúmenes.
 # Específica la versión de docker compose.
 version: "3"
-# Declara que servicios o como será la arqquitectura de la aplicación.
+# Declara que servicios o como será la arquitectura de la aplicación.
     services:
     #Crear contenedor app para la aplicación.
     app:
@@ -289,7 +290,7 @@ version: "3"
     db:
         #Contenedor basado en la imagen mongo.
         image: mongo
-docker build -t platziapp -f build/production.Dockerfile . //Crea imagen a partir de un dockerfile explicito, usa para desarrollo y para producción usualmente.
+docker build -t platziapp -f build/production.Dockerfile . //Crea imagen a partir de un dockerfile explícito, usado para desarrollo y para producción usualmente.
 https://medium.com/@serrodcal/construcci%C3%B3n-de-im%C3%A1genes-docker-en-m%C3%BAltiples-etapas-7933179a3e1f
 https://docs.docker.com/develop/develop-images/multistage-build/
 Docker puede realizar la compilación multicapas lo que permite crear un contenedor de desarrollo donde se pueden correr todos los test y posteriormente eliminar esos test y dependencias solo usadas en desarrollo para implementar la imagen de producción ya comprobada pero mas liviana.
@@ -308,7 +309,7 @@ production.Dockerfile //Dockerfile de producción con etapa de desarrollo para p
     COPY [".", "/usr/src/"]
     #Instala dependencias de desarrollo para realizar testing.
     RUN npm install --only=development
-    #Realiza el test de la aplicación (si este comando corre bien se ejecuta lo demás).
+    #Realiza el test de la aplicación (si este comando corre bien se ejecutan lo demás).
     RUN npm run test
 
     #Segunda capa.
