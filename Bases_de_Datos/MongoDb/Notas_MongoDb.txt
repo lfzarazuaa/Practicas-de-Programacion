@@ -29,3 +29,131 @@ Si el lenguaje es Orientado a Objetos de inicio transversal a la mayoría de len
     -Crea conexión. una instancia de MongoClient, recibe la dirección donde se encuentra la BD.
     -Obtener la BD. Se crea una instancia de MongoDatabase donde se pasará el parámetro el nombre de la BD donde se realizará las operaciones.
     -Acceder a una colección. Pasará el nombre de la colección donde se guardarán los documentos y a partir de MongoCollection permitirá hacer operaciones CRUD sobre nuestra BD.
+Las Bases de Datos son los contenedores físicos para nuestras colecciones. Cada base de datos tiene un archivo propio en el sistema de archivos de nuestra computadora o servidor y un Cluster puede tener múltiples bases de datos.
+Las Colecciones son agrupaciones de documentos. Son equivalentes a las tablas en bases de datos relacionales pero NO nos imponen un esquema o estructura rígida para guardar información.
+Los Documentos son registros dentro de las colecciones. Son la unidad básica de MongoDB y son análogos a los objetos JSON pero en realidad son BSON.
+Cluster:
+    -Almacena varias bases de datos.
+Base de datos:
+    -Contenedor físico de colecciones.
+    -Cada base de datos tiene su archivo propio en el sistema de archivos.
+    -Un cluster puede tener múltiples bases de datos.
+Colecciones:
+    -Agrupación de documentos.
+    -Equivalente a una tabla en las bases de datos relacionales.
+    -No impone un esquema.
+Documentos:
+    -Un registro dentro de una colección.
+    -Es análogo a un objeto JSON (BSON).
+    -La unidad básica dentro de MongoDB.
+Un BSON es una transformación binaria de un JSON que nos permite tener mas tipos de datos, como fechas y valores binarios.
+InsertOne(). Guardar un documento dentro de la colección en la BD. Si no existe la conexión MONGODB la crea. Ingresa en formato JSON. Al hacer un insert dentro de una colección sino especifica el underscoreId (es un campo obligatorio que la BD pide) Mongo lo crea automáticamente.
+InsertMany() recibe un arreglo en formato JSON y los ingresa a MongoDB automáticamente MongoDB tiene automicidad dentro de los documentos quiere decir que en el las operaciones de escritura garantiza que al escribir un documento la operación es atómica (se escribe y si no se escribe se hace rollback ( no se guarda en la BD)).
+Find({CONDICION}). Se hace una consulta con un filtro y nos permite buscar uno o varios documentos que cumplan la condición.
+FindOne(). Devuelve los documentos en orden natural (guarda los doc. dentro del sistema de archivos), se pueden definir conforme los índices. FinOne({_id: objectId(‘EL ID DEL OBJETO’)}).
+Operador AND la forma sencilla es ponerla dentro del filtro FinOne({_id: objectId(‘EL ID DEL OBJETO’), qty: {$slte: 75} }). Si y solo si ambas son verdaderas devuelve un documento.
+**UpdateOne(Filtro, nuevo valor). **De igual manera recibe un JSON o un arreglo de doc. UpdateOne({_id: objectId(‘ID DEL OBJETO’)}, {$set: {qty:130}}). updataMany() si hay más de un doc. Que cumplan con la condición cambiará el valor de cada uno
+DeleteOne() hace el paso del filtro, borrará según su orden natural que encuentre con el filtro.
+DeleteOne({status: “A”})
+DeleteMany(). Compara el filtro con la cantidad de doc. Que cuplen con el filtro y los borra
+DeleteOne({status: “A”})
+id es un indice, este puede ser autogenerado por mongodb o se puede asignar manualmente.
+MongoDB es atómico dentro de los documentos, garantizandonos que si el documento no se escribe entonces se hace rollback (no se guarda el documento).
+Con InsertMany si no se inserta el documento completo entonces no lo guarda.
+show collections//Muestra las distintas colecciones.
+db.inventory.find({ item: "canvas"}).pretty()//Encuentra todos los documentos con el atributo item en canvas.
+Los filtros se usan con un json.
+db.inventory.findOne({ _id: ObjectId("5f298f5a171f528d3f7d5659"), qty: {$lte: 750}})//Filtro and con json y específicando una cantidad menor a 750.
+db.inventory.updateOne({ _id: ObjectId("5f298f5a171f528d3f7d5659")}, {$set: {qty: 130}})//Actualiza el registro en el primer parámetro se especifican las condiciones.
+
+Para los usuarios de Windows las variables de entorno se definen de esta forma de esta forma:
+Windows CMD:
+    set FLASK_APP=platzi-api
+    set FLASK_ENV=development
+    set PLATZI_DB_URI=“MONGO-URI”
+Windows PowerShell:
+    $env:FLASK_APP = "platzi-api"
+    $env:FLASK_ENV = "development"
+    $env:PLATZI_DB_URI = "MONGO-URI”
+CRUD en la aplicación.
+#Crear carrera C.
+def crear_carrera(json):
+    return str(db.carreras.insert_one(json).inserted_id)
+
+#Leer carrera R.
+def consultar_carrera_por_id(carrera_id):
+    return dumps(db.carreras.find_one({'_id': ObjectId(carrera_id)}))#dumps convierte de bson a json.
+
+#Actualizar carrera U.
+def actualizar_carrera(carrera):
+    # Esta función solamente actualiza nombre y descripción de la carrera
+    return str(db.carreras.update_one( { '_id': ObjectId(carrera['_id'])} , {'$set': { 'nombre': carrera['nombre'], 'descripcion': carrera['descripcion']} } ).modified_count)
+
+#Borrar carrera D.
+def borrar_carrera_por_id(carrera_id):
+    #Borra el objeto conforme al filtro.
+    return str(db.carreras.delete_one({'_id': ObjectId(carrera_id)}).deleted_count)
+https://docs.mongodb.com/manual/reference/bson-types/
+Tipos de datos
+    -Strings: Nos sirven para guardar textos.
+    -Boolean: Información cierta o falsa (true y false).
+    -ObjectId: Utilizan el tiempo exacto en el que generamos la consulta para siempre generan IDs únicos. Existen en BSON pero no en JSON.
+    -Date: Nos sirven para guardar fechas y hacer operaciones de rangos entre ellas.
+    -Números: Doubles, Integers(32 bits), Integers(64 bits) y Decimals.
+    -Documentos Embebidos: Documentos dentro de otros documentos ({}).
+    -Arrays: Arreglos o listas de cualquier otro tipo de datos, incluso, de otras listas.
+MongoDB permite documentos embebidos ya que usa la notación json la forma de acceder a estos es nombreDocumento.subdocumento.valor .
+MongoDB también permite trabajar con arreglos.
+Al trabajar con documentos cada documento no puede ser mayor a 16 Mb.
+https://docs.mongodb.com/manual/reference/limits/
+Los esquemas son la forma en que nosotros organizamos los documentos en las colecciones, mongodb no un impone un esquema fijo como en las bases de datos sql.
+MongoDB posibilita tener documentos que no tengan parecido sin embargo al momento de realizar las queries extraer la información sera más compleja.
+Hay que usar MongoDB en un punto medio que los documentos tengan el mayor parecido posible con la libertad de agregar un campo si es necesario.
+Las relaciones son como los documentos o entidades se encuentran enlazados unos con otros.
+Los esquemas son la forma en que organizamos nuestros documentos en nuestras colecciones. MongoDB no impone ningún esquema pero podemos seguir buenas prácticas y estructurar nuestros documentos de forma parecida (no igual) para aprovechar la flexibilidad y escalabilidad de la base de datos sin aumentar la complejidad de nuestras aplicaciones.
+Las relaciones son la forma en que nuestras entidades o documentos sen encuentran enlazados unos con otros. Por ejemplo: Una carrera tiene multiples cursos y cada curso tiene multiples clase.
+Cuando se tienen relaciones uno a uno la mejor forma de usar mongo es usando documentos embebidos, Ejemplo: nombre, direccion ( calle, ciudad, estado).
+Para relaciones uno a muchos se usan documentos embebidos con arreglos automovil:[{nombre,marca},{nombre,marca},{nombre,marca}].
+Las operaciones de update en mongoDB no son transaccionales, si se tienen 10,000 documentos puede que 5,000 queden con la actualización y los demás no.
+Cuando se tiene un elemento con relacion muchos a uno se recomienda colocar un identificador, ejemplo libro con identificador de editorial, si la información va a cambiar frecuentemente o puede llegar a actualizarse es muy aconsejable.
+Las documentos embebidos nos ayudan a guardar la información en un solo documento y nos ahorra el tiempo que tardamos en consultar diferentes documentos a partir de referencias. Sin embargo, las referencias siguen siendo muy importantes cuando debemos actualizar información en diferentes lugares de forma continua.
+Cuando se tiene un subdocumento grande y una colección con ese subdocumento como documento se puede guardar en 2 colecciones distintas el documento pero siendo uno la versión reducida del otro con solo su id y nombre, considerando hacer las 2 actualizaciones pertinentes.
+Carreras
+{
+    "_id": "5c7605235f627d4ee1c77e81",
+    "nombre": "Carrera de AWS",
+    "descripcion": "En es carrera aprenderas AWS",
+    "cursos": [
+        {
+            "_id": "",
+            "nombre": "Nombre del curso"
+        },
+        {
+            "_id": "",
+            "nombre": "Nombre del curso"
+        }
+    ]
+}
+Cursos
+{
+    "_id": "",
+    "nombre": "",
+    "descripcion": "",
+    "clases": [
+        {
+            "_id": "",
+            "orden": 1,
+            "nombre": "",
+            "video": ["url1"]
+        },
+        {
+            "_id": "",
+            "orden": 1,
+            "nombre": "",
+            "video": ["url1"]
+        }
+    ]
+}
+Modo MongoDB con Documentos Embebidos: Guardar los documentos de los cursos directamente en la colección de la carrera porque es más rápido cargar las carreras y toda su información pero cuando cambie vas al psicólogo (no importa si solo quieres un curso, siempre traes toda todita la carrera).
+Modo “SQL” con Referencias: Guardar los cursos en su propia colección y llamarlos desde la colección de carreras con un id de referencias. Todo bien separado y fácil de conseguir solo lo que necesitamos de cada colección pero muy costoso cuando queremos llamar a todos los cursos de una carrera porque debemos consultar colecciones diferentes una y otra vez.
+Modo LEGENDA: Guardar los cursos en su propia colección pero añadir no solo una referencia sino también el nombre del curso. Así, cuando solo consultemos carrera, vamos a tener los nombres de los cursos. Solo consultamos cada curso cuando necesitamos toda todita la información. IMPORTANTE: Ojo que debemos actualizar el nombre del curso en dos partes diferentes.
