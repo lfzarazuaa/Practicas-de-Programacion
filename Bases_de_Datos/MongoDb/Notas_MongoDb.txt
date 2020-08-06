@@ -157,3 +157,139 @@ Cursos
 Modo MongoDB con Documentos Embebidos: Guardar los documentos de los cursos directamente en la colección de la carrera porque es más rápido cargar las carreras y toda su información pero cuando cambie vas al psicólogo (no importa si solo quieres un curso, siempre traes toda todita la carrera).
 Modo “SQL” con Referencias: Guardar los cursos en su propia colección y llamarlos desde la colección de carreras con un id de referencias. Todo bien separado y fácil de conseguir solo lo que necesitamos de cada colección pero muy costoso cuando queremos llamar a todos los cursos de una carrera porque debemos consultar colecciones diferentes una y otra vez.
 Modo LEGENDA: Guardar los cursos en su propia colección pero añadir no solo una referencia sino también el nombre del curso. Así, cuando solo consultemos carrera, vamos a tener los nombres de los cursos. Solo consultamos cada curso cuando necesitamos toda todita la información. IMPORTANTE: Ojo que debemos actualizar el nombre del curso en dos partes diferentes.
+Operadores para realizar queries
+Para usar operadores es común usar un filtro el cual se compone de campo, operador y valor.
+db.inventory.find({status: { $in: ["A", "D"]}})//Filtro que nos devuelve los documentos con status que tenga A o D.
+{ <campo1>: { <operador1: <valor1> }, ... }//Estructura de un filtro con operador.
+Las proyecciones nos dan la posibilidad de indicar que valores queremos traer de un documento en una consulta y cuales no.
+db.inventory.findOne({status: A}, {item: 1, status: 1})
+{ <campo1>: <valor1>, ...} //Se específica si traer el campo con 1 o no traerlo con 0, por defecto nos trae el id si no se quiere traer entonces se usa 0.
+Operadores de comparación
+    $eq : Operador igual =.
+    $gt : Operador mayor que >.
+    $gte : Operador mayor o igual que >=.
+    $lt : Operador menor que >.
+    $lte : Operador manor o igual que >=.
+    $ne : Operador distinto de.
+    $in : Valores dentro de un arreglo.
+    $nin : Valores que no están dentro de un arreglo.
+Operadores lógicos
+    $and : Une queries con un and lógico (similar al uso de una coma en un filtro).
+    $not : Invierte el efecto de una query.
+    $nor : Une queries con un nor lógico.
+    $or : Une queries con un or lógico (si una condición se cumple nos trae el documento) db.inventory.find( { $or: [ { status: "A" }, { qty: { $lt: 30 } } ] } ).
+Operadores por elemento
+    $exist : Documentos que cuentan con un campo específico (Ejemplo: campo edad).
+    $type : Documentos que cuentan con un campo de un tipo específico (Ejemplo: tipo datetime).
+Operadores para arreglos
+    $all : Arreglos que contengan todos los elementos de la query db.articles.find( { tags: { $all: [ [ "ssl", "security" ] ] } } ).
+    $elemMatch : Documentos que cumplen la condición del $elemMatch en uno de sus documentos (condiciones dentro de subdocumentos) db.inventory.find( { "instock": { $elemMatch: { qty: 5, warehouse: "A" } } } )
+    $size : Documentos que contienen un campo tipo arreglo de un tamaño específico.
+https://docs.mongodb.com/manual/tutorial/query-documents/
+https://docs.mongodb.com/manual/reference/operator/update/pull/
+
+#Con la proyección solo se regresan los campos indicados.
+def consultar_curso_por_id_proyeccion(id_curso, proyeccion=None):
+    return db.cursos.find_one({'_id': ObjectId(id_curso)}, proyeccion)#Regresa el curso solo con los campos indicados.
+
+def agregar_curso(json):
+    curso = consultar_curso_por_id_proyeccion(json['id_curso'], proyeccion={'nombre': 1}) #Solo guarda en carreras el nombre y el id de la clase.
+    return str(db.carreras.update_one({'_id': ObjectId(json['id_carrera'])}, {'$addToSet': {'cursos': curso } }).modified_count)#Agrega el curso en la colección de carreras.
+
+def borrar_curso_de_carrera(json):
+    return str(db.carreras.update_one({'_id': ObjectId(json['id_carrera'])}, {'$pull': {'cursos': {'_id': ObjectId( json['id_curso'] ) } } } ).modified_count) #Pull saca un elemento de la pila.
+
+https://docs.mongodb.com/manual/reference/operator/
+
+skip() y limit()
+
+Si tenemos una consulta que retorna 100 documentos pero solamente necesitamos los documentos del número 20 al 30, la manera de hacerlo es usando skip() y limit().
+
+Si tenemos 100 carreras y solamente queremos las primeras 10 podemos ejecutar db.carreras.find({}).limit(10) esta nos traerá las primeras 10 carreras.
+
+Ahora si queremos las carreras ubicadas en los puestos 40 y 50 lo que debemos hacer es db.carreras.find({}).skip(40).limit(10)
+
+Como vemos skip() y limit() son muy útiles para realizar paginaciones, cuando tenemos consultas que retornan muchos documentos y que en algunos casos la totalidad de los documentos no es utilizada es buena práctica limitar el número de documentos que hacemos viajar entre nuestro cluster de base de datos y el código de nuestra aplicación. Esto puede ayudar a mejorar la velocidad con que las consultas son procesadas por la aplicación.
+
+Ejercicios de práctica usando operadores
+// Arreglo de ejemplo
+use test
+db.inventory.insertMany(
+
+[{ _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: [ "A", "B", "C" ] },
+{ _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: [ "B" ] },
+{ _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: [ "A", "B" ] },
+{ _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ] },
+{ _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] }]
+
+)
+
+// $or
+db.inventory.find({$or: [{qty: {$gt: 25}}, {qty: {$lte: 15}}]})
+
+// $gte
+db.inventory.find({qty: {$gte: 25}})
+
+// $size
+db.inventory.find({tags: {$size: 2}})
+
+// Insertemos estos documentos de ejemplo en la colección survey
+db.survey.insertMany([
+{ _id: 1, results: [ { product: "abc", score: 10 }, { product: "xyz", score: 5 } ] }
+{ _id: 2, results: [ { product: "abc", score: 8 }, { product: "xyz", score: 7 } ] }
+{ _id: 3, results: [ { product: "abc", score: 7 }, { product: "xyz", score: 8 } ] }
+])
+
+// $elemMatch
+db.survey.find(
+   { results: { $elemMatch: { product: "xyz", score: { $gte: 8 } } } }
+)
+
+db.survey.find(
+   { results: { $elemMatch: { product: "xyz" } } }
+
+db.survey.find( { results: { $elemMatch: { product: "xyz", score: { $gte: 8 } } } } , { results: { $elemMatch: { product: "xyz", score: { $gte: 8 } } } })
+
+#Coleccion par.
+db.myCollection
+	.find({ sequenceNumber: { $mod: [ 2, 0 ] } }) // filtro pares
+	.sort({ createdAt: 'desc'  }) // ordeno de ultimo a primero
+	.limit(10) // limito a 10
+
+https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/
+
+Las agregaciones son operaciones avanzadas que podemos realizar sobre nuestra base de datos con un poco más de flexibilidad en nuestros documentos.
+
+Pipeline de Agregaciones: Es un grupo de multiples etapas que ejecutan agregaciones en diferentes momentos. Debemos tener muy en cuenta el performance de nuestras agregaciones porque las agregaciones corren en todo el cluster.
+Instrucción 2 agregaciones a cumplir
+db.orders.aggregate([
+   { $match: { status: "A" } },//Selecciona todos los campos con Status A
+   { $group: { _id: "$cust_id", total: { $sum: "$amount" } } } //Suma los campos al momento de agrupar.
+])
+
+Map-Reduce: Nos permite definir funciones de JavaScript para ejecutar operaciones avanzadas. La función de map nos permite definir o “mappear” los campos que queremos usar y la función reduce nos permite ejecutar operaciones y devolver resultados especiales. Por ejemplo: podemos mappear algunos campos y calcular la cantidad de elementos que cumplen ciertas condiciones.
+
+//Función que elige con que campos quedarse this es la querie.
+var mapFunction1 = function() {
+    emit(this.cust_id, this.price);
+};
+
+//Función que decide como actuar, suma los valores de cada arreglo.
+var reduceFunction1 = function(keyCustId, valuesPrices) {
+   return Array.sum(valuesPrices);
+};
+
+//Ejecutar la función mapReduce, no devuelve el resultado de la querie, sino el estado de la función.
+db.orders.mapReduce(
+   mapFunction1,
+   reduceFunction1,
+   { out: "map_reduce_example" })
+
+//Lee la colección.
+db.map_reduce_example.find().sort( { _id: 1 } )
+
+Agregaciones de propósito único: Funciones ya definidas que nos ayudan a calcular un resultado especial pero debemos tener cuidado porque pueden mejorar o afectar el performance de la base de datos. Por ejemplo: count(), estimatedDocumentCount y distinct.
+
+db.collection.estimatedDocumentCount() //devuelve un conteo estimado pero mas rapido.
+db.collection.count() //devuelve el conteo exacto.
+db.collection.distint() //devuelve los distintos valores de la coleción sin repetirse.
