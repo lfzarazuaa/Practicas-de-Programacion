@@ -3,7 +3,7 @@ Las bases de datos NoSQL tienen 4 grandes familias: Key Value Stores, basadas en
     Graph Databases: Bases de datos basadas en Grafos. Nos permiten establecer conexiones entre nuestras entidades para realizar consultas de una forma más eficiente que en bases de datos relacionales (así como Twitter o Medium donde cada publicación tiene diferentes relaciones entre sus usuarios, likes, etc). Por ejemplo: Neo4j o JanusGraph.
     Wide-column Stores: Bases de datos columnares. Tienen una llave de fila y otra de columnas para hacer consultas muy rápidas y guardar grandes cantidades de información pero modelar los datos se puede volver un poco complicado. Las usamos en Big Data, IoT, sistemas de recomendaciones, entre otras. Por ejemplo: Cassandra o HBase.
     Document Databases: Bases de datos basadas en documentos. Nos permiten guardar documentos dentro de colecciones, tiene muy buena performance y flexibilidad que nos permite modelar casos de la vida real de forma sencilla y efectiva. Por ejemplo: MongoDB o CouchBase.
-MongoDB es una base de datos gratis y de código abierto No Relacional basada en documentos que nos permite guardar una gran cantidad de documentos de forma distribuida. Mongo también es el nombre de la compañía que desarrolla el código de esta base de datos.
+MongoDB es una base de datos gratis y de código abierto No Relacional basada en documentos que nos permite guardar una gran cantidad de documentos de forma distribuida. MongoDB también es el nombre de la compañía que desarrolla el código de esta base de datos.
 Una de sus principales características es que nos permite guardar nuestras estructuras o documentos en formato JSON (no exactamente JSON, pero si algo muy parecido BSON) para tener una gran flexibilidad a la hora de modelar situaciones de la vida real.
 Por ser una base de datos distribuida podemos hablar no de uno sino de varios servidores, lo que conocemos como el Cluster de MongoDB. Gracias a esto obtenemos una gran escalabilidad de forma horizontal (escalabilidad en cantidad de servidores).
 MongoDB es “Schema Less” lo que permite que nuestros documentos tengan estructuras diferentes sin afectar su funcionamiento, algo que no podemos hacer con las tablas de las bases de datos relacionales. Su lenguaje para realizar queries, índices y agregaciones es muy expresivo.
@@ -12,61 +12,59 @@ MongoDB Compass es el entorno gráfico de MongoDB.
 Conectores son las librerías dentro de los proyectos para comunicarse con MongoDB.
 Tenemos varios proveedores que nos permiten utilizar o alquilar MongoDB como servicio y en este caso vamos a usar MongoDB Atlas por ser desarrollado por las mismas personas que desarrollan MongoDB.
 MongoDB Atlas tiene las siguientes características:
-Aprovisionamiento automático de clusters con MongoDB
-Alta disponibilidad
-Altamente escalable
-Seguro
-Disponible en AWS, GCP y Microsoft Azure
-Fácil monitoreo y optimización
+    - Aprovisionamiento automático de clusters con MongoDB
+    - Alta disponibilidad
+    - Altamente escalable
+    - Seguro
+    - Disponible en AWS, GCP y Microsoft Azure
+    - Fácil monitoreo y optimización
 Para crear nuestro cluster de base de datos debemos ir a mongodb atlas y ahi seleccionar las distintas opciones.
 Se debe crear el cluster, un usuario y agregar la ip válida a la lista blanca.
 https://www.mongodb.com/cloud/atlas
 Con la instalación de MongoDB community nos permite tener MongoDB, la consola de MongoDB y MongoDB compass.
-Se accede a C:\Program Files\MongoDB\Server\4.4\bin\mongo.exe para correr el servidor de mongo.
+Se accede a C:\Program Files\MongoDB\Server\4.4\bin\mongo.exe para correr el servidor de mongo (acceder a esta dirección desde la terminal).
 Dentro del servidor se pueden ejecutar los comandos de mongo.
 Para conectarse con el cluster de mongo atlas se selecciona en connect y ahi se selecciona si se quiere conectar por compass o por consola, para cualquier caso solo basta con copiar la cadena y correrla ya sea en la GUI o en la consola (con carpeta de bin de Mongo).
-Si el lenguaje es Orientado a Objetos de inicio transversal a la mayoría de lenguajes
-    -Crea conexión. una instancia de MongoClient, recibe la dirección donde se encuentra la BD.
-    -Obtener la BD. Se crea una instancia de MongoDatabase donde se pasará el parámetro el nombre de la BD donde se realizará las operaciones.
-    -Acceder a una colección. Pasará el nombre de la colección donde se guardarán los documentos y a partir de MongoCollection permitirá hacer operaciones CRUD sobre nuestra BD.
+Si el lenguaje es Orientado a Objetos de inicio transversal a la mayoría de lenguajes:
+    - Crea conexión. una instancia de MongoClient, recibe la dirección donde se encuentra la BD.
+    - Obtener la BD. Se crea una instancia de MongoDatabase donde se pasará el parámetro el nombre de la BD donde se realizará las operaciones.
+    - Acceder a una colección. Pasará el nombre de la colección donde se guardarán los documentos y a partir de MongoCollection permitirá hacer operaciones CRUD sobre nuestra BD.
 Las Bases de Datos son los contenedores físicos para nuestras colecciones. Cada base de datos tiene un archivo propio en el sistema de archivos de nuestra computadora o servidor y un Cluster puede tener múltiples bases de datos.
 Las Colecciones son agrupaciones de documentos. Son equivalentes a las tablas en bases de datos relacionales pero NO nos imponen un esquema o estructura rígida para guardar información.
 Los Documentos son registros dentro de las colecciones. Son la unidad básica de MongoDB y son análogos a los objetos JSON pero en realidad son BSON.
 Cluster:
-    -Almacena varias bases de datos.
+    - Almacena varias bases de datos.
 Base de datos:
-    -Contenedor físico de colecciones.
-    -Cada base de datos tiene su archivo propio en el sistema de archivos.
-    -Un cluster puede tener múltiples bases de datos.
+    - Contenedor físico de colecciones.
+    - Cada base de datos tiene su archivo propio en el sistema de archivos.
+    - Un cluster puede tener múltiples bases de datos.
 Colecciones:
-    -Agrupación de documentos.
-    -Equivalente a una tabla en las bases de datos relacionales.
-    -No impone un esquema.
+    - Agrupación de documentos.
+    - Equivalente a una tabla en las bases de datos relacionales.
+    - No impone un esquema.
 Documentos:
-    -Un registro dentro de una colección.
-    -Es análogo a un objeto JSON (BSON).
-    -La unidad básica dentro de MongoDB.
+    - Un registro dentro de una colección.
+    - Es análogo a un objeto JSON (BSON).
+    - La unidad básica dentro de MongoDB.
 Un BSON es una transformación binaria de un JSON que nos permite tener mas tipos de datos, como fechas y valores binarios.
-InsertOne(). Guardar un documento dentro de la colección en la BD. Si no existe la conexión MONGODB la crea. Ingresa en formato JSON. Al hacer un insert dentro de una colección sino especifica el underscoreId (es un campo obligatorio que la BD pide) Mongo lo crea automáticamente.
-InsertMany() recibe un arreglo en formato JSON y los ingresa a MongoDB automáticamente MongoDB tiene automicidad dentro de los documentos quiere decir que en el las operaciones de escritura garantiza que al escribir un documento la operación es atómica (se escribe y si no se escribe se hace rollback ( no se guarda en la BD)).
+InsertOne(): Guardar un documento dentro de la colección en la BD. Si no existe la conexión MONGODB la crea. Ingresa en formato JSON. Al hacer un insert dentro de una colección sino especifica el _Id (es un campo obligatorio que la BD pide) Mongo lo crea automáticamente.
+InsertMany(): recibe un arreglo en formato JSON y los ingresa a MongoDB automáticamente, MongoDB tiene atomicidad dentro de los documentos quiere decir que en el las operaciones de escritura garantiza que al escribir un documento la operación es atómica (se escribe y si no se escribe se hace rollback (no se guarda en la BD)).
 Find({CONDICION}). Se hace una consulta con un filtro y nos permite buscar uno o varios documentos que cumplan la condición.
-FindOne(). Devuelve los documentos en orden natural (guarda los doc. dentro del sistema de archivos), se pueden definir conforme los índices. FinOne({_id: objectId(‘EL ID DEL OBJETO’)}).
-Operador AND la forma sencilla es ponerla dentro del filtro FinOne({_id: objectId(‘EL ID DEL OBJETO’), qty: {$slte: 75} }). Si y solo si ambas son verdaderas devuelve un documento.
-**UpdateOne(Filtro, nuevo valor). **De igual manera recibe un JSON o un arreglo de doc. UpdateOne({_id: objectId(‘ID DEL OBJETO’)}, {$set: {qty:130}}). updataMany() si hay más de un doc. Que cumplan con la condición cambiará el valor de cada uno
-DeleteOne() hace el paso del filtro, borrará según su orden natural que encuentre con el filtro.
-DeleteOne({status: “A”})
-DeleteMany(). Compara el filtro con la cantidad de doc. Que cuplen con el filtro y los borra
-DeleteOne({status: “A”})
+FindOne(): Devuelve los documentos en orden natural (guarda los documentos dentro del sistema de archivos), se pueden definir conforme los índices. FinOne({_id: objectId(‘EL ID DEL OBJETO’)}).
+Operador AND la forma sencilla es ponerla dentro del filtro FindOne({_id: objectId(‘EL ID DEL OBJETO’), qty: {$slte: 75} }). Si y solo si ambas son verdaderas devuelve un documento.
+updateOne(Filtro, nuevo valor). **De igual manera recibe un JSON o un arreglo de documento. UpdateOne({_id: objectId(‘ID DEL OBJETO’)}, {$set: {qty:130}}). updateMany() si hay más de un documento que cumpla con la condición cambiará el valor de cada uno.
+deleteOne(): hace el paso del filtro, borrará según su orden natural que encuentre con el filtro.
+deleteOne({status: “A”}}
+deleteMany(): Compara el filtro con la cantidad de documentos que cumplan la condición y los borra.
 id es un indice, este puede ser autogenerado por mongodb o se puede asignar manualmente.
 MongoDB es atómico dentro de los documentos, garantizandonos que si el documento no se escribe entonces se hace rollback (no se guarda el documento).
 Con InsertMany si no se inserta el documento completo entonces no lo guarda.
 show collections//Muestra las distintas colecciones.
-db.inventory.find({ item: "canvas"}).pretty()//Encuentra todos los documentos con el atributo item en canvas.
+db.inventory.find({ item: "canvas"}).pretty()//Encuentra todos los documentos con el atributo item en canvas y los muestra de una forma ordenada.
 Los filtros se usan con un json.
 db.inventory.findOne({ _id: ObjectId("5f298f5a171f528d3f7d5659"), qty: {$lte: 750}})//Filtro and con json y específicando una cantidad menor a 750.
-db.inventory.updateOne({ _id: ObjectId("5f298f5a171f528d3f7d5659")}, {$set: {qty: 130}})//Actualiza el registro en el primer parámetro se especifican las condiciones.
-
-Para los usuarios de Windows las variables de entorno se definen de esta forma de esta forma:
+db.inventory.updateOne({ _id: ObjectId("5f298f5a171f528d3f7d5659")}, {$set: {qty: 130}})//Actualiza el registro en el primer parámetro se específican las condiciones.
+Para los usuarios de Windows las variables de entorno se definen de esta forma de esta forma (para configurar proyecto de python):
 Windows CMD:
     set FLASK_APP=platzi-api
     set FLASK_ENV=development
@@ -102,27 +100,27 @@ Tipos de datos
     -Números: Doubles, Integers(32 bits), Integers(64 bits) y Decimals.
     -Documentos Embebidos: Documentos dentro de otros documentos ({}).
     -Arrays: Arreglos o listas de cualquier otro tipo de datos, incluso, de otras listas.
-MongoDB permite documentos embebidos ya que usa la notación json la forma de acceder a estos es nombreDocumento.subdocumento.valor .
+MongoDB permite documentos embebidos ya que usa la notación json, la forma de acceder a estos es nombreDocumento.subdocumento.valor.
 MongoDB también permite trabajar con arreglos.
 Al trabajar con documentos cada documento no puede ser mayor a 16 Mb.
 https://docs.mongodb.com/manual/reference/limits/
-Los esquemas son la forma en que nosotros organizamos los documentos en las colecciones, mongodb no un impone un esquema fijo como en las bases de datos sql.
-MongoDB posibilita tener documentos que no tengan parecido sin embargo al momento de realizar las queries extraer la información sera más compleja.
+Los esquemas son la forma en que nosotros organizamos los documentos en las colecciones, mongoDB no impone un esquema fijo como en las bases de datos SQL.
+MongoDB da la posibilidad de tener documentos que no tengan parecido sin embargo al momento de realizar las queries extraer la información sera más compleja.
 Hay que usar MongoDB en un punto medio que los documentos tengan el mayor parecido posible con la libertad de agregar un campo si es necesario.
 Las relaciones son como los documentos o entidades se encuentran enlazados unos con otros.
 Los esquemas son la forma en que organizamos nuestros documentos en nuestras colecciones. MongoDB no impone ningún esquema pero podemos seguir buenas prácticas y estructurar nuestros documentos de forma parecida (no igual) para aprovechar la flexibilidad y escalabilidad de la base de datos sin aumentar la complejidad de nuestras aplicaciones.
-Las relaciones son la forma en que nuestras entidades o documentos sen encuentran enlazados unos con otros. Por ejemplo: Una carrera tiene multiples cursos y cada curso tiene multiples clase.
+Las relaciones son la forma en que nuestras entidades o documentos se encuentran enlazados unos con otros. Por ejemplo: Una carrera tiene múltiple cursos y cada curso tiene múltiple clases.
 Cuando se tienen relaciones uno a uno la mejor forma de usar mongo es usando documentos embebidos, Ejemplo: nombre, direccion ( calle, ciudad, estado).
-Para relaciones uno a muchos se usan documentos embebidos con arreglos automovil:[{nombre,marca},{nombre,marca},{nombre,marca}].
+Para relaciones uno a muchos se usan documentos embebidos con arreglos, Ejemplo: automóvil:[{nombre,marca},{nombre,marca},{nombre,marca}].
 Las operaciones de update en mongoDB no son transaccionales, si se tienen 10,000 documentos puede que 5,000 queden con la actualización y los demás no.
-Cuando se tiene un elemento con relacion muchos a uno se recomienda colocar un identificador, ejemplo libro con identificador de editorial, si la información va a cambiar frecuentemente o puede llegar a actualizarse es muy aconsejable.
+Cuando se tiene un elemento con relación muchos a uno se recomienda colocar un identificador, Ejemplo: libro con identificador de editorial, si la información va a cambiar frecuentemente o puede llegar a actualizarse es muy aconsejable poner un campo de id foránea.
 Las documentos embebidos nos ayudan a guardar la información en un solo documento y nos ahorra el tiempo que tardamos en consultar diferentes documentos a partir de referencias. Sin embargo, las referencias siguen siendo muy importantes cuando debemos actualizar información en diferentes lugares de forma continua.
 Cuando se tiene un subdocumento grande y una colección con ese subdocumento como documento se puede guardar en 2 colecciones distintas el documento pero siendo uno la versión reducida del otro con solo su id y nombre, considerando hacer las 2 actualizaciones pertinentes.
 Carreras
 {
     "_id": "5c7605235f627d4ee1c77e81",
     "nombre": "Carrera de AWS",
-    "descripcion": "En es carrera aprenderas AWS",
+    "descripcion": "En es carrera aprenderás AWS",
     "cursos": [
         {
             "_id": "",
@@ -163,13 +161,13 @@ db.inventory.find({status: { $in: ["A", "D"]}})//Filtro que nos devuelve los doc
 { <campo1>: { <operador1: <valor1> }, ... }//Estructura de un filtro con operador.
 Las proyecciones nos dan la posibilidad de indicar que valores queremos traer de un documento en una consulta y cuales no.
 db.inventory.findOne({status: A}, {item: 1, status: 1})
-{ <campo1>: <valor1>, ...} //Se específica si traer el campo con 1 o no traerlo con 0, por defecto nos trae el id si no se quiere traer entonces se usa 0.
+{ <campo1>: <valor1>, ...} //Se específica si traer el campo con 1 o no traerlo con 0, por defecto nos trae el id si no se quiere traer entonces se usa 0, los demás campos no los trae a menos que se indique.
 Operadores de comparación
     $eq : Operador igual =.
     $gt : Operador mayor que >.
     $gte : Operador mayor o igual que >=.
-    $lt : Operador menor que >.
-    $lte : Operador manor o igual que >=.
+    $lt : Operador menor que <.
+    $lte : Operador menor o igual que <=.
     $ne : Operador distinto de.
     $in : Valores dentro de un arreglo.
     $nin : Valores que no están dentro de un arreglo.
@@ -260,7 +258,7 @@ https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/
 
 Las agregaciones son operaciones avanzadas que podemos realizar sobre nuestra base de datos con un poco más de flexibilidad en nuestros documentos.
 
-Pipeline de Agregaciones: Es un grupo de multiples etapas que ejecutan agregaciones en diferentes momentos. Debemos tener muy en cuenta el performance de nuestras agregaciones porque las agregaciones corren en todo el cluster.
+Pipeline de Agregaciones: Es un grupo de múltiples etapas que ejecutan agregaciones en diferentes momentos. Debemos tener muy en cuenta el performance de nuestras agregaciones porque las agregaciones corren en todo el cluster.
 Instrucción 2 agregaciones a cumplir
 db.orders.aggregate([
    { $match: { status: "A" } },//Selecciona todos los campos con Status A
@@ -285,11 +283,49 @@ db.orders.mapReduce(
    reduceFunction1,
    { out: "map_reduce_example" })
 
-//Lee la colección.
+//Lee la colección, ,mostrando los resultados.
 db.map_reduce_example.find().sort( { _id: 1 } )
 
 Agregaciones de propósito único: Funciones ya definidas que nos ayudan a calcular un resultado especial pero debemos tener cuidado porque pueden mejorar o afectar el performance de la base de datos. Por ejemplo: count(), estimatedDocumentCount y distinct.
 
-db.collection.estimatedDocumentCount() //devuelve un conteo estimado pero mas rapido.
-db.collection.count() //devuelve el conteo exacto.
-db.collection.distint() //devuelve los distintos valores de la coleción sin repetirse.
+db.collection.estimatedDocumentCount() //Devuelve un conteo estimado pero mas rapido.
+db.collection.count() //Devuelve el conteo exacto.
+db.collection.distint() //Devuelve los distintos valores de la coleción sin repetirse.
+Indices
+Los índices nos ayudan a que nuestras consultas sean más rápidas porque, sin ellos, MongoDB debería escanear toda la colección en busca de los resultados, son análogos a los índices de un libro.
+
+Tipos de índices:
+    -De un solo campo - Definimos el campo sobre el nos interesa hacer queries.
+    -Compuestos - Definen indices para unir varios campos.
+    -Multi-llave.
+    -Geoespaciales - Para lugares y distancias definidas.
+    -De texto - Búsquedas por texto.
+    -Hashed - Definir hash para encontrar más rápido.
+
+https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/
+https://medium.com/@dugdun/basic-indexing-in-mongodb-8e776a5eb108
+https://medium.com/statuscode/how-to-speed-up-mongodb-regex-queries-by-a-factor-of-up-to-10-73995435c606
+https://codeburst.io/query-like-a-pro-mongodb-shell-toolbox-3c926cec4cbd
+
+db.cursos.getIndexes() // Ver los índices de una colección.
+db.cursos.createIndex({nombre: "text"}) // Crear índice de tipo texto en el campo nombre de la colección cursos.
+db.cursos.find({$text: {$search: "aws"}}, {nombre: 1})//Consulta de curso con índice.
+Recomendaciones de Arquitectura y Paso a Producción
+    -Usar proveedores cloud con alta disponibilidad: AWS, Google Cloud o Azure son muy buenas opciones.
+    -No te compliques pensando en administración de servidores con MongoDB, servicios como MongoDB Atlas o mlab son muy buenas opciones.
+    -Guardar las credenciales en variables de entorno o archivos de configuración fuera del proyecto.
+    -Asegura que tu cluster se encuentra en la misma región del proveedor que tu aplicación.
+    -Has VPC peering entre la VPC de tu aplicación y la VPC de tu cluster.
+    -Cuida la lista de IPs blancas.
+    -Puedes habilitar la autenticación en dos pasos.
+    -Actualiza constantemente tu versión de MongoDB.
+    -Separa los ambientes de desarrollo, test y producción.
+    -Habilita la opción de almacenamiento encriptado.
+https://geekflare.com/mongodb-sharding-best-practices/
+https://www.mongodb.com/blog/post/performance-best-practices-mongodb-data-modeling-and-memory-sizing
+https://www.mongodb.com/blog/post/time-series-data-and-mongodb-part-2-schema-design-best-practices
+https://www.infoq.com/articles/Starting-With-MongoDB/
+https://www.mongodb.com/mongodb-architecture
+
+https://university.mongodb.com/courses/catalog
+http://nicholasjohnson.com/mongo/course/workbook/
